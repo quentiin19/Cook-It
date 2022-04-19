@@ -1,5 +1,5 @@
 <?php include "template/header.php";
-//la moulaaaaa eirhvrzivz ?>
+//QUentin ?>
 
 		<!-- fin du header -->
 		<div class="row">
