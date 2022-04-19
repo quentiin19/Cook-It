@@ -1,4 +1,5 @@
-<?php include "template/header.php";?>
+<?php include "template/header.php";
+//la moulaaaaa ?>
 
 		<!-- fin du header -->
 		<div class="row">
