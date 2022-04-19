@@ -1,51 +1,4 @@
-	<!DOCTYPE html>
-	<html>
-	<head>
-		<meta charset="utf-8">
-		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-		<link rel="stylesheet"  href="css/style.css">
-		<title>Cook'It</title>
-	</head>
-	<body class="bg-couleur" >
-		<header>
-
-			<!-- Section menu haut -->
-
-			<div class=" bg-color w-auto p-2 row">
-				<div class="col-lg-3 col-md-4">
-					<button type="button" class="btn button-background btn-lg"><img src="images/logo.png" height ="80vh" width="100vw" />Cook'IT</button>
-				</div>
-				<div class="col-lg-6 col-md-4 align-self-center">
-					<form class="d-flex">
-				    	<input class="form-control me-2" type="search" placeholder="Rechercher..." aria-label="Search">
-				    	<button class="btn button-background" type="submit"><img src="images/loupe.png" height ="40vh" width="50vw"></button>
-					</form>
-				</div>
-				<div class="col-lg-3 col-md-4">
-					<div class="btn button-background btn-lg position-absolute end-0"><img href="#" src="images/mode_nuit.png" height ="80vh" width="150vw" /><img href="#" src="images/pdp.jpg" height ="80vh" width="100vw" /></div> 
-				</div>
-			</div>
-
-			<nav class=" nav row">
-
-				<div class="col-lg-3 col-md-3 d-flex justify-content-center button-background border border-dark ">
-		        	<a href="#" class="nav-link text-white ">Recettes aléatoires</a>
-		        </div>
-
-		        <div class="col-lg-3 col-md-3 d-flex justify-content-center button-background border border-dark">     
-		        	<a href="#" class="nav-link text-white">Vos abonnements</a>
-		        </div>  
-
-		        <div class="col-lg-3 col-md-3 d-flex justify-content-center button-background border border-dark">   
-		        	<a href="#" class="nav-link text-white">Vos favoris</a> 
-		        </div>
-
-		        <div class="col-lg-3 col-md-3 d-flex justify-content-center button-background border border-dark"> 
-		        	<a href="#" class="nav-link text-white">Vos recettes</a>
-		    	</div>
-		    </nav>
-			
-		</header>
+<?php include "template/header.php";?>
 
 		<!-- fin du header -->
 		<div class="row">
@@ -134,13 +87,4 @@
 
 		</div>
 
-        <footer class=" bg-color ">
-        	<a href="#"><span class="bi-chevron-up"></span></a>
-        	<h5>© COOK'IT</h5>
-
-
-        	
-        </footer>
-	
-	</body>
-	</html>
+<?php include "template/footer.php";?>
