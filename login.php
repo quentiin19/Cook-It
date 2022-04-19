@@ -1,6 +1,7 @@
 <?php
 	session_start();
 	require "functions.php";
+	//ezzrezrezrezrezrezrzerezrzer
 ?>
 
 <?php include "template/header.php";?>
