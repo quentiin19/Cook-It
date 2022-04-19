@@ -21,10 +21,11 @@
 					              <h2 class="fw-bold mb-2 text-uppercase">Se Connecter</h2>
 					              <p class="text-white-50 mb-5">Veillez entrer votre identifiant et votre mot de passe </p>
 					              <?php
-
+										echo "test";
 										if( !empty($_POST['email']) &&  !empty($_POST['pwd']) && count($_POST)==2 ){
 
 											//Récupérer en bdd le mot de passe hashé pour l'email provenant du formulaire
+											echo "test 1";
 
 
 											$pdo = connectDB();
