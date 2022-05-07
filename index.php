@@ -1,74 +1,235 @@
 <?php include "template/header.php";?>
 
-<!-- fin du header -->
-	<div class="row">
-		<div class="col-lg-2"></div>
-		<div class="col-lg-8 background-body py-5 h-middle ">
-			<div class="container py-5 ">
-				<div class="row">
-					<div class="col-lg-12 col-md-3 bg-color arrondie ">
-						<!-- <h1 class=" text-white text-center ">Tarte aux pommes</h1> -->
-						<div class="card-body">
-							<!-- <img src="images/pomme.jpg" class="w-100 arrondie"> -->
-							<div class="d-flex justify-content-center">
-								<div class="spinner-border" role="status">
-									<span class="visually-hidden">Loading...</span>
-								</div>
-							</div>
-							<!-- <p class="lead mb-1 ">
-								<a href="#" class="btn btn-lg btn-secondary">En savoir plus</a>
-							</p> -->
-						</div>
-					</div>
-				</div>
+		<!-- fin du header -->
+		<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
 
-				<div class="row my-5">
-					<div class="col-lg-4 col-md-3 bg-color arrondie px-5">
-						<!-- <h1 class=" text-white text-center ">Tarte aux pommes</h1> -->
-						<div class="card-body">
-							<!-- <img src="images/pomme.jpg" class="w-100 arrondie"> -->
-							<div class="d-flex justify-content-center">
-									<div class="spinner-border" role="status">
-									<span class="visually-hidden">Loading...</span>
-								</div>
-							</div>
-							<!-- <p class="lead mb-1 ">
-								<a href="#" class="btn btn-lg btn-secondary">En savoir plus</a>
-							</p> -->
-						</div>
-					</div>
-					<div class="col-lg-4 col-md-3 bg-color arrondie px-1">
-						<!-- <h1 class=" text-white text-center ">Tarte aux pommes</h1> -->
-						<div class="card-body">
-							<!-- <img src="images/pomme.jpg" class="w-100 arrondie"> -->
-							<div class="d-flex justify-content-center">
-								<div class="spinner-border" role="status">
-									<span class="visually-hidden">Loading...</span>
-								</div>
-							</div>
-							<!-- <p class="lead mb-1 ">
-								<a href="#" class="btn btn-lg btn-secondary">En savoir plus</a>
-							</p> -->
-						</div>
-					</div>
-					<div class="col-lg-4 col-md-3 bg-color arrondie px-1 ">
-						<!-- <h1 class=" text-white text-center ">Tarte aux pommes</h1> -->
-						<div class="card-body">
-							<!-- <img src="images/pomme.jpg" class="w-100 arrondie"> -->
-							<div class="d-flex justify-content-center">
-								<div class="spinner-border" role="status">
-									<span class="visually-hidden">Loading...</span>
-								</div>
-							</div>
-							<!-- <p class="lead mb-1 ">
-								<a href="#" class="btn btn-lg btn-secondary">En savoir plus</a>
-							</p> -->
-						</div>
-					</div>
-				</div>
-			</div>
+		  <div class="carousel-indicators">
+		  
+		    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+		    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+		    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+		  </div>
+		  <div class="carousel-inner">
+		    <div class="carousel-item active">
+		      <img src="images/font.png" class="d-block w-100 "  height ="800" width="445" alt="...">
+		    </div>
+		    <div class="carousel-item">
+		      <img src="images/font.png" class="d-block w-100" alt="...">
+		    </div>
+		    <div class="carousel-item">
+		      <img src="images/font.png" class="d-block w-100" alt="...">
+		    </div>
+		  </div>
+		  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+		    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+		    <span class="visually-hidden">Previous</span>
+		  </button>
+		  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+		    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+		    <span class="visually-hidden">Next</span>
+		  </button>
 		</div>
-		<div class="col-lg-2"></div>
-	</div>
+
+		<div class="container py-5 ">
+
+		<div class="row">
+			<div class="text-center text-white py-5">
+				<h1>Les Entrées</h1>
+			</div>
+			
+		</div>
+        <div class="row">
+
+            <div class="col-lg-4 col-md-3 ">
+                <div class="card mb-4 shadow-sm">
+                    <img src="images/entrees.jpeg" 
+                    class="w-100">
+                    <div class="card-body arrondie">
+                        
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-sm btn-outline-secondary">
+                                Voir la recette
+                            </button>
+                            <button type="button" class="btn btn-sm btn-outline-secondary ml-1">
+                                Favoris
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-3 ">
+                <div class="card mb-4 shadow-sm">
+                    <img src="images/brochettes.jpeg" 
+                    class="w-100">
+                    <div class="card-body arrondie">
+                        
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-sm btn-outline-secondary">
+                                Voir la recette
+                            </button>
+                            <button type="button" class="btn btn-sm btn-outline-secondary ml-1">
+                                Favoris
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-lg-4 col-md-3 ">
+                <div class="card mb-4 shadow-sm">
+                    <img src="images/entrees2.jpeg" 
+                    class="w-100">
+                    <div class="card-body arrondie">
+                        
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-sm btn-outline-secondary">
+                                Voir la recette
+                            </button>
+                            <button type="button" class="btn btn-sm btn-outline-secondary ml-1">
+                                Favoris
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        <!-- Les Plats -->
+
+        <div class="container py-5 ">
+
+		<div class="row">
+			<div class="text-center text-white py-5">
+				<h1>Les Plats</h1>
+			</div>
+			
+		</div>
+        <div class="row">
+
+            <div class="col-lg-4 col-md-3 ">
+                <div class="card mb-4 shadow-sm">
+                    <img src="images/Plats/plat1.jpeg" 
+                    class="w-100">
+                    <div class="card-body arrondie">
+                        
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-sm btn-outline-secondary">
+                                Voir la recette
+                            </button>
+                            <button type="button" class="btn btn-sm btn-outline-secondary ml-1">
+                                Favoris
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-3 ">
+                <div class="card mb-4 shadow-sm">
+                    <img src="images/Plats/plats2.webp" 
+                    class="w-100">
+                    <div class="card-body arrondie">
+                        
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-sm btn-outline-secondary">
+                                Voir la recette
+                            </button>
+                            <button type="button" class="btn btn-sm btn-outline-secondary ml-1">
+                                Favoris
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-lg-4 col-md-3 ">
+                <div class="card mb-4 shadow-sm">
+                    <img src="images/Plats/plat3.jpeg" 
+                    class="w-100">
+                    <div class="card-body arrondie">
+                        
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-sm btn-outline-secondary">
+                                Voir la recette
+                            </button>
+                            <button type="button" class="btn btn-sm btn-outline-secondary ml-1">
+                                Favoris
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        <!-- Les Desserts -->
+
+        <div class="container py-5 ">
+
+		<div class="row">
+			<div class="text-center text-white py-5">
+				<h1>Les Desserts</h1>
+			</div>
+			
+		</div>
+        <div class="row">
+
+            <div class="col-lg-4 col-md-3 ">
+                <div class="card mb-4 shadow-sm">
+                    <img src="images/Desserts/dessert1.jpeg" 
+                    class="w-100">
+                    <div class="card-body arrondie">
+                        
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-sm btn-outline-secondary">
+                                Voir la recette
+                            </button>
+                            <button type="button" class="btn btn-sm btn-outline-secondary ml-1">
+                                Favoris
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-3 ">
+                <div class="card mb-4 shadow-sm">
+                    <img src="images/Desserts/dessert2.jpeg" 
+                    class="w-100">
+                    <div class="card-body arrondie">
+                        
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-sm btn-outline-secondary">
+                                Voir la recette
+                            </button>
+                            <button type="button" class="btn btn-sm btn-outline-secondary ml-1">
+                                Favoris
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-lg-4 col-md-3 ">
+                <div class="card mb-4 shadow-sm">
+                    <img src="images/Desserts/dessert3.jpeg" 
+                    class="w-100">
+                    <div class="card-body arrondie">
+                        
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-sm btn-outline-secondary">
+                                Voir la recette
+                            </button>
+                            <button type="button" class="btn btn-sm btn-outline-secondary ml-1">
+                                Favoris
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
 
 <?php include "template/footer.php";?>
