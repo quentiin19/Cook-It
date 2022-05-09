@@ -8,6 +8,7 @@
 		$logo = imagecreatefrompng('images\bmw.png');
 		
 		
+		
 
 		$extension_authorised = array('.png', '.PNG', '.jpg', '.jpeg', '.JPG', '.JPEG');
 
