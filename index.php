@@ -11,7 +11,7 @@
 		  </div>
 		  <div class="carousel-inner">
 		    <div class="carousel-item active">
-		      <img src="images/font.png" class="d-block w-100 "  height ="800" width="445" alt="...">
+		      <img src="images/font.png" class="d-block w-100 "   alt="...">
 		    </div>
 		    <div class="carousel-item">
 		      <img src="images/font.png" class="d-block w-100" alt="...">
