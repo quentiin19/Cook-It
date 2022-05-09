@@ -1,22 +1,19 @@
 <?php 
 require "PHPMailer/PHPMailerAutoload.php";
 session_start();
-$bdd = new PDO('mysql:host=localhost;dbname=confirmation_email;','root','root');
+//$bdd = new PDO('mysql:host=localhost;dbname=confirmation_email;','root','root');
 
-$email = "dowere6441@dmosoft.com";
+$email = "oussoumane.bathilyy@gmail.com";
 $cle = rand(1000000,9000000);
         
-if(isset($_POST['valider'])){
-        
-    $insertUser = $bdd -> prepare('INSERT INTO users(email,cle,confirme) VALUES(?,?,?)');
-    $insertUser->execute(array($email, $cle, 0));        
-    $getUser = $bdd ->prepare('SELECT * FROM users WHERE email = ?');
-    $getUser->execute(array($email));
-    
-}
-else{
-    echo "Veuillez mettre votre email";
-}   
+//  if(isset($_POST['valider'])){
+
+//      $insertUser = $bdd -> prepare('INSERT INTO users(email,cle,confirme) VALUES(?,?,?)');
+//      $insertUser->execute(array($email, $cle, 0));        
+//      $getUser = $bdd ->prepare('SELECT * FROM users WHERE email = ?');
+//      $getUser->execute(array($email));
+
+//  }  
 
             
             
@@ -64,7 +61,7 @@ function smtpmailer($to, $from, $from_name, $subject, $body)
     $from = 'projann2022@gmail.com';
     $name = 'Cook\'it';
     $subj = 'test Mail conf';
-    $msg = 'http://localhost:3306/TestConfirmMail/verif.php?id='.$_SESSION['id'].'&cle='.$cle;
+    $msg = 'http://localhost:3306/TestConfirmMail/verif.php?id='.$_SESSION['id'].'&cle='.$cle.'<h1>je suis ton père</h1>';
     
     $error=smtpmailer($to,$from, $name ,$subj, $msg);
 
