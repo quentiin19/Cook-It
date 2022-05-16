@@ -1,11 +1,4 @@
-<?php 
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
 
-require 'PHPMailer/src/Exception.php';
-require 'PHPMailer/src/PHPMailer.php';
-require 'PHPMailer/src/SMTP.php';
-?>
 <?php include "template/header.php";?>
 
 <div class="row">
@@ -58,37 +51,7 @@ require 'PHPMailer/src/SMTP.php';
 </div>
 
 
-<?php
-$mail = new PHPMailer();
-$mail->IsSMTP();
-$mail->Host = '51.255.172.36';               //Adresse IP ou DNS du serveur SMTP
-$mail->Port = 465;                          //Port TCP du serveur SMTP
-$mail->SMTPAuth = 1;                        //Utiliser l'identification
-$mail->CharSet = 'UTF-8';
 
-if($mail->SMTPAuth){
-   $mail->SMTPSecure = 'ssl';               //Protocole de sécurisation des échanges avec le SMTP
-   $mail->Username   =  'login@ovh.net';    //Adresse email à utiliser
-   $mail->Password   =  'password';         //Mot de passe de l'adresse email à utiliser
-}
-
-$mail->From       = trim($_POST["email_from"]);                //L'email à afficher pour l'envoi
-$mail->FromName   = trim($_POST["email_from_alias"]);          //L'alias de l'email de l'emetteur
-
-$mail->AddAddress(trim($_POST["email_to"]));
-
-$mail->Subject    =  $_POST["object"];                      //Le sujet du mail
-$mail->WordWrap   = 50; 			       //Nombre de caracteres pour le retour a la ligne automatique
-$mail->AltBody = $_POST["body"]; 	       //Texte brut
-$mail->IsHTML(false);                                  //Préciser qu'il faut utiliser le texte brut
-
-if (!$mail->send()) {
-      echo $mail->ErrorInfo;
-} else{
-      echo 'Message bien envoyé';
-}
-?>
-			
 
 
 <?php include "template/footer.php";?>

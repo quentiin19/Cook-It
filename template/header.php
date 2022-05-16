@@ -14,7 +14,7 @@
 
 			<!-- Section menu haut -->
 
-			 <div class=" bg-color w-auto p-2 row align-self-center" >
+			 <div class=" bg-color  p-2 row align-self-center" >
 				<div class="col-lg-3 col-md-3">
 					<a href="index.php"><button type="button" class="btn text-white btn-lg"><img src="images/logo.png" height ="80vh" width="100vw" />Cook'IT</button></a>
 				</div>
@@ -63,13 +63,8 @@
 								</ul>
 							</li>
 
-							<li class="nav-item dropdown">
-								<a href="#" class="nav-link dropdown-toggle text-white" data-bs-toggle="dropdown">Vos Recettes</a>
-								<ul class="dropdown-menu">
-									<li><a href="#" class="dropdown-item">Viandes</a></li>
-									<li><a href="#" class="dropdown-item">Légumes</a></li>
-									
-								</ul>
+							<li class="nav-item ">
+								<a href="AddRecette.php" class="nav-link  text-white" >Vos Recettes</a>
 							</li>
 
 						</ul>
