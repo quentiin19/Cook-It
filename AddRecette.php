@@ -11,7 +11,6 @@
 					        <div class="card bg-color text-white" style="border-radius: 1rem;">
 					          <div class="card-body  text-center">
 
-		        	<div class="col-lg-12 col-md-12 bg-color arrondie ">
 					            <div class="mb-md-5 mt-md-4 pb-5">
 
 					              <h2 class="fw-bold mb-2 text-uppercase">CREER UNE RECETTE</h2>
