@@ -1,4 +1,4 @@
-<?php include "template/header.php";?>
+<?php include "template/header2.php";?>
 
 
 <div class="row">
