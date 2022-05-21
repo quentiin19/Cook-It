@@ -49,11 +49,11 @@ function smtpmailer($to, $from, $from_name, $subject, $body)
         }
     }
     
-    $to   = 'oussoumane.bathilyy@gmail.com';
-    $from = 'projann20222@gmail.com';
-    $name = 'Cook\'it';
-    $subj = 'test Mail conf';
-    $msg = 'http://localhost:3306/TestConfirmMail/verif.php?id='.$_SESSION['id'].'&cle='.$cle.'<h1>je suis ton père</h1>';
+    // $to   = 'oussoumane.bathilyy@gmail.com';
+    // $from = 'projann20222@gmail.com';
+    // $name = 'Cook\'it';
+    // $subj = 'test Mail conf';
+    // $msg = 'http://localhost:3306/TestConfirmMail/verif.php?id='.$_SESSION['id'].'&cle='.$cle.'<h1>je suis ton père</h1>';
     
     smtpmailer($to,$from, $name ,$subj, $msg);
     
