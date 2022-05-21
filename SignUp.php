@@ -35,11 +35,7 @@
 										<input type="password" class="form-control" name="password" placeholder="Votre mot de passe"  required="required"><br>
 										<input type="password" class="form-control" name="passwordConfirm" placeholder="confirmation" required="required"><br>
 
-										<select name="country" class="form-control">
-											<option value="fr">France</option>
-											<option value="pl">Pologne</option>
-											<option value="ml">Mali</option>
-										</select>
+										
 								  </div>
 								  </div>
 

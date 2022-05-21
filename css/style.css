@@ -1,3 +1,12 @@
+html, body {
+	max-width: 100%;
+	overflow-x: hidden; 
+}
+
+/*.font-text{
+	font-family: 'Fira Sans', sans-serif;
+}
+*/
 .button-background{
 	background-color: #4B4B4B;
 	color: white;

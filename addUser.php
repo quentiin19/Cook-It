@@ -15,10 +15,9 @@ if(
 	empty($_POST["pseudo"]) ||
 	empty($_POST["password"]) ||
 	empty($_POST["passwordConfirm"]) ||
-	empty($_POST["country"]) ||
 	empty($_POST["cgu"]) ||
 	!isset($_POST["birthday"])||
-	count($_POST)!=9
+	count($_POST)!=8
 ){
 
 	die("Tentative de Hack ...");
@@ -36,7 +35,6 @@ $pseudo = $_POST["pseudo"];
 $pwd = $_POST["password"];
 $pwdConfirm = $_POST["passwordConfirm"];
 $birthday = $_POST["birthday"];
-$country = $_POST["country"];
 $cgu = $_POST["cgu"];
 
 
@@ -114,12 +112,6 @@ if( $pwd != $pwdConfirm){
 	$errors[] = "Votre mot de passe de confirmation ne correspond pas";
 }
 
-//Pays
-$countryAuthorized = ["fr", "ml", "pl"];
-if( !in_array($country, $countryAuthorized) ){
-	$errors[] = "Votre pays n'existe pas";
-}
-
 
 if(count($errors) == 0){
 
@@ -128,8 +120,8 @@ if(count($errors) == 0){
 	//$email = "y.skrzypczy@gmail.com";
 	//$firstname = "');DELETE FROM users;";
 
-	$queryPrepared = $pdo->prepare("INSERT INTO iw_user (email, firstname, lastname, pseudo, country, birthday, pwd) 
-		VALUES ( :email , :firstname, :lastname, :pseudo, :country, :birthday, :pwd );");
+	$queryPrepared = $pdo->prepare("INSERT INTO iw_user (email, firstname, lastname, pseudo, birthday, pwd) 
+		VALUES ( :email , :firstname, :lastname, :pseudo, :birthday, :pwd );");
 
 
 	$pwd = password_hash($pwd, PASSWORD_DEFAULT);
@@ -139,7 +131,6 @@ if(count($errors) == 0){
 								"firstname"=>$firstname,
 								"lastname"=>$lastname,
 								"pseudo"=>$pseudo,
-								"country"=>$country,
 								"birthday"=>$birthday,
 								"pwd"=>$pwd,
 							]);

@@ -1,26 +1,11 @@
-<?php
-	session_start();
-	require "functions.php";
-?>
+
 
 <?php include "template/header.php";?>
 
-<div class="row">
-	<div class="col-lg-2 col-md-1 col-sm-0"></div>
-	<div class="col-lg-12 col-md-12 col-sm-12h-auto arrondie ">
-		<div class="container py-2 h-auto ">
-			<div class="row d-flex justify-content-center align-items-center h-100">
-				<div class="col-12 col-md-8 col-lg-6 col-xl-5 ">
-					<div class="card bg-color text-white" style="border-radius: 1rem;">
-					    <div class="card-body p-5 text-center">
-							<div class="mb-md-5 mt-md-4 pb-5">
-					            <h2 class="fw-bold mb-2 text-uppercase">Se Connecter</h2>
-					            <p class="text-white-50 mb-5">Veillez entrer votre identifiant et votre mot de passe </p>
-					            <?php
-									if( !empty($_POST['email']) &&  !empty($_POST['pwd']) && count($_POST)==2 ){
+<?php
 
-										//Récupérer en bdd le mot de passe hashé pour l'email provenant du formulaire
-										echo "test 1";
+									if( !empty($_POST['email']) &&  !empty($_POST['pwd']) && count($_POST)==2 ){
+										
 
 
 										$pdo = connectDB();
@@ -43,15 +28,27 @@
 											echo "Identifiants incorrects";
 										}
 									}
-								?>
+?>
+<div class="row ">
+	<div class="col-lg-2 col-md-1 col-sm-0"></div>
+	<div class="col-lg-12 col-md-12 col-sm-12h-auto arrondie ">
+		<div class="container py-2 h-auto ">
+			<div class="row d-flex justify-content-center align-items-center h-100">
+				<div class="col-12 col-md-8 col-lg-6 col-xl-5 ">
+					<div class="card bg-color text-white" style="border-radius: 1rem;">
+					    <div class="card-body p-5 text-center">
+							<div class="mb-md-5 mt-md-4 pb-5">
+					            <h2 class="fw-bold mb-2 text-uppercase">Se Connecter</h2>
+					            <p class="text-white-50 mb-5">Veillez entrer votre identifiant et votre mot de passe </p>
+					            
 								<form method="POST" action="">
 					              	<div class="form-outline form-white mb-4">
-					                	<input type="email" id="typeEmailX" placeholder="Email" class="form-control form-control-lg" />
+					                	<input  name="email" type="email" id="typeEmailX" placeholder="Email" class="form-control form-control-lg" />
 					                	<label class="form-label" for="typeEmailX"></label>
 					              	</div>
 
 					              	<div class="form-outline form-white mb-4">
-					                	<input type="password" id="typePasswordX"  placeholder="Mot de passe" class="form-control form-control-lg" />
+					                	<input type="password" name="pwd" id="typePasswordX"  placeholder="Mot de passe" class="form-control form-control-lg" />
 					                	<label class="form-label" for="typePasswordX"></label>
 					              	</div>
 
@@ -72,3 +69,4 @@
 </div>
 
 <?php include "template/footer.php";?>
+

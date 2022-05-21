@@ -1,9 +1,16 @@
+	<?php 
+		session_start();
+		require "functions.php";
+	?>
 	<!DOCTYPE html>
 	<html>
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+		<!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@200&display=swap" rel="stylesheet"> -->
 		<link rel="stylesheet"  href="css/style.css">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -14,23 +21,41 @@
 
 			<!-- Section menu haut -->
 
-			 <div class=" bg-color w-auto p-2 row align-self-center" >
+			 <div class=" bg-color  p-2 row align-self-center" >
 				<div class="col-lg-3 col-md-3">
 					<a href="index.php"><button type="button" class="btn text-white btn-lg"><img src="images/logo.png" height ="80vh" width="100vw" />Cook'IT</button></a>
 				</div>
 				<div class="col-lg-6 col-md-4 text-center align-self-center">
 					<h1>Cook'It</h1>
 				</div>
-				<div class="col-lg-2 col-md-3">
+				<!-- <div class="col-lg-2 col-md-3">
 					<div class="text-right">
 						<img href="#" src="images/mode_nuit.png" height ="80vh" width="150vw" />	
 					</div> 
-				</div>
-				<div class="col-lg-1 col-md-2">
+				</div> -->
+				<!-- <?php
+					$_SESSION['pseudo'] = $pseudo;
+				?> -->
+				<?php if (isConnected()){
+				echo'<div class="col-lg-1 col-md-2 position-absolute align-self-center end-0 ">
+								<a href="#" class="nav-link dropdown-toggle text-white" data-bs-toggle="dropdown">Mon profil</a>
+								<ul class="dropdown-menu">
+									<li><a href="#" class="dropdown-item">Mes abonnements</a></li>
+									<li><a href="#" class="dropdown-item">Mes recettes</a></li>
+									<li><a href="#" class="dropdown-item">Modifier mon profil</a></li>
+									<li><a href="#" class="dropdown-item">Consulter mon profil</a></li>
+									<li><a href="logout.php" class="dropdown-item">Se déconnecter</a></li>
+								</ul>
+						
+				</div>';
+			}else{
+				echo'<div class="col-lg-1 col-md-2 position-absolute  end-0 ">
 						<div>
 							<a href="login.php"><img href="#" src="images/pdp.jpg" height ="80vh" width="100vw" /></a>	
 						</div> 
-				</div>
+				</div>';
+			}
+			?>
 
 			<div class="container-fluid ">
 				<nav class="navbar navbar-expand-md  ">
@@ -63,13 +88,8 @@
 								</ul>
 							</li>
 
-							<li class="nav-item dropdown">
-								<a href="#" class="nav-link dropdown-toggle text-white" data-bs-toggle="dropdown">Vos Recettes</a>
-								<ul class="dropdown-menu">
-									<li><a href="#" class="dropdown-item">Viandes</a></li>
-									<li><a href="#" class="dropdown-item">Légumes</a></li>
-									
-								</ul>
+							<li class="nav-item ">
+								<a href="AddRecette.php" class="nav-link  text-white" >Vos Recettes</a>
 							</li>
 
 						</ul>
