@@ -4,8 +4,8 @@ require "config.inc.php";
 function connectDB(){
 	//création d'une nouvelle connexion à notre bdd
 	try{
-		
-		$pdo = new PDO( "mysql:host=51.255.172.36;dbname=ProjAnn;port=3306","chef" ,"QOY@BDD" );
+				
+		$pdo = new PDO( "mysql:host=localhost;dbname=ProjAnn;port=3306","chef" ,"QOY@BDD" );
 
     	$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
