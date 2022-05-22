@@ -44,7 +44,7 @@
 
             <div class="col-lg-4 col-md-3 ">
                 <div class="card mb-4 shadow-sm">
-                    <img src="images/entrees.jpeg" 
+                    <img src="./ressources/images/entrees.jpeg" 
                     class="w-100">
                     <div class="card-body arrondie">
                         
@@ -62,7 +62,7 @@
 
             <div class="col-lg-4 col-md-3 ">
                 <div class="card mb-4 shadow-sm">
-                    <img src="images/brochettes.jpeg" 
+                    <img src="./ressources/images/brochettes.jpeg" 
                     class="w-100">
                     <div class="card-body arrondie">
                         
@@ -81,7 +81,7 @@
 
             <div class="col-lg-4 col-md-3 ">
                 <div class="card mb-4 shadow-sm">
-                    <img src="images/entrees2.jpeg" 
+                    <img src="./ressources/images/entrees2.jpeg" 
                     class="w-100">
                     <div class="card-body arrondie">
                         
@@ -113,7 +113,7 @@
 
                 <div class="col-lg-4 col-md-3 ">
                     <div class="card mb-4 shadow-sm">
-                        <img src="images/Plats/plat1.jpeg" 
+                        <img src="./ressources/images/Plats/plat1.jpeg" 
                         class="w-100">
                         <div class="card-body arrondie">
                             
@@ -131,7 +131,7 @@
 
                 <div class="col-lg-4 col-md-3 ">
                     <div class="card mb-4 shadow-sm">
-                        <img src="images/Plats/plats2.webp" 
+                        <img src="./ressources/images/Plats/plats2.webp" 
                         class="w-100">
                         <div class="card-body arrondie">
                             
@@ -150,7 +150,7 @@
 
                 <div class="col-lg-4 col-md-3 ">
                     <div class="card mb-4 shadow-sm">
-                        <img src="images/Plats/plat3.jpeg" 
+                        <img src="./ressources/images/Plats/plat3.jpeg" 
                         class="w-100">
                         <div class="card-body arrondie">
                             
@@ -182,7 +182,7 @@
 
             <div class="col-lg-4 col-md-3 ">
                 <div class="card mb-4 shadow-sm">
-                    <img src="images/Desserts/dessert1.jpeg" 
+                    <img src="./ressources/images/Desserts/dessert1.jpeg" 
                     class="w-100">
                     <div class="card-body arrondie">
                         
@@ -200,7 +200,7 @@
 
             <div class="col-lg-4 col-md-3 ">
                 <div class="card mb-4 shadow-sm">
-                    <img src="images/Desserts/dessert2.jpeg" 
+                    <img src="./ressources/images/Desserts/dessert2.jpeg" 
                     class="w-100">
                     <div class="card-body arrondie">
                         
@@ -219,7 +219,7 @@
 
             <div class="col-lg-4 col-md-3 ">
                 <div class="card mb-4 shadow-sm">
-                    <img src="images/Desserts/dessert3.jpeg" 
+                    <img src="./ressources/images/Desserts/dessert3.jpeg" 
                     class="w-100">
                     <div class="card-body arrondie">
                         
