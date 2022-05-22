@@ -1,10 +1,11 @@
 
 <?php
 require 'PHPMailer/PHPMailerAutoload.php';
-$cle = rand(1000000,9000000);
+
 
 function smtpmailer($to, $from, $from_name, $subject, $body)
     {
+        $cle = rand(1000000,9000000);
         $mail = new PHPMailer();
         $mail->SMTPDebug = SMTP::DEBUG_CONNECTION;
         $mail->IsSMTP();
@@ -55,6 +56,6 @@ function smtpmailer($to, $from, $from_name, $subject, $body)
     // $subj = 'test Mail conf';
     // $msg = 'http://localhost:3306/TestConfirmMail/verif.php?id='.$_SESSION['id'].'&cle='.$cle.'<h1>je suis ton père</h1>';
     
-    smtpmailer($to,$from, $name ,$subj, $msg);
+    // smtpmailer($to,$from, $name ,$subj, $msg);
     
     ?>
