@@ -61,7 +61,7 @@ if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
 
 	//Vérification l'unicité de l'email
 	$pdo = connectDB();
-	$queryPrepared = $pdo->prepare("SELECT ID from USER WHERE EMAIL=:email");
+	$queryPrepared = $pdo->prepare("SELECT ID from USER WHERE MAIL=:email");
 
 	$queryPrepared->execute(["email"=>$email]);
 	
@@ -124,7 +124,7 @@ if(count($errors) == 0){
 	//$email = "y.skrzypczy@gmail.com";
 	//$firstname = "');DELETE FROM users;";
 
-	$queryPrepared = $pdo->prepare("INSERT INTO USER (EMAIL, FIRSTNAME, LASTNAME, PSEUDO, HASHPWD) 
+	$queryPrepared = $pdo->prepare("INSERT INTO USER (MAIL, FIRSTNAME, LASTNAME, PSEUDO, HASHPWD) 
 		VALUES ( :email , :firstname, :lastname, :pseudo, :pwd );");
 
 
