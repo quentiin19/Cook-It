@@ -1,6 +1,6 @@
 <?php   
 	include "template/header.php";
-	require "functionns.php";
+	require "functions.php";
 ?>
 
 <div class="row">
@@ -73,4 +73,5 @@
 
 <script src="test/captcha-test/captcha2.js"></script>
 <script src="test/captcha-test/tiles.js"></script>
+
 <?php include "template/footer.php";?>
