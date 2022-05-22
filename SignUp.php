@@ -1,4 +1,7 @@
-<?php include "template/header.php";?>
+<?php   
+	include "template/header.php";
+	require "functionns.php";
+?>
 
 <div class="row">
 
@@ -35,7 +38,11 @@
 										<input type="password" class="form-control" name="password" placeholder="Votre mot de passe"  required="required"><br>
 										<input type="password" class="form-control" name="passwordConfirm" placeholder="confirmation" required="required"><br>
 
-										
+										<select name="country" class="form-control">
+											<option value="fr">France</option>
+											<option value="pl">Pologne</option>
+											<option value="ml">Mali</option>
+										</select>
 								  </div>
 								  </div>
 
@@ -48,6 +55,7 @@
 										<input type="submit" class="btn btn-primary" value="S'inscrire">
 								  </div>
 								</div>
+								
 
 									</form>
 
@@ -63,5 +71,6 @@
 
 			<div class="col-lg-2 col-md-1 col-sm-0"></div>
 
-
+<script src="test/captcha-test/captcha2.js"></script>
+<script src="test/captcha-test/tiles.js"></script>
 <?php include "template/footer.php";?>
