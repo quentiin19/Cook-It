@@ -134,12 +134,12 @@ if(count($errors) == 0){
 								"birthday"=>$birthday,
 								"pwd"=>$pwd,
 	]);
-	echo $email;
+	// echo $email;
 	
-	$from = 'Cookit@gmail.com';
-	$subj = 'Mail de confirmation';
-    $msg = 'http://51.255.172.36/ProjAnn/test/TestConfirmMail/verif.php?id='.$_SESSION['id'].'&cle='.$cle.'<h1>je suis ton père</h1>';
-	smtpmailer($email,$from, $name ,$subj, $msg);
+	// $from = 'Cookit@gmail.com';
+	// $subj = 'Mail de confirmation';
+    // $msg = 'http://51.255.172.36/ProjAnn/test/TestConfirmMail/verif.php?id='.$_SESSION['id'].'&cle='.$cle.'<h1>je suis ton père</h1>';
+	// smtpmailer($email,$from, $name ,$subj, $msg);
 	
 
 	header("Location: login.php");	
