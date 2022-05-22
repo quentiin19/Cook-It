@@ -32,7 +32,7 @@ function createToken(){
 function updateToken($userId, $token){
 
 	$pdo = connectDB();
-	$queryPrepared = $pdo->prepare("UPDATE iw_user SET token=:token WHERE id=:id");
+	$queryPrepared = $pdo->prepare("UPDATE USER SET TOKEN=:token WHERE ID=:id");
 	$queryPrepared->execute(["token"=>$token, "id"=>$userId]);
 
 }
@@ -45,7 +45,7 @@ function isConnected(){
 	}
 
 	$pdo = connectDB();
-	$queryPrepared = $pdo->prepare("SELECT id FROM iw_user WHERE email=:email AND token=:token");	
+	$queryPrepared = $pdo->prepare("SELECT ID FROM USER WHERE MAIL=:email AND TOKEN=:token");	
 	$queryPrepared->execute(["email"=>$_SESSION["email"], "token"=>$_SESSION["token"]]);
 
 	return $queryPrepared->fetch();
