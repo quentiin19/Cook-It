@@ -2,7 +2,6 @@
 
 <?php 
 	include "./template/header.php";
-	echo "test";
 ?>
 
 <?php
