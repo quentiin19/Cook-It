@@ -2,7 +2,7 @@
 session_start();
 
 require "functions.php";
-require "./test/TestConfirmMail/inscription.php";
+//require "./test/TestConfirmMail/inscription.php";
 
 
 
