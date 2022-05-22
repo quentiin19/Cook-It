@@ -56,7 +56,7 @@
 								</div>
 								<div class="row">
 									<div class="col-lg-12" id="puzzle">
-									
+									<p>ta merererererererere</p>
 									</div>
 								</div>
 
