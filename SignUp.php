@@ -54,7 +54,11 @@
 										<input type="submit" class="btn btn-primary" value="S'inscrire">
 								  </div>
 								</div>
-								
+								<div class="row">
+									<div class="col-lg-12" id="puzzle">
+									
+									</div>
+								</div>
 
 									</form>
 
@@ -70,7 +74,7 @@
 
 			<div class="col-lg-2 col-md-1 col-sm-0"></div>
 
-<!-- <script src="test/captcha-test/captcha2.js"></script>
-<script src="test/captcha-test/tiles.js"></script> -->
+<script src="test/captcha-test/captcha2.js"></script>
+<script src="test/captcha-test/tiles.js"></script>
 
 <?php include "template/footer.php";?>
