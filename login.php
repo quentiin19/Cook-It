@@ -12,7 +12,7 @@
 
 
 		$pdo = connectDB();
-		$queryPrepared = $pdo->prepare("SELECT * FROM iw_user WHERE email=:email");
+		$queryPrepared = $pdo->prepare("SELECT * FROM USER WHERE MAIL=:email");
 		$queryPrepared->execute(["email"=>$_POST['email']]);
 		$results = $queryPrepared->fetch();
 
