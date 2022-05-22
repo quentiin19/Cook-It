@@ -16,7 +16,7 @@
 		$queryPrepared->execute(["email"=>$_POST['email']]);
 		$results = $queryPrepared->fetch();
 
-		if(!empty($results) && password_verify($_POST['pwd'], $results['pwd'])){
+		if(!empty($results) && password_verify($_POST['pwd'], $results['HASHPWD'])){
 			
 
 			$token = createToken();
