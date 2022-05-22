@@ -15,7 +15,8 @@
 		$queryPrepared = $pdo->prepare("SELECT * FROM USER WHERE MAIL=:email");
 		$queryPrepared->execute(["email"=>$_POST['email']]);
 		$results = $queryPrepared->fetch();
-
+		echo $_POST['pwd'];
+		echo  $results['pwd'];
 		if(!empty($results) && password_verify($_POST['pwd'], $results['pwd'])){
 			
 
