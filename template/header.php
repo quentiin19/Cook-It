@@ -1,6 +1,6 @@
 	<?php 
 		session_start();
-		require "functions.php";
+		require "../functions.php";
 	?>
 	<!DOCTYPE html>
 	<html>
@@ -11,7 +11,7 @@
 		<!-- <link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@200&display=swap" rel="stylesheet"> -->
-		<link rel="stylesheet"  href="css/style.css">
+		<link rel="stylesheet"  href="../ressources/css/style.css">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 		<title>Cook'It</title>
@@ -23,7 +23,7 @@
 
 			 <div class=" bg-color  p-2 row align-self-center" >
 				<div class="col-lg-3 col-md-3">
-					<a href="index.php"><button type="button" class="btn text-white btn-lg"><img src="images/logo.png" height ="80vh" width="100vw" />Cook'IT</button></a>
+					<a href="index.php"><button type="button" class="btn text-white btn-lg"><img src="../images/logo.png" height ="80vh" width="100vw" />Cook'IT</button></a>
 				</div>
 				<div class="col-lg-6 col-md-4 text-center align-self-center">
 					<h1>Cook'It</h1>
