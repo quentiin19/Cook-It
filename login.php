@@ -20,10 +20,10 @@
 			
 
 			$token = createToken();
-			updateToken($results["id"], $token);
+			updateToken($results["ID"], $token);
 			//Insertion dans la session du token
 			$_SESSION['email'] = $_POST['email'];
-			$_SESSION['id'] = $results["id"];
+			$_SESSION['id'] = $results["ID"];
 			$_SESSION['token'] = $token;
 			header("location: index.php");
 
