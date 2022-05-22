@@ -5,7 +5,7 @@ function connectDB(){
 	//création d'une nouvelle connexion à notre bdd
 	try{
 		
-		$pdo = new PDO( "mariadb:host=localhost;dbname=ProjAnn;port=3306","admin" ,"QOY@BDD" );
+		$pdo = new PDO( "mariadb:host=51.255.172.36;dbname=ProjAnn;port=3306","admin" ,"QOY@BDD" );
 
     	$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
