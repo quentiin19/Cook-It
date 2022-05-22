@@ -47,7 +47,7 @@ $cgu = $_POST["cgu"];
 
 $email = strtolower(trim($email));
 $firstname = ucwords(strtolower(trim($firstname)));
-$lastname = mb_strtupper(trim($lastname));
+$lastname = trim($lastname);
 $pseudo = ucwords(strtolower(trim($pseudo)));
 
 
