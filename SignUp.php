@@ -1,6 +1,5 @@
 <?php   
 	include "template/header.php";
-	require "functions.php";
 ?>
 
 <div class="row">
