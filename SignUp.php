@@ -55,8 +55,11 @@
 								  </div>
 								</div>
 								<div class="row">
-									<div class="col-lg-12" id="puzzle">
-									<p>ta merererererererere</p>
+									<div class="col-lg-12">
+										<div id="captcha">
+                                            <div id="reference"></div>
+                                            <div id="puzzle"></div>
+                                        </div>
 									</div>
 								</div>
 
