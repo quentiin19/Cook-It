@@ -1,6 +1,6 @@
 	<?php 
 		session_start();
-		require "../functions.php";
+		require "functions.php";
 	?>
 	<!DOCTYPE html>
 	<html>
@@ -16,7 +16,7 @@
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 		<title>Cook'It</title>
 	</head>
-	<body class=" h-auto bg-couleur" >
+	<body class="h-auto bg-couleur">
 		<header>
 
 			<!-- Section menu haut -->
@@ -51,7 +51,7 @@
 			}else{
 				echo'<div class="col-lg-1 col-md-2 position-absolute  end-0 ">
 						<div>
-							<a href="../login.php"><img href="#" src="../ressources/images/pdp.jpg" height ="80vh" width="100vw" /></a>	
+							<a href="./login.php"><img href="#" src="./ressources/images/pdp.jpg" height ="80vh" width="100vw" /></a>	
 						</div> 
 				</div>';
 			}

@@ -1,33 +1,36 @@
 
 
-<?php include "template/header.php";?>
+<?php 
+	include "./template/header.php";
+	echo "test";
+?>
 
 <?php
 
-									if( !empty($_POST['email']) &&  !empty($_POST['pwd']) && count($_POST)==2 ){
-										
+	if( !empty($_POST['email']) &&  !empty($_POST['pwd']) && count($_POST)==2 ){
+		
 
 
-										$pdo = connectDB();
-										$queryPrepared = $pdo->prepare("SELECT * FROM iw_user WHERE email=:email");
-										$queryPrepared->execute(["email"=>$_POST['email']]);
-										$results = $queryPrepared->fetch();
+		$pdo = connectDB();
+		$queryPrepared = $pdo->prepare("SELECT * FROM iw_user WHERE email=:email");
+		$queryPrepared->execute(["email"=>$_POST['email']]);
+		$results = $queryPrepared->fetch();
 
-										if(!empty($results) && password_verify($_POST['pwd'], $results['pwd'])){
-											
+		if(!empty($results) && password_verify($_POST['pwd'], $results['pwd'])){
+			
 
-											$token = createToken();
-											updateToken($results["id"], $token);
-											//Insertion dans la session du token
-											$_SESSION['email'] = $_POST['email'];
-											$_SESSION['id'] = $results["id"];
-											$_SESSION['token'] = $token;
-											header("location: index.php");
+			$token = createToken();
+			updateToken($results["id"], $token);
+			//Insertion dans la session du token
+			$_SESSION['email'] = $_POST['email'];
+			$_SESSION['id'] = $results["id"];
+			$_SESSION['token'] = $token;
+			header("location: index.php");
 
-										}else{
-											echo "Identifiants incorrects";
-										}
-									}
+		}else{
+			echo "Identifiants incorrects";
+		}
+	}
 ?>
 <div class="row ">
 	<div class="col-lg-2 col-md-1 col-sm-0"></div>
