@@ -41,17 +41,17 @@
 							<input type="submit" class="btn btn-primary" value="S'inscrire">
 					  </div>
 					</div>
-					
-
-							</form>
-						<div class="row">
+					<div class="row">
 							<div class="col-lg-12">
 								<div id="captcha">
-                                                <div id="reference"></div>
                                                 <div id="puzzle"></div>
-                                            </div>
+                                </div>
 							</div>
 						</div>
+					
+
+					</form>
+						
 						
 		              <a href="login.php"><button class="btn btn-outline-light btn-lg py-2 " type="submit">Se Connecter</button></a> 
 		            </div>
