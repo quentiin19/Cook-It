@@ -2,7 +2,6 @@
 
 <?php 
 	include "./template/header.php";
-	echo "test";
 ?>
 
 <?php
@@ -18,16 +17,15 @@
 
 
 		echo $_POST['pwd'];
-		echo  $results['pwd'];
-
+		echo  $results['HASHPWD'];
 		if(!empty($results) && password_verify($_POST['pwd'], $results['HASHPWD'])){
 			
 
 			$token = createToken();
-			updateToken($results["id"], $token);
+			updateToken($results["ID"], $token);
 			//Insertion dans la session du token
 			$_SESSION['email'] = $_POST['email'];
-			$_SESSION['id'] = $results["id"];
+			$_SESSION['id'] = $results["ID"];
 			$_SESSION['token'] = $token;
 			header("location: index.php");
 

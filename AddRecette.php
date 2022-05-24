@@ -1,4 +1,6 @@
-<?php include "template/header.php";?>
+<?php   
+		include "template/header.php";
+?>
 	
 <div class="row">
 
@@ -19,8 +21,8 @@
 			        <div class="row">
 			        	
 			        	<div class="col-lg-12 col-md-12 bg-color arrondie py-5 ">
-			        		<form>
-			        			<input type="text" class="form-control my-3" name="recette" placeholder="Nom de la recette"><br>
+			        		<form method="POST" action="AddRecette.php">
+			        			<input type="text" class="form-control my-3" name="recette" placeholder="Nom de la recette" required="required"><br>
 			        			<div class="row">
 			        				<div class="col-lg-6 col-md-6">
 										<select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
@@ -31,7 +33,7 @@
 										</select>
 									</div>
 			        				<div class="col-lg-6 col-md-6 ">
-										<input type="text" class="form-control" name="temps" placeholder="Temps de préparation ( h : mn )"><br>
+										<input type="text" class="form-control" name="temps" placeholder="Temps de préparation ( h : mn )" required="required"><br>
 									</div>
 									
 								</div>
@@ -41,7 +43,7 @@
 						       		<h3 class="text-center py-3">Ajouter une image à ma recette </h3>
 						       		<form method="POST" enctype="multipart/form-data">
 							       		<div class="col-lg-6 col-md-6 text-center">
-											<input type="file" name="fichier"> <br>
+											<input type="file" name="fichier" required="required"> <br>
 										</div>
 										<div class="col-lg-6 col-md-6  ">
 											<button class="btn btn-outline-light btn-lg px-2 " type="submit">Envoyer</button>
@@ -54,7 +56,7 @@
 
 						       		<div class="col-lg-12 col-md-12 col-sm-12 input-group  ">
 
-						       			<textarea class="form-control" aria-label="With textarea" placeholder="Votre Recette" name="recette"></textarea>
+						       			<textarea class="form-control" aria-label="With textarea" placeholder="Votre Recette" name="recette_description" required="required"></textarea>
 						       			
 						       		</div>
 						       		
@@ -110,6 +112,44 @@
 		}
 	}
 
+
+
+?>
+
+<?php
+if(
+	empty($_POST["recette"]) || 
+	empty($_POST["temps"]) ||
+	empty($_POST["recette_description"]) ||
+	empty($_POST["fichier"])||
+	count($_POST)!=4
+){
+
+	die("remplissez les champs requis");
+
+}else{
+	echo "TEST";
+}
+
+
+$recette = $_POST["recette"];
+$temps = $_POST["temps"];
+$recette_description = $_POST["recette_description"];
+$fichier = $_POST["fichier"];
+
+$queryPrepared = $pdo->prepare("INSERT INTO RECIPES (        
+ID_CREATOR, 
+TITLE,      
+DESCRIPTION ) 
+VALUES (:idcreator, :title, :recettedesc);");
+
+
+
+$queryPrepared->execute([
+						"idcreator"=>$_SESSION['ID'],
+						"title"=>$recette,
+						"recettedesc"=>$recette_description
+]);
 
 
 ?>

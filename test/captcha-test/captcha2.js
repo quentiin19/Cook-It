@@ -1,3 +1,10 @@
+class Tile{
+    constructor(i, img){
+        this.index = i;
+        this.image = img
+    }
+}
+
 let tiles = [];
 
 let moved_tiles = [];
@@ -14,7 +21,7 @@ const width_tile = "100px";
 
 
 
-
+console.log("come le raciste");
 
 
 //mise en place des tuiles (objet Tile) dans le tableau tiles
@@ -115,6 +122,8 @@ function draw() {
 
         captcha.appendChild(button);
     }
+    let br = document.createElement("br");
+    captcha.appendChild(br);    
 
     let retry = document.createElement("button");
     retry.setAttribute("onclick", "shuffle()");
