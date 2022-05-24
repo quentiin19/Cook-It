@@ -27,7 +27,7 @@ console.log("come le raciste");
 //mise en place des tuiles (objet Tile) dans le tableau tiles
 function setup_tiles() {
     for (let i = 0; i < 9; i++) {
-        let img = `./test/catpcha-test/img/${i}.png`;
+        let img = `test/catpcha-test/img/${i}.png`;
         let tile = new Tile(i, img);
 
         tiles[i] = tile;
