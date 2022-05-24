@@ -127,6 +127,8 @@ if(
 
 	die("remplissez les champs requis");
 
+}else{
+	echo "TEST";
 }
 
 
