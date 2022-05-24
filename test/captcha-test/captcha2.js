@@ -14,7 +14,7 @@ const width_tile = "100px";
 
 
 
-
+console.log("come le raciste");
 
 
 //mise en place des tuiles (objet Tile) dans le tableau tiles

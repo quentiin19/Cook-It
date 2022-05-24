@@ -43,8 +43,8 @@
 					</div>
 					<div class="row">
 							<div class="col-lg-12">
-								ghjklkjhgfghjk
 								<div id="captcha">
+								ghjklkjhgfghjk
                                                 <div id="puzzle"></div>
                                 </div>
 							</div>
