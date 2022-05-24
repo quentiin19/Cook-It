@@ -44,7 +44,6 @@
 					<div class="row">
 							<div class="col-lg-12">
 								<div id="captcha">
-								ghjklkjhgfghjk
                                                 <div id="puzzle"></div>
                                 </div>
 							</div>
