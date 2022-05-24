@@ -44,7 +44,7 @@
 					<div class="row">
 							<div class="col-lg-12">
 								<div id="captcha">
-                                                <div id="puzzle"></div>
+                                    <div id="puzzle"></div>
                                 </div>
 							</div>
 						</div>
@@ -63,9 +63,8 @@
 		  </div>
 </div>
 
-			<div class="col-lg-2 col-md-1 col-sm-0"></div>
+	<div class="col-lg-2 col-md-1 col-sm-0"></div>
 
-<script src="test/captcha-test/captcha2.js"></script>
-<script src="test/captcha-test/tiles.js"></script>
+<script src="ressources/js/captcha.js"></script>
 
 <?php include "template/footer.php";?>
