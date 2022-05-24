@@ -135,21 +135,18 @@ $temps = $_POST["temps"];
 $recette_description = $_POST["recette_description"];
 $fichier = $_POST["fichier"];
 
-$queryPrepared = $pdo->prepare("INSERT INTO RECIPES (
-ID,         
+$queryPrepared = $pdo->prepare("INSERT INTO RECIPES (        
 ID_CREATOR, 
 TITLE,      
-DESCRIPTION,
-ADVERTISING ) 
-VALUES ( ID , :idcreator, :title, :recettedesc,ADVERTISING );");
+DESCRIPTION ) 
+VALUES (:idcreator, :title, :recettedesc);");
 
 
-$pwd = password_hash($pwd, PASSWORD_DEFAULT);
 
 $queryPrepared->execute([
 						"idcreator"=>$_SESSION['ID'],
 						"title"=>$recette,
-						"recettedesc"=>$recette_description,
+						"recettedesc"=>$recette_description
 ]);
 
 
