@@ -27,7 +27,7 @@ console.log("come le raciste");
 //mise en place des tuiles (objet Tile) dans le tableau tiles
 function setup_tiles() {
     for (let i = 0; i < 9; i++) {
-        let img = `./img/${i}.png`;
+        let img = `/var/www/html/ProjAnn/test/captcha-test/img/${i}.png`;
         let tile = new Tile(i, img);
 
         tiles[i] = tile;
@@ -122,6 +122,8 @@ function draw() {
 
         captcha.appendChild(button);
     }
+    let br = document.createElement("br");
+    captcha.appendChild(br);    
 
     let retry = document.createElement("button");
     retry.setAttribute("onclick", "shuffle()");
