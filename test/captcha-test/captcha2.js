@@ -1,3 +1,10 @@
+class Tile{
+    constructor(i, img){
+        this.index = i;
+        this.image = img
+    }
+}
+
 let tiles = [];
 
 let moved_tiles = [];
