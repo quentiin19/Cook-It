@@ -7,8 +7,9 @@ if($_GET['id']==$_SESSION['id']){
     if($_GET['cle']== $_SESSION['cle']){
         $queryPrepared = $pdo->prepare("UPDATE USER set role = 1 WHERE ID=:id ; ");
         $queryPrepared->execute(["id"=>$_SESSION['id']]);
-        // header("Location : login.php");
-    }
+        echo "Vous avez bien validé votre mail, cliquez sur le lien ci dessous pour vous connecter";
+        echo "<a href=http://51.255.172.36/login.php";
+        }
     else
         echo "votre lien n'est plus valide";
 }
