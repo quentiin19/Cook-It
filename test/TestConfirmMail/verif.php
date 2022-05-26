@@ -1,6 +1,6 @@
 <?php
 session_start();
-require "./functions.php";
+require "../../functions.php";
 //une fois qu'on se co on met à jour la bdd de
 if($_GET['id']==$_SESSION['id']){
     if($_GET['cle']== $_SESSION['cle']){
