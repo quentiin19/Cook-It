@@ -33,10 +33,10 @@ if (isConnected()) {
 										
 												
 														 
-										echo'<td>'.$results["ID"].'</td>'
-										echo'<td>'.$results["LASTNAME"].'</td>'
-										echo'<td>'.$results["FIRSTNAME"].'</td>'
-										echo'<td>'.$results["PSEUDO"].'</td>'
+										echo'<td>'.$results["ID"].'</td>';
+										echo'<td>'.$results["LASTNAME"].'</td>';
+										echo'<td>'.$results["FIRSTNAME"].'</td>';
+										echo'<td>'.$results["PSEUDO"].'</td>';
 										echo'<td>'.$results["MAIL"].'</td>';
 
 																?>
