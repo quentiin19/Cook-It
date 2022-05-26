@@ -25,7 +25,7 @@
 
 						                <div class="col-lg-6 col-md-12 col-sm-12">
 
-						                	<form method="POST">
+						                	<form method="POST" action="">
 
 												<input type="email" class="form-control" name="email" placeholder="Votre email" required="required"><br>
 									  		</form>
@@ -53,15 +53,15 @@
 			<div class="col-lg-2 col-md-1 col-sm-0"></div>
 </div>
 <?php
-// if(
-// 	    empty($_POST["email"])&&
-// 	    count($_POST)!=1
-//     ){
+if(
+	    !isset($_POST["email"]) ||
+	    count($_POST)!=1
+    ){
 
-// 	    die("Tentative de Hack ...");
+	    die("Tentative de Hack ...");
 
-//     }
-   
+    }
+else{
    $cle = rand(1000000,9000000);
    $email = $_POST["email"];
    
@@ -70,7 +70,7 @@
    $subj = 'Mot de passe oublié';
    $msg = '<a href=http://51.255.172.36/ProjAnn/mdpforget.php?id='.$_SESSION['id'].'&cle='.$cle.'>Confirmer</a><h1>je suis ton père</h1>';
    smtpmailer($email,$from, $name ,$subj, $msg);
-
+}
 ?>
 
 <?php include "template/footer.php";?>
