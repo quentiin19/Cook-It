@@ -1,5 +1,5 @@
 <?php
-    require "header.php";
+    require "./template/header.php";
 ?>
 <div class="col-lg-6 col-md-12 col-sm-12">
 
