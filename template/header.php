@@ -50,9 +50,9 @@
 									
 									if (isAdmin()){
 										echo'<li><a href="./admin.php" class="dropdown-item">Gérer les utilisateurs</a></li>
-										</ul>'
+										</ul>';
 									}
-								echo'</ul>
+								echo'</ul>;
 						
 				</div>';
 			}else{
