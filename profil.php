@@ -17,6 +17,23 @@
 									<div class="col-lg-12">
 										<?php include "avatar/avatar.php";?>
 									</div>
+									<?php 
+										if (isConnected()) {
+											$pdo = connectDB();
+
+											$queryPrepared = $pdo->prepare("SELECT ID, LASTNAME, FIRSTNAME, PSEUDO, MAIL FROM USER where ID=:id");
+											$queryPrepared->execute();
+											$results = $queryPrepared->fetch();
+												
+														echo '<tr>
+																<td>'.$results["ID"].'</td>
+																<td>'.$results["LASTNAME"].'</td>
+																<td>'.$results["FIRSTNAME"].'</td>
+																<td>'.$results["PSEUDO"].'</td>
+																<td>'.$results["MAIL"].'</td>
+
+										}
+										?>
 
 					            </div>
 					           </div>
