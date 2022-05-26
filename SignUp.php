@@ -16,7 +16,8 @@
 		              <p class="text-white-50 mb-5">Merci de rentrer vos informations</p>
 		              <div class="row">
 		                <div class="col-lg-6 col-md-12 col-sm-12">
-		                    <form method="POST" action="addUser.php">
+						<!-- Formulaire d'inscription -->
+		                <form method="POST" action="addUser.php">
 
 								<input type="email" class="form-control" name="email" placeholder="Votre email" required="required"><br>
 
@@ -29,49 +30,31 @@
 							<input type="date" class="form-control" name="birthday" placeholder="Votre date de naissance"><br>
 							<input type="password" class="form-control" name="password" placeholder="Votre mot de passe"  required="required"><br>
 							<input type="password" class="form-control" name="passwordConfirm" placeholder="confirmation" required="required"><br>
-							<div class="text-left">
-								<input class="" type="checkbox" name="cgu"  required="required"> CGU <br>
+							<div class="text-left ">
+								<input  type="checkbox" name="cgu"  required="required"> CGU <br>
 							</div>
 					    </div>
 					  </div>
 					  <!-- Captcha -->
-					  <div class="container">
-						<h2>Large Modal</h2>
-						<!-- Trigger the modal with a button -->
-						<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Large Modal</button>
-
-						<!-- Modal -->
-						<div class="modal fade" id="myModal" role="dialog">
-							<div class="modal-dialog modal-lg">
-							<div class="modal-content">
-								<div class="modal-header">
-								<button type="button" class="close" data-dismiss="modal">&times;</button>
-								<h4 class="modal-title">Modal Header</h4>
-								</div>
-								<div class="modal-body">
-								<p>This is a large modal.</p>
-								</div>
-								<div class="modal-footer">
-								<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-								</div>
-							</div>
-							</div>
-						</div>
-						</div>
-
-					  
 					<div class="row">
 							<div class="col-lg-12">
-								<div id="captcha">
-                                    <div id="puzzle"></div>
-                                </div>
+								<h1>Captcha</h1>
+								<div id="captcha" class="row">
+									<div id="puzzle"></div>
+								</div>
 							</div>
+					</div>
+					<!-- Valider l'inscription -->
+					<div class="row">
+						<div class="col-lg-12 col-md-12 col-sm-12">
+	  						<input id="inscription" type="submit" class=" mt-5 btn btn-light btn-lg py-2 " value="S'inscrire">
 						</div>
-						<div class="row">
-							<div class="col-lg-6 col-md-12 col-sm-12">
-	  							<input id="inscription" type="submit" class="btn btn-outline-light btn-lg py-2 " value="S'inscrire">
-							</div>
-						</div>		
+					</div>	
+					<div class="row">
+						<div class="col-lg-12 col-md-12 col-sm-12">
+							<p class="mb-0">Avez-vous déjà un compte ? <a href="login.php" class="text-white-50 fw-bold">Se Connecter</a></p>
+						</div>
+					</div>		
 					
 
 					</form>
