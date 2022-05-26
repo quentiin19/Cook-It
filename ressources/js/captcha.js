@@ -132,7 +132,7 @@ function draw() {
     retry.setAttribute("onclick", "shuffle()");
     retry.innerHTML = "recommencer";
 
-    captcha.appendChild(retry);
+    //captcha.appendChild(retry);
 }
 
 function verify() {
