@@ -20,7 +20,7 @@ if (isConnected()) {
 
 					            <div class="mb-md-5 mt-md-4 pb-5">
 								<div class="row">
-									<div class="col-lg-12">
+									<div class="col-lg-12 mb-3">
 										<h1> Personnaliser mon avatar </h1>
 									</div>
 								</div>
@@ -29,6 +29,17 @@ if (isConnected()) {
 										<?php include "avatar/avatar.php"; ?>
 									</div>
 								</div>
+								<div class="row">
+									<div class="col-lg-12 col-md-12 col-sm-12">
+									<!-- Information du Compte -->
+										<form method="POST" action="">
+
+											<input type="email" class="form-control" name="email" placeholder="Votre email" required="required" value="<?=$results["MAIL"]?>"><br>
+
+											<input type="text" class="form-control" name="firstname" placeholder="Votre prénom"><br>
+											<input type="text" class="form-control" name="lastname" placeholder="Votre nom"><br>
+											<input type="text" class="form-control" name="pseudo" placeholder="Votre pseudo"  required="required"><br>
+					    			</div>
 									<?php 
 										
 												
