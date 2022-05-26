@@ -36,26 +36,15 @@ if (isConnected()) {
 								</div>
 								<div class="row">
 									<div class="col-lg-2 col-md-0 col-sm-0"></div>
-									<div class="col-lg-8 col-md-12 col-sm-12">
+									<div class="col-lg-8 col-md-12 col-sm-12 bg-color arrondie">
 									<!-- Information du Compte -->
 										<form method="POST" action="">
 											Votre prénom :<input type="text" class="form-control" name="firstname" placeholder="Votre prénom" value="<?=$results["FIRSTNAME"]?>"><br>
 											Votre nom:<input type="text" class="form-control" name="lastname" placeholder="Votre nom" value=" <?=$results["LASTNAME"]?>"><br>
 											Votre pseudo:<input type="text" class="form-control" name="pseudo" placeholder="Votre pseudo"  required="required" value=" <?=$results["PSEUDO"]?>"><br>
-						²				</form>
+										</form>
+									</div>
 									<div class="col-lg-2 col-md-0 col-sm-0"></div>
-									
-									<?php 
-										
-												
-														 
-										echo'<td>'.$results["ID"].'</td>';
-										echo'<td>'.$results["LASTNAME"].'</td>';
-										echo'<td>'.$results["FIRSTNAME"].'</td>';
-										echo'<td>'.$results["PSEUDO"].'</td>';
-										echo'<td>'.$results["MAIL"].'</td>';
-
-																?>
 
 					            </div>
 					           </div>
