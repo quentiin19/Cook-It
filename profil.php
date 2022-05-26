@@ -33,12 +33,9 @@ if (isConnected()) {
 									<div class="col-lg-12 col-md-12 col-sm-12">
 									<!-- Information du Compte -->
 										<form method="POST" action="">
-
-											<input type="email" class="form-control" name="email" placeholder="Votre email" required="required" value="<?=$results["MAIL"]?>"><br>
-
-											<input type="text" class="form-control" name="firstname" placeholder="Votre prénom"><br>
-											<input type="text" class="form-control" name="lastname" placeholder="Votre nom"><br>
-											<input type="text" class="form-control" name="pseudo" placeholder="Votre pseudo"  required="required"><br>
+											<input type="text" class="form-control" name="firstname" placeholder="Votre prénom" value=" <?=.$results["FISTNAME"]?>"><br>
+											<input type="text" class="form-control" name="lastname" placeholder="Votre nom" value=" <?=.$results["LASTNAME"]?>"><br>
+											<input type="text" class="form-control" name="pseudo" placeholder="Votre pseudo"  required="required" value=" <?=.$results["PSEUDO"]?>"><br>
 					    			</div>
 									<?php 
 										
