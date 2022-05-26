@@ -33,7 +33,7 @@ if (isConnected()) {
 									<div class="col-lg-12 col-md-12 col-sm-12">
 									<!-- Information du Compte -->
 										<form method="POST" action="">
-											<input type="text" class="form-control" name="firstname" placeholder="Votre prénom" value="<?=$results["FIRSTNAME"]?>"><br>
+											<input type="text" class="" name="firstname" placeholder="Votre prénom" value="<?=$results["FIRSTNAME"]?>"><br>
 											<input type="text" class="form-control" name="lastname" placeholder="Votre nom" value=" <?=$results["LASTNAME"]?>"><br>
 											<input type="text" class="form-control" name="pseudo" placeholder="Votre pseudo"  required="required" value=" <?=$results["PSEUDO"]?>"><br>
 					    			</div>
