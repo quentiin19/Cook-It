@@ -5,7 +5,6 @@ require 'PHPMailer/PHPMailerAutoload.php';
 
 function smtpmailer($to, $from, $from_name, $subject, $body)
     {
-        $cle = rand(1000000,9000000);
         $mail = new PHPMailer();
         $mail->SMTPDebug = SMTP::DEBUG_CONNECTION;
         $mail->IsSMTP();
