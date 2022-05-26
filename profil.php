@@ -28,14 +28,14 @@
 				<?php
 				foreach ($results as $user) {
 					echo '<tr>
-							<td>'.$user["id"].'</td>
-							<td>'.$user["lastname"].'</td>
-							<td>'.$user["firstname"].'</td>
-							<td>'.$user["pseudo"].'</td>
-							<td>'.$user["email"].'</td>
+							<td>'.$user["ID"].'</td>
+							<td>'.$user["LASTNAME"].'</td>
+							<td>'.$user["FIRSTNAME"].'</td>
+							<td>'.$user["PSEUDO"].'</td>
+							<td>'.$user["MAIL"].'</td>
 							<td>
 								<div class="btn-group">
-									<a href="delUser.php?id='.$user["id"].'" class="btn btn-danger">Supprimer</a>
+									<a href="delUser.php?id='.$user["ID"].'" class="btn btn-danger">Supprimer</a>
 									<a href="#" class="btn btn-warning" >Modifier</a>
 								</div>
 							</td>
