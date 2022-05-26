@@ -29,18 +29,11 @@
 							<input type="date" class="form-control" name="birthday" placeholder="Votre date de naissance"><br>
 							<input type="password" class="form-control" name="password" placeholder="Votre mot de passe"  required="required"><br>
 							<input type="password" class="form-control" name="passwordConfirm" placeholder="confirmation" required="required"><br>
+							<input class="my-3" type="checkbox" name="cgu"  required="required"> CGU <br>
 					    </div>
 					  </div>
 
-					  <div class="row">
-
-		              <div class="col-lg-6 col-md-12 col-sm-12 ">
-							<input class="my-3" type="checkbox" name="cgu"  required="required"> CGU <br>
-					  </div>
-					  <div class="col-lg-6 col-md-12 col-sm-12">
-							<input type="submit" class="btn btn-primary" value="S'inscrire">
-					  </div>
-					</div>
+					  
 					<div class="row">
 							<div class="col-lg-12">
 								<div id="captcha">
@@ -48,12 +41,15 @@
                                 </div>
 							</div>
 						</div>
+						<div class="row">
+							<div class="col-lg-6 col-md-12 col-sm-12">
+	  							<input type="submit" class="btn btn-outline-light btn-lg py-2 " value="S'inscrire">
+							</div>
+						</div>		
 					
 
 					</form>
-						
-						
-		              <a href="login.php"><button class="btn btn-outline-light btn-lg py-2 " type="submit">Se Connecter</button></a> 
+						 
 		            </div>
 
 		          </div>
