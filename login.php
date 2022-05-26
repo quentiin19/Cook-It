@@ -30,8 +30,10 @@
 				echo "Identifiants incorrects";
 			}
 		}
-		else
-		echo "veuillez vérifier vos mails pour confirmer votre compte";
+		else{
+			echo "veuillez vérifier vos mails pour confirmer votre compte";
+		}
+		
 
 		
 
