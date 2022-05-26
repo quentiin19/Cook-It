@@ -58,7 +58,8 @@
 			}else{
 				echo'<div class="col-lg-1 col-md-2 position-absolute  end-0 ">
 						<div>
-							<a href="./login.php"><img href="#" src="./ressources/images/pdp.jpg" height ="80vh" width="100vw" /></a>	
+							<a href="./login.php">Se Connecter</a>
+							<a href="./SignUp.php">S\'inscrire</a>	
 						</div> 
 				</div>';
 			}
