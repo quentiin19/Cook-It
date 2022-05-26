@@ -52,7 +52,7 @@
 										echo'<li><a href="./admin.php" class="dropdown-item">Gérer les utilisateurs</a></li>
 										</ul>';
 									}
-								echo'</ul>;
+								echo'</ul>
 						
 				</div>';
 			}else{
