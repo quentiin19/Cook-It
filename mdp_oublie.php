@@ -29,12 +29,13 @@
 
 												<input type="email" class="form-control" name="email" placeholder="Votre email" required="required"><br>
 												
-																					<div class="row">
+												<div class="row">
 
-										<div class="col-lg-4 col-md-1 col-sm-0"></div>
-										<div class="col-lg-4 col-md-12 col-sm-12">
-											<input type="submit" class="btn btn-outline-light btn-lg py-2 " value="Envoyer">
-										</div>
+													<div class="col-lg-4 col-md-1 col-sm-0"></div>
+													<div class="col-lg-4 col-md-12 col-sm-12">
+														<input type="submit" class="btn btn-outline-light btn-lg py-2 " value="Envoyer">
+												</div>
+												
 										<div class="col-lg-4 col-md-1 col-sm-0"></div>
 
 									</div>
@@ -61,7 +62,7 @@ if(
 	    count($_POST)!=1
     ){
 
-	    die(print_r($_POST));
+	    die("remplissez les deux champs SVP !");
 
     }
 
