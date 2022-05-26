@@ -5,7 +5,7 @@ require "functions.php";
 
 
 //Vérification de l'utilisateur
-$id = $_GET["id"];
+$id = $_POST["id"];
 if(!isConnected()){
 	die("Il faut se connecter !!!");
 }else{
@@ -44,7 +44,7 @@ $errors = [];
 //Vérification des mots de passes
 $hasholdpwd= password_hash($oldpwd, PASSWORD_DEFAULT);
 
-if ($results["hashpwd" != $hasholdpwd]){
+if ($results["hashpwd"] != $hasholdpwd){
     $errors[] = "Votre ancien mot de passe n'est pas bon";
 }
 
@@ -62,11 +62,10 @@ if( $pwd != $pwdConfirm){
 	$errors[] = "Votre mot de passe de confirmation ne correspond pas";
 }
 
-//Vérification des mots de passes
+//Hashage du nouveau mdp
 $hashpwd= password_hash($pwd, PASSWORD_DEFAULT);
 
 //Modification des infos de l'utilisateur dans la BDD
-$pdo = connectDB();
-$queryPrepared = $pdo->prepare("Update USER SET  PSEUDO =:pseudo, HASHPWD =:hashpwd, FIRSTNAME =:firstname, LASTNAME =:lastname WHERE ID =:id");
-$queryPrepared->execute(["id"=>$id]);
+$queryPrepared = $pdo->prepare("Update USER SET PSEUDO =:pseudo, HASHPWD =:hashpwd, FIRSTNAME =:firstname, LASTNAME =:lastname WHERE ID =:id");
+$queryPrepared->execute(["pseudo"=> $pseudo, "hashpwd"=> $hashpwd, "fistname"=>$firstname, "lastname"=>$lastname, "id"=>$id ]);
 
