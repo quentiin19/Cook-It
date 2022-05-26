@@ -38,9 +38,14 @@ if(!empty($_POST["password"]) || !empty($_POST["passwordConfirm"]) || count($_PO
             echo "<br/><a href=http://51.255.172.36/ProjAnn/login.php>Se Connecter</a>";
             }else{
                 echo "votre lien n'est plus valide";
+                echo $_GET['cle'];
+                echo $_SESSION['cle'];
+
         }
     }else{
         echo "votre lien n'est plus valide";
+        echo $_GET['id'];
+        echo $_SESSION['id'];
     }
 }
     
