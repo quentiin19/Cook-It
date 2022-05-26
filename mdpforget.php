@@ -3,7 +3,7 @@
 ?>
 <div class="col-lg-6 col-md-12 col-sm-12">
 
-<form method="POST">
+<form method="POST" action="login.php">
 
     <input type="email" class="form-control" name="password" placeholder="Votre Mot de passe" required="required"><br>
     <input type="email" class="form-control" name="passwordconfirm" placeholder="Confirmez votre Mot de passe" required="required"><br>
