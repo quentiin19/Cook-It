@@ -36,7 +36,7 @@ function setup_tiles() {
 
 //mélange du puzzle
 function shuffle() {
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 20; i++) {
         let temp = Math.floor(Math.random() * 9);
 
 
