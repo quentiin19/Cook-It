@@ -7,29 +7,34 @@
 <?php
 
 	if( !empty($_POST['email']) &&  !empty($_POST['pwd']) && count($_POST)==2 ){
-		
-
-
 		$pdo = connectDB();
 		$queryPrepared = $pdo->prepare("SELECT * FROM USER WHERE MAIL=:email");
 		$queryPrepared->execute(["email"=>$_POST['email']]);
 		$results = $queryPrepared->fetch();
-		echo $_POST['pwd'];
-		echo  $results['HASHPWD'];
-		if(!empty($results) && password_verify($_POST['pwd'], $results['HASHPWD'])){
-			
-
-			$token = createToken();
-			updateToken($results["ID"], $token);
-			//Insertion dans la session du token
-			$_SESSION['email'] = $_POST['email'];
-			$_SESSION['id'] = $results["ID"];
-			$_SESSION['token'] = $token;
-			header("location: index.php");
-
-		}else{
-			echo "Identifiants incorrects";
+		
+		if($results['role']==1){
+			echo $_POST['pwd'];
+			echo  $results['HASHPWD'];
+			if(!empty($results) && password_verify($_POST['pwd'], $results['HASHPWD'])){
+				
+	
+				$token = createToken();
+				updateToken($results["ID"], $token);
+				//Insertion dans la session du token
+				$_SESSION['email'] = $_POST['email'];
+				$_SESSION['id'] = $results["ID"];
+				$_SESSION['token'] = $token;
+				header("location: index.php");
+	
+			}else{
+				echo "Identifiants incorrects";
+			}
 		}
+		else
+		echo "veuillez vérifier vos mails pour confirmer votre compte";
+
+		
+
 	}
 ?>
 <div class="row ">
