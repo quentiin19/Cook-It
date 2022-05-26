@@ -25,21 +25,14 @@
     
 <?php
 
-// if(
-// 	empty($_POST["password"]) ||
-// 	empty($_POST["passwordConfirm"]) ||
-// 	count($_POST)!=2
-// ){
 
-// 	die("Remplissez les deux champs SVP !");
 
-// }
+    
+    
 
+if(!empty($_POST["password"]) || !empty($_POST["passwordConfirm"]) || count($_POST) == 2){
     $pdo = connectDB();
-    
-    $pwd = $_POST["password"];
-    
-    $pwd = password_hash($pwd, PASSWORD_DEFAULT);
+    $pwd = password_hash($_POST["password"], PASSWORD_DEFAULT);
     
     if($_GET['id']==$_SESSION['id']){
         if($_GET['cle']== $_SESSION['cle']){
@@ -52,4 +45,6 @@
         else
             echo "votre lien n'est plus valide";
     }
+}
+    
 ?>
