@@ -25,7 +25,7 @@
 
 						                <div class="col-lg-6 col-md-12 col-sm-12">
 
-						                	<form method="POST" action="">
+						                	<form method="POST">
 
 												<input type="email" class="form-control" name="email" placeholder="Votre email" required="required"><br>
 									  		</form>
@@ -43,7 +43,7 @@
 										</div>
 										<div class="col-lg-4 col-md-1 col-sm-0"></div>
 
-								</div>
+									</div>
 
 					          </div>
 					        </div>
@@ -52,12 +52,18 @@
 			</div>
 			<div class="col-lg-2 col-md-1 col-sm-0"></div>
 </div>
-
 <?php
+if(
+	    empty($_POST["email"])&&
+	    count($_POST)!=1
+    ){
+
+	    die("Tentative de Hack ...");
+
+    }
    
    $cle = rand(1000000,9000000);
-   $_SESSION['cle']= $cle;
-   $email = $_POST['email'];
+   $email = $_POST["email"];
    
    $from = 'support-cookit@cookit.com';
    $name = "Cookit-supportTeam";
@@ -66,7 +72,5 @@
    smtpmailer($email,$from, $name ,$subj, $msg);
 
 ?>
-
-
 
 <?php include "template/footer.php";?>
