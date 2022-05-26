@@ -3,7 +3,7 @@
 ?>
 <div class="col-lg-6 col-md-12 col-sm-12">
 
-<form method="POST" action="login.php">
+<form method="POST" action="">
 
     <input type="password" class="form-control" name="password" placeholder="Votre Mot de passe" required="required"><br>
     <input type="password" class="form-control" name="passwordconfirm" placeholder="Confirmez votre Mot de passe" required="required"><br>
@@ -43,8 +43,8 @@ if(
     
     if($_GET['id']==$_SESSION['id']){
         if($_GET['cle']== $_SESSION['cle']){
-            $queryPrepared = $pdo->prepare("UPDATE USER set HASHPWD =:pwd WHERE MAIL=:email AND ID =:id; ");
-            $queryPrepared->execute(["pwd"=>$pwd,"email"=>$_SESSION['email'], "id"=>$_SESSION['id']]);
+            $queryPrepared = $pdo->prepare("UPDATE USER set HASHPWD =:pwd WHERE ID =:id; ");
+            $queryPrepared->execute(["pwd"=>$pwd, "id"=>$_SESSION['id']]);
 
             echo "Vous avez bien changé votre mot de passe, cliquez sur le lien ci dessous pour vous connecter";
             echo "<br/><a href=http://51.255.172.36/ProjAnn/login.php>Se Connecter</a>";
