@@ -33,7 +33,7 @@ function smtpmailer($to, $from, $from_name, $subject, $body)
         $mail->Subject = $subject;
         $mail->Body = $body;
         $mail->AddAddress($to);
-        $mail->send();
+        // $mail->send();
         
         if(!$mail->Send())
         {
