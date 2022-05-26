@@ -59,7 +59,7 @@ if(
 	    count($_POST)!=1
     ){
 
-	    die(print_r($_POST["email"]));
+	    die(print_r($_POST));
 
     }
 
