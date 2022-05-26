@@ -48,7 +48,7 @@
 									<li><a href="./profil.php" class="dropdown-item">Consulter mon profil</a></li>
 									<li><a href="logout.php" class="dropdown-item">Se déconnecter</a></li>';
 									
-									if ($_SESSION['role']==1){
+									if (isAdmin()){
 										echo'<li><a href="./admin.php" class="dropdown-item">Gérer les utilisateurs</a></li>
 										</ul>';
 									}
