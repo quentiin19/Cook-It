@@ -56,10 +56,10 @@
 						
 				</div>';
 			}else{
-				echo'<div class="col-lg-1 col-md-2 position-absolute  end-0 ">
+				echo'<div class="col-lg-3 col-md-2 position-absolute  end-0 ">
 						<div>
-							<a href="./login.php">Se Connecter</a>
-							<a href="./SignUp.php">S\'inscrire</a>	
+							<a href="./login.php" class="text-white">Se Connecter</a>
+							<a href="./SignUp.php" class="text-white">S\'inscrire</a>	
 						</div> 
 				</div>';
 			}
