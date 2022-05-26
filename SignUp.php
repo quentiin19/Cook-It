@@ -48,8 +48,8 @@
 					<div class="row">
 						<div class="col-lg-5 col-md-5 col-sm-5"></div>
 						<div class="col-lg-2 col-md-2 col-sm-2">
-							<div class="text-center">
-	  						<input id="inscription" type="submit" class=" ml-3 mt-5 btn btn-light btn-lg py-2 " value="S'inscrire">
+							<div class="">
+	  							<input id="inscription" type="submit" class=" ml-3 mt-5 btn btn-light btn-lg py-2 " value="S'inscrire">
 							</div>
 						</div>
 						<div class="col-lg-5 col-md-5 col-sm-5"></div>

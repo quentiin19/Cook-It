@@ -18,19 +18,6 @@
 									<form method="POST" action="">
 										<input type="text" class="form-control my-3" name="recette" placeholder="Nom de la recette" required="required"><br>
 										<div class="row">
-											<div class="col-lg-6 col-md-6">
-												<select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
-												<option selected disabled>Catégorie</option>
-												<option value="1">One</option>
-												<option value="2">Two</option>
-												<option value="3">Three</option>
-												</select>
-											</div>
-											<div class="col-lg-6 col-md-6 ">
-												<input type="text" class="form-control" name="temps" placeholder="Temps de préparation ( h : mn )" required="required"><br>
-											</div>
-										</div>
-										<div class="row">
 											<h3 class="text-center py-3">Ajouter une image à ma recette </h3>
 											<form method="POST" enctype="multipart/form-data">
 												<div class="col-lg-6 col-md-6 text-center">

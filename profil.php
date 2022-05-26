@@ -1,55 +1,31 @@
 <?php include "template/header.php";?>
 
-<div class="container">
-	<h1>Salut !</h1>
 
-	<?php 
-	if (isConnected()) {
-		$pdo = connectDB();
+<div class="row">
 
-		$queryPrepared = $pdo->prepare("SELECT * FROM USER");
-		$queryPrepared->execute();
-		$results = $queryPrepared->fetchAll();
-		?>
+			<div class="col-lg-2 col-md-1 col-sm-0"></div>
 
+			<div class="col-lg-8 col-md-10 col-sm-12 h-auto arrondie  ">
+					  <div class="container py-2  h-auto  ">
+					    <div class="row d-flex justify-content-center align-items-center h-100">
+					      
+					        <div class="card bg-color text-white" style="border-radius: 1rem;">
+					          <div class="card-body  text-center">
 
-		<table class="table">
-			<thead>
-				<tr>
-					<th>Id</th>
-					<th>Nom</th>
-					<th>Prénom</th>
-					<th>Pseudo</th>
-					<th>Email</th>
-				</tr>
-			</thead>
-			<tbody>
-				
-				<?php
-				foreach ($results as $user) {
-					echo '<tr>
-							<td>'.$user["ID"].'</td>
-							<td>'.$user["LASTNAME"].'</td>
-							<td>'.$user["FIRSTNAME"].'</td>
-							<td>'.$user["PSEUDO"].'</td>
-							<td>'.$user["MAIL"].'</td>
-							<td>
-								<div class="btn-group">
-									<a href="delUser.php?id='.$user["ID"].'" class="btn btn-danger">Supprimer</a>
-									<a href="#" class="btn btn-warning" >Modifier</a>
-								</div>
-							</td>
-						</tr>';
-				}
-				?>
+					            <div class="mb-md-5 mt-md-4 pb-5">
+								<div class="row">
+									<div class="col-lg-12">
+										<?php include "avatar/avatar.php";?>
+									</div>
 
-									
-
-			</tbody>
-		</table>
-
-		<?php
-	}
-	?>
-
+					            </div>
+					           </div>
+					        </div>
+					    </div>
+					  </div>
+			</div>
+			<div class="col-lg-2 col-md-1 col-sm-0"></div>
 </div>
+
+
+<?php include "template/footer.php";?>
