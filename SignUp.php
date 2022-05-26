@@ -47,7 +47,9 @@
 					<!-- Valider l'inscription -->
 					<div class="row">
 						<div class="col-lg-12 col-md-12 col-sm-12">
+							<div class="text-center">
 	  						<input id="inscription" type="submit" class=" mt-5 btn btn-light btn-lg py-2 " value="S'inscrire">
+						</div>
 						</div>
 					</div>	
 					<div class="row">
