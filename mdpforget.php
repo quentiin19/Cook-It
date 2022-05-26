@@ -22,15 +22,15 @@
     
 <?php
 
-if(
-	empty($_POST["password"]) ||
-	empty($_POST["passwordConfirm"]) ||
-	count($_POST)!=2
-){
+// if(
+// 	empty($_POST["password"]) ||
+// 	empty($_POST["passwordConfirm"]) ||
+// 	count($_POST)!=2
+// ){
 
-	die("Remplissez les deux champs SVP !");
+// 	die("Remplissez les deux champs SVP !");
 
-}
+// }
 
     $pdo = connectDB();
     
