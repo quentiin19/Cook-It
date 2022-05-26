@@ -1,3 +1,4 @@
+//création de l'objet Tile qui permet de répertorier le chemin de l'image et l'index de l'image de chaque tuile 
 class Tile{
     constructor(i, img){
         this.index = i;
@@ -20,8 +21,6 @@ const width_tile = "100px";
 
 
 
-
-console.log("come le raciste");
 
 
 //mise en place des tuiles (objet Tile) dans le tableau tiles
