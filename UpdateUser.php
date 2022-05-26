@@ -45,7 +45,7 @@ $errors = [];
 $hasholdpwd= password_hash($oldpwd, PASSWORD_DEFAULT);
 
 if ($results["hashpwd" != $hasholdpwd]){
-    $errors[] = "Votre ancien mot de passe n'est pas bon"
+    $errors[] = "Votre ancien mot de passe n'est pas bon";
 }
 
 
