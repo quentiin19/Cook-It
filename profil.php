@@ -30,7 +30,7 @@
 																<td>'.$results["LASTNAME"].'</td>
 																<td>'.$results["FIRSTNAME"].'</td>
 																<td>'.$results["PSEUDO"].'</td>
-																<td>'.$results["MAIL"].'</td>'
+																<td>'.$results["MAIL"].'</td>';
 
 										}
 										?>
