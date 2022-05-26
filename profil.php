@@ -21,8 +21,8 @@
 										if (isConnected()) {
 											$pdo = connectDB();
 
-											$queryPrepared = $pdo->prepare("SELECT ID, LASTNAME, FIRSTNAME, PSEUDO, MAIL FROM USER where ID=:id");
-											$queryPrepared->execute();
+											$queryPrepared = $pdo->prepare("SELECT * FROM USER where ID=:id");
+											$queryPrepared->execute(["id" => $_SESSION["id"]]);
 											$results = $queryPrepared->fetch();
 												
 														echo '<tr>
