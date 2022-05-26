@@ -48,7 +48,6 @@ if (isConnected()) {
 											<span class="input-group-text" id="">Votre Prénom</span>
 										</div>
 										<input type="text" class="form-control" name="firstname"  value="<?=$results["FIRSTNAME"]?>"><br>
-										<input type="text" class="form-control">
 										</div>
 									<div class="col-lg-3 col-md-0 col-sm-0"></div>
 									
