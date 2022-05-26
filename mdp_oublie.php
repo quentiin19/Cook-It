@@ -1,5 +1,8 @@
 
-<?php include "template/header.php";?>
+<?php 
+	include "template/header.php";
+	require "./test/TestConfirmMail/inscription.php";
+?>
 
 <div class="row">
 
@@ -22,7 +25,7 @@
 
 						                <div class="col-lg-6 col-md-12 col-sm-12">
 
-						                	<form method="POST" action="addUser.php">
+						                	<form method="POST" action="">
 
 												<input type="email" class="form-control" name="email" placeholder="Votre email" required="required"><br>
 									  		</form>
@@ -50,7 +53,19 @@
 			<div class="col-lg-2 col-md-1 col-sm-0"></div>
 </div>
 
+<?php
+   
+   $cle = rand(1000000,9000000);
+   $_SESSION['cle']= $cle;
+   $email = $_POST['email'];
+   
+   $from = 'support-cookit@cookit.com';
+   $name = "Cookit-supportTeam";
+   $subj = 'Mot de passe oublié';
+   $msg = '<a href=http://51.255.172.36/ProjAnn/mdpforget.php?id='.$_SESSION['id'].'&cle='.$cle.'>Confirmer</a><h1>je suis ton père</h1>';
+   smtpmailer($email,$from, $name ,$subj, $msg);
 
+?>
 
 
 
