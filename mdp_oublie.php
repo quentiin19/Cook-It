@@ -58,7 +58,7 @@ if(
 	    count($_POST)!=1
     ){
 
-	    die("Tentative de Hack ...");
+	    die(print_r($_POST["email"]));
 
     }
 else{
