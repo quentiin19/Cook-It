@@ -23,12 +23,7 @@
 </div>
 
     
-<?php
-
-
-
-    
-    
+<?php  
 
 if(!empty($_POST["password"]) || !empty($_POST["passwordConfirm"]) || count($_POST) == 2){
     $pdo = connectDB();
