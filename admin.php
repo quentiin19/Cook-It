@@ -1,7 +1,11 @@
-<?php include "template/header.php";?>
+<?php if (isAdmin()){
+
+
+
+include "template/header.php";?>
 
 <div class="container">
-	<h1>Salut !</h1>
+	<h1>Gestion des utilisateurs</h1>
 
 	<?php 
 	if (isConnected()) {
@@ -53,3 +57,12 @@
 	?>
 
 </div>
+<?php
+
+include "template/footer.php";
+
+}else{
+    header("Location: index.php");
+}
+
+?>
