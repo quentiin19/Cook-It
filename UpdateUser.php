@@ -5,7 +5,7 @@ require "functions.php";
 
 
 //Vérification de l'utilisateur
-$id = $_POST["id"];
+$id = $_SESSION["id"];
 if(!isConnected()){
 	die("Il faut se connecter !!!");
 }else{
@@ -44,7 +44,7 @@ $errors = [];
 //Vérification des mots de passes
 $hasholdpwd= password_hash($oldpwd, PASSWORD_DEFAULT);
 
-if ($results["hashpwd"] != $hasholdpwd){
+if ($results["HASHPWD"] != $hasholdpwd){
     $errors[] = "Votre ancien mot de passe n'est pas bon";
 }
 
