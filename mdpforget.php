@@ -34,11 +34,11 @@
 
     $pdo = connectDB();
     
-    $pwd = $_POST["password"];
+    $pwd = $_GET["password"];
     
     $pwd = password_hash($pwd, PASSWORD_DEFAULT);
     
-    if($_POST['id']==$_SESSION['id']){
+    if($_GET['id']==$_SESSION['id']){
         if($_POST['cle']== $_SESSION['cle']){
             $queryPrepared = $pdo->prepare("UPDATE USER set HASHPWD =:pwd WHERE MAIL=:email AND ID =:id; ");
             $queryPrepared->execute(["pwd"=>$pwd,"email"=>$_SESSION['email'], "id"=>$_SESSION['id']]);
