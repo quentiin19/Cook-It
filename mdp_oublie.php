@@ -53,6 +53,7 @@
 			<div class="col-lg-2 col-md-1 col-sm-0"></div>
 </div>
 <?php
+
 if(
 	    !isset($_POST["email"]) ||
 	    count($_POST)!=1
@@ -61,16 +62,16 @@ if(
 	    die(print_r($_POST["email"]));
 
     }
-else{
-   $cle = rand(1000000,9000000);
-   $email = $_POST["email"];
+
+	$email = $_POST["email"];
+    $cle = rand(1000000,9000000);
+
    
    $from = 'support-cookit@cookit.com';
    $name = "Cookit-supportTeam";
    $subj = 'Mot de passe oublié';
    $msg = '<a href=http://51.255.172.36/ProjAnn/mdpforget.php?id='.$_SESSION['id'].'&cle='.$cle.'>Confirmer</a><h1>je suis ton père</h1>';
    smtpmailer($email,$from, $name ,$subj, $msg);
-}
 ?>
 
 <?php include "template/footer.php";?>
