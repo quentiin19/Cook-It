@@ -1,6 +1,12 @@
 <?php include "template/header.php";?>
+<?php
+if (isConnected()) {
+			$pdo = connectDB();
 
-
+			$queryPrepared = $pdo->prepare("SELECT * FROM USER where ID=:id");
+			$queryPrepared->execute(["id" => $_SESSION["id"]]);
+			$results = $queryPrepared->fetch();
+?>
 <div class="row">
 
 			<div class="col-lg-2 col-md-1 col-sm-0"></div>
@@ -15,25 +21,25 @@
 					            <div class="mb-md-5 mt-md-4 pb-5">
 								<div class="row">
 									<div class="col-lg-12">
-										<?php include "avatar/avatar.php";?>
+										<h1> Personnaliser mon avatar </h1>
 									</div>
+								</div>
+								<div class="row">
+									<div class="col-lg-12" >	
+										<?php include "avatar/avatar.php"; ?>
+									</div>
+								</div>
 									<?php 
-										if (isConnected()) {
-											$pdo = connectDB();
-
-											$queryPrepared = $pdo->prepare("SELECT * FROM USER where ID=:id");
-											$queryPrepared->execute(["id" => $_SESSION["id"]]);
-											$results = $queryPrepared->fetch();
+										
 												
-														echo '<tr>
-																<td>'.$results["ID"].'</td>
-																<td>'.$results["LASTNAME"].'</td>
-																<td>'.$results["FIRSTNAME"].'</td>
-																<td>'.$results["PSEUDO"].'</td>
-																<td>'.$results["MAIL"].'</td>';
+														 
+										echo'<td>'.$results["ID"].'</td>'
+										echo'<td>'.$results["LASTNAME"].'</td>'
+										echo'<td>'.$results["FIRSTNAME"].'</td>'
+										echo'<td>'.$results["PSEUDO"].'</td>'
+										echo'<td>'.$results["MAIL"].'</td>';
 
-										}
-										?>
+																?>
 
 					            </div>
 					           </div>
@@ -46,3 +52,6 @@
 
 
 <?php include "template/footer.php";?>
+
+}
+?>
