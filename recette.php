@@ -1,4 +1,4 @@
-<?php include "template/header2.php";?>
+<?php include "template/header.php";?>
 
 
 <div class="row">
@@ -13,7 +13,10 @@
 					          <div class="card-body  text-center">
 
 					            <div class="mb-md-5 mt-md-4 pb-5">
-
+								<div class="row">
+									<div class="col-lg-12">
+										<?php include "avatar/avatar.php";?>
+									</div>
 
 					            </div>
 					           </div>
