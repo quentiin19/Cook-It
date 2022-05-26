@@ -1,8 +1,7 @@
-<?php if (isAdmin()){
-
-
-
-include "template/header.php";?>
+<?php 
+include "template/header.php";
+if (isAdmin()){
+?>
 
 <div class="container">
 	<h1>Gestion des utilisateurs</h1>
