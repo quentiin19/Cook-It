@@ -40,16 +40,9 @@ if (isConnected()) {
 									<!-- Information du Compte -->
 										<form method="POST" action="">
 											Votre prénom :<input type="text" class="form-control" name="firstname" placeholder="Votre prénom" value="<?=$results["FIRSTNAME"]?>"><br>
-											<input type="text" class="form-control" name="lastname" placeholder="Votre nom" value=" <?=$results["LASTNAME"]?>"><br>
-											<input type="text" class="form-control" name="pseudo" placeholder="Votre pseudo"  required="required" value=" <?=$results["PSEUDO"]?>"><br>
-					    			
-									<div class="input-group">
-										<div class="input-group-prepend">
-											<span class="input-group-text" id="">Votre Prénom</span>
-										</div>
-										<input type="text" class="form-control" name="firstname"  value="<?=$results["FIRSTNAME"]?>"><br>
-										</div>
-									</div>
+											Votre nom:<input type="text" class="form-control" name="lastname" placeholder="Votre nom" value=" <?=$results["LASTNAME"]?>"><br>
+											Votre pseudo:<input type="text" class="form-control" name="pseudo" placeholder="Votre pseudo"  required="required" value=" <?=$results["PSEUDO"]?>"><br>
+						²				</form>
 									<div class="col-lg-2 col-md-0 col-sm-0"></div>
 									
 									<?php 
