@@ -56,12 +56,13 @@
 						
 				</div>';
 			}else{
-				echo'<div class="col-lg-4 col-md-2 position-absolute  end-0 ">
-						<div class="position-absolute  end-0 align-self-center" >
-							<a href="./login.php" class="  text-white">Se Connecter</a>
+				echo'<div class="col-lg-2 col-md-2  align-self-center text-right ">
+							<a href="./login.php" class=" text-white">Se Connecter</a>
+					</div>
+					
+					<div class="col-lg-1 col-md-2  align-self-center ">
 							<a href="./SignUp.php" class="text-white">S\'inscrire</a>	
-						</div> 
-				</div>';
+					</div>';
 			}
 			?>
 
