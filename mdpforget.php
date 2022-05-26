@@ -5,8 +5,8 @@
 
 <form method="POST" action="login.php">
 
-    <input type="email" class="form-control" name="password" placeholder="Votre Mot de passe" required="required"><br>
-    <input type="email" class="form-control" name="passwordconfirm" placeholder="Confirmez votre Mot de passe" required="required"><br>
+    <input type="password" class="form-control" name="password" placeholder="Votre Mot de passe" required="required"><br>
+    <input type="password" class="form-control" name="passwordconfirm" placeholder="Confirmez votre Mot de passe" required="required"><br>
     
     <div class="row">
 
