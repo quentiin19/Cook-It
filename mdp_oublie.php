@@ -69,6 +69,8 @@ if(
 	$email = $_POST["email"];
     $cle = rand(1000000,9000000);
 
+	$_SESSION['cle'] = $cle;
+
    
    $from = 'support-cookit@cookit.com';
    $name = "Cookit-supportTeam";
