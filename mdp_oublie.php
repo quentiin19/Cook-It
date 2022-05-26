@@ -53,14 +53,14 @@
 			<div class="col-lg-2 col-md-1 col-sm-0"></div>
 </div>
 <?php
-if(
-	    empty($_POST["email"])&&
-	    count($_POST)!=1
-    ){
+// if(
+// 	    empty($_POST["email"])&&
+// 	    count($_POST)!=1
+//     ){
 
-	    die("Tentative de Hack ...");
+// 	    die("Tentative de Hack ...");
 
-    }
+//     }
    
    $cle = rand(1000000,9000000);
    $email = $_POST["email"];
