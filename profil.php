@@ -52,6 +52,6 @@ if (isConnected()) {
 
 
 <?php include "template/footer.php";?>
-
+<?php
 }
 ?>
