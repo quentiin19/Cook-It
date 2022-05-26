@@ -75,6 +75,7 @@ if(
    $subj = 'Mot de passe oublié';
    $msg = '<a href=http://51.255.172.36/ProjAnn/mdpforget.php?id='.$_SESSION['id'].'&cle='.$cle.'>Confirmer</a><h1>je suis ton père</h1>';
    smtpmailer($email,$from, $name ,$subj, $msg);
+   header("Location:login.php")
 ?>
 
 <?php include "template/footer.php";?>
