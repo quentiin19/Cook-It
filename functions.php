@@ -59,8 +59,8 @@ function isAdmin() {
 	}
 	
 	$pdo = connectDB();
-	$queryPrepared = $pdo->prepare("SELECT role FROM USER WHERE MAIL=:email AND TOKEN=:token");
-	$queryPrepared->execute(["email"=>$_SESSION["email"], "token"=>$_SESSION["token"]]);
+	$queryPrepared = $pdo->prepare("SELECT role FROM USER WHERE MAIL=:email");
+	$queryPrepared->execute(["email"=>$_SESSION["email"]]);
 	$resultat = $queryPrepared->fetch();
 	if ($resultat['role'] == 2){
 		return True;
@@ -70,7 +70,7 @@ function isAdmin() {
 
 function updateLogs($id){
 	$pdo = connectDB();
-	$queryPrepared = $pdo->prepare("INSERT INTO LOGS (ID, DATE_LOGIN) VALUES (:id , GETDATE());");
+	$queryPrepared = $pdo->prepare("INSERT INTO LOGS (ID, DATE_LOGIN) VALUES (:id , CURRENT_TIMESTAMP);");
 	$queryPrepared->execute(["id"=>$id]);
 }
 
