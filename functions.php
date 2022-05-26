@@ -52,7 +52,18 @@ function isConnected(){
 
 }
 
+function isAdmin() {
 
+	if(!isset($_SESSION["email"]) || !isset($_SESSION["token"])){
+		return false;
+	}
+	
+	$pdo = connectDB();
+	$queryPrepared = $pdo->prepare("SELECT ROLE FROM USER WHERE MAIL=:email AND TOKEN=:token");
+	$queryPrepared->execute(["email"=>$_SESSION["email"], "token"=>$_SESSION["token"]]);
+	
+	return $queryPrepared->fetch();
+}
 
 
 ?>
