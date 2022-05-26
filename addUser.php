@@ -124,8 +124,8 @@ if(count($errors) == 0){
 	//$email = "y.skrzypczy@gmail.com";
 	//$firstname = "');DELETE FROM users;";
 
-	$queryPrepared = $pdo->prepare("INSERT INTO USER (MAIL, FIRSTNAME, LASTNAME, PSEUDO, HASHPWD) 
-		VALUES ( :email , :firstname, :lastname, :pseudo, :pwd );");
+	$queryPrepared = $pdo->prepare("INSERT INTO USER (MAIL, FIRSTNAME, LASTNAME, PSEUDO, HASHPWD, role) 
+		VALUES ( :email , :firstname, :lastname, :pseudo, :pwd , :role);");
 
 
 	$pwd = password_hash($pwd, PASSWORD_DEFAULT);
@@ -136,12 +136,19 @@ if(count($errors) == 0){
 								"lastname"=>$lastname,
 								"pseudo"=>$pseudo,
 								"pwd"=>$pwd,
+								"role"=>0
 	]);
 	
-
+	$queryPrepared = $pdo->prepare("SELECT * FROM USER WHERE MAIL = :email;");
+	$queryPrepared->execute(["email"=>$email]);
+	$result = $queryPrepared->fetch();
+	
+	$_SESSION['id']= $result['ID'];
+	$_SESSION['cle']= $cle;
+	
 	$from = 'support-cookit@cookit.com';
 	$subj = 'Mail de confirmation';
-    $msg = 'http://51.255.172.36/ProjAnn/test/TestConfirmMail/verif.php?id='.$cle.'<h1>je suis ton père</h1>';
+    $msg = 'http://51.255.172.36/ProjAnn/test/TestConfirmMail/verif.php?id='.$_SESSION['id'].'&cle='.$cle.'<h1>je suis ton père</h1>';
 	smtpmailer($email,$from, $name ,$subj, $msg);
 
 	echo "test2";
