@@ -14,6 +14,10 @@ var buttons = [];
 
 
 const captcha = document.getElementById("puzzle");
+const signupbtn = document.getElementById("inscription");
+
+//on commence par bloquer le bouton s'inscrire
+signupbtn.style.display = "none";
 
 const height_tile = "100px";
 const width_tile = "100px";
@@ -153,6 +157,8 @@ function pressed(index) {
 
     if (verify()) {
         console.log("captcha validé");
+        //on fait apparaitre le bouton s'inscrire si le captcha est validé
+        signupbtn.style.display = "block";
     }
 }
 
