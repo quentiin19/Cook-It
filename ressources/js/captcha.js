@@ -159,6 +159,9 @@ function pressed(index) {
         console.log("captcha validé");
         //on fait apparaitre le bouton s'inscrire si le captcha est validé
         signupbtn.style.display = "block";
+    }else{
+        signupbtn.style.display = "none";
+
     }
 }
 
