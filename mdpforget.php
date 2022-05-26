@@ -36,9 +36,11 @@ if(!empty($_POST["password"]) || !empty($_POST["passwordConfirm"]) || count($_PO
 
             echo "Vous avez bien changé votre mot de passe, cliquez sur le lien ci dessous pour vous connecter";
             echo "<br/><a href=http://51.255.172.36/ProjAnn/login.php>Se Connecter</a>";
-            }
-        else
-            echo "votre lien n'est plus valide";
+            }else{
+                echo "votre lien n'est plus valide";
+        }
+    }else{
+        echo "votre lien n'est plus valide";
     }
 }
     
