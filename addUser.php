@@ -139,7 +139,7 @@ if(count($errors) == 0){
 	]);
 	
 
-	$from = 'ProjAnn20222@gmail.com';
+	$from = 'support-cookit@cookit.com';
 	$subj = 'Mail de confirmation';
     $msg = 'http://51.255.172.36/ProjAnn/test/TestConfirmMail/verif.php?id='.$cle.'<h1>je suis ton père</h1>';
 	smtpmailer($email,$from, $name ,$subj, $msg);
