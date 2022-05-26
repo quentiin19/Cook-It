@@ -1,3 +1,11 @@
+//création de l'objet Tile qui permet de répertorier le chemin de l'image et l'index de l'image de chaque tuile 
+class Tile{
+    constructor(i, img){
+        this.index = i;
+        this.image = img
+    }
+}
+
 let tiles = [];
 
 let moved_tiles = [];
@@ -6,6 +14,10 @@ var buttons = [];
 
 
 const captcha = document.getElementById("puzzle");
+const signupbtn = document.getElementById("inscription");
+
+//on commence par bloquer le bouton s'inscrire
+signupbtn.style.display = "none";
 
 const height_tile = "100px";
 const width_tile = "100px";
@@ -15,12 +27,10 @@ const width_tile = "100px";
 
 
 
-
-
 //mise en place des tuiles (objet Tile) dans le tableau tiles
 function setup_tiles() {
     for (let i = 0; i < 9; i++) {
-        let img = `./img/${i}.png`;
+        let img = `ressources/images/captcha/${i}.png`;
         let tile = new Tile(i, img);
 
         tiles[i] = tile;
@@ -30,7 +40,7 @@ function setup_tiles() {
 
 //mélange du puzzle
 function shuffle() {
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 20; i++) {
         let temp = Math.floor(Math.random() * 9);
 
 
@@ -115,12 +125,14 @@ function draw() {
 
         captcha.appendChild(button);
     }
+    let br = document.createElement("br");
+    captcha.appendChild(br);    
 
     let retry = document.createElement("button");
     retry.setAttribute("onclick", "shuffle()");
     retry.innerHTML = "recommencer";
 
-    captcha.appendChild(retry);
+    //captcha.appendChild(retry);
 }
 
 function verify() {
@@ -145,6 +157,11 @@ function pressed(index) {
 
     if (verify()) {
         console.log("captcha validé");
+        //on fait apparaitre le bouton s'inscrire si le captcha est validé
+        signupbtn.style.display = "block";
+    }else{
+        signupbtn.style.display = "none";
+
     }
 }
 

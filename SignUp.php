@@ -16,7 +16,8 @@
 		              <p class="text-white-50 mb-5">Merci de rentrer vos informations</p>
 		              <div class="row">
 		                <div class="col-lg-6 col-md-12 col-sm-12">
-		                    <form method="POST" action="addUser.php">
+						<!-- Formulaire d'inscription -->
+		                <form method="POST" action="addUser.php">
 
 								<input type="email" class="form-control" name="email" placeholder="Votre email" required="required"><br>
 
@@ -29,31 +30,39 @@
 							<input type="date" class="form-control" name="birthday" placeholder="Votre date de naissance"><br>
 							<input type="password" class="form-control" name="password" placeholder="Votre mot de passe"  required="required"><br>
 							<input type="password" class="form-control" name="passwordConfirm" placeholder="confirmation" required="required"><br>
+							<div class="text-left ">
+								<input  type="checkbox" name="cgu"  required="required"> CGU <br>
+							</div>
 					    </div>
 					  </div>
-
-					  <div class="row">
-
-		              <div class="col-lg-6 col-md-12 col-sm-12 ">
-							<input class="my-3" type="checkbox" name="cgu"  required="required"> CGU <br>
-					  </div>
-					  <div class="col-lg-6 col-md-12 col-sm-12">
-							<input type="submit" class="btn btn-primary" value="S'inscrire">
-					  </div>
-					</div>
-					
-
-							</form>
-						<div class="row">
+					  <!-- Captcha -->
+					<div class="row">
 							<div class="col-lg-12">
-								<div id="captcha">
-                                                <div id="reference"></div>
-                                                <div id="puzzle"></div>
-                                            </div>
+								<h1>Captcha</h1>
+								<div id="captcha" class="row">
+									<div id="puzzle"></div>
+								</div>
+							</div>
+					</div>
+					<!-- Valider l'inscription -->
+					<div class="row">
+						<div class="col-lg-5 col-md-5 col-sm-5"></div>
+						<div class="col-lg-2 col-md-2 col-sm-2">
+							<div class="text-center">
+	  						<input id="inscription" type="submit" class=" ml-3 mt-5 btn btn-light btn-lg py-2 " value="S'inscrire">
 							</div>
 						</div>
-						
-		              <a href="login.php"><button class="btn btn-outline-light btn-lg py-2 " type="submit">Se Connecter</button></a> 
+						<div class="col-lg-5 col-md-5 col-sm-5"></div>
+					</div>	
+					<div class="row">
+						<div class="col-lg-12 col-md-12 col-sm-12">
+							<p class="mb-0">Avez-vous déjà un compte ? <a href="login.php" class="text-white-50 fw-bold">Se Connecter</a></p>
+						</div>
+					</div>		
+					
+
+					</form>
+						 
 		            </div>
 
 		          </div>
@@ -63,8 +72,8 @@
 		  </div>
 </div>
 
-			<div class="col-lg-2 col-md-1 col-sm-0"></div>
+	<div class="col-lg-2 col-md-1 col-sm-0"></div>
 
-
+<script src="ressources/js/captcha.js"></script>
 
 <?php include "template/footer.php";?>
