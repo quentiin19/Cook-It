@@ -28,14 +28,8 @@
 						                	<form method="POST" action="">
 
 												<input type="email" class="form-control" name="email" placeholder="Votre email" required="required"><br>
-									  		</form>
-									 	</div>
-
-									 	<div class="col-lg-3 col-md-1 col-sm-0"></div>
-								  
-									</div>
-
-									<div class="row">
+												
+																					<div class="row">
 
 										<div class="col-lg-4 col-md-1 col-sm-0"></div>
 										<div class="col-lg-4 col-md-12 col-sm-12">
@@ -44,6 +38,14 @@
 										<div class="col-lg-4 col-md-1 col-sm-0"></div>
 
 									</div>
+									  		</form>
+									 	</div>
+
+									 	<div class="col-lg-3 col-md-1 col-sm-0"></div>
+								  
+									</div>
+
+
 
 					          </div>
 					        </div>
