@@ -24,6 +24,11 @@
 				$_SESSION['email'] = $_POST['email'];
 				$_SESSION['id'] = $results["ID"];
 				$_SESSION['token'] = $token;
+
+				//update des logs
+				updateLogs($results["ID"]);
+
+				//redirection
 				header("location: index.php");
 	
 			}else{
