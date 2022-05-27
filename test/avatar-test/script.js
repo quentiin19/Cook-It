@@ -65,6 +65,7 @@ function click($action) {
             }else{
                 current_skin = current_skin - 1;
             }
+            console.log(current_skin);
             break;
         
         case 'next-skin':
@@ -73,6 +74,7 @@ function click($action) {
             }else{
                 current_skin = current_skin + 1;
             }
+            console.log(current_skin);
             break;
 
         case 'prev-eye':
@@ -81,6 +83,7 @@ function click($action) {
             }else{
                 current_eye = current_eye - 1;
             }
+            console.log(current_eye);
             break;
 
         case 'next-eye':
@@ -89,6 +92,7 @@ function click($action) {
             }else{
                 current_eye = current_eye + 1;
             }
+            console.log(current_eye);
             break;
 
 
