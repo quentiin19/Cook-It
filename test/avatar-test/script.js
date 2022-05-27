@@ -59,6 +59,7 @@ function draw_avatar() {
 
 
 function click($action) {
+    console.log($action);
     switch ($action) {
         case 'prev-skin':
             if (current_skin == 0) {
