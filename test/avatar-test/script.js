@@ -46,17 +46,18 @@ function draw_avatar() {
     let img_skin = document.createElement("img");
     img_skin.setAttribute("height", `${height_canva}px`);
     img_skin.setAttribute("width", `${width_canva}px`);
+    img_skin.setAttribute("class", "avatar-part");
     img_skin.setAttribute("src", skins[current_skin].image);
 
     canva.appendChild(img_skin);
-    console.log("skin drawn");
 
 
     //eye drawing
     let img_eye = document.createElement("img");
     img_eye.setAttribute("height", `${height_canva}px`);
     img_eye.setAttribute("width", `${width_canva}px`);
-    img_eye.setAttribute("src", skins[current_skin].image);
+    img_eye.setAttribute("class", "avatar-part");
+    img_eye.setAttribute("src", eyes[current_eye].image);
 
     canva.appendChild(img_eye);
 }
