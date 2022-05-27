@@ -4,12 +4,15 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <div id="1">
-            <img src="img/image1.png" height="300px" width="300px"></img>
+        <div id="avatar-canva">
         </div>
-        <div id="2">
-            <img src="img/image2.png" height="300px" width="300px"></img>
-        </div>
-        <button id="button">changer</button>
+        <br>
+        <button id="button-prev-skin" onclick="click('prev-skin');">prev skin</button>
+        <button id="button-next-skin" onclick="click('next-skin');">next skin</button>
+        <br>
+        <button id="button-prev-eye" onclick="click('prev-eye');">prev eye</button>
+        <button id="button-next-eye" onclick="click('next-eye');">next eye</button>
+
+        <script src="script.js"></script>
     </body>
 </html>
