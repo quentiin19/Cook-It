@@ -3,5 +3,5 @@ body {
 }
 
 .avatar-part{
-    position: relative;
+    position: absolute;
 }
