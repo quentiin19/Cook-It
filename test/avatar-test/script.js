@@ -102,3 +102,9 @@ function click($action) {
     
     draw_avatar();
 }
+
+function test(params) {
+    
+}
+
+setup();
