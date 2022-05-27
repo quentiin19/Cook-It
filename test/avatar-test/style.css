@@ -3,7 +3,7 @@ body {
 }
 
 .avatar-part{
-    position: relative;
+    position: absolute;
     top: 0px;
     left: 0px;
 }
