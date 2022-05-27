@@ -7,11 +7,11 @@
         <div id="avatar-canva">
         </div>
         <br>
-        <button id="button-prev-skin" onclick="click('prev-skin');">prev skin</button>
-        <button id="button-next-skin" onclick="click('next-skin');">next skin</button>
+        <button id="button-prev-skin" onclick="change_part('prev-skin');">prev skin</button>
+        <button id="button-next-skin" onclick="change_part('next-skin');">next skin</button>
         <br>
-        <button id="button-prev-eye" onclick="click('prev-eye');">prev eye</button>
-        <button id="button-next-eye" onclick="click('next-eye');">next eye</button>
+        <button id="button-prev-eye" onclick="change_part('prev-eye');">prev eye</button>
+        <button id="button-next-eye" onclick="change_part('next-eye');">next eye</button>
 
         <script src="script.js"></script>
     </body>

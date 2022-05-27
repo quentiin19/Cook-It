@@ -58,7 +58,7 @@ function draw_avatar() {
 }
 
 
-function click($action) {
+function change_part($action) {
     console.log($action);
     switch ($action) {
         case 'prev-skin':
