@@ -3,7 +3,7 @@ session_start();
 require "functions.php";
 
 //Vérification de l'utilisateur
-$id = $_POST["id"];
+$id = $_GET["id"];
 if(!isConnected()){
 	die("Il faut se connecter !!!");
 }
