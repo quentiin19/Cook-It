@@ -3,7 +3,7 @@ session_start();
 require "functions.php";
 
 //Vérification de l'utilisateur
-// $id = $_GET["id"];
+$id = $_POST["id"];
 if(!isConnected()){
 	die("Il faut se connecter !!!");
 }
@@ -11,8 +11,8 @@ if(!isConnected()){
 
 //Suppression du user en bdd
 $pdo = connectDB();
-$queryPrepared = $pdo->prepare("DELETE FROM USER WHERE TOKEN=:token");
-$queryPrepared->execute(["token"=>$_SESSION['token']]);
+$queryPrepared = $pdo->prepare("DELETE FROM USER WHERE id=:id");
+$queryPrepared->execute(["id"=>$id]);
 
 //Si c'est le user actuellement connecté je le deco
 if ($_SESSION['id'] == $id){
