@@ -104,8 +104,8 @@ function click($action) {
     draw_avatar();
 }
 
-function test(params) {
-    
+function test($texte) {
+    console.log($texte);
 }
 
 setup();
