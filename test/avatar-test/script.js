@@ -35,6 +35,8 @@ function setup() {
         let img = `img/eye${i}.png`;
         eyes[i] = new Image(i, img);
     }
+
+    draw_avatar();
 }
 
 
