@@ -52,6 +52,9 @@
 										echo'<li><a href="./admin.php" class="dropdown-item">Gérer les utilisateurs</a></li>
 										</ul>';
 									}
+									else {
+									echo "c pas bon chef";
+									}
 								echo'</ul>
 						
 				</div>';
