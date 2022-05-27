@@ -43,7 +43,7 @@ function draw_avatar() {
     let img = document.createElement("img");
     img.setAttribute("height", `${height_canva}px`);
     img.setAttribute("width", `${width_canva}px`);
-    img.setAttribute("src", skins[current_skin]);
+    img.setAttribute("src", skins[current_skin].image);
 
     canva.appendChild(img);
 
@@ -51,7 +51,7 @@ function draw_avatar() {
     //eye drawing
     img.setAttribute("height", `${height_canva}px`);
     img.setAttribute("width", `${width_canva}px`);
-    img.setAttribute("src", skins[current_skin]);
+    img.setAttribute("src", skins[current_skin].image);
 
     canva.appendChild(img);
 }
@@ -108,3 +108,4 @@ function test(params) {
 }
 
 setup();
+draw_avatar();
