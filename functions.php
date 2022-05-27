@@ -59,8 +59,8 @@ function isAdmin() {
 	// }
 	// else {
 		$pdo = connectDB();
-		$queryPrepared = $pdo->prepare("SELECT role FROM USER WHERE TOKEN=:token");
-		$queryPrepared->execute(["token"=>$_SESSION["token"]]);
+		$queryPrepared = $pdo->prepare("SELECT role FROM USER WHERE MAIL=:email ");
+		$queryPrepared->execute(["email"=>$_SESSION["email"]]);
 		$resultat = $queryPrepared->fetch();
 		if ($resultat['role'] == 2){
 			return True;
