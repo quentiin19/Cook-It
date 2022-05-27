@@ -4,4 +4,6 @@ body {
 
 .avatar-part{
     position: absolute;
+    top: 0px;
+    left: 0px;
 }
