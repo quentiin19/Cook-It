@@ -49,6 +49,7 @@ function draw_avatar() {
     img_skin.setAttribute("src", skins[current_skin].image);
 
     canva.appendChild(img_skin);
+    console.log("skin drawn");
 
 
     //eye drawing
