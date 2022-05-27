@@ -39,6 +39,9 @@ function setup() {
 
 
 function draw_avatar() {
+    //reset de la canva
+    canva.innerHTML = "";
+
     //skin drawing
     let img_skin = document.createElement("img");
     img_skin.setAttribute("height", `${height_canva}px`);
@@ -110,4 +113,4 @@ function test($texte) {
 }
 
 setup();
-draw_avatar();
+//draw_avatar();
