@@ -57,21 +57,21 @@ function isAdmin() {
 	if(!isset($_SESSION["email"]) || !isset($_SESSION["token"])){
 		return false;
 	}
+	else {
+		$pdo = connectDB();
+		$queryPrepared = $pdo->prepare("SELECT ID FROM USER WHERE MAIL=:email AND TOKEN=:token");	
+		$queryPrepared->execute(["email"=>$_SESSION["email"], "token"=>$_SESSION["token"]]);
 	
-	$pdo = connectDB();
-	$queryPrepared = $pdo->prepare("SELECT role FROM USER WHERE MAIL=:email");
-	$queryPrepared->execute(["email"=>$_SESSION["email"]]);
-	$resultat = $queryPrepared->fetch();
-	if ($resultat['role'] == 2){
-		return True;
+		return $queryPrepared->fetch();
+		
+		$resultat = $queryPrepared->fetch();
+		
+		if ($resultat['role'] == 2){
+			return True;
+			}
+				
 	}
 	
-}
-
-function updateLogs($id, $action){
-	$pdo = connectDB();
-	$queryPrepared = $pdo->prepare("INSERT INTO LOGS (ID, DATE_LOGIN, ACTION) VALUES (:id , CURRENT_TIMESTAMP, :action);");
-	$queryPrepared->execute(["id"=>$id, "action"=>$action]);
 }
 
 

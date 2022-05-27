@@ -26,7 +26,7 @@
 				$_SESSION['token'] = $token;
 
 				//update des logs
-				updateLogs($results["ID"], "connexion");
+				// updateLogs($results["ID"], "connexion");
 
 				//redirection
 				header("location: index.php");
