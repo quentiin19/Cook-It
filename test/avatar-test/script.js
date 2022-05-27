@@ -6,8 +6,8 @@ class Image{
 }
 
 
-const height_canva = 300;
-const width_canva = 300;
+const height_canva = 200;
+const width_canva = 200;
 
 
 let skins = [];
