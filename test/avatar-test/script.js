@@ -40,20 +40,21 @@ function setup() {
 
 function draw_avatar() {
     //skin drawing
-    let img = document.createElement("img");
-    img.setAttribute("height", `${height_canva}px`);
-    img.setAttribute("width", `${width_canva}px`);
-    img.setAttribute("src", skins[current_skin].image);
+    let img_skin = document.createElement("img");
+    img_skin.setAttribute("height", `${height_canva}px`);
+    img_skin.setAttribute("width", `${width_canva}px`);
+    img_skin.setAttribute("src", skins[current_skin].image);
 
-    canva.appendChild(img);
+    canva.appendChild(img_skin);
 
 
     //eye drawing
-    img.setAttribute("height", `${height_canva}px`);
-    img.setAttribute("width", `${width_canva}px`);
-    img.setAttribute("src", skins[current_skin].image);
+    let img_eye = document.createElement("img");
+    img_eye.setAttribute("height", `${height_canva}px`);
+    img_eye.setAttribute("width", `${width_canva}px`);
+    img_eye.setAttribute("src", skins[current_skin].image);
 
-    canva.appendChild(img);
+    canva.appendChild(img_eye);
 }
 
 
