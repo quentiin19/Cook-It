@@ -10,7 +10,7 @@ if(!isConnected()){
 
 
 //Suppression du user en bdd
-$pdo = connectDB();
+// $pdo = connectDB();
 $queryPrepared = $pdo->prepare("DELETE FROM USER WHERE id=:id");
 $queryPrepared->execute(["id"=>$id]);
 
