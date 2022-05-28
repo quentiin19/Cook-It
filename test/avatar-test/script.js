@@ -18,6 +18,10 @@ let eyes = [];
 let current_eye = 0;
 const total_eyes = 3;
 
+let mouths = [];
+let current_mouth = 0;
+const total_mouths = 3;
+
 
 const canva = document.getElementById("avatar-canva");
 
@@ -34,6 +38,12 @@ function setup() {
     for (let i = 0; i < total_eyes; i++) {
         let img = `img/eye${i}.png`;
         eyes[i] = new Image(i, img);
+    }
+
+    //setup des images des bouches
+    for (let i = 0; i < total_mouths; i++) {
+        let img = `img/mouth${i}.png`;
+        mouths[i] = new Image(i, img);
     }
 
     draw_avatar();
@@ -62,6 +72,16 @@ function draw_avatar() {
     img_eye.setAttribute("src", eyes[current_eye].image);
 
     canva.appendChild(img_eye);
+
+
+    //mouth drawing
+    let img_mouth = document.createElement("img");
+    img_mouth.setAttribute("height", `${height_canva}px`);
+    img_mouth.setAttribute("width", `${width_canva}px`);
+    img_mouth.setAttribute("class", "avatar-part");
+    img_mouth.setAttribute("src", mouths[current_mouth].image);
+
+    canva.appendChild(img_mouth);
 }
 
 
@@ -102,6 +122,24 @@ function change_part($action) {
                 current_eye = current_eye + 1;
             }
             console.log(current_eye);
+            break;
+
+        case 'prev-mouth':
+            if (current_mouth == 0) {
+                current_mouth = total_mouths - 1;
+            }else{
+                current_mouth = current_mouth - 1;
+            }
+            console.log(current_mouth);
+            break;
+
+        case 'next-mouth':
+            if (current_mouth == total_mouths - 1) {
+                current_mouth = 0;
+            }else{
+                current_mouth = current_mouth + 1;
+            }
+            console.log(current_mouth);
             break;
 
 
