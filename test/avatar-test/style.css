@@ -1,3 +1,13 @@
 body {
     background-image: url('img/image1.png');
 }
+
+#avatar-canva{
+    position: relative;
+}
+
+.avatar-part{
+    position: absolute;
+    top: 0px;
+    left: 400px;
+}
