@@ -26,7 +26,7 @@ if (isConnected()) {
 								</div>
 								<div class="row">
 									<div class="col-lg-12 pb-3" >	
-										<?php include "avatar/avatar.php"; ?>
+										<?php //include "avatar/avatar.php"; ?>
 									</div>
 								</div>
 								<div class="row">
