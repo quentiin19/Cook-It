@@ -19,7 +19,7 @@
 			$temp = getimagesize($file_path);
 
 			//création d'une canvas de mêmes dimensions que l'image
-			imagecreate($temp[0], $temp[1]);
+			$img = imagecreate($temp[0], $temp[1]);
 
 
 			imagecopy($img, $file_path, 0, 0, 0, 0, $temp[0], $temp[1]);
