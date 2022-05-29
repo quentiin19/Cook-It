@@ -27,7 +27,7 @@
 											</div>
 										</div>
 										<div class="row">
-											<!-- <div class="col-lg-12 col-md-12 col-sm-12"> -->
+											<div class="col-lg-12 col-md-12 col-sm-12">
 												<div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-offset="0" class="scrollspy-example" tabindex="0">
 													<h4 id="scrollspyHeading1">First heading</h4>
 													<p>...</p>
@@ -40,10 +40,10 @@
 													<h4 id="scrollspyHeading5">Fifth heading</h4>
 													<p>...</p>
 												</div>
-											<!-- </div> -->
+											</div>
 										</div>
 										<div class="row">
-											<div class="col-lg-6 col-md-6">
+											<div class="col-lg-12 col-md-12">
 													<button class="btn btn-outline-light btn-lg px-2 " type="submit">Envoyer</button>
 											</div>
 										</div>
