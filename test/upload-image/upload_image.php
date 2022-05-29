@@ -5,7 +5,7 @@
 
 		$file_path = $_FILES['fichier']['tmp_name'];
 		$destination = '/var/www/html/ProjAnn/test/upload-image/files/'.$file_name;
-		$logo = imagecreatefrompng('images\bmw.png');
+		$logo = imagecreatefrompng('/var/www/html/ProjAnn/ressources/images/Utilitaires/logo.png');
 		
 		
 		
