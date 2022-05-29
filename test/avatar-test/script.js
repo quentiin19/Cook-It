@@ -87,7 +87,7 @@ function draw_avatar() {
 
 
     //configuration du lien pour le téléchargement
-    let link = `51.255.172.36/test/avatar-test/avatar_creation.php?skin=${current_skin}&eye=${current_eye}&mouth=${current_mouth}`;
+    let link = `avatar_creation.php?skin=${current_skin}&eye=${current_eye}&mouth=${current_mouth}`;
     download_button.setAttribute("href", link);
 }
 
