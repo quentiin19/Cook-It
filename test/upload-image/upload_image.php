@@ -16,7 +16,7 @@
 		
 		if(in_array($extension, $extension_authorised)){
 			//récupération des dimensions de l'image
-			$temp = getimagesize($file_name);
+			$temp = getimagesize($file_path);
 
 			//création d'une canvas de mêmes dimensions que l'image
 			imagecreate($temp[0], $temp[1]);
