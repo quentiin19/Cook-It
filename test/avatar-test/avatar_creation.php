@@ -11,4 +11,4 @@ $mouth = imagecreatefrompng("img/mouth".$_GET['mouth'].".png");
 imagecopy($avatar, $eye, 0, 0, 0, 0, 300, 300);
 imagecopy($avatar, $mouth, 0, 0, 0, 0, 300, 300);
 
-imagepng($avatar, "img/avatar.png");
+imagepng($avatar, "avatars/avatar.png");
