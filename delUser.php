@@ -14,6 +14,8 @@ $pdo = connectDB();
 $queryPrepared = $pdo->prepare("DELETE FROM USER WHERE id=:id");
 $queryPrepared->execute(["id"=>$id]);
 
+updateLogs($id, 'suppression');
+
 //Si c'est le user actuellement connecté je le deco
 if ($_SESSION['id'] == $id){
 	header("Location: logout.php");
