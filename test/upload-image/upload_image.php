@@ -1,6 +1,7 @@
 <?php
 	if(!empty($_FILES)){
 		$file_name = $_FILES['fichier']['name'];
+		echo $file_name;
 		$extension = strrchr($file_name, ".");
 
 		$file_path = $_FILES['fichier']['tmp_name'];
