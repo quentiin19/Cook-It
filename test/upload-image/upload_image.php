@@ -1,9 +1,11 @@
 <?php
 	if(!empty($_FILES)){
 		$file_name = $_FILES['fichier']['name'];
+		echo $file_name;
 		$extension = strrchr($file_name, ".");
 
 		$file_path = $_FILES['fichier']['tmp_name'];
+		echo $file_path;
 		$destination = '/var/www/html/ProjAnn/test/upload-image/files/'.$file_name;
 		$logo = imagecreatefrompng('sources/logo.png');
 		
@@ -15,10 +17,10 @@
 		
 		if(in_array($extension, $extension_authorised)){
 			//récupération des dimensions de l'image
-			$temp = getimagesize($file_name);
+			$temp = getimagesize($file_path);
 
 			//création d'une canvas de mêmes dimensions que l'image
-			imagecreate($temp[0], $temp[1]);
+			$img = imagecreate($temp[0], $temp[1]);
 
 
 			imagecopy($img, $file_path, 0, 0, 0, 0, $temp[0], $temp[1]);
