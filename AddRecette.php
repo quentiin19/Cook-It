@@ -19,18 +19,17 @@
 										<input type="text" class="form-control my-3" name="recette" placeholder="Nom de la recette" required="required"><br>
 										<div class="row">
 											<h3 class="text-center py-3">Ajouter une image à ma recette </h3>
-											<form method="POST" enctype="multipart/form-data">
-												<div class="col-lg-6 col-md-6 text-center">
-													<input type="file" name="fichier" required="required"> <br>
-												</div>
-												<div class="col-lg-6 col-md-6  ">
-													<button class="btn btn-outline-light btn-lg px-2 " type="submit">Envoyer</button>
-												</div>
-											</form>
+												<input type="file" name="fichier" required="required"> <br>
+											
 										</div>
 										<div class="row">
 											<div class="col-lg-12 col-md-12 col-sm-12 input-group  ">
 												<textarea class="form-control" aria-label="With textarea" placeholder="Votre Recette" name="recette_description" required="required"></textarea>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-lg-6 col-md-6 ">
+													<button class="btn btn-outline-light btn-lg px-2 " type="submit">Envoyer</button>
 											</div>
 										</div>
 									</form>
