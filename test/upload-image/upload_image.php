@@ -6,7 +6,7 @@
 
 		$file_path = $_FILES['fichier']['tmp_name'];
 		echo $file_path;
-		$destination = '/var/www/html/ProjAnn/test/upload-image/files/'.$file_name;
+		$destination = '/var/www/html/ProjAnn/test/upload-image/uploaded_images/';
 		$logo = imagecreatefrompng('sources/logo.png');
 		
 		
@@ -23,7 +23,7 @@
 			$img = imagecreate($temp[0], $temp[1]);
 
 
-			imagecopy($img, $file_path, 0, 0, 0, 0, $temp[0], $temp[1]);
+			imagecopy($img, $file_path.$file_name, 0, 0, 0, 0, $temp[0], $temp[1]);
 			imagecopy($img, $logo, 20, 20, 0, 0, 250, 250);
 
 			if(move_uploaded_file($file_path, $destination)){
