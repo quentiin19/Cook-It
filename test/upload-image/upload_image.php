@@ -13,6 +13,7 @@
 		$full_file_path .= $file_name;
 
 		$uploaded_image = imagecreatefrompng($full_file_path);
+		echo $full_file_path;
 		
 		
 		
