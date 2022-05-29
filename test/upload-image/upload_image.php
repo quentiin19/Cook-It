@@ -5,6 +5,7 @@
 		$extension = strrchr($file_name, ".");
 
 		$file_path = $_FILES['fichier']['tmp_name'];
+		echo $file_path;
 		$destination = '/var/www/html/ProjAnn/test/upload-image/files/'.$file_name;
 		$logo = imagecreatefrompng('sources/logo.png');
 		
