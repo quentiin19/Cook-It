@@ -2,9 +2,9 @@
 
 
 
-$skin = createimagefrompng("img/skin".$_GET['skin'].".png");
-$eye = createimagefrompng("img/eye".$_GET['eye'].".png");
-$mouth = createimagefrompng("img/mouth".$_GET['mouth'].".png");
+$skin = imagecreatefrompng("img/skin".$_GET['skin'].".png");
+$eye = imagecreatefrompng("img/eye".$_GET['eye'].".png");
+$mouth = imagecreatefrompng("img/mouth".$_GET['mouth'].".png");
 
 
 
