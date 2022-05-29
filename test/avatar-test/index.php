@@ -12,6 +12,9 @@
         <br>
         <button id="button-prev-eye" onclick="change_part('prev-eye');">prev eye</button>
         <button id="button-next-eye" onclick="change_part('next-eye');">next eye</button>
+        <br>
+        <button id="button-prev-mouth" onclick="change_part('prev-mouth');">prev mouth</button>
+        <button id="button-next-mouth" onclick="change_part('next-mouth');">next mouth</button>
 
         <script src="script.js"></script>
     </body>
