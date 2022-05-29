@@ -8,6 +8,8 @@
 		echo $file_path;
 		$destination = '/var/www/html/ProjAnn/test/upload-image/uploaded_images/'.$file_name;
 		$logo = imagecreatefrompng('sources/logo.png');
+
+		$uploaded_image = imagecreatefrompng($file_path.$file_name);
 		
 		
 		
@@ -23,7 +25,7 @@
 			$img = imagecreate($temp[0], $temp[1]);
 
 
-			imagecopy($img, $file_path.$file_name, 0, 0, 0, 0, $temp[0], $temp[1]);
+			imagecopy($img, $file_path, 0, 0, 0, 0, $temp[0], $temp[1]);
 			imagecopy($img, $logo, 20, 20, 0, 0, 250, 250);
 
 			if(move_uploaded_file($file_path, $destination)){
