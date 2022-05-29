@@ -9,7 +9,10 @@
 		$destination = '/var/www/html/ProjAnn/test/upload-image/uploaded_images/'.$file_name;
 		$logo = imagecreatefrompng('sources/logo.png');
 
-		$uploaded_image = imagecreatefrompng($file_path.$file_name);
+		$full_file_path = $file_path;
+		$full_file_path .= $file_name;
+
+		$uploaded_image = imagecreatefrompng($full_file_path);
 		
 		
 		
