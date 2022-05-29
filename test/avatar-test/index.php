@@ -15,6 +15,9 @@
         <br>
         <button id="button-prev-mouth" onclick="change_part('prev-mouth');">prev mouth</button>
         <button id="button-next-mouth" onclick="change_part('next-mouth');">next mouth</button>
+        <br><br>
+        <a id="avatar-download-button" href="">Télécharger l'avatar</a>
+
 
         <script src="script.js"></script>
     </body>

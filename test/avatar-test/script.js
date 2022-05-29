@@ -24,6 +24,8 @@ const total_mouths = 3;
 
 
 const canva = document.getElementById("avatar-canva");
+const download_button = document.getElementById("avatar-download-button");
+
 
 
 
@@ -82,6 +84,10 @@ function draw_avatar() {
     img_mouth.setAttribute("src", mouths[current_mouth].image);
 
     canva.appendChild(img_mouth);
+
+
+    //configuration du lien pour le téléchargement
+    let link = `51.255.172.36/test/avatar-test/avatar_creation.php?skin=${current_skin}&eye=${current_eye}&mouth=${current_mouth}`;
 }
 
 
