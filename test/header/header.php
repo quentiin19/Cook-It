@@ -18,6 +18,7 @@
 		<link rel="icon" href="../ressources/images/Utilitaires/logo.ico">
 		<title>Cook'It</title>
 	</head>
+    
 	<body class="h-auto bg-couleur">
 		<header>
 
@@ -37,34 +38,19 @@
 				<?php 
 				if (isConnected()){
 				echo'<div class="col-lg-1 col-md-2 position-absolute align-self-center end-0 ">
-								<a href="#" class="nav-link dropdown-toggle text-white" data-bs-toggle="dropdown">Mon profil</a>
-								<ul class="dropdown-menu">
-									<li><a href="#" class="dropdown-item">Mes abonnements</a></li>
-									<li><a href="#" class="dropdown-item">Mes recettes</a></li>
-									<li><a href="#" class="dropdown-item">Modifier mon profil</a></li>
-									<li><a href="./profil.php" class="dropdown-item">Consulter mon profil</a></li>
-									<li><a href="logout.php" class="dropdown-item">Se déconnecter</a></li>';
-									
-									if (isAdmin()) {
-										echo'<li><a href="./admin.php" class="dropdown-item">Gérer les utilisateurs</a></li>
-										</ul>';
-									}
-									else {
-									echo "c pas bon chef";
-									}
-								echo'</ul>
-						
+						<button id="burger-menu-button">Photo de profil</button>
+                        <?php include "./ressources/menu.php"; ?>
 				    </div>';
                 }else{
                     echo'<div class="col-lg-2 col-md-2  align-self-center text-right ">
                                 <a href="./login.php" class=" text-white">Se Connecter</a>
                         </div>
-                        
                         <div class="col-lg-1 col-md-2  align-self-center ">
                                 <a href="./SignUp.php" class="text-white">S\'inscrire</a>	
                         </div>';
                 }
                 ?>
+                <script src="./script.js"></script>
 
                 <div class="container-fluid ">
                     <nav class="navbar navbar-expand-md  ">
