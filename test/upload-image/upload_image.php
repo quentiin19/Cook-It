@@ -8,7 +8,7 @@
 		$file_path = $_FILES['fichier']['tmp_name'];
 
 		//destination que l'on souhaite pour fichier
-		$destination = '/var/www/html/ProjAnn/test/upload-image/uploaded_images/'.$file_name;
+		$destination = '/var/www/html/ProjAnn/test/upload-image/uploaded_images/';
 
 		//extention du fichier
 		$extension = strrchr($file_name, ".");
