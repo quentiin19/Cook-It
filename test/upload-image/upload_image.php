@@ -1,6 +1,14 @@
 <?php
 	if(!empty($_FILES)){
 		//enregistrement de l'image sur le serveur
+		//nom du fichier
+		$file_name = $_FILES['fichier']['name'];
+	
+		//emplacement du fichier
+		$file_path = $_FILES['fichier']['tmp_name'];
+
+		//destination que l'on souhaite pour fichier
+		$destination = '/var/www/html/ProjAnn/test/upload-image/uploaded_images/'.$file_name;
 
 		//extention du fichier
 		$extension = strrchr($file_name, ".");
@@ -15,16 +23,7 @@
 		
 		//si le fichier est une image autorisé
 		if(in_array($extension, $extension_authorised)){
-			//nom du fichier
-			$file_name = $_FILES['fichier']['name'];
-	
-			//emplacement du fichier
-			$file_path = $_FILES['fichier']['tmp_name'];
-	
-			//destination que l'on souhaite pour fichier
-			$destination = '/var/www/html/ProjAnn/test/upload-image/uploaded_images/'.$file_name;
-
-
+			
 			if(move_uploaded_file($_FILES['fichier']['tmp_name'], $destination)){
 				echo "Envoyé !";
 
