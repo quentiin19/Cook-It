@@ -8,7 +8,7 @@
 		$file_path = $_FILES['fichier']['tmp_name'];
 
 		//destination que l'on souhaite pour fichier
-		$destination = '/var/www/html/ProjAnn/test/upload-image/uploaded_images/'.$file_name;
+		$destination = '/var/www/html/ProjAnn/test/upload-image/uploaded_images/';
 
 		//extention du fichier
 		$extension = strrchr($file_name, ".");
@@ -18,31 +18,39 @@
 
 
 
-		
-
-		
 		//si le fichier est une image autorisé
 		if(in_array($extension, $extension_authorised)){
 			echo "test";
 			
-			if(move_uploaded_file($_FILES['fichier']['tmp_name'], $destination)){
+			if(move_uploaded_file($_FILES['fichier']['tmp_name'], $destination.$file_name)){
 				echo "Envoyé !";
 
 				//création du filigranne
 				$logo = imagecreatefrompng('sources/logo.png');
 
 				//création de l'image de base
-				$img = imagecreatefrompng($destination);
-
-				//récupération des dimensions de l'image
-				$temp = getimagesize($file_path);
+				$img = imagecreatefrompng($destination.$file_name);
 
 				//création d'une canvas de mêmes dimensions que l'image
-				$img_size = imagecreate($temp[0], $temp[1]);
+				$final_img = imagecreate(imagesx($img), imagesy($img));
 
 
-				imagecopy($img, $file_path, 0, 0, 0, 0, $temp[0], $temp[1]);
-				imagecopy($img, $logo, 20, 20, 0, 0, 250, 250);
+				imagecopy($final_img, $img, 0, 0, 0, 0, $temp[0], $temp[1]);
+				imagecopy($final_img, $logo, 20, 20, 0, 0, 250, 250);
+
+				//nom final du fichier (id de la recette et index de l'image) - A CHANGER
+				$final_file_name = "1_1.png";
+
+				//suppression de l'ancien fichier
+				unlink($destination);
+
+				//création de l'image
+				imagepng($final_img, $destination.$final_file_name);
+
+				//libération de la mémoire
+				imagedestroy($logo);
+				imagedestroy($img);
+				imagedestroy($final_img);
 
 			}
 
