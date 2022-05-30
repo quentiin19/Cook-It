@@ -24,16 +24,12 @@
 
 			 <div class=" bg-color  p-2 row align-self-center" >
 				<div class="col-lg-3 col-md-3">
-					<a href="index.php"><button type="button" class="btn text-white btn-lg"><img src="./ressources/images/logo.png" height ="80vh" width="100vw" />Cook'IT</button></a>
+					<a href="index.php"><button type="button" class="btn text-white btn-lg"><img src="./ressources/images/utilitaires/logo.png" height ="80vh" width="100vw" />Cook'IT</button></a>
 				</div>
 				<div class="col-lg-6 col-md-4 text-center align-self-center">
 					<h1>Cook'It</h1>
 				</div>
-				<!-- <div class="col-lg-2 col-md-3">
-					<div class="text-right">
-						<img href="#" src="images/mode_nuit.png" height ="80vh" width="150vw" />	
-					</div> 
-				</div> -->
+
 				<!-- <?php
 					$_SESSION['pseudo'] = $pseudo;
 				?> -->

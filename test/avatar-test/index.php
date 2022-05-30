@@ -4,12 +4,21 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <div id="1">
-            <img src="img/image1.png" height="300px" width="300px"></img>
+        <div id="avatar-canva">
         </div>
-        <div id="2">
-            <img src="img/image2.png" height="300px" width="300px"></img>
-        </div>
-        <button id="button">changer</button>
+        <br>
+        <button id="button-prev-skin" onclick="change_part('prev-skin');">prev skin</button>
+        <button id="button-next-skin" onclick="change_part('next-skin');">next skin</button>
+        <br>
+        <button id="button-prev-eye" onclick="change_part('prev-eye');">prev eye</button>
+        <button id="button-next-eye" onclick="change_part('next-eye');">next eye</button>
+        <br>
+        <button id="button-prev-mouth" onclick="change_part('prev-mouth');">prev mouth</button>
+        <button id="button-next-mouth" onclick="change_part('next-mouth');">next mouth</button>
+        <br><br>
+        <a id="avatar-download-button" href="">Télécharger l'avatar</a>
+
+
+        <script src="script.js"></script>
     </body>
 </html>
