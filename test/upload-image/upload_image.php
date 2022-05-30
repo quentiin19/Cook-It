@@ -36,7 +36,7 @@
 
 
 				imagecopy($final_img, $img, 0, 0, 0, 0, imagesx($img), imagesy($img));
-				imagecopy($final_img, $logo, 20, 20, 0, 0, 250, 250);
+				imagecopy($final_img, $logo, 0, 0, 0, 0, 50, 50);
 
 				//nom final du fichier (id de la recette et index de l'image) - A CHANGER
 				$final_file_name = "1_1.png";
