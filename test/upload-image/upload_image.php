@@ -35,14 +35,14 @@
 				$final_img = imagecreate(imagesx($img), imagesy($img));
 
 
-				imagecopy($final_img, $img, 0, 0, 0, 0, $temp[0], $temp[1]);
+				imagecopy($final_img, $img, 0, 0, 0, 0, imagesx($img), imagesy($img));
 				imagecopy($final_img, $logo, 20, 20, 0, 0, 250, 250);
 
 				//nom final du fichier (id de la recette et index de l'image) - A CHANGER
 				$final_file_name = "1_1.png";
 
 				//suppression de l'ancien fichier
-				unlink($destination);
+				unlink($destination.$file_name);
 
 				//création de l'image
 				imagepng($final_img, $destination.$final_file_name);
