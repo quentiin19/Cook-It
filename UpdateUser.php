@@ -69,3 +69,6 @@ $hashpwd= password_hash($pwd, PASSWORD_DEFAULT);
 $queryPrepared = $pdo->prepare("Update USER SET PSEUDO =:pseudo, HASHPWD =:hashpwd, FIRSTNAME =:firstname, LASTNAME =:lastname WHERE ID =:id");
 $queryPrepared->execute(["pseudo"=> $pseudo, "hashpwd"=> $hashpwd, "fistname"=>$firstname, "lastname"=>$lastname, "id"=>$id ]);
 
+
+//update des logs
+updateLogs($results["ID"], "modification du profil");
