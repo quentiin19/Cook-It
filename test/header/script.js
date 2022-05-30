@@ -5,6 +5,9 @@ button.addEventListener("click", changeState, false);
 
 function changeState() {
 
-    console.log("test");
+    menu.hidden = menu.hidden ? false : true;
+    menu.style.zIndex = menu.hidden ? -1 : 100;
+
+    console.log("le menu à changé d'état");
     
 }
