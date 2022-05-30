@@ -3,9 +3,8 @@ const menu = document.getElementById("burger-menu");
 
 button.addEventListener("click", changeState(), false);
 
-function changeState(event) {
+function changeState() {
 
-  event.preventDefault();
     console.log("test");
     
 }
