@@ -24,7 +24,7 @@
 		//si le fichier est une image autorisé
 		if(in_array($extension, $extension_authorised)){
 			
-			if(move_uploaded_file($_FILES['fichier']['name'], $destination)){
+			if(move_uploaded_file($_FILES['fichier']['tmp_name'], $destination)){
 				echo "Envoyé !";
 
 				//création du filigranne
