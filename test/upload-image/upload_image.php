@@ -23,6 +23,7 @@
 		
 		//si le fichier est une image autorisé
 		if(in_array($extension, $extension_authorised)){
+			echo "test";
 			
 			if(move_uploaded_file($_FILES['fichier']['tmp_name'], $destination)){
 				echo "Envoyé !";
