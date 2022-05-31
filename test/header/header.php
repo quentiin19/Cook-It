@@ -38,8 +38,9 @@
 				
 				<div class="col-lg-1 col-md-2 position-absolute align-self-center end-0 ">
                     <button id="burger-menu-button">Photo de profil</button>
-                    <?php include "./ressources/menu.php"; ?>
 				</div>
+                    <?php include "./ressources/menu.php"; ?>
+				
                 
                 <script src="./script.js"></script>
 
