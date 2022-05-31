@@ -32,11 +32,9 @@
 					<h1>Cook'It</h1>
 				</div>
 
-				<!-- <?php
-					$_SESSION['pseudo'] = $pseudo;
-				?> -->
 				
-				<div class="col-lg-1 col-md-2 position-absolute align-self-center end-0 ">
+				
+				<div class="col-lg-1 col-md-2 align-self-center end-0 ">
                     <button id="burger-menu-button">Photo de profil</button>
 				</div>
                     <?php include "./ressources/menu.php"; ?>
