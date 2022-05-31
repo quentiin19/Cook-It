@@ -1,5 +1,4 @@
 <div id="burger-menu" hidden>
-    Test
     <div class="container-fluid ">
         <nav class="navbar navbar-expand-md  ">
             <div class="container-fluid">
