@@ -29,7 +29,7 @@
                     <button id="burger-menu-button">Photo de profil</button>
 				</div>
 				
-				<div class="col-lg-8 col-md-8 col-sm-1 text-center align-self-center">
+				<div class="col-lg-8 col-md-8 col-sm-0 text-center align-self-center">
 					<h1>Cook'It</h1>
 				</div>
 
