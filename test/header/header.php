@@ -43,6 +43,7 @@
 				
                 
                 <script src="./script.js"></script>
+				<img src="../../ressources/images/Desserts/dessert1.jpeg">
 
                 
 
