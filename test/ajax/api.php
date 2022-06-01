@@ -16,14 +16,14 @@ class API{
         
 
 
-
-        return json_encode($results);
+        echo $results;
+        //return json_encode($results);
 
     }
 }
 
 $API = new API;
-header('Content-Type: application/json');
+//header('Content-Type: application/json');
 echo $API->ReturnRecipe($_GET['keywords']);
 
 
