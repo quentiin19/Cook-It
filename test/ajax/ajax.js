@@ -14,7 +14,7 @@ search_button.addEventListener("click", onclick, false);
 function onclick() {
     //récupération de la valeur dans la barre de recherche
     console.log("test");
-    var keywords = search_bar.value();
+    var keywords = search_bar.value;
 
     console.log(keywords);
 
