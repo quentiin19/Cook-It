@@ -9,8 +9,8 @@ class API{
 
         $array_key_words = explode('-', $key_words);
 
-        $queryPrepared = $pdo->prepare("SELECT * FROM RECIPES WHERE TITLE LIKE '%:tarte%';");
-        $queryPrepared->execute(["word"=>$key_words]);
+        $queryPrepared = $pdo->prepare("SELECT * FROM RECIPES WHERE TITLE LIKE '%tarte%';");
+        $queryPrepared->execute();
         $results = $queryPrepared->fetchAll();
 
         
