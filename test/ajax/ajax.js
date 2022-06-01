@@ -20,7 +20,7 @@ function onclick() {
 
     //envoi de la requete
     request.addEventListener("load", display_results);
-    request.open("GET", `http://localhost/test/ajax/api.php?keywords=${keywords}`);
+    request.open("GET", `http://51.255.172.36/test/ajax/api.php?keywords=${keywords}`);
     request.send();
 
     console.log("requete envoyée");
