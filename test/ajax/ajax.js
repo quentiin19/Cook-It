@@ -8,7 +8,7 @@ const result_ajax = document.getElementById("result_ajax");
 var coor_sb = search_bar.getBoundingClientRect();
 
 //écouteurs
-search_button.addEventListener("click", onclick);
+search_button.addEventListener("click", onclick, false);
 
 
 function onclick() {
