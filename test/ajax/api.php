@@ -11,7 +11,7 @@ class API{
 
         $queryPrepared = $pdo->prepare("SELECT * FROM RECIPES WHERE TITLE LIKE '%:word%';");
         $queryPrepared->execute(["word"=>$key_words]);
-        $results = $queryPrepared->fetch();
+        $results = $queryPrepared->fetchAll();
 
         
 
