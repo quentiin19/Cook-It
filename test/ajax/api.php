@@ -11,7 +11,7 @@ class API{
 
         $queryPrepared = $pdo->prepare("SELECT * FROM RECIPES WHERE TITLE LIKE '%Boeuf%';");
         $queryPrepared->execute();
-        $results = $queryPrepared->fetchAll();
+        $results = $queryPrepared->fetch();
 
         
 
