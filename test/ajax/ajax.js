@@ -7,6 +7,9 @@ const result_ajax = document.getElementById("result_ajax");
 //récupération des coordonnées de la barre de recherche
 var coor_sb = search_bar.getBoundingClientRect();
 
+//écouteurs
+search_button.addEventListener("click", onclick);
+
 
 function onclick() {
     //récupération de la valeur dans la barre de recherche
@@ -24,5 +27,5 @@ function onclick() {
 }
 
 function display_results() {
-    
+    console.log(request.responseXML);
 }
