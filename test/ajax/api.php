@@ -38,8 +38,8 @@ class API{
         
 
 
-        //print_r($results);
-        return json_encode($results);
+        print_r($results);
+        //return json_encode($results);
 
     }
 }
