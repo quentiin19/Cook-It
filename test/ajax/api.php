@@ -37,8 +37,9 @@ class API{
         */
         
 
-
+        print "<pre>";
         print_r($results);
+        print "</pre>";
         //return json_encode($results);
 
     }
