@@ -17,11 +17,18 @@ class API{
             $results[$index] = $queryPrepared->fetchAll();
         }
 
-        for ($i = 0; $i < count($array_key_words); $i++) { 
-            
-        }
 
         //clean de la recherche (retirer les recettes qui sont en plusieurs itérations)
+        /*
+        for ($i = 0; $i < count($results[0]); $i++) { 
+            for ($j = 0; $j < count($results); $j++) { 
+                for ($k = 0; $k < count($results[0]); $k++) { 
+                    
+                }
+            }
+        }
+        */
+
 
 
 
@@ -36,17 +43,19 @@ class API{
         $results = $queryPrepared->fetchAll();
         */
         
-
+        /*
         print "<pre>";
         print_r($results);
         print "</pre>";
-        //return json_encode($results);
+        */
+
+        return json_encode($results);
 
     }
 }
 
 $API = new API;
-//header('Content-Type: application/json');
+header('Content-Type: application/json');
 echo $API->ReturnRecipe($_GET['keywords']);
 
 
