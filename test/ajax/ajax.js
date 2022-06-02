@@ -28,5 +28,5 @@ function onclick() {
 }
 
 function display_results() {
-    console.log(request.responseXML);
+    console.log(request.responseXML.children[0]);
 }
