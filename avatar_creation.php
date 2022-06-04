@@ -29,5 +29,12 @@ $queryPrepared = $pdo->prepare("INSERT INTO USER (PATH_AVATAR) VALUES (:path) wh
 $queryPrepared->execute(["path"=>$path, "id"=>$_SESSION['id']]);
 
 
+//------------------------
+//rajouter la possiblité de changer d'avatar en faisant une requetes en bdd pour voir s'il existe déjà un avatar ou non (si oui ne pas faire un insert, faire un modify)
+//------------------------
+
+
 header("Location: index.php");
+
+
 
