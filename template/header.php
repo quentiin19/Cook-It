@@ -38,8 +38,8 @@
 								<ul class="dropdown-menu">
 									<li><a href="#" class="dropdown-item">Mes abonnements</a></li>
 									<li><a href="#" class="dropdown-item">Mes recettes</a></li>
-									<li><a href="#" class="dropdown-item">Modifier mon profil</a></li>
-									<li><a href="./profil.php" class="dropdown-item">Consulter mon profil</a></li>
+									<li><a href="./profil.php" class="dropdown-item">Modifier mon profil</a></li>
+									<li><a href="./avatar.php" class="dropdown-item">Modifier mon Avatar</a></li>
 									<li><a href="logout.php" class="dropdown-item">Se déconnecter</a></li>';
 									
 									if (isAdmin()) {
