@@ -25,8 +25,8 @@ imagedestroy($mouth);
 $path = "/var/www/html/ProjAnn/ressources/images/avatars/".$_SESSION['id'].".png";
 
 $pdo = connectDB();
-$queryPrepared = $pdo->prepare("INSERT INTO USER (PATH_AVATAR) VALUES (:path);");
-$queryPrepared->execute(["path"=>$path]);
+$queryPrepared = $pdo->prepare("INSERT INTO USER (PATH_AVATAR) VALUES (:path) where ID = :id;");
+$queryPrepared->execute(["path"=>$path, "id"=>$_SESSION['id']]);
 
 
 header("Location: index.php");
