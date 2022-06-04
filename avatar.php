@@ -72,6 +72,6 @@
 			<div class="col-lg-2 col-md-1 col-sm-0"></div>
 </div>
 
-<script src="script.js"></script>
+<script src="ressources/js/avatar.js"></script>
 
 
