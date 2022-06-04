@@ -38,13 +38,13 @@ function setup() {
 
     //setup des images des yeux
     for (let i = 0; i < total_eyes; i++) {
-        let img = `ressources/images/avatar-parts/img/eye${i}.png`;
+        let img = `ressources/images/avatar-parts/eye${i}.png`;
         eyes[i] = new Image(i, img);
     }
 
     //setup des images des bouches
     for (let i = 0; i < total_mouths; i++) {
-        let img = `ressources/images/avatar-parts/img/mouth${i}.png`;
+        let img = `ressources/images/avatar-parts/mouth${i}.png`;
         mouths[i] = new Image(i, img);
     }
 
