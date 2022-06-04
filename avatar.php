@@ -1,4 +1,4 @@
-<?php include "../../template/header.php";?>
+<?php include "template/header.php";?>
 <!-- <link href="style.css" rel="stylesheet"> -->
 
 <div class="row">
