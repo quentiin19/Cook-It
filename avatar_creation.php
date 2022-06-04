@@ -14,7 +14,7 @@ imagecopy($avatar, $eye, 0, 0, 0, 0, 300, 300);
 imagecopy($avatar, $mouth, 0, 0, 0, 0, 300, 300);
 
 //création du fichier image qui portera comme nom l'id du user
-imagepng($avatar, "/var/www/html/ProjAnn/ressources/images/avatars/".$_SESSION['id'].".png");
+imagepng($avatar, "ressources/images/avatars/".$_SESSION['id'].".png");
 
 //libération de la mémoire
 imagedestroy($avatar);
