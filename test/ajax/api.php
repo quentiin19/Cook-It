@@ -19,7 +19,6 @@ class API{
 
 
         //clean de la recherche (retirer les recettes qui sont en plusieurs itérations)
-        /*
         for ($i = 0; $i < count($results[0]); $i++) { 
             for ($j = 0; $j < count($results); $j++) { 
                 for ($k = 0; $k < count($results[0]); $k++) { 
@@ -27,7 +26,7 @@ class API{
                 }
             }
         }
-        */
+        
 
 
 
