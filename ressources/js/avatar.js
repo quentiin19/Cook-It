@@ -60,7 +60,7 @@ function draw_avatar() {
     let img_skin = document.createElement("img");
     img_skin.setAttribute("height", `${height_canva}px`);
     img_skin.setAttribute("width", `${width_canva}px`);
-    img_skin.setAttribute("class", "avatar-part");
+    img_skin.setAttribute("class", "avatar-skin");
     img_skin.setAttribute("src", skins[current_skin].image);
 
     canva.appendChild(img_skin);
