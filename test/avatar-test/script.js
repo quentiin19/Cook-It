@@ -20,7 +20,7 @@ const total_eyes = 3;
 
 let mouths = [];
 let current_mouth = 0;
-const total_mouths = 4;
+const total_mouths = 2;
 
 
 const canva = document.getElementById("avatar-canva");
