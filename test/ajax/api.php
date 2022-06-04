@@ -49,9 +49,7 @@ class API{
         print "</pre>";
         */
 
-        for ($i = 0; $i < count($results); $i++) { 
-            $results[$i] = json_encode($results[$i]);
-        }
+        
         return json_encode($results);
 
     }
