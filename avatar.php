@@ -23,7 +23,7 @@
                                     </div>
 
                                     <!-- Peau -->
-                                    <div class="row">
+                                    <div class="row py-3">
                                         <div class= "col-lg-4 col-md-4">
                                             <button type="button" class="btn btn-secondary btn-lg" id="button-prev-skin" onclick="change_part('prev-skin');"><</button>
                                         </div>
@@ -36,7 +36,7 @@
                                     </div>
 
                                     <!-- Yeux -->
-                                    <div class="row">
+                                    <div class="row py-3">
                                         <div class= "col-lg-4 col-md-4">
                                             <button type="button" class="btn btn-secondary btn-lg" id="button-prev-eye" onclick="change_part('prev-eye');"><</button>
                                         </div>
@@ -49,7 +49,7 @@
                                     </div>
 
                                     <!-- Bouche -->
-                                    <div class="row">
+                                    <div class="row py-3">
                                         <div class= "col-lg-4 col-md-4">
                                             <button type="button" class="btn btn-secondary btn-lg" id="button-prev-mouth" onclick="change_part('prev-mouth');"><</button>
                                         </div>
