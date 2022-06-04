@@ -32,19 +32,19 @@ const download_button = document.getElementById("avatar-download-button");
 function setup() {
     //setup des images des couleurs de peau
     for (let i = 0; i < total_skins; i++) {
-        let img = `img/skin${i}.png`;
+        let img = `ressources/images/avatar-parts/skin${i}.png`;
         skins[i] = new Image(i, img);
     }
 
     //setup des images des yeux
     for (let i = 0; i < total_eyes; i++) {
-        let img = `img/eye${i}.png`;
+        let img = `ressources/images/avatar-parts/img/eye${i}.png`;
         eyes[i] = new Image(i, img);
     }
 
     //setup des images des bouches
     for (let i = 0; i < total_mouths; i++) {
-        let img = `img/mouth${i}.png`;
+        let img = `ressources/images/avatar-parts/img/mouth${i}.png`;
         mouths[i] = new Image(i, img);
     }
 
