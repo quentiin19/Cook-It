@@ -157,9 +157,4 @@ function change_part($action) {
     draw_avatar();
 }
 
-function test($texte) {
-    console.log($texte);
-}
-
 setup();
-//draw_avatar();
