@@ -1,5 +1,5 @@
 <?php include "../../template/header.php";?>
-<link href="style.css" rel="stylesheet">
+<!-- <link href="style.css" rel="stylesheet"> -->
 
 <div class="row">
 
