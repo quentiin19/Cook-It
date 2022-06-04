@@ -21,13 +21,14 @@
                                         <div class="col-lg-2 col-md-2">
                                         </div>
                                     </div>
+                                    <br>
 
                                     <!-- Peau -->
                                     <div class="row py-3">
                                         <div class= "col-lg-4 col-md-4">
                                             <button type="button" class="btn btn-secondary btn-lg" id="button-prev-skin" onclick="change_part('prev-skin');"><</button>
                                         </div>
-                                        <div class= "col-lg-4 col-md-4 text-white text-center">
+                                        <div class= "col-lg-4 col-md-4 d-flex text-white text-center justify-content-center">
                                             <p> Couleur de Peau </p>
                                         </div>
                                         <div class= "col-lg-4 col-md-4">
