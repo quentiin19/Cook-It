@@ -31,7 +31,7 @@ $result = $queryPrepared->execute(["id"=>$_SESSION['id']]);
 
 //si un avatar n'est pas encore définit
 if (empty($result['PATH_AVATAR'])) {
-    $queryPrepared = $pdo->prepare("INSERT INTO USER (PATH_AVATAR) VALUES (:path) WHERE ID = :id;");
+    $queryPrepared = $pdo->prepare("UPDATE USER SET PATH_AVATAR=:path WHERE ID = :id;");
     $queryPrepared->execute(["path"=>$path, "id"=>$_SESSION['id']]);
 
 //sinon, nous modifions l'avatar
