@@ -12,7 +12,7 @@
 		$queryPrepared->execute(["email"=>$_POST['email']]);
 		$results = $queryPrepared->fetch();
 		
-		if($results['role']==1){
+		if($results['role'] >=1){
 			echo $_POST['pwd'];
 			echo  $results['HASHPWD'];
 			if(!empty($results) && password_verify($_POST['pwd'], $results['HASHPWD'])){
