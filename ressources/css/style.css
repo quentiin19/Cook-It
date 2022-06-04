@@ -45,3 +45,15 @@ border-radius:7px;
 }
 
 /*----- Captcha -----*/
+
+/*----- Avatar ------*/
+
+#avatar-canva{
+    position: relative;
+}
+
+.avatar-part{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
