@@ -19,7 +19,7 @@
 
 <body class="h-auto bg-couleur">
 	<header>
-
+	<?php include "./ressources/menu.php"; ?>
 		<!-- Section menu haut -->
 
 		<div class=" bg-color  p-2 row align-self-center" >
@@ -38,7 +38,7 @@
 			
 			
 			
-			<?php include "./ressources/menu.php"; ?>
+			
 			
 			
 			<script src="./script.js"></script>
