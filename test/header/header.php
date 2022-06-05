@@ -26,7 +26,7 @@
 
 			 <div class=" bg-color  p-2 row align-self-center" >
 			 	<div class="col-lg-2 col-md-2 col-sm-6 align-self-center end-0 ">
-                    <button id="burger-menu-button"><img src="../../ressources/images/avatars/<?=$_SESSION['id']?>.png" height="100vh" width="10vw"></button>
+                    <button id="burger-menu-button"><img src="../../ressources/images/avatars/<?=$_SESSION['id']?>.png" height="100vh" width="100vw"></button>
 				</div>
 				
 				<div class="col-lg-8 col-md-8 col-sm-0 text-center align-self-center">
