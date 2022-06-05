@@ -1,6 +1,6 @@
 <?php 
 		session_start();
-		//require "functions.php";
+		require "functions.php";
 	?>
 	<!DOCTYPE html>
 	<html>
@@ -26,7 +26,7 @@
 
 			 <div class=" bg-color  p-2 row align-self-center" >
 			 	<div class="col-lg-2 col-md-2 col-sm-6 align-self-center end-0 ">
-                    <button id="burger-menu-button">Photo de profil</button>
+                    <button id="burger-menu-button"><img src="../../ressources/images/avatars/<?=$_SESSION['id']?>.png">Photo de profil</button>
 				</div>
 				
 				<div class="col-lg-8 col-md-8 col-sm-0 text-center align-self-center">
