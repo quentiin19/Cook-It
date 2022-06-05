@@ -8,5 +8,4 @@
     <div><a href="">modifier mon avatar</a></div>
     <br>
     <div><a href="">me déconnecter</a></div>
-    <br>
 </div>
