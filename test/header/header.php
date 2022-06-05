@@ -21,9 +21,11 @@
 
 <body class="h-auto bg-couleur">
 	<header>
-	<?php include "./ressources/menu.php"; ?>
-		<!-- Section menu haut -->
+		<!-- Burger Menu -->
+		<?php include "./ressources/menu.php"; ?>
 
+
+		<!-- Section menu haut -->
 		<div class=" bg-color  p-2 row align-self-center" >
 			<div class="col-lg-2 col-md-3 col-sm-6 align-self-center end-0 ">
 				<img id="burger-menu-button" src="../../ressources/images/avatars/<?=$_SESSION['id']?>.png" height="100vh" width="100vw">
@@ -37,10 +39,7 @@
 			
 			<script src="./script.js"></script>
 		</div>
-		<img src="../../ressources/images/Desserts/dessert1.jpeg" height="500px" width="500px">
-
-			
-
-
 		
 	</header>
+
+	<img src="../../ressources/images/Desserts/dessert1.jpeg" height="500px" width="500px">
