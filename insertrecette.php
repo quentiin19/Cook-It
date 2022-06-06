@@ -1,6 +1,9 @@
 <?php
 session_start();
 require "functions.php";
+print "<pre>";
+print_r($_POST);
+print "</pre>";
 // echo "testeurer";
 // if(
 // 	empty($_POST["recette"]) || 
