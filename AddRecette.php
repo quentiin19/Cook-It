@@ -156,7 +156,7 @@ if(!empty($_POST)){
 				echo "Envoyé !";
 
 				//création du filigranne
-				$logo = imagecreatefrompng('ressource/images/Utilitaires/logo.png');
+				$logo = imagecreatefrompng('ressources/images/Utilitaires/logo.png');
 
 				//création de l'image de base
 				$img = imagecreatefrompng($destination.$file_name);
