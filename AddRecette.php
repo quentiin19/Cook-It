@@ -67,7 +67,7 @@
 										
 										<div class="row">
 											<div class="col-lg-12 col-md-12">
-												<button class="btn btn-outline-light btn-lg px-2 " type="submit">Envoyer</button>
+												<input type="submit">Envoyer</button>
 											</div>
 										</div>
 									</form>
