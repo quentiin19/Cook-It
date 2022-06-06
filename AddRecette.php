@@ -83,6 +83,10 @@
 </div>
 
 <?php
+
+print '<pre>';
+print_r($_POST);
+print '</pre>';
 if(isset($_POST)){
 	//création d'image
 	$final_file_name = "";
