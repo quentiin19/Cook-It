@@ -1,5 +1,6 @@
 <?php
-require 'template/header.php';
+session_start();
+require 'functions.php';
 // echo "testeurer";
 // if(
 // 	empty($_POST["recette"]) || 
@@ -14,9 +15,6 @@ require 'template/header.php';
 // 	echo "TEST";
 // }
 
-print '<pre>';
-print_r($_POST);
-print '</pre>';
 
 
 $recette = $_POST["recette"];
