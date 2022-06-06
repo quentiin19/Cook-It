@@ -135,7 +135,7 @@ class API{
         
 
         
-        //return json_encode($queryResults);
+        return json_encode($queryResults);
 
 
     }
