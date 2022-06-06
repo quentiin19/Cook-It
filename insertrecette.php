@@ -119,4 +119,5 @@ for ($i = 1; $i<6; $i++){
         $queryPrepared->execute(["quantity"=>$quantity, "id_ingr"=>$i ,"id_recipe"=>$result['ID']]);
     }
 }
+header("Location: recette.php?id=".$result['ID']);
 ?>
