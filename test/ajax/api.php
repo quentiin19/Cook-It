@@ -31,7 +31,7 @@ class API{
 
         $temp = $queryResults[0][0][0];
         $queryResults[0][0][0] = $queryResults[0][1][0];
-        $queryResults[0][1][0] = $temp
+        $queryResults[0][1][0] = $temp;
 
 
 
@@ -139,7 +139,7 @@ class API{
         
 
         
-        //return json_encode($queryResults);
+        return json_encode($queryResults);
 
 
     }
