@@ -20,7 +20,7 @@ const total_eyes = 3;
 
 let mouths = [];
 let current_mouth = 0;
-const total_mouths = 3;
+const total_mouths = 2;
 
 
 const canva = document.getElementById("avatar-canva");
@@ -32,19 +32,19 @@ const download_button = document.getElementById("avatar-download-button");
 function setup() {
     //setup des images des couleurs de peau
     for (let i = 0; i < total_skins; i++) {
-        let img = `img/skin${i}.png`;
+        let img = `ressources/images/avatar-parts/skin${i}.png`;
         skins[i] = new Image(i, img);
     }
 
     //setup des images des yeux
     for (let i = 0; i < total_eyes; i++) {
-        let img = `img/eye${i}.png`;
+        let img = `ressources/images/avatar-parts/eye${i}.png`;
         eyes[i] = new Image(i, img);
     }
 
     //setup des images des bouches
     for (let i = 0; i < total_mouths; i++) {
-        let img = `img/mouth${i}.png`;
+        let img = `ressources/images/avatar-parts/mouth${i}.png`;
         mouths[i] = new Image(i, img);
     }
 
@@ -157,9 +157,4 @@ function change_part($action) {
     draw_avatar();
 }
 
-function test($texte) {
-    console.log($texte);
-}
-
 setup();
-//draw_avatar();

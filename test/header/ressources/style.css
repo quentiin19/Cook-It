@@ -1,0 +1,12 @@
+#burger-menu{
+    background-color: aquamarine;
+    position: absolute;
+    top: 112px;
+    left: 0px;
+    border-radius: 10px;
+}
+
+.burger-section{
+    margin: 3vh;
+    padding-left: 1vw;
+}
