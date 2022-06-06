@@ -16,7 +16,7 @@ require "functions.php";
 // }
 
 //création d'image
-echo "test";
+
 $final_file_name = "";
 
 //isertion reccette dans tables recipes
@@ -55,6 +55,7 @@ for ($i = 1; $i<6; $i++){
         $queryPrepared->execute(["quantity"=>$quantity, "id_ingr"=>$i ,"id_recipe"=>$result['ID']]);
     }
 }
+echo "test";
 if (!empty($_POST['fichier'])){
     if(!empty($_FILES)){
         //enregistrement de l'image sur le serveur
