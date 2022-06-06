@@ -39,7 +39,7 @@ $queryPrepared = $pdo->prepare("SELECT ID FROM RECIPES WHERE ID_CREATOR=:id AND 
 $queryPrepared->execute(["id"=>$_SESSION['id'], "title"=>$recette]);
 $result = $queryPrepared->fetch();
 
-for ($i = 0; $i<5; $i++){
+for ($i = 1; $i<5; $i++){
     $index = 'checkbox'.$i;
     if($_POST[$index]){
         $quantity = $_POST["quantity".$i];
