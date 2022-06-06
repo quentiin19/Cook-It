@@ -52,8 +52,8 @@
 														<div class="col-lg-3 col-md-3 col-sm-3">
 															<p ><?= $ingredient['NAME']?></p>
 														</div>
-														<div class="col-lg-3 col-md-2 col-sm-2 input-width">
-															<input type="text" name="quantity<?php echo $ingredient['ID']?>" placeholder="quantité">
+														<div class="col-lg-3 col-md-2 col-sm-2 ">
+															<input class="input-width" type="text" name="quantity<?php echo $ingredient['ID']?>" placeholder="quantité">
 														</div>
 														<div class="col-lg-2 col-md-3 col-sm-3">
 															<?= $ingredient['UNIT']?>

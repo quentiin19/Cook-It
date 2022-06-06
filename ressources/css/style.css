@@ -38,7 +38,7 @@ border-radius:7px;
 }
 
 .input-width{
-	width: 8000px;
+	width: 60px;
 	overflow: hidden; /* Empêche le dépassement des flottants. */
 }
 
