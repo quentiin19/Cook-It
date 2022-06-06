@@ -1,4 +1,6 @@
 <?php
+
+echo "testeurer";
 // if(
 // 	empty($_POST["recette"]) || 
 // 	empty($_POST["recette_description"]) ||
