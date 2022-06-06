@@ -13,7 +13,7 @@ $needs = $queryPrepared->fetchAll();
 
 $queryPrepared = $pdo->prepare("SELECT * FROM INGREDIENTS WHERE ID = (SELECT ID_INGREDIENT FROM NEED WHERE ID_RECIPE = :id);");
 $queryPrepared->execute(["id"=>_GET['id']]);
-$ingredient = $queryPrepared->fetch();
+$ingredients = $queryPrepared->fetch();
 
 
 
