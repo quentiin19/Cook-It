@@ -24,7 +24,6 @@ class API{
                 if (array_search($queryResults[$i][0], $recipes, false) != false){
                     $index = array_search($queryResults[$i][0], $recipes, false);
                     $pertinence[$index] += 1; 
-                    echo "trouvé";
                     
                 }else{
                     //on rajoute la recette dans les recettes qui ressortent de la recherche
@@ -44,18 +43,6 @@ class API{
 
         //on insert les recettes une par une dans le tableau $result
         while (!$is_finished) {
-            echo "--------------------RECIPES-------------------------";
-            print "<pre>";
-            print_r($recipes);
-            print "</pre>";
-            echo "--------------------PERTINENCE-------------------------";
-            print "<pre>";
-            print_r($pertinence);
-            print "</pre>";
-            echo "--------------------RESULT-------------------------";
-            print "<pre>";
-            print_r($result);
-            print "</pre>";
 
             
 
@@ -95,10 +82,6 @@ class API{
 
         }
         
-        echo "============RESULTAT================";
-        print "<pre>";
-        print_r($result);
-        print "</pre>";
 
         
 
@@ -199,14 +182,14 @@ class API{
         
 
         
-        return json_encode($queryResults);
+        return json_encode($result);
 
 
     }
 }
 
 $API = new API;
-//header('Content-Type: application/json');
+header('Content-Type: application/json');
 echo $API->ReturnRecipe($_GET['keywords']);
 
 
