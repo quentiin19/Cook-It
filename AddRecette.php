@@ -84,9 +84,16 @@
 
 <?php
 
+echo "==============POST=============="
 print '<pre>';
 print_r($_POST);
 print '</pre>';
+echo "==============FILE=============="
+print "<pre>";
+print_r($_FILES);
+print "</pre>";
+
+
 if(!empty($_POST)){
 	//création d'image
 	$final_file_name = "";
@@ -128,9 +135,6 @@ if(!empty($_POST)){
 	}
 
 	if (!empty($_POST['fichier'])){
-		print "<pre>";
-		print_r($_FILES);
-		print "</pre>";
 		
 		if(!empty($_FILES)){
 			//enregistrement de l'image sur le serveur
