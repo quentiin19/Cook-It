@@ -18,7 +18,7 @@ class API{
         foreach ($array_key_words as $index=>$word) {
             $queryPrepared = $pdo->prepare("SELECT ID FROM RECIPES WHERE TITLE LIKE :word;");
             $queryPrepared->execute(["word"=>"%".$word."%"]);
-            $queryResults[$index] = $queryPrepared->fetch();
+            $queryResults[$index] = $queryPrepared->fetchAll();
         }
 
 
