@@ -38,7 +38,7 @@
 											$queryPrepared->execute();
 											$results = $queryPrepared->fetchAll();
 
-											echo $results;
+											print_r($results);
 
 											foreach ($results as $key => $ingredient) { 
 												echo '
