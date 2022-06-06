@@ -105,7 +105,7 @@ class API{
 }
 
 $API = new API;
-header('Content-Type: application/json');
+//header('Content-Type: application/json');
 echo $API->ReturnRecipe($_GET['keywords']);
 
 
