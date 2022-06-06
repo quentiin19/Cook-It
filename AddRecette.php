@@ -28,6 +28,10 @@
 											</div>
 										</div>
 
+										<div class="row">
+											<h3 class="text-center py-3">Ajouter les ingrédients </h3>
+										</div>
+
 										<?php
 										$pdo = connectDB();
 
