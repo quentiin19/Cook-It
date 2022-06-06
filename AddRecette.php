@@ -63,23 +63,21 @@
 
 
 <?php
-if(
-	empty($_POST["recette"]) || 
-	empty($_POST["temps"]) ||
-	empty($_POST["recette_description"]) ||
-	empty($_POST["fichier"])||
-	count($_POST)!=4
-){
+// if(
+// 	empty($_POST["recette"]) || 
+// 	empty($_POST["recette_description"]) ||
+// 	empty($_POST["fichier"])||
+// 	count($_POST)!=3
+// ){
 
-	die("remplissez les champs requis");
+// 	die("remplissez les champs requis");
 
-}else{
-	echo "TEST";
-}
+// }else{
+// 	echo "TEST";
+// }
 
 
 $recette = $_POST["recette"];
-$temps = $_POST["temps"];
 $recette_description = $_POST["recette_description"];
 $fichier = $_POST["fichier"];
 
