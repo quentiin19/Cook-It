@@ -33,6 +33,7 @@ $queryPrepared->execute([
 						"title"=>$recette,
 						"recettedesc"=>$recette_description
 ]);
+header("Location:recette.php");
 
 // $queryPrepared = $pdo->prepare("SELECT ID FROM RECIPES WHERE ID_CREATOR=:id AND TITLE=:title");
 // $queryPrepared->execute(["id"=>$_SESSION['id'], "title"=>$recette]);
