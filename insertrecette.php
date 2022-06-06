@@ -117,5 +117,5 @@ if (!empty($_POST['fichier'])){
     }
 
 }
-header("Location: recette.php?id=".$result['ID']);
+// header("Location: recette.php?id=".$result['ID']);
 ?>
