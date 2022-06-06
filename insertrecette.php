@@ -1,5 +1,5 @@
 <?php
-require 'functions.php';
+require 'template/header.php';
 echo "testeurer";
 // if(
 // 	empty($_POST["recette"]) || 
