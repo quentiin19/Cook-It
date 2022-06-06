@@ -55,7 +55,7 @@ for ($i = 1; $i<6; $i++){
         $queryPrepared->execute(["quantity"=>$quantity, "id_ingr"=>$i ,"id_recipe"=>$result['ID']]);
     }
 }
-echo "test";
+
 if (!empty($_POST['fichier'])){
     if(!empty($_FILES)){
         //enregistrement de l'image sur le serveur
@@ -74,7 +74,7 @@ if (!empty($_POST['fichier'])){
         //liste des extentions autorisées à être uploadées
         $extension_authorised = array('.png', '.PNG', '.jpg', '.jpeg', '.JPG', '.JPEG');
 
-
+        echo "test";
 
         //si le fichier est une image autorisé
         if(in_array($extension, $extension_authorised)){
