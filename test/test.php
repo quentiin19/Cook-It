@@ -10,7 +10,9 @@ $queryPrepared = $pdo->prepare("SELECT * FROM INGREDIENTS;");
 $queryPrepared->execute();
 $results = $queryPrepared->fetch();
 
-foreach ($ingredients as $key => $ingredient) {
+foreach ($results as $key => $ingredient) {
     
 }
+
+print_r($results);
 ?>
