@@ -32,12 +32,13 @@
 										</div>
 
 										<?php
-										echo $ingredient['ID'];
 										$pdo = connectDB();
 
 											$queryPrepared = $pdo->prepare("SELECT * FROM INGREDIENTS;");
 											$queryPrepared->execute();
 											$results = $queryPrepared->fetchAll();
+
+											echo $results;
 
 											foreach ($results as $key => $ingredient) { 
 												echo '
