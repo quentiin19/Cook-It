@@ -18,6 +18,9 @@ class API{
         }
 
         $results = array();
+        print "<pre>";
+        print_r($queryResults);
+        print "</pre>";
 
         //clean de la recherche (retirer les recettes qui sont en plusieurs itérations)
         for ($i = 0; $i < count($queryResults); $i++) { 
@@ -67,6 +70,7 @@ class API{
         }
 
         //enfin, nous trions le table du plus pertinent au moin pertinent
+        /*
         while (is_sort($results)) {
             for ($i = 0; $i < count($results); $i++) { 
                 if ($array[$i - 1][1] < $array[$i][1]) {
@@ -74,7 +78,7 @@ class API{
                 }
             }
         }
-        
+        */
 
 
 
@@ -89,7 +93,9 @@ class API{
         $queryPrepared->execute(["word"=>"%".$tarte."%"]);
         $results = $queryPrepared->fetchAll();
         */
-        
+        print "<pre>";
+        print_r($queryResults);
+        print "</pre>";
         
         print "<pre>";
         print_r($results);
@@ -104,7 +110,7 @@ class API{
 }
 
 $API = new API;
-header('Content-Type: application/json');
+//header('Content-Type: application/json');
 echo $API->ReturnRecipe($_GET['keywords']);
 
 
