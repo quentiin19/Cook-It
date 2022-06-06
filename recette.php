@@ -10,8 +10,31 @@ $queryPrepared = $pdo->prepare("SELECT * FROM NEED WHERE ID_RECIPE = :id;");
 $queryPrepared->execute(["id"=>$_GET['id']]);
 $needs = $queryPrepared->fetchAll();
 
+$ingredients = array();
+
+foreach ($needs as $key => $ingredient){
+	array_push($ingredients, $ingredient);
+}
+
+foreach ($ingredients as $key => $ingredient) {
+	$queryPrepared = $pdo->prepare("SELECT * FROM INGREDIENT WHERE ID = :id;");
+	$queryPrepared->execute(["id"=>$ingredient[2]]);
+	$ingredient = $queryPrepared->fetch();
+}
+
+
+
+echo'-------------------recette------------';
+print '<pre>';
+print_r($recipe);
+print '</pre>';
+echo'-------------------needs------------';
 print '<pre>';
 print_r($needs);
+print '</pre>';
+echo'-------------------ingredients------------';
+print '<pre>';
+print_r($ingredients);
 print '</pre>';
 
 
@@ -45,8 +68,8 @@ print '</pre>';
 										foreach ($ingredients as $key => $ingredient) {
 											
 											echo '	<tr>
+														<td><img src=""></td>
 														<td></td>
-														<td>test</td>
 													</tr>';
 										}
 										?>
