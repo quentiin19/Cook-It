@@ -15,7 +15,7 @@
 
 							<div class="row">
 								<div class="col-lg-12 col-md-12 bg-color arrondie py-5 ">
-									<form method="POST" enctype="multipart/form-data" action="./insertrecette.php">
+									<form method="POST" action="./insertrecette.php">
 
 										<input type="text" class="form-control my-3" name="recette" placeholder="Nom de la recette" required="required"><br>
 										<div class="row">
