@@ -38,32 +38,32 @@
 											$queryPrepared->execute();
 											$results = $queryPrepared->fetchAll();
 
-											foreach ($results as $key => $ingredient) { ?>
-											<div class="row">
-											<div class="col-lg-2 col-md-1 col-sm-0"></div>
-											<div class="col-lg-8 col-md-10 col-sm-12 background-body arrondie my-2">
-												<div class="row align-items-center">
-														<div class="col-lg-1 col-md-1 col-sm-6">
-															<input  type="checkbox" name=<?php echo "checkbox".$ingredient['ID'];?>">
+											foreach ($results as $key => $ingredient) { 
+												echo '
+													<div class="row">
+														<div class="col-lg-2 col-md-1 col-sm-0"></div>
+														<div class="col-lg-8 col-md-10 col-sm-12 background-body arrondie my-2">
+															<div class="row align-items-center">
+																	<div class="col-lg-1 col-md-1 col-sm-6">
+																		<input  type="checkbox" name="checkbox'.$ingredient['ID'].'">
+																	</div>
+																	<div class="col-lg-3 col-md-3 col-sm-6">
+																		<img src="'.$ingredient['PICTURE_PATH'].'" height ="70vh" width="70vw"/>
+																	</div>
+																	<div class="col-lg-3 col-md-3 col-sm-3">
+																		<p>'.$ingredient['NAME'].'</p>
+																	</div>
+																	<div class="col-lg-3 col-md-2 col-sm-6 ">
+																		<input class="input-width" type="text" name="quantity'.$ingredient['ID'].'" placeholder="quantité">
+																	</div>
+																	<div class="col-lg-2 col-md-3 col-sm-3">
+																		'.$ingredient['UNIT'].'
+																	</div>		
+															</div>
 														</div>
-														<div class="col-lg-3 col-md-3 col-sm-6">
-															<img src="<?= $ingredient['PICTURE_PATH']?>" height ="70vh" width="70vw"/>
-														</div>
-														<div class="col-lg-3 col-md-3 col-sm-3">
-															<p ><?= $ingredient['NAME']?></p>
-														</div>
-														<div class="col-lg-3 col-md-2 col-sm-6 ">
-															<input class="input-width" type="text" name="quantity<?php echo $ingredient['ID'];?>" placeholder="quantité">
-														</div>
-														<div class="col-lg-2 col-md-3 col-sm-3">
-															<?= $ingredient['UNIT']?>
-														</div>		
-												</div>
-											</div>
-											<div class="col-lg-2 col-md-1 col-sm-0"></div>
-										</div>
-										<?php	}
-											?>
+														<div class="col-lg-2 col-md-1 col-sm-0"></div>
+													</div>'
+											}?>
 										
 										<div class="row">
 											<div class="col-lg-12 col-md-12">
