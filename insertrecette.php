@@ -16,6 +16,7 @@ require "functions.php";
 // }
 
 //création d'image
+echo "test";
 $final_file_name = "";
 
 //isertion reccette dans tables recipes
