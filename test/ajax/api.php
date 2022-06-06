@@ -43,6 +43,14 @@ class API{
 
         //on insert les recettes une par une dans le tableau $result
         while (!$is_finished) {
+            print "<pre>";
+            print_r($recipes);
+            print "</pre>";
+            echo "---------------------------------------------";
+            print "<pre>";
+            print_r($pertinence);
+            print "</pre>";
+            echo "---------------------------------------------";
 
             //si tous les éléments ont été enlevés, le tri est fini
             if (empty($recipes)){
