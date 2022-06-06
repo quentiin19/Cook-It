@@ -119,7 +119,7 @@ class API{
         $queryPrepared = $pdo->prepare("SELECT * FROM RECIPES WHERE TITLE LIKE :word;");
         $queryPrepared->execute(["word"=>"%".$tarte."%"]);
         $results = $queryPrepared->fetchAll();
-        */
+        
         print "<pre>";
         print_r($queryResults);
         print "</pre>";
@@ -127,6 +127,7 @@ class API{
         print "<pre>";
         print_r($results);
         print "</pre>";
+        */
         
 
         
