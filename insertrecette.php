@@ -16,7 +16,7 @@ echo "testeurer";
 
 
 $recette = $_POST["recette"];
-$recette_description = $_POST["recette_description"];
+$recette_description = $_GET["recette_description"];
 $fichier = $_POST["fichier"];
 
 $pdo = connectDB();
@@ -29,7 +29,7 @@ VALUES (:idcreator, :title, :recettedesc);");
 
 
 $queryPrepared->execute([
-						"idcreator"=>$_SESSION['ID'],
+						"idcreator"=>$_SESSION['id'],
 						"title"=>$recette,
 						"recettedesc"=>$recette_description
 ]);
