@@ -64,6 +64,16 @@ class API{
             $max_pert = 0;
             $max_reci = 0;
 
+            foreach ($recipes as $key => $recipe) {
+                if (isset($recipes[$key])) {
+                    if ($pertinence[$key] >= $max_pert) {
+                        $index_max = $key;
+                        $max_pert = $pertinence[$key];
+                        $max_reci = $recipes[$key];
+                    }
+                }
+            }
+            /*
             for ($i = 0; $i < count($recipes); $i++) { 
                 if (isset($recipes[$i])) {
                     if ($pertinence[$i] >= $max_pert) {
@@ -72,7 +82,7 @@ class API{
                         $max_reci = $recipes[$i];
                     }
                 }
-            }
+            }*/
 
             array_push($result, $recipes[$index_max]);
             unset($recipes[$index_max]);
