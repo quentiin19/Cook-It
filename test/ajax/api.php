@@ -17,10 +17,37 @@ class API{
             $queryResults[$index] = $queryPrepared->fetchAll();
         }
 
-        $results = array();
+
+
+
+
         print "<pre>";
         print_r($queryResults);
         print "</pre>";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+        $results = array();
+        
 
         //clean de la recherche (retirer les recettes qui sont en plusieurs itérations)
         for ($i = 0; $i < count($queryResults); $i++) { 
@@ -70,7 +97,7 @@ class API{
         }
 
         //enfin, nous trions le table du plus pertinent au moin pertinent
-        /*
+        
         while (is_sort($results)) {
             for ($i = 0; $i < count($results); $i++) { 
                 if ($array[$i - 1][1] < $array[$i][1]) {
