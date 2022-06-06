@@ -58,7 +58,7 @@ for ($i = 1; $i<6; $i++){
 
 if (!empty($_POST['fichier'])){
     print "<pre>";
-    print_r($_POST['fichier']);
+    print_r($_FILES);
     print "</pre>";
     
     if(!empty($_FILES)){
