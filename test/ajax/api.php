@@ -34,12 +34,59 @@ class API{
             }
         }
 
+        //création du tableau $result qui sera renvoyer après l'appel de l'api
+        //les recettes les plus pertinentes seront trié par index du plus petit au plus grand
+        $result = array();
+
+
+        $is_finished = 0;
+
+        //on insert les recettes une par une dans le tableau $result
+        while (!$is_finished) {
+            echo "--------------------RECIPES-------------------------";
+            print "<pre>";
+            print_r($recipes);
+            print "</pre>";
+            echo "--------------------PERTINENCE-------------------------";
+            print "<pre>";
+            print_r($pertinence);
+            print "</pre>";
+            echo "--------------------RESULT-------------------------";
+            print "<pre>";
+            print_r($result);
+            print "</pre>";
+
+            //si tous les éléments ont été enlevés, le tri est fini
+            if (empty($recipes)){
+                $is_finished = 1;
+            }
+
+            //on définit une variable qui hébergera la pertinence maximum
+            $index_max = 0;
+            $max_pert = 0;
+            $max_reci = 0;
+
+            for ($i = 0; $i < count($recipes); $i++) { 
+                if (isset($recipes[$i])) {
+                    if ($pertinence[$i] >= $max_pert) {
+                        $index_max = $i;
+                        $max_pert = $pertinence[$i];
+                        $max_reci = $recipes[$i];
+                    }
+                }
+            }
+
+            array_push($result, $recipes[$index_max][0]);
+            unset($recipes[$index_max]);
+            unset($pertinence[$index_max]);
+
+        }
+        
+
         print "<pre>";
-        print_r($recipes);
+        print_r($result);
         print "</pre>";
-        print "<pre>";
-        print_r($pertinence);
-        print "</pre>";
+
         
 
         /*
