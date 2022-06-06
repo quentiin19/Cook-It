@@ -44,7 +44,7 @@
 											<div class="col-lg-8 col-md-10 col-sm-12 background-body arrondie my-2">
 												<div class="row align-items-center">
 														<div class="col-lg-1 col-md-1 col-sm-6">
-															<input  type="checkbox" name=<?php echo "checkbox".$ingredient['ID']?>">
+															<input  type="checkbox" name=<?php echo "checkbox".$ingredient['ID'];?>">
 														</div>
 														<div class="col-lg-3 col-md-3 col-sm-6">
 															<img src="<?= $ingredient['PICTURE_PATH']?>" height ="70vh" width="70vw"/>
@@ -53,7 +53,7 @@
 															<p ><?= $ingredient['NAME']?></p>
 														</div>
 														<div class="col-lg-3 col-md-2 col-sm-6 ">
-															<input class="input-width" type="text" name="quantity<?php echo $ingredient['ID']?>" placeholder="quantité">
+															<input class="input-width" type="text" name="quantity<?php echo $ingredient['ID'];?>" placeholder="quantité">
 														</div>
 														<div class="col-lg-2 col-md-3 col-sm-3">
 															<?= $ingredient['UNIT']?>
