@@ -21,7 +21,7 @@ class API{
             $queryResults = $queryPrepared->fetchAll();
             echo "--------------------query-------------------------";
             print "<pre>";
-            print_r($recipes);
+            print_r($queryResults);
             print "</pre>";
 
             for ($i = 0; $i < count($queryResults); $i++){ 
