@@ -17,6 +17,43 @@ require "functions.php";
 
 //création d'image
 $final_file_name = "";
+
+//isertion reccette dans tables recipes
+$recette = $_POST["recette"];
+$recette_description = $_POST["recette_description"];
+$fichier = $_POST["fichier"];
+
+$pdo = connectDB();
+$queryPrepared = $pdo->prepare("INSERT INTO RECIPES (        
+ID_CREATOR, 
+TITLE,      
+DESCRIPTION,
+PICTURE_PATH) 
+VALUES (:idcreator, :title, :recettedesc, :path);");
+
+
+
+$queryPrepared->execute([
+						"idcreator"=>$_SESSION['id'],
+						"title"=>$recette,
+						"recettedesc"=>$recette_description,
+						"path"=>$final_file_name
+]);
+// header("Location:recette.php");
+
+
+$queryPrepared = $pdo->prepare("SELECT ID FROM RECIPES WHERE ID_CREATOR=:id AND TITLE=:title");
+$queryPrepared->execute(["id"=>$_SESSION['id'], "title"=>$recette]);
+$result = $queryPrepared->fetch();
+
+//insertion ingrédient dans la table NEED
+for ($i = 1; $i<6; $i++){
+    if(isset($_POST['checkbox'.$i])){
+        $quantity = $_POST["quantity".$i];
+        $queryPrepared = $pdo->prepare("INSERT INTO NEED VALUES (:quantity, :id_ingr, :id_recipe)");
+        $queryPrepared->execute(["quantity"=>$quantity, "id_ingr"=>$i ,"id_recipe"=>$result['ID']]);
+    }
+}
 if (!empty($_POST['fichier'])){
     if(!empty($_FILES)){
         //enregistrement de l'image sur le serveur
@@ -79,45 +116,6 @@ if (!empty($_POST['fichier'])){
     
     }
 
-}
-
-
-
-//isertion reccette dans tables recipes
-$recette = $_POST["recette"];
-$recette_description = $_POST["recette_description"];
-$fichier = $_POST["fichier"];
-
-$pdo = connectDB();
-$queryPrepared = $pdo->prepare("INSERT INTO RECIPES (        
-ID_CREATOR, 
-TITLE,      
-DESCRIPTION,
-PICTURE_PATH) 
-VALUES (:idcreator, :title, :recettedesc, :path);");
-
-
-
-$queryPrepared->execute([
-						"idcreator"=>$_SESSION['id'],
-						"title"=>$recette,
-						"recettedesc"=>$recette_description,
-						"path"=>$final_file_name
-]);
-// header("Location:recette.php");
-
-
-$queryPrepared = $pdo->prepare("SELECT ID FROM RECIPES WHERE ID_CREATOR=:id AND TITLE=:title");
-$queryPrepared->execute(["id"=>$_SESSION['id'], "title"=>$recette]);
-$result = $queryPrepared->fetch();
-
-//insertion ingrédient dans la table NEED
-for ($i = 1; $i<6; $i++){
-    if(isset($_POST['checkbox'.$i])){
-        $quantity = $_POST["quantity".$i];
-        $queryPrepared = $pdo->prepare("INSERT INTO NEED VALUES (:quantity, :id_ingr, :id_recipe)");
-        $queryPrepared->execute(["quantity"=>$quantity, "id_ingr"=>$i ,"id_recipe"=>$result['ID']]);
-    }
 }
 header("Location: recette.php?id=".$result['ID']);
 ?>
