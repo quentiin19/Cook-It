@@ -16,6 +16,7 @@ require "functions.php";
 // }
 
 //création d'image
+$final_file_name = "";
 if (!empty($_POST['fichier'])){
     if(!empty($_FILES)){
         //enregistrement de l'image sur le serveur
