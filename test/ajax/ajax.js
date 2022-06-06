@@ -44,7 +44,7 @@ function clean_str(str){
             }
         }
     }
-
+    console.log(str);
     return str;
 }
 
