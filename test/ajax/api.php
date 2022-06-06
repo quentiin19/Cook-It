@@ -20,7 +20,7 @@ class API{
             $queryPrepared->execute(["word"=>"%".$word."%"]);
             $queryResults = $queryPrepared->fetchAll();
 
-            for ($i = 0; $i < ; $i++) { 
+            for ($i = 0; $i < count($queryResults); $i++){ 
                 if (array_search($queryResults[$i], $recipes) != false){
                     $index = array_search($queryResults[$i], $recipes);
                     $pertinence[$index] += 1; 
