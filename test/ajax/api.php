@@ -38,9 +38,26 @@ class API{
             }
         }
 
+        //fonction de swap
+        function swap($a, $b){
+            $temp = a;
+            $a = $b;
+            $b = $temp;
+        }
+
+        //fonction pour remettre tous les index de manière claire
+        function index_clean($array){
+            $i = 0;
+            foreach ($array as $key => $value) {
+                $key = $i;
+                $i++;
+            }
+        }
 
         //fonction pour savoir si le tableau $results est trié
         function is_sort($array){
+            index_clean($array);
+
             for ($i = 1; $i < count($array); $i++) { 
                 //si la deuxième recherche est plus pertinente que la première, le tableau n'est pas trié
                 if ($array[$i - 1][1] < $array[$i][1]) {
@@ -51,7 +68,11 @@ class API{
 
         //enfin, nous trions le table du plus pertinent au moin pertinent
         while (is_sort($results)) {
-            
+            for ($i = 0; $i < count($results); $i++) { 
+                if ($array[$i - 1][1] < $array[$i][1]) {
+                    swap($array[$i - 1][1], $array[$i][1]);
+                }
+            }
         }
         
 
