@@ -32,7 +32,7 @@
 
 											$queryPrepared = $pdo->prepare("SELECT * FROM INGREDIENTS;");
 											$queryPrepared->execute();
-											$results = $queryPrepared->fetch();
+											$results = $queryPrepared->fetchAll();
 
 											foreach ($results as $key => $ingredient) { ?>
 											<div class="row">
