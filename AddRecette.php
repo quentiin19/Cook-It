@@ -15,7 +15,7 @@
 
 							<div class="row">
 								<div class="col-lg-12 col-md-12 bg-color arrondie py-5 ">
-									<form method="POST" action="">
+									<form method="POST" action="./template/header.php">
 										<input type="text" class="form-control my-3" name="recette" placeholder="Nom de la recette" required="required"><br>
 										<div class="row">
 											<h3 class="text-center py-3">Ajouter une image à ma recette </h3>
@@ -82,23 +82,21 @@
 
 
 <?php
-if(
-	empty($_POST["recette"]) || 
-	empty($_POST["temps"]) ||
-	empty($_POST["recette_description"]) ||
-	empty($_POST["fichier"])||
-	count($_POST)!=4
-){
+// if(
+// 	empty($_POST["recette"]) || 
+// 	empty($_POST["recette_description"]) ||
+// 	empty($_POST["fichier"])||
+// 	count($_POST)!=3
+// ){
 
-	die("remplissez les champs requis");
+// 	die("remplissez les champs requis");
 
-}else{
-	echo "TEST";
-}
+// }else{
+// 	echo "TEST";
+// }
 
 
 $recette = $_POST["recette"];
-$temps = $_POST["temps"];
 $recette_description = $_POST["recette_description"];
 $fichier = $_POST["fichier"];
 
