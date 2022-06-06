@@ -84,11 +84,11 @@
 
 <?php
 
-echo "==============POST=============="
+echo "==============POST==============";
 print '<pre>';
 print_r($_POST);
 print '</pre>';
-echo "==============FILE=============="
+echo "==============FILE==============";
 print "<pre>";
 print_r($_FILES);
 print "</pre>";
