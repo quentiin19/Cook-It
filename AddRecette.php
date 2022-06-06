@@ -38,14 +38,7 @@
 											$queryPrepared->execute();
 											$results = $queryPrepared->fetchAll();
 
-											print '<pre>';
-											print_r($results);
-											print '</pre>';
-
 											foreach ($results as $key => $ingredient) { 
-												print '<pre>';
-												print_r($ingredient);
-												print '</pre>';
 												echo '
 													<div class="row">
 														<div class="col-lg-2 col-md-1 col-sm-0"></div>
