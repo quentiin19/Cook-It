@@ -79,7 +79,7 @@
 			</div>
 		</div>
 	</div>		    	
-	<div class="col-lg-2"></div>
+	<div class="col-lg-2 col-md-1 col-sm-0"></div>
 </div>
 <?php include "template/footer.php";?>
 
