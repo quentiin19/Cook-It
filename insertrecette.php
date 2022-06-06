@@ -113,8 +113,7 @@ $result = $queryPrepared->fetch();
 
 //insertion ingrédient dans la table NEED
 for ($i = 1; $i<6; $i++){
-    $index = 'checkbox'.$i;
-    if($_POST[$index]){
+    if(isset($_POST['checkbox'.$i])){
         $quantity = $_POST["quantity".$i];
         $queryPrepared = $pdo->prepare("INSERT INTO NEED VALUES (:quantity, :id_ingr, :id_recipe)");
         $queryPrepared->execute(["quantity"=>$quantity, "id_ingr"=>$i ,"id_recipe"=>$result['ID']]);
