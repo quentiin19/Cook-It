@@ -13,8 +13,27 @@
 					          <div class="card-body  text-center">
 
 					            <div class="mb-md-5 mt-md-4 pb-5">
+									<h2 class="fw-bold mb-2 text-uppercase">Nom de la recette</h2>
 								
-
+									<div class="row">
+										<div class="col-lg-12 col-md-12 col-md-12">
+											<img src="<?= ?>">
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-lg-6 col-md-6 col-sm-6">
+											<h4>Recette :</h4> <br>
+										</div>
+										<div class="col-lg-6 col-md-6 col-sm-6">
+											<h4>Ingredients :</h4> <br>
+											<table>
+												<tr>
+													<td>test</td>
+													<td>test</td>
+												</tr>
+											</table>
+										</div>
+									</div>	
 					            </div>
 					           </div>
 					        </div>
