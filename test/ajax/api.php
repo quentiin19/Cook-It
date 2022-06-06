@@ -28,6 +28,7 @@ class API{
                 if (array_search($queryResults[$i][0], $recipes) != false){
                     $index = array_search($queryResults[$i][0], $recipes);
                     $pertinence[$index] += 1; 
+                    echo "trouvé";
                     
                 }else{
                     //on rajoute la recette dans les recettes qui ressortent de la recherche
