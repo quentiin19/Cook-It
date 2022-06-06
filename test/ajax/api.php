@@ -25,13 +25,13 @@ class API{
             print "</pre>";
 
             for ($i = 0; $i < count($queryResults); $i++){ 
-                if (array_search($queryResults[$i], $recipes) != false){
-                    $index = array_search($queryResults[$i], $recipes);
+                if (array_search($queryResults[$i][0], $recipes) != false){
+                    $index = array_search($queryResults[$i][0], $recipes);
                     $pertinence[$index] += 1; 
                     
                 }else{
                     //on rajoute la recette dans les recettes qui ressortent de la recherche
-                    array_push($recipes, $queryResults[$i]);
+                    array_push($recipes, $queryResults[$i][0]);
                     //on initialise la pertinence à 1 car c'est la première itération de la recette dans la recherche
                     array_push($pertinence, 1);
                 }
