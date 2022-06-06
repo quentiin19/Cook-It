@@ -35,17 +35,17 @@ $queryPrepared->execute([
 ]);
 header("Location:recette.php");
 
-// $queryPrepared = $pdo->prepare("SELECT ID FROM RECIPES WHERE ID_CREATOR=:id AND TITLE=:title");
-// $queryPrepared->execute(["id"=>$_SESSION['id'], "title"=>$recette]);
-// $result = $queryPrepared->fetch();
+$queryPrepared = $pdo->prepare("SELECT ID FROM RECIPES WHERE ID_CREATOR=:id AND TITLE=:title");
+$queryPrepared->execute(["id"=>$_SESSION['id'], "title"=>$recette]);
+$result = $queryPrepared->fetch();
 
-// for ($i = 0; $i<5; $i++){
+for ($i = 0; $i<5; $i++){
 
-//     if($_POST['checkbox'.$i]){
-//         $quantity = $_POST["quantity".$i];
-//         $queryPrepared = $pdo->prepare("INSERT INTO NEED VALUES (:quantity, :id_ingr, :id_recipe)");
-//         $queryPrepared->execute(["quantity"=> $_POST["quantity"],
-//                                 "id_recipes"=>$result['ID'], "id_ingr"=>$i ]);
-//     }
-// }
+    if($_POST['checkbox'.$i]){
+        $quantity = $_POST["quantity".$i];
+        $queryPrepared = $pdo->prepare("INSERT INTO NEED VALUES (:quantity, :id_ingr, :id_recipe)");
+        $queryPrepared->execute(["quantity"=> $_POST["quantity"],
+                                "id_recipes"=>$result['ID'], "id_ingr"=>$i ]);
+    }
+}
 ?>
