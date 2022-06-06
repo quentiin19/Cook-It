@@ -87,7 +87,7 @@
 print '<pre>';
 print_r($_POST);
 print '</pre>';
-if(isset($_POST)){
+if(empty($_POST)){
 	//création d'image
 	$final_file_name = "";
 
