@@ -11,45 +11,49 @@ class API{
         $array_key_words = explode('-', $key_words);
 
         //création des tableaux qui vont permettre de gérer la pertinence des recherches
-        $results = array();
+        $recipes = array();
         $pertinence = array();
 
         //pour chaque mots, on recherche dans la BDD si une recette correspond
         foreach ($array_key_words as $index=>$word) {
             $queryPrepared = $pdo->prepare("SELECT ID FROM RECIPES WHERE TITLE LIKE :word;");
             $queryPrepared->execute(["word"=>"%".$word."%"]);
-            $queryResults[$index] = $queryPrepared->fetchAll();
+            $queryResults = $queryPrepared->fetchAll();
+
+            for ($i = 0; $i < count($queryResults); $i++){ 
+                if (array_search($queryResults[$i], $recipes) != false){
+                    $index = array_search($queryResults[$i], $recipes);
+                    $pertinence[$index] += 1; 
+                    
+                }else{
+                    //on rajoute la recette dans les recettes qui ressortent de la recherche
+                    array_push($recipes, $queryResults[$i]);
+                    //on initialise la pertinence à 1 car c'est la première itération de la recette dans la recherche
+                    array_push($pertinence, 1);
+                }
+            }
         }
 
-
+        print "<pre>";
+        print_r($recipes);
+        print "</pre>";
+        print "<pre>";
+        print_r($pertinence);
+        print "</pre>";
         
 
-
+        /*
         print "<pre>";
         print_r($queryResults);
         print "</pre>";
 
+        $temp = $queryResults[0][0][0];
+        $queryResults[0][0][0] = $queryResults[0][1][0];
+        $queryResults[0][1][0] = $temp;
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
         $results = array();
         
 
@@ -74,7 +78,7 @@ class API{
 
         //fonction de swap
         function swap($a, $b){
-            $temp = a;
+            $temp = $a;
             $a = $b;
             $b = $temp;
         }
