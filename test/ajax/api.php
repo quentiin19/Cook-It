@@ -77,7 +77,7 @@ class API{
             array_push($result, $recipes[$index_max][0]);
             unset($recipes[$index_max]);
             unset($pertinence[$index_max]);
-            
+
             //si tous les éléments ont été enlevés, le tri est fini
             if (empty($recipes)){
                 $is_finished = 1;
@@ -85,7 +85,7 @@ class API{
 
         }
         
-
+        echo "============RESULTAT================";
         print "<pre>";
         print_r($result);
         print "</pre>";
