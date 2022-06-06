@@ -40,8 +40,8 @@ $queryPrepared->execute(["id"=>$_SESSION['id'], "title"=>$recette]);
 $result = $queryPrepared->fetch();
 
 for ($i = 0; $i<5; $i++){
-
-    if($_POST['checkbox'.$i]){
+    $index = 'checkbox'.$i;
+    if($_POST[$index]){
         $quantity = $_POST["quantity".$i];
         $queryPrepared = $pdo->prepare("INSERT INTO NEED VALUES (:quantity, :id_ingr, :id_recipe)");
         $queryPrepared->execute(["quantity"=>$quantity, "id_ingr"=>$i ,"id_recipe"=>$result['ID']]);
