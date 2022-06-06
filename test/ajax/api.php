@@ -10,15 +10,19 @@ class API{
         //séparation de tous les mots dans un tableau
         $array_key_words = explode('-', $key_words);
 
+        //création des tableaux qui vont permettre de gérer la pertinence des recherches
+        $results = array();
+        $pertinence = array();
+
         //pour chaque mots, on recherche dans la BDD si une recette correspond
         foreach ($array_key_words as $index=>$word) {
             $queryPrepared = $pdo->prepare("SELECT ID FROM RECIPES WHERE TITLE LIKE :word;");
             $queryPrepared->execute(["word"=>"%".$word."%"]);
-            $queryResults[$index] = $queryPrepared->fetchAll();
+            $queryResults[$index] = $queryPrepared->fetch();
         }
 
 
-
+        
 
 
         print "<pre>";
