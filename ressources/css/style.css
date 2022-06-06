@@ -37,6 +37,10 @@ border-radius:7px;
 	height: 500px;
 }
 
+.input-width{
+	width: 60px;
+}
+
 /*----- Captcha -----*/
 
 .puzzle button{
