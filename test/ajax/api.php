@@ -90,7 +90,9 @@ class API{
         $queryPrepared->execute(["word"=>"%".$tarte."%"]);
         $results = $queryPrepared->fetchAll();
         */
-        
+        print "<pre>";
+        print_r($queryResults);
+        print "</pre>";
         
         print "<pre>";
         print_r($results);
