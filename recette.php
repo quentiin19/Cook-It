@@ -21,10 +21,10 @@
 										</div>
 									</div>
 									<div class="row">
-										<div class="col-lg-6 col-md-6 col-sm-6">
+										<div class="col-lg-8 col-md-8 col-sm-8">
 											<h4>Recette :</h4> <br>
 										</div>
-										<div class="col-lg-6 col-md-6 col-sm-6">
+										<div class="col-lg-4 col-md-4 col-sm-4">
 											<h4>Ingredients :</h4> <br>
 											<table>
 												<tr>
