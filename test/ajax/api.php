@@ -67,6 +67,7 @@ class API{
         }
 
         //enfin, nous trions le table du plus pertinent au moin pertinent
+        /*
         while (is_sort($results)) {
             for ($i = 0; $i < count($results); $i++) { 
                 if ($array[$i - 1][1] < $array[$i][1]) {
@@ -74,7 +75,7 @@ class API{
                 }
             }
         }
-        
+        */
 
 
 
