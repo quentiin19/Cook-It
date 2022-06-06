@@ -32,6 +32,7 @@
 										</div>
 
 										<?php
+										echo $ingredient['ID'];
 										$pdo = connectDB();
 
 											$queryPrepared = $pdo->prepare("SELECT * FROM INGREDIENTS;");
