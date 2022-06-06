@@ -11,7 +11,7 @@ $queryPrepared->execute(["id"=>$_GET['id']]);
 $needs = $queryPrepared->fetchAll();
 
 
-$queryPrepared = $pdo->prepare("SELECT * FROM INGREDIENTS WHERE ID = (SELECT ID_INGREDIENT FROM NEED WHERE ID_RECIPE = :id);");
+$queryPrepared = $pdo->prepare("SELECT * FROM INGREDIENTS WHERE ID IN (SELECT ID_INGREDIENT FROM NEED WHERE ID_RECIPE = :id);");
 $queryPrepared->execute(["id"=>$_GET['id']]);
 $ingredients = $queryPrepared->fetch();
 
