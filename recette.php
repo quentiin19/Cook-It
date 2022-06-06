@@ -45,7 +45,7 @@ print '</pre>';
 										foreach ($ingredients as $key => $ingredient) {
 											
 											echo '	<tr>
-														<td>'.$ingredient[].'</td>
+														<td></td>
 														<td>test</td>
 													</tr>';
 										}
