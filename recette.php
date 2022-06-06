@@ -8,7 +8,7 @@ $recipe = $queryPrepared->fetch();
 
 $queryPrepared = $pdo->prepare("SELECT * FROM NEED WHERE ID_RECIPE = :id;");
 $queryPrepared->execute(["id"=>$_GET['id']]);
-$needs = $queryPrepared->fetch();
+$needs = $queryPrepared->fetchAll();
 
 print '<pre>';
 print_r($needs);
