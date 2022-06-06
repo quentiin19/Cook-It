@@ -10,17 +10,11 @@ $queryPrepared = $pdo->prepare("SELECT * FROM NEED WHERE ID_RECIPE = :id;");
 $queryPrepared->execute(["id"=>$_GET['id']]);
 $needs = $queryPrepared->fetchAll();
 
-$ingredients = array();
 
-foreach ($needs as $key => $ingredient){
-	array_push($ingredients, $ingredient);
-}
+$queryPrepared = $pdo->prepare("SELECT * FROM INGREDIENTS WHERE ID = (SELECT ID_INGREDIENT FROM NEED WHERE ID_RECIPE = :id);");
+$queryPrepared->execute(["id"=>_GET['id']]);
+$ingredient = $queryPrepared->fetch();
 
-foreach ($ingredients as $key => $ingredient) {
-	$queryPrepared = $pdo->prepare("SELECT * FROM INGREDIENTS WHERE ID = :id;");
-	$queryPrepared->execute(["id"=>$ingredient[2]]);
-	$ingredient = $queryPrepared->fetch();
-}
 
 
 
