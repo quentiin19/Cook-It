@@ -1,18 +1,18 @@
 <?php
 require 'template/header.php';
 echo "testeurer";
-// if(
-// 	empty($_POST["recette"]) || 
-// 	empty($_POST["recette_description"]) ||
-// 	empty($_POST["fichier"])||
-// 	count($_POST)!=3
-// ){
+if(
+	empty($_POST["recette"]) || 
+	empty($_POST["recette_description"]) ||
+	!isset($_POST["fichier"])||
+	count($_POST)!=3
+){
 
-// 	die("remplissez les champs requis");
+	die("remplissez les champs requis");
 
-// }else{
-// 	echo "TEST";
-// }
+}else{
+	echo "TEST";
+}
 
 
 $recette = $_POST["recette"];
