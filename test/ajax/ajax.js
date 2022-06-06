@@ -16,7 +16,7 @@ function clean_str(str){
     let i = "ìíîïIÌÍÎÏ";
     let o = "òóôöOÒÓÔÖ";
     let u = "ùúûüUÙÚÛÜ";
-    let liaison = ['à', 'au', 'aux', 'le', 'pour', 'dans', 'avec', 'sans'];
+    let liaison = ['à', 'au', 'aux', 'le', 'la' , 'les', 'pour', 'dans', 'avec', 'sans'];
 
     //on supprime les mots de liaisons qui ne sont pas utiliser dans la recherche en bdd
     for (let i = 0; i < liaison.length; i++) {
