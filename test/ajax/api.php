@@ -18,6 +18,9 @@ class API{
         }
 
         $results = array();
+        print "<pre>";
+        print_r($queryResults);
+        print "</pre>";
 
         //clean de la recherche (retirer les recettes qui sont en plusieurs itérations)
         for ($i = 0; $i < count($queryResults); $i++) { 
