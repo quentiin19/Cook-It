@@ -6,9 +6,9 @@ require "../functions.php";
 
 $pdo = connectDB();
 
-$queryPrepared = $pdo->prepare("SELECT * FROM INGREDIENTS WHERE ID=2;");
+$queryPrepared = $pdo->prepare("SELECT * FROM INGREDIENTS;");
 $queryPrepared->execute();
-$results = $queryPrepared->fetch();
+$results = $queryPrepared->fetchAll();
 
 print "<pre>";
 print_r($results);
