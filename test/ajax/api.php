@@ -19,14 +19,10 @@ class API{
             $queryPrepared = $pdo->prepare("SELECT ID FROM RECIPES WHERE TITLE LIKE :word;");
             $queryPrepared->execute(["word"=>"%".$word."%"]);
             $queryResults = $queryPrepared->fetchAll();
-            echo "--------------------query-------------------------";
-            print "<pre>";
-            print_r($queryResults);
-            print "</pre>";
 
             for ($i = 0; $i < count($queryResults); $i++){ 
-                if (array_search($queryResults[$i][0], $recipes) != false){
-                    $index = array_search($queryResults[$i][0], $recipes);
+                if (array_search($queryResults[$i][0], $recipes, false) != false){
+                    $index = array_search($queryResults[$i][0], $recipes, false);
                     $pertinence[$index] += 1; 
                     echo "trouvé";
                     
