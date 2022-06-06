@@ -26,22 +26,41 @@
 												<textarea class="form-control" aria-label="With textarea" placeholder="Votre Recette" name="recette_description" required="required"></textarea>
 											</div>
 										</div>
-										<div class="row">
-											<div class="col-lg-12 col-md-12 col-sm-12">
-												<div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-offset="0" class="scrollspy-example" tabindex="0">
-													<h4 id="scrollspyHeading1">First heading</h4>
-													<p>...</p>
-													<h4 id="scrollspyHeading2">Second heading</h4>
-													<p>...</p>
-													<h4 id="scrollspyHeading3">Third heading</h4>
-													<p>...</p>
-													<h4 id="scrollspyHeading4">Fourth heading</h4>
-													<p>...</p>
-													<h4 id="scrollspyHeading5">Fifth heading</h4>
-													<p>...</p>
+
+										<?php
+										$pdo = connectDB();
+
+											$queryPrepared = $pdo->prepare("SELECT * FROM INGREDIENTS;");
+											$queryPrepared->execute();
+											$results = $queryPrepared->fetch();
+
+											foreach ($results as $key => $ingredient) { ?>
+											<div class="row">
+											<div class="col-lg-2 col-md-2 col-sm-2"></div>
+											<div class="col-lg-8 col-md-8 col-sm-8 background-body arrondie">
+												<div class="row align-items-center">
+														<div class="col-lg-1 col-md-1 col-sm-1">
+															<input  type="checkbox" name="checkbox">
+														</div>
+														<div class="col-lg-3 col-md-3 col-sm-3">
+															<img src="<?= $ingredient['PICTURE_PATH']?>" height ="70vh" width="70vw"/>
+														</div>
+														<div class="col-lg-3 col-md-3 col-sm-3">
+															<p ><?= $ingredient['NAME']?></p>
+														</div>
+														<div class="col-lg-3 col-md-3 col-sm-3">
+															<input type="text" name="quantity" placeholder="quantité">
+														</div>
+														<div class="col-lg-2 col-md-2 col-sm-2">
+															<?= $ingredient['UNIT']?>
+														</div>		
 												</div>
 											</div>
+											<div class="col-lg-2 col-md-2 col-sm-2"></div>
 										</div>
+										<?php	}
+											?>
+										
 										<div class="row">
 											<div class="col-lg-12 col-md-12">
 													<button class="btn btn-outline-light btn-lg px-2 " type="submit">Envoyer</button>
