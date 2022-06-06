@@ -14,7 +14,9 @@ require 'template/header.php';
 // 	echo "TEST";
 // }
 
-echo $_POST;
+print '<pre>';
+print_r($_POST);
+print '</pre>';
 
 
 $recette = $_POST["recette"];
