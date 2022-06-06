@@ -17,7 +17,7 @@ foreach ($needs as $key => $ingredient){
 }
 
 foreach ($ingredients as $key => $ingredient) {
-	$queryPrepared = $pdo->prepare("SELECT * FROM INGREDIENT WHERE ID = :id;");
+	$queryPrepared = $pdo->prepare("SELECT * FROM INGREDIENTS WHERE ID = :id;");
 	$queryPrepared->execute(["id"=>$ingredient[2]]);
 	$ingredient = $queryPrepared->fetch();
 }
