@@ -62,8 +62,10 @@ print '</pre>';
 										foreach ($ingredients as $key => $ingredient) {
 											
 											echo '	<tr>
-														<td><img src=""></td>
-														<td></td>
+														<td><img src="'.$ingredient['PICTURE_PATH'].'"></td>
+														<td>'.$ingredient['NAME'].'</td>
+														<td>'.$needs[$key]['QUANTITY'].'</td>
+														<td>'.$ingredient['UNIT'].'</td>
 													</tr>';
 										}
 										?>
