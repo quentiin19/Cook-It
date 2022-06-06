@@ -54,7 +54,7 @@ class API{
             $max_pert = 0;
             $max_reci = 0;
 
-            for ($i = 0; $i < count($result); $i++) { 
+            for ($i = 0; $i < count($recipes); $i++) { 
                 if (isset($recipes[$i])) {
                     if ($pertinence[$i] >= $max_pert) {
                         $index_max = $i;
