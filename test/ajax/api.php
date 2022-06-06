@@ -12,19 +12,46 @@ class API{
 
         //pour chaque mots, on recherche dans la BDD si une recette correspond
         foreach ($array_key_words as $index=>$word) {
-            $queryPrepared = $pdo->prepare("SELECT * FROM RECIPES WHERE TITLE LIKE :word;");
+            $queryPrepared = $pdo->prepare("SELECT ID FROM RECIPES WHERE TITLE LIKE :word;");
             $queryPrepared->execute(["word"=>"%".$word."%"]);
-            $results[$index] = $queryPrepared->fetchAll();
+            $queryResults[$index] = $queryPrepared->fetchAll();
+        }
+
+        $results = array();
+
+        //clean de la recherche (retirer les recettes qui sont en plusieurs itérations)
+        for ($i = 0; $i < count($queryResults); $i++) { 
+            for ($j = 0; $j < count($queryResults[$i]); $j++) { 
+
+                //Si l'id de la recette existe déjà dans le tableau de résultats
+                if ($results[$queryResults[$i][$j][0]] != NULL) {
+                    //on rajoute 1 à la pertinence de la recherche
+                    $results[$queryResults[$i][$j][0]][1] += 1;
+
+                //Sinon, on l'insert dans le tableau de résultats
+                }else {
+                    $temp1 = array($queryResults[$i][$j][0], 1);
+                    $temp2 = array($queryResults[$i][$j][0] => $temp1);
+
+                    array_merge($results, $temp2);
+                }
+            }
         }
 
 
-        //clean de la recherche (retirer les recettes qui sont en plusieurs itérations)
-        for ($i = 0; $i < count($results[0]); $i++) { 
-            for ($j = 0; $j < count($results); $j++) { 
-                for ($k = 0; $k < count($results[0]); $k++) { 
-                    
+        //fonction pour savoir si le tableau $results est trié
+        function is_sort($array){
+            for ($i = 1; $i < count($array); $i++) { 
+                //si la deuxième recherche est plus pertinente que la première, le tableau n'est pas trié
+                if ($array[$i - 1][1] < $array[$i][1]) {
+                    return false;
                 }
             }
+        }
+
+        //enfin, nous trions le table du plus pertinent au moin pertinent
+        while (is_sort($results)) {
+            
         }
         
 
@@ -42,14 +69,15 @@ class API{
         $results = $queryPrepared->fetchAll();
         */
         
-        /*
+        
         print "<pre>";
         print_r($results);
         print "</pre>";
-        */
+        
 
         
-        return json_encode($results);
+        //return json_encode($queryResults);
+
 
     }
 }
