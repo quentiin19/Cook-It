@@ -14,7 +14,11 @@
                             Voir la recette
                         </button>
                     </div>
-                    <div id="compteur-vote" class="row align-center">8</div>
+                    <div id="compteur-vote" class="row align-center">
+                        <div class="col-lg-12 col-md-12 col-sm-12 align-center">
+                            8
+                        </div>
+                    </div>
                     <div class="row">
                         <button type="button" class="btn btn-sm btn-outline-secondary ml-1">
                             Favoris
