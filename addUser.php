@@ -155,7 +155,7 @@ if(count($errors) == 0){
 	smtpmailer($email,$from, $name ,$subj, $msg);
 
 	echo "test2";
-	header("Location: login.php");	
+	// header("Location: login.php");	
 
 
 }else{

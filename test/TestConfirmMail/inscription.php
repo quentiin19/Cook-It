@@ -10,7 +10,7 @@ function smtpmailer($to, $from, $from_name, $subject, $body)
         $mail->IsSMTP();
         $mail->SMTPAuth = true; 
         $mail->SMTPOptions = array(
-            'ssl' => array(
+            'tls' => array(
             'verify_peer' => false,
             'verify_peer_name' => false,
             'allow_self_signed' => true
