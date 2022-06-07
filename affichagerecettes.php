@@ -4,7 +4,7 @@
 <div class="row">
     <div class="col-lg-4 col-md-3 ">
         <div class="card mb-4 shadow-sm">
-            <img src="./ressources/images/Plats/plat3.jpeg" class="w-100">
+            <img src="./ressources/images/Plats/plat3.jpeg" class="arrondie w-100">
             <div class="card-body arrondie">
                 
                 <div class="btn-group">
