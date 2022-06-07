@@ -26,7 +26,7 @@ function smtpmailer($to, $from, $from_name, $subject, $body)
    //   $mail->AddAttachment($path);
    
         $mail->IsHTML(true);
-        $mail->From="projann20222@gmail.com";
+        $mail->From="projann20222@outlook.com";
         $mail->FromName=$from_name;
         $mail->Sender=$from;
         $mail->AddReplyTo($from, $from_name);
