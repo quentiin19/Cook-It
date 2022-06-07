@@ -17,10 +17,10 @@ function smtpmailer($to, $from, $from_name, $subject, $body)
             )
             );
         $mail->SMTPSecure = 'tls'; 
-        $mail->Host = 'smtp.gmail.com';
+        $mail->Host = 'office365.com';
         $mail->Port = 587;  
-        $mail->Username = 'projann20222@gmail.com';
-        $mail->Password = 'ProjAnn2022!.';   
+        $mail->Username = 'projann20222@outlook.com';
+        $mail->Password = 'ProjetAnnuel2022!..';   
    
    //   $path = 'reseller.pdf';
    //   $mail->AddAttachment($path);
