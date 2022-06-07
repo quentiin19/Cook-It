@@ -10,7 +10,7 @@
 
                 <div class="col-lg-3 col-md-3 col-sm-3">
                     <div class="row">
-                        <button type="button" class="btn btn-sm btn-outline-secondary">
+                        <button type="button" class="btn btn-outline-secondary">
                             ⬆
                         </button>
                     </div>
