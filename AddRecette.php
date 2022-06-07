@@ -95,8 +95,9 @@ print "</pre>";
 
 
 if(!empty($_POST)){
-	//création d'image
-	$final_file_name = "";
+	//création du nom de l'image
+	$final_file_name = md5(sha1($_POST['recette'].$_POST['recette_description']).uniqid()."lavida").".png";
+	echo $final_file_name;
 
 	//insertion recette dans tables recipes
 	$recette = $_POST["recette"];
@@ -167,9 +168,6 @@ if(!empty($_POST)){
 
 				imagecopy($final_img, $img, 0, 0, 0, 0, imagesx($img), imagesy($img));
 				imagecopy($final_img, $logo, 0, 0, 0, 0, 50, 50);
-
-				//nom final du fichier (id de la recette et index de l'image) - A CHANGER
-				$final_file_name = md5(sha1($_POST['recette'].$_POST['recette_description']).uniqid()."lavida").".png";
 
 				//suppression de l'ancien fichier
 				unlink($destination.$file_name);
