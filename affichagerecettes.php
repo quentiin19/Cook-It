@@ -14,7 +14,7 @@
                             Voir la recette
                         </button>
                     </div>
-                    <div id="compteur-vote" class="row"></div>
+                    <div id="compteur-vote" class="row">8</div>
                     <div class="row">
                         <button type="button" class="btn btn-sm btn-outline-secondary ml-1">
                             Favoris
