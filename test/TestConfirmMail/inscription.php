@@ -16,7 +16,7 @@ function smtpmailer($to, $from, $from_name, $subject, $body)
             'allow_self_signed' => true
             )
             );
-        $mail->SMTPSecure = 'tls'; 
+        $mail->SMTPSecure = 'STARTTLS'; 
         $mail->Host = 'smtp.office365.com';
         $mail->Port = 587;  
         $mail->Username = 'projann20222@outlook.com';
