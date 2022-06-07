@@ -9,10 +9,13 @@
                 
 
                 <div class="col-lg-3 col-md-3 col-sm-3">
-                    <div class="btn-group">
+                    <div class="row">
                         <button type="button" class="btn btn-sm btn-outline-secondary">
                             Voir la recette
                         </button>
+                    </div>
+                    <div id="compteur-vote" class="row"></div>
+                    <div class="row">
                         <button type="button" class="btn btn-sm btn-outline-secondary ml-1">
                             Favoris
                         </button>
