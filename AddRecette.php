@@ -159,9 +159,6 @@ if(!empty($_POST)){
 
 	$pdo = connectDB();
 	$queryPrepared = $pdo->prepare("INSERT INTO RECIPES (ID_CREATOR, TITLE, DESCRIPTION, PICTURE_PATH) VALUES (:idcreator, :title, :recettedesc, :path);");
-
-
-
 	$queryPrepared->execute([
 							"idcreator"=>$_SESSION['id'],
 							"title"=>$recette,
@@ -170,6 +167,12 @@ if(!empty($_POST)){
 	]);
 
 
+	//update des logs
+	updateLogs($_SESSION['id'], "création de la recette : ".$recette);
+
+
+
+	//récupération de l'id de la recette pour créer les insertions dans la table NEED
 	$queryPrepared = $pdo->prepare("SELECT ID FROM RECIPES WHERE ID_CREATOR=:id AND TITLE=:title");
 	$queryPrepared->execute(["id"=>$_SESSION['id'], "title"=>$recette]);
 	$result = $queryPrepared->fetch();
@@ -182,6 +185,7 @@ if(!empty($_POST)){
 			$queryPrepared->execute(["quantity"=>$quantity, "id_ingr"=>$i ,"id_recipe"=>$result['ID']]);
 		}
 	}
+	
 
 
 	// header("Location: recette.php?id=".$result['ID']);

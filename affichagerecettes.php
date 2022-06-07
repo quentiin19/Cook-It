@@ -1,4 +1,13 @@
-<?php require 'template/header.php';?>
+<?php require 'template/header.php';
+
+$pdo = connectDB();
+
+
+
+
+?>
+
+
 
 
 <div class="row">
