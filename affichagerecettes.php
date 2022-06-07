@@ -15,7 +15,7 @@
                         </button>
                     </div>
                     <div id="compteur-vote" class="row align-center">
-                        <div class="col-lg-12 col-md-12 col-sm-12 align-center">
+                        <div class="col-lg-12 col-md-12 col-sm-12 text-center">
                             8
                         </div>
                     </div>
