@@ -132,7 +132,7 @@ if(!empty($_POST)){
 
 
 				imagecopy($final_img, $img, 0, 0, 0, 0, imagesx($img), imagesy($img));
-				imagecopy($final_img, $logo, 0, 0, 0, 0, 50, 50);
+				imagecopy($final_img, $logo, 0, 0, 0, 0, 81, 75);
 
 				//suppression de l'ancien fichier
 				unlink($destination.$file_name);
