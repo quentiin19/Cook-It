@@ -17,7 +17,7 @@ function smtpmailer($to, $from, $from_name, $subject, $body)
             )
             );
         $mail->SMTPSecure = 'tls'; 
-        $mail->Host = 'office365.com';
+        $mail->Host = 'smtp.live.com';
         $mail->Port = 587;  
         $mail->Username = 'projann20222@outlook.com';
         $mail->Password = 'ProjetAnnuel2022!..';   
