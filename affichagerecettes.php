@@ -7,13 +7,20 @@
             <img src="./ressources/images/Plats/plat3.jpeg" class="arrondie w-100">
             <div class="card-body arrondie">
                 
-                <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-secondary">
-                        Voir la recette
-                    </button>
-                    <button type="button" class="btn btn-sm btn-outline-secondary ml-1">
-                        Favoris
-                    </button>
+
+                <div class="col-lg-3 col-md-3">
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-sm btn-outline-secondary">
+                            Voir la recette
+                        </button>
+                        <button type="button" class="btn btn-sm btn-outline-secondary ml-1">
+                            Favoris
+                        </button>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3">
+                </div>
+                <div class="col-lg-3 col-md-3">
                 </div>
             </div>
         </div>
