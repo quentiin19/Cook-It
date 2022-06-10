@@ -56,9 +56,6 @@ function onclick() {
     //récupération de la valeur dans la barre de recherche
     var keywords = clean_str(search_bar.value);
 
-    
-
-    console.log(keywords);
 
     //envoi de la requete
     request.addEventListener("load", display_results);
