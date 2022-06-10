@@ -28,10 +28,10 @@
 		?> -->
 		<?php 
 			if (isConnected()){
-				echo'<div class="col-lg-1 col-md-3    ">
+				echo'<div class="col-lg-1 col-md-1    ">
 							<img src="./ressources/images/avatars/default.png" height="100vh" width="100vw">
 					</div>
-					<div class="col-lg-2 col-md-2 align-self-center text-left">
+					<div class="col-lg-1 col-md-1 align-self-center text-left">
 									<a href="#" class="nav-link dropdown-toggle text-white" data-bs-toggle="dropdown">mon profil</a>
 									<ul class="dropdown-menu">
 										<li><a href="#" class="dropdown-item">Mes abonnements</a></li>
@@ -60,10 +60,10 @@
 						</div>';
 				}
 				?>
-			<div class="col-lg-5 col-md-5 col-sm-0 text-center align-self-center">
+			<div class="col-lg-8 col-md-8 col-sm-0 text-center align-self-center">
 				<h1>Cook'It</h1>
 			</div>
-			<div class="col-lg-2 col-md-3 col-sm-5 text-right">
+			<div class="col-lg-2 col-md-2 col-sm-5 text-right">
 				<a href="index.php"><button type="button" class="btn text-white btn-lg"><img src="./ressources/images/Utilitaires/logo.png" height ="80vh" width="100vw" /></button></a>
 			</div>
 			
