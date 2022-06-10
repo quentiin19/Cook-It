@@ -28,7 +28,7 @@
 		?> -->
 		<?php 
 			if (isConnected()){
-				echo'<div class="col-lg-1 col-md-1 position-absolute align-self-center  ">
+				echo'<div class="col-lg-2 col-md-1 position-absolute align-self-center  ">
 							<img src="./ressources/images/avatars/default.png" height="100vh" width="100vw">
 					</div>
 					<div class="col-lg-1 col-md-1  align-self-center ">
