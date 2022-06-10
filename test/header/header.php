@@ -22,14 +22,48 @@
 <body class="h-auto bg-couleur">
 	<header>
 		<!-- Burger Menu -->
-		<?php include "./ressources/menu.php"; ?>
+		<!--  include "./ressources/menu.php";  -->
 
 
 		<!-- Section menu haut -->
 		<div class=" bg-color  p-2 row align-self-center" >
-			<div class="col-lg-2 col-md-3 col-sm-6 align-self-center end-0 ">
-				<img id="burger-menu-button" src="../../ressources/images/avatars/<?=$_SESSION['id']?>.png" height="100vh" width="100vw">
-			</div>
+		<!-- <?php
+			$_SESSION['pseudo'] = $pseudo;
+		?> -->
+		<?php 
+			if (isConnected()){
+				echo'<div class="col-lg-1 col-md-1 position-absolute align-self-center ">
+							<img src="../../ressources/images/avatars/default.png height="100vh" width="100vw">
+					</div>
+					<div class="col-lg-1 col-md-1  align-self-center ">
+									<a href="#" class="nav-link dropdown-toggle text-white" data-bs-toggle="dropdown">mon profil</a>
+									<ul class="dropdown-menu">
+										<li><a href="#" class="dropdown-item">Mes abonnements</a></li>
+										<li><a href="#" class="dropdown-item">Mes recettes</a></li>
+										<li><a href="./profil.php" class="dropdown-item">Modifier mon profil</a></li>
+										<li><a href="./avatar.php" class="dropdown-item">Modifier mon Avatar</a></li>
+										<li><a href="logout.php" class="dropdown-item">Se déconnecter</a></li>';
+										
+										if (isAdmin()) {
+											echo'<li><a href="./admin.php" class="dropdown-item">Gérer les utilisateurs</a></li>
+											</ul>';
+										}
+										else {
+										echo "c pas bon chef";
+										}
+									echo'</ul>
+							
+					</div>';
+				}else{
+					echo'<div class="col-lg-1 col-md-1  align-self-center text-left ">
+								<a href="./login.php" class=" text-white">Se Connecter</a>
+						</div>
+						
+						<div class="col-lg-1 col-md-1  align-self-center ">
+								<a href="./SignUp.php" class="text-white">S\'inscrire</a>	
+						</div>';
+				}
+				?>
 			<div class="col-lg-8 col-md-6 col-sm-0 text-center align-self-center">
 				<h1>Cook'It</h1>
 			</div>
