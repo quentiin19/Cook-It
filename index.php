@@ -11,13 +11,13 @@
 		  </div>
 		  <div class="carousel-inner">
 		    <div class="carousel-item active">
-		      <img src="./ressources/images/Utilitaires/font.png" class="d-block w-100 " height="80vh" width="80vw"  alt="...">
+		      <img src="./ressources/images/Utilitaires/font.png" class="d-block w-100 " height="150vh" width="80vw"  alt="...">
 		    </div>
 		    <div class="carousel-item">
-		      <img src="./ressources/images/Utilitaires/font.png" class="d-block w-100" height="80vh" width="80vw" alt="...">
+		      <img src="./ressources/images/Utilitaires/font.png" class="d-block w-100" height="200vh" width="80vw" alt="...">
 		    </div>
 		    <div class="carousel-item">
-		      <img src="./ressources/images/Utilitaires/font.png" class="d-block w-100" height="80vh" width="80vw" alt="...">
+		      <img src="./ressources/images/Utilitaires/font.png" class="d-block w-100" height="250vh" width="80vw" alt="...">
 		    </div>
 		  </div>
 		  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
