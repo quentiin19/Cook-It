@@ -28,10 +28,10 @@
 		?> -->
 		<?php 
 			if (isConnected()){
-				echo'<div class="col-lg-3 col-md-3  align-self-center  ">
+				echo'<div class="col-lg-3 col-md-3    ">
 							<img src="./ressources/images/avatars/default.png" height="100vh" width="100vw">
 					</div>
-					<div class="col-lg-2 col-md-2  ">
+					<div class="col-lg-2 col-md-2 align-self-center ">
 									<a href="#" class="nav-link dropdown-toggle text-white" data-bs-toggle="dropdown">mon profil</a>
 									<ul class="dropdown-menu">
 										<li><a href="#" class="dropdown-item">Mes abonnements</a></li>
