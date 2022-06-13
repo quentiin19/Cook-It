@@ -19,14 +19,14 @@ function smtpmailer($to, $from, $from_name, $subject, $body)
         $mail->SMTPSecure = 'STARTTLS'; 
         $mail->Host = 'smtp.office365.com';
         $mail->Port = 587;  
-        $mail->Username = 'projann20222@outlook.com';
+        $mail->Username = 'projann2022@outlook.com';
         $mail->Password = 'ProjetAnnuel2022!..';   
    
    //   $path = 'reseller.pdf';
    //   $mail->AddAttachment($path);
    
         $mail->IsHTML(true);
-        $mail->From="projann20222@outlook.com";
+        $mail->From="projann2022@outlook.com";
         $mail->FromName=$from_name;
         $mail->Sender=$from;
         $mail->AddReplyTo($from, $from_name);
