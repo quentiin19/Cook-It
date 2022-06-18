@@ -1,6 +1,6 @@
 <?php 
 		session_start();
-		require "/functions.php";
+		require "/var/www/html/ProjAnn/functions.php";
 	?>
 <!DOCTYPE html>
 <html>
