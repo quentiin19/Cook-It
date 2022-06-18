@@ -12,8 +12,8 @@ search_button.addEventListener("click", onclick, false);
 
 
 function clean_str(str){
-    let string = str;
-    console.log(`uncleaned string : ${string}`);
+    let new_str = str;
+    console.log(`uncleaned string : ${str}`);
     let a = "àáâäAÀÁÂÄ";
     let e = "èéêëEÈÉÊË";
     let i = "ìíîïIÌÍÎÏ";
@@ -22,32 +22,35 @@ function clean_str(str){
     let liaison = ['à', 'au', 'aux', 'le', 'la' , 'les', 'pour', 'dans', 'avec', 'sans'];
 
     //on supprime les mots de liaisons qui ne sont pas utiliser dans la recherche en bdd
+    /*
     for (let i = 0; i < liaison.length; i++) {
         let position = string.indexOf(liaison[i]);
         if (position != -1){
             string.slice(position, liaison[i].length);
         }
     }
+    */
 
     //on remplace les lettres qui pourrait fausser notre rechercher en bdd
-    for (let k = 0; k < string.length; k++) {
+    for (let k = 0; k < str.length; k++) {
         for (let j = 0; j < a.length; j++) {
-            if (string[k] == a[j]){
-                string[k] = 'a';
-            }else if(string[k] == e[j]){
-                string[k] = 'e';
-            }else if(string[k] == i[j]){
-                string[k] = 'i';
-            }else if(string[k] == o[j]){
-                string[k] = 'o';
-            }else if(string[k] == u[j]){
-                string[k] = 'u';
-            }else if(string[k] == ' '){
-                string[k] = '-';
+            if (str[k] == a[j]){
+                new_str[k] = 'a';
+            }else if(str[k] == e[j]){
+                new_str[k] = 'e';
+            }else if(str[k] == i[j]){
+                new_str[k] = 'i';
+            }else if(str[k] == o[j]){
+                new_str[k] = 'o';
+            }else if(str[k] == u[j]){
+                new_str[k] = 'u';
+            }else if(str[k] == ' '){
+                new_str[k] = '-';
+            }else{
+                new_str[k] = str[k]
             }
         }
     }
-    console.log(`cleaned string : ${string}`);
     return string;
 }
 
