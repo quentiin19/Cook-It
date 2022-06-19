@@ -14,7 +14,7 @@
 							<p class="text-white-50 mb-5">Partager vos recettes préférées</p>
 
 							<div class="row">
-								<div class="col-lg-12 col-md-12 bg-color arrondie py-5 ">
+								<div class="col-lg-6 col-md-6 bg-color arrondie py-5 ">
 									<form method="POST" enctype="multipart/form-data">
 
 										<input type="text" class="form-control my-3" name="recette" placeholder="Nom de la recette" required="required"><br>
@@ -24,7 +24,7 @@
 										</div>
 										<div class="row">
 											<div class="col-lg-12 col-md-12 col-sm-12 input-group">
-												<textarea class="form-control h-75" aria-label="With textarea" placeholder="Votre Recette" name="recette_description" required="required"></textarea>
+												<textarea class="form-control " aria-label="With textarea" placeholder="Votre Recette" name="recette_description" required="required"></textarea>
 											</div>
 										</div>
 										<div class="row">
