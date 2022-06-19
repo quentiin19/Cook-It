@@ -135,7 +135,7 @@ class API{
             $max_reci = 0;
 
             //on cherche l'id avec le plus de pertinence
-            foreach ($recipes as $key => $recipe) {
+            foreach ($ingredients as $key => $recipe) {
                 if (isset($ingredients[$key])) {
                     if ($pertinence[$key] >= $max_pert) {
                         $index_max = $key;
