@@ -129,7 +129,9 @@ function display_results() {
         second_div.appendChild(img);
         second_div.appendChild(third_div);
 
-        main_div.appendChild(second_div);
+        button.appendChild(second_div);
+
+        main_div.appendChild(button);
 
         recettes.appendChild(main_div);
 
