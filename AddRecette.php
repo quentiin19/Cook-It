@@ -28,7 +28,7 @@
 										</div>
 										<div class="row">
 											<div class="col-lg-6 col-md-6 col-sm-6 input-group">
-												<h3 class="text-center ml-3 py-3">Votre Recette </h3>
+												<h3 class="text-center pl-3 py-3">Votre Recette </h3>
 												<textarea class="form-control" id="textAreaExample1" name="recette_description" rows="20"></textarea>
 											</div>
 										</div>
