@@ -30,7 +30,7 @@
 			if (isConnected()){
 				echo'<div class="col-lg-2 col-md-2  align-self-center ">
 									<div class="btn-group">
-									<a><button type="button"class="btn btn-lg dropdown-toggle" data-toggle="dropdown"><img <img src="../../ressources/images/avatars/default.png" height="100vh" width="100vw"></button></a>		
+									<button type="button"class="btn btn-lg dropdown-toggle" data-toggle="dropdown"><img <img src="../../ressources/images/avatars/default.png" height="100vh" width="100vw"></button>		
 									<ul class="dropdown-menu">
 										<li><a href="#" class="dropdown-item">Mes abonnements</a></li>
 										<li><a href="#" class="dropdown-item">Mes recettes</a></li>
