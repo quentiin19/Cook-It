@@ -72,5 +72,5 @@ function onclick() {
 }
 
 function display_results() {
-    console.log(request.response);
+    console.log(JSON.parse(request.response));
 }
