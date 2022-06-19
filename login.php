@@ -1,49 +1,7 @@
-
-
 <?php 
 	include "./template/header.php";
 ?>
 
-<?php
-
-	if( !empty($_POST['email']) &&  !empty($_POST['pwd']) && count($_POST)==2 ){
-		$pdo = connectDB();
-		$queryPrepared = $pdo->prepare("SELECT * FROM USER WHERE MAIL=:email");
-		$queryPrepared->execute(["email"=>$_POST['email']]);
-		$results = $queryPrepared->fetch();
-		
-		if($results['role'] >=1){
-			echo $_POST['pwd'];
-			echo  $results['HASHPWD'];
-			if(!empty($results) && password_verify($_POST['pwd'], $results['HASHPWD'])){
-				
-	
-				$token = createToken();
-				updateToken($results["ID"], $token);
-				//Insertion dans la session du token
-				$_SESSION['email'] = $_POST['email'];
-				$_SESSION['id'] = $results["ID"];
-				$_SESSION['token'] = $token;
-
-				//update des logs
-				updateLogs($results["ID"], "connexion");
-
-				//redirection
-				header("location: index.php");
-	
-			}else{
-				echo "Identifiants incorrects";
-			}
-		}
-		else{
-			echo "veuillez vérifier vos mails pour confirmer votre compte";
-		}
-		
-
-		
-
-	}
-?>
 <div class="row ">
 	<div class="col-lg-2 col-md-1 col-sm-0"></div>
 	<div class="col-lg-12 col-md-12 col-sm-12h-auto arrondie ">
@@ -56,6 +14,44 @@
 					            <h2 class="fw-bold mb-2 text-uppercase">Se Connecter</h2>
 					            <p class="text-white-50 mb-5">Veillez entrer votre identifiant et votre mot de passe </p>
 					            
+								<?php
+
+									if(!empty($_POST['email']) && !empty($_POST['pwd']) && count($_POST)==2){
+										$pdo = connectDB();
+										$queryPrepared = $pdo->prepare("SELECT * FROM USER WHERE MAIL=:email");
+										$queryPrepared->execute(["email"=>$_POST['email']]);
+										$results = $queryPrepared->fetch();
+										
+										if (isset($results['role'])) {
+											if($results['role'] >=1){
+												if(!empty($results) && password_verify($_POST['pwd'], $results['HASHPWD'])){
+													
+										
+													$token = createToken();
+													updateToken($results["ID"], $token);
+													//Insertion dans la session du token
+													$_SESSION['email'] = $_POST['email'];
+													$_SESSION['id'] = $results["ID"];
+													$_SESSION['token'] = $token;
+	
+													//update des logs
+													updateLogs($results["ID"], "connexion");
+	
+													//redirection
+													header("location: index.php");
+										
+												}else{
+													echo "Identifiants incorrects";
+												}
+											}else{
+												echo "veuillez vérifier vos mails pour confirmer votre compte";
+											}
+										}else{
+											echo "Ce compte n'existe pas";
+										}
+									}
+								?>
+
 								<form method="POST" action="">
 					              	<div class="form-outline form-white mb-4">
 					                	<input  name="email" type="email" id="typeEmailX" placeholder="Email" class="form-control form-control-lg" />
