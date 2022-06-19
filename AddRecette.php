@@ -27,9 +27,9 @@
 											</div>
 										</div>
 										<div class="row">
-											<div class="col-lg-6 col-md-6 col-sm-6 input-group">
+											<div class="col-lg-6 col-md-6 col-sm-6 pl-2">
 												<h3 class="text-center py-3">Votre Recette </h3>
-												<textarea class="form-control ml-5 my-3" id="textAreaExample1" name="recette_description" rows="20"></textarea>
+												<textarea class="form-control my-3" id="textAreaExample1" name="recette_description" rows="20"></textarea>
 											</div>
 											<div class="col-lg-6 col-md-6 col-sm-6">
 												<h3 class="text-center py-3">Ajouter les ingrédients </h3>
