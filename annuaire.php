@@ -24,17 +24,19 @@ if (isConnected()) {
         <tbody>
             
 <?php
-foreach ($results as $user) {
-    echo '  <tr>
-                <td>'.$user["LASTNAME"].'</td>
-                <td>'.$user["FIRSTNAME"].'</td>
-                <td>'.$user["PSEUDO"].'</td>
-                <td>
-                    <div class="btn-group">
-                        <a href="delUser.php?id='.$user["ID"].'" class="btn btn-danger">Supprimer</a>
-                        <a href="#" class="btn btn-warning" >Modifier</a>
-                    </div>
-                </td>
-            </tr>';
+    foreach ($results as $user) {
+        if ($user['ID'] != $_SESSION['id']) {
+            echo '  <tr>
+                    <td>'.$user["LASTNAME"].'</td>
+                    <td>'.$user["FIRSTNAME"].'</td>
+                    <td>'.$user["PSEUDO"].'</td>
+                    <td>
+                        <div class="btn-group">
+                            <a href="message.php?id='.$user["ID"].'" class="btn btn-primary">Message</a>
+                        </div>
+                    </td>
+                </tr>';
+        }
+    }
 }
 ?>
