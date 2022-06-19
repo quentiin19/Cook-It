@@ -83,12 +83,13 @@ function display_results() {
         const main_div = document.createElement("div");
         main_div.setAttribute("class", "col-lg-3 col-md-4 col-sm-1 py-3");
 
-        const button = document.createElement("button");
-        button.setAttribute("href", `http://51.255.172.36/recette.php?id=${recipe['ID']}`);
-
         const second_div = document.createElement("div");
         second_div.setAttribute("class", "card mb-4 shadow-sm bg-color py-3 px-3 arrondie");
         second_div.setAttribute("style", "width: 35rem");
+
+
+        const button = document.createElement("button");
+        button.setAttribute("href", `http://51.255.172.36/recette.php?id=${recipe['ID']}`);
 
         const img = document.createElement("img");
         img.setAttribute("src", `${recipe['PICTURE_PATH']}`);
@@ -126,12 +127,12 @@ function display_results() {
 
         third_div.appendChild(fourth_div);
 
-        second_div.appendChild(img);
-        second_div.appendChild(third_div);
+        button.appendChild(img);
+        button.appendChild(third_div);
 
-        button.appendChild(second_div);
+        second_div.appendChild(button);
 
-        main_div.appendChild(button);
+        main_div.appendChild(second_div);
 
         recettes.appendChild(main_div);
 
