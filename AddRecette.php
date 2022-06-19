@@ -167,7 +167,7 @@ if(!empty($_POST)){
 							"idcreator"=>$_SESSION['id'],
 							"title"=>$recette,
 							"recettedesc"=>$recette_description,
-							"path"=>"ressources/images/images-recettes/".$final_file_name
+							"path"=>"/ressources/images/images-recettes/".$final_file_name
 	]);
 
 
