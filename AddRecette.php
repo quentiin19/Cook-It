@@ -20,13 +20,13 @@
 											<div class="col-lg-6 col-md-6">
 												<input type="text" class="form-control my-3" name="recette" placeholder="Nom de la recette" required="required"><br>
 											</div>
+											<div class="col-lg-6 col-md-6">
+												<h3 class="text-center py-3">Ajouter une image à ma recette </h3>
+													<input type="file" name="fichier" required="required"> <br>	
+											</div>
 										</div>
 										<div class="row">
-											<h3 class="text-center py-3">Ajouter une image à ma recette </h3>
-												<input type="file" name="fichier" required="required"> <br>	
-										</div>
-										<div class="row">
-											<div class="col-lg-12 col-md-12 col-sm-12 input-group">
+											<div class="col-lg-6 col-md-6 col-sm-6 input-group">
 												<textarea class="form-control " aria-label="With textarea" placeholder="Votre Recette" name="recette_description" required="required"></textarea>
 											</div>
 										</div>
