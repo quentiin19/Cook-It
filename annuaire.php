@@ -25,7 +25,8 @@ if (isConnected()) {
             
 <?php
     foreach ($results as $user) {
-        echo '  <tr>
+        if ($user['ID'] != $_SESSION['id']) {
+            echo '  <tr>
                     <td>'.$user["LASTNAME"].'</td>
                     <td>'.$user["FIRSTNAME"].'</td>
                     <td>'.$user["PSEUDO"].'</td>
@@ -35,6 +36,7 @@ if (isConnected()) {
                         </div>
                     </td>
                 </tr>';
+        }
     }
 }
 ?>
