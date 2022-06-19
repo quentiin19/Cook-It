@@ -100,7 +100,7 @@ class API{
 
         //pour chaque mots, on recherche dans la BDD si une recette correspond
         foreach ($array_key_words as $index=>$word) {
-            $queryPrepared = $pdo->prepare("SELECT ID FROM INGREDIENTS WHERE TITLE LIKE :word;");
+            $queryPrepared = $pdo->prepare("SELECT ID FROM INGREDIENTS WHERE NAME LIKE :word;");
             $queryPrepared->execute(["word"=>"%".$word."%"]);
             $queryResults = $queryPrepared->fetchAll();
 
