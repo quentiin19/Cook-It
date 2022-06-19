@@ -31,8 +31,7 @@ if (isConnected()) {
                     <td>'.$user["PSEUDO"].'</td>
                     <td>
                         <div class="btn-group">
-                            <a href="delUser.php?id='.$user["ID"].'" class="btn btn-danger">Supprimer</a>
-                            <a href="#" class="btn btn-warning" >Modifier</a>
+                            <a href="message.php?id='.$user["ID"].'" class="btn btn-primary">Message</a>
                         </div>
                     </td>
                 </tr>';
