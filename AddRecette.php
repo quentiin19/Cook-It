@@ -24,7 +24,7 @@
 										</div>
 										<div class="row">
 											<div class="col-lg-12 col-md-12 col-sm-12 input-group">
-												<textarea class="form-control" aria-label="With textarea" placeholder="Votre Recette" name="recette_description" required="required"></textarea>
+												<textarea class="form-control h-75" aria-label="With textarea" placeholder="Votre Recette" name="recette_description" required="required"></textarea>
 											</div>
 										</div>
 										<div class="row">
