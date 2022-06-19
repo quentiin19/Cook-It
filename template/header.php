@@ -37,8 +37,7 @@
 										<li><a href="./profil.php" class="dropdown-item">Modifier mon profil</a></li>
 										<li><a href="./avatar.php" class="dropdown-item">Modifier mon Avatar</a></li>';
 										if (isAdmin()) {
-											echo'<li><a href="./admin.php" class="dropdown-item">Gérer les utilisateurs</a></li>
-											</ul>';
+											echo'<li><a href="./admin.php" class="dropdown-item">Gérer les utilisateurs</a></li>';
 										}
 										else {
 										echo "c pas bon chef";
