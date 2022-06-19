@@ -47,7 +47,7 @@
 												echo '<p class="bg-danger text-white">veuillez vérifier vos mails pour confirmer votre compte</p>';
 											}
 										}else{
-											echo '<p class="bg-danger text-white">Ce compte n\'existe pass</p>';
+											echo '<p class="bg-danger text-white">Ce compte n\'existe pas</p>';
 										}
 									}
 								?>
