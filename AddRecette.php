@@ -14,10 +14,13 @@
 							<p class="text-white-50 mb-5">Partager vos recettes préférées</p>
 
 							<div class="row">
-								<div class="col-lg-6 col-md-6 bg-color arrondie py-5 ">
+								<div class="col-lg-12 col-md-12 bg-color arrondie py-5 ">
 									<form method="POST" enctype="multipart/form-data">
-
-										<input type="text" class="form-control my-3" name="recette" placeholder="Nom de la recette" required="required"><br>
+										<div class="row">
+											<div class="col-lg-6 col-md-6">
+												<input type="text" class="form-control my-3" name="recette" placeholder="Nom de la recette" required="required"><br>
+											</div>
+										</div>
 										<div class="row">
 											<h3 class="text-center py-3">Ajouter une image à ma recette </h3>
 												<input type="file" name="fichier" required="required"> <br>	
