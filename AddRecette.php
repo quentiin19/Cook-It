@@ -28,7 +28,8 @@
 										</div>
 										<div class="row">
 											<div class="col-lg-6 col-md-6 col-sm-6 input-group">
-												<textarea class="form-control " aria-label="With textarea" placeholder="Votre Recette" name="recette_description" row="10" required="required"></textarea>
+												<textarea class="form-control" id="textAreaExample1" name="recette_description" rows="4"></textarea>
+  												<label class="form-label" for="textAreaExample">Message</label>
 											</div>
 										</div>
 										<div class="row">
