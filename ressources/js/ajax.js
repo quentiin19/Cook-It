@@ -89,7 +89,7 @@ function display_results() {
 
 
         const button = document.createElement("button");
-        button.setAttribute("href", `http://51.255.172.36/recette.php?id=${recipe['ID']}`);
+        button.setAttribute("src", `http://51.255.172.36/recette.php?id=${recipe['ID']}`);
 
         const img = document.createElement("img");
         img.setAttribute("src", `${recipe['PICTURE_PATH']}`);
