@@ -88,8 +88,8 @@ function display_results() {
         second_div.setAttribute("style", "width: 35rem");
 
 
-        const button = document.createElement("button");
-        button.setAttribute("src", `http://51.255.172.36/recette.php?id=${recipe['ID']}`);
+        const a = document.createElement("a");
+        a.setAttribute("href", `http://51.255.172.36/recette.php?id=${recipe['ID']}`);
 
         const img = document.createElement("img");
         img.setAttribute("src", `${recipe['PICTURE_PATH']}`);
@@ -127,10 +127,10 @@ function display_results() {
 
         third_div.appendChild(fourth_div);
 
-        button.appendChild(img);
-        button.appendChild(third_div);
+        a.appendChild(img);
+        a.appendChild(third_div);
 
-        second_div.appendChild(button);
+        second_div.appendChild(a);
 
         main_div.appendChild(second_div);
 
