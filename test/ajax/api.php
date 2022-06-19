@@ -83,7 +83,9 @@ class API{
 
 
 
-        echo $json_recipes;
+        print '<pre>';
+        print_r($json_recipes);
+        print '</pre>';
         return json_encode($json_recipes);
     }
 }
