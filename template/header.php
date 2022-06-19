@@ -43,7 +43,7 @@
 										else {
 										echo "c pas bon chef";
 										}
-										// echo'<li><a href="logout.php" class="dropdown-item">Se déconnecter</a></li>';
+										echo'<li><a href="logout.php" class="dropdown-item">Se déconnecter</a></li>';
 										
 
 									echo'</ul>
