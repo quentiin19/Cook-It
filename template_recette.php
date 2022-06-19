@@ -1,7 +1,7 @@
 <?php include "template/header.php" ?>
 
 <div class="col-lg-4 col-md-3  ">
-                <div class="card mb-4 shadow-sm bg-color py-3 px-3 arrondie" style="width: 50rem ">
+                <div class="card mb-4 shadow-sm bg-color py-3 px-3 arrondie" style="width: 35rem ">
                     <img src="./ressources/images/Desserts/dessert1.jpeg" height="100%" width="100%"> 
                     <div class="card-body arrondie">
                         <div class="row">
