@@ -7,8 +7,8 @@
                         <div class="row">
                             <div class="col-lg-3 col-md-3 col-sm-3"></div>
                                 <div class="col-lg-6 col-md-6 col-sm-6 px-2 py-2 border">
-                                    <h4> Titre </h4><br>
-                                    <p>Crée par ******</p>
+                                    <h4 class="text-center"> Titre </h4><br>
+                                    <p class="text-center">Crée par ******</p>
                                 </div>
                             <div class="col-lg-3 col-md-3 col-sm-3"></div>
                         </div>
@@ -22,8 +22,8 @@
                         <div class="row">
                             <div class="col-lg-3 col-md-3 col-sm-3"></div>
                                 <div class="col-lg-6 col-md-6 col-sm-6 px-2 py-2 border">
-                                    <h4> Titre </h4><br>
-                                    <p>Crée par ******</p>
+                                    <h4 class="text-center"> Titre </h4><br>
+                                    <p class="text-center">Crée par ******</p>
                                 </div>
                             <div class="col-lg-3 col-md-3 col-sm-3"></div>
                         </div>
@@ -37,8 +37,8 @@
                         <div class="row">
                             <div class="col-lg-3 col-md-3 col-sm-3"></div>
                                 <div class="col-lg-6 col-md-6 col-sm-6 px-2 py-2 border">
-                                    <h4> Titre </h4><br>
-                                    <p>Crée par ******</p>
+                                    <h4 class="text-center"> Titre </h4><br>
+                                    <p class="text-center">Crée par ******</p>
                                 </div>
                             <div class="col-lg-3 col-md-3 col-sm-3"></div>
                         </div>
@@ -52,8 +52,8 @@
                         <div class="row">
                             <div class="col-lg-3 col-md-3 col-sm-3"></div>
                                 <div class="col-lg-6 col-md-6 col-sm-6 px-2 py-2 border">
-                                    <h4> Titre </h4><br>
-                                    <p>Crée par ******</p>
+                                    <h4 class="text-center"> Titre </h4><br>
+                                    <p class="text-center">Crée par ******</p>
                                 </div>
                             <div class="col-lg-3 col-md-3 col-sm-3"></div>
                         </div>
