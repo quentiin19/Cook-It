@@ -1,4 +1,6 @@
 <?php
+include "../../template/header";
+?>
 
 <!DOCTYPE html>
 <html>
