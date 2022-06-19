@@ -38,7 +38,7 @@
 										<li><a href="./avatar.php" class="dropdown-item">Modifier mon Avatar</a></li>
 										<ul class="dropdown-menu">
 											<li><a href="#" class="dropdown-item">Mes abonnements</a></li>
-										</ul>'
+										</ul>';
 										if (isAdmin()) {
 											echo'<li><a href="./admin.php" class="dropdown-item">Gérer les utilisateurs</a></li>
 											</ul>';
