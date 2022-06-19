@@ -1,4 +1,4 @@
-<?php include "header.php" ?>
+<?php include "template/header.php" ?>
 
 <div class="col-lg-4 col-md-3 bg-color ">
                 <div class="card mb-4 shadow-sm">
