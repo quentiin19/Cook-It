@@ -3,6 +3,7 @@ const request = new XMLHttpRequest;
 const search_bar = document.getElementById("search_bar_ajax");
 const search_button = document.getElementById("search_button_ajax");
 const result_ajax = document.getElementById("result_ajax");
+const recettes = document.getElementById("recettes");
 
 //récupération des coordonnées de la barre de recherche
 var coor_sb = search_bar.getBoundingClientRect();
@@ -73,4 +74,79 @@ function onclick() {
 
 function display_results() {
     console.log(JSON.parse(request.response));
+
+    let recipes = JSON.parse(request.response);
+
+
+    for (const recipe of recipes) {
+        const main_div = document.createElement("div");
+        main_div.setAttribute("class", "col-lg-3 col-md-4 col-sm-1 py-3");
+
+        const second_div = document.createElement("div");
+        second_div.setAttribute("class", "card mb-4 shadow-sm bg-color py-3 px-3 arrondie");
+        second_div.setAttribute("style", "width: 35rem");
+
+        const img = document.createElement("img");
+        img.setAttribute("src", `${recipe['PICTURE_PATH']}`);
+        img.setAttribute("height", "100%");
+        img.setAttribute("width", "100%");
+
+        const third_div = document.createElement("div");
+        third_div.setAttribute("class", "card-body arrondie");
+
+        const fourth_div = document.createElement("div");
+        fourth_div.setAttribute("class", "row");
+
+        const fifth_div = document.createElement("div");
+        fifth_div.setAttribute("class", "col-lg-3 col-md-3 col-sm-3");
+
+        const sixth_div = document.createElement("div");
+        sixth_div.setAttribute("class", "col-lg-6 col-md-6 col-sm-6 px-2 py-2 border");
+
+        const title = document.createElement("h4");
+        title.innerText = `${recipe['TITLE']}`;
+
+        const creator = document.createElement("p");
+        creator.innerText = `Créé par ${recipe['PSEUDO']}`;
+
+        const seventh_div = document.createElement("div");
+        seventh_div.setAttribute("class", "col-lg-3 col-md-3 col-sm-3");
+
+
+        sixth_div.appendChild(title);
+        sixth_div.appendChild(creator);
+
+        fourth_div.appendChild(fifth_div);
+        fourth_div.appendChild(sixth_div);
+        fourth_div.appendChild(seventh_div);
+
+        third_div.appendChild(fourth_div);
+
+        second_div.appendChild(img);
+        second_div.appendChild(third_div);
+
+        main_div.appendChild(second_div);
+
+        recettes.appendChild(main_div);
+
+    }
+
+
+/*
+<div class="col-lg-3 col-md-4 col-sm-1 py-3">
+    <div class="card mb-4 shadow-sm bg-color py-3 px-3 arrondie" style="width: 35rem ">
+        <img src="./ressources/images/Desserts/dessert1.jpeg" height="100%" width="100%"> 
+        <div class="card-body arrondie">
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-sm-3"></div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 px-2 py-2 border">
+                        <h4 class="text-center"> Titre </h4><br>
+                        <p class="text-center">Crée par ******</p>
+                    </div>
+                <div class="col-lg-3 col-md-3 col-sm-3"></div>
+            </div>
+        </div>
+    </div>
+</div>
+*/
 }
