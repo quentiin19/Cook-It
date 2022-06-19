@@ -73,6 +73,7 @@ function onclick() {
 }
 
 function display_results() {
+    recettes.innerHTML = "";
     console.log(JSON.parse(request.response));
 
     let recipes = JSON.parse(request.response);
