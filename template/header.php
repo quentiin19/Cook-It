@@ -1,6 +1,6 @@
 <?php 
 		session_start();
-		require "functions.php";
+		require "http://51.255.172.36/functions.php";
 	?>
 <!DOCTYPE html>
 <html>
