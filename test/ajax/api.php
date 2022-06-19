@@ -83,7 +83,7 @@ class API{
 
 
 
-
+        echo $json_recipes;
         return json_encode($json_recipes);
     }
 }
