@@ -1,8 +1,8 @@
 <?php include "template/header.php" ?>
 
-<div class="col-lg-4 col-md-3 bg-color ">
-                <div class="card mb-4 shadow-sm">
-                    <img src="./ressources/images/entrees.jpeg" class="w-100">
+<div class="col-lg-4 col-md-3  ">
+                <div class="card mb-4 shadow-sm bg-color">
+                    <img src="./ressources/images/Desserts/dessert1.jpeg" class="w-100">
                     <div class="card-body arrondie">
                         <div class="row">
                             <div class="col-lg-3 col-md-3 col-sm-3"></div>
