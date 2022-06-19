@@ -18,10 +18,11 @@
 									<form method="POST" enctype="multipart/form-data">
 										<div class="row">
 											<div class="col-lg-6 col-md-6">
-												<input type="text" class="form-control my-3" name="recette" placeholder="Nom de la recette" required="required"><br>
+												<h3 class="text-center">Ajouter une image à ma recette </h3>
+													<input type="text" class="form-control my-3" name="recette" placeholder="Nom de la recette" required="required"><br>
 											</div>
 											<div class="col-lg-6 col-md-6">
-												<h3 class="text-center py-3">Ajouter une image à ma recette </h3>
+												<h3 class="text-center">Ajouter une image à ma recette </h3>
 													<input type="file" name="fichier" required="required"> <br>	
 											</div>
 										</div>
