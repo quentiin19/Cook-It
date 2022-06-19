@@ -71,7 +71,20 @@ class API{
             }
 
         }
-        return json_encode($result);
+
+        $json_recipes = [];
+        foreach ($result as $index => $recipe_id) {
+            $queryPrepared = $pdo->prepare("SELECT ID_CREATOR, TITLE, PICTURE_PATH FROM RECIPES WHERE ID=:id;");
+            $queryPrepared->execute(["id"=>$recipe_id]);
+            $queryResults = $queryPrepared->fetch();
+
+            array_push($json_recipes, $queryResults);
+        }
+
+
+
+
+        return json_encode($json_recipes);
     }
 }
 
