@@ -18,17 +18,17 @@
 									<form method="POST" enctype="multipart/form-data">
 										<div class="row">
 											<div class="col-lg-6 col-md-6">
-												<h3 class="text-center">Ajouter une image à ma recette </h3>
+												<h3 class="text-center">Titre </h3>
 													<input type="text" class="form-control my-3" name="recette" placeholder="Nom de la recette" required="required"><br>
 											</div>
 											<div class="col-lg-6 col-md-6">
-												<h3 class="text-center">Ajouter une image à ma recette </h3>
+												<h3 class="text-center">Ajouter une image </h3>
 													<input type="file" name="fichier" required="required"> <br>	
 											</div>
 										</div>
 										<div class="row">
 											<div class="col-lg-6 col-md-6 col-sm-6 input-group">
-												<h3 class="text-center ly-3 py-3">Votre Recette </h3>
+												<h3 class="text-center ml-3 py-3">Votre Recette </h3>
 												<textarea class="form-control" id="textAreaExample1" name="recette_description" rows="20"></textarea>
 											</div>
 										</div>
