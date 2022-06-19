@@ -41,13 +41,13 @@
 													header("location: index.php");
 										
 												}else{
-													echo "Identifiants incorrects";
+													echo '<p class="bg-danger text-white">Identifiants incorrects</p>';
 												}
 											}else{
-												echo "veuillez vérifier vos mails pour confirmer votre compte";
+												echo '<p class="bg-danger text-white">veuillez vérifier vos mails pour confirmer votre compte</p>';
 											}
 										}else{
-											echo "Ce compte n'existe pas";
+											echo '<p class="bg-danger text-white">Ce compte n\'existe pas</p>';
 										}
 									}
 								?>
