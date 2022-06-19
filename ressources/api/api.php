@@ -145,8 +145,8 @@ class API{
                 }
             }
 
-            array_push($result, $recipes[$index_max]);
-            unset($recipes[$index_max]);
+            array_push($result, $ingredients[$index_max]);
+            unset($ingredients[$index_max]);
             unset($pertinence[$index_max]);
 
             //si tous les éléments ont été enlevés, le tri est fini
