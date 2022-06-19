@@ -35,10 +35,7 @@
 										<li><a href="#" class="dropdown-item">Mes abonnements</a></li>
 										<li><a href="#" class="dropdown-item">Mes recettes</a></li>
 										<li><a href="./profil.php" class="dropdown-item">Modifier mon profil</a></li>
-										<li><a href="./avatar.php" class="dropdown-item">Modifier mon Avatar</a></li>
-										<ul class="dropdown-menu">
-											<li><a href="#" class="dropdown-item">Mes abonnements</a></li>
-										</ul>';
+										<li><a href="./avatar.php" class="dropdown-item">Modifier mon Avatar</a></li>';
 										if (isAdmin()) {
 											echo'<li><a href="./admin.php" class="dropdown-item">Gérer les utilisateurs</a></li>
 											</ul>';
@@ -46,10 +43,10 @@
 										else {
 										echo "c pas bon chef";
 										}
-										echo'<li><a href="logout.php" class="dropdown-item">Se déconnecter</a></li>
+										echo'<li><a href="logout.php" class="dropdown-item">Se déconnecter</a></li>';
 										
 
-									</ul>
+									echo'</ul>
 							
 					</div>
 					</div>';
