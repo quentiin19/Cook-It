@@ -74,7 +74,7 @@ class API{
 
         $json_recipes = [];
         foreach ($result as $index => $recipe_id) {
-            $queryPrepared = $pdo->prepare("SELECT PSEUDO, TITLE, PICTURE_PATH FROM RECIPES, USER WHERE RECIPES.ID=:id AND RECIPES.ID_CREATOR = USER.ID;");
+            $queryPrepared = $pdo->prepare("SELECT PSEUDO, TITLE, PICTURE_PATH, RECIPES.ID FROM RECIPES, USER WHERE RECIPES.ID=:id AND RECIPES.ID_CREATOR = USER.ID;");
             $queryPrepared->execute(["id"=>$recipe_id]);
             $queryResults = $queryPrepared->fetch();
 
