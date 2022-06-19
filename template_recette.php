@@ -2,7 +2,7 @@
 
 <div class="col-lg-4 col-md-3  ">
                 <div class="card mb-4 shadow-sm bg-color">
-                    <img src="./ressources/images/Desserts/dessert1.jpeg" class="w-100">
+                    <img src="./ressources/images/Desserts/dessert1.jpeg" height="100%" width="100%"> 
                     <div class="card-body arrondie">
                         <div class="row">
                             <div class="col-lg-3 col-md-3 col-sm-3"></div>
