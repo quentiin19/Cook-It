@@ -118,6 +118,9 @@ function display_results() {
         seventh_div.setAttribute("class", "col-lg-3 col-md-3 col-sm-3");
 
 
+
+
+        
         sixth_div.appendChild(title);
         sixth_div.appendChild(creator);
 
