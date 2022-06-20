@@ -160,7 +160,7 @@ if(count($errors) == 0){
 	$_SESSION['errors'] = $errors;
 	header("Location: SignUp.php");
 	foreach ($errors as $error){
-		echo '<p class="bg-danger text-white">';$error echo'</p>';
+		echo '<p class="bg-danger text-white">$error</p>';
 	}
 	echo'-------------------errors------------';
 	print '<pre>';
