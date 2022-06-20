@@ -119,10 +119,7 @@ if( $pwd != $pwdConfirm){
 
 if(count($errors) == 0){
 
-	
 
-	//$email = "y.skrzypczy@gmail.com";
-	//$firstname = "');DELETE FROM users;";
 
 	$queryPrepared = $pdo->prepare("INSERT INTO USER (MAIL, FIRSTNAME, LASTNAME, PSEUDO, HASHPWD, role) 
 		VALUES ( :email , :firstname, :lastname, :pseudo, :pwd , :role);");
@@ -162,7 +159,7 @@ if(count($errors) == 0){
 	
 	$_SESSION['errors'] = $errors;
 	echo "test";
-	header("Location: SignUp.php");
+	// header("Location: SignUp.php");
 }
 
 
