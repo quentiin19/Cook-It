@@ -158,6 +158,10 @@ if(count($errors) == 0){
 }else{
 	
 	$_SESSION['errors'] = $errors;
+	echo'-------------------errors------------';
+	print '<pre>';
+	print_r($errors);
+	print '</pre>';
 	header("Location: SignUp.php");
 }
 
