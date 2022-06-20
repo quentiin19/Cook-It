@@ -59,7 +59,7 @@
 						</div>';
 				}
 				?>
-			<div class="col-lg-8 col-md-8 col-sm-0 text-center align-self-center">
+			<div class="col-lg-8 col-md-8 col-sm-hidden text-center align-self-center">
 				<h1>Cook'It</h1>
 			</div>
 			<div class="col-lg-2 col-md-2 col-sm-5 text-right">
