@@ -162,7 +162,7 @@ if(count($errors) == 0){
 	print '<pre>';
 	print_r($errors);
 	print '</pre>';
-	header("Location: SignUp.php");
+	// header("Location: SignUp.php");
 }
 
 
