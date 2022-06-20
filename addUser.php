@@ -158,8 +158,7 @@ if(count($errors) == 0){
 }else{
 	
 	$_SESSION['errors'] = $errors;
-	echo $errors;
-	// header("Location: SignUp.php");
+	header("Location: SignUp.php");
 }
 
 
