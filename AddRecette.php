@@ -68,7 +68,7 @@
 													<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati eaque tempore labore asperiores! Excepturi veritatis a reiciendis provident, mollitia esse consequuntur vero iste maxime nostrum unde ducimus suscipit ipsam ut?</p>
 												</div>
 												</div>
-												</div
+											</div>
 											</div>
 										</div>
 										
