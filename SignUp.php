@@ -8,7 +8,6 @@
 	<div class="col-lg-8 col-md-10 col-sm-12 h-auto arrondie  ">
 		<div>
 		<?php
-			$_SESSION['errors'] = $errors;
 			foreach ($errors as $error){
 				echo '<p class="bg-danger text-white">$error</p>';
 			}
