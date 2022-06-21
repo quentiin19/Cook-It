@@ -6,6 +6,14 @@
 	<div class="col-lg-2 col-md-1 col-sm-0"></div>
 
 	<div class="col-lg-8 col-md-10 col-sm-12 h-auto arrondie  ">
+		<div>
+		<?php
+			$_SESSION['errors'] = $errors;
+			foreach ($errors as $error){
+				echo '<p class="bg-danger text-white">$error</p>';
+			}
+		?>
+		</div>
 		<div class="container py-2  h-auto  ">
 		    <div class="row d-flex justify-content-center align-items-center h-100">
 		        <div class="card bg-color text-white" style="border-radius: 1rem;">

@@ -162,10 +162,10 @@ if(count($errors) == 0){
 	// 	echo '<p class="bg-danger text-white">$error</p>';
 	// }
 	// echo'-------------------errors------------';
-	print '<pre>';
-	print_r($errors);
-	print '</pre>';
-	// header("Location: SignUp.php");
+	// print '<pre>';
+	// print_r($errors);
+	// print '</pre>';
+	header("Location: SignUp.php");
 }
 
 
