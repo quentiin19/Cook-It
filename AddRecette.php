@@ -33,8 +33,7 @@
 											</div>
 											<div class="col-lg-6 col-md-6 col-sm-6">
 												<h3 class="text-center py-3">Ajouter les ingrédients </h3>
-												<div>
-												<div class="overflow-auto " style="height= 100px">
+												<div class="overflow-scroll " style="height= 100px">
 												<?php
 											$pdo = connectDB();
 
@@ -64,8 +63,10 @@
 															</div>';
 												
 												}?>
+												<div class="col-lg-12 col-md-12 col-sm-12 background-body arrondie my-2">
+													<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati eaque tempore labore asperiores! Excepturi veritatis a reiciendis provident, mollitia esse consequuntur vero iste maxime nostrum unde ducimus suscipit ipsam ut?</p>
 												</div>
-											</div>
+												</div>
 											</div>
 										</div>
 										
