@@ -9,7 +9,7 @@
 		<div>
 		<?php
 		if(!empty($_SESSION['errors'])){
-				echo '<p class="bg-danger text-white">'.$_SESSION['errors'].'</p>';
+				echo '<p class="bg-danger text-white">'.implode(" ",$_SESSION['errors']).'</p>';
 			}
 			unset($_SESSION['errors']);
 
