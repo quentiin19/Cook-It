@@ -1,43 +1,46 @@
 <?php   
 		include "template/header.php";
 ?>
-	
-<div class="row">
-	<div class="col-lg-2 col-md-1 col-sm-0"></div>
-	<div class="col-lg-8 col-md-10 col-sm-12 h-auto arrondie  ">
-		<div class="container py-2  h-auto  ">
-			<div class="row d-flex justify-content-center align-items-center h-100">
-				<div class="card bg-color text-white" style="border-radius: 1rem;">
-					<div class="card-body  text-center">
-						<div class="mb-md-5 mt-md-4 pb-5">
-							<h2 class="fw-bold mb-2 text-uppercase">CREER UNE RECETTE</h2>
-							<p class="text-white-50 mb-5">Partager vos recettes préférées</p>
 
-							<div class="row">
-								<div class="col-lg-12 col-md-12 bg-color arrondie py-5 ">
-									<form method="POST" enctype="multipart/form-data">
-										<div class="row">
-											<div class="col-lg-6 col-md-6">
-												<h3 class="text-center">Titre </h3>
-													<input type="text" class="form-control my-3" name="recette" placeholder="Nom de la recette" required="required"><br>
-											</div>
-											<div class="col-lg-6 col-md-6">
-												<h3 class="text-center">Ajouter une image </h3>
-													<input type="file" name="fichier" required="required"> <br>	
-											</div>
-										</div>
-										<div class="row">
-											<div class="col-lg-6 col-md-6 col-sm-6 pl-2">
-												<h3 class="text-center py-3">Votre Recette </h3>
-												<textarea class="form-control my-3" id="textAreaExample1" placeholder="Les étapes de votre recette" name="recette_description" rows="20"></textarea>
-											</div>
-											<div class="col-lg-6 col-md-6 col-sm-6">
-												<h3 class="text-center py-3">Ajouter les ingrédients </h3>
-												
-												<!--scroll-->
-												<div>
-												<div class="overflow-auto " style="height : 400px">
-												<?php
+<div class="row">
+    <div class="col-lg-2 col-md-1 col-sm-0"></div>
+    <div class="col-lg-8 col-md-10 col-sm-12 h-auto arrondie  ">
+        <div class="container py-2  h-auto  ">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="card bg-color text-white" style="border-radius: 1rem;">
+                    <div class="card-body  text-center">
+                        <div class="mb-md-5 mt-md-4 pb-5">
+                            <h2 class="fw-bold mb-2 text-uppercase">CREER UNE RECETTE</h2>
+                            <p class="text-white-50 mb-5">Partager vos recettes préférées</p>
+
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 bg-color arrondie py-5 ">
+                                    <form method="POST" enctype="multipart/form-data">
+                                        <div class="row">
+                                            <div class="col-lg-6 col-md-6">
+                                                <h3 class="text-center">Titre </h3>
+                                                <input type="text" class="form-control my-3" name="recette"
+                                                    placeholder="Nom de la recette" required="required"><br>
+                                            </div>
+                                            <div class="col-lg-6 col-md-6">
+                                                <h3 class="text-center">Ajouter une image </h3>
+                                                <input type="file" name="fichier" required="required"> <br>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-6 col-md-6 col-sm-6 pl-2">
+                                                <h3 class="text-center py-3">Votre Recette </h3>
+                                                <textarea class="form-control my-3" id="textAreaExample1"
+                                                    placeholder="Les étapes de votre recette" name="recette_description"
+                                                    rows="20"></textarea>
+                                            </div>
+                                            <div class="col-lg-6 col-md-6 col-sm-6">
+                                                <h3 class="text-center py-3">Ajouter les ingrédients </h3>
+
+                                                <!--scroll-->
+                                                <div>
+                                                    <div class="overflow-auto " style="height : 400px">
+                                                        <?php
 											$pdo = connectDB();
 
 												$queryPrepared = $pdo->prepare("SELECT * FROM INGREDIENTS;");
@@ -59,37 +62,34 @@
 																		<div class="col-lg-3 col-md-2 col-sm-6 ">
 																			<input class="input-width" type="text" name="quantity'.$ingredient['ID'].'" placeholder="quantité">
 																		</div>
-																		<div class="col-lg-2 col-md-3 col-sm-3">
+																	<div class="col-lg-2 col-md-3 col-sm-3">
 																			'.$ingredient['UNIT'].'
 																		</div>		
 																</div>
 															</div>';
 												
 												}?>
-												<div class="col-lg-12 col-md-12 col-sm-12 background-body arrondie my-2">
-													<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati eaque tempore labore asperiores! Excepturi veritatis a reiciendis provident, mollitia esse consequuntur vero iste maxime nostrum unde ducimus suscipit ipsam ut?</p>
-												</div>
-												</div>
-											</div>
-											</div>
-										</div>
-										
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
 
-										<div class="row">
-											<div class="col-lg-12 col-md-12">
-												<input type="submit" value="Envoyer"></button>
-											</div>
-										</div>
-									</form>
-								</div>
-							</div>
-		    			</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>		    	
-	<div class="col-lg-2 col-md-1 col-sm-0"></div>
+
+                                        <div class="row">
+                                            <div class="col-lg-12 col-md-12">
+                                                <input type="submit" value="Envoyer"></button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-2 col-md-1 col-sm-0"></div>
 </div>
 
 <?php
@@ -205,6 +205,3 @@ if(!empty($_POST)){
 
 
 <?php include "template/footer.php";?>
-
-
-

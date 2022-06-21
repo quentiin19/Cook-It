@@ -11,7 +11,9 @@
 		
 		if(!empty($_SESSION['errors'])){
 			foreach ($_SESSION['errors'] as $error){
-				echo '<p class="bg-danger text-white">'.$error.'</p>';
+				echo'<div class="alert alert-danger" role="alert">
+						<p>'.$error.'</p>
+					</div>';
 			}
 			unset($_SESSION['errors']);
 		}
