@@ -33,7 +33,7 @@
 											</div>
 											<div class="col-lg-6 col-md-6 col-sm-6">
 												<h3 class="text-center py-3">Ajouter les ingrédients </h3>
-												<div class="overflow-scroll bg-light" style="height= 50px">
+												<div class="overflow-scroll " style="height= 50%">
 												<?php
 											$pdo = connectDB();
 
