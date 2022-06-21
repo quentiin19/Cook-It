@@ -158,10 +158,10 @@ if(count($errors) == 0){
 }else{
 	
 	$_SESSION['errors'] = $errors;
-	foreach ($errors as $error){
-		echo '<p class="bg-danger text-white">$error</p>';
-	}
-	echo'-------------------errors------------';
+	// foreach ($errors as $error){
+	// 	echo '<p class="bg-danger text-white">$error</p>';
+	// }
+	// echo'-------------------errors------------';
 	print '<pre>';
 	print_r($errors);
 	print '</pre>';
