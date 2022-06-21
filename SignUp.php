@@ -13,7 +13,6 @@
 			}
 			unset($_SESSION['errors']);
 
-							}
 			// foreach ($errors as $error){
 			// 	echo '<p class="bg-danger text-white">$error</p>';
 			// }
