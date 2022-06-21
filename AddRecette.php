@@ -39,7 +39,7 @@
 
                                                 <!--scroll-->
                                                 <div>
-                                                    <div class="overflow-auto " style="height : 400px">
+                                                    <div class="overflow-auto " style="height : 300px">
                                                         <?php
 											$pdo = connectDB();
 
@@ -67,7 +67,7 @@
 																		</div>		
 																</div>
 															</div>';
-												
+													
 												}?>
                                                     </div>
                                                 </div>
