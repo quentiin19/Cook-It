@@ -8,9 +8,14 @@
 	<div class="col-lg-8 col-md-10 col-sm-12 h-auto arrondie  ">
 		<div>
 		<?php
-			foreach ($errors as $error){
-				echo '<p class="bg-danger text-white">$error</p>';
-			}
+		if(!empty($_SESSION['errors'])){
+			print_r( $_SESSION['errors'] );
+			unset($_SESSION['errors']);
+
+							}
+			// foreach ($errors as $error){
+			// 	echo '<p class="bg-danger text-white">$error</p>';
+			// }
 		?>
 		</div>
 		<div class="container py-2  h-auto  ">
