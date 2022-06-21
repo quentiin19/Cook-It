@@ -137,10 +137,12 @@ if(!empty($_POST)){
 					$img = imagecreatefrompng($destination.$file_name);
 					//création du nom de l'image
 					$final_file_name = md5(sha1($_POST['recette'].$_POST['recette_description']).uniqid()."lavida").".png";
+
 				}elseif ($file_name == '.jpg' || $file_name == '.jpeg' || $file_name == '.JPG' || $file_name == '.JPEG') {
 					$img = imagecreatefromjpeg($destination.$file_name);
 					//création du nom de l'image
 					$final_file_name = md5(sha1($_POST['recette'].$_POST['recette_description']).uniqid()."lavida").".jpg";
+					
 				}else {
 					die("hack");
 				}
