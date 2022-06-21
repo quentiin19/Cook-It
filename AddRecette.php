@@ -135,7 +135,13 @@ if(!empty($_POST)){
 				$logo = imagecreatefrompng('ressources/images/Utilitaires/logo.png');
 
 				//création de l'image de base
-				$img = imagecreatefrompng($destination.$file_name);
+				if ($file_name == '.png' || $file_name == '.PNG') {
+					$img = imagecreatefrompng($destination.$file_name);
+				}elseif ($file_name == '.jpg' || $file_name == '.jpeg' || $file_name == '.JPG' || $file_name == '.JPEG') {
+					$img = imagecreatefromjpeg($destination.$file_name);
+				}else {
+					die("hack");
+				}
 
 				//création d'une canvas de mêmes dimensions que l'image
 				$final_img = imagecreate(imagesx($img), imagesy($img));
