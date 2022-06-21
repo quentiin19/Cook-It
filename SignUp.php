@@ -8,10 +8,14 @@
 	<div class="col-lg-8 col-md-10 col-sm-12 h-auto arrondie  ">
 		<div>
 		<?php
-		if(!empty($_SESSION['errors'])){
-				echo '<p class="bg-danger text-white">'.implode(" ",$_SESSION['errors']).'</p>';
+		$errors=[];
+		$errors = $_SESSION['errors'];
+		if(!empty($errors)){
+			foreach ($errors as $error){
+				echo '<p class="bg-danger text-white">'.$error.'</p>';
 			}
 			unset($_SESSION['errors']);
+		}
 
 			// foreach ($errors as $error){
 			// 	echo '<p class="bg-danger text-white">$error</p>';
