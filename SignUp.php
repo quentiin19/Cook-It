@@ -9,7 +9,9 @@
 		<div>
 		<?php
 		if(!empty($_SESSION['errors'])){
-			print_r( $_SESSION['errors'] );
+			foreach ($errors as $error){
+				echo '<p class="bg-danger text-white">'; $error echo'</p>';
+			}
 			unset($_SESSION['errors']);
 
 							}
