@@ -9,8 +9,7 @@
 		<div>
 		<?php
 		if(!empty($_SESSION['errors'])){
-			foreach ($errors as $error){
-				echo '<p class="bg-danger text-white">'.$error.'</p>';
+				echo '<p class="bg-danger text-white">'.$_SESSION['errors'].'</p>';
 			}
 			unset($_SESSION['errors']);
 
