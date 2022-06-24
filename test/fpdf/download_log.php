@@ -67,10 +67,9 @@ if(isconnected() == $_GET['id']) {
 
     //Logs
 
-    $pdf->Line(10, 100, 200, 100);
 
     $pdf->SetFont('Arial', 'B', 20);
-    $pdf->Cell(210, 20, 'Logs', 0, 1, 'C');
+    $pdf->Cell(210, 20, 'Logs', 1, 1, 'C');
 
     foreach ($logs as $key => $log) {
         //date
