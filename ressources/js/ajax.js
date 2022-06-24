@@ -34,7 +34,9 @@ function clean_str(str){
 
     //on remplace les lettres qui pourrait fausser notre rechercher en bdd
     for (let k = 0; k < str.length; k++) {
+        console.log("boucle numéro 1")
         for (let j = 0; j < a.length; j++) {
+            console.log("boucle numéro 2")
             if (str[k] == a[j]){
                 new_str += 'a';
                 break;
