@@ -69,7 +69,7 @@ if(isconnected() == $_GET['id']) {
 
 
     $pdf->SetFont('Arial', 'B', 20);
-    $pdf->Cell(180, 20, 'Logs', 1, 1, 'C');
+    $pdf->Cell(190, 20, 'Logs', 1, 1, 'C');
 
     foreach ($logs as $key => $log) {
         //date
@@ -82,7 +82,7 @@ if(isconnected() == $_GET['id']) {
             //connexion
             $pdf->setFillColor(100,230,100);
             $pdf->SetFont('Arial', '',15);
-            $pdf->Cell(120, 20, $log['ACTION'], 1, 1, 'L', 1);
+            $pdf->Cell(130, 20, $log['ACTION'], 1, 1, 'L', 1);
         }elseif ($log['ACTION'] == 'déconnexion') {
             //déconnexion
             $pdf->setFillColor(230,100,100);
