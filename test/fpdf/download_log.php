@@ -67,7 +67,7 @@ if(isconnected() == $_GET['id']) {
 
     //Logs
 
-    $pdf->Line();
+    $pdf->SetDash(5,5);
 
     $pdf->Cell(50, 10, 'Logs', 0, 1, 'C');
 
