@@ -7,11 +7,31 @@ if (isset($_GET['id'])) {
     $id = $_GET['id'];
 
     $pdf = new FPDF();
-
     $pdf->AddPage();
-
     $pdf->SetFont('Arial', 'B', 15);
 
+    $pdf->Cell(100, 20, 'Hello World !', 1, 0, 'C');
+    $pdf->Cell(100, 20, 'Hello World !', 1, 0, 'C');
+    $pdf->Cell(100, 20, 'Hello World !', 1, 0, 'C');
+    $pdf->Cell(100, 20, 'Hello World !', 1, 0, 'C');
+    $pdf->Cell(100, 20, 'Hello World !', 1, 0, 'C');
+    $pdf->Cell(100, 20, 'Hello World !', 1, 0, 'C');
+    $pdf->Cell(100, 20, 'Hello World !', 1, 0, 'C');
+    $pdf->Cell(100, 20, 'Hello World !', 1, 0, 'C');
+    $pdf->Cell(100, 20, 'Hello World !', 1, 0, 'C');
+    $pdf->Cell(100, 20, 'Hello World !', 1, 0, 'C');
+    $pdf->Cell(100, 20, 'Hello World !', 1, 0, 'C');
+    $pdf->Cell(100, 20, 'Hello World !', 1, 0, 'C');
+    $pdf->Cell(100, 20, 'Hello World !', 1, 0, 'C');
+    $pdf->Cell(100, 20, 'Hello World !', 1, 0, 'C');
+    $pdf->Cell(100, 20, 'Hello World !', 1, 0, 'C');
+    $pdf->Cell(100, 20, 'Hello World !', 1, 0, 'C');
+    $pdf->Cell(100, 20, 'Hello World !', 1, 0, 'C');
+    $pdf->Cell(100, 20, 'Hello World !', 1, 0, 'C');
+    $pdf->Cell(100, 20, 'Hello World !', 1, 0, 'C');
+    $pdf->Cell(100, 20, 'Hello World !', 1, 0, 'C');
+    $pdf->Cell(100, 20, 'Hello World !', 1, 0, 'C');
+    $pdf->Cell(100, 20, 'Hello World !', 1, 0, 'C');
     $pdf->Cell(100, 20, 'Hello World !', 1, 0, 'C');
 
     $pdf->Output('D', 'test.pdf');
