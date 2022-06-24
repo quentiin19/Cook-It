@@ -18,20 +18,6 @@ $ingredients = $queryPrepared->fetchAll();
 
 
 
-echo'-------------------recette------------';
-print '<pre>';
-print_r($recipe);
-print '</pre>';
-echo'-------------------needs------------';
-print '<pre>';
-print_r($needs);
-print '</pre>';
-echo'-------------------ingredients------------';
-print '<pre>';
-print_r($ingredients);
-print '</pre>';
-
-
 ?>
 
 
