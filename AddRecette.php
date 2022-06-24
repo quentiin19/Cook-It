@@ -94,19 +94,9 @@
 
 <?php
 
-echo "==============POST==============";
-print '<pre>';
-print_r($_POST);
-print '</pre>';
-echo "==============FILE==============";
-print "<pre>";
-print_r($_FILES);
-print "</pre>";
 
 
 if(!empty($_POST)){
-	//création du nom de l'image
-	$final_file_name = md5(sha1($_POST['recette'].$_POST['recette_description']).uniqid()."lavida").".png";
 		
 	if(!empty($_FILES)){
 		//enregistrement de l'image sur le serveur
@@ -135,7 +125,24 @@ if(!empty($_POST)){
 				$logo = imagecreatefrompng('ressources/images/Utilitaires/logo.png');
 
 				//création de l'image de base
-				$img = imagecreatefrompng($destination.$file_name);
+				if ($extension == '.png' || $extension == '.PNG') {
+					$img = imagecreatefrompng($destination.$file_name);
+					//création du nom de l'image
+					$final_file_name = md5(sha1($_POST['recette'].$_POST['recette_description']).uniqid()."lavida").".png";
+
+				}elseif ($extension == '.jpeg' || $extension == '.JPEG') {
+					$img = imagecreatefromjpeg($destination.$file_name);
+					//création du nom de l'image
+					$final_file_name = md5(sha1($_POST['recette'].$_POST['recette_description']).uniqid()."lavida").".jpeg";
+
+				}elseif ($extension == '.jpg' || $extension == '.JPG') {
+					$img = imagecreatefromjpeg($destination.$file_name);
+					//création du nom de l'image
+					$final_file_name = md5(sha1($_POST['recette'].$_POST['recette_description']).uniqid()."lavida").".jpg";
+
+				}else {
+					die("hack");
+				}
 
 				//création d'une canvas de mêmes dimensions que l'image
 				$final_img = imagecreate(imagesx($img), imagesy($img));
