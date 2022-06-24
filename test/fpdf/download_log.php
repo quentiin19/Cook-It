@@ -71,21 +71,21 @@ if(isconnected() == $_GET['id']) {
         //date
         $pdf->setFillColor(230,230,230);
         $pdf->SetFont('Arial', 'B', 15);
-        $pdf->Cell(50, 20, $log['DATE_LOGIN'], 0, 0, 'L');
+        $pdf->Cell(50, 20, $log['DATE_LOGIN'], 1, 0, 'L');
 
         //log
         if ($log['ACTION'] == 'connexion') {
             $pdf->setFillColor(100,230,100);
             $pdf->SetFont('Arial', '',15);
-            $pdf->Cell(100, 20, $log['ACTION'], 0, 1, 'L');
+            $pdf->Cell(100, 20, $log['ACTION'], 1, 1, 'C');
         }elseif ($log['ACTION'] == 'déconnexion') {
             $pdf->setFillColor(230,100,100);
             $pdf->SetFont('Arial', '',15);
-            $pdf->Cell(100, 20, $log['ACTION'], 0, 1, 'L');
+            $pdf->Cell(100, 20, $log['ACTION'], 1, 1, 'C');
         }else{
             $pdf->setFillColor(100,100,230);
             $pdf->SetFont('Arial', '',15);
-            $pdf->Cell(100, 20, $log['ACTION'], 0, 1, 'L');
+            $pdf->Cell(100, 20, $log['ACTION'], 1, 1, 'C');
 
         }
     }
