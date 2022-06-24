@@ -8,10 +8,46 @@ if (isset($_GET['id'])) {
 
     $pdf = new FPDF();
     $pdf->AddPage();
-    $pdf->SetFont('Arial', 'B', 15);
 
-    $pdf->Cell(100, 20, 'Hello World !', 1, 1, 'C');
-    $pdf->SetFont('Arial', 'I', 5);
+    $pdo = connectDB();
+
+    $queryPrepared = $pdo->("SELECT * FROM USER WHERE ID=:id;");
+    $queryPrepared->execute(['id'=>$id]);
+    $result = $queryPrepared->fetch();
+
+
+
+    //header
+    //nom
+    $pdf->SetFont('Arial', 'B', 15);
+    $pdf->Cell(100, 20, 'Nom : ', 0, 0, 'L');
+    $pdf->SetFont('Arial', 15);
+    $pdf->Cell(100, 20, $result['LASTNAME'], 0, 1, 'L');
+
+    //prénom
+    $pdf->SetFont('Arial', 'B', 15);
+    $pdf->Cell(100, 20, 'Prénom : ', 0, 0, 'L');
+    $pdf->SetFont('Arial', 15);
+    $pdf->Cell(100, 20, $result['FIRSTNAME'], 0, 1, 'L');
+
+    //Pseudo
+    $pdf->SetFont('Arial', 'B', 15);
+    $pdf->Cell(100, 20, 'Pseudo : ', 0, 0, 'L');
+    $pdf->SetFont('Arial', 15);
+    $pdf->Cell(100, 20, $result['PSEUDO'], 0, 1, 'L');
+
+    //prénom
+    $pdf->SetFont('Arial', 'B', 15);
+    $pdf->Cell(100, 20, 'Email : ', 0, 0, 'L');
+    $pdf->SetFont('Arial', 15);
+    $pdf->Cell(100, 20, $result['MAIL'], 0, 1, 'L');
+
+
+
+
+
+    //table
+    $pdf->SetFont('Arial', 'B', 15);
 
     $pdf->Cell(100, 20, 'Hello World !', 1, 1, 'C');
 
