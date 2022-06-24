@@ -78,17 +78,17 @@ if(isconnected() == $_GET['id']) {
             //connexion
             $pdf->setFillColor(100,230,100);
             $pdf->SetFont('Arial', '',15);
-            $pdf->Cell(100, 20, $log['ACTION'], 1, 1, 'L', 1);
+            $pdf->Cell(120, 20, $log['ACTION'], 1, 1, 'L', 1);
         }elseif ($log['ACTION'] == 'déconnexion') {
             //déconnexion
             $pdf->setFillColor(230,100,100);
             $pdf->SetFont('Arial', '',15);
-            $pdf->Cell(100, 20, $log['ACTION'], 1, 1, 'L', 1);
+            $pdf->Cell(120, 20, $log['ACTION'], 1, 1, 'L', 1);
         }else{
             //action sur recette
             $pdf->setFillColor(100,100,230);
             $pdf->SetFont('Arial', '',15);
-            $pdf->Cell(100, 20, $log['ACTION'], 1, 1, 'L', 1);
+            $pdf->Cell(120, 20, $log['ACTION'], 1, 1, 'L', 1);
 
         }
     }
