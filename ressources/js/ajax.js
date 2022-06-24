@@ -36,21 +36,25 @@ function clean_str(str){
     for (let k = 0; k < str.length; k++) {
         console.log("boucle numéro 1")
         for (let j = 0; j < a.length; j++) {
-            console.log("boucle numéro 2")
             if (str[k] == a[j]){
                 new_str += 'a';
+                console.log("a")
                 break;
             }else if(str[k] == e[j]){
                 new_str += 'e';
+                console.log("e")
                 break;
             }else if(str[k] == i[j]){
                 new_str += 'i';
+                console.log("i")
                 break;
             }else if(str[k] == o[j]){
                 new_str += 'o';
+                console.log("o")
                 break;
             }else if(str[k] == u[j]){
                 new_str += 'u';
+                console.log("u")
                 break;
             }else if(str[k] == ' '){
                 new_str += '-';
