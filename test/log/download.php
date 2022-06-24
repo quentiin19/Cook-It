@@ -10,5 +10,4 @@ if (isset($_GET['path'])) {
     header("Expires: 0");
     header('Content-Disposition: attachment; filename="'.basename($filename).'"');
     header('Content-Length: ' . filesize($filename));
-    header('Pragma: public');
 }
