@@ -11,7 +11,7 @@ if (isset($_GET['id'])) {
 
     $pdo = connectDB();
 
-    $queryPrepared = $pdo->("SELECT * FROM USER WHERE ID=:id;");
+    $queryPrepared = $pdo->prepare("SELECT * FROM USER WHERE ID=:id;");
     $queryPrepared->execute(['id'=>$id]);
     $result = $queryPrepared->fetch();
 
