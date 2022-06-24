@@ -88,7 +88,7 @@ if(isconnected() == $_GET['id']) {
             //action sur recette
             $pdf->setFillColor(100,100,230);
             $pdf->SetFont('Arial', '',15);
-            $pdf->Cell(120, 20, $log['ACTION'], 1, 1, 'L', 1);
+            $pdf->Cell(120, 20, utf8_decode($log['ACTION']), 1, 1, 'L', 1);
 
         }
     }
