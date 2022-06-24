@@ -37,15 +37,10 @@ function clean_str(str){
         for (let j = 0; j < a.length; j++) {
             if (str[k] == a[j]){
                 new_str += 'a';
-
-
-
-
-
             }else if(str[k] == e[j]){
-                new_str[k] = 'e';
+                new_str += 'e';
             }else if(str[k] == i[j]){
-                new_str[k] = 'i';
+                new_str = 'i';
             }else if(str[k] == o[j]){
                 new_str[k] = 'o';
             }else if(str[k] == u[j]){
@@ -89,7 +84,7 @@ function display_results() {
         main_div.setAttribute("class", "col-lg-3 col-md-4 col-sm-1 py-3");
 
         const second_div = document.createElement("div");
-        second_div.setAttribute("class", "card h-100 mb-4 shadow-sm bg-color py-3 px-3 arrondie");
+        second_div.setAttribute("class", "card mb-4 shadow-sm bg-color py-3 px-3 arrondie");
         second_div.setAttribute("style", "width: 35rem");
 
 
