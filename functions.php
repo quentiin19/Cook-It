@@ -47,8 +47,9 @@ function isConnected(){
 	$pdo = connectDB();
 	$queryPrepared = $pdo->prepare("SELECT ID FROM USER WHERE MAIL=:email AND TOKEN=:token");	
 	$queryPrepared->execute(["email"=>$_SESSION["email"], "token"=>$_SESSION["token"]]);
+	$result = $queryPrepared->fetch();
 
-	return $queryPrepared->fetch();
+	return $result[0];
 
 }
 
