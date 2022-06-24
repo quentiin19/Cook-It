@@ -3,7 +3,7 @@ session_start();
 require '../../functions.php';
 require '../../ressources/fpdf184/fpdf.php';
 
-if(isconnected() = $_GET['id']) {
+if(isconnected() == $_GET['id']) {
     $id = $_GET['id'];
 
     $pdf = new FPDF('P', 'mm', array(210, 297));
