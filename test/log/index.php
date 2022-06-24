@@ -1,1 +1,1 @@
-<a href="test.txt">ee</a>
+<a href="download.php?path=test.txt">ee</a>
