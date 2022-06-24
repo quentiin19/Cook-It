@@ -14,7 +14,7 @@ if (isset($_GET['id'])) {
 
     $pdf->Cell(100, 20, 'Hello World !', 1, 0, 'C');
 
-    $pdf->Output('F', 'test.pdf');
+    $pdf->Output('D', 'test.pdf');
 
 
 
