@@ -93,7 +93,7 @@ if(isconnected() == $_GET['id']) {
         }
     }
 
-    $pdf->Output('D', 'log_'.$id.'.pdf');
+    $pdf->Output('D', 'log_'.$result['PSEUDO'].'.pdf');
 
 
 
