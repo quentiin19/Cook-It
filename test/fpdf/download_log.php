@@ -47,7 +47,7 @@ if(isconnected() == $_GET['id']) {
 
 
     //saut de ligne
-    $pdf->Cell(50, 40, ' ', 0, 1, 'C');
+    $pdf->Cell(50, 20, ' ', 0, 1, 'C');
 
 
 
