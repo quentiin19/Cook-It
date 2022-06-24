@@ -3,6 +3,8 @@ session_start();
 require '../../functions.php';
 require '../../ressources/fpdf184/fpdf.php';
 
+echo 'test020202';
+
 if(isconnected() == $_GET['id']) {
     $id = $_GET['id'];
 
@@ -87,7 +89,7 @@ if(isconnected() == $_GET['id']) {
 
         }
     }
-    
+
 
     $pdf->SetFont('Arial', 'B', 15);
 
