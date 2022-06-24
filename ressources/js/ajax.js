@@ -85,7 +85,7 @@ function display_results() {
     console.log(JSON.parse(request.response));
 
     let recipes = JSON.parse(request.response);
-
+    console.log(recipes);
 
     for (const recipe of recipes) {
         const main_div = document.createElement("div");
