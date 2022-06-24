@@ -47,7 +47,7 @@ if(isconnected() == $_GET['id']) {
 
 
     //saut de ligne
-    $pdf->Cell(50, 20, ' ', 0, 1, 'C');
+    $pdf->Cell(50, 10, ' ', 0, 1, 'C');
 
 
 
@@ -65,7 +65,11 @@ if(isconnected() == $_GET['id']) {
 
 
 
-    //table
+    //Logs
+
+    $pdf->Line();
+
+    $pdf->Cell(50, 10, 'Logs', 0, 1, 'C');
 
     foreach ($logs as $key => $log) {
         //date
