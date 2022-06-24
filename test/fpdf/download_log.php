@@ -3,13 +3,11 @@ session_start();
 require '../../functions.php';
 require '../../ressources/fpdf184/fpdf.php';
 
-echo 'arrivée sur la page';
 
 
 if(isconnected() == $_GET['id']) {
     $id = $_GET['id'];
 
-    echo 'condition isconnected';
 
     $pdf = new FPDF('P', 'mm', array(210, 297));
     $pdf->AddPage();
