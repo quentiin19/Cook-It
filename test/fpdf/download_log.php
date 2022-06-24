@@ -19,27 +19,27 @@ if (isset($_GET['id'])) {
 
     //header
     //nom
-    $pdf->SetFont('Arial', 'B', 15);
+    $pdf->SetFont('Helvetica', 'B', 15);
     $pdf->Cell(100, 20, 'Nom : ', 0, 0, 'L');
-    $pdf->SetFont('Arial', 15);
+    $pdf->SetFont('Helvetica', 15);
     $pdf->Cell(100, 20, $result['LASTNAME'], 0, 1, 'L');
 
     //prénom
-    $pdf->SetFont('Arial', 'B', 15);
+    $pdf->SetFont('Helvetica', 'B', 15);
     $pdf->Cell(100, 20, 'Prénom : ', 0, 0, 'L');
-    $pdf->SetFont('Arial', 15);
+    $pdf->SetFont('Helvetica', 15);
     $pdf->Cell(100, 20, $result['FIRSTNAME'], 0, 1, 'L');
 
     //Pseudo
-    $pdf->SetFont('Arial', 'B', 15);
+    $pdf->SetFont('Helvetica', 'B', 15);
     $pdf->Cell(100, 20, 'Pseudo : ', 0, 0, 'L');
-    $pdf->SetFont('Arial', 15);
+    $pdf->SetFont('Helvetica', 15);
     $pdf->Cell(100, 20, $result['PSEUDO'], 0, 1, 'L');
 
-    //prénom
-    $pdf->SetFont('Arial', 'B', 15);
+    //email
+    $pdf->SetFont('Helvetica', 'B', 15);
     $pdf->Cell(100, 20, 'Email : ', 0, 0, 'L');
-    $pdf->SetFont('Arial', 15);
+    $pdf->SetFont('Helvetica', 15);
     $pdf->Cell(100, 20, $result['MAIL'], 0, 1, 'L');
 
 
