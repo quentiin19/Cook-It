@@ -62,7 +62,7 @@ function clean_str(str){
     }
 
     console.log(`cleaned string : ${new_str}`);
-    return string.join('');
+    return new_str.join('');
 }
 
 
