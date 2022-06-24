@@ -36,7 +36,12 @@ function clean_str(str){
     for (let k = 0; k < str.length; k++) {
         for (let j = 0; j < a.length; j++) {
             if (str[k] == a[j]){
-                new_str[k] = 'a';
+                new_str += 'a';
+
+
+
+
+
             }else if(str[k] == e[j]){
                 new_str[k] = 'e';
             }else if(str[k] == i[j]){
