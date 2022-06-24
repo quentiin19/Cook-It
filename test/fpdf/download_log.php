@@ -46,6 +46,8 @@ if(isconnected() == $_GET['id']) {
     //saut de ligne
     $pdf->Cell(50, 40, ' ', 0, 1, 'C');
 
+    echo "header done";
+
 
 
 
@@ -85,6 +87,7 @@ if(isconnected() == $_GET['id']) {
 
         }
     }
+    
 
     $pdf->SetFont('Arial', 'B', 15);
 
