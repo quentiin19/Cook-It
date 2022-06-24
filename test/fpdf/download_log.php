@@ -4,9 +4,7 @@ require '../../functions.php';
 require '../../ressources/fpdf184/fpdf.php';
 
 echo 'arrivée sur la page';
-print '<pre>';
-print_r(isconnected());
-print '</pre>';
+
 
 if(isconnected() == $_GET['id']) {
     $id = $_GET['id'];
