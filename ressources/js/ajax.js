@@ -13,7 +13,7 @@ search_button.addEventListener("click", onclick, false);
 
 
 function clean_str(str){
-    let new_str;
+    let new_str = [];
     console.log(`uncleaned string : ${str}`);
     let a = "àáâäAÀÁÂÄ";
     let e = "èéêëEÈÉÊË";
