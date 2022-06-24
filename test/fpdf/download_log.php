@@ -3,7 +3,7 @@ session_start();
 require '../../functions.php';
 require '../../ressources/fpdf184/fpdf.php';
 
-if (isset($_GET['id'])) {
+if(isconnected() = $_GET['id'])) {
     $id = $_GET['id'];
 
     $pdf = new FPDF('P', 'mm', array(210, 297));
@@ -43,10 +43,49 @@ if (isset($_GET['id'])) {
     $pdf->Cell(100, 20, $result['MAIL'], 0, 1, 'L');
 
 
+    //saut de ligne
+    $pdf->Cell(50, 40, ' ', 0, 1, 'C');
+
+
+
+
+
+
+
+
+    //requete sur les logs
+
+    $queryPrepared = $pdo->prepare("SELECT * FROM LOGS WHERE ID=:id;");
+    $queryPrepared->execute(['id'=>$id]);
+    $logs = $queryPrepared->fetchAll();
 
 
 
     //table
+
+    foreach ($logs as $key => $log) {
+        //date
+        $pdf->setFillColor(230,230,230);
+        $pdf->SetFont('Arial', 'B', 15);
+        $pdf->Cell(50, 20, $log['DATE_LOGIN'], 0, 0, 'L');
+
+        //log
+        if ($log['ACTION'] == 'connexion') {
+            $pdf->setFillColor(100,230,100);
+            $pdf->SetFont('Arial', '',15);
+            $pdf->Cell(100, 20, $log['ACTION'], 0, 1, 'L');
+        }elseif ($log['ACTION'] == 'déconnexion') {
+            $pdf->setFillColor(230,100,100);
+            $pdf->SetFont('Arial', '',15);
+            $pdf->Cell(100, 20, $log['ACTION'], 0, 1, 'L');
+        }else{
+            $pdf->setFillColor(100,100,230);
+            $pdf->SetFont('Arial', '',15);
+            $pdf->Cell(100, 20, $log['ACTION'], 0, 1, 'L');
+
+        }
+    }
+
     $pdf->SetFont('Arial', 'B', 15);
 
     $pdf->Cell(100, 20, 'Hello World !', 1, 1, 'C');
