@@ -71,7 +71,7 @@ if(isconnected() == $_GET['id']) {
         //date
         $pdf->setFillColor(230,230,230);
         $pdf->SetFont('Arial', 'B', 15);
-        $pdf->Cell(50, 20, $log['DATE_LOGIN'], 1, 0, 'L');
+        $pdf->Cell(50, 20, $log['DATE_LOGIN'], 1, 0, 'L', 1);
 
         //log
         if ($log['ACTION'] == 'connexion') {
