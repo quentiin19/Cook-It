@@ -93,12 +93,7 @@ if(isconnected() == $_GET['id']) {
         }
     }
 
-
-    $pdf->SetFont('Arial', 'B', 15);
-
-    $pdf->Cell(100, 20, 'Hello World !', 1, 1, 'C');
-
-    $pdf->Output('D', 'test.pdf');
+    $pdf->Output('D', 'log_'.$id.'.pdf');
 
 
 
