@@ -40,15 +40,15 @@ function clean_str(str){
             }else if(str[k] == e[j]){
                 new_str += 'e';
             }else if(str[k] == i[j]){
-                new_str = 'i';
+                new_str += 'i';
             }else if(str[k] == o[j]){
-                new_str[k] = 'o';
+                new_str += 'o';
             }else if(str[k] == u[j]){
-                new_str[k] = 'u';
+                new_str += 'u';
             }else if(str[k] == ' '){
-                new_str[k] = '-';
+                new_str += '-';
             }else{
-                new_str[k] = str[k]
+                new_str += str[k]
             }
         }
     }
