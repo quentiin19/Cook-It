@@ -44,7 +44,7 @@ $action = $_GET['action'];
 
 if ($action == 1) {
     //retourner le nombre de votes
-    $API = new API;
+    $API = new API_VOTE;
     echo json_encode($API->CountVote($id_recipe));
 
 }elseif ($action == 2) {
