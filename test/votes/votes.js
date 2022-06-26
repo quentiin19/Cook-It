@@ -4,9 +4,13 @@ let request2 = new XMLHttpRequest;
 const upvote = document.getElementById("upvote-1")
 const votes = document.getElementById("1")
 const downvote = document.getElementById("downvote-1")
+
 const id_user = document.getElementById("user_id");
 const id_recipe = 67
 const token = document.getElementById("user_token");
+
+console.log(id_user.innerText);
+console.log(token.innerText);
 
 console.log("test");
 
