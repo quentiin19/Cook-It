@@ -39,6 +39,7 @@ class API_VOTE{
 
 
 $action = $_GET['action'];
+$id_recipe = $_GET['recipe'];
 
 //vérification du token pour voir si le user est bien connecté
 
@@ -49,7 +50,6 @@ if ($action == 1) {
 
 }elseif ($action == 2) {
     //vote d'un user
-    $id_recipe = $_GET['recipe'];
     $id_user = $_GET['user'];
     $vote = $_GET['vote'];
     $token = $_GET['token'];
