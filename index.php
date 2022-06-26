@@ -21,7 +21,7 @@ include "template/header.php";
                             <div class="row">
                                 <div class=\"col-lg-3 col-md-3 col-sm-3\"></div>
                                 <div class=\"col-lg-6 col-md-6 col-sm-6 px-2 py-2 border\">
-                                    <h4>'$recipe['TITLE'].'</h4>
+                                    <h4>'.$recipe['TITLE'].'</h4>
                                     <p>Créé par '.$recipe['PSEUDO'].'</p>
                                 </div>
                                 <div class=\"col-lg-3 col-md-3 col-sm-3\"></div>
