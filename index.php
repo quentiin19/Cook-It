@@ -16,16 +16,10 @@ include "template/header.php";
             echo '<div class="col-lg-3 col-md-4 col-sm-1 py-3">
                     <div class="card mb-4 shadow-sm bg-color py-3 px-3 arrondie" height="500px">
                         <a href="https://cookit.ovh/recette.php?id='.$recipe['ID_RECIPE'].'">
-                        <img src="'.$recipe['PICTURE_PATH'].'" height="100px"> </img>
-                        <div class="card-body arrondie">
-                            <div class="row">
-                                <div class="col-lg-3 col-md-3 col-sm-3"></div>
-                                <div class="col-lg-6 col-md-6 col-sm-6 px-2 py-2 border">
+                        <img src="'.$recipe['PICTURE_PATH'].'" height="150px"> </img>
+                        <div class="card-body text-center arrondie">
                                     <h4>'.$recipe['TITLE'].'</h4>
                                     <p>Créé par '.$recipe['PSEUDO'].'</p>
-                                </div>
-                                <div class="col-lg-3 col-md-3 col-sm-3"></div>
-                            </div>
                         </div>
                         </a>        
                     </div>
