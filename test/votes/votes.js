@@ -17,5 +17,12 @@ downvote.addEventListener("click", function(){
 
 
 function vote(number){
-    console.log(number)
+
+
+    var session = '<%= Session["id"] %>';
+    console.log(session);
+
+    request.addEventListener("load", display_results);
+    request.open("GET", `http://51.255.172.36/test/votes/api_vote?action=${number}&action=1`);
+    request.send();
 }
