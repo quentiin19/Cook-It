@@ -75,7 +75,7 @@ function onclick() {
 
     //envoi de la requete
     request.addEventListener("load", display_results);
-    request.open("GET", `http://cookit.ovh/ressources/api/api.php?keywords=${keywords}&action=1`);
+    request.open("GET", `https://cookit.ovh/ressources/api/api.php?keywords=${keywords}&action=1`);
     request.send();
 
     console.log("requete envoyée");
@@ -99,7 +99,7 @@ function display_results() {
 
 
         const a = document.createElement("a");
-        a.setAttribute("href", `http://cookit.ovh/recette.php?id=${recipe['ID']}`);
+        a.setAttribute("href", `https://cookit.ovh/recette.php?id=${recipe['ID']}`);
 
         const img = document.createElement("img");
         img.setAttribute("src", `${recipe['PICTURE_PATH']}`);
