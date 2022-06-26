@@ -8,7 +8,7 @@ include "template/header.php";
 
         <?php 
         $pdo = connectDB();
-        $queryPrepared = $pdo->prepare("SELECT * FROM RECIPES ORDER BY ID DESC;");
+        $queryPrepared = $pdo->prepare("SELECT *, PSEUDO FROM RECIPES, USER WHERE USER.ID = RECIPES.ID_CREATOR ORDER BY RECIPES.ID DESC;");
         $queryPrepared->execute();
         $recipes = $queryPrepared->fetchAll();
 
