@@ -3,6 +3,8 @@ session_start();
 require '../../functions.php';
 require '../../ressources/fpdf184/fpdf.php';
 
+echo '<p id="user_id" hidden="hidden">'.$_SESSION['id'].'</p>';
+
 ?>
 
 <button id="upvote-1">Upvote</button>
