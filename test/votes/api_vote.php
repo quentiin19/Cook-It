@@ -68,7 +68,7 @@ if ($action == 1) {
         print_r($tokenbdd);
         
         if($token == $tokenbdd[0]) {
-            $API = new API;
+            $API = new API_VOTE;
             echo $API->Vote($id_recipe, $id_user, $vote);
         }else{
             die("token invalide");
