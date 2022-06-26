@@ -1,7 +1,7 @@
 <?php include "template/header.php";
 
 $pdo = connectDB();
-$queryPrepared = $pdo->prepare("SELECT * FROM RECIPES WHERE ID = :id;");
+$queryPrepared = $pdo->prepare("SELECT * FROM RECIPES WHERE ID_RECIPE = :id;");
 $queryPrepared->execute(["id"=>$_GET['id']]);
 $recipe = $queryPrepared->fetch();
 
