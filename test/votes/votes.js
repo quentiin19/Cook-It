@@ -5,7 +5,13 @@ const vote = document.getElementById("1")
 const downvote = document.getElementById("downvote-1")
 
 
-upvote.addEventListener("click", vote(3));
+upvote.addEventListener("click", function(){
+    vote(1);
+});
+
+downvote.addEventListener("click", function(){
+    vote(-1);
+})
 
 
 function vote(number){
