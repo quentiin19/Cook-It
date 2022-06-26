@@ -92,7 +92,7 @@ function display_results() {
         main_div.setAttribute("class", "col-lg-3 col-md-4 col-sm-1 py-3");
 
         const second_div = document.createElement("div");
-        second_div.setAttribute("class", "card mb-4 shadow-sm bg-color py-3 px-3 arrondie");
+        second_div.setAttribute("class", "card cardh mb-4 shadow-sm bg-color py-3 px-3 arrondie");
         second_div.setAttribute("style", "width: 35rem");
 
 
