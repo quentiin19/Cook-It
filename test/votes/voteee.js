@@ -32,7 +32,7 @@ function vote(number){
     request.addEventListener("load", function(){
         getVote(id_recipe);
     });
-    request.open("GET", `http://cookit.ovh/test/votes/api_vote.php?action=2&vote=${number}&user=${id_user.innerText}&token=${token.innerText}&recipe=${id_recipe}`);
+    request.open("GET", `https://cookit.ovh/test/votes/api_vote.php?action=2&vote=${number}&user=${id_user.innerText}&token=${token.innerText}&recipe=${id_recipe}`);
     request.send();
     console.log("requete envoyée");
 }
@@ -41,7 +41,7 @@ function getVote(recipe){
     request2.addEventListener("load", function(){
         displayVote();
     });
-    request2.open("GET", `http://cookit.ovh/test/votes/api_vote.php?action=1&recipe=${id_recipe}`);
+    request2.open("GET", `https://cookit.ovh/test/votes/api_vote.php?action=1&recipe=${id_recipe}`);
     request2.send();
 }
 
