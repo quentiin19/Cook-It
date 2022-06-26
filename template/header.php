@@ -66,7 +66,6 @@
 				<a href="index.php"><button type="button" class="btn text-white btn-lg"><img src="./ressources/images/Utilitaires/logo.png" height ="80vh" width="100vw" /></button></a>
 			</div>
 			
-			<script src="./script.js"></script>
 		</div>
 		
 	</header>
