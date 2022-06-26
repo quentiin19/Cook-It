@@ -8,11 +8,12 @@ include "template/header.php";
 
         <?php 
         $pdo = connectDB();
-        $queryPrepared = $pdo->prepare("SELECT ID,PICTURE_PATH, TITLE, PSEUDO FROM RECIPES, USER WHERE USER.ID = RECIPES.ID_CREATOR ORDER BY RECIPES.ID DESC;");
+        $queryPrepared = $pdo->prepare("SELECT *, PSEUDO FROM RECIPES, USER WHERE USER.ID = RECIPES.ID_CREATOR ORDER BY RECIPES.ID DESC;");
         $queryPrepared->execute();
         $recipes = $queryPrepared->fetchAll();
 
-
+        print_r($recipes);
+        
         foreach ($recipes as $recipe){
             echo '<div class="col-lg-3 col-md-4 col-sm-1 py-3">
                     <div class="card cardh mb-4 shadow-sm bg-color py-3 px-3 arrondie">
