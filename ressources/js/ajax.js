@@ -73,7 +73,7 @@ function onclick() {
 
     //envoi de la requete
     request.addEventListener("load", display_results);
-    request.open("GET", `http://51.255.172.36/ressources/api/api.php?keywords=${keywords}&action=1`);
+    request.open("GET", `http://cookit.ovh/ressources/api/api.php?keywords=${keywords}&action=1`);
     request.send();
 
     console.log("requete envoyée");
