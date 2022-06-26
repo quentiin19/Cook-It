@@ -8,6 +8,9 @@ require '../../ressources/fpdf184/fpdf.php';
 <button id="upvote-1">Upvote</button>
 <p id="1"></p>
 <button id="downvote-1">Downvote</button><br>
+
+
+<script src="votes.js"></script>
 <!--
 <button id="upvote-2">Upvote</button>
 <p id="2"></p>
