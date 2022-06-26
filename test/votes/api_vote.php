@@ -30,7 +30,7 @@ class API_VOTE{
         }elseif ($result[0] != $vote) {
             //changement du vote en bdd
             $queryPrepared = $pdo->prepare("UPDATE VOTES SET VOTE=:vote WHERE ID_RECIPE=:id_recipe AND ID_USER=:id_user;");
-            $queryPrepared->execute(['vote'=>$vote, 'id_recipe'=>$id_recipe, 'id_user'=>$id_user])
+            $queryPrepared->execute(['vote'=>$vote, 'id_recipe'=>$id_recipe, 'id_user'=>$id_user]);
         }
     }
 }
