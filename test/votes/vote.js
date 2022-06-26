@@ -31,6 +31,7 @@ function vote(number){
     });
     request.open("GET", `http://cookit.ovh/test/votes/api_vote.php?action=2&vote=${number}&user=${id_user.innerText}&token=${token.innerText}&recipe=${id_recipe}`);
     request.send();
+    console.log("requete envoyée");
 }
 
 function getVote(recipe){
