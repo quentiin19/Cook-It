@@ -115,6 +115,7 @@ function display_results() {
 
         const sixth_div = document.createElement("div");
         sixth_div.setAttribute("class", "col-lg-6 col-md-6 col-sm-6 px-2 py-2 border");
+        sixth_div.setAttribute("height", "100px");
 
         const title = document.createElement("h4");
         title.innerText = `${recipe['TITLE']}`;
