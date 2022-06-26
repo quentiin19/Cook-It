@@ -1,4 +1,5 @@
 let request = new XMLHttpRequest;
+let request2 = new XMLHttpRequest;
 
 const upvote = document.getElementById("upvote-1")
 const votes = document.getElementById("1")
