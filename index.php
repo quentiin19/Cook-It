@@ -6,6 +6,6 @@ include "template/header.php";
         <button id="search_button_ajax">rechercher</button>
         <div id="recettes"></div>
 
-        <script src="ressources/js/test.js"></script>
+        <script src="ressources/js/ajax.js"></script>
     </body>
 </html>
