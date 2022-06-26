@@ -70,9 +70,9 @@ if ($action == 1) {
             $API = new API;
             echo $API->Vote($id_recipe, $id_user, $vote);
         }else{
-            die;
+            die("token invalide");
         }
     }else{
-        die;
+        die("vote invalide");
     }
 }
