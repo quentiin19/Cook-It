@@ -1,7 +1,7 @@
 <?php include "template/header.php";
 
 $pdo = connectDB();
-$queryPrepared = $pdo->prepare("SELECT * FROM RECIPES WHERE ID = :id;");
+$queryPrepared = $pdo->prepare("SELECT * FROM RECIPES WHERE ID_RECIPE = :id;");
 $queryPrepared->execute(["id"=>$_GET['id']]);
 $recipe = $queryPrepared->fetch();
 
@@ -32,7 +32,7 @@ $ingredients = $queryPrepared->fetchAll();
 						<div class="mb-md-5 mt-md-4 pb-5">
 							<h2 class="fw-bold mb-2 text-uppercase"><?= $recipe['TITLE']?></h2>
 							<div class="row">
-								<div class="col-lg-12 col-md-12 col-md-12">
+								<div class="col-lg-12 col-md-12 col-md-12 card cardh">
 									<img src="<?=$recipe['PICTURE_PATH']?>">
 								</div>
 							</div>
