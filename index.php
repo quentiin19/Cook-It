@@ -16,7 +16,7 @@ include "template/header.php";
             echo '<div class="col-lg-3 col-md-4 col-sm-1 py-3">
                     <div class="card mb-4 shadow-sm bg-color py-3 px-3 arrondie">
                         <a href="https://cookit.ovh/recette.php?id='.$recipe['ID_RECIPE'].'">
-                        <img src="'.$recipe['PICTURE_PATH'].'" class="card-img-top cardh"> </img>
+                        <img src="'.$recipe['PICTURE_PATH'].'" class="card-img-top "> </img>
                         <div class="card-body text-center arrondie">
                                     <h4>'.$recipe['TITLE'].'</h4>
                                     <p>Créé par '.$recipe['PSEUDO'].'</p>
