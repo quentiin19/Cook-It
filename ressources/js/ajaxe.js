@@ -12,6 +12,8 @@ var coor_sb = search_bar.getBoundingClientRect();
 search_button.addEventListener("click", onclick, false);
 
 
+console.log("nenenenenenenene");
+
 function clean_str(str){
     let new_str = [];
     console.log(`uncleaned string : ${str}`);
