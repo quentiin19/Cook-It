@@ -4,6 +4,7 @@ require '../../functions.php';
 require '../../ressources/fpdf184/fpdf.php';
 
 echo '<p id="user_id" hidden="hidden">'.$_SESSION['id'].'</p>';
+echo '<p id="user_token" hidden="hidden">'.$_SESSION['token'].'</p>';
 
 ?>
 
