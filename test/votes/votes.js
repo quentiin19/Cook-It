@@ -11,6 +11,7 @@ const token = document.getElementById("user_token");
 
 console.log(id_user.innerText);
 console.log(token.innerText);
+console.log("rerere");
 
 console.log("test");
 
