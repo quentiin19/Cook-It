@@ -19,12 +19,12 @@ include "template/header.php";
                         <img src="'.$recipe['PICTURE_PATH'].'" height : 100px> </img>
                         <div class="card-body arrondie">
                             <div class="row">
-                                <div class=\"col-lg-3 col-md-3 col-sm-3\"></div>
-                                <div class=\"col-lg-6 col-md-6 col-sm-6 px-2 py-2 border\">
+                                <div class="col-lg-3 col-md-3 col-sm-3"></div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 px-2 py-2 border">
                                     <h4>'.$recipe['TITLE'].'</h4>
                                     <p>Créé par '.$recipe['PSEUDO'].'</p>
                                 </div>
-                                <div class=\"col-lg-3 col-md-3 col-sm-3\"></div>
+                                <div class="col-lg-3 col-md-3 col-sm-3"></div>
                             </div>
                         </div>
                         </a>        
