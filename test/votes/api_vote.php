@@ -56,7 +56,7 @@ if ($action == 1) {
 
     if ($vote >= -1 && $vote <= 1) {
         $pdo = connectDB();
-        $queryPrepared = $pdo->prepare("SELECT TOKEN FROM USERS WHERE ID=:id_user;");
+        $queryPrepared = $pdo->prepare("SELECT TOKEN FROM USER WHERE ID=:id_user;");
         $queryPrepared->execute(['id_user'=>$id_user]);
         $tokenbdd = $queryPrepared->fetch();
     
