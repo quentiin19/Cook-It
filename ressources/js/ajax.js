@@ -101,8 +101,7 @@ function display_results() {
 
         const img = document.createElement("img");
         img.setAttribute("src", `${recipe['PICTURE_PATH']}`);
-        img.setAttribute("height", "100%");
-        img.setAttribute("width", "100%");
+        img.setAttribute("height", "100px");
 
         const third_div = document.createElement("div");
         third_div.setAttribute("class", "card-body arrondie");
