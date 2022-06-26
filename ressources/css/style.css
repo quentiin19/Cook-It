@@ -62,3 +62,11 @@ border-radius:7px;
     top: 0px;
     left: 28%;
 }
+
+/*----- Card -----*/
+
+.cardh {
+    object-fit: cover;
+    height: 40vh;
+    width: 100%;
+}
