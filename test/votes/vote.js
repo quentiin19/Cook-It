@@ -17,15 +17,18 @@ console.log("test");
 
 
 upvote.addEventListener("click", function(){
+    console.log('test');
     vote(1);
 });
 
 downvote.addEventListener("click", function(){
+    console.log("test2");
     vote(-1);
 })
 
 
 function vote(number){
+
     request.addEventListener("load", function(){
         getVote(id_recipe);
     });
