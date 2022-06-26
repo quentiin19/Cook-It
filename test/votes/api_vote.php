@@ -65,7 +65,7 @@ if ($action == 1) {
         $queryPrepared = $pdo->prepare("SELECT TOKEN FROM USER WHERE ID=:id_user;");
         $queryPrepared->execute(['id_user'=>$id_user]);
         $tokenbdd = $queryPrepared->fetch();
-        echo $tokenbdd;
+        print_r($tokenbdd);
         
         if($token == $tokenbdd[0]) {
             $API = new API;
