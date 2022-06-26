@@ -14,7 +14,7 @@ include "template/header.php";
 
         foreach ($recipes as $recipe){
             echo '<div class="col-lg-3 col-md-4 col-sm-1 py-3">
-                    <div class="card mb-4 shadow-sm bg-color py-3 px-3 arrondie" height="100px">
+                    <div class="card mb-4 shadow-sm bg-color py-3 px-3 arrondie" height="500px">
                         <a href="https://cookit.ovh/recette.php?id='.$recipe['ID_RECIPE'].'">
                         <img src="'.$recipe['PICTURE_PATH'].'" height="100px"> </img>
                         <div class="card-body arrondie">
