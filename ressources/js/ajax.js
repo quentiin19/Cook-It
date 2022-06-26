@@ -97,7 +97,7 @@ function display_results() {
 
 
         const a = document.createElement("a");
-        a.setAttribute("href", `http://51.255.172.36/recette.php?id=${recipe['ID']}`);
+        a.setAttribute("href", `http://cookit.ovh/recette.php?id=${recipe['ID']}`);
 
         const img = document.createElement("img");
         img.setAttribute("src", `${recipe['PICTURE_PATH']}`);
