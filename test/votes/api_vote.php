@@ -67,7 +67,7 @@ if ($action == 1) {
         $tokenbdd = $queryPrepared->fetch();
         echo $tokenbdd;
         
-        if($token == $tokenbdd) {
+        if($token == $tokenbdd[0]) {
             $API = new API;
             echo $API->Vote($id_recipe, $id_user, $vote);
         }else{
