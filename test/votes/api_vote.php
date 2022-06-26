@@ -29,10 +29,16 @@ class API_VOTE{
             $queryPrepared = $pdo->prepare("INSERT INTO VOTES VALUES (:id_user, :id_recipe, :vote);");
             $queryPrepared->execute(['id_user'=>$id_user, 'id_recipe'=>$id_recipe, 'vote'=>$vote]);
 
+            return "le vote a été enregistré en bdd";
+
         }elseif ($result[0] != $vote) {
             //changement du vote en bdd
             $queryPrepared = $pdo->prepare("UPDATE VOTES SET VOTE=:vote WHERE ID_RECIPE=:id_recipe AND ID_USER=:id_user;");
             $queryPrepared->execute(['vote'=>$vote, 'id_recipe'=>$id_recipe, 'id_user'=>$id_user]);
+
+            return "le vote a été changé en bdd";
+        }else {
+            return "erreur";
         }
     }
 }
@@ -62,7 +68,7 @@ if ($action == 1) {
     
         if($token == $tokenbdd) {
             $API = new API;
-            $API->Vote($id_recipe, $id_user, $vote);
+            echo $API->Vote($id_recipe, $id_user, $vote);
         }else{
             die;
         }
