@@ -13,7 +13,7 @@ echo '<p id="user_token" hidden="hidden">'.$_SESSION['token'].'</p>';
 <button id="downvote-1">Downvote</button><br>
 
 
-<script src="vote.js"></script>
+<script src="voteee.js"></script>
 <!--
 <button id="upvote-2">Upvote</button>
 <p id="2"></p>
