@@ -23,7 +23,7 @@ function vote(number){
     request.addEventListener("load", function(){
         displayVote(id_recipe);
     });
-    request.open("GET", `http://cookit.ovh/test/votes/api_vote?action=2&vote=${number}&user=${id_user.innerText}&token=$${token.innerText}&recipe=${id_recipe}`);
+    request.open("GET", `http://cookit.ovh/test/votes/api_vote.php?action=2&vote=${number}&user=${id_user.innerText}&token=$${token.innerText}&recipe=${id_recipe}`);
     request.send();
 }
 
