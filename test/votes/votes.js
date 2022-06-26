@@ -28,5 +28,5 @@ function vote(number){
 }
 
 function displayVote(recipe){
-    
+    console.log(request.response);
 }
