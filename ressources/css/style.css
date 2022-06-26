@@ -67,6 +67,6 @@ border-radius:7px;
 
 .cardh {
     object-fit: cover;
-    height: 40px;
+    height: 40vh;
     width: 100%;
 }
