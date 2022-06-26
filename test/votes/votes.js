@@ -21,12 +21,20 @@ downvote.addEventListener("click", function(){
 
 function vote(number){
     request.addEventListener("load", function(){
-        displayVote(id_recipe);
+        getVote(id_recipe);
     });
     request.open("GET", `http://cookit.ovh/test/votes/api_vote.php?action=2&vote=${number}&user=${id_user.innerText}&token=$${token.innerText}&recipe=${id_recipe}`);
     request.send();
 }
 
-function displayVote(recipe){
-    console.log(request.response);
+function getVote(recipe){
+    request2.addEventListener("load", function(){
+        displayVote();
+    });
+    request2.open("GET", `http://cookit.ovh/test/votes/api_vote.php?action=1&recipe=${id_recipe}`);
+    request2.send();
+}
+
+function displayVote() {
+    console.log(request2.response);
 }
