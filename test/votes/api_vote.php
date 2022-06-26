@@ -25,7 +25,7 @@ class API_VOTE{
         if (!isset($result[0])) {
             //mise en bdd du vote
             $queryPrepared = $pdo->prepare("INSERT INTO VOTES VALUES (:id_user, :id_recipe, :vote);");
-            $queryPrepared->execute(['id_user'=>$id_user, 'id_recipe'=>$id_recipe, 'vote'=>$vote])
+            $queryPrepared->execute(['id_user'=>$id_user, 'id_recipe'=>$id_recipe, 'vote'=>$vote]);
 
         }elseif ($result[0] != $vote) {
             //changement du vote en bdd
