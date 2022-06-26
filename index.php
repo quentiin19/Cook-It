@@ -2,9 +2,9 @@
 include "template/header.php";
 ?>
 
-        <input type="text" id="search_bar_ajax" placeholder="rechercher" class="text-center">
+        <!-- <input type="text" id="search_bar_ajax" placeholder="rechercher" class="text-center">
         <button id="search_button_ajax">rechercher</button>
-        <div id="recettes">
+        <div id="recettes"> -->
 
         <?php 
         $pdo = connectDB();
@@ -33,7 +33,7 @@ include "template/header.php";
         }
         ?>
 
-        </div>
+        <!-- </div> -->
 
         <script src="ressources/js/ajax.js"></script>
     </body>
