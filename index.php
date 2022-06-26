@@ -7,6 +7,7 @@ include "template/header.php";
         <div id="recettes">
 
         <?php 
+        $pdo = connectDB();
         $queryPrepared = $pdo->prepare("SELECT * FROM RECIPES ORDER BY ID DESC;");
         $queryPrepared->execute();
         $recipes = $queryPrepared->fetchAll();
