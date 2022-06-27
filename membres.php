@@ -21,7 +21,10 @@ if(isset($_SESSION['id'])){
         ?>
         <div class="col-lg-3 col-md-4 col-sm-6"> 
             <div class="bg-light text-center shadow p-3 mb-5 rounded">
-            <?= $am['PSEUDO'] ?> 
+                <div>
+                    <?= $am['PSEUDO'] ?> 
+                </div>
+                <a href="#"> Voir le profil</a>
             </div>
         </div>
         <?php
