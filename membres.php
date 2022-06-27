@@ -23,6 +23,7 @@ if(isset($_SESSION['id'])){
             <div class="bg-light text-center ">
             <?= $am['PSEUDO'] ?> 
             </div>
+        </div>
         <?php
             }
         ?>
