@@ -24,7 +24,7 @@ if(isset($_SESSION['id'])){
                 <div>
                     <?= $am['PSEUDO'] ?> 
                 </div>
-                <a href="#"> Voir le profil</a>
+                <a href="profil.php?id=<?= $am['id'] ?>"> Voir le profil</a>
             </div>
         </div>
         <?php
