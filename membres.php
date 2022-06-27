@@ -20,9 +20,9 @@ if(isset($_SESSION['id'])){
             foreach ($afficher_membres as $am){
         ?>
         <div class="col-lg-3 col-md-4 col-sm-6"> 
-            <div class="bg-light text-center shadow p-3 mb-5 rounded"
-            <?=$am['PSEUDO'] ?> 
-        </div>
+            <div class="bg-light text-center shadow p-3 mb-5 rounded">
+            <?= $am['PSEUDO'] ?> 
+            </div>
         <?php
             }
         ?>
