@@ -25,7 +25,7 @@ if(isset($_SESSION['id'])){
                     <?= $am['PSEUDO'] ?> 
                     
                 </div>
-                <a href="profil_membres.php?id=<?= $am['id'] ?>" class ="bg-color text-white  rounded"> Voir le profil</a>
+                <a href="https://cookit.ovh/profil_membres.php?id=<?= $am['id'] ?>" class ="bg-color text-white  rounded"> Voir le profil</a>
                 
             </div>
         </div>
