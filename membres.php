@@ -23,8 +23,9 @@ if(isset($_SESSION['id'])){
             <div class="bg-light text-center shadow p-3 mb-5 rounded">
                 <div>
                     <?= $am['PSEUDO'] ?> 
-                    <a href="profil.php?id=<?= $am['id'] ?>" class ="bg-color text-white p-5 rounded"> Voir le profil</a>
+                    
                 </div>
+                <a href="profil.php?id=<?= $am['id'] ?>" class ="bg-color text-white  rounded"> Voir le profil</a>
                 
             </div>
         </div>
