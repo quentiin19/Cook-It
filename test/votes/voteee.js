@@ -41,7 +41,7 @@ function getVote(recipe){
     request2.addEventListener("load", function(){
         displayVote();
     });
-    request2.open("GET", `http://localhost/test/votes/api_vote.php?action=1&recipe=${id_recipe}`);
+    request2.open("GET", `http://cookit.ovh/test/votes/api_vote.php?action=1&recipe=${id_recipe}`);
     request2.send();
 }
 
