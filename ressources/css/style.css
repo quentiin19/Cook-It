@@ -66,7 +66,7 @@ border-radius:7px;
 /*----- Card -----*/
 
 .cardh {
-    object-fit: cover;
+    object-fit: contain; 
     height: 200px;
     width: 100%;
 }
