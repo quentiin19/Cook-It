@@ -19,7 +19,7 @@
 									print_r($_POST);
 									echo '</pre>';
 
-									if(isset($_POST) && !empty($_POST['email']) && !empty($_POST['pwd']) && count($_POST)==2){
+									if(!empty($_POST['email']) && !empty($_POST['pwd']) && count($_POST)==2){
 										$pdo = connectDB();
 										$queryPrepared = $pdo->prepare("SELECT * FROM USER WHERE MAIL=:email");
 										$queryPrepared->execute(["email"=>$_POST['email']]);
@@ -52,7 +52,7 @@
 										}else{
 											echo '<p class="bg-danger text-white">Ce compte n\'existe pas</p>';
 										}
-									}else{
+									}elseif(isset($_POST['clicked'])){
 										echo '<p class="bg-danger text-white">Veuillez remplir tous les champs</p>';
 									}
 								?>
