@@ -12,7 +12,7 @@ if (isConnected() && $_GET['id'] != $_SESSION['id']) {
 	}
 
 	$queryPrepared = $pdo->prepare("SELECT * FROM USER where ID=:id");
-	$queryPrepared->execute(array($utilisateur_id));
+	$queryPrepared->execute(["id" => $utilisateur_id]);
 	$results = $queryPrepared->fetch();
 
 	if(!isset($results['id'])){
