@@ -4,8 +4,8 @@ session_start();
 include "functions.php";
 
 updateLogs($_SESSION['id'], "déconnexion");
-unset($_SESSION['email']);
-unset($_SESSION['token']);
+
+session_destroy();
 
 
 header("Location: index.php");
