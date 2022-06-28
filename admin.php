@@ -39,7 +39,7 @@ if (isAdmin()){
 							<td>
 								<div class="btn-group">
 									<a href="delUser.php?id='.$user["ID"].'" class="btn btn-danger">Supprimer</a>
-									<a href="#" class="btn btn-warning" >Modifier</a>
+									<a href="https://cookit.ovh/profil_membres.php?id='.$user['ID'].'" class="btn btn-warning" >Modifier</a>
 								</div>
 							</td>
 						</tr>';
