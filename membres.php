@@ -22,12 +22,12 @@ if(isset($_SESSION['id'])){
         <div class="col-lg-3 col-md-4 col-sm-6"> 
             <div class=" card bg-color text-center shadow p-3 mb-5 rounded">
                 <div>
-                    <img src="<?= $am['PATH_AVATAR']?>" class="card-img-top cardh"></img>
+                    <img src="<?= $am['PATH_AVATAR']?>" class="card-img-top cardh my-3"></img>
                 </div>
                 <div>
                     <?= $am['PSEUDO'] ?>  
                 </div>
-                <a href="https://cookit.ovh/profil_membres.php?id=<?= $am['ID'] ?>" class ="bg-color text-white  rounded"> Voir le profil</a>
+                <a href="https://cookit.ovh/profil_membres.php?id=<?= $am['ID'] ?>" class ="bg-light rounded my-3"> Voir le profil</a>
                 
             </div>
         </div>
