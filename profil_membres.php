@@ -3,22 +3,13 @@
 <?php	
 
 
-if (isConnected() && $_GET['id'] != $_SESSION['id']) {
+
 	$pdo = connectDB();
-
-	if(empty($_GET['id'])){
-		header('Location: /membres.php');
-		exit;
-	}
-
 	$queryPrepared = $pdo->prepare("SELECT * FROM USER WHERE ID=:id;");
 	$queryPrepared->execute(["id"=>$_GET['id']]);
 	$results = $queryPrepared->fetch();
 
-	if(!isset($results['id'])){
-		header('Location: /membres.php');
-		exit;
-	}
+
 ?>
 <div class="row">
 
