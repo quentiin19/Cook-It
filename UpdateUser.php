@@ -29,7 +29,7 @@ $pseudo = $_POST["pseudo"];
 
 //nettoyage des données
 $firstname = ucwords(strtolower(trim($firstname)));
-$lastname = mb_strtoupper(trim($lastname));
+$lastname = strtoupper(trim($lastname));
 $pseudo = ucwords(strtolower(trim($pseudo)));
 
 //Vérification des données
@@ -99,7 +99,7 @@ header("Location: admin.php");
 
 	$email = strtolower(trim($email));
 	$firstname = ucwords(strtolower(trim($firstname)));
-	$lastname = mb_strtoupper(trim($lastname));
+	$lastname = strtoupper(trim($lastname));
 	$pseudo = ucwords(strtolower(trim($pseudo)));
 
 	// Verif champs
