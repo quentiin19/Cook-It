@@ -6,15 +6,15 @@ const result_ajax = document.getElementById("result_ajax");
 const recettes = document.getElementById("recettes");
 
 //récupération des coordonnées de la barre de recherche
-var coor_sb = search_bar.getBoundingClientRect();
+//var coor_sb = search_bar.getBoundingClientRect();
 
 //écouteurs
-search_button.addEventListener("click", onclick, false);
+search_bar.addEventListener("input", onclickajax);
 
 
 console.log("testetestsetsts");
 
-function clean_str(str){
+function clean_str_ajax(str){
     let new_str = [];
     console.log(`uncleaned string : ${str}`);
     let a = "àáâäAÀÁÂÄ";
@@ -68,13 +68,13 @@ function clean_str(str){
 }
 
 
-function onclick() {
+function onclickajax() {
     //récupération de la valeur dans la barre de recherche
-    var keywords = clean_str(search_bar.value);
+    var keywords = clean_str_ajax(search_bar.value);
 
 
     //envoi de la requete
-    request.addEventListener("load", display_results);
+    request.addEventListener("load", display_results_ajax);
     request.open("GET", `https://cookit.ovh/ressources/api/api.php?keywords=${keywords}&action=1`);
     request.send();
 
@@ -82,7 +82,7 @@ function onclick() {
 
 }
 
-function display_results() {
+function display_results_ajax() {
     recettes.innerHTML = "";
     console.log(JSON.parse(request.response));
 
@@ -99,7 +99,7 @@ function display_results() {
 
 
         const a = document.createElement("a");
-        a.setAttribute("href", `https://cookit.ovh/recette.php?id=${recipe['ID']}`);
+        a.setAttribute("href", `https://cookit.ovh/recette.php?id=${recipe['ID_RECIPE']}`);
 
         const img = document.createElement("img");
         img.setAttribute("src", `${recipe['PICTURE_PATH']}`);
