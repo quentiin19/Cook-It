@@ -14,7 +14,7 @@ if (isConnected() && $_GET['id'] <> $_SESSION['id']) {
 
 			$queryPrepared = $pdo->prepare("SELECT * FROM USER where ID=:id");
 			$queryPrepared->execute(array($utilisateur_id));
-			$results = $queryPrepared->fetch();
+			$results = $queryPrepared->fetchAll();
 
             if(!isset($results['id'])){
                 header('Location: /membres.php');
