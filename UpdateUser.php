@@ -4,9 +4,9 @@ require "functions.php";
 
 //Vérification si admin
 
-if(isConnected() && isAdmin()){
+if(isAdmin()){
 	$pdo = connectDB();
-    $queryPrepared = $pdo->prepare("SELECT * FROM USER WHERE id=:id");
+    $queryPrepared = $pdo->prepare("SELECT * FROM USER WHERE ID=:id");
     $queryPrepared->execute(["id"=>$_GET['id']]);
     $results=$queryPrepared->fetch();
 
@@ -66,6 +66,11 @@ $queryPrepared->execute(["pseudo"=> $pseudo, "fistname"=>$firstname, "lastname"=
 
 	//vérifier les données
 	$errors = [];
+
+	//Nettoyage des variables
+
+
+	// Verif champs
 
 	//Vérification des mots de passes
 	$hasholdpwd= password_hash($oldpwd, PASSWORD_DEFAULT);
