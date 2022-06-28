@@ -3,11 +3,12 @@ session_start();
 require "functions.php";
 
 //Vérification si admin
+$id=$_POST['id'];
 
 if(isAdmin()){
 	$pdo = connectDB();
     $queryPrepared = $pdo->prepare("SELECT * FROM USER WHERE ID=:id");
-    $queryPrepared->execute(["id"=>$_GET['id']]);
+    $queryPrepared->execute(["id"=>$id]);
     $results=$queryPrepared->fetch();
 
 
@@ -30,14 +31,16 @@ $pseudo = $results["pseudo"];
 
 //Modification des infos de l'utilisateur dans la BDD
 $queryPrepared = $pdo->prepare("Update USER SET PSEUDO =:pseudo, FIRSTNAME =:firstname, LASTNAME =:lastname WHERE ID =:id");
-$queryPrepared->execute(["pseudo"=> $pseudo, "fistname"=>$firstname, "lastname"=>$lastname, "id"=>$_GET['id'] ]);
+$queryPrepared->execute(["pseudo"=> $pseudo, "fistname"=>$firstname, "lastname"=>$lastname, "id"=>$id ]);
 
-}else if(!isConnected()){				//Vérification de l'utilisateur	
-	die("Il faut se connecter !!!");
-}else{
-    $pdo = connectDB();
-    $queryPrepared = $pdo->prepare("SELECT * FROM USER WHERE id=:id");
-    $queryPrepared->execute(["id"=>$_SESSION["id"]]);
+//update des logs
+updateLogs($id, "modification du profil par un administrateur (".$_SESSION['id'].")");
+
+}else if(isConnected() == $id){
+
+	$pdo = connectDB();
+    $queryPrepared = $pdo->prepare("SELECT HASHPWD FROM USER WHERE ID=:id");
+    $queryPrepared->execute(["id"=>$id]);
     $results=$queryPrepared->fetch();
 
 
@@ -75,7 +78,7 @@ $queryPrepared->execute(["pseudo"=> $pseudo, "fistname"=>$firstname, "lastname"=
 	//Vérification des mots de passes
 	$hasholdpwd= password_hash($oldpwd, PASSWORD_DEFAULT);
 
-	if ($results["HASHPWD"] != $hasholdpwd){
+	if ($results[0] != $hasholdpwd){
 		$errors[] = "Votre ancien mot de passe n'est pas bon";
 	}
 
@@ -100,7 +103,11 @@ $queryPrepared->execute(["pseudo"=> $pseudo, "fistname"=>$firstname, "lastname"=
 	//Modification des infos de l'utilisateur dans la BDD
 	$queryPrepared = $pdo->prepare("Update USER SET PSEUDO =:pseudo, HASHPWD =:hashpwd, FIRSTNAME =:firstname, LASTNAME =:lastname WHERE ID =:id");
 	$queryPrepared->execute(["pseudo"=> $pseudo, "hashpwd"=> $hashpwd, "fistname"=>$firstname, "lastname"=>$lastname, "id"=>$id ]);
+	
+	//update des logs
+	updateLogs($id, "modification du profil");
+	
+}else{
+	die("Il faut se connecter !!!");
 }
 
-//update des logs
-updateLogs($results["ID"], "modification du profil");
