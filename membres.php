@@ -22,7 +22,7 @@ if(isset($_SESSION['id'])){
         <div class="col-lg-3 col-md-4 col-sm-6"> 
             <div class=" card bg-light text-center shadow p-3 mb-5 rounded">
                 <div>
-                    <img src="<?= $am['PATH_AVATAR']?>" class="card-img-top cardh">></img>
+                    <img src="<?= $am['PATH_AVATAR']?>" class="card-img-top cardh"></img>
                 </div>
                 <div>
                     <?= $am['PSEUDO'] ?>  
