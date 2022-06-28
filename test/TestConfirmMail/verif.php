@@ -4,7 +4,7 @@ require "../../functions.php";
 //une fois qu'on se co on met à jour la bdd de
 print_r($_SESSION);
 print_r($_GET);
-if($_GET['id']==$_SESSION['id']){
+if($_GET['id']==$_SESSION['ID']){
     if($_GET['cle']== $_SESSION['cle']){
         $pdo = connectDB();
         $queryPrepared = $pdo->prepare("UPDATE USER set role = 1 WHERE ID=:id ; ");
