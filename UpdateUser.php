@@ -29,7 +29,7 @@ $pseudo = $_POST["pseudo"];
 
 //Modification des infos de l'utilisateur dans la BDD
 $queryPrepared = $pdo->prepare("Update USER SET PSEUDO =:pseudo, FIRSTNAME =:firstname, LASTNAME =:lastname WHERE ID =:id");
-$queryPrepared->execute(["pseudo"=> $pseudo, "fistname"=>$firstname, "lastname"=>$lastname, "id"=>$id ]);
+$queryPrepared->execute(["pseudo"=> $pseudo, "firstname"=>$firstname, "lastname"=>$lastname, "id"=>$id ]);
 
 //update des logs
 updateLogs($id, "modification du profil par un administrateur (".$_SESSION['id'].")");
