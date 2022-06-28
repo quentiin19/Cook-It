@@ -8,7 +8,7 @@ include "template/header.php";
 
         <?php 
         $pdo = connectDB();
-        $queryPrepared = $pdo->prepare("SELECT ID_RECIPE, PICTURE_PATH, TITLE, PSEUDO FROM RECIPES, USER WHERE USER.ID = RECIPES.ID_CREATOR ORDER BY RECIPES.ID_RECIPE DESC;");
+        $queryPrepared = $pdo->prepare("SELECT ID_RECIPE, PICTURE_PATH, TITLE, ID_CREATOR, PSEUDO FROM RECIPES, USER WHERE USER.ID = RECIPES.ID_CREATOR ORDER BY RECIPES.ID_RECIPE DESC;");
         $queryPrepared->execute();
         $recipes = $queryPrepared->fetchAll();
 
@@ -19,7 +19,7 @@ include "template/header.php";
                         <img src="'.$recipe['PICTURE_PATH'].'" class="card-img-top cardh"> </img>
                         <div class="card-body text-center arrondie">
                                     <h4>'.$recipe['TITLE'].'</h4>
-                                    <p>Créé par '.$recipe['PSEUDO'].'</p>
+                                    <a href="https://cookit.ovh/profil.php?id='.$recipe['ID_CREATOR'].'"><p>Créé par '.$recipe['PSEUDO'].'</p></a>
                         </div>
                         </a>        
                     </div>
