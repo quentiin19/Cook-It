@@ -14,7 +14,7 @@ if(isAdmin()){
 		!isset($_POST["firstname"]) ||
 		!isset($_POST["lastname"]) || 
 		empty($_POST["pseudo"]) ||
-		count($_POST)!=3
+		count($_POST)!=4
 	){
 
 		die("Tentative de Hack ...");
@@ -49,7 +49,7 @@ updateLogs($id, "modification du profil par un administrateur (".$_SESSION['id']
 		empty($_POST["oldpassword"])||
 		empty($_POST["password"]) ||
 		empty($_POST["passwordConfirm"]) ||
-		count($_POST)!=6
+		count($_POST)!=7
 	){
 
 		die("Tentative de Hack ...");
