@@ -27,7 +27,6 @@
 		?> -->
 		<?php 
 			if (isConnected()){
-				print_r($_SESSION);
 				echo'<div class="col-lg-2 col-md-2  align-self-center ">
 									<div class="btn-group">
 										
