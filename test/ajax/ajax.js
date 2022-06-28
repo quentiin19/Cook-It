@@ -6,10 +6,10 @@ const result_ajax = document.getElementById("result_ajax");
 const recettes = document.getElementById("recettes");
 
 //récupération des coordonnées de la barre de recherche
-var coor_sb = search_bar.getBoundingClientRect();
+//var coor_sb = search_bar.getBoundingClientRect();
 
 //écouteurs
-//search_bar.addEventListener("input", onclick, false);
+search_bar.addEventListener("input", onclick, false);
 
 
 console.log("testetestsetsts");
