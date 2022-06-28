@@ -25,7 +25,7 @@ if(isAdmin() || $_GET['id'] == isConnected()){
 	//connexion à la base de données
 	$pdo = connectDB();
 
-
+	$id = $_GET['id'];
 
 	//suppression des messages
 	$queryPrepared = $pdo->prepare("DELETE * FROM MESSAGE WHERE ID_SENDER=:id OR ID_RECEIVER=:id;");
