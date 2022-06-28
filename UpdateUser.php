@@ -27,6 +27,28 @@ $firstname =$_POST["firstname"];
 $lastname = $_POST["lastname"];
 $pseudo = $_POST["pseudo"];
 
+//nettoyage des données
+$firstname = ucwords(strtolower(trim($firstname)));
+$lastname = mb_strtoupper(trim($lastname));
+$pseudo = ucwords(strtolower(trim($pseudo)));
+
+//Vérification des données
+
+//prénom : Min 2, Max 45 ou empty
+if( strlen($firstname)==1 || strlen($firstname)>45 ){
+	$errors[] = "Votre prénom doit faire plus de 2 caractères";
+}
+
+//nom : Min 2, Max 100 ou empty
+if( strlen($lastname)==1 || strlen($lastname)>100 ){
+	$errors[] = "Votre nom doit faire plus de 2 caractères";
+}
+
+//pseudo : Min 4 Max 60
+if( strlen($pseudo)<4 || strlen($pseudo)>60 ){
+	$errors[] = "Votre pseudo doit faire entre 4 et 60 caractères";
+}
+
 //Modification des infos de l'utilisateur dans la BDD
 $queryPrepared = $pdo->prepare("Update USER SET PSEUDO =:pseudo, FIRSTNAME =:firstname, LASTNAME =:lastname WHERE ID =:id");
 $queryPrepared->execute(["pseudo"=> $pseudo, "firstname"=>$firstname, "lastname"=>$lastname, "id"=>$id ]);
@@ -46,13 +68,14 @@ header("Location: admin.php");
 
 
 	if(
+		empty($_POST["email"])||
 		!isset($_POST["firstname"]) ||
 		!isset($_POST["lastname"]) || 
 		empty($_POST["pseudo"]) ||
 		empty($_POST["oldpassword"])||
 		empty($_POST["password"]) ||
 		empty($_POST["passwordConfirm"]) ||
-		count($_POST)!=7
+		count($_POST)!=8
 	){
 
 		die("Tentative de Hack ...");
@@ -61,6 +84,7 @@ header("Location: admin.php");
 
 	//récupérer les données du formulaire
 
+	$email = $_POST["email"];
 	$firstname = $_POST["firstname"];
 	$lastname = $_POST["lastname"];
 	$pseudo = $_POST["pseudo"];
@@ -71,10 +95,47 @@ header("Location: admin.php");
 	//vérifier les données
 	$errors = [];
 
-	//Nettoyage des variables
+	//nettoyer les données
 
+	$email = strtolower(trim($email));
+	$firstname = ucwords(strtolower(trim($firstname)));
+	$lastname = mb_strtoupper(trim($lastname));
+	$pseudo = ucwords(strtolower(trim($pseudo)));
 
 	// Verif champs
+
+	//Email OK
+	if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+		$errors[] = "Email incorrect";
+	}else{
+
+		//Vérification l'unicité de l'email
+		$pdo = connectDB();
+		$queryPrepared = $pdo->prepare("SELECT ID from USER WHERE EMAIL=:email");
+
+		$queryPrepared->execute(["email"=>$email]);
+		
+		if(!empty($queryPrepared->fetch())){
+			$errors[] = "L'email existe déjà en bdd";
+		}
+
+
+	}
+
+	//prénom : Min 2, Max 45 ou empty
+	if( strlen($firstname)==1 || strlen($firstname)>45 ){
+		$errors[] = "Votre prénom doit faire plus de 2 caractères";
+	}
+
+	//nom : Min 2, Max 100 ou empty
+	if( strlen($lastname)==1 || strlen($lastname)>100 ){
+		$errors[] = "Votre nom doit faire plus de 2 caractères";
+	}
+
+	//pseudo : Min 4 Max 60
+	if( strlen($pseudo)<4 || strlen($pseudo)>60 ){
+		$errors[] = "Votre pseudo doit faire entre 4 et 60 caractères";
+	}
 
 	//Vérification des mots de passes
 	$hasholdpwd= password_hash($oldpwd, PASSWORD_DEFAULT);
