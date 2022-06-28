@@ -75,7 +75,7 @@ class API{
         //enfin on met dans le tableau json_recipes les colonnes qui nous intéresse des recettes
         $json_recipes = [];
         foreach ($result as $index => $recipe_id) {
-            $queryPrepared = $pdo->prepare("SELECT PSEUDO, TITLE, PICTURE_PATH, RECIPES.ID_RECIPE FROM RECIPES, USER WHERE RECIPES.ID=:id AND RECIPES.ID_CREATOR = USER.ID;");
+            $queryPrepared = $pdo->prepare("SELECT PSEUDO, TITLE, PICTURE_PATH, RECIPES.ID_RECIPE FROM RECIPES, USER WHERE RECIPES.ID_RECIPE=:id AND RECIPES.ID_CREATOR = USER.ID;");
             $queryPrepared->execute(["id"=>$recipe_id]);
             $queryResults = $queryPrepared->fetch();
 
