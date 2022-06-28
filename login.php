@@ -15,6 +15,9 @@
 					            <p class="text-white-50 mb-5">Veillez entrer votre identifiant et votre mot de passe </p>
 					            
 								<?php
+									echo '<pre>';
+									print_r($_POST);
+									echo '</pre>';
 
 									if(isset($_POST) && !empty($_POST['email']) && !empty($_POST['pwd']) && count($_POST)==2){
 										$pdo = connectDB();
@@ -55,6 +58,7 @@
 								?>
 
 								<form method="POST" action="">
+									<input type="hidden" name="clicked" >
 					              	<div class="form-outline form-white mb-4">
 					                	<input  name="email" type="email" id="typeEmailX" placeholder="Email" class="form-control form-control-lg" />
 					                	<label class="form-label" for="typeEmailX"></label>
