@@ -56,13 +56,13 @@ if(isAdmin() || $_GET['id'] == isConnected()){
 
 
 	//suppression des images dans les recettes que le user à créé
-	$queryPrepared = $pdo->prepare("DELETE FROM PICTURE WHERE ID_RECIPE IN (SELECT * FROM RECIPES WHERE ID_CREATOR=:id);");
+	$queryPrepared = $pdo->prepare("DELETE FROM PICTURE WHERE ID_RECIPE IN (SELECT ID_RECIPE FROM RECIPES WHERE ID_CREATOR=:id);");
 	$queryPrepared->execute(["id"=>$id]);
 
 
 
 	//suppression des besoin des recettes créé par le user
-	$queryPrepared = $pdo->prepare("DELETE FROM NEED WHERE ID_RECIPE IN (SELECT * FROM RECIPES WHERE ID_CREATOR=:id);");
+	$queryPrepared = $pdo->prepare("DELETE FROM NEED WHERE ID_RECIPE IN (SELECT ID_RECIPE FROM RECIPES WHERE ID_CREATOR=:id);");
 	$queryPrepared->execute(["id"=>$id]);
 
 
@@ -72,7 +72,7 @@ if(isAdmin() || $_GET['id'] == isConnected()){
 	$queryPrepared->execute(["id"=>$id]);
 
 	//suppression des votes sur les recettes créé par le user
-	$queryPrepared = $pdo->prepare("DELETE FROM VOTES WHERE ID_RECIPE IN (SELECT * FROM RECIPES WHERE ID_CREATOR=:id);");
+	$queryPrepared = $pdo->prepare("DELETE FROM VOTES WHERE ID_RECIPE IN (SELECT ID_RECIPE FROM RECIPES WHERE ID_CREATOR=:id);");
 	$queryPrepared->execute(["id"=>$id]);
 
 
