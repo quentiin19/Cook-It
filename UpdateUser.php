@@ -5,6 +5,8 @@ require "functions.php";
 //Vérification si admin
 $id=$_POST['id'];
 
+print_r($_POST);
+
 if(isAdmin()){
 	$pdo = connectDB();
 
