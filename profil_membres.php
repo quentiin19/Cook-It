@@ -7,7 +7,8 @@ if (isConnected() && $_GET['id'] != $_SESSION['id']) {
 	$pdo = connectDB();
 
 	if(empty($_GET['id'])){
-		header('Location: /membres.php');
+		echo 'lolo';
+		// header('Location: /membres.php');
 		exit;
 	}
 
