@@ -5,8 +5,8 @@
 
 // Condition  : si la personne est connecté elle ne se verra pas dans les membres ( on verifie si une variable de session existe)
 if(isset($_SESSION['id'])){
-    $afficher_membres = $pdo->prepare("SELECT * FROM USER WHERE id <> ?");
-    $afficher_membres -> execute(array($_SESSION['id']));
+    $afficher_membres = $pdo->prepare("SELECT * FROM USER WHERE id <> :id");
+    $afficher_membres -> execute(['id' =>$_SESSION['id']]);
 }else{
     $afficher_membres = $pdo->prepare("SELECT * FROM USER");
     $afficher_membres -> execute();
@@ -25,7 +25,7 @@ if(isset($_SESSION['id'])){
                     <?= $am['PSEUDO'] ?> 
                     
                 </div>
-                <a href="https://cookit.ovh/profil_membres.php?id=<?= $am['id'] ?>" class ="bg-color text-white  rounded"> Voir le profil</a>
+                <a href="https://cookit.ovh/profil_membres.php?id=<?= $am['ID'] ?>" class ="bg-color text-white  rounded"> Voir le profil</a>
                 
             </div>
         </div>

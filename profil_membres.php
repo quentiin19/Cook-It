@@ -2,9 +2,9 @@
 
 <?php
 
-$utilisateur_id = (int) trim($_GET['id']);
+$utilisateur_id = ($_GET['id']);
 
-if (isConnected()) {
+if (isConnected() && $_GET['id'] <> $_SESSION['id']) {
 			$pdo = connectDB();
 
             if(empty($utilisateur_id)){
