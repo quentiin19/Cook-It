@@ -6,7 +6,7 @@
 
 	$pdo = connectDB();
 	$queryPrepared = $pdo->prepare("SELECT * FROM RECIPES WHERE ID=:id;");
-	$queryPrepared->execute(["id"=>$_GET['id']]);
+	$queryPrepared->execute(["id"=>$_SESSION['id']]);
 	$results = $queryPrepared->fetch();
 
 
@@ -38,7 +38,6 @@
 								<div class ="py-3">
 									Title :<input type="text" class="form-control py-4" name="title" placeholder="Votre recette" value="<?=$results["TITLE"]?>"><br>
 									Description :<input type="text" class="form-control" name="description" placeholder="Votre description" value=" <?=$results["DESCRIPTION"]?>"><br>
-									<input  type="hidden" name="id" value="<?=  $_GET['id'] ?>">
 									<input  type="submit" class=" ml-3 mt-5 btn btn-light btn-lg py-2 " value="Modifier">								
 								</div>
 							</form>
