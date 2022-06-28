@@ -32,11 +32,11 @@
 						<div class="col-lg-2 col-md-0 col-sm-0"></div>
 						<div class="col-lg-8 col-md-12 col-sm-12 bg-color arrondie">
 							<div>
-								<img src="<?= $results['PATH_AVATAR']?>"></img>						
+								<img src="<?= $results['PATH_AVATAR']?>" ></img>						
 							</div>
 						<!-- Information du Compte -->
 							<form method="POST" action="UpdateUser.php">
-								Prénom :<input type="text" class="form-control" name="firstname" placeholder="Votre prénom" value="<?=$results["FIRSTNAME"]?>"><br>
+								Prénom :<input type="text" class="form-control py-4" name="firstname" placeholder="Votre prénom" value="<?=$results["FIRSTNAME"]?>"><br>
 								Nom :<input type="text" class="form-control" name="lastname" placeholder="Votre nom" value=" <?=$results["LASTNAME"]?>"><br>
 								Pseudo :<input type="text" class="form-control" name="pseudo" placeholder="Votre pseudo"  required="required" value=" <?=$results["PSEUDO"]?>"><br>
 								<h3 class="py-3"> Modifier mot de passe </h3>
