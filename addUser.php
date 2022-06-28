@@ -148,7 +148,7 @@ if(count($errors) == 0){
 	$from = 'support-cookit@cookit.com';
 	$name = "Cookit-supportTeam";
 	$subj = 'Mail de confirmation';
-    $msg = '<a href=http://51.255.172.36/test/TestConfirmMail/verif.php?id='.$_SESSION['id'].'&cle='.$cle.'>Confirmer</a><h1>je suis ton père</h1>';
+    $msg = '<a href=http://51.255.172.36/test/TestConfirmMail/verif.php?id='.$_SESSION['id'].'&cle='.$cle.'>Confirmer</a><h1>Cliquez sur le lien de confirmation juste au dessus</h1>';
 	smtpmailer($email,$from, $name ,$subj, $msg);
 
 	echo "test2";
