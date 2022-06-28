@@ -7,14 +7,13 @@ if (isConnected() && $_GET['id'] != $_SESSION['id']) {
 	$pdo = connectDB();
 
 	if(empty($_GET['id'])){
-		echo 'lolo';
-		// header('Location: /membres.php');
+		header('Location: /membres.php');
 		exit;
 	}
 
 	$queryPrepared = $pdo->prepare("SELECT * FROM USER WHERE ID=:id;");
 	$queryPrepared->execute(["id"=>$_GET['id']]);
-	$recipe = $queryPrepared->fetch();
+	$results = $queryPrepared->fetch();
 
 	if(!isset($results['id'])){
 		header('Location: /membres.php');
