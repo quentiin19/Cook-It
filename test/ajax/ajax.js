@@ -99,7 +99,7 @@ function display_results_ajax() {
 
 
         const a = document.createElement("a");
-        a.setAttribute("href", `https://cookit.ovh/recette.php?id=${recipe['ID']}`);
+        a.setAttribute("href", `https://cookit.ovh/recette.php?id=${recipe['ID_RECIPE']}`);
 
         const img = document.createElement("img");
         img.setAttribute("src", `${recipe['PICTURE_PATH']}`);
