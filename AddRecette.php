@@ -180,7 +180,7 @@ if(!empty($_POST)){
 							"idcreator"=>$_SESSION['id'],
 							"title"=>$recette,
 							"recettedesc"=>$recette_description,
-							"path"=>"http://51.255.172.36/ressources/images/images-recettes/".$final_file_name
+							"path"=>"https://cookit.ovh/ressources/images/images-recettes/".$final_file_name
 	]);
 
 
@@ -190,7 +190,7 @@ if(!empty($_POST)){
 
 
 	//récupération de l'id de la recette pour créer les insertions dans la table NEED
-	$queryPrepared = $pdo->prepare("SELECT ID FROM RECIPES WHERE ID_CREATOR=:id AND TITLE=:title");
+	$queryPrepared = $pdo->prepare("SELECT ID_RECIPE FROM RECIPES WHERE ID_CREATOR=:id AND TITLE=:title");
 	$queryPrepared->execute(["id"=>$_SESSION['id'], "title"=>$recette]);
 	$result = $queryPrepared->fetch();
 
