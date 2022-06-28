@@ -96,7 +96,7 @@ if(isAdmin() || $_GET['id'] == isConnected()){
 
 
 	//redirection sur la home
-	header("Location: index.php");
+	header("Location: admin.php");
 
 }else{
 	die("Vous ne pouvez pas supprimer ce compte.");
