@@ -16,7 +16,7 @@
 					            
 								<?php
 
-									if(!empty($_POST['email']) && !empty($_POST['pwd']) && count($_POST)==2){
+									if(!empty($_POST['email']) && !empty($_POST['pwd']) && count($_POST)==3){
 										$pdo = connectDB();
 										$queryPrepared = $pdo->prepare("SELECT * FROM USER WHERE MAIL=:email");
 										$queryPrepared->execute(["email"=>$_POST['email']]);
