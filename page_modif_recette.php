@@ -34,7 +34,7 @@
 								<img src="<?= $results['PICTURE_PATH']?>" ></img>						
 							</div>
 						<!-- Affichage recette -->
-							<form method="POST" action="UpdateUser.php">
+							<form method="POST" action="modifRecette.php">
 								<div class ="py-3">
 									Title :<input type="text" class="form-control py-4" name="title" placeholder="Votre recette" value="<?=$results["TITLE"]?>"><br>
 									Description :<input type="text" class="form-control" name="description" placeholder="Votre description" value=" <?=$results["DESCRIPTION"]?>"><br>
