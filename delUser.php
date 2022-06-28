@@ -50,7 +50,7 @@ if(isAdmin() || $_GET['id'] == isConnected()){
 	$queryPrepared->execute(["id"=>$id]);
 
 	//suppression des recettes que le user à créé et que d'autres ont sauvegardé
-	$queryPrepared = $pdo->prepare("DELETE FROM RECIPES_SAVED WHERE ID_RECIPE IN (SELECT * FROM RECIPES WHERE ID_CREATOR=:id);");
+	$queryPrepared = $pdo->prepare("DELETE FROM RECIPES_SAVED WHERE ID_RECIPE IN (SELECT ID_RECIPE FROM RECIPES WHERE ID_CREATOR=:id);");
 	$queryPrepared->execute(["id"=>$id]);
 
 
