@@ -1,10 +1,14 @@
 <?php
 include "template/header.php";
 ?>
+
+
         <?php 
+        print_r($_GET);
+        print_r($_SESSION);
         $pdo = connectDB();
-        $queryPrepared = $pdo->prepare("SELECT ID_RECIPE, PICTURE_PATH, TITLE, PSEUDO FROM RECIPES, USER WHERE  RECIPES.ID_CREATOR = :id ORDER BY RECIPES.ID_RECIPE DESC;");
-        $queryPrepared->execute(["id" => $_SESSION["id"]]);
+        $queryPrepared = $pdo->prepare("SELECT ID_RECIPE, PICTURE_PATH, TITLE, PSEUDO, LASTNAME, FIRSTNAME FROM RECIPES, USER WHERE  RECIPES.ID_CREATOR = :id ORDER BY RECIPES.ID_RECIPE DESC;");
+        $queryPrepared->execute(["id" => $_GET["id"]]);
         $results = $queryPrepared->fetchAll();
 
         foreach ($results as $result){
@@ -14,7 +18,6 @@ include "template/header.php";
                         <img src="'.$result['PICTURE_PATH'].'" class="card-img-top cardh"> </img>
                         <div class="card-body text-center arrondie">
                                     <h4>'.$result['TITLE'].'</h4>
-                                    <p>Créé par '.$result['PSEUDO'].'</p>
                         </div>
                         </a>        
                     </div>
