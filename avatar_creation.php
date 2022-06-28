@@ -22,7 +22,7 @@ imagedestroy($eye);
 imagedestroy($mouth);
 
 //changement de base de données du chemin de l'avatar
-$path = "/var/www/html/ProjAnn/ressources/images/avatars/".$_SESSION['id'].".png";
+$path = "/ressources/images/avatars/".$_SESSION['id'].".png";
 
 $pdo = connectDB();
 
