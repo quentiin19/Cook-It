@@ -7,16 +7,12 @@ $id=$_POST['id'];
 
 if(isAdmin()){
 	$pdo = connectDB();
-    $queryPrepared = $pdo->prepare("SELECT * FROM USER WHERE ID=:id");
-    $queryPrepared->execute(["id"=>$id]);
-    $results=$queryPrepared->fetch();
-
 
 	if(
-		!isset($results["firstname"]) ||
-		!isset($results["lastname"]) || 
-		empty($results["pseudo"]) ||
-		count($results)!=3
+		!isset($_POST["firstname"]) ||
+		!isset($_POST["lastname"]) || 
+		empty($_POST["pseudo"]) ||
+		count($_POST)!=3
 	){
 
 		die("Tentative de Hack ...");
@@ -25,9 +21,9 @@ if(isAdmin()){
 
 //récupérer les données du formulaire
 
-$firstname = $results["firstname"];
-$lastname = $results["lastname"];
-$pseudo = $results["pseudo"];
+$firstname =$_POST["firstname"];
+$lastname = $_POST["lastname"];
+$pseudo = $_POST["pseudo"];
 
 //Modification des infos de l'utilisateur dans la BDD
 $queryPrepared = $pdo->prepare("Update USER SET PSEUDO =:pseudo, FIRSTNAME =:firstname, LASTNAME =:lastname WHERE ID =:id");
