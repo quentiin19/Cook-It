@@ -2,7 +2,37 @@
 session_start();
 require "functions.php";
 
+//Vérification si admin
 
+if(isConnected() && isAdmin()){
+	$pdo = connectDB();
+    $queryPrepared = $pdo->prepare("SELECT * FROM USER WHERE id=:id");
+    $queryPrepared->execute(["id"=>$_GET['id']]);
+    $results=$queryPrepared->fetch();
+
+
+if(
+	!isset($results["firstname"]) ||
+	!isset($results["lastname"]) || 
+	empty($results["pseudo"]) ||
+	count($results)!=3
+){
+
+	die("Tentative de Hack ...");
+
+}
+
+//récupérer les données du formulaire
+
+$firstname = $results["firstname"];
+$lastname = $results["lastname"];
+$pseudo = $results["pseudo"];
+
+//Modification des infos de l'utilisateur dans la BDD
+$queryPrepared = $pdo->prepare("Update USER SET PSEUDO =:pseudo, FIRSTNAME =:firstname, LASTNAME =:lastname WHERE ID =:id");
+$queryPrepared->execute(["pseudo"=> $pseudo, "fistname"=>$firstname, "lastname"=>$lastname, "id"=>$_GET['id'] ]);
+
+}
 
 //Vérification de l'utilisateur
 $id = $_SESSION["id"];
