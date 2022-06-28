@@ -74,7 +74,7 @@ function onclickajax() {
 
 
     //envoi de la requete
-    request.addEventListener("load", display_results);
+    request.addEventListener("load", display_results_ajax);
     request.open("GET", `https://cookit.ovh/ressources/api/api.php?keywords=${keywords}&action=1`);
     request.send();
 
@@ -82,7 +82,7 @@ function onclickajax() {
 
 }
 
-function display_results() {
+function display_results_ajax() {
     recettes.innerHTML = "";
     console.log(JSON.parse(request.response));
 
