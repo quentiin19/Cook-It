@@ -5,7 +5,7 @@ require "functions.php";
 //Vérification si admin
 $id=$_POST['id'];
 
-print_r($_POST);
+
 
 if(isAdmin()){
 	$pdo = connectDB();
@@ -33,6 +33,9 @@ $queryPrepared->execute(["pseudo"=> $pseudo, "firstname"=>$firstname, "lastname"
 
 //update des logs
 updateLogs($id, "modification du profil par un administrateur (".$_SESSION['id'].")");
+
+//redirection vers la page membre
+header("Location : admin.php");
 
 }else if(isConnected() == $id){
 
@@ -104,6 +107,9 @@ updateLogs($id, "modification du profil par un administrateur (".$_SESSION['id']
 	
 	//update des logs
 	updateLogs($id, "modification du profil");
+
+	//Redirection
+	header("Location : profil.php");
 	
 }else{
 	die("Il faut se connecter !!!");
