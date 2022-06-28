@@ -20,11 +20,6 @@ if (isConnected()) {
 
 					            <div class="mb-md-5 mt-md-4 pb-5">
 								<div class="row">
-									<div class="col-lg-12 mb-3">
-										<h2> Personnaliser mon avatar </h2>
-									</div>
-								</div>
-								<div class="row">
 									<div class="col-lg-12 pb-3" >	
 										<?php //include "avatar/avatar.php"; ?>
 									</div>
