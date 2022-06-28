@@ -27,9 +27,10 @@
 		?> -->
 		<?php 
 			if (isConnected()){
+				print_r($_SESSION);
 				echo'<div class="col-lg-2 col-md-2  align-self-center ">
 									<div class="btn-group">
-											
+										
 									<a href="#" class="btn btn-lg dropdown-toggle" data-bs-toggle="dropdown"><img src="../../ressources/images/avatars/'.$_SESSION['id'].'.png" height="100vh" width="100vw"></a>
 									<ul class="dropdown-menu">
 										<li><a href="#" class="dropdown-item">Mes abonnements</a></li>
