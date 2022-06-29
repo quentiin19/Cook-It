@@ -1,6 +1,10 @@
 <?php   
 		include "template/header.php";
+
 ?>
+
+
+
 
 <div class="row">
     <div class="col-lg-2 col-md-1 col-sm-0"></div>
@@ -199,13 +203,13 @@ if(!empty($_POST)){
 		if(isset($_POST['checkbox'.$i])){
 			$quantity = $_POST["quantity".$i];
 			$queryPrepared = $pdo->prepare("INSERT INTO NEED VALUES (:quantity, :id_ingr, :id_recipe)");
-			$queryPrepared->execute(["quantity"=>$quantity, "id_ingr"=>$i ,"id_recipe"=>$result['ID']]);
+			$queryPrepared->execute(["quantity"=>$quantity, "id_ingr"=>$i ,"id_recipe"=>$result['ID_RECIPE']]);
 		}
 	}
 	
 
 
-	// header("Location: recette.php?id=".$result['ID']);
+	header("Location: recette.php?id=".$result['ID']);
 }
 
 ?>
