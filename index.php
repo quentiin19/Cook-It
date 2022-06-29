@@ -19,7 +19,7 @@ include "template/header.php";
                         <img src="'.$recipe['PICTURE_PATH'].'" class="card-img-top cardh"> </img>
                         <div class="card-body text-center arrondie">
                                     <h4>'.$recipe['TITLE'].'</h4>
-                                    <button type="button" class="btn btn-secondary"><a href="https://cookit.ovh/profil.php?id='.$recipe['ID_CREATOR'].'""><p>Créé par '.$recipe['PSEUDO'].'</p></a></button>
+                                    <button type="button" class="btn btn-secondary"><a href="https://cookit.ovh/profil.php?id='.$recipe['ID_CREATOR'].'" class="text-white""><p>Créé par '.$recipe['PSEUDO'].'</p></a></button>
                         </div>
                         </a>        
                     </div>
