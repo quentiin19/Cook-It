@@ -1,13 +1,16 @@
 <?php
 session_start();
 require '../../functions.php';
-require '../../ressources/fpdf184/fpdf.php';
-include '../../template/header.php';
 
 echo '<p id="user_id" hidden="hidden">'.$_SESSION['id'].'</p>';
 echo '<p id="user_token" hidden="hidden">'.$_SESSION['token'].'</p>';
 
 ?>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
 
 
@@ -15,10 +18,11 @@ echo '<p id="user_token" hidden="hidden">'.$_SESSION['token'].'</p>';
 	<h1>Boutons</h1>
 	<div class="btn-group-vertical" role="group" aria-label="Groupe de boutons en colonne">
 	<button type="button" id='upvote-1' class="btn btn-secondary">Haut</button>
+
+	<p id='1'>test</p>
 	<button type="button" id='downvote-1' class="btn btn-secondary">Bas</button>
 	</div>
 
-	<p id='1'>test</p>
 </div>
 
 
