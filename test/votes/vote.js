@@ -43,7 +43,6 @@ function displayVote() {
 
     votes.innerText = response;
 
-    votes.replace(/\<br\>/g,' ');
 }
 
 getVote(id_recipe);
