@@ -19,7 +19,7 @@ include "template/header.php";
         ?>
 
         <div class="row">
-            <div class="container bg-color justify-content-center my-5">
+            <div class="container-fluid bg-color justify-content-center my-5">
                 <div class="col-lg-3">
                     <img src="<?= $us['PATH_AVATAR']?>" class="rounded float-start" alt="avatar">
                 </div>
