@@ -3,9 +3,9 @@
 
 <div class="row">
 
-			<div class="col-lg-2 col-md-1 col-sm-0"></div>
+	
 
-			<div class="col-lg-8 col-md-10 col-sm-12 h-auto arrondie  ">
+			<div class="col-lg-12 col-md-12 col-sm-12 h-auto arrondie d-flex justify-content-center ">
 					  <div class="container py-2  h-auto  ">
 					    <div class="row d-flex justify-content-center align-items-center h-100">
 					      
@@ -70,7 +70,6 @@
 					    </div>
 					  </div>
 			</div>
-			<div class="col-lg-2 col-md-1 col-sm-0"></div>
 </div>
 
 <script src="ressources/js/avatar.js"></script>
