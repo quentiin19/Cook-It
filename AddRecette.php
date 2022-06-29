@@ -209,7 +209,7 @@ if(!empty($_POST)){
 	
 
 
-	header("Location: recette.php?id=".$result['ID']);
+	header("Location: recette.php?id=".$result['ID_RECIPE']);
 }
 
 ?>
