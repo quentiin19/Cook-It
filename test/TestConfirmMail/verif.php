@@ -4,6 +4,7 @@ require "../../functions.php";
 
 print_r($_SESSION);
 print_r($_GET);
+
 if($_GET['id'] == $_SESSION['id']){
     if($_GET['cle'] == $_SESSION['cle']){
         $pdo = connectDB();
