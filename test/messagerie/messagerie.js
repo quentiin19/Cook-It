@@ -9,8 +9,8 @@ const send_btn = document.getElementById("send-message");
 
 //variables
 const id_sender = document.getElementById("id-sender").innerText;
-const token = document.getElementById("id-receveur").innerText;
-const id_receveur = document.getElementById("token").innerText;
+const id_receveur = document.getElementById("id-receveur").innerText;
+const token = document.getElementById("token").innerText;
 
 
 //listener
