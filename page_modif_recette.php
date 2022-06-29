@@ -16,9 +16,7 @@ $queryPrepared->execute(["id" => $_GET['id']]);
 $resultN = $queryPrepared->fetch();
 }
 
-$queryPrepared = $pdo->prepare("SELECT * FROM INGREDIENTS WHERE ID IN (SELECT ID_INGREDIENT FROM NEED WHERE ID_RECIPE = :id);");
-$queryPrepared->execute(["id"=>$_GET['id']]);
-$ingredients = $queryPrepared->fetchAll();
+
 
 
 ?>
@@ -57,13 +55,16 @@ $ingredients = $queryPrepared->fetchAll();
 									<h4>Ingredients :</h4> <br>
 									<table>
 									<?php
-										foreach ($ingredients as $key => $ingredient) {
+										foreach ($resultN as $key => $need) {
+                                            $queryPrepared = $pdo->prepare("SELECT * FROM INGREDIENTS WHERE ID = :idn;");
+                                            $queryPrepared->execute(["idn"=>$need['ID_INGREDIENT']]);
+                                            $ingredient = $queryPrepared->fetch();
 											
 											echo '	<tr>
 														<td><img src="'.$ingredient['PICTURE_PATH'].'" height="70vh" width="70vw""></td>
 														<td>'.$ingredient['NAME'].'</td>
 														<td>'.$resultN[$key]['QUANTITY'].'</td>
-														<td>'.$resultN['UNIT'].'</td>
+														<td>'.$ingredient['UNIT'].'</td>
 													</tr>';
 										}
 										?>
