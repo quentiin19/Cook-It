@@ -16,14 +16,12 @@ $queryPrepared = $pdo->prepare("SELECT * FROM INGREDIENTS WHERE ID IN (SELECT ID
 $queryPrepared->execute(["id"=>$_GET['id']]);
 $ingredients = $queryPrepared->fetchAll();
 
-
+//récupération de l'info si l'utilisateur à enregistré la recette actuelle (COUNT = 0 -> non
+//																			COUNT = 1 -> oui)
 $queryPrepared = $pdo->prepare("SELECT COUNT(ID_USER) FROM RECIPES_SAVED WHERE ID_RECIPE = :id_recipe AND ID_USER = :id_user;");
 $queryPrepared->execute(["id_recipe"=>$_GET['id'], "id_user"=>isConnected()]);
 $saved = $queryPrepared->fetch();
 
-
-
-print_r($recipe);
 ?>
 
 
@@ -43,6 +41,7 @@ print_r($recipe);
 								<div class="col-lg-3">
 									<div class="btn-group-vertical" role="" aria-label="Groupe de boutons en colonne">
 										<button type="button" id='upvote-1' class="btn btn-secondary"><i class="glyphicon glyphicon-menu-up" aria-hidden="true"></i></button>
+
 										<button type="button" id='downvote-1' class="btn btn-secondary"><i class="glyphicon glyphicon-menu-down" aria-hidden="true"></i></button>
 									</div>
 								</div>
@@ -52,18 +51,21 @@ print_r($recipe);
 								<div class="col-lg-3">
 
 									<?php
-									if ($saved['0'] == 1) {
-										echo '<a href="https://cookit.ovh/saveRecipe.php?id_recipe='.$_GET['id'].'"><button type="button" class="btn btn-success px-3"><i class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></i></button></a>';
-									}else{
-										echo '<a href="https://cookit.ovh/saveRecipe.php?id_recipe='.$_GET['id'].'"><button type="button" class="btn btn-danger px-3"><i class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></i></button></a>';
+									if(isConnected()){
+										if ($saved['0'] == 1) {
+											echo '<a href="https://cookit.ovh/saveRecipe.php?id_recipe='.$_GET['id'].'"><button type="button" class="btn btn-success px-3"><i class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></i></button></a>';
+										}else{
+											echo '<a href="https://cookit.ovh/saveRecipe.php?id_recipe='.$_GET['id'].'"><button type="button" class="btn btn-danger px-3"><i class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></i></button></a>';
+										}
+										
+										if($recipe['ID_CREATOR'] == isConnected()){
+											echo '
+											<a href="https://cookit.ovh/modifRecette.php?id='.$_GET['id'].'"><button type="button" class="btn btn-primary px-3"><i class="glyphicon glyphicon-pencil" aria-hidden="true"></i></button></a>
+											<a href="https://cookit.ovh/delRecette.php?id='.$_GET['id'].'"><button type="button" class="btn btn-danger px-3"><i class="glyphicon glyphicon-trash" aria-hidden="true"></i></button></a>
+										';
+										}
 									}
 									
-									if($recipe['ID_CREATOR'] == isConnected()){
-										echo '
-										<a href="https://cookit.ovh/modifRecette.php?id='.$_GET['id'].'"><button type="button" class="btn btn-primary px-3"><i class="glyphicon glyphicon-pencil" aria-hidden="true"></i></button></a>
-										<a href="https://cookit.ovh/delUser.php?id='.$_GET['id'].'"><button type="button" class="btn btn-danger px-3"><i class="glyphicon glyphicon-trash" aria-hidden="true"></i></button></a>
-									';
-									}
 									
 									?>
 

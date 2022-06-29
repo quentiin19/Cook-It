@@ -2,11 +2,11 @@ let request = new XMLHttpRequest;
 let request2 = new XMLHttpRequest;
 
 const upvote = document.getElementById("upvote-1")
-const votes = document.getElementById("1")
+const votes = document.getElementById("votes")
 const downvote = document.getElementById("downvote-1")
 
 const id_user = document.getElementById("user_id");
-const id_recipe = 67
+const id_recipe = document.getElementById("id-recette").value;
 const token = document.getElementById("user_token");
 
 
