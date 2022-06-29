@@ -77,3 +77,5 @@ if ($action == 1) {
         die("vote invalide");
     }
 }
+
+header("Content-type: application/json");
