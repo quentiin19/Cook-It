@@ -3,7 +3,6 @@
 require '../../functions.php';
 
 
-
 class API_VOTE{
     function CountVote($id_recipe){
         $pdo = connectDB();
@@ -52,6 +51,8 @@ $id_recipe = $_GET['recipe'];
 if ($action == 1) {
     //retourner le nombre de votes
     $API = new API_VOTE;
+    header('Content-Type: application/json');
+
     echo json_encode($API->CountVote($id_recipe));
 
 }elseif ($action == 2) {
@@ -69,6 +70,8 @@ if ($action == 1) {
         
         if($token == $tokenbdd[0]) {
             $API = new API_VOTE;
+            header('Content-Type: application/json');
+            
             echo $API->Vote($id_recipe, $id_user, $vote);
         }else{
             die("token invalide");
