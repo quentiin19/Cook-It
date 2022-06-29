@@ -23,7 +23,7 @@ include "template/header.php";
         <div class="row">
             <div class="container bg-color justify-content-center my-3 py-5">
                 <div class="col-lg-5">
-                    <img src=".<?= $user['PATH_AVATAR']?>" class="text-right" alt="avatar">
+                    <img src=".<?= $user['PATH_AVATAR']?>" class="text-right cardh" alt="avatar.png">
                 </div>
                 <div class="col-lg-7">
                     <div class="row">
