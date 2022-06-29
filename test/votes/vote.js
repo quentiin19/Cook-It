@@ -38,7 +38,7 @@ function getVote(recipe){
 }
 
 function displayVote() {
-    console.log(request2);
+    console.log(request2.response);
 
     votes.innerText  = request2.response;
 }
