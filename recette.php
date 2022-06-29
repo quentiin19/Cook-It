@@ -37,8 +37,8 @@ $ingredients = $queryPrepared->fetchAll();
 							<div class="row">
 								<div class="col-lg-3">
 									<div class="btn-group-vertical" role="" aria-label="Groupe de boutons en colonne">
-										<button type="button" id='upvote-1' class="btn btn-secondary">^</button>
-										<button type="button" id='downvote-1' class="btn btn-secondary">v</button>
+										<button type="button" id='upvote-1' class="btn btn-secondary"><i class="glyphicon glyphicon-menu-up" aria-hidden="true"></i></button>
+										<button type="button" id='downvote-1' class="btn btn-secondary"><i class="glyphicon glyphicon-menu-up" aria-hidden="true"></i></button>
 									</div>
 								</div>
 								<div class="col-lg-6">
