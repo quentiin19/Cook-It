@@ -3,9 +3,8 @@
 ?>
 
 <div class="row">
-	<div class="col-lg-2 col-md-1 col-sm-0"></div>
 
-	<div class="col-lg-8 col-md-10 col-sm-12 h-auto arrondie py-3 ">
+	<div class="col-lg-12 col-md-12 col-sm-12 h-auto arrondie py-3 d-flex justify-content-center ">
 		<div>
 		<?php
 		
@@ -92,7 +91,7 @@
 		  </div>
 </div>
 
-	<div class="col-lg-2 col-md-1 col-sm-0"></div>
+
 
 <script src="ressources/js/captcha.js"></script>
 
