@@ -52,7 +52,7 @@ $ingredients = $queryPrepared->fetchAll();
                                                 <h3 class="text-center py-3">Votre Recette </h3>
                                                 <textarea class="form-control my-3"
                                                     placeholder="Les étapes de votre recette" name="recette_description"
-                                                    rows="20">abcd</textarea>
+                                                    rows="20" value="<?=$resultR["DESCRIPTION"]?>"></textarea>
                                     </div>                                    
                                     <div class="col-lg-4 col-md-4 col-sm-4">
 									<h4>Ingredients :</h4> <br>
