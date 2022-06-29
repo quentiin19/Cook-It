@@ -64,7 +64,7 @@ if (isConnected() == $_SESSION['id']){
 												foreach($allIngredient as $ingredient){
 													foreach($resultN as $key => $need){
 														if($ingredient['ID'] == $need['ID_INGREDIENT']){
-															$displayed = 1
+															$displayed = 1;
 															echo '<div class="col-lg-12 col-md-12 col-sm-12 background-body arrondie my-2">
 																	<div class="row align-items-center">
 																		<div class="col-lg-1 col-md-1 col-sm-6">
