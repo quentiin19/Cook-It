@@ -4,7 +4,7 @@ include "template/header.php";
         <?php
         $pdo = connectDB();
 
-        $queryPrepared = $pdo->prepare("SELECT * FROM USER WHERE  USER.ID = :id;");
+        $queryPrepared = $pdo->prepare("SELECT PATH_AVATAR FROM USER WHERE  USER.ID = :id;");
         $queryPrepared->execute(["id" => $_GET["id"]]);
         $us = $queryPrepared->fetch();
 
