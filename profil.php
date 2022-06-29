@@ -42,7 +42,7 @@ include "template/header.php";
                             </div>
                         </div>
                         <?php 
-                        if ($user['ID'] == $_SESSION['ID']){
+                        if ($user['ID'] == $_SESSION['id']){
                         echo'<div class="row">
                                 <div class="d-flex justify-content-center">
                                     <a href="#" type="button" class="btn btn-secondary">Modifier mon Profil</a>
