@@ -10,7 +10,8 @@ $queryPrepared = $pdo->prepare("SELECT * FROM RECIPES WHERE ID_RECIPE = :id;");
 $queryPrepared->execute(["id"=> $id_recipe]);
 $recipe = $queryPrepared->fetch();
 
- 
+print_r($recipe);
+
 if(isAdmin() || isConnected() == $recipe['ID_CREATOR']){
 
     //suppression de la table besion 
