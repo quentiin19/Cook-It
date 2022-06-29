@@ -30,14 +30,14 @@ include "template/header.php";
                         </div>
                     </div>          
                     <div class="row">
-                        <h3 class="text-center">Recettes</h3><br>
-                        <h3 class="bold text-center">4</h3>
+                        <h3 class="text-center">Recettes :</h3>
+                        <h3 class="bold text-center">4  </h3>
 
-                        <h3 class="text-center">Abonnés</h3><br>
-                        <h3 class="bold text-center">20</h3>
+                        <h3 class="text-center">Abonnés :</h3>
+                        <h3 class="bold text-center">20  </h3>
 
-                        <h3 classe="text-center">Abonnement</h3><br>
-                        <h3 class="bold text-center">20</h3>
+                        <h3 classe="text-center">Abonnement :</h3>
+                        <h3 class="bold text-center">20  </h3>
                     </div>
                 </div>
             </div>         
