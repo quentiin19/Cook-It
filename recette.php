@@ -1,21 +1,25 @@
 <?php include "template/header.php";
 
 $pdo = connectDB();
+//récupération de la recette
 $queryPrepared = $pdo->prepare("SELECT * FROM RECIPES WHERE ID_RECIPE = :id;");
 $queryPrepared->execute(["id"=>$_GET['id']]);
 $recipe = $queryPrepared->fetch();
 
-
+//récupération des ingrédients nécessaire pour la recette
 $queryPrepared = $pdo->prepare("SELECT * FROM NEED WHERE ID_RECIPE = :id;");
 $queryPrepared->execute(["id"=>$_GET['id']]);
 $needs = $queryPrepared->fetchAll();
 
-
+//récupération des informations des ingrédients
 $queryPrepared = $pdo->prepare("SELECT * FROM INGREDIENTS WHERE ID IN (SELECT ID_INGREDIENT FROM NEED WHERE ID_RECIPE = :id);");
 $queryPrepared->execute(["id"=>$_GET['id']]);
 $ingredients = $queryPrepared->fetchAll();
 
 
+$queryPrepared = $pdo->prepare("SELECT COUNT(ID_USER) FROM RECIPES_SAVED WHERE ID_RECIPE = :id_recipe AND ID_USER = :id_user;");
+$queryPrepared->execute(["id_recipe"=>$_GET['id'], "id_user"=>isConnected()]);
+$saved = $queryPrepared->fetch();
 
 
 ?>
@@ -44,7 +48,14 @@ $ingredients = $queryPrepared->fetchAll();
 									<h2 class="fw-bold mb-2 text-uppercase"><?= $recipe['TITLE']?></h2>
 								</div>
 								<div class="col-lg-3">
-									<button type="button" class="btn btn-default px-3"><i class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></i></button>
+
+									<?php
+									if ($saved == 1) {
+										echo '<a href="https://cookit.ovh/saveRecipe.php?id_recipe='.$_GET['id'].'"><button type="button" class="btn btn-primary px-3"><i class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></i></button></a>';
+									}else{
+										echo '<a href="https://cookit.ovh/saveRecipe.php?id_recipe='.$_GET['id'].'"><button type="button" class="btn btn-default px-3"><i class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></i></button></a>';
+									}
+									
 									<button type="button" class="btn btn-default px-3"><i class="glyphicon glyphicon-pencil" aria-hidden="true"></i></button>
 									<button type="button" class="btn btn-default px-3"><i class="glyphicon glyphicon-trash" aria-hidden="true"></i></button>
 								</div>
