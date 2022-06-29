@@ -38,8 +38,8 @@ function getVote(recipe){
 }
 
 function displayVote() {
-    console.log(request2.response.value);
-    
+    console.log(request2);
+
     votes.innerText  = request2.response;
 }
 
