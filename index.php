@@ -20,8 +20,14 @@ include "template/header.php";
                         <div class="card-body text-center arrondie">
                                     <h4 class="text-white">'.$recipe['TITLE'].'</h4>
                                     <a href="https://cookit.ovh/profil.php?id='.$recipe['ID_CREATOR'].'" class=" btn btn-secondary" style="height : 30px"><p>Créé par '.$recipe['PSEUDO'].'</p></a>
-                        </div>
-                        </a>        
+                        </div>';
+                        if (isAdmin()){
+                            echo'<div class="text-right">
+                                    <a href="https://cookit.ovh/delRecette.php?id='.$recipe['ID_RECIPE'].'"><button type="button" class="btn btn-danger px-3"><i class="glyphicon glyphicon-trash" aria-hidden="true"></i></button></a>
+                                </div>';
+                        }
+                        
+                        echo'</a>        
                     </div>
                 </div>';
         }
