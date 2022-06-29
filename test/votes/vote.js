@@ -38,9 +38,10 @@ function getVote(recipe){
 }
 
 function displayVote() {
-    console.log(JSON.parse(request2.response));
+    let response = JSON.parse(request2.response);
+    console.log();
 
-    votes.innerHTML = request2.response;
+    votes.innerText = response;
 
     votes.replace(/\<br\>/g,' ');
 }
