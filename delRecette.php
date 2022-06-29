@@ -23,6 +23,11 @@ if(isAdmin() || isConnected() == $recipe['ID_CREATOR']){
     $queryPrepared = $pdo->prepare("DELETE FROM RECIPES_SAVED WHERE ID_RECIPE = :id;");
     $queryPrepared->execute(["id"=> $id_recipe]);
 
+    //suppression des votes relatif à cette recette
+    $queryPrepared = $pdo->prepare("DELETE FROM VOTES WHERE ID_RECIPE = :id;");
+    $queryPrepared->execute(["id"=> $id_recipe]);
+
+
     //suppression de la recette
     $queryPrepared = $pdo->prepare("DELETE FROM RECIPES WHERE ID_RECIPE = :id;");
     $queryPrepared->execute(["id"=> $id_recipe]);
