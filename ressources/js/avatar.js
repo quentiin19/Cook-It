@@ -60,7 +60,7 @@ function draw_avatar() {
     let img_skin = document.createElement("img");
     img_skin.setAttribute("height", `${height_canva}px`);
     img_skin.setAttribute("width", `${width_canva}px`);
-    img_skin.setAttribute("class", "avatar-skin");
+    img_skin.setAttribute("class", "avatar-skin text-center");
     img_skin.setAttribute("src", skins[current_skin].image);
 
     canva.appendChild(img_skin);
@@ -70,7 +70,7 @@ function draw_avatar() {
     let img_eye = document.createElement("img");
     img_eye.setAttribute("height", `${height_canva}px`);
     img_eye.setAttribute("width", `${width_canva}px`);
-    img_eye.setAttribute("class", "avatar-part");
+    img_eye.setAttribute("class", "avatar-part text-center");
     img_eye.setAttribute("src", eyes[current_eye].image);
 
     canva.appendChild(img_eye);
@@ -80,7 +80,7 @@ function draw_avatar() {
     let img_mouth = document.createElement("img");
     img_mouth.setAttribute("height", `${height_canva}px`);
     img_mouth.setAttribute("width", `${width_canva}px`);
-    img_mouth.setAttribute("class", "avatar-part");
+    img_mouth.setAttribute("class", "avatar-part text-center");
     img_mouth.setAttribute("src", mouths[current_mouth].image);
 
     canva.appendChild(img_mouth);
