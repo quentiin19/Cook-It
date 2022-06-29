@@ -32,11 +32,11 @@ include "template/header.php";
                             <?php 
                                 if ($user['ID'] == $_SESSION['id']){
                                 echo'<div class="col-lg-6 col-md-6 d-flex justify-content-end">
-                                            <a href="#" type="button" class="btn btn-secondary">Modifier mon Profil</a>
+                                        <a href="https://cookit.ovh/profil.php?id='.$recipe['ID_CREATOR'].'" class=" btn btn-secondary" style="height : 30px"><p>Modifier mon profil</p></a>
                                     </div>';
                                 }else{
                                 echo'<div class="col-lg-6 col-md-6 d-flex justify-content-end">
-                                            <a href="#" type="button" class="btn btn-secondary" style="height : 20px">S\'abonner</a>
+                                <a href="https://cookit.ovh/profil.php?id='.$recipe['ID_CREATOR'].'" class=" btn btn-secondary" style="height : 30px"><p>S\'abonner</p></a>
                                     </div>';
                         }
                         ?>
