@@ -41,7 +41,7 @@ include "template/header.php";
                         }
                         ?>
                         </div>          
-                        <div class="row">
+                        <div class="row my-5">
                             <div class="col-lg-4 ">
                                 <h4>Recettes : 12 </h4>
                             </div>
