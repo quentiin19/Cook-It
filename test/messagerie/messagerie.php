@@ -13,4 +13,6 @@ if(isConnected()){
 
 <div id="message-canva"></div>
 <input type="text" id="message-input">
-<button id="send-message"></button>
+<button id="send-message">envoyer</button>
+
+<script src="messagerie.js"></script>
