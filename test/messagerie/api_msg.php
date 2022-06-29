@@ -50,7 +50,6 @@ if($_GET['task'] == "write"){
 }elseif ($_GET['task'] == "read") {
     $sender = $_GET['sender'];
     $receveur = $_GET['receiver'];
-    $msg = $_GET['msg'];
     $token = $_GET['token'];
 
     $pdo = connectDB();
@@ -63,7 +62,7 @@ if($_GET['task'] == "write"){
     if($tokenbdd[0] == $token){
 
         //récupération de tous les messages entre les deux memebres
-        $queryPrepared = $pdo->("SELECT * FROM MESSAGE WHERE (ID_SENDER = :sender AND ID_RECEIVER = :receveur) OR (ID_SENDER = :receveur AND ID_RECEIVER = :sender);");
+        $queryPrepared = $pdo->prepare("SELECT * FROM MESSAGE WHERE (ID_SENDER = :sender AND ID_RECEIVER = :receveur) OR (ID_SENDER = :receveur AND ID_RECEIVER = :sender);");
         $queryPrepared->execute(["sender"=>$sender, "receveur"=>$receveur]);
         $results = $queryPrepared->fetchAll();
 
