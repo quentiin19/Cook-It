@@ -32,6 +32,7 @@
 		?> -->
 		<?php 
 			if (isConnected()){
+				include './ressources/menu.php';
 				echo'<div class="col-lg-2 col-md-2  align-self-center ">
 									<img src="../../ressources/images/avatars/default.png" height="100vh" width="100vw">
 									<ul class="dropdown-menu">
