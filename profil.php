@@ -25,7 +25,6 @@ include "template/header.php";
                     <img src=".<?= $user['PATH_AVATAR']?>" class="text-right cardh" alt="avatar.png">
                 </div>
                 <div class="col-lg-7 col-md-5">
-                    <div class="container">
                         <div class="row ">
                             <div class="my-2">
                                 <h4>@Pseudo</h4>
@@ -43,7 +42,6 @@ include "template/header.php";
                             </div>
                         </div>
                     </div>
-                </div>
             </div>         
         </div>
 
