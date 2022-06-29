@@ -42,7 +42,7 @@ $ingredients = $queryPrepared->fetchAll();
 						<div class="col-lg-2 col-md-0 col-sm-0"></div>
 						<div class="col-lg-8 col-md-12 col-sm-12 bg-color arrondie">
 							<div>
-								<img src="<?= $results['PICTURE_PATH']?>" ></img>						
+								<img src="<?= $resultR['PICTURE_PATH']?>" ></img>						
 							</div>
 						<!-- Affichage recette -->
 							<form method="POST" action="modifRecette.php">
