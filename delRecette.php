@@ -3,7 +3,7 @@
 session_start();
 require "functions.php";
 
-$id_recipe = $_GET['id_recipe'];
+$id_recipe = $_GET['id'];
 
 $pdo = connectDB();
 $queryPrepared = $pdo->prepare("SELECT * FROM RECIPES WHERE ID_RECIPE = :id;");
