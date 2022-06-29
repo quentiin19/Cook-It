@@ -8,7 +8,6 @@ include "template/header.php";
         $queryPrepared->execute(["id" => $_GET["id"]]);
         $user = $queryPrepared->fetch();
 
-        print_r($user);
 
         // $queryPrepared = $pdo->prepare("SELECT COUNT(ID) FROM SUBSCRIPTION WHERE  SUBSCRIPTION.ID_DEMANDEUR = :id WHERE STATUS = 1;");
         // $queryPrepared->execute(["id" => $_GET["id"]]);
@@ -26,12 +25,12 @@ include "template/header.php";
                     <img src=".<?= $user['PATH_AVATAR']?>" class="text-right cardh" alt="avatar.png">
                 </div>
                 <div class="col-lg-7">
-                    <div class="row">
+                    <div class="row align-items-center">
                         <div class="my-2">
                             <h4>@Pseudo</h4>
                         </div>
                     </div>          
-                    <div class="row">
+                    <div class="row align-items-center">
                         <div class="col-lg-4">
                             <h4>Recettes : 12 </h4>
                         </div>
