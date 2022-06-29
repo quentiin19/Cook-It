@@ -4,7 +4,7 @@ include "template/header.php";
         <?php
         $pdo = connectDB();
 
-        $queryPrepared = $pdo->prepare("SELECT PATH_AVATAR FROM USER WHERE  USER.ID = :id;");
+        $queryPrepared = $pdo->prepare("SELECT * FROM USER WHERE  USER.ID = :id;");
         $queryPrepared->execute(["id" => $_GET["id"]]);
         $us = $queryPrepared->fetch();
 
@@ -23,7 +23,7 @@ include "template/header.php";
         <div class="row">
             <div class="container bg-color justify-content-center my-3 py-5">
                 <div class="col-lg-5">
-                    <img src=".<?= $us[0]?>" class="text-right" alt="avatar">
+                    <img src=".<?= $us[7]?>" class="text-right" alt="avatar">
                 </div>
                 <div class="col-lg-7">
                     <div class="row">
