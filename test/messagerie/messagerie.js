@@ -30,8 +30,7 @@ function sendMsg(){
 
 function displayMsg() {
     request.addEventListener("load", function(){
-        console.log(request.response);
-        console.log(JSON.parse(request.response));
+        
     });
     request.open("GET", `https://cookit.ovh/test/messagerie/api_msg.php?task=read&sender=${id_sender}&receiver=${id_receveur}&token=${token}`);
     request.send();
