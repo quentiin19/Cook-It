@@ -55,9 +55,16 @@ $saved = $queryPrepared->fetch();
 									}else{
 										echo '<a href="https://cookit.ovh/saveRecipe.php?id_recipe='.$_GET['id'].'"><button type="button" class="btn btn-danger px-3"><i class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></i></button></a>';
 									}
+									
+									if($recipe['ID_CREATOR'] == isConnected()){
+										echo '
+										<a href="https://cookit.ovh/modifRecette.php?id='.$_GET['id'].'"><button type="button" class="btn btn-primary px-3"><i class="glyphicon glyphicon-pencil" aria-hidden="true"></i></button></a>
+										<a href="https://cookit.ovh/delUser.php?id='.$_GET['id'].'"><button type="button" class="btn btn-danger px-3"><i class="glyphicon glyphicon-trash" aria-hidden="true"></i></button></a>
+									';
+									}
+									
 									?>
-									<button type="button" class="btn btn-primary px-3"><i class="glyphicon glyphicon-pencil" aria-hidden="true"></i></button>
-									<button type="button" class="btn btn-danger px-3"><i class="glyphicon glyphicon-trash" aria-hidden="true"></i></button>
+
 								</div>
 							</div>
 
