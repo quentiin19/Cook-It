@@ -6,9 +6,9 @@ include "template/header.php";
 
         $queryPrepared = $pdo->prepare("SELECT * FROM USER WHERE  USER.ID = :id;");
         $queryPrepared->execute(["id" => $_GET["id"]]);
-        $us = $queryPrepared->fetch();
+        $user = $queryPrepared->fetch();
 
-        print_r($us);
+        print_r($user);
 
         // $queryPrepared = $pdo->prepare("SELECT COUNT(ID) FROM SUBSCRIPTION WHERE  SUBSCRIPTION.ID_DEMANDEUR = :id WHERE STATUS = 1;");
         // $queryPrepared->execute(["id" => $_GET["id"]]);
@@ -23,7 +23,7 @@ include "template/header.php";
         <div class="row">
             <div class="container bg-color justify-content-center my-3 py-5">
                 <div class="col-lg-5">
-                    <img src=".<?= $us['PATH_AVATAR']?>" class="text-right" alt="avatar">
+                    <img src=".<?= $user['PATH_AVATAR']?>" class="text-right" alt="avatar">
                 </div>
                 <div class="col-lg-7">
                     <div class="row">
