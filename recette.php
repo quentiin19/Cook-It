@@ -54,12 +54,12 @@ $ingredients = $queryPrepared->fetchAll();
 
 						<!-- PHOTO + INGREDIENTS (DOSES) -->
 							<div class="row py-5">
-								<div class="col-lg-8 col-md-8 col-md-8">
+								<div class="col-lg-6 col-md-6 col-md-6">
 									<div class="card ">
 										<img src="<?=$recipe['PICTURE_PATH']?>" class="card-img-top cardh">
 									</div>
 								</div>
-								<div class="col-lg-4 col-md-4 col-sm-4">
+								<div class="col-lg-6 col-md-6 col-sm-6">
                                     <div class="overflow-auto " style="height : 300px">
 										<table>
 										<?php
