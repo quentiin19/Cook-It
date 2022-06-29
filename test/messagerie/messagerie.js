@@ -20,6 +20,7 @@ send_btn.addEventListener("click", sendMsg);
 
 function sendMsg(){
     let msg = msg_input.value;
+    console.log(msg);
 
     if(msg.length > 0){
         console.log('envoi du message');
@@ -27,6 +28,8 @@ function sendMsg(){
         request.send();
     }
 }
+
+//https://cookit.ovh/test/messagerie/api_msg.php?task=write&msg=$&sender=&receiver=$&token=
 
 function displayMsg() {
     request.open("GET", `https://cookit.ovh/test/messagerie/api_msg.php?task=read&sender=${id_sender}&receiver=${id_receveur}&token=${token}`);
