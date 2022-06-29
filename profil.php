@@ -8,6 +8,8 @@ include "template/header.php";
         $queryPrepared->execute(["id" => $_GET["id"]]);
         $us = $queryPrepared->fetchAll();
 
+        print_r($us);
+
         // $queryPrepared = $pdo->prepare("SELECT COUNT(ID) FROM SUBSCRIPTION WHERE  SUBSCRIPTION.ID_DEMANDEUR = :id WHERE STATUS = 1;");
         // $queryPrepared->execute(["id" => $_GET["id"]]);
         // $abn = $queryPrepared->fetch();
