@@ -11,7 +11,6 @@ const id_recipe = document.getElementById("id-recette").innerText;
 const token = document.getElementById("user-token");
 
 
-console.log(id_recipe);
 
 upvote.addEventListener("click", function(){
     vote_recipe(1);
@@ -42,7 +41,7 @@ function getVote(recipe){
 
 function displayVote() {
     let response = JSON.parse(request2.response);
-    console.log(response.children[0].children[0]);
+    console.log(response.vote);
 
     votes.innerText = response.vote;
 
