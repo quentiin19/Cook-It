@@ -22,6 +22,8 @@ $queryPrepared->execute(["id_recipe"=>$_GET['id'], "id_user"=>isConnected()]);
 $saved = $queryPrepared->fetch();
 
 
+
+print_r($recipe);
 ?>
 
 
