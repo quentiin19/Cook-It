@@ -39,9 +39,6 @@
 										if (isAdmin()) {
 											echo'<li><a href="./membres.php" class="dropdown-item">Gérer les utilisateurs</a></li>';
 										}
-										else {
-										echo "c pas bon chef";
-										}
 										echo'<li><a href="logout.php" class="dropdown-item">Se déconnecter</a></li>';
 										
 
