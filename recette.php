@@ -46,6 +46,8 @@ $ingredients = $queryPrepared->fetchAll();
 								</div>
 								<div class="col-lg-3">
 									<button type="button" class="btn btn-default px-3"><i class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></i></button>
+									<button type="button" class="btn btn-default px-3"><i class="glyphicon glyphicon-pencil" aria-hidden="true"></i></button>
+									<button type="button" class="btn btn-default px-3"><i class="glyphicon glyphicon-trash" aria-hidden="true"></i></button>
 
 							</div>
 							
