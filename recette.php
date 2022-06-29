@@ -55,7 +55,7 @@ $ingredients = $queryPrepared->fetchAll();
 						<!-- PHOTO + INGREDIENTS (DOSES) -->
 							<div class="row py-5">
 								<div class="col-lg-8 col-md-8 col-md-8">
-									<div class="card mb-4 py-3 px-3 ">
+									<div class="card ">
 										<img src="<?=$recipe['PICTURE_PATH']?>" class="card-img-top cardh">
 									</div>
 								</div>
