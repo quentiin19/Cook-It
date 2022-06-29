@@ -55,7 +55,8 @@ include "template/header.php";
         $queryPrepared->execute(["id" => $_GET["id"]]);
         $results = $queryPrepared->fetchAll();
 
-        echo'<div class="d-flex justify-content-center">';
+        echo'<div class="col-lg-2"></div>
+        <div class="col-lg-8">';
         foreach ($results as $result){
             echo '
                     <div class="col-lg-4 col-md-4 col-sm-1 py-3">
@@ -69,7 +70,8 @@ include "template/header.php";
                         </div>
                     </div>';
         }
-        echo'</div>';
+        echo '</div>
+        <div class="col-lg-2"></div>';
 
 
         ?>
