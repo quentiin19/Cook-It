@@ -2,6 +2,8 @@
 
 require '../../functions.php';
 
+header('Content-Type: application/json');
+
 
 class API_VOTE{
     function CountVote($id_recipe){
@@ -71,7 +73,7 @@ if ($action == 1) {
         if($token == $tokenbdd[0]) {
             $API = new API_VOTE;
             header('Content-Type: application/json');
-            
+
             echo $API->Vote($id_recipe, $id_user, $vote);
         }else{
             die("token invalide");
