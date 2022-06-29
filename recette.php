@@ -23,11 +23,12 @@ $queryPrepared = $pdo->prepare("SELECT COUNT(ID_USER) FROM RECIPES_SAVED WHERE I
 $queryPrepared->execute(["id_recipe"=>$_GET['id'], "id_user"=>isConnected()]);
 $saved = $queryPrepared->fetch();
 
-
+if(isConnected()){
 //récupération des variables pour le script vote.js
 echo '<p id="user-id" hidden="hidden">'.$_SESSION['id'].'</p>';
 echo '<p id="user-token" hidden="hidden">'.$_SESSION['token'].'</p>';
 echo '<p id="id-recette" hidden="hidden">'.$_GET['id'].'</p>';
+}
 ?>
 
 
