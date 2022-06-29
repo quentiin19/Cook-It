@@ -63,8 +63,8 @@ $ingredients = $queryPrepared->fetchAll();
                                     <div class="overflow-auto" style="height : 100%">
 										<table>
 										<?php
-											foreach ($ingredients as $key => $ingredient) {	
-														echo'<tr class="background-body arrondie>
+											foreach ($ingredients as $key => $ingredient) {
+												echo '<tr class="background-body>
 															
 																<td class="px-1"><img src="'.$ingredient['PICTURE_PATH'].'" height="70vh" width="70vw""></td>
 																<td class="px-1">'.$ingredient['NAME'].'</td>
@@ -73,7 +73,6 @@ $ingredients = $queryPrepared->fetchAll();
 															
 														</tr>';
 
-												
 											}
 										?>
 										</table>
