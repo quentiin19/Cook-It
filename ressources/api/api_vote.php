@@ -2,8 +2,6 @@
 
 require '../../functions.php';
 
-header('Content-Type: application/json');
-
 
 class API_VOTE{
     function CountVote($id_recipe){
@@ -50,10 +48,11 @@ $id_recipe = $_GET['recipe'];
 
 //vérification du token pour voir si le user est bien connecté
 
+header('Content-Type: application/json');
+
 if ($action == 1) {
     //retourner le nombre de votes
     $API = new API_VOTE;
-    header('Content-Type: application/json');
 
     echo json_encode($API->CountVote($id_recipe));
 
@@ -72,7 +71,6 @@ if ($action == 1) {
         
         if($token == $tokenbdd[0]) {
             $API = new API_VOTE;
-            header('Content-Type: application/json');
 
             echo $API->Vote($id_recipe, $id_user, $vote);
         }else{
