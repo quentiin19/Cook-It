@@ -15,4 +15,4 @@ if(isConnected()){
 <input type="text" id="message-input">
 <button id="send-message">envoyer</button>
 
-<script src="script.js"></script>
+<script src="messagerie.js"></script>
