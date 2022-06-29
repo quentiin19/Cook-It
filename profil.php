@@ -25,12 +25,12 @@ include "template/header.php";
                     <img src=".<?= $user['PATH_AVATAR']?>" class="text-right cardh" alt="avatar.png">
                 </div>
                 <div class="col-lg-7 col-md-5">
-                        <div class="row align-self-center ">
+                        <div class="row">
                             <div class="my-2">
                                 <h4>@Pseudo</h4>
                             </div>
                         </div>          
-                        <div class="row align-items-center">
+                        <div class="row">
                             <div class="col-lg-4 ">
                                 <h4>Recettes : 12 </h4>
                             </div>
@@ -41,6 +41,21 @@ include "template/header.php";
                                 <h4>Abonnement : 15</h4>
                             </div>
                         </div>
+                        <?php 
+                        if ($user['ID'] == $_SESSION['ID']){
+                        echo'<div class="row">
+                                <div class="d-flex justify-content-center">
+                                    <a href="#" type="button" class="btn btn-secondary">Modifier mon Profil</a>
+                                </div>
+                            </div>';
+                        }else{
+                        echo'<div class="row">
+                                <div class="d-flex justify-content-center">
+                                    <a href="#" type="button" class="btn btn-secondary">S\'abonner</a>
+                                </div>
+                            </div>';
+                        }
+                        ?>
                     </div>
             </div>         
         </div>
