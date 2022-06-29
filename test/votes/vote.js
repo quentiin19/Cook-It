@@ -40,7 +40,7 @@ function getVote(recipe){
 function displayVote() {
     console.log(request2);
 
-    votes.innerText  = request2.response;
+    votes.innerText  = trim(request2.response);
 }
 
 getVote(id_recipe);
