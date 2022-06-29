@@ -60,6 +60,7 @@ $ingredients = $queryPrepared->fetchAll();
 									</div>
 								</div>
 								<div class="col-lg-6 col-md-6 col-sm-6 ">
+									<h3 class="text-center">INGREDIENTS</h3>
                                     <div class="overflow-auto" style="height : 100%">
 										<table>
 										<?php
