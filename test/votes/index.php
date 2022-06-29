@@ -26,7 +26,7 @@ echo '<p id="user_token" hidden="hidden">'.$_SESSION['token'].'</p>';
 
 
 
-<script src="vote.js"></script>
+<script src="votee.js"></script>
 <!--
 
 <button id="upvote-1">Upvote</button>
