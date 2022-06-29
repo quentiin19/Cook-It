@@ -5,7 +5,7 @@
 
 if (isConnected() == $_SESSION['id']){
 $pdo = connectDB();
-
+print_r($_GET);
 $queryPrepared = $pdo->prepare("SELECT *  FROM RECIPES WHERE ID_RECIPE = :idr;");
 $queryPrepared->execute(["idr" => $_GET['id']]);
 echo "1";
