@@ -39,11 +39,11 @@ if($_GET['task'] == "write"){
             $queryPrepared->execute(['sender'=>$sender, 'receveur'=>$receveur, 'msg'=>$msg]);
         }else{
             //les deux membres ne sont pas amis
-            $error += 'les deux membres ne sont pas amis';
+            $error[] = 'les deux membres ne sont pas amis';
         }
     }else{
         //pas connecté
-        $error += 'vous netes pas connecté';
+        $error[] = 'vous netes pas connecté';
     }
 
 
@@ -69,12 +69,12 @@ if($_GET['task'] == "write"){
         echo json_encode($results);
     }else{
         //pas connecté
-        $error += 'vous netes pas connecté';
+        $error[] = 'vous netes pas connecté';
     }
 
 
 }else {
-    $error += 'mauvaise tache';
+    $error[] = 'mauvaise tache';
 }
 
 
