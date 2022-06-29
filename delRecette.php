@@ -34,4 +34,4 @@ if(isAdmin() || isConnected() == $recipe['ID_CREATOR']){
     
 }
 
-header("Location : index.php");
+header("Location: index.php");
