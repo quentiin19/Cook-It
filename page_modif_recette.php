@@ -53,16 +53,18 @@ if (isConnected() == $_SESSION['id']){
                                                 <textarea class="form-control my-3" name="recette_description"
                                                     rows="20" value="20"><?=$resultR["DESCRIPTION"]?></textarea>
                                     </div>                                    
-                                    <div class="col-lg-4 col-md-4 col-sm-4">
+                                    <div class="col-lg-6 col-md-6 col-sm-6">
 									<h4>Ingredients :</h4> <br>
 
 											<!--clean-->
-											<div>
-												<div class="overflow-auto " style="height : 300px">
-												<?php
+									<div>
+										<div class="overflow-auto " style="height : 300px">
+											<?php
+											$displayed = 0;
 												foreach($allIngredient as $ingredient){
 													foreach($resultN as $key => $need){
 														if($ingredient['ID'] == $need['ID_INGREDIENT']){
+															$displayed = 1
 															echo '<div class="col-lg-12 col-md-12 col-sm-12 background-body arrondie my-2">
 																	<div class="row align-items-center">
 																		<div class="col-lg-1 col-md-1 col-sm-6">
@@ -82,8 +84,10 @@ if (isConnected() == $_SESSION['id']){
 																		</div>		
 																	</div>
 																</div>';
-														}else{
-															echo '<div class="col-lg-12 col-md-12 col-sm-12 background-body arrondie my-2">
+														}
+													}
+													if($displayed == 0){
+														echo '<div class="col-lg-12 col-md-12 col-sm-12 background-body arrondie my-2">
 																<div class="row align-items-center">
 																	<div class="col-lg-1 col-md-1 col-sm-6">
 																		<input type="checkbox" name="checkbox'.$ingredient['ID'].'">
@@ -102,15 +106,17 @@ if (isConnected() == $_SESSION['id']){
 																	</div>		
 																</div>
 															</div>';
-														}
 													}
+													$displayed = 0;
 												}
 												?>
 											</div>
 										</div>
 									</div>
 								</div>
-								<input  type="submit" class=" ml-3 mt-5 btn btn-light btn-lg py-2 " value="Modifier">
+								<div class="row text-center">
+									<input  type="submit" class=" ml-3 mt-5 btn btn-light btn-lg py-2 " value="Modifier">
+								</div>
 							</form>
 						
 							<!--fin form-->
