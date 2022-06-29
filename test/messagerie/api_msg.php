@@ -36,7 +36,7 @@ if($_GET['task'] == "write"){
         //si les deux sont amis
         if(isset($state1[0]) && isset($state2[0])){
             if ($state1[0] == 1 && $state2[0] == 1){
-                $queryPrepared = $pdo->prepare("INSERT INTO MESSAGE VALUES (CURRENT_TIME, :sender, :receveur, :msg);");
+                $queryPrepared = $pdo->prepare("INSERT INTO MESSAGE VALUES (NOW(), :sender, :receveur, :msg);");
                 $queryPrepared->execute(['sender'=>$sender, 'receveur'=>$receveur, 'msg'=>$msg]);
             }else{
                 //les deux membres ne sont pas amis
