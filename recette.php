@@ -50,8 +50,8 @@ $saved = $queryPrepared->fetch();
 								<div class="col-lg-3">
 
 									<?php
-									if ($saved == 1) {
-										echo '<a href="https://cookit.ovh/saveRecipe.php?id_recipe='.$_GET['id'].'"><button type="button" class="btn btn-info px-3"><i class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></i></button></a>';
+									if ($saved['0'] == 1) {
+										echo '<a href="https://cookit.ovh/saveRecipe.php?id_recipe='.$_GET['id'].'"><button type="button" class="btn btn-success px-3"><i class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></i></button></a>';
 									}else{
 										echo '<a href="https://cookit.ovh/saveRecipe.php?id_recipe='.$_GET['id'].'"><button type="button" class="btn btn-danger px-3"><i class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></i></button></a>';
 									}
