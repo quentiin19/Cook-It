@@ -59,8 +59,8 @@ $ingredients = $queryPrepared->fetchAll();
 										<img src="<?=$recipe['PICTURE_PATH']?>" class="card-img-top cardh">
 									</div>
 								</div>
-								<div class="col-lg-6 col-md-6 col-sm-6">
-                                    <div class="overflow-auto " style="height : 300px">
+								<div class="col-lg-6 col-md-6 col-sm-6 d-flex">
+                                    <div class="overflow-auto justify-content-center" style="height : 300px">
 										<table>
 										<?php
 											foreach ($ingredients as $key => $ingredient) {
