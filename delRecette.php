@@ -8,7 +8,8 @@ $id_recipe = $_GET['id'];
 $pdo = connectDB();
 $queryPrepared = $pdo->prepare("SELECT * FROM RECIPES WHERE ID_RECIPE = :id;");
 $queryPrepared->execute(["id"=> $id_recipe]);
-$recicpe = $queryPrepared->fetch();
+$recipe = $queryPrepared->fetch();
+
  
 if(isAdmin() || isConnected() == $recipe['ID_CREATOR']){
 
