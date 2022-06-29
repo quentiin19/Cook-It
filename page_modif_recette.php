@@ -13,7 +13,7 @@ $resultR = $queryPrepared->fetch();
 
 $queryPrepared = $pdo->prepare("SELECT *  FROM NEED WHERE ID_RECIPE = :id;");
 $queryPrepared->execute(["id" => $_GET['id']]);
-$resultN = $queryPrepared->fetch();
+$resultN = $queryPrepared->fetchAll();
 }
 
 
