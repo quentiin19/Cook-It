@@ -45,7 +45,7 @@ $ingredients = $queryPrepared->fetchAll();
 									<h2 class="fw-bold mb-2 text-uppercase"><?= $recipe['TITLE']?></h2>
 								</div>
 								<div class="col-lg-3">
-									<button type="button" class="btn btn-primary px-3"><i class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></i></button>
+									<button type="button" class="btn btn-default px-3"><i class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></i></button>
 
 							</div>
 							
