@@ -26,7 +26,7 @@ include "template/header.php";
                 </div>
                 <div class="col-lg-7 col-md-5">
                         <div class="row">
-                            <div class="my-2">
+                            <div class="">
                                 <h4>@Pseudo</h4>
                             </div>
                             <?php 
