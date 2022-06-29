@@ -56,56 +56,56 @@ if (isConnected() == $_SESSION['id']){
                                     <div class="col-lg-4 col-md-4 col-sm-4">
 									<h4>Ingredients :</h4> <br>
 
-									<!--clean-->
-									<div>
-										<div class="overflow-auto " style="height : 300px">
-										<?php
-										foreach($allIngredient as $ingredient){
-											foreach($resultN as $key => $need){
-												if($ingredient['ID'] == $need['ID_INGREDIENT'])
-													echo '<div class="col-lg-12 col-md-12 col-sm-12 background-body arrondie my-2">
-															<div class="row align-items-center">
-																<div class="col-lg-1 col-md-1 col-sm-6">
-																	<input checked="checked" type="checkbox" name="checkbox'.$ingredient['ID'].'">
+											<!--clean-->
+											<div>
+												<div class="overflow-auto " style="height : 300px">
+												<?php
+												foreach($allIngredient as $ingredient){
+													foreach($resultN as $key => $need){
+														if($ingredient['ID'] == $need['ID_INGREDIENT']){
+															echo '<div class="col-lg-12 col-md-12 col-sm-12 background-body arrondie my-2">
+																	<div class="row align-items-center">
+																		<div class="col-lg-1 col-md-1 col-sm-6">
+																			<input checked="checked" type="checkbox" name="checkbox'.$ingredient['ID'].'">
+																		</div>
+																		<div class="col-lg-3 col-md-3 col-sm-6">
+																			<img src="'.$ingredient['PICTURE_PATH'].'" height ="70vh" width="70vw"/>
+																		</div>
+																		<div class="col-lg-3 col-md-3 col-sm-3">
+																			<p>'.$ingredient['NAME'].'</p>
+																		</div>
+																		<div class="col-lg-3 col-md-2 col-sm-6 ">
+																			<input class="input-width" type="text" name="quantity'.$ingredient['ID'].'" value='.$need['QUANTITY'].' placeholder="quantité">
+																		</div>
+																		<div class="col-lg-2 col-md-3 col-sm-3">
+																			'.$ingredient['UNIT'].'
+																		</div>		
+																	</div>
+																</div>';
+														}else{
+															echo '<div class="col-lg-12 col-md-12 col-sm-12 background-body arrondie my-2">
+																<div class="row align-items-center">
+																	<div class="col-lg-1 col-md-1 col-sm-6">
+																		<input type="checkbox" name="checkbox'.$ingredient['ID'].'">
+																	</div>
+																	<div class="col-lg-3 col-md-3 col-sm-6">
+																		<img src="'.$ingredient['PICTURE_PATH'].'" height ="70vh" width="70vw"/>
+																	</div>
+																	<div class="col-lg-3 col-md-3 col-sm-3">
+																		<p>'.$ingredient['NAME'].'</p>
+																	</div>
+																	<div class="col-lg-3 col-md-2 col-sm-6 ">
+																		<input class="input-width" type="text" name="quantity'.$ingredient['ID'].'" placeholder="quantité">
+																	</div>
+																	<div class="col-lg-2 col-md-3 col-sm-3">
+																		'.$ingredient['UNIT'].'
+																	</div>		
 																</div>
-																<div class="col-lg-3 col-md-3 col-sm-6">
-																	<img src="'.$ingredient['PICTURE_PATH'].'" height ="70vh" width="70vw"/>
-																</div>
-																<div class="col-lg-3 col-md-3 col-sm-3">
-																	<p>'.$ingredient['NAME'].'</p>
-																</div>
-																<div class="col-lg-3 col-md-2 col-sm-6 ">
-																	<input class="input-width" type="text" name="quantity'.$ingredient['ID'].'" value='.$need['QUANTITY'].' placeholder="quantité">
-																</div>
-																<div class="col-lg-2 col-md-3 col-sm-3">
-																	'.$ingredient['UNIT'].'
-																</div>		
-															</div>
-														</div>';
-												}else{
-													echo '<div class="col-lg-12 col-md-12 col-sm-12 background-body arrondie my-2">
-														<div class="row align-items-center">
-															<div class="col-lg-1 col-md-1 col-sm-6">
-																<input type="checkbox" name="checkbox'.$ingredient['ID'].'">
-															</div>
-															<div class="col-lg-3 col-md-3 col-sm-6">
-																<img src="'.$ingredient['PICTURE_PATH'].'" height ="70vh" width="70vw"/>
-															</div>
-															<div class="col-lg-3 col-md-3 col-sm-3">
-																<p>'.$ingredient['NAME'].'</p>
-															</div>
-															<div class="col-lg-3 col-md-2 col-sm-6 ">
-																<input class="input-width" type="text" name="quantity'.$ingredient['ID'].'" placeholder="quantité">
-															</div>
-															<div class="col-lg-2 col-md-3 col-sm-3">
-																'.$ingredient['UNIT'].'
-															</div>		
-														</div>
-													</div>';
+															</div>';
+														}
+													}
 												}
-											}
-										}
-										?>
+												?>
 											</div>
 										</div>
 									</div>
