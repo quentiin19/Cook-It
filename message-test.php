@@ -5,7 +5,7 @@ include"template/header.php";
 
 ?>
 
-    <div class="row d-flex justify-content-center">
+    <div class="row d-flex justify-content-center my-5">
       <div class="col-md-10 col-lg-8 col-xl-6">
 
         <div class="card" id="chat2">
