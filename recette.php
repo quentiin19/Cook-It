@@ -64,15 +64,17 @@ $ingredients = $queryPrepared->fetchAll();
 										<table>
 										<?php
 											foreach ($ingredients as $key => $ingredient) {
-												
-												echo '	<tr>
-															<div class="background-body arrondie my-2">	
+												echo '<div class="background-body arrondie my-2">	
+														<tr>
+															
 																<td class="px-1"><img src="'.$ingredient['PICTURE_PATH'].'" height="70vh" width="70vw""></td>
 																<td class="px-1">'.$ingredient['NAME'].'</td>
 																<td class="px-1">'.$needs[$key]['QUANTITY'].'</td>
 																<td class="px-1">'.$ingredient['UNIT'].'</td>
-															</div>
-														</tr>';
+															
+														</tr>
+													</div>';
+												
 											}
 										?>
 										</table>
