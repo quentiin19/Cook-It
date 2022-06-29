@@ -33,13 +33,16 @@ function sendMsg(){
     }
 }
 
-//https://cookit.ovh/test/messagerie/api_msg.php?task=write&msg=grrtbaw$&sender=&receiver=$&token=
 
 function displayMsg() {
     request.open("GET", `https://cookit.ovh/test/messagerie/api_msg.php?task=read&sender=${id_sender}&receiver=${id_receveur}&token=${token}`);
     request.send();
 
     const div = document.createElement("div");
+
+    for (const message in request.response) {
+
+    }
 }
 
 function refresh() {
