@@ -19,7 +19,7 @@ include "template/header.php";
         ?>
 
         <div class="row">
-            <div class="container bg-color justify-content-center">
+            <div class="container bg-color justify-content-center py-5">
                 <div class="col-lg-3">
                     <img src="<?= $us['PATH_AVATAR']?>" class="rounded float-start" alt="avatar">
                 </div>
@@ -56,7 +56,7 @@ include "template/header.php";
         $results = $queryPrepared->fetchAll();
 
         foreach ($results as $result){
-            echo '<div class="col-lg-3 col-md-4 col-sm-1 py-3">
+            echo '<div class="col-lg-4 col-md-4 col-sm-1 py-3">
                     <div class="card mb-4 shadow-sm bg-color py-3 px-3 arrondie">
                         <a href="https://cookit.ovh/recette.php?id='.$result['ID_RECIPE'].'">
                         <img src="'.$result['PICTURE_PATH'].'" class="card-img-top cardh"> </img>
