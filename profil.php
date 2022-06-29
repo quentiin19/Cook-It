@@ -55,8 +55,9 @@ include "template/header.php";
         $queryPrepared->execute(["id" => $_GET["id"]]);
         $results = $queryPrepared->fetchAll();
 
+        echo'<div class="d-flex justify-content-center">';
         foreach ($results as $result){
-            echo '<div class="d-flex justify-content-center">
+            echo '
                     <div class="col-lg-4 col-md-4 col-sm-1 py-3">
                         <div class="card mb-4 shadow-sm bg-color py-3 px-3 arrondie">
                             <a href="https://cookit.ovh/recette.php?id='.$result['ID_RECIPE'].'">
@@ -66,9 +67,9 @@ include "template/header.php";
                             </div>
                             </a>        
                         </div>
-                    </div>
-                </div>';
+                    </div>';
         }
+        echo'</div>';
 
 
         ?>
