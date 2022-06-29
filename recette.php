@@ -70,7 +70,7 @@ $ingredients = $queryPrepared->fetchAll();
 																<td class="px-1">'.$needs[$key]['QUANTITY'].'</td>
 																<td class="px-1">'.$ingredient['UNIT'].'</td>
 															
-														</tr>';
+														</tr><hr>';
 
 											}
 										?>
