@@ -68,10 +68,11 @@ $resultN = $queryPrepared->fetchAll();
 										}
 										?>
 									</table>
-								</div>																
 								</div>
-								<input  type="submit" class=" ml-3 mt-5 btn btn-light btn-lg py-2 " value="Modifier">	
+								</div>
+								
 							</form>
+							<input  type="submit" class=" ml-3 mt-5 btn btn-light btn-lg py-2 " value="Modifier">
 						</div>
 						<div class="col-lg-2 col-md-0 col-sm-0"></div>
 
