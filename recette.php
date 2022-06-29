@@ -34,7 +34,21 @@ $ingredients = $queryPrepared->fetchAll();
 				<div class="card bg-color text-white" style="border-radius: 1rem;">
 					<div class="card-body  text-center">
 						<div class="mb-md-5 mt-md-4 pb-5">
-							<h2 class="fw-bold mb-2 text-uppercase"><?= $recipe['TITLE']?></h2>
+							<div class="row">
+								<div class="col-lg-3">
+									<div class="btn-group-vertical" role="" aria-label="Groupe de boutons en colonne">
+										<button type="button" id='upvote-1' class="btn btn-secondary">^</button>
+										<button type="button" id='downvote-1' class="btn btn-secondary">v</button>
+									</div>
+								</div>
+								<div class="col-lg-6">
+									<h2 class="fw-bold mb-2 text-uppercase"><?= $recipe['TITLE']?></h2>
+								</div>
+								<div class="col-lg-3">
+									<button type="button" class="btn btn-primary px-3"><i class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></i></button>
+
+							</div>
+							
 							<div class="row">
 								<div class="col-lg-12 col-md-12 col-md-12">
 									<img src="<?=$recipe['PICTURE_PATH']?>">
