@@ -1,4 +1,4 @@
-const request = new XMLHttpRequest;
+const request_ajax = new XMLHttpRequest;
 
 const search_bar = document.getElementById("search_bar_ajax");
 const search_button = document.getElementById("search_button_ajax");
@@ -11,8 +11,6 @@ const recettes = document.getElementById("recettes");
 //écouteurs
 search_bar.addEventListener("input", onclickajax);
 
-
-console.log("testetestsetsts");
 
 function clean_str_ajax(str){
     let new_str = [];
@@ -74,11 +72,10 @@ function onclickajax() {
 
 
     //envoi de la requete
-    request.addEventListener("load", display_results_ajax);
-    request.open("GET", `https://cookit.ovh/ressources/api/api.php?keywords=${keywords}&action=1`);
-    request.send();
+    request_ajax.addEventListener("load", display_results_ajax);
+    request_ajax.open("GET", `https://cookit.ovh/ressources/api/api.php?keywords=${keywords}&action=1`);
+    request_ajax.send();
 
-    console.log("requete envoyée");
 
 }
 
