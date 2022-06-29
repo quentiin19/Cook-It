@@ -6,7 +6,7 @@ include "template/header.php";
 
         $queryPrepared = $pdo->prepare("SELECT * FROM USER WHERE  USER.ID = :id;");
         $queryPrepared->execute(["id" => $_GET["id"]]);
-        $us = $queryPrepared->fetchAll();
+        $us = $queryPrepared->fetch();
 
         print_r($us);
 
@@ -23,7 +23,7 @@ include "template/header.php";
         <div class="row">
             <div class="container bg-color justify-content-center my-3 py-5">
                 <div class="col-lg-5">
-                    <img src="../..<?= $us['PATH_AVATAR']?>" class="text-right" alt="avatar">
+                    <img src="../..<?= $us[0]?>" class="text-right" alt="avatar">
                 </div>
                 <div class="col-lg-7">
                     <div class="row">
