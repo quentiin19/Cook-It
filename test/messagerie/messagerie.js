@@ -41,8 +41,13 @@ function displayMsg() {
     const div = document.createElement("div");
 
     for (const message in request.response) {
+        
+
+
 
     }
+
+
 }
 
 function refresh() {
