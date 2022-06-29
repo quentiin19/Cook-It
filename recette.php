@@ -59,17 +59,17 @@ $ingredients = $queryPrepared->fetchAll();
 										<img src="<?=$recipe['PICTURE_PATH']?>" class="card-img-top cardh">
 									</div>
 								</div>
-								<div class="col-lg-6 col-md-6 col-sm-6 d-flex">
-                                    <div class="overflow-auto justify-content-center" style="height : 300px">
+								<div class="col-lg-6 col-md-6 col-sm-6 ">
+                                    <div class="overflow-auto" style="height : 300px">
 										<table>
 										<?php
 											foreach ($ingredients as $key => $ingredient) {
 												
 												echo '	<tr>
-															<td><img src="'.$ingredient['PICTURE_PATH'].'" height="70vh" width="70vw""></td>
-															<td>'.$ingredient['NAME'].'</td>
-															<td>'.$needs[$key]['QUANTITY'].'</td>
-															<td>'.$ingredient['UNIT'].'</td>
+															<td class="px-1"><img src="'.$ingredient['PICTURE_PATH'].'" height="70vh" width="70vw""></td>
+															<td class="px-1">'.$ingredient['NAME'].'</td>
+															<td class="px-1">'.$needs[$key]['QUANTITY'].'</td>
+															<td class="px-1">'.$ingredient['UNIT'].'</td>
 														</tr>';
 											}
 										?>
