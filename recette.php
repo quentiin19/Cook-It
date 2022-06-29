@@ -22,6 +22,11 @@ $queryPrepared = $pdo->prepare("SELECT COUNT(ID_USER) FROM RECIPES_SAVED WHERE I
 $queryPrepared->execute(["id_recipe"=>$_GET['id'], "id_user"=>isConnected()]);
 $saved = $queryPrepared->fetch();
 
+
+//récupération des variables pour le script vote.js
+echo '<p id="user-id" hidden="hidden">'.$_SESSION['id'].'</p>';
+echo '<p id="user-token" hidden="hidden">'.$_SESSION['token'].'</p>';
+echo '<p id="id-recette" hidden="hidden">'.$_GET['id'].'</p>';
 ?>
 
 
@@ -41,7 +46,7 @@ $saved = $queryPrepared->fetch();
 								<div class="col-lg-3">
 									<div class="btn-group-vertical" role="" aria-label="Groupe de boutons en colonne">
 										<button type="button" id='upvote-1' class="btn btn-secondary"><i class="glyphicon glyphicon-menu-up" aria-hidden="true"></i></button>
-
+        								<div id='votes' class='text-center'>votes</div>
 										<button type="button" id='downvote-1' class="btn btn-secondary"><i class="glyphicon glyphicon-menu-down" aria-hidden="true"></i></button>
 									</div>
 								</div>
@@ -116,18 +121,7 @@ $saved = $queryPrepared->fetch();
 </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+<script src='ressources/js/vote.js'></script>
 
 
 <?php include "template/footer.php";?>

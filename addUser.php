@@ -151,7 +151,6 @@ if(count($errors) == 0){
     $msg = '<a href=https://cookit.ovh/test/TestConfirmMail/verif.php?id='.$_SESSION['id'].'&cle='.$cle.'>Confirmer</a><h1>Cliquez sur le lien de confirmation juste au dessus</h1>';
 	smtpmailer($email,$from, $name ,$subj, $msg);
 
-	echo "test2";
 	header("Location: login.php");	
 
 
