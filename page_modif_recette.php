@@ -4,6 +4,8 @@
 
 
 if (isConnected() == $_SESSION['id']){
+$pdo = connectDB();
+
 $queryPrepared = $pdo->prepare("SELECT *  FROM RECIPES WHERE ID_CREATOR = :id  AND ID_RECIPE = :idr");
 $queryPrepared ->execute(["id" => $_SESSION["id"], "idr" => $_GET["id"]]);
 $resultR = $queryPrepared->fetch();
