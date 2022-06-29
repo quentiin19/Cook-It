@@ -48,7 +48,12 @@ $ingredients = $queryPrepared->fetchAll();
 							<form method="POST" action="modifRecette.php">
 								<div class ="py-3">
 									Title :<input type="text" class="form-control py-4" name="title" placeholder="Votre recette" value="<?=$resultR["TITLE"]?>"><br>
-									Description :<input type="text" class="form-control" name="description" placeholder="Votre description" value=" <?=$resultR["DESCRIPTION"]?>"><br>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 pl-2">
+                                                <h3 class="text-center py-3">Votre Recette </h3>
+                                                <textarea class="form-control my-3"
+                                                    placeholder="Les étapes de votre recette" name="recette_description"
+                                                    rows="20">abcd</textarea>
+                                    </div>                                    
                                     <div class="col-lg-4 col-md-4 col-sm-4">
 									<h4>Ingredients :</h4> <br>
 									<table>
