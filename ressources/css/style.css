@@ -73,12 +73,3 @@ border-radius:7px;
 
 /*membres*/
 
-.membre-btn-voir{
-	background: #2980b9;
-	color: white;
-	text-decoration: none;
-	outline: none;
-	border-radius: 10px;
-	padding: 5px 20px;
-	transition: ease-in .5s all;
-}
