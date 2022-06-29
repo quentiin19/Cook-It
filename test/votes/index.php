@@ -2,8 +2,9 @@
 session_start();
 require '../../functions.php';
 
-echo '<p id="user_id" hidden="hidden">'.$_SESSION['id'].'</p>';
-echo '<p id="user_token" hidden="hidden">'.$_SESSION['token'].'</p>';
+echo '<p id="user-id" hidden="hidden">'.$_SESSION['id'].'</p>';
+echo '<p id="user-token" hidden="hidden">'.$_SESSION['token'].'</p>';
+echo '<p id="id-recette" hidden="hidden">88</p>';
 
 ?>
 
