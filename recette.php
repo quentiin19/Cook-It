@@ -27,8 +27,9 @@ if(isConnected()){
 //récupération des variables pour le script vote.js
 echo '<p id="user-id" hidden="hidden">'.$_SESSION['id'].'</p>';
 echo '<p id="user-token" hidden="hidden">'.$_SESSION['token'].'</p>';
-echo '<p id="id-recette" hidden="hidden">'.$_GET['id'].'</p>';
 }
+echo '<p id="id-recette" hidden="hidden">'.$_GET['id'].'</p>';
+
 ?>
 
 
