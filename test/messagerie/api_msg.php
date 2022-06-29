@@ -50,7 +50,6 @@ if($_GET['task'] == "write"){
 }elseif ($_GET['task'] == "read") {
     $sender = $_GET['sender'];
     $receveur = $_GET['receiver'];
-    $msg = $_GET['msg'];
     $token = $_GET['token'];
 
     $pdo = connectDB();
