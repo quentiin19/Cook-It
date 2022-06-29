@@ -24,8 +24,8 @@ include "template/header.php";
                 <div class="col-lg-5">
                     <img src=".<?= $user['PATH_AVATAR']?>" class="text-right cardh" alt="avatar.png">
                 </div>
-                <div class="col-lg-7">
-                    <div class="row align-middle">
+                <div class="col-lg-7 align-middle">
+                    <div class="row ">
                         <div class="my-2">
                             <h4>@Pseudo</h4>
                         </div>
