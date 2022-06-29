@@ -20,6 +20,7 @@ send_btn.addEventListener("click", sendMsg);
 
 function sendMsg(){
     let msg = msg_input.value;
+    console.log("test btn");
     console.log(msg);
 
     if(msg.length > 0){
