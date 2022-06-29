@@ -26,11 +26,22 @@ include "template/header.php";
                 </div>
                 <div class="col-lg-7 col-md-5">
                         <div class="row">
-                            <div class="my-2">
+                            <div class="col-lg-6 col-md-6 my-3">
                                 <h4>@Pseudo</h4>
                             </div>
+                            <?php 
+                                if ($user['ID'] == $_SESSION['id']){
+                                echo'<div class="col-lg-6 col-md-6 d-flex justify-content-end">
+                                        <a href="#" class=" btn btn-secondary" style="height : 30px"><p>Modifier mon profil</p></a>
+                                    </div>';
+                                }else{
+                                echo'<div class="col-lg-6 col-md-6 d-flex justify-content-end">
+                                <a href="#" class=" btn btn-secondary" style="height : 30px"><p>S\'abonner</p></a>
+                                    </div>';
+                        }
+                        ?>
                         </div>          
-                        <div class="row">
+                        <div class="row my-5">
                             <div class="col-lg-4 ">
                                 <h4>Recettes : 12 </h4>
                             </div>
@@ -41,21 +52,6 @@ include "template/header.php";
                                 <h4>Abonnement : 15</h4>
                             </div>
                         </div>
-                        <?php 
-                        if ($user['ID'] == $_SESSION['id']){
-                        echo'<div class="row">
-                                <div class="d-flex justify-content-center">
-                                    <a href="#" type="button" class="btn btn-secondary">Modifier mon Profil</a>
-                                </div>
-                            </div>';
-                        }else{
-                        echo'<div class="row">
-                                <div class="d-flex justify-content-center">
-                                    <a href="#" type="button" class="btn btn-secondary">S\'abonner</a>
-                                </div>
-                            </div>';
-                        }
-                        ?>
                     </div>
             </div>         
         </div>

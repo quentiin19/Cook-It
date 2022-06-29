@@ -3,11 +3,22 @@
 <?php	
 
 
+if (isConnected() == $_SESSION['id']){
+$pdo = connectDB();
+print_r($_GET);
+$queryPrepared = $pdo->prepare("SELECT *  FROM RECIPES WHERE ID_RECIPE = :idr;");
+$queryPrepared->execute(["idr" => $_GET['id']]);
+echo "1";
+$resultR = $queryPrepared->fetch();
 
-	$pdo = connectDB();
-	$queryPrepared = $pdo->prepare("SELECT * FROM RECIPES WHERE ID_CREATOR =:id;");
-	$queryPrepared->execute(["id"=>$_SESSION['id']]);
-	$results = $queryPrepared->fetch();
+$queryPrepared = $pdo->prepare("SELECT *  FROM NEED WHERE ID_RECIPE = :id;");
+$queryPrepared->execute(["id" => $_GET['id']]);
+$resultN = $queryPrepared->fetch();
+}
+
+$queryPrepared = $pdo->prepare("SELECT * FROM INGREDIENTS WHERE ID IN (SELECT ID_INGREDIENT FROM NEED WHERE ID_RECIPE = :id);");
+$queryPrepared->execute(["id"=>$_GET['id']]);
+$ingredients = $queryPrepared->fetchAll();
 
 
 ?>
@@ -36,9 +47,30 @@
 						<!-- Affichage recette -->
 							<form method="POST" action="modifRecette.php">
 								<div class ="py-3">
-									Title :<input type="text" class="form-control py-4" name="title" placeholder="Votre recette" value="<?=$results["TITLE"]?>"><br>
-									Description :<input type="text" class="form-control" name="description" placeholder="Votre description" value=" <?=$results["DESCRIPTION"]?>"><br>
-									<input  type="submit" class=" ml-3 mt-5 btn btn-light btn-lg py-2 " value="Modifier">								
+									Title :<input type="text" class="form-control py-4" name="title" placeholder="Votre recette" value="<?=$resultR["TITLE"]?>"><br>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 pl-2">
+                                                <h3 class="text-center py-3">Votre Recette </h3>
+                                                <textarea class="form-control my-3"
+                                                    placeholder="Les étapes de votre recette" name="recette_description"
+                                                    rows="20" value="<?=$resultR["DESCRIPTION"]?>"></textarea>
+                                    </div>                                    
+                                    <div class="col-lg-4 col-md-4 col-sm-4">
+									<h4>Ingredients :</h4> <br>
+									<table>
+									<?php
+										foreach ($ingredients as $key => $ingredient) {
+											
+											echo '	<tr>
+														<td><img src="'.$ingredient['PICTURE_PATH'].'" height="70vh" width="70vw""></td>
+														<td>'.$ingredient['NAME'].'</td>
+														<td>'.$resultN[$key]['QUANTITY'].'</td>
+														<td>'.$resultN['UNIT'].'</td>
+													</tr>';
+										}
+										?>
+									</table>
+								</div>									
+								<input  type="submit" class=" ml-3 mt-5 btn btn-light btn-lg py-2 " value="Modifier">								
 								</div>
 							</form>
 						</div>

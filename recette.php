@@ -68,7 +68,7 @@ echo '<p id="id-recette" hidden="hidden">'.$_GET['id'].'</p>';
 										
 										if($recipe['ID_CREATOR'] == isConnected() || isAdmin()){
 											echo '
-											<a href="https://cookit.ovh/modifRecette.php?id='.$_GET['id'].'"><button type="button" class="btn btn-primary px-3"><i class="glyphicon glyphicon-pencil" aria-hidden="true"></i></button></a>
+											<a href="https://cookit.ovh/page_modif_recette.php?id='.$_GET['id'].'"><button type="button" class="btn btn-primary px-3"><i class="glyphicon glyphicon-pencil" aria-hidden="true"></i></button></a>
 											<a href="https://cookit.ovh/delRecette.php?id='.$_GET['id'].'"><button type="button" class="btn btn-danger px-3"><i class="glyphicon glyphicon-trash" aria-hidden="true"></i></button></a>
 										';
 										}
