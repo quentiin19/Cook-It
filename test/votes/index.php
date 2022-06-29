@@ -18,7 +18,7 @@ echo '<p id="id-recette" hidden="hidden">88</p>';
 <div class="container">
 	<div class="btn-group-vertical" role="" aria-label="Groupe de boutons en colonne">
         <button type="button" id='upvote-1' class="btn btn-secondary">^</button>
-        <div id='1' class='text-center'>test</div>
+        <div id='votes' class='text-center'>test</div>
         <button type="button" id='downvote-1' class="btn btn-secondary">v</button>
 	</div>
 
