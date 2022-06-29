@@ -25,39 +25,39 @@
 
                                     <!-- Peau -->
                                     <div class="row py-3">
-                                        <div class= "col-lg-4 col-md-4">
+                                        <div class= "col-lg-4 col-md-4 col-sm-4">
                                             <button type="button" class="btn btn-secondary btn-lg" id="button-prev-skin" onclick="change_part('prev-skin');"><</button>
                                         </div>
-                                        <div class= "col-lg-4 col-md-4 d-flex text-white text-center justify-content-center">
+                                        <div class= "col-lg-4 col-md-4 col-sm-4 d-flex text-white text-center justify-content-center">
                                             <p> Couleur de Peau </p>
                                         </div>
-                                        <div class= "col-lg-4 col-md-4">
+                                        <div class= "col-lg-4 col-md-4 col-sm-4">
                                             <button type="button" class="btn btn-secondary btn-lg" id="button-next-skin" onclick="change_part('next-skin');">></button>
                                         </div>  
                                     </div>
 
                                     <!-- Yeux -->
                                     <div class="row py-3">
-                                        <div class= "col-lg-4 col-md-4">
+                                        <div class= "col-lg-4 col-md-4 col-sm-4">
                                             <button type="button" class="btn btn-secondary btn-lg" id="button-prev-eye" onclick="change_part('prev-eye');"><</button>
                                         </div>
-                                        <div class= "col-lg-4 col-md-4 text-white text-center">
+                                        <div class= "col-lg-4 col-md-4 col-sm-4 text-white text-center">
                                             <p> Couleur des Yeux </p>
                                         </div>
-                                        <div class= "col-lg-4 col-md-4">
+                                        <div class= "col-lg-4 col-md-4 col-sm-4">
                                             <button type="button" class="btn btn-secondary btn-lg" id="button-next-eye" onclick="change_part('next-eye');">></button>
                                         </div>  
                                     </div>
 
                                     <!-- Bouche -->
                                     <div class="row py-3">
-                                        <div class= "col-lg-4 col-md-4">
+                                        <div class= "col-lg-4 col-md-4 col-sm-4">
                                             <button type="button" class="btn btn-secondary btn-lg" id="button-prev-mouth" onclick="change_part('prev-mouth');"><</button>
                                         </div>
-                                        <div class= "col-lg-4 col-md-4 text-white text-center">
+                                        <div class= "col-lg-4 col-md-4 col-sm-4 text-white text-center">
                                             <p> Couleur de Bouche </p>
                                         </div>
-                                        <div class= "col-lg-4 col-md-4">
+                                        <div class= "col-lg-4 col-md-4 col-sm-4">
                                             <button type="button" class="btn btn-secondary btn-lg" id="button-next-mouth" onclick="change_part('next-mouth');">></button>
                                         </div>  
                                     </div>
