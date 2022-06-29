@@ -16,7 +16,7 @@
                                     <div class="row">
                                         <div class="col-lg-2 col-md-2">
                                         </div>
-                                        <div class="col-lg-8 col-md-8" id="avatar-canva">
+                                        <div class="col-lg-8 col-md-8 text-center" id="avatar-canva">
                                         </div>
                                         <div class="col-lg-2 col-md-2">
                                         </div>
