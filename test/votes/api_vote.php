@@ -53,7 +53,7 @@ $array = array();
 if ($action == 1) {
     //retourner le nombre de votes
     $API = new API_VOTE;
-    array_push($array, $API->CountVote($id_recipe));
+    $array['vote'] = $API->CountVote($id_recipe);
     echo json_encode($array);
 
 }elseif ($action == 2) {
