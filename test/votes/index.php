@@ -17,10 +17,10 @@ echo '<p id="user_token" hidden="hidden">'.$_SESSION['token'].'</p>';
 <div class="container">
 	<h1>Boutons</h1>
 	<div class="btn-group-vertical" role="group" aria-label="Groupe de boutons en colonne">
-	<button type="button" id='upvote-1' class="btn btn-secondary">Haut</button>
+	<button type="button" id='upvote-1' class="btn btn-secondary">^</button>
 
 	<p id='1'>test</p>
-	<button type="button" id='downvote-1' class="btn btn-secondary">Bas</button>
+	<button type="button" id='downvote-1' class="btn btn-secondary">v</button>
 	</div>
 
 </div>
