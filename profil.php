@@ -25,15 +25,15 @@ include "template/header.php";
                 </div>
                 <div class="col-lg-2">
                     <h3>Recettes</h3><br>
-                    <h3 class="bold">4</h3>
+                    <h3 class="bold text-center">4</h3>
                 </div>
                 <div class="col-lg-2">
                     <h3>Abonnés</h3><br>
-                    <h3 class="bold">20</h3>
+                    <h3 class="bold text-center">20</h3>
                 </div>
                 <div class="col-lg-2">
                     <h3>Abonnement</h3><br>
-                    <h3 class="bold">20</h3>
+                    <h3 class="bold text-center">20</h3>
                 </div>
         </div>
 
