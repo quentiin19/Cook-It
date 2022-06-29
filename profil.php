@@ -26,15 +26,19 @@ include "template/header.php";
                 <div class="col-lg-7">
                     <div class="row">
                         <div class="my-2">
-                            <h3>@Pseudo></h3>
+                            <h4>@Pseudo</h4>
                         </div>
                     </div>          
                     <div class="row">
-                        <h4>Recettes : 12 </h4>
-
-                        <h4>Abonnés : 20 </h4>
-
-                        <h4>Abonnement : 15</h4>
+                        <div class="col-lg-4">
+                            <h4>Recettes : 12 </h4>
+                        </div>
+                        <div class="col-lg-4">
+                            <h4>Abonnés : 20 </h4>
+                        </div>
+                        <div class="col-lg-4">
+                            <h4>Abonnement : 15</h4>
+                        </div>
 
                     </div>
                 </div>
