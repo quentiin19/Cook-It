@@ -22,7 +22,7 @@ function sendMsg(){
     let msg = msg_input.value;
 
     if(msg.length > 0){
-        request.addEventListener("load", displayMsg);
+        request.addEventListener("load", );
         request.open("GET", `https://cookit.ovh/test/messagerie/api_msg.php?task=write&msg=${msg}&sender=${id_sender}&receiver=${id_receveur}&token=${token}`);
         request.send();
     }
@@ -37,4 +37,10 @@ function displayMsg() {
     request.send();
 }
 
-displayMsg();
+function refresh() {
+    displayMsg();
+    console.log("refreshed");
+    setTimeout(refresh, 2000);
+}
+
+refresh();
