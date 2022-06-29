@@ -58,14 +58,13 @@ $resultN = $queryPrepared->fetch();
 									echo '<pre>';
                                     print_r($resultN);
                                     echo'</pre>';
-                                    echo '<pre>';
-                                    print_r($ingredient);
-                                    echo'</pre>';
 										foreach ($resultN as $key => $need) {
                                             $queryPrepared = $pdo->prepare("SELECT * FROM INGREDIENTS WHERE ID = :idn;");
                                             $queryPrepared->execute(["idn"=>$need['ID_INGREDIENT']]);
                                             $ingredient = $queryPrepared->fetch();
-											
+                                            echo '<pre>';
+                                            print_r($ingredient);
+                                            echo'</pre>';
 											echo '	<tr>
 														<td><img src="'.$ingredient['PICTURE_PATH'].'" height="70vh" width="70vw""></td>
 														<td>'.$ingredient['NAME'].'</td>
