@@ -53,7 +53,7 @@ if (isConnected() == $_SESSION['id']){
                                                     rows="20" value="20"><?=$resultR["DESCRIPTION"]?></textarea>
                                     </div>                                    
                                     <div class="col-lg-6 col-md-6 col-sm-6">
-									<h4>Ingredients :</h4> <br>
+									<h3 class="text-center py-3">Ingrédients </h3>
 
 											<!--clean-->
 									<div>
@@ -113,6 +113,7 @@ if (isConnected() == $_SESSION['id']){
 										</div>
 									</div>
 								</div>
+								</div>
 								<div class="row text-center">
 									<input  type="submit" class=" ml-3 mt-5 btn btn-light btn-lg py-2 " value="Modifier">
 								</div>
@@ -123,7 +124,7 @@ if (isConnected() == $_SESSION['id']){
 
 
 
-						</div>
+						
 
 					</div>
 					</div>
