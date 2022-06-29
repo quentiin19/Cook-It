@@ -39,7 +39,7 @@ function getVote(recipe){
 
 function displayVote() {
     let response = JSON.parse(request2.response);
-    console.log();
+    console.log(response);
 
     votes.innerText = response.vote;
 
