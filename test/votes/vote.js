@@ -7,7 +7,7 @@ const downvote = document.getElementById("downvote-1")
 
 //récupération des variables
 const id_user = document.getElementById("user-id");
-const id_recipe = document.getElementById("id-recette").value;
+const id_recipe = document.getElementById("id-recette").innerText;
 const token = document.getElementById("user-token");
 
 
@@ -44,7 +44,7 @@ function displayVote() {
     let response = JSON.parse(request2.response);
     console.log(response);
 
-    votes.innerText = response;
+    votes.innerText = response.vote;
 
 }
 
