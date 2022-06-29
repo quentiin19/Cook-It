@@ -60,12 +60,12 @@ $ingredients = $queryPrepared->fetchAll();
 									</div>
 								</div>
 								<div class="col-lg-6 col-md-6 col-sm-6 ">
-                                    <div class="overflow-auto" style="height : 50px">
+                                    <div class="overflow-auto" style="height : 100%">
 										<table>
 										<?php
 											foreach ($ingredients as $key => $ingredient) {
 												
-												echo '	<tr>
+												echo '	<tr class="background-body">
 															<td class="px-1"><img src="'.$ingredient['PICTURE_PATH'].'" height="70vh" width="70vw""></td>
 															<td class="px-1">'.$ingredient['NAME'].'</td>
 															<td class="px-1">'.$needs[$key]['QUANTITY'].'</td>
