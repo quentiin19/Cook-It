@@ -1,6 +1,15 @@
 <?php   
 		include "template/header.php";
+
+
+
+		echo '<pre>';
+		print_r($_POST);
+		echo '</pre>';
 ?>
+
+
+
 
 <div class="row">
     <div class="col-lg-2 col-md-1 col-sm-0"></div>
@@ -205,7 +214,7 @@ if(!empty($_POST)){
 	
 
 
-	// header("Location: recette.php?id=".$result['ID']);
+	//header("Location: recette.php?id=".$result['ID']);
 }
 
 ?>
