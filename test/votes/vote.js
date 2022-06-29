@@ -41,7 +41,7 @@ function displayVote() {
     let response = JSON.parse(request2.response);
     console.log();
 
-    votes.innerText = response;
+    votes.innerText = response.vote;
 
     votes.replace(/\<br\>/g,' ');
 }
