@@ -2,7 +2,6 @@
 const request = new XMLHttpRequest;
 
 
-
 //document elements
 const msg_input = document.getElementById("message-input");
 const send_btn = document.getElementById("send-message");
@@ -16,6 +15,7 @@ const id_receveur = document.getElementById("token").innerText;
 
 //listener
 send_btn.addEventListener("click", sendMsg);
+
 
 
 function sendMsg(){
