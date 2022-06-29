@@ -34,32 +34,54 @@ $ingredients = $queryPrepared->fetchAll();
 				<div class="card bg-color text-white" style="border-radius: 1rem;">
 					<div class="card-body  text-center">
 						<div class="mb-md-5 mt-md-4 pb-5">
-							<h2 class="fw-bold mb-2 text-uppercase"><?= $recipe['TITLE']?></h2>
+						<!-- TITRE + UP&DOWN VOTES + ENREGISTREMENT + MODIF + SUPPRESSION -->
 							<div class="row">
-								<div class="col-lg-12 col-md-12 col-md-12">
-									<img src="<?=$recipe['PICTURE_PATH']?>">
+								<div class="col-lg-3">
+									<div class="btn-group-vertical" role="" aria-label="Groupe de boutons en colonne">
+										<button type="button" id='upvote-1' class="btn btn-secondary"><i class="glyphicon glyphicon-menu-up" aria-hidden="true"></i></button>
+										<button type="button" id='downvote-1' class="btn btn-secondary"><i class="glyphicon glyphicon-menu-down" aria-hidden="true"></i></button>
+									</div>
+								</div>
+								<div class="col-lg-6">
+									<h2 class="fw-bold mb-2 text-uppercase"><?= $recipe['TITLE']?></h2>
+								</div>
+								<div class="col-lg-3">
+									<button type="button" class="btn btn-default px-3"><i class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></i></button>
+									<button type="button" class="btn btn-default px-3"><i class="glyphicon glyphicon-pencil" aria-hidden="true"></i></button>
+									<button type="button" class="btn btn-default px-3"><i class="glyphicon glyphicon-trash" aria-hidden="true"></i></button>
 								</div>
 							</div>
+
+						<!-- PHOTO + INGREDIENTS (DOSES) -->
+							<div class="row py-5">
+								<div class="col-lg-6 col-md-6 col-md-6">
+									<div class="card bg-color py-3 ">
+										<img src="<?=$recipe['PICTURE_PATH']?>" class="card-img-top cardh">
+									</div>
+								</div>
+								<div class="col-lg-6 col-md-6 col-sm-6 ">
+                                    <div class="overflow-auto" style="height : 300px">
+										<table>
+										<?php
+											foreach ($ingredients as $key => $ingredient) {
+												
+												echo '	<tr>
+															<td class="px-1"><img src="'.$ingredient['PICTURE_PATH'].'" height="70vh" width="70vw""></td>
+															<td class="px-1">'.$ingredient['NAME'].'</td>
+															<td class="px-1">'.$needs[$key]['QUANTITY'].'</td>
+															<td class="px-1">'.$ingredient['UNIT'].'</td>
+														</tr>';
+											}
+										?>
+										</table>
+									</div>
+								</div>
+							</div>
+							<!-- RECETTE -->
 							<div class="row">
-								<div class="col-lg-8 col-md-8 col-sm-8">
+								<div class="col-lg-12 col-md-12 col-sm-12">
 									<h4>Recette :</h4><br>
 									<p><?= $recipe['DESCRIPTION']?></p>
-								</div>
-								<div class="col-lg-4 col-md-4 col-sm-4">
-									<h4>Ingredients :</h4> <br>
-									<table>
-									<?php
-										foreach ($ingredients as $key => $ingredient) {
-											
-											echo '	<tr>
-														<td><img src="'.$ingredient['PICTURE_PATH'].'" height="70vh" width="70vw""></td>
-														<td>'.$ingredient['NAME'].'</td>
-														<td>'.$needs[$key]['QUANTITY'].'</td>
-														<td>'.$ingredient['UNIT'].'</td>
-													</tr>';
-										}
-										?>
-									</table>
 								</div>
 							</div>	
 						</div>
