@@ -19,22 +19,21 @@ include "template/header.php";
         ?>
 
         <div class="row">
-            <div class="container-fluid bg-color justify-content-center py-3 by-3 position-relative">
+            <div class="container-fluid bg-color justify-content-center py-3 by-3">
                 <div class="col-lg-3">
                     <img src="<?= $us['PATH_AVATAR']?>" class="rounded float-start" alt="avatar">
                 </div>
-                <div class="position-absolute top-50 end-0 translate-middle-y">
-                    <div class="col-lg-2">
-                        <h3 class="text-center">Recettes</h3><br>
-                        <h3 class="bold text-center">4</h3>
-                    </div>
-                        <h3 class="text-center">Abonnés</h3><br>
-                        <h3 class="bold text-center">20</h3>
-                    </div>
-                    <div class="col-lg-2">
-                        <h3 class="text-center">Abonnement</h3><br>
-                        <h3 class="bold text-center">20</h3>
-                    </div>
+                <div class="col-lg-2">
+                    <h3 class="text-center">Recettes</h3><br>
+                    <h3 class="bold text-center">4</h3>
+                </div>
+                <div class="col-lg-2">
+                    <h3 class="text-center">Abonnés</h3><br>
+                    <h3 class="bold text-center">20</h3>
+                </div>
+                <div class="col-lg-2">
+                    <h3 classe="text-center">Abonnement</h3><br>
+                    <h3 class="bold text-center">20</h3>
                 </div>
         </div>
 
