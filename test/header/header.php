@@ -30,44 +30,6 @@
 		<!-- <?php
 			$_SESSION['pseudo'] = $pseudo;
 		?> -->
-		<?php 
-			if (isConnected()){
-				include './ressources/menu.php';
-				echo'<div class="col-lg-2 col-md-2  align-self-center ">
-									<img src="../../ressources/images/avatars/default.png" height="100vh" width="100vw">
-									<ul class="dropdown-menu">
-										<li><a href="#" class="dropdown-item">Mes abonnements</a></li>
-										<li><a href="#" class="dropdown-item">Mes recettes</a></li>
-										<li><a href="./profil.php" class="dropdown-item">Modifier mon profil</a></li>
-										<li><a href="./avatar.php" class="dropdown-item">Modifier mon Avatar</a></li>
-										<li><a href="logout.php" class="dropdown-item">Se déconnecter</a></li>';
-										
-										if (isAdmin()) {
-											echo'<li><a href="./admin.php" class="dropdown-item">Gérer les utilisateurs</a></li>
-											</ul>';
-										}
-										else {
-										echo "c pas bon chef";
-										}
-									echo'</ul>
-							
-					</div>';
-				}else{
-					echo'<div class="col-lg-1 col-md-1  align-self-center text-left ">
-								<a href="./login.php" class=" text-white">Se Connecter</a>
-						</div>
-						
-						<div class="col-lg-1 col-md-1  align-self-center ">
-								<a href="./SignUp.php" class="text-white">S\'inscrire</a>	
-						</div>';
-				}
-				?>
-			<div class="col-lg-8 col-md-6 col-sm-0 text-center align-self-center">
-				<h1>Cook'It</h1>
-			</div>
-			<div class="col-lg-2 col-md-3 col-sm-5">
-				<a href="index.php"><button type="button" class="btn text-white btn-lg"><img src="../ressources/images/Utilitaires/logo.png" height ="80vh" width="100vw" />Cook'IT</button></a>
-			</div>
 			
 			<script src="./script.js"></script>
 		</div>
