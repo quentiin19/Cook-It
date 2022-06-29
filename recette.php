@@ -64,7 +64,7 @@ $ingredients = $queryPrepared->fetchAll();
 										<?php
 											foreach ($ingredients as $key => $ingredient) {
 												echo '
-														<tr><hr>															
+														<tr>															
 																<td class="px-1"><img src="'.$ingredient['PICTURE_PATH'].'" height="70vh" width="70vw""></td>
 																<td class="px-1">'.$ingredient['NAME'].'</td>
 																<td class="px-1">'.$needs[$key]['QUANTITY'].'</td>
