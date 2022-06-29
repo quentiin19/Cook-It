@@ -1,4 +1,5 @@
-<?php include "template/header.php";
+<?php
+include "template/header.php";
 
 $pdo = connectDB();
 //récupération de la recette
