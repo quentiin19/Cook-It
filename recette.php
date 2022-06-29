@@ -60,7 +60,7 @@ $ingredients = $queryPrepared->fetchAll();
 									</div>
 								</div>
 								<div class="col-lg-6 col-md-6 col-sm-6 ">
-                                    <div class="overflow-auto" style="height : 300px">
+                                    <div class="overflow-auto" style="height : 50px">
 										<table>
 										<?php
 											foreach ($ingredients as $key => $ingredient) {
