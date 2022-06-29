@@ -63,13 +63,14 @@ function isAdmin() {
 		$queryPrepared = $pdo->prepare("SELECT ID FROM USER WHERE MAIL=:email AND TOKEN=:token");	
 		$queryPrepared->execute(["email"=>$_SESSION["email"], "token"=>$_SESSION["token"]]);
 	
-		return $queryPrepared->fetch();
 		
 		$resultat = $queryPrepared->fetch();
 		
 		if ($resultat['role'] == 2){
 			return True;
-			}
+		}else{
+			return false;
+		}
 				
 	}
 	
