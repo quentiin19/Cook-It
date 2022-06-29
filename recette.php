@@ -25,10 +25,8 @@ $ingredients = $queryPrepared->fetchAll();
 
 
 
-<div class="row">
-
-	<div class="col-lg-2 col-md-1 col-sm-0"></div>
-	<div class="col-lg-8 col-md-10 col-sm-12 h-auto arrondie  ">
+<div class="row ">
+	<div class="col-lg-8 col-md-10 col-sm-12 h-auto arrondie d-flex justify-content-center ">
 		<div class="container py-2  h-auto  ">
 			<div class="row d-flex justify-content-center align-items-center h-100">
 				<div class="card bg-color text-white" style="border-radius: 1rem;">
@@ -60,17 +58,20 @@ $ingredients = $queryPrepared->fetchAll();
 									</div>
 								</div>
 								<div class="col-lg-6 col-md-6 col-sm-6 ">
-                                    <div class="overflow-auto" style="height : 50px">
+									<h3 class="text-center">Ingrédients</h3>
+                                    <div class="overflow-auto" style="height : 100%">
 										<table>
 										<?php
 											foreach ($ingredients as $key => $ingredient) {
-												
-												echo '	<tr>
-															<td class="px-1"><img src="'.$ingredient['PICTURE_PATH'].'" height="70vh" width="70vw""></td>
-															<td class="px-1">'.$ingredient['NAME'].'</td>
-															<td class="px-1">'.$needs[$key]['QUANTITY'].'</td>
-															<td class="px-1">'.$ingredient['UNIT'].'</td>
+												echo '
+														<tr>															
+																<td class="px-1"><img src="'.$ingredient['PICTURE_PATH'].'" height="70vh" width="70vw""></td>
+																<td class="px-1">'.$ingredient['NAME'].'</td>
+																<td class="px-1">'.$needs[$key]['QUANTITY'].'</td>
+																<td class="px-1">'.$ingredient['UNIT'].'</td>
+															
 														</tr>';
+
 											}
 										?>
 										</table>
@@ -90,7 +91,6 @@ $ingredients = $queryPrepared->fetchAll();
 			</div>
 		</div>
 	</div>
-	<div class="col-lg-2 col-md-1 col-sm-0"></div>
 </div>
 
 
