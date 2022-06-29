@@ -26,7 +26,7 @@ include "template/header.php";
                 </div>
                 <div class="col-lg-7 col-md-5">
                         <div class="row">
-                            <div class="col-lg-6 col-md-6">
+                            <div class="col-lg-6 col-md-6 my-3">
                                 <h4>@Pseudo</h4>
                             </div>
                             <?php 
@@ -36,7 +36,7 @@ include "template/header.php";
                                     </div>';
                                 }else{
                                 echo'<div class="col-lg-6 col-md-6 d-flex justify-content-end">
-                                            <a href="#" type="button" class="btn btn-secondary">S\'abonner</a>
+                                            <a href="#" type="button" class="btn btn-secondary" style="height : 30px">S\'abonner</a>
                                     </div>';
                         }
                         ?>
