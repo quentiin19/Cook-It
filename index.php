@@ -23,7 +23,7 @@ include "template/header.php";
                         </div>';
                         if (isAdmin()){
                             echo'<div class="text-right">
-                                    <a href="https://cookit.ovh/delRecette.php?id='.$_GET['id'].'"><button type="button" class="btn btn-danger px-3"><i class="glyphicon glyphicon-trash" aria-hidden="true"></i></button></a>
+                                    <a href="https://cookit.ovh/delRecette.php?id='.$recipe['ID_RECIPE'].'"><button type="button" class="btn btn-danger px-3"><i class="glyphicon glyphicon-trash" aria-hidden="true"></i></button></a>
                                 </div>';
                         }
                         
