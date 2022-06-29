@@ -54,7 +54,7 @@ if ($action == 1) {
     //retourner le nombre de votes
     $API = new API_VOTE;
     $array += $API->CountVote($id_recipe);
-    echo json_encode($array[]);
+    echo json_encode($array);
 
 }elseif ($action == 2) {
     //vote d'un user
