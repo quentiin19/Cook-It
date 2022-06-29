@@ -25,13 +25,13 @@
 
                                     <!-- Peau -->
                                     <div class="row py-3">
-                                        <div class= "col-lg-4 col-md-4">
+                                        <div class= "col-lg-4 col-md-4 col-sm-4">
                                             <button type="button" class="btn btn-secondary btn-lg" id="button-prev-skin" onclick="change_part('prev-skin');"><</button>
                                         </div>
-                                        <div class= "col-lg-4 col-md-4 d-flex text-white text-center justify-content-center">
+                                        <div class= "col-lg-4 col-md-4 col-sm-4 d-flex text-white text-center justify-content-center">
                                             <p> Couleur de Peau </p>
                                         </div>
-                                        <div class= "col-lg-4 col-md-4">
+                                        <div class= "col-lg-4 col-md-4 col-sm-4">
                                             <button type="button" class="btn btn-secondary btn-lg" id="button-next-skin" onclick="change_part('next-skin');">></button>
                                         </div>  
                                     </div>
