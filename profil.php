@@ -26,16 +26,16 @@ include "template/header.php";
                 </div>
                 <div class="col-lg-7 col-md-5">
                         <div class="row">
-                            <div class="">
+                            <div class="col-lg-6 col-md-6">
                                 <h4>@Pseudo</h4>
                             </div>
                             <?php 
                                 if ($user['ID'] == $_SESSION['id']){
-                                echo'<div class="d-flex justify-content-end">
+                                echo'<div class="col-lg-6 col-md-6 d-flex justify-content-end">
                                             <a href="#" type="button" class="btn btn-secondary">Modifier mon Profil</a>
                                     </div>';
                                 }else{
-                                echo'<div class="d-flex justify-content-end">
+                                echo'<div class="col-lg-6 col-md-6 d-flex justify-content-end">
                                             <a href="#" type="button" class="btn btn-secondary">S\'abonner</a>
                                     </div>';
                         }
