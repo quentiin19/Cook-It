@@ -36,7 +36,7 @@
 										<li><a href="#" class="dropdown-item">Mes abonnements</a></li>
 										<li><a href="./profil.php?id='.$_SESSION['id'].'" class="dropdown-item">Voir mon profil</a></li>
 										<li><a href="./avatar.php" class="dropdown-item">Modifier mon Avatar</a></li>
-										<li><a href="./AddRecette.php" class="dropdown-item">Ajouter une recette</a></li>';
+										<li><a href="./AddRecette.php" class="dropdown-item">A outer une recette</a></li>';
 										if (isAdmin()) {
 											echo'<li><a href="./admin.php" class="dropdown-item">Gérer les utilisateurs</a></li>';
 										}
