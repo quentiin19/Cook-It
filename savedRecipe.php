@@ -4,7 +4,7 @@ include "template/header.php";
 
 $pdo = connectDB();
 $queryPrepared = $pdo->prepare("SELECT * FROM RECIPES WHERE ID_RECIPE IN (SELECT ID_RECIPE FROM RECIPES_SAVED WHERE ID_USER = :id ORDER BY DATE_SAVED);");
-$queryPrepared->execute();
+$queryPrepared->execute(['id'=>$_SESSION['id']]);
 $recipes = $queryPrepared->fetchAll();
 
 foreach ($recipes as $recipe){
