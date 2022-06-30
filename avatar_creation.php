@@ -21,24 +21,22 @@ imagedestroy($avatar);
 imagedestroy($eye);
 imagedestroy($mouth);
 
+
+//nom du fichier
+$final_file_name = md5(sha1($_POST['recette'].$_POST['recette_description']).uniqid()."lavida").".png";
+
 //changement de base de données du chemin de l'avatar
-$path = "/ressources/images/avatars/".$_SESSION['id'].".png";
+$path = "https://cookit.ovh/ressources/images/avatars/".$final_file_name.".png";
 
 $pdo = connectDB();
 
 $queryPrepared = $pdo->prepare("SELECT * FROM USER WHERE ID = :id;");
 $result = $queryPrepared->execute(["id"=>$_SESSION['id']]);
 
-//si un avatar n'est pas encore définit
-if (empty($result['PATH_AVATAR'])) {
-    $queryPrepared = $pdo->prepare("UPDATE USER SET PATH_AVATAR=:path WHERE ID = :id;");
-    $queryPrepared->execute(["path"=>$path, "id"=>$_SESSION['id']]);
+//mise en bdd du chemin pour l'image de l'avatar
+$queryPrepared = $pdo->prepare("UPDATE USER SET PATH_AVATAR=:path WHERE ID = :id;");
+$queryPrepared->execute(["path"=>$path, "id"=>$_SESSION['id']]);
 
-//sinon, nous modifions l'avatar
-}else{
-    $queryPrepared = $pdo->prepare("UPDATE USER SET PATH_AVATAR=:path WHERE ID = :id;");
-    $queryPrepared->execute(["path"=>$path, "id"=>$_SESSION['id']]);
-}
 
 
 
