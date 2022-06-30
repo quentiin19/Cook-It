@@ -3,6 +3,9 @@ session_start();
 include "./functions.php";?>
 <?php
 
+echo '<pre>';
+print_r($_FILES);
+echo '</pre>';
 
 if (isConnected() == $_SESSION['id'] || isAdmin()) {
 		$pdo = connectDB();
