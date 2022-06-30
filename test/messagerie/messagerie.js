@@ -35,13 +35,8 @@ function sendMsg(){
 
 
 function displayMsg() {
-    request.open("GET", `https://cookit.ovh/test/messagerie/api_msg.php?task=read&sender=${id_sender}&receiver=${id_receveur}&token=${token}`);
-    request.send();
-
-
     console.log(request.response);
-
-
+    console.log('displaying');
 
     if (old_request != request.response) {
         //update de l'ancienne requete
@@ -68,7 +63,11 @@ function displayMsg() {
 }
 
 function refresh() {
-    displayMsg();
+    request.addEventListener("load", function(){
+        displayMsg();
+    });
+    request.open("GET", `https://cookit.ovh/test/messagerie/api_msg.php?task=read&sender=${id_sender}&receiver=${id_receveur}&token=${token}`);
+    request.send();
     console.log("refreshed");
     setTimeout(refresh, 2000);
 }
