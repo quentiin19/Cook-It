@@ -169,7 +169,7 @@ if(!empty($_POST)){
 					imagepng($img, $destination.$final_file_name);
 				}else($extension == '.jpeg' || $extension == '.JPEG' || $extension == '.jpg' || $extension == '.JPG'){
 					imagejpeg($img, $destination.$final_file_name);
-				}
+				};
 				
 
 				//libération de la mémoire
