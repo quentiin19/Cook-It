@@ -59,7 +59,7 @@ function displayMsg() {
 
             //style en fonction de l'envoyeur de message
             if(message['ID_SENDER'] == id_sender){
-                div.setAttribute("class", "d-flex flex-row justify-content-end mb-4 pt-1");
+                div.setAttribute("class", "d-flex flex-row justify-content-end pt-1");
                 msg.setAttribute("class", "small p-2 me-3 mb-1 text-white rounded-3 bg-primary");
 
             }else{
