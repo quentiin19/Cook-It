@@ -51,20 +51,17 @@ function displayMsg() {
         msg_canva.innerText = "";
 
         //affichage des messages
-        let old_msg = [0];
         for (const message in request.response) {
-            if (old_msg['ID_SENDER'] != message['ID_SENDER']) {
-                const group_msg = document.createElement("div");
-                group_msg.setAttribute("class", "d-flex flex-row justify-content-start");
-
-                const img_friend = document.createElement("img");
-                img_friend.setAttribute("src", `https://cookit.ovh/ressources/images/avatars/${id_receveur}.png`)
-                
-                const
+            const div = document.createElement("div");
+            if(message['ID_SENDER'] == id_sender){
+                div.setAttribute("class", "d-flex flex-row justify-content-end mb-4 pt-1");
+            }else{
+                div.setAttribute("class", "d-flex flex-row justify-content-start");
             }
 
+            div.appendChild(message['MESSAGE']);
 
-            old_msg = message;
+            msg_canva.appendChild(div);
         } 
     }
 }
