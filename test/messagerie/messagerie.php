@@ -61,6 +61,7 @@ if($state1[0] == 1 && $state2[0] == 1){
               
                     <!-- 1ere personne -->
                     <div class="d-flex flex-row justify-content-start">
+                        <!-- <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3-bg.webp" alt="avatar 1" style="width: 45px; height: 100%;">-->
                         <div>
                             <p class="small p-2 ms-3 mb-1 rounded-3" style="background-color: #f5f6f7;">Hi</p>
                             <p class="small p-2 ms-3 mb-1 rounded-3" style="background-color: #f5f6f7;">How are you ...???</p>
@@ -78,10 +79,11 @@ if($state1[0] == 1 && $state2[0] == 1){
                             <p class="small p-2 me-3 mb-1 text-white rounded-3 bg-primary">Long time no see! Tomorrow office. will be free on sunday.</p>
                             <p class="small me-3 mb-3 rounded-3 text-muted d-flex justify-content-end">00:06</p>
                         </div>
-                        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava4-bg.webp" alt="avatar 1" style="width: 45px; height: 100%;">
+                        <!-- <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava4-bg.webp" alt="avatar 1" style="width: 45px; height: 100%;">-->
                     </div>
 
                 </div>
+
                 <!-- section du chat -->
     
 
