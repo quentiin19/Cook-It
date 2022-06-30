@@ -165,7 +165,7 @@ header("Location: admin.php");
 
 	//Modification des infos de l'utilisateur dans la BDD
 	$queryPrepared = $pdo->prepare("update USER SET PSEUDO =:pseudo, HASHPWD =:hashpwd, FIRSTNAME =:firstname, LASTNAME =:lastname WHERE ID =:id");
-	$queryPrepared->execute(["pseudo"=> $pseudo, "hashpwd"=> $hashpwd, "fistname"=>$firstname, "lastname"=>$lastname, "id"=>$id ]);
+	$queryPrepared->execute(["pseudo"=> $pseudo, "hashpwd"=> $hashpwd, "fistname"=> $firstname, "lastname"=> $lastname, "id"=> $id ]);
 	
 	//update des logs
 	updateLogs($id, "modification du profil");
