@@ -72,8 +72,10 @@ include "template/header.php";
                     <div class="col-lg-6 col-md-6 my-3">
                         <h4><?= $user['PSEUDO'] ?></h4>
                     </div>
-                    <div class="container">
-                    <div class="btn-group" role="group">
+
+
+
+                    
                     <?php
                         //s'il s'agit de la page d'un autre utilisateur
                         if($ownpage == 0){
@@ -133,8 +135,6 @@ include "template/header.php";
                         // }
                     ?>
 
-</div>
-                    </div>  
                     </div>          
                     <div class="row my-5">
                         <div class="col-lg-4 ">
@@ -196,9 +196,5 @@ include "template/header.php";
         ?>
 
 
-        <button type="button" class="btn btn-secondary">Gauche</button>
-        <button type="button" class="btn btn-secondary">Milieu</button>
-        <button type="button" class="btn btn-secondary">Droite</button>
-    </div>
     </body>
 </html>
