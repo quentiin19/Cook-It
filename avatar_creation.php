@@ -35,13 +35,9 @@ $queryPrepared = $pdo->prepare("SELECT * FROM USER WHERE ID = :id;");
 $queryPrepared->execute(["id"=>$_SESSION['id']]);
 $result = $queryPrepared->fetch();
 
-//suppression de l'avatar
-//changement du propriétaire du fichier
-
-//suppression du fichier
+//suppression du fichier de l'avatar
 unlink(".".$result['PATH_AVATAR']);
 
-echo '.'.$result['PATH_AVATAR'];
 
 //mise en bdd du chemin pour l'image de l'avatar
 $queryPrepared = $pdo->prepare("UPDATE USER SET PATH_AVATAR=:path WHERE ID = :id;");
