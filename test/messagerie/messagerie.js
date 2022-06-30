@@ -41,17 +41,11 @@ function displayMsg() {
         //update de l'ancienne requete
         old_request = request.response;
 
-
-        console.log(JSON.parse(request.response));
-        console.log('displaying');
-
-
         //clear de la canva
         msg_canva.innerText = "";
 
         //affichage des messages
         for (const message of JSON.parse(request.response)) {
-            console.log(message);
 
             //création des elements
             const div = document.createElement("div");
@@ -71,10 +65,12 @@ function displayMsg() {
             msg.innerText = message['MESSAGE'];
 
             div.appendChild(msg);
-
             msg_canva.appendChild(div);
+
+            msg.scrollIntoView();
         }
         msg_input.value = "";
+
     }
 }
 
