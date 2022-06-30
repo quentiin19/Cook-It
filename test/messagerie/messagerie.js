@@ -21,6 +21,9 @@ send_btn.addEventListener("click", sendMsg);
 
 function sendMsg(){
     let msg = msg_input.value;
+    msg_input.value = "";
+
+
     console.log(msg);
     console.log(id_sender);
     console.log(id_receveur);
@@ -69,8 +72,6 @@ function displayMsg() {
 
             msg.scrollIntoView();
         }
-        msg_input.value = "";
-
     }
 }
 
