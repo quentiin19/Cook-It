@@ -48,7 +48,7 @@ function displayMsg() {
         msg_canva.innerText = "";
 
         //affichage des messages
-        for (const message in JSON.parse(request.response)) {
+        for (const message of JSON.parse(request.response)) {
             console.log(message);
             const div = document.createElement("div");
             if(message['ID_SENDER'] == id_sender){
