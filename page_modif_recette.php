@@ -48,7 +48,7 @@ if (isConnected() == $_SESSION['id']){
                             <div class="col-lg-6 col-md-6 bg-color arrondie">
 							    <input type="file" name="fichier" id="inpFile" required="required">
                             </div>
-							<div class="image-preview" id="imagePreview">
+							<div class="col-lg-6 col-md-6 bg-color arrondie image-preview" id="imagePreview">
 								<img src="" alt="image Preview" class="image-preview__image">
 								<span class="image-preview__default-text">Image Preview</span>
 							</div>
