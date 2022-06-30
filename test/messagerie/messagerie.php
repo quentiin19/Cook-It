@@ -55,7 +55,7 @@ if($state1[0] == 1 && $state2[0] == 1){
 
 
             <!-- section du chat -->
-            <div id="message-canva" class="card-body" data-mdb-perfect-scrollbar="true" style="position: relative; height: 400px">
+            <div id="message-canva" class="card-body overflow-auto" data-mdb-perfect-scrollbar="true" style="position: relative; height: 400px">
             
             
                 <!-- 1ere personne -->
