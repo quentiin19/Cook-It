@@ -52,7 +52,7 @@ if($state1[0] == 1 && $state2[0] == 1){
                 <!-- section du chat -->
     
     
-                <div class="card-body" data-mdb-perfect-scrollbar="true" style="position: relative; height: 400px">
+                <div id="message-canva" class="card-body" data-mdb-perfect-scrollbar="true" style="position: relative; height: 400px">
               
               
                     <!-- 1ere personne -->
@@ -94,12 +94,6 @@ if($state1[0] == 1 && $state2[0] == 1){
     
         </div>
     </div>
-    
-    
-    
-    <div id="message-canva"></div>
-    <input type="text" id="message-input">
-    <button id="send-message">envoyer</button>
     
     <script src="messagerie.js"></script>
 <?php
