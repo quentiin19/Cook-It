@@ -33,8 +33,7 @@
 									<a href="#" class="btn btn-lg dropdown-toggle" data-bs-toggle="dropdown"><img src="../../ressources/images/avatars/'.$_SESSION['id'].'.png" height="100vh" width="100vw"></a>
 									<ul class="dropdown-menu">
 										<li><a href="#" class="dropdown-item">Mes abonnements</a></li>
-										<li><a href="#" class="dropdown-item">Mes recettes</a></li>
-										<li><a href="./modif_profil.php" class="dropdown-item">Modifier mon profil</a></li>
+										<li><a href="./profil.php" class="dropdown-item">Voir mon profil</a></li>
 										<li><a href="./avatar.php" class="dropdown-item">Modifier mon Avatar</a></li>';
 										if (isAdmin()) {
 											echo'<li><a href="./membres.php" class="dropdown-item">Gérer les utilisateurs</a></li>';
