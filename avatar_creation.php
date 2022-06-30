@@ -26,7 +26,7 @@ imagedestroy($mouth);
 $final_file_name = md5(sha1($_POST['recette'].$_POST['recette_description']).uniqid()."lavida").".png";
 
 //changement de base de données du chemin de l'avatar
-$path = "https://cookit.ovh/ressources/images/avatars/".$final_file_name.".png";
+$path = "https://cookit.ovh/ressources/images/avatars/".$final_file_name;
 
 $pdo = connectDB();
 
