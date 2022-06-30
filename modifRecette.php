@@ -32,10 +32,6 @@ if (isConnected() == $_SESSION['id'] || isAdmin()) {
 			//création du nom de l'image
 			$final_file_name = md5(sha1($_POST['title'].$_POST['recette_description']).uniqid()."lavida").".png";
 			
-			print "<pre>";
-			print_r($_FILES);
-			print "</pre>";
-			
 			if(!empty($_FILES)){
 				//enregistrement de l'image sur le serveur
 				//nom du fichier
@@ -94,7 +90,7 @@ if (isConnected() == $_SESSION['id'] || isAdmin()) {
 			}
 			//on inscrit le chemin de la nouvelle image dans la recette
 			$queryPrepared = $pdo->prepare("UPDATE RECIPES set PICTURE_PATH = :imgp where ID_RECIPE= :id;");
-			$queryPrepared->execute(["imgp"=> $final_file_name, "id"=>$_POST["idrecipe"]]);
+			$queryPrepared->execute(["imgp"=> "https://cookit.ovh/ressources/images/images-recettes/".$final_file_name, "id"=>$_POST["idrecipe"]]);
 
 			echo $final_file_name;
 		}
