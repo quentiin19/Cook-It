@@ -2,6 +2,9 @@
 
 <?php	
 
+echo '<pre>';
+print_r($_SESSION);
+echo'</pre>';
 
 if (isConnected() == $_SESSION['id']){
 	$pdo = connectDB();
@@ -115,7 +118,8 @@ if (isConnected() == $_SESSION['id']){
 								</div>
 								</div>
 								<div class="row text-center">
-									<input  type="submit" class=" ml-3 mt-5 btn btn-light btn-lg py-2 " value="Modifier">
+                                <input  type="submit" class=" ml-3 mt-5 btn btn-light btn-lg py-2 " value="Modifier">
+                                <input type = "text" hidden = "hidden" name = "idrecipe" value =" <?= $_GET['id'] ?>">
 								</div>
 							</form>
 						
