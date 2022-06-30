@@ -144,7 +144,7 @@ include "template/header.php";
                             <a href="<?= 'https://cookit.ovh/viewsub.php?id='.$_GET['id'].'&display=1'?>"><h4>Abonnés : <?= $abonnes[0]?></h4><a>
                         </div>
                         <div class="col-lg-4">
-                            <a href="<?= 'https://cookit.ovh/viewsub.php?id='.$_GET['id']'&display=2'?>"><h4>Abonnement : <?= $abonnement[0]?></h4><a>
+                            <a href="<?= 'https://cookit.ovh/viewsub.php?id='.$_GET['id'].'&display=2'?>"><h4>Abonnement : <?= $abonnement[0]?></h4><a>
                             
                         </div>
                     </div>
