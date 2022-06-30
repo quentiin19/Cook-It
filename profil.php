@@ -141,7 +141,7 @@ include "template/header.php";
                             <h4>Recettes : <?= $nbrecipe[0]?></h4>
                         </div>
                         <div class="col-lg-4">
-                            <h4>Abonnés : <?= $abonnes[0]?></h4>
+                            <a href="viewsub.php?id=<?php $_GET['id'] ?>><h4>Abonnés : <?= $abonnes[0]?></h4>
                         </div>
                         <div class="col-lg-4">
                             <h4>Abonnement : <?= $abonnement[0]?></h4>
