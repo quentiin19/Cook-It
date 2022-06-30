@@ -7,10 +7,6 @@ $queryPrepared = $pdo->prepare("SELECT * from RECIPES_SAVED,RECIPES where RECIPE
 $queryPrepared->execute(['id'=>$_SESSION['id']]);
 $recipes = $queryPrepared->fetchAll();
 
-echo '<pre>';
-print_r($recipes);
-echo '</pre>';
-
 
 foreach ($recipes as $recipe){
     echo '<div class="col-lg-3 col-md-4 col-sm-1 py-3">
