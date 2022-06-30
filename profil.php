@@ -10,7 +10,7 @@ include "template/header.php";
         $user = $queryPrepared->fetch();
 
         //récupération du nombre de recette créée par ce profil
-        $queryPrepared = $pdo->prepare("SELECT COUNT(ID_RECIPE) FROM RECIPE WHERE ID_CREATOR = :id;");
+        $queryPrepared = $pdo->prepare("SELECT COUNT(ID_RECIPE) FROM RECIPES WHERE ID_CREATOR = :id;");
         $queryPrepared->execute(['id' => $_GET["id"]]);
         $nbrecipe = $queryPrepared->fetch();
 
