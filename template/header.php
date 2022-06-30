@@ -36,7 +36,7 @@
 										<li><a href="./profil.php" class="dropdown-item">Voir mon profil</a></li>
 										<li><a href="./avatar.php" class="dropdown-item">Modifier mon Avatar</a></li>';
 										if (isAdmin()) {
-											echo'<li><a href="./membres.php" class="dropdown-item">Gérer les utilisateurs</a></li>';
+											echo'<li><a href="./admin.php" class="dropdown-item">Gérer les utilisateurs</a></li>';
 										}
 										echo'<li><a href="logout.php" class="dropdown-item">Se déconnecter</a></li>';
 										
