@@ -47,11 +47,12 @@ if (isConnected() == $_SESSION['id']){
 							<h3 class="text-center">Changer l'image </h3>
                             <div class="col-lg-6 col-md-6 bg-color arrondie">
 							    <input type="file" name="fichier" id="inpFile" required="required">
+                            </div>
 							<div class="image-preview" id="imagePreview">
 								<img src="" alt="image Preview" class="image-preview__image">
 								<span class="image-preview__default-text">Image Preview</span>
 							</div>
-						    </div>
+						    
 								<div class ="py-3">
 									Title :
 								<input type="text" class="form-control py-4" name="title" placeholder="Votre recette" value="<?=$resultR["TITLE"]?>"><br>
