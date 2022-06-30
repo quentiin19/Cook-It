@@ -35,23 +35,20 @@ function sendMsg(){
 
 
 function displayMsg() {
-    request.open("GET", `https://cookit.ovh/test/messagerie/api_msg.php?task=read&sender=${id_sender}&receiver=${id_receveur}&token=${token}`);
-    request.send();
-
-
-    console.log(request.response);
-
-
+    console.log(JSON.parse(request.response));
+    console.log('displaying');
 
     if (old_request != request.response) {
         //update de l'ancienne requete
         old_request = request.response;
 
+
+
         //clear de la canva
         msg_canva.innerText = "";
 
         //affichage des messages
-        for (const message in request.response) {
+        for (const message in JSON.parse(request.response)) {
             console.log(message);
             const div = document.createElement("div");
             if(message['ID_SENDER'] == id_sender){
@@ -60,7 +57,9 @@ function displayMsg() {
                 div.setAttribute("class", "d-flex flex-row justify-content-start");
             }
 
-            div.appendChild(message['MESSAGE']);
+
+
+            div.innerText = message['MESSAGE'];
 
             msg_canva.appendChild(div);
         } 
@@ -68,7 +67,11 @@ function displayMsg() {
 }
 
 function refresh() {
-    displayMsg();
+    request.addEventListener("load", function(){
+        displayMsg();
+    });
+    request.open("GET", `https://cookit.ovh/test/messagerie/api_msg.php?task=read&sender=${id_sender}&receiver=${id_receveur}&token=${token}`);
+    request.send();
     console.log("refreshed");
     setTimeout(refresh, 2000);
 }
