@@ -1,6 +1,5 @@
 <?php
-session_start();
-include '../../functions.php';
+include '../../template/header.php';
 
 
 $pdo = connectDB();
