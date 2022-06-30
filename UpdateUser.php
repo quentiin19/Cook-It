@@ -3,10 +3,6 @@ session_start();
 require "functions.php";
 
 //Vérification si admin
-$id=$_SESSION['id'];
-
-
-
 if(isAdmin()){
 	$pdo = connectDB();
 
@@ -21,9 +17,10 @@ if(isAdmin()){
 
 	}
 
-//récupérer les données du formulaire
+$id=$_POST['id'];
 
-$firstname =$_POST["firstname"];
+//récupérer les données du formulaire
+$firstname = $_POST["firstname"];
 $lastname = $_POST["lastname"];
 $pseudo = $_POST["pseudo"];
 
