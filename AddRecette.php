@@ -26,7 +26,11 @@
                                             </div>
                                             <div class="col-lg-6 col-md-6">
                                                 <h3 class="text-center">Ajouter une image </h3>
-                                                <input type="file" name="fichier" required="required"> <br>
+                                                <input type="file" name="fichier" id="inpFile" required="required">
+												<div class="image-preview" id="imagePreview">
+													<img src="" alt="image Preview" class="image-preview_image">
+													<span class="text-preview">Image Preview</span>
+											</div>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -62,7 +66,7 @@
 																			<p>'.$ingredient['NAME'].'</p>
 																		</div>
 																		<div class="col-lg-3 col-md-2 col-sm-6 ">
-																			<input class="input-width" type="text" name="quantity'.$ingredient['ID'].'" placeholder="quantité">
+																			<input class="input-width text-dark" type="text" name="quantity'.$ingredient['ID'].'" placeholder="quantité">
 																		</div>
 																	<div class="col-lg-2 col-md-3 col-sm-3">
 																			'.$ingredient['UNIT'].'
@@ -225,5 +229,5 @@ if(!empty($_POST)){
 
 ?>
 
-
+<script src='preview-image.js'></script>
 <?php include "template/footer.php";?>

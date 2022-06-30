@@ -3,7 +3,7 @@ session_start();
 require "functions.php";
 
 //Vérification si admin
-$id=$_POST['id'];
+$id=$_SESSION['id'];
 
 
 
@@ -66,19 +66,20 @@ header("Location: admin.php");
     $queryPrepared->execute(["id"=>$id]);
     $results=$queryPrepared->fetch();
 
-
+	print_r($_POST);
+	print_r($_SESSION);
 	if(
-		empty($_POST["email"])||
 		!isset($_POST["firstname"]) ||
 		!isset($_POST["lastname"]) || 
 		empty($_POST["pseudo"]) ||
 		empty($_POST["oldpassword"])||
 		empty($_POST["password"]) ||
 		empty($_POST["passwordConfirm"]) ||
-		count($_POST)!=8
+		count($_POST)!=6
 	){
 
 		die("Tentative de Hack ...");
+		print_r($_POST);
 
 	}
 
@@ -163,8 +164,8 @@ header("Location: admin.php");
 	$hashpwd= password_hash($pwd, PASSWORD_DEFAULT);
 
 	//Modification des infos de l'utilisateur dans la BDD
-	$queryPrepared = $pdo->prepare("Update USER SET PSEUDO =:pseudo, HASHPWD =:hashpwd, FIRSTNAME =:firstname, LASTNAME =:lastname WHERE ID =:id");
-	$queryPrepared->execute(["pseudo"=> $pseudo, "hashpwd"=> $hashpwd, "fistname"=>$firstname, "lastname"=>$lastname, "id"=>$id ]);
+	$queryPrepared = $pdo->prepare("update USER SET PSEUDO =:pseudo, HASHPWD =:hashpwd, FIRSTNAME =:firstname, LASTNAME =:lastname WHERE ID =:id");
+	$queryPrepared->execute(["pseudo"=> $pseudo, "hashpwd"=> $hashpwd, "fistname"=> $firstname, "lastname"=> $lastname, "id"=> $id ]);
 	
 	//update des logs
 	updateLogs($id, "modification du profil");

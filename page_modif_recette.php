@@ -42,10 +42,18 @@ if (isConnected() == $_SESSION['id']){
 						</div>
 					</div>
 					<div class="row">
-						<div class="col-lg-12 col-md-12 col-sm-12 bg-color arrondie">
-							<div>
-								<img src="<?= $resultR['PICTURE_PATH']?>" ></img>						
+						<div class="col-lg-6 col-md-6 col-sm-6 bg-color arrondie">
+								<img class ="cardh" src="<?= $resultR['PICTURE_PATH']?>" ></img>						
+						</div>
+						<div class="col-lg-6 col-md-6 bg-color arrondie">
+							<h3 class="text-center">Changer l'image </h3>
+							<input type="file" name="fichier" id="inpFile" required="required">
+							<div class="image-preview" id="imagePreview">
+								<img src="" alt="image Preview" class="image-preview__image">
+								<span class="image-preview__default-text">Image Preview</span>
 							</div>
+						</div>
+						
 						<!-- Affichage recette -->
 							<form method="POST" action="modifRecette.php">
 								<div class ="py-3">
@@ -79,7 +87,7 @@ if (isConnected() == $_SESSION['id']){
 																			<p>'.$ingredient['NAME'].'</p>
 																		</div>
 																		<div class="col-lg-3 col-md-2 col-sm-6 ">
-																			<input class="input-width" type="text" name="quantity'.$ingredient['ID'].'" value='.$need['QUANTITY'].' placeholder="quantité">
+																			<input class="input-width text-dark" type="text" name="quantity'.$ingredient['ID'].'" value='.$need['QUANTITY'].' placeholder="quantité">
 																		</div>
 																		<div class="col-lg-2 col-md-3 col-sm-3">
 																			'.$ingredient['UNIT'].'
@@ -116,10 +124,9 @@ if (isConnected() == $_SESSION['id']){
 										</div>
 									</div>
 								</div>
-								</div>
 								<div class="row text-center">
-                                <input  type="submit" class=" ml-3 mt-5 btn btn-light btn-lg py-2 " value="Modifier">
-                                <input type = "text" hidden = "hidden" name = "idrecipe" value =" <?= $_GET['id'] ?>">
+                                	<input  type="submit" class=" ml-3 mt-5 btn btn-light btn-lg py-2 " value="Modifier">
+                                	<input type = "text" hidden = "hidden" name = "idrecipe" value =" <?= $_GET['id'] ?>">
 								</div>
 							</form>
 						
@@ -138,5 +145,5 @@ if (isConnected() == $_SESSION['id']){
 	</div>
 </div>
 
-
+<script src='preview-image.js'></script>
 <?php include "template/footer.php";?>
