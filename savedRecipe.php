@@ -3,7 +3,7 @@ include "template/header.php";
 
 
 $pdo = connectDB();
-$queryPrepared = $pdo->prepare("SELECT * from RECIPES_SAVED,RECIPES where RECIPES.ID_RECIPE = RECIPES_SAVED.ID_RECIPE order by RECIPES_SAVED.DATE_SAVED");
+$queryPrepared = $pdo->prepare("SELECT * from RECIPES_SAVED,RECIPES where RECIPES.ID_RECIPE = RECIPES_SAVED.ID_RECIPE order by RECIPES_SAVED.DATE_SAVED DESC");
 $queryPrepared->execute(['id'=>$_SESSION['id']]);
 $recipes = $queryPrepared->fetchAll();
 
