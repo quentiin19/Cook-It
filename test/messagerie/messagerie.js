@@ -57,7 +57,9 @@ function displayMsg() {
                 div.setAttribute("class", "d-flex flex-row justify-content-start");
             }
 
-            div.appendChild(message['MESSAGE']);
+
+
+            div.innerText = message['MESSAGE'];
 
             msg_canva.appendChild(div);
         } 
