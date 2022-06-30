@@ -1,5 +1,13 @@
 <?php include "template/header.php";?>
 <?php
+
+echo '<pre>';
+print_r($_SESSION);
+echo'</pre>';
+echo '<pre>';
+print_r($_GET);
+echo'</pre>';
+
 if (isConnected() == $_SESSION['id']) {
 		$pdo = connectDB();
 		
@@ -20,7 +28,7 @@ if (isConnected() == $_SESSION['id']) {
 		print_r($resultN);
 		echo'</pre>';
 		echo '<pre>';
-		print_r($ingredient);
+		print_r($ingredients);
 		echo'</pre>';
 		
 		
