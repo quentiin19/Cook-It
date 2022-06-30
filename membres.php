@@ -3,10 +3,10 @@
 <?php
     $pdo = connectDB();
 
-// Condition  : si la personne est connecté elle ne se verra pas dans les membres ( on verifie si une variable de GET existe)
-if(isset($_GET['id'])){
+// Condition  : si la personne est connecté elle ne se verra pas dans les membres ( on verifie si une variable de SESSIO$_SESSION existe)
+if(isset($_SESSION['id'])){
     $queryPrepared = $pdo->prepare("SELECT * FROM USER WHERE ID IN (SELECT ID_SUBSCRIPTION FROM SUBSCRIPTION WHERE ID_SUBSCRIBER = :id) ORDER BY PSEUDO ASC;");
-    $queryPrepared -> execute(['id' =>$_GET['id']]);
+    $queryPrepared -> execute(['id' =>$_SESSION['id']]);
     $abonnement = $queryPrepared -> fetchAll();
 
 }else{
