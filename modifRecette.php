@@ -109,8 +109,8 @@ if (isConnected() == $_SESSION['id'] || isAdmin()) {
 		}
 		
 		//on inscrit le chemin de la nouvelle image dans la recette
-		$queryPrepared = $pdo->prepare("UPDATE RECIPES set PICTURE_PATH = :imgp);");
-		$queryPrepared->execute(["imgp"=> $final_file_name]);
+		$queryPrepared = $pdo->prepare("UPDATE RECIPES set PICTURE_PATH = :imgp where ID_RECIPE= :id;");
+		$queryPrepared->execute(["imgp"=> $final_file_name, "id" => $_POST["idrecipe"]]);
 		
 		//on rentre le titre
 		$queryPrepared = $pdo->prepare("UPDATE RECIPES set TITLE = :title WHERE ID_RECIPE = :id");
