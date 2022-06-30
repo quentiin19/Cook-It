@@ -1,4 +1,6 @@
-<?php include "template/header.php";?>
+<?php 
+session_start();
+include "./functions.php";?>
 <?php
 
 echo '<pre>';
