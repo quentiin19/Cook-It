@@ -35,18 +35,20 @@ function sendMsg(){
 
 
 function displayMsg() {
-    console.log(request.response);
+    console.log(JSON.parse(request.response));
     console.log('displaying');
 
     if (old_request != request.response) {
         //update de l'ancienne requete
         old_request = request.response;
 
+
+
         //clear de la canva
         msg_canva.innerText = "";
 
         //affichage des messages
-        for (const message in request.response) {
+        for (const message in JSON.parse(request.response)) {
             console.log(message);
             const div = document.createElement("div");
             if(message['ID_SENDER'] == id_sender){
