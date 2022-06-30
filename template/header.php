@@ -24,7 +24,7 @@
 		<div class=" bg-color  p-2 row align-self-center" >
 		<?php 
 
-			if (isConnected()== $_SESSION['id']){
+			if (isConnected()){
 				$pdo = connectDB();
 				$queryPrepared = $pdo->prepare("SELECT PATH_AVATAR FROM USER WHERE ID = :id;");
 				$queryPrepared->execute(["id"=>$_SESSION['id']]);
