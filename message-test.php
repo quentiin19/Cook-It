@@ -1,6 +1,6 @@
 <?php
 
-include"template/header.php";
+include "template/header.php";
 
 
 ?>
@@ -12,18 +12,22 @@ include"template/header.php";
           <div class="card-header d-flex justify-content-between align-items-center p-3">
             <h5 class="mb-0">Chat</h5>
           </div>
-          <div class="card-body" data-mdb-perfect-scrollbar="true" style="position: relative; height: 400px">
 
+
+          <!-- section du chat -->
+
+
+          <div class="card-body" data-mdb-perfect-scrollbar="true" style="position: relative; height: 400px">
+          
+          
           <!-- 1ere personne -->
             <div class="d-flex flex-row justify-content-start">
               <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3-bg.webp"
                 alt="avatar 1" style="width: 45px; height: 100%;">
               <div>
                 <p class="small p-2 ms-3 mb-1 rounded-3" style="background-color: #f5f6f7;">Hi</p>
-                <p class="small p-2 ms-3 mb-1 rounded-3" style="background-color: #f5f6f7;">How are you ...???
-                </p>
-                <p class="small p-2 ms-3 mb-1 rounded-3" style="background-color: #f5f6f7;">What are you doing
-                  tomorrow? Can we come up a bar?</p>
+                <p class="small p-2 ms-3 mb-1 rounded-3" style="background-color: #f5f6f7;">How are you ...???</p>
+                <p class="small p-2 ms-3 mb-1 rounded-3" style="background-color: #f5f6f7;">What are you doing tomorrow? Can we come up a bar?</p>
                 <p class="small ms-3 mb-3 rounded-3 text-muted">23:58</p>
               </div>
             </div>
@@ -41,6 +45,9 @@ include"template/header.php";
 
 
           </div>
+          <!-- section du chat -->
+
+
           <div class="card-footer text-muted d-flex justify-content-start align-items-center p-3">
             <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3-bg.webp"
               alt="avatar 3" style="width: 40px; height: 100%;">
