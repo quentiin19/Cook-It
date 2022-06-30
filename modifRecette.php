@@ -33,73 +33,91 @@ if (isConnected() == $_SESSION['id'] || isAdmin()) {
 		$queryPrepared->execute(["id"=>$_POST["idrecipe"]]);
 		
 		
-		$final_file_name = " ";
 		
+		if(!empty($_FILES)){
+			//enregistrement de l'image sur le serveur
+			//nom du fichier
+			$file_name = $_FILES['fichier']['name'];
+	
+			//emplacement du fichier
+			$file_path = $_FILES['fichier']['tmp_name'];
+	
+			//destination que l'on souhaite pour fichier
+			$destination = '/var/www/html/ProjAnn/ressources/images/images-recettes/';
+	
+			//extention du fichier
+			$extension = strrchr($file_name, ".");
 		
-		//on rentre la nouvelle photo du
-		if (!empty($_POST['fichier'])){
-			//création du nom de l'image
-			$final_file_name = md5(sha1($_POST['title'].$_POST['recette_description']).uniqid()."lavida").".png";
-			
-			if(!empty($_FILES)){
-				//enregistrement de l'image sur le serveur
-				//nom du fichier
-				$file_name = $_FILES['fichier']['name'];
-		
-				//emplacement du fichier
-				$file_path = $_FILES['fichier']['tmp_name'];
-		
-				//destination que l'on souhaite pour fichier
-				$destination = '/var/www/html/ProjAnn/ressources/images/images-recettes/';
-		
-				//extention du fichier
-				$extension = strrchr($file_name, ".");
-			
-				//liste des extentions autorisées à être uploadées
-				$extension_authorised = array('.png', '.PNG', '.jpg', '.jpeg', '.JPG', '.JPEG');
-		
-				//si le fichier est une image autorisé
-				if(in_array($extension, $extension_authorised)){
-					// sert à bouger le fichier qui vient d'être upload dans la destination que l'on veut
-					if(move_uploaded_file($_FILES['fichier']['tmp_name'], $destination.$file_name)){
-		
-						//création du filigranne
-						$logo = imagecreatefrompng('ressource/images/Utilitaires/logo.png');
-		
-						//création de l'image de base
+			//liste des extentions autorisées à être uploadées
+			$extension_authorised = array('.png', '.PNG', '.jpg', '.jpeg', '.JPG', '.JPEG');
+	
+			//si le fichier est une image autorisé
+			if(in_array($extension, $extension_authorised)){
+				// sert à bouger le fichier qui vient d'être upload dans la destination que l'on veut
+				if(move_uploaded_file($_FILES['fichier']['tmp_name'], $destination.$file_name)){
+					echo "Envoyé !";
+	
+					//création du filigranne
+					$logo = imagecreatefrompng('ressources/images/Utilitaires/logo.png');
+	
+					//création de l'image de base
+					if ($extension == '.png' || $extension == '.PNG') {
 						$img = imagecreatefrompng($destination.$file_name);
-		
-						//création d'une canvas de mêmes dimensions que l'image
-						$final_img = imagecreate(imagesx($img), imagesy($img));
-		
-		
-						imagecopy($final_img, $img, 0, 0, 0, 0, imagesx($img), imagesy($img));
-						imagecopy($final_img, $logo, 0, 0, 0, 0, 50, 50);
-		
-						//nom final du fichier (id de la recette et index de l'image) - A CHANGER
+						//création du nom de l'image
 						$final_file_name = md5(sha1($_POST['recette'].$_POST['recette_description']).uniqid()."lavida").".png";
-		
-						//suppression de l'ancien fichier
-						unlink($destination.$file_name);
-		
-						//création de l'image
-						imagepng($final_img, $destination.$final_file_name);
-		
-						//libération de la mémoire
-						imagedestroy($logo);
-						imagedestroy($img);
-						imagedestroy($final_img);
+	
+					}elseif ($extension == '.jpeg' || $extension == '.JPEG') {
+						$img = imagecreatefromjpeg($destination.$file_name);
+						//création du nom de l'image
+						$final_file_name = md5(sha1($_POST['recette'].$_POST['recette_description']).uniqid()."lavida").".jpeg";
+	
+					}elseif ($extension == '.jpg' || $extension == '.JPG') {
+						$img = imagecreatefromjpeg($destination.$file_name);
+						//création du nom de l'image
+						$final_file_name = md5(sha1($_POST['recette'].$_POST['recette_description']).uniqid()."lavida").".jpg";
+	
+					}else {
+						die("hack");
 					}
-					else{
-						echo "Veuillez rentrer choisir une image au format PNG, JPG ou JPEG";
+	
+					// Définit les marges pour le cachet et récupère la hauteur et la largeur de celui-ci
+					$marge_right = 10;
+					$marge_bottom = 10;
+					$sx = imagesx($logo);
+					$sy = imagesy($logo);
+					//création d'une canvas de mêmes dimensions que l'image
+					// $final_img = imagecreate(imagesx($img), imagesy($img));
+	
+					// Fonction pour copier une image sur une autre
+					// imagecopy($final_img, $img, 0, 0, 0, 0, imagesx($img), imagesy($img));
+					// imagecopy($final_img, $logo, 0, 0, 0, 0, 81, 75);
+	
+					// Copie le cachet sur la photo en utilisant les marges et la largeur de la
+					// photo originale  afin de calculer la position du cachet 
+					imagecopy($img, $logo, imagesx($img) - $sx - $marge_right, imagesy($img) - $sy - $marge_bottom, 0, 0, imagesx($logo), imagesy($logo));
+					
+					//suppression de l'ancien fichier
+					// unlink($destination.$file_name);
+	
+					//création de l'image
+					if ($extension == '.png' || $extension == '.PNG') {
+						imagepng($img, $destination.$final_file_name);
+					}elseif($extension == '.jpeg' || $extension == '.JPEG' || $extension == '.jpg' || $extension == '.JPG'){
+						imagejpeg($img, $destination.$final_file_name);
 					}
-						
+					
+	
+					//libération de la mémoire
+					imagedestroy($img);
+					imagedestroy($logo);
+	
 				}
-			
+				else{
+					echo "Veuillez rentrer choisir une image au format PNG, JPG ou JPEG";
+				}
+					
 			}
-
-
-
+		
 		}
 		
 		
