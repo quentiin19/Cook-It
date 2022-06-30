@@ -73,7 +73,7 @@ border-radius:7px;
 
 /* Preview-image */
 
-.imagePreview {
+.image-preview {
 	width : 300px;
 	min-height: 100px;
 	border : 2px solid #dddddd;
@@ -89,7 +89,7 @@ border-radius:7px;
 
 }
 
-.image-preview__image {
+.image-preview_image {
 	display: none;
 	width : 100%;
 }

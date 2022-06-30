@@ -1,6 +1,6 @@
 const inpFile = document.getElementById("inpFile");
 const previewContainer = document.getElementById("imagePreview");
-const previewImage = previewContainer.querySelector(".image-preview__image");
+const previewImage = previewContainer.querySelector(".image-preview_image");
 const previewDefaultText = previewContainer.querySelector(".text-preview");
 
 inpFile.addEventListener("change", function() {     
