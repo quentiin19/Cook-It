@@ -73,7 +73,7 @@ border-radius:7px;
 
 /* Preview-image */
 
-.image-preview {
+.imagePreview {
 	width : 300px;
 	min-height: 100px;
 	border : 2px solid #dddddd;
