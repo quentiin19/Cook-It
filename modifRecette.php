@@ -70,6 +70,10 @@ if (isConnected() == $_SESSION['id'] || isAdmin()) {
 					// sert à bouger le fichier qui vient d'être upload dans la destination que l'on veut
 					if(move_uploaded_file($_FILES['fichier']['tmp_name'], $destination.$file_name)){
 						echo "Envoyé !";
+
+						//création du nom de l'image
+						$final_file_name = md5(sha1($_POST['recette'].$_POST['recette_description']).uniqid()."lavida").".png";
+
 		
 						//création du filigranne
 						$logo = imagecreatefrompng('ressource/images/Utilitaires/logo.png');
