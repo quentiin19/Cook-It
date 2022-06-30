@@ -41,6 +41,8 @@ if (isConnected() == $_SESSION['id']){
 						<div class="col-lg-6 col-md-6 col-sm-6 bg-color arrondie">
 								<img class ="cardh" src="<?= $resultR['PICTURE_PATH']?>" ></img>						
 						</div>
+
+						<form method="POST" action="modifRecette.php">
 						<div class="col-lg-6 col-md-6 bg-color arrondie">
 							<h3 class="text-center">Changer l'image </h3>
 							<input type="file" name="fichier" id="inpFile" required="required">
@@ -51,13 +53,12 @@ if (isConnected() == $_SESSION['id']){
 						</div>
 						
 						<!-- Affichage recette -->
-							<form method="POST" action="modifRecette.php">
 								<div class ="py-3">
-									Title :<input type="text" class="form-control py-4" name="title" placeholder="Votre recette" value="<?=$resultR["TITLE"]?>"><br>
+									Title :
+								<input type="text" class="form-control py-4" name="title" placeholder="Votre recette" value="<?=$resultR["TITLE"]?>"><br>
                                     <div class="col-lg-6 col-md-6 col-sm-6 pl-2">
-                                                <h3 class="text-center py-3">Votre Recette </h3>
-                                                <textarea class="form-control my-3" name="recette_description"
-                                                    rows="20" value="20"><?=$resultR["DESCRIPTION"]?></textarea>
+										<h3 class="text-center py-3">Votre Recette </h3>
+										<textarea class="form-control my-3" name="recette_description" rows="20" value="20"><?=$resultR["DESCRIPTION"]?></textarea>
                                     </div>                                    
                                     <div class="col-lg-6 col-md-6 col-sm-6">
 									<h3 class="text-center py-3">Ingrédients </h3>
