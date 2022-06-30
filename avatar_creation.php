@@ -34,6 +34,9 @@ $pdo = connectDB();
 $queryPrepared = $pdo->prepare("SELECT * FROM USER WHERE ID = :id;");
 $result = $queryPrepared->execute(["id"=>$_SESSION['id']]);
 
+//suppression de l'avatar
+unlink($result['PATH_AVATAR']);
+
 //mise en bdd du chemin pour l'image de l'avatar
 $queryPrepared = $pdo->prepare("UPDATE USER SET PATH_AVATAR=:path WHERE ID = :id;");
 $queryPrepared->execute(["path"=>$path, "id"=>$_SESSION['id']]);
