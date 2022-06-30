@@ -42,13 +42,13 @@ if($_GET['display']==1){
 <?php
 // Condition  : si la personne est connecté elle ne se verra pas dans les membres ( on verifie si une variable de SESSIO$_SESSION existe)
 
-    $queryPrepared = $pdo->prepare("SELECT * FROM USER WHERE ID IN (SELECT ID_SUBSCRIPTION FROM SUBSCRIPTION WHERE ID_SUBSCRIPTION = :id) ORDER BY PSEUDO ASC;");
+    $queryPrepared = $pdo->prepare("SELECT * FROM USER WHERE ID IN (SELECT ID_SUBSCRIBER FROM SUBSCRIPTION WHERE ID_SUBSCRIPTION = :id) ORDER BY PSEUDO ASC;");
     $queryPrepared -> execute(['id' =>$_GET['id']]);
     $abonnement = $queryPrepared -> fetchAll();
 
 
 ?>
-<h1 class="text-center my-3">abonner</h1>
+<h1 class="text-center my-3">Abonnés</h1>
 <div class="container py-5">
     <div class="row">
         <?php
