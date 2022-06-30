@@ -36,10 +36,11 @@ $result = $queryPrepared->execute(["id"=>$_SESSION['id']]);
 
 //suppression de l'avatar
 //changement du propriétaire du fichier
-chown(".".$result['PATH_AVATAR'], 666);
 
 //suppression du fichier
 unlink(".".$result['PATH_AVATAR']);
+
+echo '.'.$result['PATH_AVATAR'];
 
 //mise en bdd du chemin pour l'image de l'avatar
 $queryPrepared = $pdo->prepare("UPDATE USER SET PATH_AVATAR=:path WHERE ID = :id;");
@@ -49,7 +50,7 @@ $queryPrepared->execute(["path"=>$path, "id"=>$_SESSION['id']]);
 
 
 
-header("Location: index.php");
+//header("Location: index.php");
 
 
 
