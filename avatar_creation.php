@@ -32,7 +32,8 @@ $path = "/ressources/images/avatars/".$final_file_name;
 $pdo = connectDB();
 
 $queryPrepared = $pdo->prepare("SELECT * FROM USER WHERE ID = :id;");
-$result = $queryPrepared->execute(["id"=>$_SESSION['id']]);
+$queryPrepared->execute(["id"=>$_SESSION['id']]);
+$result = $queryPrepared->fetch();
 
 //suppression de l'avatar
 //changement du propriétaire du fichier
