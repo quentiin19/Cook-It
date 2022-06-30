@@ -28,6 +28,7 @@ function sendMsg(){
 
     if(msg.length > 0){
         console.log('envoi du message');
+        request.addEventListener("load", displayMsg);
         request.open("GET", `https://cookit.ovh/test/messagerie/api_msg.php?task=write&msg=${msg}&sender=${id_sender}&receiver=${id_receveur}&token=${token}`);
         request.send();
     }
@@ -35,34 +36,41 @@ function sendMsg(){
 
 
 function displayMsg() {
-    console.log(JSON.parse(request.response));
-    console.log('displaying');
 
     if (old_request != request.response) {
         //update de l'ancienne requete
         old_request = request.response;
-
-
 
         //clear de la canva
         msg_canva.innerText = "";
 
         //affichage des messages
         for (const message of JSON.parse(request.response)) {
-            console.log(message);
+
+            //création des elements
             const div = document.createElement("div");
+            const msg = document.createElement("p");
+
+            //style en fonction de l'envoyeur de message
             if(message['ID_SENDER'] == id_sender){
-                div.setAttribute("class", "d-flex flex-row justify-content-end mb-4 pt-1");
+                div.setAttribute("class", "d-flex flex-row justify-content-end pt-1");
+                msg.setAttribute("class", "small p-2 me-3 mb-1 text-white rounded-3 bg-primary");
+
             }else{
                 div.setAttribute("class", "d-flex flex-row justify-content-start");
+                msg.setAttribute("class", "small p-2 ms-3 mb-1 rounded-3");
+                msg.setAttribute("style", "background-color: #f5f6f7;");
             }
 
+            msg.innerText = message['MESSAGE'];
 
-
-            div.innerText = message['MESSAGE'];
-
+            div.appendChild(msg);
             msg_canva.appendChild(div);
-        } 
+
+            msg.scrollIntoView();
+        }
+        msg_input.value = "";
+
     }
 }
 
