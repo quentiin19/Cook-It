@@ -26,6 +26,8 @@ if (isConnected() == $_SESSION['id'] || isAdmin()) {
 		$queryPrepared->execute(["id"=>$_POST["idrecipe"]]);
 		
 		
+		$final_file_name = " ";
+		
 		
 		//on rentre la nouvelle photo du
 		if (!empty($_POST['fichier'])){
