@@ -67,7 +67,7 @@ header("Location: admin.php");
     $results=$queryPrepared->fetch();
 
 	print_r($_POST);
-	print_r($SESSION);
+	print_r($_SESSION);
 	if(
 		!isset($_POST["firstname"]) ||
 		!isset($_POST["lastname"]) || 
