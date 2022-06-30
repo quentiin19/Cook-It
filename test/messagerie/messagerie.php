@@ -49,15 +49,18 @@ if($state1[0] == 1 && $state2[0] == 1){
                 </div>
     
     
+
+
+
+
+
+
                 <!-- section du chat -->
-    
-    
                 <div id="message-canva" class="card-body" data-mdb-perfect-scrollbar="true" style="position: relative; height: 400px">
               
               
                     <!-- 1ere personne -->
                     <div class="d-flex flex-row justify-content-start">
-                        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3-bg.webp" alt="avatar 1" style="width: 45px; height: 100%;">
                         <div>
                             <p class="small p-2 ms-3 mb-1 rounded-3" style="background-color: #f5f6f7;">Hi</p>
                             <p class="small p-2 ms-3 mb-1 rounded-3" style="background-color: #f5f6f7;">How are you ...???</p>
@@ -79,10 +82,11 @@ if($state1[0] == 1 && $state2[0] == 1){
                     </div>
 
                 </div>
-
-
                 <!-- section du chat -->
     
+
+
+
     
                 <div class="card-footer text-muted d-flex justify-content-start align-items-center p-3">
                     <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3-bg.webp" alt="avatar 3" style="width: 40px; height: 100%;">
