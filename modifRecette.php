@@ -26,6 +26,8 @@ if (isConnected() == $_SESSION['id'] || isAdmin()) {
 		$queryPrepared->execute(["id"=>$_POST["idrecipe"]]);
 		
 		
+		$final_file_name = " ";
+		
 		
 		//on rentre la nouvelle photo du
 		if (!empty($_POST['fichier'])){
@@ -88,12 +90,21 @@ if (isConnected() == $_SESSION['id'] || isAdmin()) {
 				}
 			
 			}
-			//on inscrit le chemin de la nouvelle image dans la recette
-			$queryPrepared = $pdo->prepare("UPDATE RECIPES set PICTURE_PATH = :imgp where ID_RECIPE= :id;");
-			$queryPrepared->execute(["imgp"=> "https://cookit.ovh/ressources/images/images-recettes/".$final_file_name, "id"=>$_POST["idrecipe"]]);
 
-			echo $final_file_name;
+
+
 		}
+		
+		
+		
+		echo $final_file_name;
+		echo '<pre>';
+		print_r($final_file_name);
+		echo '</pre>';
+		
+		//on inscrit le chemin de la nouvelle image dans la recette
+		$queryPrepared = $pdo->prepare("UPDATE RECIPES set PICTURE_PATH = :imgp where ID_RECIPE= :id;");
+		$queryPrepared->execute(["imgp"=> "https://cookit.ovh/ressources/images/images-recettes/".$final_file_name, "id"=>$_POST["idrecipe"]]);
 		
 		//on rentre le titre
 		$queryPrepared = $pdo->prepare("UPDATE RECIPES set TITLE = :title WHERE ID_RECIPE = :id");
@@ -112,7 +123,7 @@ if (isConnected() == $_SESSION['id'] || isAdmin()) {
 			}
 		}
 		
-		// header("Location: https://cookit.ovh/recette.php?id=".$_POST["idrecipe"]);
+		header("Location: https://cookit.ovh/recette.php?id=".$_POST["idrecipe"]);
 		
 			
 			
