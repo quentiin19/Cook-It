@@ -7,6 +7,10 @@ echo '<pre>';
 print_r($_FILES);
 echo '</pre>';
 
+echo '<pre>';
+print_r($_POST);
+echo '</pre>';
+
 if (isConnected() == $_SESSION['id'] || isAdmin()) {
 		$pdo = connectDB();
 		
@@ -98,12 +102,6 @@ if (isConnected() == $_SESSION['id'] || isAdmin()) {
 
 		}
 		
-		
-		
-		echo $final_file_name;
-		echo '<pre>';
-		print_r($final_file_name);
-		echo '</pre>';
 		
 		//on inscrit le chemin de la nouvelle image dans la recette
 		$queryPrepared = $pdo->prepare("UPDATE RECIPES set PICTURE_PATH = :imgp where ID_RECIPE= :id;");
