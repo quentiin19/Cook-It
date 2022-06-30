@@ -121,15 +121,15 @@ include "template/header.php";
 
 
 
-                        if ($user['ID'] == $_SESSION['id']){
-                            echo'<div class="col-lg-6 col-md-6 d-flex justify-content-end">
-                                    <a href="modif_profil.php" class=" btn btn-secondary" style="height : 30px"><p>Modifier mon profil</p></a>
-                                </div>';
-                        }else{
-                            echo'<div class="col-lg-6 col-md-6 d-flex justify-content-end">
-                                    <a href="#" class=" btn btn-secondary" style="height : 30px"><p>S\'abonner</p></a>
-                                </div>';
-                        }
+                        // if ($user['ID'] == $_SESSION['id']){
+                        //     echo'<div class="col-lg-6 col-md-6 d-flex justify-content-end">
+                        //             <a href="modif_profil.php" class=" btn btn-secondary" style="height : 30px"><p>Modifier mon profil</p></a>
+                        //         </div>';
+                        // }else{
+                        //     echo'<div class="col-lg-6 col-md-6 d-flex justify-content-end">
+                        //             <a href="#" class=" btn btn-secondary" style="height : 30px"><p>S\'abonner</p></a>
+                        //         </div>';
+                        // }
                     ?>
                     </div>          
                     <div class="row my-5">
