@@ -10,7 +10,7 @@ inpFile.addEventListener("change", function() {
     if(file){
         const reader = new FileReader();
 
-        previewDefaultText.style.display = "none";
+        previewDefaultText.style.display = "hidden";
         previewImage.style.display = "block";
 
         reader.addEventListener("load", function(){
