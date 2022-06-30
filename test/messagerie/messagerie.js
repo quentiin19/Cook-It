@@ -52,6 +52,7 @@ function displayMsg() {
 
         //affichage des messages
         for (const message in request.response) {
+            console.log(message);
             const div = document.createElement("div");
             if(message['ID_SENDER'] == id_sender){
                 div.setAttribute("class", "d-flex flex-row justify-content-end mb-4 pt-1");
