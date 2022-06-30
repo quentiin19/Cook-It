@@ -145,23 +145,33 @@ if(!empty($_POST)){
 					die("hack");
 				}
 
+				// Définit les marges pour le cachet et récupère la hauteur et la largeur de celui-ci
+				$marge_right = 10;
+				$marge_bottom = 10;
+				$sx = imagesx($logo);
+				$sy = imagesy($logo);
 				//création d'une canvas de mêmes dimensions que l'image
-				$final_img = imagecreate(imagesx($img), imagesy($img));
+				// $final_img = imagecreate(imagesx($img), imagesy($img));
 
+				// Fonction pour copier une image sur une autre
+				// imagecopy($final_img, $img, 0, 0, 0, 0, imagesx($img), imagesy($img));
+				// imagecopy($final_img, $logo, 0, 0, 0, 0, 81, 75);
 
-				imagecopy($final_img, $img, 0, 0, 0, 0, imagesx($img), imagesy($img));
-				imagecopy($final_img, $logo, 0, 0, 0, 0, 81, 75);
-
+				// Copie le cachet sur la photo en utilisant les marges et la largeur de la
+				// photo originale  afin de calculer la position du cachet 
+				imagecopy($img, $logo, imagesx($img) - $sx - $marge_right, imagesy($img) - $sy - $marge_bottom, 0, 0, imagesx($logo), imagesy($logo));
+				
 				//suppression de l'ancien fichier
-				unlink($destination.$file_name);
+				// unlink($destination.$file_name);
 
 				//création de l'image
-				imagepng($final_img, $destination.$final_file_name);
+				// imagepng($final_img, $destination.$final_file_name);
+				imagejpeg($img, $destination.$final_file_name);
 
 				//libération de la mémoire
-				imagedestroy($logo);
+				// imagedestroy($logo);
 				imagedestroy($img);
-				imagedestroy($final_img);
+				// imagedestroy($final_img);
 			}
 			else{
 				echo "Veuillez rentrer choisir une image au format PNG, JPG ou JPEG";
