@@ -2,6 +2,9 @@
 
 <?php	
 
+echo '<pre>';
+print_r($_SESSION);
+echo'</pre>';
 
 if (isConnected() == $_SESSION['id']){
 	$pdo = connectDB();
