@@ -78,9 +78,8 @@ border-radius:7px;
 	min-height: 100px;
 	border : 2px solid #dddddd;
 	margin-top: 15px;
-}
-.text-preview{
 
+	/*Default Text*/
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -89,7 +88,7 @@ border-radius:7px;
 
 }
 
-.image-preview_image {
+.image-preview__image {
 	display: none;
 	width : 100%;
 }
