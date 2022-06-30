@@ -26,9 +26,6 @@
 			$_SESSION['pseudo'] = $pseudo;
 		?> -->
 		<?php 
-				echo '<pre>';
-				print_r($_SESSION);
-				echo'</pre>';
 
 			if (isConnected()){
 				echo'<div class="col-lg-2 col-md-2  align-self-center ">

@@ -67,6 +67,7 @@ header("Location: admin.php");
     $results=$queryPrepared->fetch();
 
 	print_r($_POST);
+	print_r($_SESSION);
 	if(
 		!isset($_POST["firstname"]) ||
 		!isset($_POST["lastname"]) || 
@@ -163,8 +164,8 @@ header("Location: admin.php");
 	$hashpwd= password_hash($pwd, PASSWORD_DEFAULT);
 
 	//Modification des infos de l'utilisateur dans la BDD
-	$queryPrepared = $pdo->prepare("Update USER SET PSEUDO =:pseudo, HASHPWD =:hashpwd, FIRSTNAME =:firstname, LASTNAME =:lastname WHERE ID =:id");
-	$queryPrepared->execute(["pseudo"=> $pseudo, "hashpwd"=> $hashpwd, "fistname"=>$firstname, "lastname"=>$lastname, "id"=>$id ]);
+	$queryPrepared = $pdo->prepare("update USER SET PSEUDO =:pseudo, HASHPWD =:hashpwd, FIRSTNAME =:firstname, LASTNAME =:lastname WHERE ID =:id");
+	$queryPrepared->execute(["pseudo"=> $pseudo, "hashpwd"=> $hashpwd, "fistname"=> $firstname, "lastname"=> $lastname, "id"=> $id ]);
 	
 	//update des logs
 	updateLogs($id, "modification du profil");
