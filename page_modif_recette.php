@@ -46,6 +46,7 @@ if (isConnected() == $_SESSION['id']){
 							<div>
 								<img src="<?= $resultR['PICTURE_PATH']?>" ></img>						
 							</div>
+						</div>
 						<!-- Affichage recette -->
 							<form method="POST" action="modifRecette.php">
 								<div class ="py-3">
