@@ -27,7 +27,7 @@ imagedestroy($mouth);
 
 
 //changement de base de données du chemin de l'avatar
-$path = "https://cookit.ovh/ressources/images/avatars/".$final_file_name;
+$path = "/ressources/images/avatars/".$final_file_name;
 
 $pdo = connectDB();
 
