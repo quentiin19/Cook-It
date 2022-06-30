@@ -51,11 +51,11 @@ include "template/header.php";
         */
         //si les deux sont abonnées l'un à l'autre
         if($state1[0] == 1 && $state2[0] == 1){
-            $state = ;
+            $state = 0;
 
         //si l'utilisateur est déjà abonné au profil
         }elseif ($state1[0] == 1){
-            $state = ;
+            $state = 0;
 
         }
 
