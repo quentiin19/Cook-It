@@ -3,7 +3,7 @@ session_start();
 require "functions.php";
 
 //Vérification si admin
-$id=$_POST['id'];
+$id=$_SESSION['id'];
 
 
 
