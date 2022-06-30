@@ -41,6 +41,9 @@ if (isConnected() == $_SESSION['id'] || isAdmin()) {
 		
 		//on rentre la nouvelle photo du
 		if (!empty($_POST['fichier'])){
+			//création du nom de l'image
+			$final_file_name = md5(sha1($_POST['title'].$_POST['recette_description']).uniqid()."lavida").".png";
+			
 			print "<pre>";
 			print_r($_FILES);
 			print "</pre>";
@@ -62,18 +65,12 @@ if (isConnected() == $_SESSION['id'] || isAdmin()) {
 				//liste des extentions autorisées à être uploadées
 				$extension_authorised = array('.png', '.PNG', '.jpg', '.jpeg', '.JPG', '.JPEG');
 		
-				echo "test";
-		
 				//si le fichier est une image autorisé
 				if(in_array($extension, $extension_authorised)){
 					echo "test";
 					// sert à bouger le fichier qui vient d'être upload dans la destination que l'on veut
 					if(move_uploaded_file($_FILES['fichier']['tmp_name'], $destination.$file_name)){
 						echo "Envoyé !";
-
-						//création du nom de l'image
-						$final_file_name = md5(sha1($_POST['title'].$_POST['recette_description']).uniqid()."lavida").".png";
-
 		
 						//création du filigranne
 						$logo = imagecreatefrompng('ressource/images/Utilitaires/logo.png');
