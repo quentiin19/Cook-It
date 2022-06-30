@@ -25,39 +25,40 @@ include "template/header.php";
         $abonnement = $queryPrepared->fetch();
 
 
-        //Verification que l'un est bien abonné à l'autre
-        $queryPrepared = $pdo->prepare("SELECT STATUS FROM SUBSCRIPTION WHERE ID_SUBSCRIBER = :sender AND ID_SUBSCRIPTION = :receveur");
-        $queryPrepared->execute(["sender"=>$_SESSION['id'], "receveur"=>$_GET['id']]);
-        $state1 = $queryPrepared->fetch();
+        //affichages des boutons sur le profil
 
-        //vérification que l'autre est bien abonné à l'un
-        $queryPrepared = $pdo->prepare("SELECT STATUS FROM SUBSCRIPTION WHERE ID_SUBSCRIBER = :sender AND ID_SUBSCRIPTION = :receveur");
-        $queryPrepared->execute(["receveur"=>$_SESSION['id'], "sender"=>$_GET['id']]);
-        $state2 = $queryPrepared->fetch();
+        if($_SESSION['id'] != $_GET['id']){
+            $ownpage = 0;
+
+            //Verification que l'un est bien abonné à l'autre
+            $queryPrepared = $pdo->prepare("SELECT STATUS FROM SUBSCRIPTION WHERE ID_SUBSCRIBER = :sender AND ID_SUBSCRIPTION = :receveur");
+            $queryPrepared->execute(["sender"=>$_SESSION['id'], "receveur"=>$_GET['id']]);
+            $state1 = $queryPrepared->fetch();
+    
+            //vérification que l'autre est bien abonné à l'un
+            $queryPrepared = $pdo->prepare("SELECT STATUS FROM SUBSCRIPTION WHERE ID_SUBSCRIBER = :sender AND ID_SUBSCRIPTION = :receveur");
+            $queryPrepared->execute(["receveur"=>$_SESSION['id'], "sender"=>$_GET['id']]);
+            $state2 = $queryPrepared->fetch();
+
+        }else{
+            $ownpage = 1;
+        }
 
         /*
         tous les états possibles :
-        u = 1 p = 1     messages supprimer
-        u = 1 p = 0     supprimer
-        u = 1 p = -1    supprimer
+        u = 1 p = 1     messages supprimer bloquer
+        u = 1 p = 0     supprimer bloquer
+        u = 1 p = -1    supprimer bloquer
 
-        u = 0 p = 1     s'abonner
-        u = 0 p = 0     s'abonner
-        u = 0 p = -1    
+        u = 0 p = 1     s'abonner bloquer
+        u = 0 p = 0     s'abonner bloquer
+        u = 0 p = -1    bloquer
 
         u = -1 p = 1    débloquer
         u = -1 p = 0    débloquer
         u = -1 p = -1   débloquer
         */
-        //si les deux sont abonnées l'un à l'autre
-        if($state1[0] == 1 && $state2[0] == 1){
-            $state = 0;
 
-        //si l'utilisateur est déjà abonné au profil
-        }elseif ($state1[0] == 1){
-            $state = 0;
-
-        }
 
         ?>
 
@@ -71,7 +72,55 @@ include "template/header.php";
                     <div class="col-lg-6 col-md-6 my-3">
                         <h4><?= $user['PSEUDO'] ?></h4>
                     </div>
-                    <?php 
+                    <?php
+                        //s'il s'agit de la page d'un autre utilisateur
+                        if($ownpage == 0){
+                            if(isset($state1[0])){
+                                if($state1[0] == 1){
+                                    if($state2[0] == 1){
+                                        //afficher le bouton message
+                                        echo'<div class="col-lg-6 col-md-6 d-flex justify-content-end">
+                                            <a href="#" class=" btn btn-secondary" style="height : 30px"><p>Message</p></a>
+                                        </div>';
+    
+                                    }
+                                    //afficher le bouton supprimer
+                                    echo'<div class="col-lg-6 col-md-6 d-flex justify-content-end">
+                                        <a href="#" class=" btn btn-secondary" style="height : 30px"><p>Désabonner</p></a>
+                                    </div>';
+    
+                                }elseif ($state1[0] == -1) {
+                                    //afficher le bouton pour débloquer
+                                    echo'<div class="col-lg-6 col-md-6 d-flex justify-content-end">
+                                        <a href="#" class=" btn btn-secondary" style="height : 30px"><p>Débloquer</p></a>
+                                    </div>';
+    
+                                }
+    
+                            }elseif(!isset($state2[0]) || $state2[0] == 1) {
+                                //affichage du bouton s'abonner
+                                echo'<div class="col-lg-6 col-md-6 d-flex justify-content-end">
+                                    <a href="#" class=" btn btn-secondary" style="height : 30px"><p>S\'abonner</p></a>
+                                </div>';
+
+                            }
+
+                            echo'<div class="col-lg-6 col-md-6 d-flex justify-content-end">
+                                    <a href="#" class=" btn btn-secondary" style="height : 30px"><p>Bloquer</p></a>
+                                </div>';
+                        
+                        //sinon, il s'agit de la propre page du user
+                        }else{
+                            echo'<div class="col-lg-6 col-md-6 d-flex justify-content-end">
+                                    <a href="modif_profil.php" class=" btn btn-secondary" style="height : 30px"><p>Modifier mon profil</p></a>
+                                </div>';
+                        }
+                        
+
+
+
+
+
                         if ($user['ID'] == $_SESSION['id']){
                             echo'<div class="col-lg-6 col-md-6 d-flex justify-content-end">
                                     <a href="modif_profil.php" class=" btn btn-secondary" style="height : 30px"><p>Modifier mon profil</p></a>
