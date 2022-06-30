@@ -165,13 +165,16 @@ if(!empty($_POST)){
 				// unlink($destination.$file_name);
 
 				//création de l'image
-				// imagepng($final_img, $destination.$final_file_name);
-				imagejpeg($img, $destination.$final_file_name);
+				if ($extension == '.png' || $extension == '.PNG') {
+					imagepng($img, $destination.$final_file_name);
+				}else($extension == '.jpeg' || $extension == '.JPEG' || $extension == '.jpg' || $extension == '.JPG'){
+					imagejpeg($img, $destination.$final_file_name);
+				}
+				
 
 				//libération de la mémoire
-				// imagedestroy($logo);
 				imagedestroy($img);
-				// imagedestroy($final_img);
+
 			}
 			else{
 				echo "Veuillez rentrer choisir une image au format PNG, JPG ou JPEG";
