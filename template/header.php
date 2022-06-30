@@ -30,20 +30,20 @@
 				$queryPrepared->execute(["id"=>$_SESSION['id']]);
 				$pathAvatar = $queryPrepared->fetch();
 				echo'<div class="col-lg-2 col-md-2  align-self-center ">
-									<div class="btn-group">
-									<a href="#" class="btn btn-lg dropdown-toggle" data-bs-toggle="dropdown"><img src="../../ressources/images/avatars/'.$pathAvatar[0].'" height="100vh" width="100vw"></a>
-									<ul class="dropdown-menu">
-										<li><a href="#" class="dropdown-item">Mes abonnements</a></li>
-										<li><a href="./profil.php?id='.$_SESSION['id'].'" class="dropdown-item">Voir mon profil</a></li>
-										<li><a href="./avatar.php" class="dropdown-item">Modifier mon Avatar</a></li>
-										<li><a href="./AddRecette.php" class="dropdown-item">Ajouter une recette</a></li>';
-										if (isAdmin()) {
-											echo'<li><a href="./admin.php" class="dropdown-item">Gérer les utilisateurs</a></li>';
-										}
-										echo'<li><a href="logout.php" class="dropdown-item">Se déconnecter</a></li>';
-										
+						<div class="btn-group">
+						<a href="#" class="btn btn-lg dropdown-toggle" data-bs-toggle="dropdown"><img src="../../ressources/images/avatars/'.$pathAvatar[0].'" height="100vh" width="100vw"></a>
+						<ul class="dropdown-menu">
+							<li><a href="#" class="dropdown-item">Mes abonnements</a></li>
+							<li><a href="./profil.php?id='.$_SESSION['id'].'" class="dropdown-item">Voir mon profil</a></li>
+							<li><a href="./avatar.php" class="dropdown-item">Modifier mon Avatar</a></li>
+							<li><a href="./AddRecette.php" class="dropdown-item">Ajouter une recette</a></li>';
+							if (isAdmin()) {
+								echo'<li><a href="./admin.php" class="dropdown-item">Gérer les utilisateurs</a></li>';
+							}
+							echo'<li><a href="logout.php" class="dropdown-item">Se déconnecter</a></li>';
+							
 
-									echo'</ul>
+						echo'</ul>
 							
 					</div>
 					</div>';
@@ -52,7 +52,7 @@
 								<a href="./SignUp.php" class="text-white">S\'inscrire</a>	
 						</div>
                         
-                        <div class="col-lg-1 col-md-1  align-self-center  ">
+                        <div class="col-lg-1 col-md-1 align-self-center">
 								<a href="./login.php" class=" text-white">Se connecter</a>
 						</div>';
 				}
