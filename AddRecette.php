@@ -167,13 +167,14 @@ if(!empty($_POST)){
 				//création de l'image
 				if ($extension == '.png' || $extension == '.PNG') {
 					imagepng($img, $destination.$final_file_name);
-				}else($extension == '.jpeg' || $extension == '.JPEG' || $extension == '.jpg' || $extension == '.JPG'){
+				}elseif($extension == '.jpeg' || $extension == '.JPEG' || $extension == '.jpg' || $extension == '.JPG'){
 					imagejpeg($img, $destination.$final_file_name);
 				}
 				
 
 				//libération de la mémoire
 				imagedestroy($img);
+				imagedestroy($logo);
 
 			}
 			else{
