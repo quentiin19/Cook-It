@@ -73,7 +73,8 @@ function displayMsg() {
             div.appendChild(msg);
 
             msg_canva.appendChild(div);
-        } 
+        }
+        msg_input.value = "";
     }
 }
 
