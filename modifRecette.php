@@ -37,9 +37,6 @@ if (isConnected() == $_SESSION['id'] || isAdmin()) {
 		$queryPrepared = $pdo->prepare("DELETE FROM NEED WHERE ID_RECIPE = :id");
 		$queryPrepared->execute(["id"=>$_POST["idrecipe"]]);
 		
-		//on supprime l'ancienne image contenu dans la recette qu'on veut modifier
-		$queryPrepared = $pdo->prepare("DELETE FROM RECIPE PICTURE_PATH WHERE ID_RECIPE = :id");
-		$queryPrepared->execute(["id"=>$_POST["idrecipe"]]);
 		
 		
 		//on rentre la nouvelle photo du
@@ -110,6 +107,10 @@ if (isConnected() == $_SESSION['id'] || isAdmin()) {
 			}
 		
 		}
+		
+		//on inscrit le chemin de la nouvelle image dans la recette
+		$queryPrepared = $pdo->prepare("UPDATE RECIPES set PICTURE_PATH = :imgp);");
+		$queryPrepared->execute(["imgp"=> $final_file_name]);
 		
 		//on rentre le titre
 		$queryPrepared = $pdo->prepare("UPDATE RECIPES set TITLE = :title WHERE ID_RECIPE = :id");
