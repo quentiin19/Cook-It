@@ -46,7 +46,7 @@ if (isConnected() == $_SESSION['id']){
 								<img class ="cardh" src="<?= $resultR['PICTURE_PATH']?>" ></img>						
 						</div>
 						<div class="col-lg-6 col-md-6 bg-color arrondie">
-							<h3 class="text-center">Ajouter une image </h3>
+							<h3 class="text-center">Changer l'image </h3>
 							<input type="file" name="fichier" id="inpFile" required="required">
 							<div class="image-preview" id="imagePreview">
 								<img src="" alt="image Preview" class="image-preview__image">
