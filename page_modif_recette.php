@@ -87,7 +87,7 @@ if (isConnected() == $_SESSION['id']){
 																			<p>'.$ingredient['NAME'].'</p>
 																		</div>
 																		<div class="col-lg-3 col-md-2 col-sm-6 ">
-																			<input class="input-width" type="text" name="quantity'.$ingredient['ID'].'" value='.$need['QUANTITY'].' placeholder="quantité">
+																			<input class="input-width text-dark" type="text" name="quantity'.$ingredient['ID'].'" value='.$need['QUANTITY'].' placeholder="quantité">
 																		</div>
 																		<div class="col-lg-2 col-md-3 col-sm-3">
 																			'.$ingredient['UNIT'].'

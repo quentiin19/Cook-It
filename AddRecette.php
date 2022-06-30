@@ -66,7 +66,7 @@
 																			<p>'.$ingredient['NAME'].'</p>
 																		</div>
 																		<div class="col-lg-3 col-md-2 col-sm-6 ">
-																			<input class="input-width" type="text" name="quantity'.$ingredient['ID'].'" placeholder="quantité">
+																			<input class="input-width text-dark" type="text" name="quantity'.$ingredient['ID'].'" placeholder="quantité">
 																		</div>
 																	<div class="col-lg-2 col-md-3 col-sm-3">
 																			'.$ingredient['UNIT'].'
