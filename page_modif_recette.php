@@ -44,7 +44,7 @@ if (isConnected() == $_SESSION['id']){
 						</div>
 						
 						<!-- Affichage recette -->
-							<form method="POST" action="modifRecette.php">
+							<form method="POST" action="modifRecette.php" enctype="multipart/form-data">
                             <div class="col-lg-6 col-md-6 bg-color arrondie">
 							    <input type="file" name="fichier" id="inpFile" required="required">
                             </div>
