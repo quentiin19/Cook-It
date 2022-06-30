@@ -44,7 +44,7 @@ if (isConnected() == $_SESSION['id']){
 					<div class="row">
 						<div class="col-lg-12 col-md-12 col-sm-12 bg-color arrondie">
 							<div>
-								<img src="<?= $resultR['PICTURE_PATH']?>" ></img>						
+								<img class ="cardh" src="<?= $resultR['PICTURE_PATH']?>" ></img>						
 							</div>
 						</div>
 						
