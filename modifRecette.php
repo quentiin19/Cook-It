@@ -43,7 +43,7 @@ if (isConnected() == $_SESSION['id'] || isAdmin()) {
 		
 		//on rentre la description
 		$queryPrepared = $pdo->prepare("UPDATE RECIPES set DESCRIPTION = :desc WHERE ID_RECIPE = :id");
-		$queryPrepared ->execute(["title"=>$_POST["recette_description"],"id" => $_POST["idrecipe"]]);
+		$queryPrepared ->execute(["desc"=>$_POST["recette_description"],"id" => $_POST["idrecipe"]]);
 		
 		for ($i = 1; $i<6; $i++){
 			if(isset($_POST['checkbox'.$i])){
