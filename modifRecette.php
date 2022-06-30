@@ -123,7 +123,7 @@ if (isConnected() == $_SESSION['id'] || isAdmin()) {
 			}
 		}
 		
-		// header("Location: https://cookit.ovh/recette.php?id=".$_POST["idrecipe"]);
+		header("Location: https://cookit.ovh/recette.php?id=".$_POST["idrecipe"]);
 		
 			
 			
