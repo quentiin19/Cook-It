@@ -13,8 +13,11 @@ $mouth = imagecreatefrompng("ressources/images/avatar-parts/mouth".$_GET['mouth'
 imagecopy($avatar, $eye, 0, 0, 0, 0, 300, 300);
 imagecopy($avatar, $mouth, 0, 0, 0, 0, 300, 300);
 
+//nom du fichier
+$final_file_name = md5(sha1($_POST['recette'].$_POST['recette_description']).uniqid()."lavida").".png";
+
 //création du fichier image qui portera comme nom l'id du user
-imagepng($avatar, "ressources/images/avatars/".$_SESSION['id'].".png");
+imagepng($avatar, "ressources/images/avatars/".$final_file_name);
 
 //libération de la mémoire
 imagedestroy($avatar);
@@ -22,8 +25,6 @@ imagedestroy($eye);
 imagedestroy($mouth);
 
 
-//nom du fichier
-$final_file_name = md5(sha1($_POST['recette'].$_POST['recette_description']).uniqid()."lavida").".png";
 
 //changement de base de données du chemin de l'avatar
 $path = "https://cookit.ovh/ressources/images/avatars/".$final_file_name;
