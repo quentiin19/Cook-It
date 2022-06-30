@@ -35,6 +35,7 @@ if (isConnected() == $_SESSION['id']){
 					<div class="row">
 						<div class="col-lg-12 pb-3" >	
 							<h2> Recette </h2>
+							<h4 class="text-center">Changer l'image </h3>
 						</div>
 					</div>
 					<div class="row">
@@ -44,7 +45,6 @@ if (isConnected() == $_SESSION['id']){
 						
 						<!-- Affichage recette -->
 							<form method="POST" action="modifRecette.php">
-							<h3 class="text-center">Changer l'image </h3>
                             <div class="col-lg-6 col-md-6 bg-color arrondie">
 							    <input type="file" name="fichier" id="inpFile" required="required">
                             </div>
