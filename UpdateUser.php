@@ -74,7 +74,7 @@ header("Location: admin.php");
 		empty($_POST["oldpassword"])||
 		empty($_POST["password"]) ||
 		empty($_POST["passwordConfirm"]) ||
-		count($_POST)!=7
+		count($_POST)!=6
 	){
 
 		die("Tentative de Hack ...");
