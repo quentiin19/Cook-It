@@ -7,10 +7,10 @@ echo '<pre>';
 print_r($_SESSION);
 echo'</pre>';
 echo '<pre>';
-print_r($_POST['idrecipe']);
+print_r($_POST);
 echo'</pre>';
 
-if (isConnected() == $_SESSION['id']) {
+if (isConnected() == $_SESSION['id'] || isAdmin()) {
 		$pdo = connectDB();
 		
 		
@@ -32,6 +32,8 @@ if (isConnected() == $_SESSION['id']) {
 		echo '<pre>';
 		print_r($ingredients);
 		echo'</pre>';
+		
+		
 		
 		
 			
