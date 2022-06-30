@@ -11,7 +11,7 @@
 
 
 ?>
-
+<h1 class="text-center my-3">Abonnements</h1>
 <div class="container py-5">
     <div class="row">
         <?php
