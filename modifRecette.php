@@ -64,17 +64,17 @@ if (isConnected() == $_SESSION['id'] || isAdmin()) {
 					if ($extension == '.png' || $extension == '.PNG') {
 						$img = imagecreatefrompng($destination.$file_name);
 						//création du nom de l'image
-						$final_file_name = md5(sha1($_POST['recette'].$_POST['recette_description']).uniqid()."lavida").".png";
+						$final_file_name = md5(sha1($_POST['title'].$_POST['recette_description']).uniqid()."lavida").".png";
 	
 					}elseif ($extension == '.jpeg' || $extension == '.JPEG') {
 						$img = imagecreatefromjpeg($destination.$file_name);
 						//création du nom de l'image
-						$final_file_name = md5(sha1($_POST['recette'].$_POST['recette_description']).uniqid()."lavida").".jpeg";
+						$final_file_name = md5(sha1($_POST['title'].$_POST['recette_description']).uniqid()."lavida").".jpeg";
 	
 					}elseif ($extension == '.jpg' || $extension == '.JPG') {
 						$img = imagecreatefromjpeg($destination.$file_name);
 						//création du nom de l'image
-						$final_file_name = md5(sha1($_POST['recette'].$_POST['recette_description']).uniqid()."lavida").".jpg";
+						$final_file_name = md5(sha1($_POST['title'].$_POST['recette_description']).uniqid()."lavida").".jpg";
 	
 					}else {
 						die("hack");
