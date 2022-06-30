@@ -192,5 +192,10 @@ include "template/header.php";
         ?>
 
 
+<div class="btn-group" role="group">
+        <button type="button" class="btn btn-secondary">Gauche</button>
+        <button type="button" class="btn btn-secondary">Milieu</button>
+        <button type="button" class="btn btn-secondary">Droite</button>
+    </div>
     </body>
 </html>
