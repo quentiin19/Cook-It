@@ -15,12 +15,12 @@ include "template/header.php";
         $nbrecipe = $queryPrepared->fetch();
 
         //récupération du nombre d'abonnés à ce profil
-        $queryPrepared = $pdo->prepare("SELECT COUNT(ID_SENDER) FROM SUBSCRIPTION WHERE SUBSCRIPTION.ID_RECEIVER = :id AND STATUS = 1;");
+        $queryPrepared = $pdo->prepare("SELECT COUNT(ID_SUBSCRIBER) FROM SUBSCRIPTION WHERE SUBSCRIPTION.ID_SUBSCRIPTION = :id AND STATUS = 1;");
         $queryPrepared->execute(["id" => $_GET["id"]]);
         $abonnes = $queryPrepared->fetch();
 
         //récupération du nombre d'abonnement de ce profil
-        $queryPrepared = $pdo->prepare("SELECT COUNT(ID_RECEIVER) FROM SUBSCRIPTION WHERE SUBSCRIPTION.ID_SENDER = :id AND STATUS = 1;");
+        $queryPrepared = $pdo->prepare("SELECT COUNT(ID_SUBSCRIPTION) FROM SUBSCRIPTION WHERE SUBSCRIPTION.ID_SUBSCRIBER = :id AND STATUS = 1;");
         $queryPrepared->execute(["id" => $_GET["id"]]);
         $abonnement = $queryPrepared->fetch();
 
