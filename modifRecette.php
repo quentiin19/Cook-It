@@ -93,6 +93,9 @@ if (isConnected() == $_SESSION['id'] || isAdmin()) {
 			$queryPrepared->execute(["imgp"=> "https://cookit.ovh/ressources/images/images-recettes/".$final_file_name, "id"=>$_POST["idrecipe"]]);
 
 			echo $final_file_name;
+			echo '<pre>';
+			print_r($final_file_name);
+			echo '</pre>';
 		}
 		
 		//on rentre le titre
