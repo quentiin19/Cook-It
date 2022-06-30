@@ -3,12 +3,6 @@ session_start();
 include "./functions.php";?>
 <?php
 
-echo '<pre>';
-print_r($_SESSION);
-echo'</pre>';
-echo '<pre>';
-print_r($_POST);
-echo'</pre>';
 
 if (isConnected() == $_SESSION['id'] || isAdmin()) {
 		$pdo = connectDB();
@@ -26,12 +20,6 @@ if (isConnected() == $_SESSION['id'] || isAdmin()) {
 		$queryPrepared->execute(["id"=>$_POST["idrecipe"]]);
 		$ingredients = $queryPrepared->fetchAll();
 		
-		echo '<pre>';
-		print_r($resultN);
-		echo'</pre>';
-		echo '<pre>';
-		print_r($ingredients);
-		echo'</pre>';
 		
 		//on supprime tout les inredients pour pouvoir le mettre a jour après
 		$queryPrepared = $pdo->prepare("DELETE FROM NEED WHERE ID_RECIPE = :id");
@@ -67,10 +55,8 @@ if (isConnected() == $_SESSION['id'] || isAdmin()) {
 		
 				//si le fichier est une image autorisé
 				if(in_array($extension, $extension_authorised)){
-					echo "test";
 					// sert à bouger le fichier qui vient d'être upload dans la destination que l'on veut
 					if(move_uploaded_file($_FILES['fichier']['tmp_name'], $destination.$file_name)){
-						echo "Envoyé !";
 		
 						//création du filigranne
 						$logo = imagecreatefrompng('ressource/images/Utilitaires/logo.png');
@@ -108,7 +94,9 @@ if (isConnected() == $_SESSION['id'] || isAdmin()) {
 			}
 			//on inscrit le chemin de la nouvelle image dans la recette
 			$queryPrepared = $pdo->prepare("UPDATE RECIPES set PICTURE_PATH = :imgp where ID_RECIPE= :id;");
-			$queryPrepared->execute(["imgp"=> $final_file_name, "id" => $_POST["idrecipe"]]);
+			$queryPrepared->execute(["imgp"=> $final_file_name, "id"=>$_POST["idrecipe"]]);
+
+			echo $final_file_name;
 		}
 		
 		//on rentre le titre
