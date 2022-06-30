@@ -3,13 +3,12 @@
 <?php
     $pdo = connectDB();
 
-// Condition  : si la personne est connecté elle ne se verra pas dans les membres ( on verifie si une variable de session existe)
-if(isset($_SESSION['id'])){
-    $afficher_membres = $pdo->prepare("SELECT * FROM USER WHERE id <> :id");
-    $afficher_membres -> execute(['id' =>$_SESSION['id']]);
+// Condition  : si la personne est connecté elle ne se verra pas dans les membres ( on verifie si une variable de GET existe)
+if(isset($_GET['id'])){
+    $abonnement = $pdo->prepare("SELECT * FROM USER WHERE ID IN (SELECT ID_SUBSCRIPTION FROM SUBSCRIPTION WHERE ID_SUBSCRIBER = :id) ORDER BY PSEUDO ASC;");
+    $abonnement -> execute(['id' =>$_GET['id']]);
 }else{
-    $afficher_membres = $pdo->prepare("SELECT * FROM USER");
-    $afficher_membres -> execute();
+    echo 'Veillez Vous Connecter';
 }
 
 ?>
@@ -17,17 +16,17 @@ if(isset($_SESSION['id'])){
 <div class="container py-5">
     <div class="row">
         <?php
-            foreach ($afficher_membres as $am){
+            foreach ($abonnement as $ab){
         ?>
         <div class="col-lg-3 col-md-4 col-sm-6"> 
             <div class=" card bg-color text-center shadow p-3 mb-5 rounded">
                 <div>
-                    <img src="<?= $am['PATH_AVATAR']?>" class="card-img-top cardh my-3"></img>
+                    <img src="<?= $ab['PATH_AVATAR']?>" class="card-img-top cardh my-3"></img>
                 </div>
                 <div>
-                    <?= $am['PSEUDO'] ?>  
+                    <?= $ab['PSEUDO'] ?>  
                 </div>
-                <a href="https://cookit.ovh/profil_membres.php?id=<?= $am['ID'] ?>" class ="bg-light rounded my-3"> Voir le profil</a>
+                <a href="https://cookit.ovh/profil_membres.php?id=<?= $ab['ID'] ?>" class ="bg-light rounded my-3"> Voir le profil</a>
                 
             </div>
         </div>
