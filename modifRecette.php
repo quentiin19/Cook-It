@@ -33,6 +33,25 @@ if (isConnected() == $_SESSION['id'] || isAdmin()) {
 		print_r($ingredients);
 		echo'</pre>';
 		
+		//on supprime tout les inredients pour pouvoir le mettre a jour après
+		$queryPrepared = $pdo->prepare("DELETE FROM NEED WHERE ID_RECIPE = :id");
+		$queryPrepared->execute(["id"=>$_POST["idrecipe"]]);
+		
+		//on rentre le titre
+		$queryPrepared = $pdo->prepare("UPDATE RECIPES set TITLE = :title WHERE ID_RECIPE = :id");
+		$queryPrepared ->execute(["title"=>$_POST["title"],"id" => $_POST["idrecipe"]]);
+		
+		//on rentre la description
+		$queryPrepared = $pdo->prepare("UPDATE RECIPES set DESCRIPTION = :desc WHERE ID_RECIPE = :id");
+		$queryPrepared ->execute(["title"=>$_POST["recette_description"],"id" => $_POST["idrecipe"]]);
+		
+		for ($i = 1; $i<6; $i++){
+			if(isset($_POST['checkbox'.$i])){
+				$quantity = $_POST["quantity".$i];
+				$queryPrepared = $pdo->prepare("INSERT INTO NEED VALUES (:quantity, :id_ingr, :id_recipe)");
+				$queryPrepared->execute(["quantity"=>$quantity, "id_ingr"=>$i ,"id_recipe"=>$_POST["idrecipe"]]);
+			}
+		}
 		
 		
 		
