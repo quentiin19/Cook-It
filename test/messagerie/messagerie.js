@@ -36,13 +36,14 @@ function sendMsg(){
 
 
 function displayMsg() {
-    console.log(JSON.parse(request.response));
-    console.log('displaying');
 
     if (old_request != request.response) {
         //update de l'ancienne requete
         old_request = request.response;
 
+
+        console.log(JSON.parse(request.response));
+        console.log('displaying');
 
 
         //clear de la canva
