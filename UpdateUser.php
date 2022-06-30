@@ -66,7 +66,7 @@ header("Location: admin.php");
     $queryPrepared->execute(["id"=>$id]);
     $results=$queryPrepared->fetch();
 
-
+	print_r($_POST);
 	if(
 		!isset($_POST["firstname"]) ||
 		!isset($_POST["lastname"]) || 
@@ -78,6 +78,7 @@ header("Location: admin.php");
 	){
 
 		die("Tentative de Hack ...");
+		print_r($_POST);
 
 	}
 
