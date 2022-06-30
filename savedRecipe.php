@@ -7,6 +7,11 @@ $queryPrepared = $pdo->prepare("SELECT *, DATE_SAVED FROM RECIPES, RECIPES_SAVED
 $queryPrepared->execute(['id'=>$_SESSION['id']]);
 $recipes = $queryPrepared->fetchAll();
 
+echo '<pre>';
+print_r($recipes);
+echo '</pre>';
+
+
 foreach ($recipes as $recipe){
     echo '<div class="col-lg-3 col-md-4 col-sm-1 py-3">
             <div class="card mb-4 shadow-sm bg-color py-3 px-3 arrondie">
