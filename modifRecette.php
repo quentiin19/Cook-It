@@ -72,7 +72,7 @@ if (isConnected() == $_SESSION['id'] || isAdmin()) {
 						echo "Envoyé !";
 
 						//création du nom de l'image
-						$final_file_name = md5(sha1($_POST['recette'].$_POST['recette_description']).uniqid()."lavida").".png";
+						$final_file_name = md5(sha1($_POST['title'].$_POST['recette_description']).uniqid()."lavida").".png";
 
 		
 						//création du filigranne
