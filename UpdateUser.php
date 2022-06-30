@@ -68,14 +68,13 @@ header("Location: admin.php");
 
 
 	if(
-		empty($_POST["email"])||
 		!isset($_POST["firstname"]) ||
 		!isset($_POST["lastname"]) || 
 		empty($_POST["pseudo"]) ||
 		empty($_POST["oldpassword"])||
 		empty($_POST["password"]) ||
 		empty($_POST["passwordConfirm"]) ||
-		count($_POST)!=8
+		count($_POST)!=7
 	){
 
 		die("Tentative de Hack ...");
