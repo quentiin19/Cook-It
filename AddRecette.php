@@ -29,7 +29,7 @@
                                                 <input type="file" name="fichier" id="inpFile" required="required">
 												<div class="image-preview" id="imagePreview">
 													<img src="" alt="image Preview" class="image-preview__image">
-													<span class="image-preview__default-text">Image Preview</span>
+													<span class="text-preview">Image Preview</span>
 											</div>
                                             </div>
                                         </div>
