@@ -42,9 +42,15 @@ if (isConnected() == $_SESSION['id']){
 						</div>
 					</div>
 					<div class="row">
-						<div class="col-lg-12 col-md-12 col-sm-12 bg-color arrondie">
-							<div>
+						<div class="col-lg-6 col-md-6 col-sm-6 bg-color arrondie">
 								<img class ="cardh" src="<?= $resultR['PICTURE_PATH']?>" ></img>						
+						</div>
+						<div class="col-lg-6 col-md-6 bg-color arrondie">
+							<h3 class="text-center">Ajouter une image </h3>
+							<input type="file" name="fichier" id="inpFile" required="required">
+							<div class="image-preview" id="imagePreview">
+								<img src="" alt="image Preview" class="image-preview__image">
+								<span class="image-preview__default-text">Image Preview</span>
 							</div>
 						</div>
 						
@@ -139,5 +145,5 @@ if (isConnected() == $_SESSION['id']){
 	</div>
 </div>
 
-
+<script src='preview-image.js'></script>
 <?php include "template/footer.php";?>
