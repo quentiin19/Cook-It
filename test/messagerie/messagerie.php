@@ -4,24 +4,22 @@ include '../../functions.php';
 
 
 $pdo = connectDB();
-
-if(isConnected()){
-    echo '<p id="id-sender" hidden="hidden">'.$_SESSION['id'].'</p>';
-    echo '<p id="id-receveur" hidden="hidden">'.$_GET['id'].'</p>';
-    echo '<p id="token" hidden="hidden">'.$_SESSION['token'].'</p>';
-}
-
 //Verification que l'un est bien abonné à l'autre
 $queryPrepared = $pdo->prepare("SELECT STATUS FROM SUBSCRIPTION WHERE ID_SUBSCRIBER = :sender AND ID_SUBSCRIPTION = :receveur");
-$queryPrepared->execute(["sender"=>$sender, "receveur"=>$receveur]);
+$queryPrepared->execute(["sender"=>$_SESSION['id'], "receveur"=>$_GET['id']]);
 $state1 = $queryPrepared->fetch();
 
 //vérification que l'autre est bien abonné à l'un
 $queryPrepared = $pdo->prepare("SELECT STATUS FROM SUBSCRIPTION WHERE ID_SUBSCRIBER = :sender AND ID_SUBSCRIPTION = :receveur");
-$queryPrepared->execute(["receveur"=>$sender, "sender"=>$receveur]);
+$queryPrepared->execute(["receveur"=>$_SESSION['id'], "sender"=>$_GET['id']]);
 $state2 = $queryPrepared->fetch();
 
 if($state1[0] == 1 && $state2[0] == 1){
+    if(isConnected()){
+        echo '<p id="id-sender" hidden="hidden">'.$_SESSION['id'].'</p>';
+        echo '<p id="id-receveur" hidden="hidden">'.$_GET['id'].'</p>';
+        echo '<p id="token" hidden="hidden">'.$_SESSION['token'].'</p>';
+    }
     
     $queryPrepared = $pdo->prepare("SELECT PSEUDO FROM USER WHERE ID = :id;");
     $queryPrepared->execute(['id'=>$_GET['id']]);
