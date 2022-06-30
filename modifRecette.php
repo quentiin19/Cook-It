@@ -18,7 +18,7 @@ if (isConnected() == $_SESSION['id'] || isAdmin()) {
 		$queryPrepared ->execute(["id" => $_SESSION["id"], "idr" => $_POST["idrecipe"]]);
 		$resultR = $queryPrepared->fetch();
 		
-		$queryPrepared = $pdo->prepare("SELECT *  FROM NEED WHERE ID_RECIPE = :id");
+		$queryPrepared = $pdo->prepare("SELECT * FROM NEED WHERE ID_RECIPE = :id;");
 		$queryPrepared ->execute(["id" => $_POST["idrecipe"]]);
 		$resultN = $queryPrepared->fetchAll();
 		
