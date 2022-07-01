@@ -15,6 +15,8 @@ if(isConnected()){
         $queryPrepared = $pdo->prepare("SELECT ID_RECIPE, PICTURE_PATH, TITLE, ID_CREATOR, PSEUDO FROM RECIPES, USER WHERE USER.ID = RECIPES.ID_CREATOR ORDER BY RECIPES.ID_RECIPE DESC;");
         $queryPrepared->execute();
         $recipes = $queryPrepared->fetchAll();
+        $pmax = ceil(count($recipes) / 20); //Calcule le nombre de pages totales
+
 
         foreach ($recipes as $recipe){
             echo '<div class="col-lg-3 col-md-4 col-sm-1 py-3">
@@ -39,24 +41,41 @@ if(isConnected()){
 
         </div>
 
-        <!-- PAGINATION 
+        <!-- PAGINATION --> 
         <nav aria-label="...">
         <ul class="pagination">
             <li class="page-item disabled">
-            <a class="page-link" href="#" tabindex="-1">Previous</a>
+            <a class="page-link" href="
+            <?php 
+            if ($_GET['p'] == 0){
+                echo'#';
+            }else{
+                echo'https://cookit.ovh/index.php?='.($_GET['p'] -1);
+            }
+            ?>">Previous</a>
             </li>
-            <li class="page-item"><a class="page-link" href="#">1</a></li>
-            <li class="page-item active">
-            <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+            <li>
+                <p> Pages : <?=$_GET['p'] .'/'.$pmax ?> </p> 
             </li>
-            <li class="page-item"><a class="page-link" href="#">3</a></li>
             <li class="page-item">
-            <a class="page-link" href="#">Next</a>
+            <a class="page-link" href="
+            <?php 
+            if ($_GET['p'] == $pmax){
+                echo'#';
+            }else{
+                echo'https://cookit.ovh/index.php?='.($_GET['p'] +1);
+            }
+            ?>">Next</a>
             </li>
         </ul>
-        </nav> -->
+        </nav> 
+
+
 
         <script src="ressources/js/ajax.js"></script>
         <?php // include "template/footer.php";?>
 
 
+<!-- PAGINATION --> 
+
+$
