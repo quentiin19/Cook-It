@@ -36,27 +36,10 @@ function clean_str_ajax(str){
     for (let k = 0; k < str.length; k++) {
         console.log("boucle numéro 1")
         for (let j = 0; j < a.length; j++) {
-            if (str[k] == a[j]){
-                new_str += 'a';
-                break;
-            }else if(str[k] == e[j]){
-                new_str += 'e';
-                break;
-            }else if(str[k] == i[j]){
-                new_str += 'i';
-                break;
-            }else if(str[k] == o[j]){
-                new_str += 'o';
-                break;
-            }else if(str[k] == u[j]){
-                new_str += 'u';
-                break;
-            }else if(str[k] == ' '){
+            if(str[k] == ' '){
                 new_str += '-';
-                break;
             }else{
                 new_str += str[k]
-                break;
             }
         }
     }
@@ -73,6 +56,7 @@ function onclickajax() {
 
     //envoi de la requete
     request_ajax.addEventListener("load", display_results_ajax);
+    //configuration de la requete
     request_ajax.open("GET", `https://cookit.ovh/ressources/api/api.php?keywords=${keywords}&action=1`);
     request_ajax.send();
 
@@ -81,9 +65,9 @@ function onclickajax() {
 
 function display_results_ajax() {
     recettes.innerHTML = "";
-    console.log(JSON.parse(request.response));
+    console.log(JSON.parse(request_ajax.response));
 
-    let recipes = JSON.parse(request.response);
+    let recipes = JSON.parse(request_ajax.response);
     console.log(recipes);
 
     for (const recipe of recipes) {
