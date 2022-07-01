@@ -85,7 +85,6 @@ header("Location: admin.php");
 
 	//récupérer les données du formulaire
 
-	$email = $_POST["email"];
 	$firstname = $_POST["firstname"];
 	$lastname = $_POST["lastname"];
 	$pseudo = $_POST["pseudo"];
@@ -97,31 +96,11 @@ header("Location: admin.php");
 	$errors = [];
 
 	//nettoyer les données
-
-	$email = strtolower(trim($email));
 	$firstname = ucwords(strtolower(trim($firstname)));
 	$lastname = strtoupper(trim($lastname));
 	$pseudo = ucwords(strtolower(trim($pseudo)));
 
 	// Verif champs
-
-	//Email OK
-	if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
-		$errors[] = "Email incorrect";
-	}else{
-
-		//Vérification l'unicité de l'email
-		$pdo = connectDB();
-		$queryPrepared = $pdo->prepare("SELECT ID from USER WHERE EMAIL=:email");
-
-		$queryPrepared->execute(["email"=>$email]);
-		
-		if(!empty($queryPrepared->fetch())){
-			$errors[] = "L'email existe déjà en bdd";
-		}
-
-
-	}
 
 	//prénom : Min 2, Max 45 ou empty
 	if( strlen($firstname)==1 || strlen($firstname)>45 ){
@@ -173,7 +152,7 @@ header("Location: admin.php");
 	//Redirection
 	header("Location: profil.php");
 	
-}else{
-	die("Il faut se connecter !!!");
+	}else{
+		die("Il faut se connecter !!!");
 }
 
