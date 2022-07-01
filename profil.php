@@ -63,11 +63,11 @@ include "template/header.php";
         ?>
 
 <div class="row">
-    <div class="container bg-color justify-content-center my-3 py-5 arrondie">
-        <div class="col-lg-3">
+    <div class="container bg-color justify-content-center my-3 py-3 arrondie">
+        <div class="col-lg-5">
             <img src=".<?= $user['PATH_AVATAR'] ?>" class="text-right cardh" alt="avatar.png">
         </div>
-        <div class="col-lg-9 col-md-9">
+        <div class="col-lg-7 col-md-5">
                 <div class="row">
                     <div class="col-lg-6 col-md-6 my-3">
                         <h4><?= $user['PSEUDO'] ?></h4>
