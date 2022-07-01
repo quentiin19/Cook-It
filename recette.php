@@ -95,10 +95,10 @@ echo '<p id="id-recette" hidden="hidden">'.$_GET['id'].'</p>';
 											foreach ($ingredients as $key => $ingredient) {
 												echo '
 														<tr>															
-																<td class="px-1"><img src="'.$ingredient['PICTURE_PATH'].'" height="70vh" width="70vw""></td>
-																<td class="px-1">'.$ingredient['NAME'].'</td>
-																<td class="px-1">'.$needs[$key]['QUANTITY'].'</td>
-																<td class="px-1">'.$ingredient['UNIT'].'</td>
+																<td class="px-1 text-right"><img src="'.$ingredient['PICTURE_PATH'].'" height="70vh" width="70vw""></td>
+																<td class="px-1 text-right">'.$ingredient['NAME'].'</td>
+																<td class="px-1 text-right">'.$needs[$key]['QUANTITY'].'</td>
+																<td class="px-1 text-right">'.$ingredient['UNIT'].'</td>
 															
 														</tr>';
 
