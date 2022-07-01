@@ -33,18 +33,17 @@
                                         <div class="row">
                                             <div class="col-lg-6 col-md-6 col-sm-6 pl-2">
                                                 <h3 class="text-center py-3">Votre Recette </h3>
-                                                <textarea class="form-control my-3" id="textAreaExample1"
-                                                    placeholder="Les étapes de votre recette" name="recette_description"
-                                                    rows="20"></textarea>
+                                                <textarea class="form-control my-3" id="textAreaExample1" placeholder="Les étapes de votre recette" name="recette_description" rows="20"></textarea>
                                             </div>
                                             <div class="col-lg-6 col-md-6 col-sm-6">
                                                 <h3 class="text-center py-3">Ajouter les ingrédients </h3>
 
                                                 <!--scroll-->
                                                 <div>
-                                                    <div class="overflow-auto" style="height : 300px">
+													<input type="text" id="search-bar-ingredient">
+                                                    <div id="ingredients" class="overflow-auto" style="height : 300px">
                                                         <?php
-											$pdo = connectDB();
+												$pdo = connectDB();
 
 												$queryPrepared = $pdo->prepare("SELECT * FROM INGREDIENTS;");
 												$queryPrepared->execute();
