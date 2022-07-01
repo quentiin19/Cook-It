@@ -3,7 +3,7 @@
 include 'template/header.php';
 ?>
 
-<div class="row " style ="background-color : #123456">
+<div class="row bg-danger " >
     <div>
         Blelalleno
     </div>
