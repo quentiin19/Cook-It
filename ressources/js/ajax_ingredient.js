@@ -51,8 +51,8 @@ function onclickingredients() {
 }
 
 
-function display_results_ingredient() {
-    let ingredients_resp = JSON.parse(request_ajax.response);
+function display_results_ingredient(){
+    let ingredients_resp = JSON.parse(request_ajax.response.toString());
     console.log(ingredients_resp);
     console.log(request_ajax.response);
 
