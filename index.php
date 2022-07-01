@@ -89,7 +89,7 @@ $p = $_GET['p'];
                 if ($_GET['p'] == 0){
                     echo'#';
                 }else{
-                    echo'https://cookit.ovh/index.php?='.($_GET['p'] -1);
+                    echo'https://cookit.ovh/index.php?='.($p -1);
                 }
                 ?>">Previous</a>
                 </li>
@@ -102,7 +102,7 @@ $p = $_GET['p'];
                 if ($_GET['p'] == $pmax){
                     echo'#';
                 }else{
-                    echo'https://cookit.ovh/index.php?='.($_GET['p'] +1);
+                    echo'https://cookit.ovh/index.php?='.($p + 1);
                 }
                 ?>">Next</a>
                 </li>
