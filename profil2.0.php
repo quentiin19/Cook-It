@@ -12,17 +12,17 @@ include 'template/header.php';
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-12">
+                <div class="col-lg-12 my-5 py-5">
                     <a href="#" >Modifier mon profil</a>
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-12">
+                <div class="col-lg-12 my-5 py-5">
                     <a href="#" >Modifier mon profil</a>
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-12">
+                <div class="col-lg-12 my-5 py-5">
                     <a href="#" >Modifier mon profil</a>
                 </div>
             </div>
