@@ -37,7 +37,7 @@ function clean_str_ajax(str){
 }
 
 function onclickingredients() {
-    console.log("maj");
+    console.log(clean_str_ajax(search_bar_ingredients.value));
     //récupération de la valeur dans la barre de recherche
     var keywords = clean_str_ajax(search_bar_ingredients.value);
 
