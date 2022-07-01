@@ -42,7 +42,7 @@
 
                                                 <!--scroll-->
                                                 <div>
-                                                    <div class="overflow-auto " style="height : 300px">
+                                                    <div class="overflow-auto" style="height : 300px">
                                                         <?php
 											$pdo = connectDB();
 
