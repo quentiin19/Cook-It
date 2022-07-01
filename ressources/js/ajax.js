@@ -2,6 +2,8 @@
 const request_ajax = new XMLHttpRequest;
 const request_admin = new XMLHttpRequest;
 
+console.log("testes");
+
 //elements du dom
 const search_bar_recipes = document.getElementById("search-bar-recipe");
 const result_ajax = document.getElementById("result-ajax");
@@ -18,6 +20,7 @@ search_bar_ingredients.addEventListener("input", onclickingredients);
 const id = document.getElementById("id-user").innerText;
 const token = document.getElementById("token-user").innerText;
 let adminDisplay = 0;
+
 
 
 function clean_str_ajax(str){
@@ -41,6 +44,7 @@ function clean_str_ajax(str){
 }
 
 function onclickingredients() {
+    console.log("maj");
     //récupération de la valeur dans la barre de recherche
     var keywords = clean_str_ajax(search_bar_recipes.value);
 
@@ -55,77 +59,99 @@ function onclickingredients() {
 
 
 function display_results_ingredient() {
-    ingredients.innerHTML = "";
     console.log(JSON.parse(request_ajax.response));
 
     let ingredients_resp = JSON.parse(request_ajax.response);
     console.log(ingredients_resp);
 
-    for (const ingredient of ingredients_resp){
-        const main_div = document.createElement("div");
-        main_div.setAttribute("class", "col-lg-12 col-md-12 col-sm-12 background-body arrondie my-2");
+    //hide tous les éléments
+    for (const element of ingredients.childNodes) {
+        element.hidden = true;
+    }
 
-        const second_div = document.createElement("div");
-        second_div.setAttribute("class", "row align-items-center");
-
-        const checkbox_div = document.createElement("div");
-        checkbox_div.setAttribute("class", "col-lg-1 col-md-1 col-sm-6");
-
-        const checkbox = document.createElement("input");
-        checkbox.setAttribute("type", "checkbox");
-        checkbox.setAttribute("name", `checkbox${ingredient['ID']}`);
-
-        checkbox_div.appendChild(checkbox);
-
-
-        const img_div = document.createElement("div");
-        img_div.setAttribute("class", "col-lg-3 col-md-3 col-sm-6");
-
-        const img = document.createElement("img");
-        img.setAttribute("src", `${ingredient['PICTURE_PATH']}`);
-        img.setAttribute("height", "70vh");
-        img.setAttribute("width", "70vw");
-
-        img_div.appendChild(img);
+    //afficher tous les éléments présents dans ingredients_resp
+    for (const element of ingredients.childNodes) {
+        for (const ingredient of ingredients_resp) {
+            if(element.id == ingredient['ID']){
+                element.hidden = false;
+                break;
+            }
+        }
+    }
 
 
-        const name_div = document.createElement("div");
-        name_div.setAttribute("class", "col-lg-3 col-md-3 col-sm-3");
-
-        const name = document.createElement("p");
-        name.innerText = `${ingredient['NAME']}`;
-
-        name_div.appendChild(name);
 
 
-        const quantity_div = document.createElement("div");
-        quantity_div.setAttribute("class", "col-lg-3 col-md-2 col-sm-6");
-
-        const quantity = document.createElement("input");
-        quantity.setAttribute("class", "input-width text-dark");
-        quantity.setAttribute("type", "text");
-        quantity.setAttribute("name", `quantity${ingredient['ID']}`);
-        quantity.setAttribute("placeholder", "quantité");
-
-        quantity_div.appendChild(quantity);
 
 
-        const unit_div = document.createElement("div");
-        unit_div.setAttribute("class", "col-lg-2 col-md-3 col-sm-3");
-        unit_div.innerText = `${ingredient['UNIT']}`;
 
 
-        second_div.appendChild(checkbox_div);
-        second_div.appendChild(img_div);
-        second_div.appendChild(name_div);
-        second_div.appendChild(quantity_div);
-        second_div.appendChild(unit_div);
 
-        main_div.appendChild(second_div);
+    // for (const ingredient of ingredients_resp){
+    //     const main_div = document.createElement("div");
+    //     main_div.setAttribute("class", "col-lg-12 col-md-12 col-sm-12 background-body arrondie my-2");
 
-        ingredients.appendChild(main_div);
+    //     const second_div = document.createElement("div");
+    //     second_div.setAttribute("class", "row align-items-center");
+
+    //     const checkbox_div = document.createElement("div");
+    //     checkbox_div.setAttribute("class", "col-lg-1 col-md-1 col-sm-6");
+
+    //     const checkbox = document.createElement("input");
+    //     checkbox.setAttribute("type", "checkbox");
+    //     checkbox.setAttribute("name", `checkbox${ingredient['ID']}`);
+
+    //     checkbox_div.appendChild(checkbox);
 
 
+    //     const img_div = document.createElement("div");
+    //     img_div.setAttribute("class", "col-lg-3 col-md-3 col-sm-6");
+
+    //     const img = document.createElement("img");
+    //     img.setAttribute("src", `${ingredient['PICTURE_PATH']}`);
+    //     img.setAttribute("height", "70vh");
+    //     img.setAttribute("width", "70vw");
+
+    //     img_div.appendChild(img);
+
+
+    //     const name_div = document.createElement("div");
+    //     name_div.setAttribute("class", "col-lg-3 col-md-3 col-sm-3");
+
+    //     const name = document.createElement("p");
+    //     name.innerText = `${ingredient['NAME']}`;
+
+    //     name_div.appendChild(name);
+
+
+    //     const quantity_div = document.createElement("div");
+    //     quantity_div.setAttribute("class", "col-lg-3 col-md-2 col-sm-6");
+
+    //     const quantity = document.createElement("input");
+    //     quantity.setAttribute("class", "input-width text-dark");
+    //     quantity.setAttribute("type", "text");
+    //     quantity.setAttribute("name", `quantity${ingredient['ID']}`);
+    //     quantity.setAttribute("placeholder", "quantité");
+
+    //     quantity_div.appendChild(quantity);
+
+
+    //     const unit_div = document.createElement("div");
+    //     unit_div.setAttribute("class", "col-lg-2 col-md-3 col-sm-3");
+    //     unit_div.innerText = `${ingredient['UNIT']}`;
+
+
+    //     second_div.appendChild(checkbox_div);
+    //     second_div.appendChild(img_div);
+    //     second_div.appendChild(name_div);
+    //     second_div.appendChild(quantity_div);
+    //     second_div.appendChild(unit_div);
+
+    //     main_div.appendChild(second_div);
+
+    //     ingredients.appendChild(main_div);
+
+//=====================================================================
         
 
         // <div class="col-lg-12 col-md-12 col-sm-12 background-body arrondie my-2">
@@ -147,7 +173,7 @@ function display_results_ingredient() {
         //         </div>		
         //     </div>
         // </div>
-    }
+    //}
 }
 
 
