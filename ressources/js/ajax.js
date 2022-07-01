@@ -69,18 +69,16 @@ function onclickingredients() {
 
 
 function display_results_ingredient() {
-    console.log(JSON.parse(request_ajax.response));
-
     let ingredients_resp = JSON.parse(request_ajax.response);
-    console.log(ingredients_resp[0]);
+    console.log(ingredients_resp);
 
     //hide tous les éléments
-    for (const element of ingredients_resp[0]) {
+    for (const element of ingredients) {
         element.hidden = true;
     }
 
     //afficher tous les éléments présents dans ingredients_resp
-    for (const element of ingredients_resp[0]) {
+    for (const element of ingredients) {
         for (const ingredient of ingredients_resp) {
             if(element.id == ingredient['ID']){
                 element.hidden = false;

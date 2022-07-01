@@ -50,7 +50,7 @@
 												$results = $queryPrepared->fetchAll();
 
 												foreach ($results as $key => $ingredient) { 
-													echo '<div class="col-lg-12 col-md-12 col-sm-12 background-body arrondie my-2">
+													echo '<div id="'.$ingredient['ID'].'"class="col-lg-12 col-md-12 col-sm-12 background-body arrondie my-2">
 																<div class="row align-items-center">
 																		<div class="col-lg-1 col-md-1 col-sm-6">
 																			<input  type="checkbox" name="checkbox'.$ingredient['ID'].'">
@@ -228,6 +228,6 @@ if(!empty($_POST)){
 
 ?>
 
-<script src='ressources/js/ajax.js'></script>
+<script src='ressources/js/ajax_ingredient.js'></script>
 <script src='preview-image.js'></script>
 <?php include "template/footer.php";?>
