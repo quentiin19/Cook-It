@@ -5,7 +5,7 @@ include "template/header.php";
 if (isConnected() == $_SESSION['id']){
 	$pdo = connectDB();
 	$queryPrepared = $pdo->prepare("SELECT *  FROM RECIPES WHERE ID_SUBSCRIBER = :idsber AND STATUS = 1;");
-	$queryPrepared->execute(["idr" => $_GET['id']]);
+	$queryPrepared->execute(["idsber" => $_GET['id']]);
 	$friends = $queryPrepared->fetch();
 
 }
