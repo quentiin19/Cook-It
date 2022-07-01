@@ -12,17 +12,18 @@ const search_bar_ingredients = document.getElementById("search-bar-ingredient");
 const ingredients = document.getElementById("ingredients");
 
 //écouteurs
-if (search_bar_recipes === null) {
+if (search_bar_recipes != null) {
     search_bar_recipes.addEventListener("input", onclickrecipe);
+
+    //variable
+    const id = document.getElementById("id-user").innerText;
+    const token = document.getElementById("token-user").innerText;
+    let adminDisplay = 0;
 }
-if (search_bar_ingredients === null){
+if (search_bar_ingredients != null){
     search_bar_ingredients.addEventListener("input", onclickingredients);
 }
 
-//variable
-const id = document.getElementById("id-user").innerText;
-const token = document.getElementById("token-user").innerText;
-let adminDisplay = 0;
 
 
 
