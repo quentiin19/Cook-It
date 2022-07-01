@@ -8,8 +8,9 @@ const recettes = document.getElementById("recettes");
 const search_bar_ingredients = document.getElementById("search-bar-recipe");
 const ingredients = document.getElementById("ingredients");
 
-//écouteur
-search_bar.addEventListener("input", onclickrecipe);
+//écouteurs
+search_bar_recipes.addEventListener("input", onclickrecipe);
+search_bar_ingredients.addEventListener("input", onclickingredients);
 
 
 function clean_str_ajax(str){
