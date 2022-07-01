@@ -149,7 +149,7 @@ header("Location: admin.php");
 	updateLogs($id, "modification du profil");
 
 	//Redirection
-	header("Location: profil.php");
+	header("Location: profil.php?id=".$id);
 	
 	}else{
 		die("Il faut se connecter !!!");
