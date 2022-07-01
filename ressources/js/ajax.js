@@ -7,14 +7,17 @@ console.log("testes");
 const search_bar_recipes = document.getElementById("search-bar-recipe");
 const result_ajax = document.getElementById("result-ajax");
 const recettes = document.getElementById("recettes");
-console.log(search_bar_recipes);
 
 const search_bar_ingredients = document.getElementById("search-bar-ingredient");
 const ingredients = document.getElementById("ingredients");
 
 //écouteurs
-search_bar_recipes.addEventListener("input", onclickrecipe);
-search_bar_ingredients.addEventListener("input", onclickingredients);
+if (search_bar_recipes === null) {
+    search_bar_recipes.addEventListener("input", onclickrecipe);
+}
+if (search_bar_ingredients === null){
+    search_bar_ingredients.addEventListener("input", onclickingredients);
+}
 
 //variable
 const id = document.getElementById("id-user").innerText;
