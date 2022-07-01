@@ -209,9 +209,13 @@ if(!empty($_POST)){
 	$queryPrepared = $pdo->prepare("SELECT ID_RECIPE FROM RECIPES WHERE ID_CREATOR=:id AND TITLE=:title");
 	$queryPrepared->execute(["id"=>$_SESSION['id'], "title"=>$recette]);
 	$result = $queryPrepared->fetch();
+	
+	$queryPrepared = $pdo->prepare("SELECT count(ID) FROM INGREDIENTS;");
+	$queryPrepared->execute();
+	$nbingredients = $queryPrepared->fetch();
 
 	//insertion ingrédient dans la table NEED
-	for ($i = 1; $i<6; $i++){
+	for ($i = 1; $i<$nbingredients; $i++){
 		if(isset($_POST['checkbox'.$i])){
 			$quantity = $_POST["quantity".$i];
 			$queryPrepared = $pdo->prepare("INSERT INTO NEED VALUES (:quantity, :id_ingr, :id_recipe)");

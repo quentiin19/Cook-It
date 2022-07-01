@@ -133,8 +133,13 @@ if (isConnected() == $_SESSION['id'] || isAdmin()) {
 		$queryPrepared = $pdo->prepare("UPDATE RECIPES set DESCRIPTION = :desc WHERE ID_RECIPE = :id");
 		$queryPrepared ->execute(["desc"=>$_POST["recette_description"],"id" => $_POST["idrecipe"]]);
 		
-		//on inscrit les nouvelles valeurs des ingredients 1 à 1
-		for ($i = 1; $i<6; $i++){
+		
+		$queryPrepared = $pdo->prepare("SELECT count(ID) FROM INGREDIENTS;");
+		$queryPrepared->execute();
+		$nbingredients = $queryPrepared->fetch();
+
+		//on inscrit les nouvelles valeurs des ingredients 1 à count id ingredient
+		for ($i = 1; $i<$nbingredients; $i++){
 			if(isset($_POST['checkbox'.$i])){
 				$quantity = $_POST["quantity".$i];
 				$queryPrepared = $pdo->prepare("INSERT INTO NEED VALUES (:quantity, :id_ingr, :id_recipe)");
