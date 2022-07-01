@@ -9,26 +9,20 @@ class API{
 
         //séparation de tous les mots dans un tableau
         $array_key_words = explode('-', $key_words);
-        print_r($array_key_words);
 
         //création des tableaux qui vont permettre de gérer la pertinence des recherches
         $recipes = array();
         $pertinence = array();
 
-        echo '=========requetes==========';
         //pour chaque mots, on recherche dans la BDD si une recette correspond
         foreach ($array_key_words as $index=>$word) {
             $queryPrepared = $pdo->prepare("SELECT ID_RECIPE AS ID FROM RECIPES WHERE TITLE LIKE :word;");
             $queryPrepared->execute(["word"=>"%".$word."%"]);
             $queryResults = $queryPrepared->fetchAll();
-            echo $word;
-            print_r($queryResults);
 
             for ($i = 0; $i < count($queryResults); $i++){ 
-                echo ', '.array_search($queryResults[$i][0], $recipes, false);
                 //vérification de la présence dans le tableau $recipes de la recette (0 == false retourne vrai en php)
                 if (array_search($queryResults[$i][0], $recipes, false) == 0 || array_search($queryResults[$i][0], $recipes, false) != false){
-                    echo 'trouvé';
                     $index = array_search($queryResults[$i][0], $recipes, false);
                     $pertinence[$index] += 1; 
                     
@@ -39,11 +33,7 @@ class API{
                     array_push($pertinence, 1);
                 }
             }
-            echo '=====================';
         }
-
-        print_r($recipes);
-        print_r($pertinence);
 
         //les recettes les plus pertinentes seront trié par index du plus petit au plus grand
         $result = array();
