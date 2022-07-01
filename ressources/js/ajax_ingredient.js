@@ -60,6 +60,9 @@ function display_results_ingredient(){
         element.hidden = true;
     }
 
+
+    console.log(ingredients.children);
+    console.log(ingredients.childNodes);
     //afficher tous les éléments présents dans ingredients_resp
     for (const element of ingredients.childNodes) {
         for (const ingredient of ingredients_resp) {
