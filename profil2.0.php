@@ -3,7 +3,7 @@
 include 'template/header.php';
 ?>
 
-<div class="row " >
+<div class="row h-100" >
     <div class="col-lg-2 col-md-2 col-sm-2 bg-danger ">
         Blelalleno
     </div>
