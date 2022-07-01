@@ -22,12 +22,12 @@ $p=$_GET['p'];
         print_r($recipes);
         echo '</pre>';
 
-        if ((($p -1)*20 + 19)> count($recipes)){
-            $q = count($recipes);
+        if ((($p -1)*20 + 19)> count($recipes) -1){
+            $q = count($recipes) -1;
         }else{
             $q = ($p -1)*20 + 19;
         }
-        
+
         for($i = (($p -1)*20); $i < $q; $i++){
             echo '<div class="col-lg-3 col-md-4 col-sm-1 py-3">
                     <div class="card mb-4 shadow-sm bg-color py-3 px-3 arrondie">
