@@ -25,7 +25,7 @@ class API{
             print_r($queryResults);
 
             for ($i = 0; $i < count($queryResults); $i++){ 
-                echo array_search($queryResults[$i][0], $recipes, false);
+                echo ', '.array_search($queryResults[$i][0], $recipes, false);
                 if (array_search($queryResults[$i][0], $recipes, false) != false){
                     $index = array_search($queryResults[$i][0], $recipes, false);
                     $pertinence[$index] += 1; 
