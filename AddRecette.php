@@ -223,9 +223,10 @@ if(!empty($_POST)){
 		}
 	}
 	
+	echo $nbingredients;
 
 
-	header("Location: recette.php?id=".$result['ID_RECIPE']);
+	//header("Location: recette.php?id=".$result['ID_RECIPE']);
 }
 
 ?>
