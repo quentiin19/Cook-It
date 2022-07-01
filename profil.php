@@ -154,7 +154,7 @@ include "template/header.php";
                         if ($_GET['id']== $_SESSION['id'])
                         echo '
                         <div class="col-lg-3">
-                            <a href="<?= https://cookit.ovh/friendrequests.php?id='.$_GET['id'].'&display=2"><h4>Demandesd\'amis : '.$friendR[0].'</h4><a>
+                            <a href="https://cookit.ovh/friendrequests.php?id='.$_GET['id'].'&display=2"><h4>Demandesd\'amis : '.$friendR[0].'</h4><a>
                         </div>'
                         ?>
                         
