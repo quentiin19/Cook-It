@@ -69,7 +69,6 @@ function display_results_ingredient(){
             console.log(`${element.id} -- ${ingredient['ID']}`);
             if(element.id == ingredient['ID']){
                 element.hidden = false;
-
                 break;
             }
         }
