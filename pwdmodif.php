@@ -1,0 +1,44 @@
+<?php include "template/header.php";?>
+<?php
+if (isConnected()) {
+?>
+<div class="row">
+			<div class="col-lg-12 col-md-12 col-sm-12 h-auto arrondie d-flex justify-content-center  ">
+					  <div class="container py-2  h-auto  ">
+					    <div class="row d-flex justify-content-center align-items-center h-100">
+					      
+					        <div class="card bg-color text-white" style="border-radius: 1rem;">
+					          <div class="card-body  text-center">
+
+					            <div class="mb-md-5 mt-md-4 pb-5">
+								<div class="row">
+									<div class="col-lg-12 pb-3" >	
+										<?php //include "avatar/avatar.php"; ?>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-lg-2 col-md-0 col-sm-0"></div>
+									<div class="col-lg-8 col-md-12 col-sm-12 bg-color arrondie">
+										<form method="POST" action="UpdatePWD.php">
+											<h2 class="py-3"> Modifier mon mot de passe </h2>
+											<input type="password" class="form-control" name="oldpassword" placeholder="ancien mot de passe"  required="required"><br>
+											<input type="password" class="form-control" name="password" placeholder="nouveau mot de passe" required="required"><br>
+											<input type="password" class="form-control" name="passwordConfirm" placeholder="confirmation" required="required"><br>
+											<input  type="submit" class=" ml-3 mt-5 btn btn-light btn-lg py-2 " value="Modifier">
+										</form>
+									</div>
+									<div class="col-lg-2 col-md-0 col-sm-0"></div>
+
+					            </div>
+					           </div>
+					        </div>
+					    </div>
+					  </div>
+			</div>
+</div>
+
+
+<?php include "template/footer.php";?>
+<?php
+}
+?>
