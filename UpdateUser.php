@@ -19,7 +19,7 @@ if(isAdmin()){
 
 	}
 
-$id=$_POST['id'];
+$id=$_SESSION['id'];
 
 //récupérer les données du formulaire
 $firstname = $_POST["firstname"];
