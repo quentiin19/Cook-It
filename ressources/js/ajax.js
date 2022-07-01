@@ -299,6 +299,7 @@ function display_results_recipe() {
 
 function changeAdminDP(){
     adminRespons = JSON.parse(request_admin.response);
+    console.log(adminRespons);
     if (adminRespons == 1) {
         adminDisplay = 1;
     }
