@@ -215,7 +215,7 @@ if(!empty($_POST)){
 	$nbingredients = $queryPrepared->fetch();
 
 	//insertion ingrédient dans la table NEED
-	for ($i = 1; $i<$nbingredients; $i++){
+	for ($i = 1; $i<$nbingredients[0]; $i++){
 		if(isset($_POST['checkbox'.$i])){
 			$quantity = $_POST["quantity".$i];
 			$queryPrepared = $pdo->prepare("INSERT INTO NEED VALUES (:quantity, :id_ingr, :id_recipe)");
