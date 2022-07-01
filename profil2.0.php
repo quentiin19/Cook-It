@@ -71,7 +71,7 @@ include 'template/header.php';
                 if ($p == 1){
                     echo'#';
                 }else{
-                    echo'https://cookit.ovh/index.php?p='.($p -1);
+                    echo'https://cookit.ovh/index2.0.php?p='.($p -1);
                 }
                 ?>">Previous</a>
                 </li>
@@ -84,7 +84,7 @@ include 'template/header.php';
                 if ($p == $pmax){
                     echo'#';
                 }else{
-                    echo'https://cookit.ovh/index.php?p='.($p + 1);
+                    echo'https://cookit.ovh/index2.0.php?p='.($p + 1);
                 }
                 ?>">Next</a>
                 </li>
