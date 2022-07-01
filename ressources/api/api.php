@@ -72,6 +72,7 @@ class API{
                 }
             }
             echo $index_max;
+            print_r($recipes);
             array_push($result, $recipes[$index_max]);
             unset($recipes[$index_max]);
             unset($pertinence[$index_max]);
