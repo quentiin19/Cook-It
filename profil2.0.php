@@ -13,13 +13,19 @@ include 'template/header.php';
                 </div>
             </div>
             <div class="row">
-                <a href="#" >Modifier mon profil</a>
+                <div class="col-lg-12">
+                    <a href="#" >Modifier mon profil</a>
+                </div>
             </div>
             <div class="row">
-                <a href="#" >Modifier mon profil</a>
+                <div class="col-lg-12">
+                    <a href="#" >Modifier mon profil</a>
+                </div>
             </div>
             <div class="row">
-                <a href="#" >Modifier mon profil</a>
+                <div class="col-lg-12">
+                    <a href="#" >Modifier mon profil</a>
+                </div>
             </div>
         </div>
     </div>
