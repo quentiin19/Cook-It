@@ -3,6 +3,7 @@ session_start();
 require "functions.php";
 echo '<pre>';print_r($_POST);echo '</pre>';
 echo '<pre>';print_r($_SESSION);echo '</pre>';
+$id=$_SESSION['id'];
 //Vérification si admin
 if(isAdmin()){
 	$pdo = connectDB();
@@ -18,7 +19,7 @@ if(isAdmin()){
 
 	}
 
-$id=$_SESSION['id'];
+
 
 
 //récupérer les données du formulaire
@@ -58,7 +59,6 @@ updateLogs($id, "modification du profil par un administrateur (".$_SESSION['id']
 //redirection vers la page membre
 header("Location: admin.php");
 
-echo $id;
 }elseif(isConnected() == $id){
 
 	$pdo = connectDB();
