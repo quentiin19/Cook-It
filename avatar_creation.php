@@ -47,7 +47,7 @@ $queryPrepared->execute(["path"=>$path, "id"=>$_SESSION['id']]);
 
 
 
-//header("Location: index.php");
+header("Location: index.php");
 
 
 

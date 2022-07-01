@@ -73,6 +73,7 @@ function onclickajax() {
 
     //envoi de la requete
     request_ajax.addEventListener("load", display_results_ajax);
+    //configuration de la requete
     request_ajax.open("GET", `https://cookit.ovh/ressources/api/api.php?keywords=${keywords}&action=1`);
     request_ajax.send();
 
