@@ -2,6 +2,8 @@
 const request_ajax = new XMLHttpRequest;
 const request_admin = new XMLHttpRequest;
 
+console.log("testes");
+
 //elements du dom
 const search_bar_recipes = document.getElementById("search-bar-recipe");
 const result_ajax = document.getElementById("result-ajax");
@@ -19,7 +21,6 @@ const id = document.getElementById("id-user").innerText;
 const token = document.getElementById("token-user").innerText;
 let adminDisplay = 0;
 
-console.log("testes");
 
 
 function clean_str_ajax(str){
