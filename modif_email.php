@@ -32,7 +32,7 @@ include "template/header.php";
                 </div>
             </div>
     </div>
-    <div class="col-lg-10 col-md-10 col-sm-10 bg-coleur">
+    <div class="col-lg-10 col-md-10 col-sm-10 ">
     <?php
     if (isConnected()) {
 			$pdo = connectDB();
@@ -42,7 +42,7 @@ include "template/header.php";
 			$results = $queryPrepared->fetch();
     ?>
 <div class="row">
-<div class="col-lg-12 col-md-12 col-sm-12 h-auto arrondie d-flex justify-content-center  ">
+<div class="col-lg-12 col-md-12 col-sm-12 h-auto arrondie d-flex justify-content-center my-5 ">
           <div class="container py-2  h-auto  ">
             <div class="row d-flex justify-content-center align-items-center h-100">
               
