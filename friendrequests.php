@@ -24,8 +24,8 @@ echo'</pre>';
                 <div>
                     <?= $friend['ID_SUBSCRIBER'] ?>  
                 </div>
-                <button type="button" class="btn btn"><a href="https://cookit.ovh/friendRaccepted.php?id=<?=$friend['ID_SUBSCRIPTION']?>&?ids=<?=$friend['ID_SUBSCRIBER']?>" class ="bg-light rounded my-3"> Accepter</a></button>
-                <button type="button" class="btn btn"><a href="https://cookit.ovh/friendRrefused.php?id=<?=$friend['ID_SUBSCRIPTION']?>&?ids=<?=$friend['ID_SUBSCRIBER']?>" class ="bg-light rounded my-3"> Refuser</a></button>
+                <button type="button" class="btn btn"><a href="https://cookit.ovh/friendRaccepted.php?id=<?=$friend['ID_SUBSCRIPTION']?>&ids=<?=$friend['ID_SUBSCRIBER']?>" class ="bg-light rounded my-3"> Accepter</a></button>
+                <button type="button" class="btn btn"><a href="https://cookit.ovh/friendRrefused.php?id=<?=$friend['ID_SUBSCRIPTION']?>&ids=<?=$friend['ID_SUBSCRIBER']?>" class ="bg-light rounded my-3"> Refuser</a></button>
                 
             </div>
         </div>
