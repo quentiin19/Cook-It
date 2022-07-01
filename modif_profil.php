@@ -37,7 +37,7 @@ if (isConnected()) {
 											<h3 class="py-3"> Modifier mon mot de passe </h3>
 											<input type="password" class="form-control" name="oldpassword" placeholder="mot de passe"  required="required"><br>
 											<?php
-											echo '<a href="pwdmodif.php?id="'.$_SESSION["id"];
+											echo '<a href="pwdmodif.php?id="'.$_SESSION["id"].'>Modifier votre Mot de passe</a>';
 											?>
 											<input  type="submit" class=" ml-3 mt-5 btn btn-light btn-lg py-2 " value="Modifier">
 										</form>
