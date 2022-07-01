@@ -55,7 +55,6 @@ function onclickingredients() {
 
 
 function display_results_ingredient() {
-    ingredients.innerHTML = "";
     console.log(JSON.parse(request_ajax.response));
 
     let ingredients_resp = JSON.parse(request_ajax.response);
