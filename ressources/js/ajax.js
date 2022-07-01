@@ -299,7 +299,7 @@ function display_results_recipe() {
 
 function changeAdminDP(){
     adminRespons = JSON.parse(request_admin.response);
-    console.log(adminRespons);
+    console.log(request_admin.response);
     if (adminRespons == 1) {
         adminDisplay = 1;
     }
