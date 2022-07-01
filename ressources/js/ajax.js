@@ -176,63 +176,58 @@ function display_results_recipe() {
         main_div.setAttribute("class", "col-lg-3 col-md-4 col-sm-1 py-3");
 
         const second_div = document.createElement("div");
-        second_div.setAttribute("class", "card cardh mb-4 shadow-sm bg-color py-3 px-3 arrondie");
-        second_div.setAttribute("style", "width: 35rem");
-
+        second_div.setAttribute("class", "card mb-4 shadow-sm bg-color py-3 px-3 arrondie");
 
         const a = document.createElement("a");
         a.setAttribute("href", `https://cookit.ovh/recette.php?id=${recipe['ID_RECIPE']}`);
 
         const img = document.createElement("img");
         img.setAttribute("src", `${recipe['PICTURE_PATH']}`);
-        img.setAttribute("height", "100px");
-        img.setAttribute("width", "100%");
+        img.setAttribute("class", "card-img-top cardh");
 
-        const third_div = document.createElement("div");
-        third_div.setAttribute("class", "card-body arrondie");
-
-        const fourth_div = document.createElement("div");
-        fourth_div.setAttribute("class", "row");
-
-        const fifth_div = document.createElement("div");
-        fifth_div.setAttribute("class", "col-lg-3 col-md-3 col-sm-3");
-
-        const sixth_div = document.createElement("div");
-        sixth_div.setAttribute("class", "col-lg-6 col-md-6 col-sm-6 px-2 py-2 border");
-        sixth_div.setAttribute("height", "100px");
+        const title_div = document.createElement("div");
+        title_div.setAttribute("class", "card-body text-center arrondie");
 
         const title = document.createElement("h4");
         title.innerText = `${recipe['TITLE']}`;
 
-        const creator = document.createElement("p");
-        creator.innerText = `Créé par ${recipe['PSEUDO']}`;
+        const creator = document.createElement("a");
+        creator.setAttribute("href", `https://cookit.ovh/profil.php?id=${recipe['ID_CREATOR']}`);
+        creator.setAttribute("class", "btn btn-secondary");
+        creator.setAttribute("style", "height : 30px;");
+        creator.innerHTML = `<p>Créé par ${recipe['PSEUDO']}</p>`;
 
-        const seventh_div = document.createElement("div");
-        seventh_div.setAttribute("class", "col-lg-3 col-md-3 col-sm-3");
+        title_div.appendChild(title);
+        title_div.appendChild(creator);
 
 
 
+        const admin_div = document.createElement("div");
+        admin_div.setAttribute("class", "text-right");
 
-        
-        sixth_div.appendChild(title);
-        sixth_div.appendChild(creator);
+        if (adminDisplay == 1){
 
-        fourth_div.appendChild(fifth_div);
-        fourth_div.appendChild(sixth_div);
-        fourth_div.appendChild(seventh_div);
+            const aAdmin = document.createElement("a");
+            aAdmin.setAttribute("href", `https://cookit.ovh/delRecette.php?id=${recipe['ID_RECIPE']}`);
 
-        third_div.appendChild(fourth_div);
+            const btnAdmin = document.createElement("button");
+            //---------------------------------------------------------------
+            btnAdmin.setAttribute("class", "btn btn-danger px-3");
+            btnAdmin.innerHTML = '<i class="glyphicon glyphicon-trash" aria-hidden="true"></i>';
+
+            admin_div.appendChild(aAdmin);
+            admin_div.appendChild(btnAdmin);
+        }
 
         a.appendChild(img);
-        a.appendChild(third_div);
+        a.appendChild(title_div);
+        a.appendChild(admin_div);
 
         second_div.appendChild(a);
-
         main_div.appendChild(second_div);
 
-        recettes.appendChild(main_div);
 
-        //---------------------------------------------------------------
+ //---------------------------------------------------------------
 
 
 
@@ -241,18 +236,62 @@ function display_results_recipe() {
         //                 <a href="https://cookit.ovh/recette.php?id='.$recipe['ID_RECIPE'].'">
         //                 <img src="'.$recipe['PICTURE_PATH'].'" class="card-img-top cardh"> </img>
         //                 <div class="card-body text-center arrondie">
-        //                             <h4 class="text-white">'.$recipe['TITLE'].'</h4>
-        //                             <a href="https://cookit.ovh/profil.php?id='.$recipe['ID_CREATOR'].'" class=" btn btn-secondary" style="height : 30px"><p>Créé par '.$recipe['PSEUDO'].'</p></a>
+//                             <h4 class="text-white">'.$recipe['TITLE'].'</h4>
+//                             <a href="https://cookit.ovh/profil.php?id='.$recipe['ID_CREATOR'].'" class=" btn btn-secondary" style="height : 30px"><p>Créé par '.$recipe['PSEUDO'].'</p></a>
         //                 </div>';
         //                 if (isAdmin()){
         //                     echo'<div class="text-right">
-        //                             <a href="https://cookit.ovh/delRecette.php?id='.$recipe['ID_RECIPE'].'"><button type="button" class="btn btn-danger px-3"><i class="glyphicon glyphicon-trash" aria-hidden="true"></i></button></a>
+        //                             <a href="https://cookit.ovh/delRecette.php?id='.$recipe['ID_RECIPE'].'">
+                                        //     <button type="button" class="btn btn-danger px-3">
+                                        //         <i class="glyphicon glyphicon-trash" aria-hidden="true"></i>
+                                        //     </button>
+                                        // </a>
         //                         </div>';
         //                 }
                         
         //                 echo'</a>        
         //             </div>
         //         </div>'
+
+
+
+
+        // const fourth_div = document.createElement("div");
+        // fourth_div.setAttribute("class", "row");
+
+        // const fifth_div = document.createElement("div");
+        // fifth_div.setAttribute("class", "col-lg-3 col-md-3 col-sm-3");
+
+        // const sixth_div = document.createElement("div");
+        // sixth_div.setAttribute("class", "col-lg-6 col-md-6 col-sm-6 px-2 py-2 border");
+        // sixth_div.setAttribute("height", "100px");
+
+        // const crjeator = document.createElement("p");
+        // creator.innerText = `Créé par ${recipe['PSEUDO']}`;
+
+        // const seventh_div = document.createElement("div");
+        // seventh_div.setAttribute("class", "col-lg-3 col-md-3 col-sm-3");
+
+
+        // sixth_div.appendChild(title);
+        // sixth_div.appendChild(creator);
+
+        // fourth_div.appendChild(fifth_div);
+        // fourth_div.appendChild(sixth_div);
+        // fourth_div.appendChild(seventh_div);
+
+        // third_div.appendChild(fourth_div);
+
+        // a.appendChild(img);
+        // a.appendChild(third_div);
+
+        // second_div.appendChild(a);
+
+        // main_div.appendChild(second_div);
+
+        // recettes.appendChild(main_div);
+
+       
     }
 }
 
