@@ -29,7 +29,7 @@ $p=$_GET['p'];
                         <img src="'.$recipes[$i]['PICTURE_PATH'].'" class="card-img-top cardh"> </img>
                         <div class="card-body text-center arrondie">
                                     <h4 class="text-white">'.$recipes[$i]['TITLE'].'</h4>
-                                    <a href="https://cookit.ovh/profil.php?id='.$recipes[$i]['ID_CREATOR'].'" class=" btn btn-secondary" style="height : 30px"><p>Créé par '.$recipe['PSEUDO'].'</p></a>
+                                    <a href="https://cookit.ovh/profil.php?id='.$recipes[$i]['ID_CREATOR'].'" class=" btn btn-secondary" style="height : 30px"><p>Créé par '.$recipes[$i]['PSEUDO'].'</p></a>
                         </div>';
                         if (isAdmin()){
                             echo'<div class="text-right">
