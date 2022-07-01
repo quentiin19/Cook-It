@@ -23,6 +23,7 @@ $p = $_GET['p'];
         $queryPrepared->execute();
         $recipes = $queryPrepared->fetchAll();
         $pmax = ceil(count($recipes) / 20); //Calcule le nombre de pages totales
+        echo $pmax;
 
         // echo '<pre>';
         // print_r($recipes);
@@ -81,12 +82,11 @@ $p = $_GET['p'];
     </div>
         <!-- PAGINATION --> 
         <div class="row">
-            <nav>
             <ul class="pagination">
-                <li class="page-item disabled">
+                <li>
                 <a class="page-link" href="
                 <?php 
-                if ($_GET['p'] == 0){
+                if ($p == 0){
                     echo'#';
                 }else{
                     echo'https://cookit.ovh/index.php?='.($p -1);
@@ -99,7 +99,7 @@ $p = $_GET['p'];
                 <li class="page-item">
                 <a class="page-link" href="
                 <?php 
-                if ($_GET['p'] == $pmax){
+                if ($p == $pmax){
                     echo'#';
                 }else{
                     echo'https://cookit.ovh/index.php?='.($p + 1);
@@ -107,7 +107,6 @@ $p = $_GET['p'];
                 ?>">Next</a>
                 </li>
             </ul>
-            </nav> 
         </div>
 
 
