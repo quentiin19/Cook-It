@@ -22,7 +22,13 @@ $p=$_GET['p'];
         print_r($recipes);
         echo '</pre>';
 
-        for($i = (($p -1)*20); $i< (($p -1)*20 + 19); $i++){
+        if ((($p -1)*20 + 19)> count($recipes)){
+            $q = count($recipes);
+        }else{
+            $q = ($p -1)*20 + 19;
+        }
+        
+        for($i = (($p -1)*20); $i < $q; $i++){
             echo '<div class="col-lg-3 col-md-4 col-sm-1 py-3">
                     <div class="card mb-4 shadow-sm bg-color py-3 px-3 arrondie">
                         <a href="https://cookit.ovh/recette.php?id='.$recipes[$i]['ID_RECIPE'].'">
@@ -66,7 +72,7 @@ $p=$_GET['p'];
     </div>
         <!-- PAGINATION --> 
         <div class="row">
-            <nav aria-label="...">
+            <nav>
             <ul class="pagination">
                 <li class="page-item disabled">
                 <a class="page-link" href="
@@ -97,7 +103,7 @@ $p=$_GET['p'];
 
 
 
-        <script src="ressources/js/ajax.js"></script>
+        <!-- <script src="ressources/js/ajax.js"></script> -->
 
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
