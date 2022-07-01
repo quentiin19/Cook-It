@@ -46,7 +46,7 @@ if (isConnected() == $_SESSION['id']){
 						<!-- Affichage recette -->
 							<form method="POST" action="modifRecette.php" enctype="multipart/form-data">
                             <div class="col-lg-6 col-md-6 bg-color arrondie">
-							    <input type="file" name="fichier" id="inpFile" required="required">
+							    <input type="file" name="fichier" id="inpFile">
                             </div>
 							<div class="image-preview" id="imagePreview">
 								<img src="" alt="image Preview" class="image-preview__image">
