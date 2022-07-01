@@ -37,7 +37,6 @@ function clean_str_ajax(str){
 }
 
 function onclickingredients() {
-    console.log(clean_str_ajax(search_bar_ingredients.value));
     //récupération de la valeur dans la barre de recherche
     var keywords = clean_str_ajax(search_bar_ingredients.value);
 
@@ -52,11 +51,10 @@ function onclickingredients() {
 
 
 function display_results_ingredient(){
-    console.log(request_ajax.response);
     let ingredients_resp = JSON.parse(request_ajax.response);
     console.log(ingredients_resp);
 
-    
+
     //hide tous les éléments
     for (const element of ingredients.childNodes) {
         element.hidden = true;
@@ -65,8 +63,10 @@ function display_results_ingredient(){
     //afficher tous les éléments présents dans ingredients_resp
     for (const element of ingredients.childNodes) {
         for (const ingredient of ingredients_resp) {
+            console.log(`${element.id} -- ${ingredient['ID']}`);
             if(element.id == ingredient['ID']){
                 element.hidden = false;
+
                 break;
             }
         }
