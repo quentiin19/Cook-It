@@ -21,7 +21,7 @@ class API{
             $queryPrepared = $pdo->prepare("SELECT ID_RECIPE AS ID FROM RECIPES WHERE TITLE LIKE :word;");
             $queryPrepared->execute(["word"=>"%".$word."%"]);
             $queryResults = $queryPrepared->fetchAll();
-            print_r($queryPrepared);
+            print_r($queryResults);
 
             for ($i = 0; $i < count($queryResults); $i++){ 
                 if (array_search($queryResults[$i][0], $recipes, false) != false){
