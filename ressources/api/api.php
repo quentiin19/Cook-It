@@ -9,6 +9,7 @@ class API{
 
         //séparation de tous les mots dans un tableau
         $array_key_words = explode('-', $key_words);
+        print_r($array_key_words);
 
         //création des tableaux qui vont permettre de gérer la pertinence des recherches
         $recipes = array();
