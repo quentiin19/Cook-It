@@ -63,8 +63,8 @@ function onclickrecipe() {
 }
 
 function display_results_recipe() {
+    recettes.innerText = "";
     if(keywords == ""){
-        recettes.innerText = "";
         next_prev.hidden = false;
         for (const recipe of recettes_php.childNodes){
             recipe.hidden = false;
