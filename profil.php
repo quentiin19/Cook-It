@@ -137,19 +137,20 @@ include "template/header.php";
 
                     </div>          
                     <div class="row my-5">
-                        <div class="col-lg-2 ">
+                        <div class="col-lg-3 ">
                             <h4>Recettes : <?= $nbrecipe[0]?></h4>
                         </div>
-                        <div class="col-lg-2">
+                        <div class="col-lg-3">
                             <a href="<?= 'https://cookit.ovh/viewsub.php?id='.$_GET['id'].'&display=2'?>"><h4>Abonnés : <?= $abonnes[0]?></h4><a>
                         </div>
-                        <div class="col-lg-2">
+                        <div class="col-lg-3">
                             <a href="<?= 'https://cookit.ovh/viewsub.php?id='.$_GET['id'].'&display=1'?>"><h4>Abonnement : <?= $abonnement[0]?></h4><a> 
                         </div>
+                    </div>
+                    <div class="row my-5">
                         <div class="col-lg-3 ">
                             <h4>Description : </h4><br>
-                            <p><?= $user['DESCRIPTION_PROFIL']?></p><br>
-                            
+                            <p><?= $user['DESCRIPTION_PROFIL']?></p><br>    
                         </div>
                     </div>
                 </div>
