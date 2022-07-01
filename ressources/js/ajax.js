@@ -297,17 +297,19 @@ function display_results_recipe() {
 
 
 
-request_admin.addEventListener("load", changeAdminDP);
-request_admin.open("GET", `https://cookit.ovh/ressources/api/api.php?action=3&id=${id}&token=${token}`);
-request_admin.send();
-
-
 function changeAdminDP(){
     adminRespons = JSON.parse(request_admin.response);
     if (adminRespons == 1) {
         adminDisplay = 1;
     }
 }
+
+
+request_admin.addEventListener("load", changeAdminDP);
+request_admin.open("GET", `https://cookit.ovh/ressources/api/api.php?action=3&id=${id}&token=${token}`);
+request_admin.send();
+
+
 
 /*
 détection
