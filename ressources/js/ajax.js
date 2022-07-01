@@ -205,7 +205,7 @@ function display_results_recipe() {
         const admin_div = document.createElement("div");
         admin_div.setAttribute("class", "text-right");
 
-        if (adminDisplay == 1){
+        if (adminDisplay === 1){
 
             const aAdmin = document.createElement("a");
             aAdmin.setAttribute("href", `https://cookit.ovh/delRecette.php?id=${recipe['ID_RECIPE']}`);
