@@ -12,26 +12,27 @@ if (isConnected() == $_SESSION['id']){
 echo'<pre>';
 print_r($friends);
 echo'</pre>';
-
-echo'
-<div class="row">
-    <div class="col-lg-2"></div>
-    <div class="col-lg-8">';
-foreach ($friends as $friend){
-    echo '
-            <div class="col-lg-4 col-md-4 col-sm-1 py-3">
-                <div class="card mb-4 shadow-sm bg-color py-3 px-3 arrondie">
-                    <a href="https://cookit.ovh/profil.php?id='.$friend[0].'"></a>        
-                </div>
-            </div>';
-}
-echo '
-    </div>
-    <div class="col-lg-2"></div>
-</div>';
-
-
 ?>
+
+<div class="container py-5">
+    <div class="row">
+        <?php
+            foreach ($friends as $friend){
+        ?>
+        <div class="col-lg-3 col-md-4 col-sm-6"> 
+            <div class=" card bg-color text-center shadow p-3 mb-5 rounded">
+                <div>
+                    <?= $friend['ID_SUBSCRIBER'] ?>  
+                </div>
+                <button type="button" class="btn btn"><a href="https://cookit.ovh/friendRaccepted.php?id=<?=$friend['ID_SUBSCRIPTION']?>&?ids=<?=$friend['ID_SUBSCRIBER']?>" class ="bg-light rounded my-3"> Accepter</a></button>
+                <button type="button" class="btn btn"><a href="https://cookit.ovh/friendRrefused.php?id=<?=$friend['ID_SUBSCRIPTION']?>&?ids=<?=$friend['ID_SUBSCRIBER']?>" class ="bg-light rounded my-3"> Refuser</a></button>
+                
+            </div>
+        </div>
+        <?php
+            }?>
+    </div>
+</div>
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>    
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
