@@ -22,7 +22,7 @@ $p=$_GET['p'];
         print_r($recipes);
         echo '</pre>';
 
-        for($i = ($p*20); $i< ($p*20 + 19); $i++){
+        for($i = (($p -1)*20); $i< (($p -1)*20 + 19); $i++){
             echo '<div class="col-lg-3 col-md-4 col-sm-1 py-3">
                     <div class="card mb-4 shadow-sm bg-color py-3 px-3 arrondie">
                         <a href="https://cookit.ovh/recette.php?id='.$recipes[$i]['ID_RECIPE'].'">
