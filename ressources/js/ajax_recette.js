@@ -5,12 +5,13 @@ const request_admin = new XMLHttpRequest;
 console.log("testes");
 //elements du dom
 const search_bar_recipes = document.getElementById("search-bar-recipe");
-const result_ajax = document.getElementById("result-ajax");
 const recettes = document.getElementById("recettes");
+
 const recettes_php = document.getElementById("recettes-php");
 const next_prev = document.getElementById("next-prev");
 
-
+//remise à zero de la barre de recherche à l'arrivée sur la page
+search_bar_recipes.value = "";
 
 
 
