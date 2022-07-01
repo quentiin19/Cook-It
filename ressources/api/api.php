@@ -119,6 +119,13 @@ class API{
             }
         }
 
+        echo '<pre>';
+        print_r($ingredients);
+        echo '</pre>';
+        echo '<pre>';
+        print_r($pertinence);
+        echo '</pre>';
+
         //les recettes les plus pertinentes seront trié par index du plus petit au plus grand
         $result = array();
 
