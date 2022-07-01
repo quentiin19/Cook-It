@@ -21,6 +21,7 @@ search_bar_recipes.addEventListener("input", onclickrecipe);
 const id = document.getElementById("id-user").innerText;
 const token = document.getElementById("token-user").innerText;
 let adminDisplay = 0;
+let keywords = '';
 
 
 
@@ -51,7 +52,7 @@ function clean_str_ajax(str){
 
 function onclickrecipe() {
     //récupération de la valeur dans la barre de recherche
-    var keywords = clean_str_ajax(search_bar_recipes.value);
+    keywords = clean_str_ajax(search_bar_recipes.value);
 
     //envoi de la requete
     request_ajax.addEventListener("load", display_results_recipe);
