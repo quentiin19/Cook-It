@@ -19,6 +19,20 @@ if (search_bar_recipes != null) {
     const id = document.getElementById("id-user").innerText;
     const token = document.getElementById("token-user").innerText;
     let adminDisplay = 0;
+
+    function changeAdminDP(){
+        adminRespons = JSON.parse(request_admin.response);
+        console.log(request_admin.response);
+        if (adminRespons == 1) {
+            adminDisplay = 1;
+        }
+    }
+    
+    
+    request_admin.addEventListener("load", changeAdminDP);
+    request_admin.open("GET", `https://cookit.ovh/ressources/api/api.php?action=3&id=${id}&token=${token}`);
+    console.log('eee');
+    request_admin.send();
 }
 if (search_bar_ingredients != null){
     search_bar_ingredients.addEventListener("input", onclickingredients);
@@ -50,7 +64,7 @@ function clean_str_ajax(str){
 function onclickingredients() {
     console.log("maj");
     //récupération de la valeur dans la barre de recherche
-    var keywords = clean_str_ajax(search_bar_recipes.value);
+    var keywords = clean_str_ajax(search_bar_ingredients.value);
 
     //envoi de la requete
     request_ajax.addEventListener("load", display_results_ingredient);
@@ -65,7 +79,7 @@ function onclickingredients() {
 function display_results_ingredient() {
     console.log(JSON.parse(request_ajax.response));
 
-    let ingredients_resp = JSON.parse(request_ajax.response);
+    let ingredients_resp = JSON.parse(request_ajax.response.children);
     console.log(ingredients_resp);
 
     //hide tous les éléments
@@ -327,19 +341,7 @@ function display_results_recipe() {
 
 
 
-function changeAdminDP(){
-    adminRespons = JSON.parse(request_admin.response);
-    console.log(request_admin.response);
-    if (adminRespons == 1) {
-        adminDisplay = 1;
-    }
-}
 
-
-request_admin.addEventListener("load", changeAdminDP);
-request_admin.open("GET", `https://cookit.ovh/ressources/api/api.php?action=3&id=${id}&token=${token}`);
-console.log('eee');
-request_admin.send();
 
 
 
