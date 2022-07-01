@@ -93,10 +93,3 @@ border-radius:7px;
 	width : 100%;
 }
 
-.leftpane {
-    width: 25%;
-    height: 100%;
-    float: left;
-    background-color: rosybrown;
-    border-collapse: collapse;
-}
