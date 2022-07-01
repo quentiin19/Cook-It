@@ -2,6 +2,19 @@
 
 include 'template/header.php';
 ?>
+<?php
+    if(isConnected()){
+    echo '<p id="id-user" hidden="hidden">'.$_SESSION['id'].'</p>';
+    echo '<p id="token-user" hidden="hidden">'.$_SESSION['token'].'</p>';
+}
+
+if(!isset($_GET['p'])){
+    header("Location: index.php?p=1");
+}
+
+$p = $_GET['p'];
+
+?>
 
 <div class="row" height = "100%" >
     <div class="col-lg-2 col-md-2 col-sm-2 bg-danger ">
@@ -101,19 +114,7 @@ include 'template/header.php';
   
         
     </div>
-<?php
-    if(isConnected()){
-    echo '<p id="id-user" hidden="hidden">'.$_SESSION['id'].'</p>';
-    echo '<p id="token-user" hidden="hidden">'.$_SESSION['token'].'</p>';
-}
 
-if(!isset($_GET['p'])){
-    header("Location: index.php?p=1");
-}
-
-$p = $_GET['p'];
-
-?>
 
 
 
