@@ -79,7 +79,7 @@ function onclickingredients() {
 function display_results_ingredient() {
     console.log(JSON.parse(request_ajax.response));
 
-    let ingredients_resp = JSON.parse(request_ajax.response);
+    let ingredients_resp = JSON.parse(request_ajax.response.children[0]);
     console.log(ingredients_resp);
 
     //hide tous les éléments
