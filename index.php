@@ -31,12 +31,12 @@ $p = $_GET['p'];
         // echo '</pre>';
 
         if ((($p - 1) * 20 + 19)> count($recipes) -1){
-            $q = count($recipes) -1;
+            $q = count($recipes);
         }else{
-            $q = ($p - 1) * 20 + 19;
+            $q = ($p - 1) * 20 + 20;
         }
 
-        for($i = (($p - 1) * 20); $i < 20; $i++){
+        for($i = (($p - 1) * 20); $i < $q; $i++){
             echo '<pre>';
             print_r($recipes[$i]);
             echo '</pre>';
