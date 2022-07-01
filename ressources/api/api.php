@@ -34,6 +34,9 @@ class API{
             }
         }
 
+        print_r($recipes);
+        print_r($pertinence);
+
         //les recettes les plus pertinentes seront trié par index du plus petit au plus grand
         $result = array();
 
