@@ -32,7 +32,7 @@ include 'template/header.php';
     ?>
 <div class="row">
 			<div class="col-lg-12 col-md-12 col-sm-12 my-3 mr-3 h-auto arrondie d-flex justify-content-center  ">
-					  <div class="container py-2  h-auto  ">
+					  <div class="container   h-auto  ">
 					    <div class="row d-flex justify-content-center align-items-center h-100">
 					      
 					        <div class="card bg-color text-white" style="border-radius: 1rem;">
