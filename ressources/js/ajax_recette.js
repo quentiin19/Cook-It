@@ -66,12 +66,12 @@ function display_results_recipe() {
     if(keywords == ""){
         recettes.innerText = "";
         next_prev.hidden = false;
-        for (const recipe of recettes_php){
+        for (const recipe of recettes_php.childNodes){
             recipe.hidden = false;
         }
     }else{
         next_prev.hidden = true;
-        for (const recipe of recettes_php){
+        for (const recipe of recettes_php.childNodes){
             recipe.hidden = true;
         }
     
