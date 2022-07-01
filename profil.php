@@ -136,7 +136,7 @@ include "template/header.php";
                     ?>
 
                     </div>          
-                    <div class="row my-5">
+                    <div class="row ">
                         <div class="col-lg-3 ">
                             <h4>Recettes : <?= $nbrecipe[0]?></h4>
                         </div>
