@@ -40,7 +40,7 @@
 
                                                 <!--scroll-->
                                                 <div>
-													<input type="text" id="search-bar-ingredient">
+													<input type="text" id="search-bar-ingredient" class="text-dark" placeholder="rechercher un ingredient">
                                                     <div id="ingredients" class="overflow-auto" style="height : 300px">
                                                         <?php
 												$pdo = connectDB();
