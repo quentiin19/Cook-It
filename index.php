@@ -42,33 +42,35 @@ if(isConnected()){
         </div>
 
         <!-- PAGINATION --> 
-        <nav aria-label="...">
-        <ul class="pagination">
-            <li class="page-item disabled">
-            <a class="page-link" href="
-            <?php 
-            if ($_GET['p'] == 0){
-                echo'#';
-            }else{
-                echo'https://cookit.ovh/index.php?='.($_GET['p'] -1);
-            }
-            ?>">Previous</a>
-            </li>
-            <li>
-                <p> Pages : <?=$_GET['p'] .'/'.$pmax ?> </p> 
-            </li>
-            <li class="page-item">
-            <a class="page-link" href="
-            <?php 
-            if ($_GET['p'] == $pmax){
-                echo'#';
-            }else{
-                echo'https://cookit.ovh/index.php?='.($_GET['p'] +1);
-            }
-            ?>">Next</a>
-            </li>
-        </ul>
-        </nav> 
+        <div class="row">
+            <nav aria-label="...">
+            <ul class="pagination">
+                <li class="page-item disabled">
+                <a class="page-link" href="
+                <?php 
+                if ($_GET['p'] == 0){
+                    echo'#';
+                }else{
+                    echo'https://cookit.ovh/index.php?='.($_GET['p'] -1);
+                }
+                ?>">Previous</a>
+                </li>
+                <li>
+                    <p> Pages : <?=$_GET['p'] .'/'.$pmax ?> </p> 
+                </li>
+                <li class="page-item">
+                <a class="page-link" href="
+                <?php 
+                if ($_GET['p'] == $pmax){
+                    echo'#';
+                }else{
+                    echo'https://cookit.ovh/index.php?='.($_GET['p'] +1);
+                }
+                ?>">Next</a>
+                </li>
+            </ul>
+            </nav> 
+        </div>
 
 
 
