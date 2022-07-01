@@ -4,7 +4,7 @@ include "template/header.php";
 
 if (isConnected() == $_SESSION['id']){
 	$pdo = connectDB();
-	$queryPrepared = $pdo->prepare("SELECT *  FROM SUBSCRIPTIONS WHERE ID_SUBSCRIPTION = :idstion AND STATUS = 0;");
+	$queryPrepared = $pdo->prepare("SELECT *  FROM SUBSCRIPTION WHERE ID_SUBSCRIPTION = :idstion AND STATUS = 0;");
 	$queryPrepared->execute(["idstion" => $_GET['id']]);
 	$friends = $queryPrepared->fetch();
 
