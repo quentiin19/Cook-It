@@ -180,9 +180,9 @@ class API{
         $resultat = $queryPrepared->fetch();
         
         if ($resultat[0] == 2){
-            return 1;
+            return json_encode(array(1));
         }else{
-            return 0;
+            return json_encode(array(0));
         }       
     }
 }
