@@ -87,7 +87,7 @@ $p = $_GET['p'];
                 ?>">Previous</a>
                 </li>
                 <li>
-                    <p> Pages : <?=$_GET['p'] .'/'.$pmax ?> </p> 
+                    <p> Pages : <?=$p .'/'.$pmax ?> </p> 
                 </li>
                 <li class="page-item">
                 <a class="page-link" href="
