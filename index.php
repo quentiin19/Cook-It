@@ -79,7 +79,7 @@ $p = $_GET['p'];
                 <li>
                 <a class="page-link" href="
                 <?php 
-                if ($p == 0){
+                if ($p == 1){
                     echo'#';
                 }else{
                     echo'https://cookit.ovh/index.php?p='.($p -1);
