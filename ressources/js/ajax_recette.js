@@ -80,6 +80,8 @@ function display_results_recipe() {
         console.log(recipes);
 
         for (const recipe of recipes) {
+            console.log(recipe);
+            
             const main_div = document.createElement("div");
             main_div.setAttribute("class", "col-lg-3 col-md-4 col-sm-1 py-3");
 
