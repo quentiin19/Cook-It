@@ -135,8 +135,6 @@ class API{
         //on insert les recettes une par une dans le tableau $result
         while (!$is_finished) {
 
-            
-
             //on définit une variable qui hébergera la pertinence maximum
             $index_max = 0;
             $max_pert = 0;
@@ -163,6 +161,11 @@ class API{
             }
 
         }
+
+        
+        echo '<pre>';
+        print_r($result);
+        echo '</pre>';
 
         //enfin on met dans le tableau json_recipes les colonnes qui nous intéresse des recettes
         $json_ingredients = [];
