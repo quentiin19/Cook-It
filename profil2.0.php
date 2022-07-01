@@ -3,53 +3,24 @@
 include 'template/header.php';
 ?>
 
-<div class="wrapper">
-    <!-- Sidebar -->
-    <nav id="sidebar">
-        <div class="sidebar-header">
-            <h3>Bootstrap Sidebar</h3>
+<div class="row">
+    <div class="col-lg-4 col-md-4 col-sm-4 bg-color">
+        <div class="row">
+            <div class="align-middle">
+                <a href="#" >Modifier mon profil</a>
+            </div>
+            <div class="align-middle">
+                <a href="#" >Modifier mon profil</a>
+            </div>
+            <div class="align-middle">
+                <a href="#" >Modifier mon profil</a>
+            </div>
+            <div class="align-middle">
+                <a href="#" >Modifier mon profil</a>
+            </div>
         </div>
-
-        <ul class="list-unstyled components">
-            <p>Dummy Heading</p>
-            <li class="active">
-                <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
-                <ul class="collapse list-unstyled" id="homeSubmenu">
-                    <li>
-                        <a href="#">Home 1</a>
-                    </li>
-                    <li>
-                        <a href="#">Home 2</a>
-                    </li>
-                    <li>
-                        <a href="#">Home 3</a>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <a href="#">About</a>
-            </li>
-            <li>
-                <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
-                <ul class="collapse list-unstyled" id="pageSubmenu">
-                    <li>
-                        <a href="#">Page 1</a>
-                    </li>
-                    <li>
-                        <a href="#">Page 2</a>
-                    </li>
-                    <li>
-                        <a href="#">Page 3</a>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <a href="#">Portfolio</a>
-            </li>
-            <li>
-                <a href="#">Contact</a>
-            </li>
-        </ul>
-    </nav>
-
+    </div>
+    <div class="col-lg-8 col-md-8 col-sm-8">
+        
+    </div>
 </div>
