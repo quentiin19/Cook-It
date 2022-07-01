@@ -130,14 +130,13 @@ class API{
 
         //on insert les recettes une par une dans le tableau $result
         while (!$is_finished) {
-            echo 'e';
             //on définit une variable qui hébergera la pertinence maximum
             $index_max = 0;
             $max_pert = 0;
             $max_reci = 0;
 
             //on cherche l'id avec le plus de pertinence
-            foreach ($ingredients as $key => $recipe) {
+            foreach ($ingredients as $key => $ingredient) {
                 if (isset($ingredients[$key])) {
                     if ($pertinence[$key] >= $max_pert) {
                         $index_max = $key;
@@ -152,7 +151,7 @@ class API{
             unset($pertinence[$index_max]);
 
             //si tous les éléments ont été enlevés, le tri est fini
-            if (empty($recipes)){
+            if (empty($ingredients)){
                 $is_finished = 1;
             }
 
