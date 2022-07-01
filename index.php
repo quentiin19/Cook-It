@@ -23,12 +23,7 @@ $p = $_GET['p'];
         $queryPrepared->execute();
         $recipes = $queryPrepared->fetchAll();
         $pmax = ceil(count($recipes) / 20); //Calcule le nombre de pages totales
-        echo $pmax;
-        echo count($recipes);
 
-        // echo '<pre>';
-        // print_r($recipes);
-        // echo '</pre>';
 
         if ((($p - 1) * 20 + 19)> count($recipes) -1){
             $q = count($recipes);
@@ -37,9 +32,6 @@ $p = $_GET['p'];
         }
 
         for($i = (($p - 1) * 20); $i < $q; $i++){
-            echo '<pre>';
-            print_r($recipes[$i]);
-            echo '</pre>';
             echo '<div class="col-lg-3 col-md-4 col-sm-1 py-3">
                     <div class="card mb-4 shadow-sm bg-color py-3 px-3 arrondie">
                         <a href="https://cookit.ovh/recette.php?id='.$recipes[$i]['ID_RECIPE'].'">
