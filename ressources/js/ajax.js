@@ -11,30 +11,22 @@ const recettes = document.getElementById("recettes");
 const search_bar_ingredients = document.getElementById("search-bar-ingredient");
 const ingredients = document.getElementById("ingredients");
 
+
+
+
+
 //écouteurs
 if (search_bar_recipes != null) {
+    console.log("recipe");
     search_bar_recipes.addEventListener("input", onclickrecipe);
 
     //variable
     const id = document.getElementById("id-user").innerText;
     const token = document.getElementById("token-user").innerText;
     let adminDisplay = 0;
-
-    function changeAdminDP(){
-        adminRespons = JSON.parse(request_admin.response);
-        console.log(request_admin.response);
-        if (adminRespons == 1) {
-            adminDisplay = 1;
-        }
-    }
-    
-    
-    request_admin.addEventListener("load", changeAdminDP);
-    request_admin.open("GET", `https://cookit.ovh/ressources/api/api.php?action=3&id=${id}&token=${token}`);
-    console.log('eee');
-    request_admin.send();
 }
 if (search_bar_ingredients != null){
+    console.log("ingredient");
     search_bar_ingredients.addEventListener("input", onclickingredients);
 }
 
@@ -79,16 +71,16 @@ function onclickingredients() {
 function display_results_ingredient() {
     console.log(JSON.parse(request_ajax.response));
 
-    let ingredients_resp = JSON.parse(request_ajax.response.children);
-    console.log(ingredients_resp);
+    let ingredients_resp = JSON.parse(request_ajax.response);
+    console.log(ingredients_resp.children[0]);
 
     //hide tous les éléments
-    for (const element of ingredients.childNodes) {
+    for (const element of ingredients_resp.childNodes) {
         element.hidden = true;
     }
 
     //afficher tous les éléments présents dans ingredients_resp
-    for (const element of ingredients.childNodes) {
+    for (const element of ingredients_resp.childNodes) {
         for (const ingredient of ingredients_resp) {
             if(element.id == ingredient['ID']){
                 element.hidden = false;
@@ -339,6 +331,20 @@ function display_results_recipe() {
     }
 }
 
+function changeAdminDP(){
+    adminRespons = JSON.parse(request_admin.response);
+    console.log(request_admin.response);
+    if (adminRespons == 1) {
+        adminDisplay = 1;
+    }
+}
+
+if(adminDisplay == 0){
+    request_admin.addEventListener("load", changeAdminDP);
+    request_admin.open("GET", `https://cookit.ovh/ressources/api/api.php?action=3&id=${id}&token=${token}`);
+    request_admin.send();
+
+}
 
 
 
