@@ -53,7 +53,7 @@ function onclickingredients() {
 
 function display_results_ingredient(){
     console.log(request_ajax.response);
-    let ingredients_resp = JSON.parse(request_ajax.response.toString());
+    let ingredients_resp = JSON.parse(request_ajax.response);
     console.log(ingredients_resp);
 
     //hide tous les éléments
