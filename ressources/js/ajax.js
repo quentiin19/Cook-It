@@ -33,26 +33,28 @@ function clean_str_ajax(str){
     */
 
     //on remplace les lettres qui pourrait fausser notre rechercher en bdd
-    for (let k = 0; k < str.length; k++) {
-        console.log("boucle numéro 1")
-        for (let j = 0; j < a.length; j++) {
-            if (str[k] == a[j]){
-                new_str += 'a';
-            }else if(str[k] == e[j]){
-                new_str += 'e';
-            }else if(str[k] == i[j]){
-                new_str += 'i';
-            }else if(str[k] == o[j]){
-                new_str += 'o';
-            }else if(str[k] == u[j]){
-                new_str += 'u';
-            }else if(str[k] == ' '){
-                new_str += '-';
-            }else{
-                new_str += str[k]
-            }
-        }
-    }
+    // for (let k = 0; k < str.length; k++) {
+    //     console.log("boucle numéro 1")
+    //     for (let j = 0; j < a.length; j++) {
+    //         if (str[k] == a[j]){
+    //             new_str += 'a';
+    //         }else if(str[k] == e[j]){
+    //             new_str += 'e';
+    //         }else if(str[k] == i[j]){
+    //             new_str += 'i';
+    //         }else if(str[k] == o[j]){
+    //             new_str += 'o';
+    //         }else if(str[k] == u[j]){
+    //             new_str += 'u';
+    //         }else if(str[k] == ' '){
+    //             new_str += '-';
+    //         }else{
+    //             new_str += str[k]
+    //         }
+    //     }
+    // }
+
+    new_str.replace(a, 'a');
 
     console.log(`cleaned string : ${new_str}`);
     return new_str;
