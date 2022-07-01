@@ -15,7 +15,7 @@ if (isConnected() == $_GET['id']){
     elseif (isset($frrequest)) {
         $queryPrepared = $pdo->prepare("update SUBSCRIPTION set STATUS = 1 WHERE ID_SUBSCRIPTION = :idsub AND ID_SUBSCRIBER = :idber; ");
         $queryPrepared->execute(["idsub"=>$_GET['id'],"idber"=>$_GET['ids']]);
-        header("Location: https://cookit.ovh/profil.php".$_GET['id']);
+        header("Location: https://cookit.ovh/profil.php?id=".$_GET['id']);
     }
 
 }
