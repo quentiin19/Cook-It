@@ -12,6 +12,7 @@ const msg_canva = document.getElementById("message-canva");
 const id_sender = document.getElementById("id-sender").innerText;
 const id_receveur = document.getElementById("id-receveur").innerText;
 const token = document.getElementById("token").innerText;
+let last_msg;
 
 
 //listener
@@ -70,8 +71,10 @@ function displayMsg() {
             div.appendChild(msg);
             msg_canva.appendChild(div);
 
-            msg.scrollIntoView();
+            last_msg = msg;
         }
+
+        last_msg.scrollIntoView();
     }
 }
 
