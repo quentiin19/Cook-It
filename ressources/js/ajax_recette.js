@@ -77,6 +77,7 @@ function display_results_recipe() {
     
 
         let recipes = JSON.parse(request_ajax.response);
+        console.log(recipes);
 
         for (const recipe of recipes) {
             const main_div = document.createElement("div");
