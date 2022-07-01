@@ -12,7 +12,8 @@ if(isAdmin()){
 		!isset($_POST["firstname"]) ||
 		!isset($_POST["lastname"]) || 
 		empty($_POST["pseudo"]) ||
-		count($_POST)!=4
+		!isset($_POST["description"]) ||
+		count($_POST)!=5
 	){
 
 		die("Tentative de Hack ...");
@@ -26,11 +27,13 @@ if(isAdmin()){
 $firstname = $_POST["firstname"];
 $lastname = $_POST["lastname"];
 $pseudo = $_POST["pseudo"];
+$description = $_POST["description"];
 
 //nettoyage des données
 $firstname = ucwords(strtolower(trim($firstname)));
 $lastname = strtoupper(trim($lastname));
 $pseudo = ucwords(strtolower(trim($pseudo)));
+$description = trim($description);
 
 //Vérification des données
 
@@ -50,8 +53,8 @@ if( strlen($pseudo)<4 || strlen($pseudo)>60 ){
 }
 
 //Modification des infos de l'utilisateur dans la BDD
-$queryPrepared = $pdo->prepare("Update USER SET PSEUDO =:pseudo, FIRSTNAME =:firstname, LASTNAME =:lastname WHERE ID =:id");
-$queryPrepared->execute(["pseudo"=> $pseudo, "firstname"=>$firstname, "lastname"=>$lastname, "id"=>$id ]);
+$queryPrepared = $pdo->prepare("Update USER SET PSEUDO =:pseudo, FIRSTNAME =:firstname, LASTNAME =:lastname, DESCRIPTION_PROFIL=:desc WHERE ID =:id");
+$queryPrepared->execute(["pseudo"=> $pseudo, "firstname"=>$firstname, "lastname"=>$lastname,"desc"=>$description, "id"=>$id ]);
 
 //update des logs
 updateLogs($id, "modification du profil par un administrateur (".$_SESSION['id'].")");
@@ -73,6 +76,7 @@ header("Location: admin.php");
 		!isset($_POST["lastname"]) || 
 		empty($_POST["pseudo"]) ||
 		empty($_POST["password"])||
+		!isset($_POST["description"]) ||
 		count($_POST)!=4
 	){
 
@@ -86,6 +90,7 @@ header("Location: admin.php");
 	$lastname = $_POST["lastname"];
 	$pseudo = $_POST["pseudo"];
 	$pwd = $_POST["password"];
+	$description = $_POST["description"];
 
 	//vérifier les données
 	$errors = [];
@@ -94,6 +99,7 @@ header("Location: admin.php");
 	$firstname = ucwords(strtolower(trim($firstname)));
 	$lastname = strtoupper(trim($lastname));
 	$pseudo = ucwords(strtolower(trim($pseudo)));
+	$description = trim($description);
 
 	// Verif champs
 
@@ -112,6 +118,11 @@ header("Location: admin.php");
 		$errors[] = "Votre pseudo doit faire entre 4 et 60 caractères";
 	}
 
+	//description >300
+	if( strlen($description)>300){
+		$errors[] = "Votre description est trop longue";
+	}
+	
 	//Vérification des mots de passes
 	$hashpwd= password_hash($pwd, PASSWORD_DEFAULT);
 
@@ -132,8 +143,8 @@ header("Location: admin.php");
 	$hashpwd= password_hash($pwd, PASSWORD_DEFAULT);
 
 	//Modification des infos de l'utilisateur dans la BDD
-	$queryPrepared = $pdo->prepare("update USER SET PSEUDO =:pseudo, HASHPWD =:hashpwd, FIRSTNAME =:firstname, LASTNAME =:lastname WHERE ID =:id;");
-	$queryPrepared->execute(["pseudo"=> $pseudo, "hashpwd"=> $hashpwd, "firstname"=> $firstname, "lastname"=> $lastname, "id"=> $id ]);
+	$queryPrepared = $pdo->prepare("Update USER SET PSEUDO =:pseudo, FIRSTNAME =:firstname, LASTNAME =:lastname, DESCRIPTION_PROFIL=:desc WHERE ID =:id");
+	$queryPrepared->execute(["pseudo"=> $pseudo, "firstname"=>$firstname, "lastname"=>$lastname,"desc"=>$description, "id"=>$id ]);
 	
 	//update des logs
 	updateLogs($id, "modification du profil");
