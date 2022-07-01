@@ -38,8 +38,10 @@ function clean_str_ajax(str){
         for (let j = 0; j < a.length; j++) {
             if(str[k] == ' '){
                 new_str += '-';
+                break;
             }else{
                 new_str += str[k]
+                break;
             }
         }
     }
