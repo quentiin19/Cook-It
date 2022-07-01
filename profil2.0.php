@@ -8,7 +8,9 @@ include 'template/header.php';
         Blelalleno
     </div>
     <div class="col-lg-10 col-md-10 col-sm-10 bg-light">
-        bzandknzenf
+        <p>bzandknzenf</p>
+        <p>bzandknzenf</p>
+        aaaa
     </div>  
 
 
