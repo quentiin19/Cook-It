@@ -79,7 +79,6 @@ header("Location: admin.php");
 	){
 
 		die("Tentative de Hack ...");
-		print_r($_POST);
 
 	}
 
