@@ -50,7 +50,6 @@ function isConnected(){
 	$result = $queryPrepared->fetch();
 
 	return $result[0];
-
 }
 
 function isAdmin() {
