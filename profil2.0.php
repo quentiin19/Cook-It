@@ -3,7 +3,8 @@
 include 'template/header.php';
 ?>
 
-<div class="row bg-danger">
+<div class="row " style ="background-color : #123456">
+
 
 
 
