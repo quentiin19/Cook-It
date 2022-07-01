@@ -4,7 +4,7 @@ include "template/header.php";
 
 if (isConnected() == $_SESSION['id']){
 	$pdo = connectDB();
-	$queryPrepared = $pdo->prepare("SELECT *  FROM SUBSCRIPTION WHERE ID_SUBSCRIPTION = :idstion AND STATUS = 0;");
+	$queryPrepared = $pdo->prepare("SELECT *  FROM SUBSCRIPTION,USER WHERE USER.ID = ID_SUBSCRIPTION AND ID_SUBSCRIPTION = :idstion AND STATUS = 0;");
 	$queryPrepared->execute(["idstion" => $_GET['id']]);
 	$friends = $queryPrepared->fetchAll();
 
@@ -22,7 +22,7 @@ echo'</pre>';
         <div class="col-lg-3 col-md-4 col-sm-6"> 
             <div class=" card bg-color text-center shadow p-3 mb-5 rounded">
                 <div>
-                    <?= $friend['ID_SUBSCRIBER'] ?>  
+                    <?= $friend['PSEUDO'] ?>  
                 </div>
                 <button type="button" class="btn btn"><a href="https://cookit.ovh/friendRaccepted.php?id=<?=$friend['ID_SUBSCRIPTION']?>&ids=<?=$friend['ID_SUBSCRIBER']?>" class ="bg-light rounded my-3"> Accepter</a></button>
                 <button type="button" class="btn btn"><a href="https://cookit.ovh/friendRrefused.php?id=<?=$friend['ID_SUBSCRIPTION']?>&ids=<?=$friend['ID_SUBSCRIBER']?>" class ="bg-light rounded my-3"> Refuser</a></button>
