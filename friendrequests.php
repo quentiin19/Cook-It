@@ -9,9 +9,6 @@ if (isConnected() == $_SESSION['id']){
 	$friends = $queryPrepared->fetchAll();
 
 }
-echo'<pre>';
-print_r($friends);
-echo'</pre>';
 ?>
 
 <div class="container py-5">
