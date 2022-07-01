@@ -4,7 +4,7 @@ console.log("linked");
 
 for (const child of div.childNodes) {
     console.log(child);
-    if((child.innerText % 2) == 0){
+    if((child.id % 2) == 0){
         child.hidden = true;
     }
 }
