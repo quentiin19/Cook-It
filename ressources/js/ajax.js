@@ -5,7 +5,7 @@ const search_bar_recipes = document.getElementById("search-bar-recipe");
 const result_ajax = document.getElementById("result-ajax");
 const recettes = document.getElementById("recettes");
 
-const search_bar_ingredients = document.getElementById("search-bar-recipe");
+const search_bar_ingredients = document.getElementById("search-bar-ingredient");
 const ingredients = document.getElementById("ingredients");
 
 //écouteurs
