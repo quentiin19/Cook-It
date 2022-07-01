@@ -13,7 +13,7 @@ include 'template/header.php';
             </div>
             <div class="row">
                 <div class="col-lg-12 my-5  py-2 pl-2">
-                    <a class="text-white" href="https://cookit.ovh/avatar.php" >Modifier mon avatar</a>
+                    <a class="text-white" href="https://cookit.ovh/avatar.php?id=<?= $_SESSION['id']?>" >Modifier mon avatar</a>
                 </div>
             </div>
             <div class="row">
