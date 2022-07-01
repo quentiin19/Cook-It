@@ -5,7 +5,7 @@ include 'template/header.php';
 
 
 <div class="row" height = "100%" >
-    <div class="col-lg-2 col-md-2 col-sm-2 bg-danger ">
+    <div class="col-lg-2 col-md-2 col-sm-2 bg-color ">
         <div class=" d-flex  justify-content-center ">
             <div class="">
                 <a href="#" >Modifier mon profil</a>
@@ -21,7 +21,7 @@ include 'template/header.php';
             </div>
         </div>
     </div>
-    <div class="col-lg-10 col-md-10 col-sm-10 bg-light">
+    <div class="col-lg-10 col-md-10 col-sm-10 background-body">
     <?php
     if (isConnected()) {
 			$pdo = connectDB();
@@ -78,7 +78,9 @@ include 'template/header.php';
 </div>
 <?php
     }
+
 ?>
+
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
