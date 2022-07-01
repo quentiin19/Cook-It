@@ -139,7 +139,7 @@ if (isConnected() == $_SESSION['id'] || isAdmin()) {
 		$nbingredients = $queryPrepared->fetch();
 
 		//on inscrit les nouvelles valeurs des ingredients 1 à count id ingredient
-		for ($i = 1; $i<$nbingredients; $i++){
+		for ($i = 1; $i<$nbingredients[0]; $i++){
 			if(isset($_POST['checkbox'.$i])){
 				$quantity = $_POST["quantity".$i];
 				$queryPrepared = $pdo->prepare("INSERT INTO NEED VALUES (:quantity, :id_ingr, :id_recipe)");
