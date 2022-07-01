@@ -119,9 +119,7 @@ class API{
             }
         }
 
-        echo '<pre>';
         print_r($ingredients);
-        echo '</pre>';
         echo '<pre>';
         print_r($pertinence);
         echo '</pre>';
