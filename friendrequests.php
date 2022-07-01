@@ -4,14 +4,11 @@ include "template/header.php";
 
 if (isConnected() == $_SESSION['id']){
 	$pdo = connectDB();
-	$queryPrepared = $pdo->prepare("SELECT *  FROM SUBSCRIPTION,USER WHERE USER.ID = ID_SUBSCRIPTION AND ID_SUBSCRIPTION = :idstion AND STATUS = 0;");
+	$queryPrepared = $pdo->prepare("SELECT *  FROM SUBSCRIPTION,USER WHERE USER.ID = ID_SUBSCRIBER AND ID_SUBSCRIPTION = :idstion AND STATUS = 0;");
 	$queryPrepared->execute(["idstion" => $_GET['id']]);
 	$friends = $queryPrepared->fetchAll();
 
 }
-echo'<pre>';
-print_r($friends);
-echo'</pre>';
 ?>
 
 <div class="container py-5">

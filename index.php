@@ -15,7 +15,9 @@ $p = $_GET['p'];
 ?>
 <div>
         <input type="text" id="search-bar-recipe" placeholder="rechercher" class="text-center">
-        <div id="recettes">
+        <div id="recettes"></div>
+
+        <div id="recettes-php">
 
         <?php 
         $pdo = connectDB();
@@ -74,7 +76,7 @@ $p = $_GET['p'];
         </div>
     </div>
         <!-- PAGINATION --> 
-        <div class="row">
+        <div id="next-prev" class="row">
             <ul class="pagination">
                 <li>
                 <a class="page-link" href="
@@ -104,7 +106,7 @@ $p = $_GET['p'];
 
 
 
-        <!-- <script src="ressources/js/ajax.js"></script> -->
+        <script src="ressources/js/ajax_recette.js"></script>
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
