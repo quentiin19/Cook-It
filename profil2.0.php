@@ -5,7 +5,7 @@ include 'template/header.php';
 
 
 <div class="row" height = "100%" >
-    <div class="col-lg-2 col-md-2 col-sm-2 bg-color my-2 ml-5 arrondie ">
+    <div class="col-lg-2 col-md-2 col-sm-2 bg-color my-3 ml-5 arrondie ">
         <div class=" d-flex  justify-content-center  ">
             <div class="">
                 <a href="#" >Modifier mon profil</a>
