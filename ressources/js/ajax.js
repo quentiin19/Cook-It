@@ -3,11 +3,11 @@ const request_ajax = new XMLHttpRequest;
 const request_admin = new XMLHttpRequest;
 
 console.log("testes");
-
 //elements du dom
 const search_bar_recipes = document.getElementById("search-bar-recipe");
 const result_ajax = document.getElementById("result-ajax");
 const recettes = document.getElementById("recettes");
+console.log(search_bar_recipes);
 
 const search_bar_ingredients = document.getElementById("search-bar-ingredient");
 const ingredients = document.getElementById("ingredients");
