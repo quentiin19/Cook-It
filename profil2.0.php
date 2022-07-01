@@ -5,7 +5,7 @@ include 'template/header.php';
 
 
     <div class=" col-lg-2 col-md-2 col-sm-2 bg-color ">
-        <div class=" h-auto justify-content-center align-items-center">
+        <div class=" d-flex  justify-content-center align-items-center">
             <div class="">
                 <a href="#" >Modifier mon profil</a>
             </div>
