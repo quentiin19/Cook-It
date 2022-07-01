@@ -13,17 +13,22 @@ include 'template/header.php';
             </div>
             <div class="row">
                 <div class="col-lg-12 my-5  py-2 pl-2">
-                    <a href="#" >Modifier mon profil</a>
+                    <a href="#" >Modifier mon avatar</a>
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-12 my-5 py-2 pl-2">
-                    <a href="#" >Modifier mon profil</a>
+                    <a href="#" >Modifier mon email</a>
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-12 my-5 py-2 pl-2">
-                    <a href="#" >Modifier mon profil</a>
+                    <a href="#" >Modifier mon mot de passe</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 my-5 py-2 pl-2">
+                    <a href="#" >Télécharger mes logs</a>
                 </div>
             </div>
     </div>
