@@ -62,7 +62,7 @@ function display_results_ingredient(){
     }
 
     //afficher tous les éléments présents dans ingredients_resp
-    for (const element of ingredients) {
+    for (const element of ingredients.childNodes) {
         for (const ingredient of ingredients_resp) {
             if(element.id == ingredient['ID']){
                 element.hidden = false;
