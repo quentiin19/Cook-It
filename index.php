@@ -57,6 +57,6 @@ if(isConnected()){
         </nav> -->
 
         <script src="ressources/js/ajax.js"></script>
-        <?php include "template/footer.php";?>
+        <?php // include "template/footer.php";?>
 
 
