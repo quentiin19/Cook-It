@@ -24,6 +24,7 @@ $p = $_GET['p'];
         $recipes = $queryPrepared->fetchAll();
         $pmax = ceil(count($recipes) / 20); //Calcule le nombre de pages totales
         echo $pmax;
+        echo count($recipes);
 
         // echo '<pre>';
         // print_r($recipes);
