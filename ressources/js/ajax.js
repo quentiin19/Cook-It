@@ -69,17 +69,17 @@ function onclickingredients() {
 
 
 function display_results_ingredient() {
-    console.log(JSON.parse(request_ajax.response.children));
+    console.log(JSON.parse(request_ajax.response));
 
-    let ingredients_resp = JSON.parse(request_ajax.response.children);
+    let ingredients_resp = JSON.parse(request_ajax.response);
 
     //hide tous les éléments
-    for (const element of ingredients.childNodes) {
+    for (const element of ingredients_resp.childNodes) {
         element.hidden = true;
     }
 
     //afficher tous les éléments présents dans ingredients_resp
-    for (const element of ingredients.childNodes) {
+    for (const element of ingredients_resp.childNodes) {
         for (const ingredient of ingredients_resp) {
             if(element.id == ingredient['ID']){
                 element.hidden = false;
