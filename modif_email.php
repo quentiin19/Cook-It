@@ -50,8 +50,8 @@ include "template/header.php";
                   <div class="card-body  text-center">
                       <div class="mb-md-5 mt-md-4 pb-5">
 
-                      <h2 class="fw-bold mb-2 text-uppercase">Problèmes de connexion ?</h2>
-                      <p class="text-white-50 mb-5"> Entrez votre adresse mail et nous vous enverrons un lien pour récupérer votre compte.</p>
+                      <h2 class="fw-bold mb-2 text-uppercase">MODIFIER VOTRE EMAIL</h2>
+                      <p class="text-white-50 mb-5">N'oubliez pas de vérifier votre nouveau mail pour vous reconnecter.</p>
 
                         <div class="row">
 
@@ -61,16 +61,15 @@ include "template/header.php";
 
                                 <form method="POST" action="">
 
-                                    <input type="email" class="form-control" name="email" placeholder="Votre email" required="required"><br>
-                                    
-                                    <div class="row">
+                                    <input type="email" class="form-control" name="email" placeholder="Votre email actuel" required="required"><br>
 
-                                        <div class="col-lg-4 col-md-1 col-sm-0"></div>
-                                        <div class="col-lg-4 col-md-12 col-sm-12">
+                                    <input type="email" class="form-control" name="email" placeholder="Votre nouvel email" required="required"><br>
+
+                                    <div class="row">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 d-flex justify-content-center">
                                             <input type="submit" class="btn btn-outline-light btn-lg py-2 " value="Envoyer">
-                                    </div>
+                                        </div>
                                     
-                            <div class="col-lg-4 col-md-1 col-sm-0"></div>
 
                         </div>
                                   </form>
@@ -91,14 +90,6 @@ include "template/header.php";
 </div>
 <?php
 
-if(
-!isset($_POST["email"]) ||
-count($_POST)!=1
-){
-
-die("remplissez les deux champs SVP !");
-
-}
 }
 ?>
 
