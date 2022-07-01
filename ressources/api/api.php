@@ -14,13 +14,15 @@ class API{
         $recipes = array();
         $pertinence = array();
 
+
         //pour chaque mots, on recherche dans la BDD si une recette correspond
         foreach ($array_key_words as $index=>$word) {
             $queryPrepared = $pdo->prepare("SELECT ID_RECIPE AS ID FROM RECIPES WHERE TITLE LIKE :word;");
             $queryPrepared->execute(["word"=>"%".$word."%"]);
             $queryResults = $queryPrepared->fetchAll();
 
-            for ($i = 0; $i < count($queryResults); $i++){ 
+            for ($i = 0; $i < count($queryResults); $i++){
+                print_r($pertinence);
                 //vérification de la présence dans le tableau $recipes de la recette (0 == false retourne vrai en php)
                 if (array_search($queryResults[$i][0], $recipes, false) == 0 || array_search($queryResults[$i][0], $recipes, false) != false){
                     $index = array_search($queryResults[$i][0], $recipes, false);
