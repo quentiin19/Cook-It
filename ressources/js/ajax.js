@@ -12,10 +12,10 @@ const search_bar_ingredients = document.getElementById("search-bar-ingredient");
 const ingredients = document.getElementById("ingredients");
 
 //écouteurs
-if (search_bar_recipes === null) {
+if (search_bar_recipes != null) {
     search_bar_recipes.addEventListener("input", onclickrecipe);
 }
-if (search_bar_ingredients === null){
+if (search_bar_ingredients != null){
     search_bar_ingredients.addEventListener("input", onclickingredients);
 }
 
