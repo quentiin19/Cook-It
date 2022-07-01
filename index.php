@@ -40,5 +40,7 @@ if(isConnected()){
         </div>
 
         <script src="ressources/js/ajax.js"></script>
+        
     </body>
 </html>
+<?php include "template/footer.php";?>
