@@ -22,7 +22,6 @@ class API{
             $queryResults = $queryPrepared->fetchAll();
 
             for ($i = 0; $i < count($queryResults); $i++){
-                print_r($pertinence);
                 //vérification de la présence dans le tableau $recipes de la recette (0 == false retourne vrai en php)
                 if (array_search($queryResults[$i][0], $recipes, false) === 0 || array_search($queryResults[$i][0], $recipes, false) != false){
                     $index = array_search($queryResults[$i][0], $recipes, false);
