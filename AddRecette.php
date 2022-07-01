@@ -222,8 +222,6 @@ if(!empty($_POST)){
 			$queryPrepared->execute(["quantity"=>$quantity, "id_ingr"=>$i ,"id_recipe"=>$result['ID_RECIPE']]);
 		}
 	}
-	
-	echo $nbingredients;
 
 
 	//header("Location: recette.php?id=".$result['ID_RECIPE']);
