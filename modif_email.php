@@ -59,11 +59,11 @@ include "template/header.php";
 
                             <div class="col-lg-6 col-md-12 col-sm-12">
 
-                                <form method="POST" action="">
+                                <form method="POST" action="changemail.php">
 
-                                    <input type="email" class="form-control" name="email" placeholder="Votre email actuel" required="required"><br>
+                                    <input type="email" class="form-control" name="emailold" placeholder="Votre email actuel" required="required"><br>
 
-                                    <input type="email" class="form-control" name="email" placeholder="Votre nouvel email" required="required"><br>
+                                    <input type="email" class="form-control" name="emailnew" placeholder="Votre nouvel email" required="required"><br>
 
                                     <div class="row">
                                         <div class="col-lg-12 col-md-12 col-sm-12 d-flex justify-content-center">
