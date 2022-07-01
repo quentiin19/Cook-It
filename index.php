@@ -18,6 +18,8 @@ $p=$_GET['p'];
         $recipes = $queryPrepared->fetchAll();
         $pmax = ceil(count($recipes) / 20); //Calcule le nombre de pages totales
 
+        print_r($recipes);
+        
         for($i = ($p*20); $i< ($p*20 + 19); $i++){
             echo '<div class="col-lg-3 col-md-4 col-sm-1 py-3">
                     <div class="card mb-4 shadow-sm bg-color py-3 px-3 arrondie">
