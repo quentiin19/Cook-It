@@ -2,10 +2,12 @@
 const request_ajax = new XMLHttpRequest;
 const request_admin = new XMLHttpRequest;
 
+console.log("testes");
 //elements du dom
 const search_bar_recipes = document.getElementById("search-bar-recipe");
 const result_ajax = document.getElementById("result-ajax");
 const recettes = document.getElementById("recettes");
+console.log(search_bar_recipes);
 
 const search_bar_ingredients = document.getElementById("search-bar-ingredient");
 const ingredients = document.getElementById("ingredients");
@@ -18,6 +20,7 @@ search_bar_ingredients.addEventListener("input", onclickingredients);
 const id = document.getElementById("id-user").innerText;
 const token = document.getElementById("token-user").innerText;
 let adminDisplay = 0;
+
 
 
 function clean_str_ajax(str){
@@ -41,6 +44,7 @@ function clean_str_ajax(str){
 }
 
 function onclickingredients() {
+    console.log("maj");
     //récupération de la valeur dans la barre de recherche
     var keywords = clean_str_ajax(search_bar_recipes.value);
 
@@ -55,7 +59,6 @@ function onclickingredients() {
 
 
 function display_results_ingredient() {
-    ingredients.innerHTML = "";
     console.log(JSON.parse(request_ajax.response));
 
     let ingredients_resp = JSON.parse(request_ajax.response);

@@ -228,5 +228,6 @@ if(!empty($_POST)){
 
 ?>
 
+<script src='ressources/js/ajax.js'></script>
 <script src='preview-image.js'></script>
 <?php include "template/footer.php";?>
