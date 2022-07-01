@@ -308,7 +308,9 @@ function changeAdminDP(){
 
 request_admin.addEventListener("load", changeAdminDP);
 request_admin.open("GET", `https://cookit.ovh/ressources/api/api.php?action=3&id=${id}&token=${token}`);
+console.log('eee');
 request_admin.send();
+
 
 
 
