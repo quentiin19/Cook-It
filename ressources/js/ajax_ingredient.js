@@ -56,6 +56,7 @@ function display_results_ingredient(){
     let ingredients_resp = JSON.parse(request_ajax.response);
     console.log(ingredients_resp);
 
+    
     //hide tous les éléments
     for (const element of ingredients.childNodes) {
         element.hidden = true;
