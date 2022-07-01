@@ -6,7 +6,7 @@ include 'template/header.php';
 
 <div class="row" height = "100%" >
     <div class="col-lg-2 col-md-2 col-sm-2 bg-color ">
-        <div class=" d-flex  justify-content-center ">
+        <div class=" d-flex  justify-content-center my-2 ml-2 ">
             <div class="">
                 <a href="#" >Modifier mon profil</a>
             </div>
@@ -31,7 +31,7 @@ include 'template/header.php';
 			$results = $queryPrepared->fetch();
     ?>
 <div class="row">
-			<div class="col-lg-12 col-md-12 col-sm-12 my-3 mr-2 h-auto arrondie d-flex justify-content-center  ">
+			<div class="col-lg-12 col-md-12 col-sm-12 my-3 mr-3 h-auto arrondie d-flex justify-content-center  ">
 					  <div class="container py-2  h-auto  ">
 					    <div class="row d-flex justify-content-center align-items-center h-100">
 					      
