@@ -11,6 +11,16 @@ const recettes = document.getElementById("recettes");
 const search_bar_ingredients = document.getElementById("search-bar-ingredient");
 const ingredients = document.getElementById("ingredients");
 
+
+function changeAdminDP(){
+    adminRespons = JSON.parse(request_admin.response);
+    console.log(request_admin.response);
+    if (adminRespons == 1) {
+        adminDisplay = 1;
+    }
+}
+
+
 //écouteurs
 if (search_bar_recipes != null) {
     search_bar_recipes.addEventListener("input", onclickrecipe);
@@ -20,15 +30,7 @@ if (search_bar_recipes != null) {
     const token = document.getElementById("token-user").innerText;
     let adminDisplay = 0;
 
-    function changeAdminDP(){
-        adminRespons = JSON.parse(request_admin.response);
-        console.log(request_admin.response);
-        if (adminRespons == 1) {
-            adminDisplay = 1;
-        }
-    }
-    
-    
+
     request_admin.addEventListener("load", changeAdminDP);
     request_admin.open("GET", `https://cookit.ovh/ressources/api/api.php?action=3&id=${id}&token=${token}`);
     console.log('eee');
