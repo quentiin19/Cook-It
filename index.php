@@ -2,8 +2,7 @@
 include "template/header.php";
 ?>
 
-        <input type="text" id="search_bar_ajax" placeholder="rechercher" class="text-center">
-        <button id="search_button_ajax">rechercher</button>
+        <input type="text" id="search-bar-recipe" placeholder="rechercher" class="text-center">
         <div id="recettes">
 
         <?php 

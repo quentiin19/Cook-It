@@ -1,25 +1,23 @@
 const request_ajax = new XMLHttpRequest;
 
-const search_bar = document.getElementById("search_bar_ajax");
-const search_button = document.getElementById("search_button_ajax");
-const result_ajax = document.getElementById("result_ajax");
+//elements du dom
+const search_bar_recipes = document.getElementById("search-bar-recipe");
+const search_bar_ingredients = document.getElementById("search-bar-recipe");
+const result_ajax = document.getElementById("result-ajax");
 const recettes = document.getElementById("recettes");
 
-//récupération des coordonnées de la barre de recherche
-//var coor_sb = search_bar.getBoundingClientRect();
-
-//écouteurs
-search_bar.addEventListener("input", onclickajax);
+//écouteur
+search_bar.addEventListener("input", onclickrecipe);
 
 
 function clean_str_ajax(str){
     let new_str = [];
     console.log(`uncleaned string : ${str}`);
-    let a = "àáâäAÀÁÂÄ";
-    let e = "èéêëEÈÉÊË";
-    let i = "ìíîïIÌÍÎÏ";
-    let o = "òóôöOÒÓÔÖ";
-    let u = "ùúûüUÙÚÛÜ";
+    // let a = "àáâäAÀÁÂÄ";
+    // let e = "èéêëEÈÉÊË";
+    // let i = "ìíîïIÌÍÎÏ";
+    // let o = "òóôöOÒÓÔÖ";
+    // let u = "ùúûüUÙÚÛÜ";
     let liaison = ['à', 'au', 'aux', 'le', 'la' , 'les', 'pour', 'dans', 'avec', 'sans'];
 
     //on supprime les mots de liaisons qui ne sont pas utiliser dans la recherche en bdd
@@ -50,10 +48,13 @@ function clean_str_ajax(str){
     return new_str;
 }
 
+function onclickingredients(params) {
+    
+}
 
-function onclickajax() {
+function onclickrecipe() {
     //récupération de la valeur dans la barre de recherche
-    var keywords = clean_str_ajax(search_bar.value);
+    var keywords = clean_str_ajax(search_bar_recipes.value);
 
 
     //envoi de la requete
