@@ -6,7 +6,6 @@ include 'template/header.php';
 
 <div class="row" height = "100%" >
     <div class="col-lg-2 col-md-2 col-sm-2 bg-color my-3 ml-5 arrondie ">
-        <div class=" d-flex  ">
             <div class="row">
                 <div class="col-lg-12">
                     <a href="#" >Modifier mon profil</a>
@@ -27,7 +26,6 @@ include 'template/header.php';
                     <a href="#" >Modifier mon profil</a>
                 </div>
             </div>
-        </div>
     </div>
     <div class="col-lg-10 col-md-10 col-sm-10 bg-coleur">
     <?php
