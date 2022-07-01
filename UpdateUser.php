@@ -3,7 +3,7 @@ session_start();
 require "functions.php";
 echo '<pre>';print_r($_POST);echo '</pre>';
 echo '<pre>';print_r($_SESSION);echo '</pre>';
-
+$id=$_SESSION['id'];
 //Vérification si admin
 if(isAdmin()){
 	$pdo = connectDB();
@@ -19,7 +19,8 @@ if(isAdmin()){
 
 	}
 
-$id=$_POST['id'];
+
+
 
 //récupérer les données du formulaire
 $firstname = $_POST["firstname"];
@@ -58,7 +59,7 @@ updateLogs($id, "modification du profil par un administrateur (".$_SESSION['id']
 //redirection vers la page membre
 header("Location: admin.php");
 
-}else if(isConnected() == $id){
+}elseif(isConnected() == $id){
 
 	$pdo = connectDB();
     $queryPrepared = $pdo->prepare("SELECT HASHPWD FROM USER WHERE ID=:id");
@@ -84,7 +85,6 @@ header("Location: admin.php");
 
 	//récupérer les données du formulaire
 
-	$email = $_POST["email"];
 	$firstname = $_POST["firstname"];
 	$lastname = $_POST["lastname"];
 	$pseudo = $_POST["pseudo"];
@@ -96,31 +96,11 @@ header("Location: admin.php");
 	$errors = [];
 
 	//nettoyer les données
-
-	$email = strtolower(trim($email));
 	$firstname = ucwords(strtolower(trim($firstname)));
 	$lastname = strtoupper(trim($lastname));
 	$pseudo = ucwords(strtolower(trim($pseudo)));
 
 	// Verif champs
-
-	//Email OK
-	if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
-		$errors[] = "Email incorrect";
-	}else{
-
-		//Vérification l'unicité de l'email
-		$pdo = connectDB();
-		$queryPrepared = $pdo->prepare("SELECT ID from USER WHERE EMAIL=:email");
-
-		$queryPrepared->execute(["email"=>$email]);
-		
-		if(!empty($queryPrepared->fetch())){
-			$errors[] = "L'email existe déjà en bdd";
-		}
-
-
-	}
 
 	//prénom : Min 2, Max 45 ou empty
 	if( strlen($firstname)==1 || strlen($firstname)>45 ){
@@ -163,7 +143,7 @@ header("Location: admin.php");
 	$hashpwd= password_hash($pwd, PASSWORD_DEFAULT);
 
 	//Modification des infos de l'utilisateur dans la BDD
-	$queryPrepared = $pdo->prepare("update USER SET PSEUDO =:pseudo, HASHPWD =:hashpwd, FIRSTNAME =:firstname, LASTNAME =:lastname WHERE ID =:id");
+	$queryPrepared = $pdo->prepare("update USER SET PSEUDO =:pseudo, HASHPWD =:hashpwd, FIRSTNAME =:firstname, LASTNAME =:lastname WHERE ID =:id;");
 	$queryPrepared->execute(["pseudo"=> $pseudo, "hashpwd"=> $hashpwd, "fistname"=> $firstname, "lastname"=> $lastname, "id"=> $id ]);
 	
 	//update des logs
@@ -172,7 +152,7 @@ header("Location: admin.php");
 	//Redirection
 	header("Location: profil.php");
 	
-}else{
-	die("Il faut se connecter !!!");
+	}else{
+		die("Il faut se connecter !!!");
 }
 
