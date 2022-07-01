@@ -1,7 +1,7 @@
 <?php
 session_start();
 require "functions.php";
-
+echo '<pre>';print_r($_POST);echo '</pre>';
 //Vérification si admin
 if(isAdmin()){
 	$pdo = connectDB();
