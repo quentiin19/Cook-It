@@ -5,7 +5,7 @@ include "template/header.php";
 if (isConnected() == $_GET['id']){
     $pdo = connectDB();
 
-    $queryPrepared = $pdo->prepare("SELECT * FROM SUBSCRIPTION WHERE ID_SUBSCRIPTION = :idsub AND ID_SUBSCRIBER = idber;");
+    $queryPrepared = $pdo->prepare("SELECT * FROM SUBSCRIPTION WHERE ID_SUBSCRIPTION = :idsub AND ID_SUBSCRIBER = :idber;");
     $queryPrepared->execute(["idsub"=>$_GET['id'],"idber"=>$_GET['ids']]);
     $frrequest = $queryPrepared->fetch();
     
@@ -13,8 +13,11 @@ if (isConnected() == $_GET['id']){
         die("Could not find this request");
     }
     elseif (isset($frrequest)) {
-        $queryPrepared = $pdo->prepare("DELETE FROM SUBSCRIPTION WHERE ID_SUBSCRIPTION = :idsub AND ID_SUBSCRIBER = idber; ");
+        $queryPrepared = $pdo->prepare("DELETE FROM SUBSCRIPTION WHERE ID_SUBSCRIPTION = :idsub AND ID_SUBSCRIBER = :idber; ");
         $queryPrepared->execute(["idsub"=>$_GET['id'],"idber"=>$_GET['ids']]);
+        header("Location: https://cookit.ovh/profil.php?id=".$_GET['id']);
+        
     }
+    
 
 }
