@@ -26,7 +26,8 @@ class API{
 
             for ($i = 0; $i < count($queryResults); $i++){ 
                 echo ', '.array_search($queryResults[$i][0], $recipes, false);
-                if (array_search($queryResults[$i][0], $recipes, false) != false){
+                //vérification de la présence dans le tableau $recipes de la recette (0 == false retourne vrai en php)
+                if (array_search($queryResults[$i][0], $recipes, false) == 0 || array_search($queryResults[$i][0], $recipes, false) != false){
                     echo 'trouvé';
                     $index = array_search($queryResults[$i][0], $recipes, false);
                     $pertinence[$index] += 1; 
