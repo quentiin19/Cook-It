@@ -34,7 +34,7 @@ $p = $_GET['p'];
             $q = ($p - 1) * 20 + 19;
         }
 
-        for($i = (($p - 1) * 20); $i < $q; $i++){
+        for($i = (($p - 1) * 20); $i < 19; $i++){
             echo '<pre>';
             print_r($recipes[$i]);
             echo '</pre>';
