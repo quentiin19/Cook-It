@@ -35,6 +35,6 @@ include "template/header.php";
 
         </div>
 
-        <!-- <script src="ressources/js/ajax.js"></script> -->
+        <script src="ressources/js/ajax.js"></script>
     </body>
 </html>
