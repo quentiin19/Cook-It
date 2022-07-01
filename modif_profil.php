@@ -34,10 +34,12 @@ if (isConnected()) {
 											Votre prénom :<input type="text" class="form-control" name="firstname" placeholder="Votre prénom" value="<?=$results["FIRSTNAME"]?>"><br>
 											Votre nom :<input type="text" class="form-control" name="lastname" placeholder="Votre nom" value=" <?=$results["LASTNAME"]?>"><br>
 											Votre pseudo :<input type="text" class="form-control" name="pseudo" placeholder="Votre pseudo"  required="required" value=" <?=$results["PSEUDO"]?>"><br>
-											<h3 class="py-3"> Modifier mon mot de passe </h3>
-											<input type="password" class="form-control" name="oldpassword" placeholder="ancien mot de passe"  required="required"><br>
-											<input type="password" class="form-control" name="password" placeholder="nouveau mot de passe" required="required"><br>
-											<input type="password" class="form-control" name="passwordConfirm" placeholder="confirmation" required="required"><br>
+											Votre Descriptin :<textarea row=3 type="text" class="form-control" name="description" placeholder="Votre description"  required="required" value=" <?=$results["DESCRIPTION_PROFIL"]?>"></textarea><br>
+											<h3 class="py-3"> Confirmez en rentrant votre mot de passe </h3>
+											<input type="password" class="form-control" name="password" placeholder="mot de passe"  required="required"><br>
+											<?php
+											echo '<a href="pwdmodif.php?id="'.$_SESSION["id"].'>Modifier votre Mot de passe</a><br>';
+											?>
 											<input  type="submit" class=" ml-3 mt-5 btn btn-light btn-lg py-2 " value="Modifier">
 										</form>
 									</div>
