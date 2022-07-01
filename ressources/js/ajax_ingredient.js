@@ -57,7 +57,7 @@ function display_results_ingredient(){
     console.log(ingredients_resp);
 
     //hide tous les éléments
-    for (const element of ingredients) {
+    for (const element of ingredients.childNodes) {
         element.hidden = true;
     }
 
