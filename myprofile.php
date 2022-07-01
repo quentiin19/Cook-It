@@ -5,7 +5,7 @@ include 'template/header.php';
 
 
 <div class="row" height = "100%" >
-    <div class="col-lg-2 col-md-2 col-sm-2 bg-color my-3 ml-5 arrondie ">
+    <div class="col-lg-2 col-md-2 col-sm-2 bg-color mx-3 my-3 ml-5 arrondie ">
             <div class="row">
                 <div class="col-lg-12 my-5 py-2 pl-2">
                     <a class="text-white" href="https://cookit.ovh/modif_profil.php?id=<?= $_SESSION['id']?>" >Modifier mon profil</a>
@@ -13,7 +13,7 @@ include 'template/header.php';
             </div>
             <div class="row">
                 <div class="col-lg-12 my-5  py-2 pl-2">
-                    <a class="text-white" href="https://cookit.ovh/avatar.php" >Modifier mon avatar</a>
+                    <a class="text-white" href="https://cookit.ovh/avatar.php?id=<?= $_SESSION['id']?>" >Modifier mon avatar</a>
                 </div>
             </div>
             <div class="row">
