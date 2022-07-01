@@ -35,10 +35,12 @@ function clean_str_ajax(str){
 
     //on remplace les lettres qui pourrait fausser notre rechercher en bdd
     for (let k = 0; k < str.length; k++) {
+        if(!(k == (str.length - 1) && str[k] == ' ')){
             if(str[k] == ' '){
                 new_str += '-';
             }else{
                 new_str += str[k]
+            }
         }
     }
 
