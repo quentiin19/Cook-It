@@ -77,7 +77,7 @@ header("Location: admin.php");
 		empty($_POST["pseudo"]) ||
 		empty($_POST["password"])||
 		!isset($_POST["description"]) ||
-		count($_POST)!=4
+		count($_POST)!=5
 	){
 
 		die("Tentative de Hack ...");
