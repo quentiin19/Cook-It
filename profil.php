@@ -24,7 +24,11 @@ include "template/header.php";
         $queryPrepared->execute(["id" => $_GET["id"]]);
         $abonnement = $queryPrepared->fetch();
 
-
+        //récupération du nombre d'abonnement de ce profil qu'il n'a pas accepté
+        $queryPrepared = $pdo->prepare("SELECT COUNT(ID_SUBSCRIPTION) FROM SUBSCRIPTION WHERE SUBSCRIPTION.ID_SUBSCRIBER = :id AND STATUS = 0;");
+        $queryPrepared->execute(["id" => $_GET["id"]]);
+        $friendR = $queryPrepared->fetch();
+        
         //affichages des boutons sur le profil
 
         if($_SESSION['id'] != $_GET['id']){
@@ -147,7 +151,7 @@ include "template/header.php";
                             <a href="<?= 'https://cookit.ovh/viewsub.php?id='.$_GET['id'].'&display=2'?>"><h4>Abonnés : <?= $abonnes[0]?></h4><a>
                         </div>
                         <div class="col-lg-3">
-                            <a href="<?= 'https://cookit.ovh/friendrequests.php?id='.$_GET['id'].'&display=2'?>"><h4>Abonnés : <?= $abonnes[0]?></h4><a>
+                            <a href="<?= 'https://cookit.ovh/friendrequests.php?id='.$_GET['id'].'&display=2'?>"><h4>Demandesd'amis : <?= $friendR[0]?></h4><a>
                         </div>
                         
                     </div>
