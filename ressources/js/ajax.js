@@ -72,7 +72,7 @@ function display_results_ingredient() {
     console.log(JSON.parse(request_ajax.response));
 
     let ingredients_resp = JSON.parse(request_ajax.response);
-    console.log(ingredients_resp.children[0]);
+    console.log(ingredients_resp.children);
 
     //hide tous les éléments
     for (const element of ingredients_resp.childNodes) {
