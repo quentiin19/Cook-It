@@ -135,6 +135,8 @@ function display_results_recipe() {
 
             second_div.appendChild(a);
             main_div.appendChild(second_div);
+
+            recettes.appendChild(main_div);
         }
     }
 }
