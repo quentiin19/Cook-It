@@ -155,7 +155,6 @@ class API{
         }
 
         
-        print_r($result);
 
         //enfin on met dans le tableau json_recipes les colonnes qui nous intéresse des recettes
         $json_ingredients = [];
