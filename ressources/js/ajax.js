@@ -1,4 +1,6 @@
+//requetes
 const request_ajax = new XMLHttpRequest;
+const request_admin = new XMLHttpRequest;
 
 //elements du dom
 const search_bar_recipes = document.getElementById("search-bar-recipe");
@@ -12,26 +14,16 @@ const ingredients = document.getElementById("ingredients");
 search_bar_recipes.addEventListener("input", onclickrecipe);
 search_bar_ingredients.addEventListener("input", onclickingredients);
 
+//variable
+const id = document.getElementById("id-user").innerText;
+const token = document.getElementById("token-user").innerText;
+let adminDisplay = 0;
+
 
 function clean_str_ajax(str){
     let new_str = [];
     console.log(`uncleaned string : ${str}`);
-    // let a = "àáâäAÀÁÂÄ";
-    // let e = "èéêëEÈÉÊË";
-    // let i = "ìíîïIÌÍÎÏ";
-    // let o = "òóôöOÒÓÔÖ";
-    // let u = "ùúûüUÙÚÛÜ";
     let liaison = ['à', 'au', 'aux', 'le', 'la' , 'les', 'pour', 'dans', 'avec', 'sans'];
-
-    //on supprime les mots de liaisons qui ne sont pas utiliser dans la recherche en bdd
-    /*
-    for (let i = 0; i < liaison.length; i++) {
-        let position = string.indexOf(liaison[i]);
-        if (position != -1){
-            string.slice(position, liaison[i].length);
-        }
-    }
-    */
 
     //on remplace les lettres qui pourrait fausser notre rechercher en bdd
     for (let k = 0; k < str.length; k++) {
@@ -164,9 +156,9 @@ function onclickrecipe() {
     //récupération de la valeur dans la barre de recherche
     var keywords = clean_str_ajax(search_bar_recipes.value);
 
-
     //envoi de la requete
     request_ajax.addEventListener("load", display_results_recipe);
+
     //configuration de la requete
     request_ajax.open("GET", `https://cookit.ovh/ressources/api/api.php?keywords=${keywords}&action=1`);
     request_ajax.send();
@@ -240,11 +232,43 @@ function display_results_recipe() {
 
         recettes.appendChild(main_div);
 
+        //---------------------------------------------------------------
+
+
+
+        //          <div class="col-lg-3 col-md-4 col-sm-1 py-3">
+        //             <div class="card mb-4 shadow-sm bg-color py-3 px-3 arrondie">
+        //                 <a href="https://cookit.ovh/recette.php?id='.$recipe['ID_RECIPE'].'">
+        //                 <img src="'.$recipe['PICTURE_PATH'].'" class="card-img-top cardh"> </img>
+        //                 <div class="card-body text-center arrondie">
+        //                             <h4 class="text-white">'.$recipe['TITLE'].'</h4>
+        //                             <a href="https://cookit.ovh/profil.php?id='.$recipe['ID_CREATOR'].'" class=" btn btn-secondary" style="height : 30px"><p>Créé par '.$recipe['PSEUDO'].'</p></a>
+        //                 </div>';
+        //                 if (isAdmin()){
+        //                     echo'<div class="text-right">
+        //                             <a href="https://cookit.ovh/delRecette.php?id='.$recipe['ID_RECIPE'].'"><button type="button" class="btn btn-danger px-3"><i class="glyphicon glyphicon-trash" aria-hidden="true"></i></button></a>
+        //                         </div>';
+        //                 }
+                        
+        //                 echo'</a>        
+        //             </div>
+        //         </div>'
     }
 }
 
 
 
+request_admin.addEventListener("load", changeAdminDP);
+request_admin.open("GET", `https://cookit.ovh/ressources/api/api.php?action=3&id=${id}&token=${token}`);
+request_admin.send();
+
+
+function changeAdminDP(){
+    adminRespons = JSON.parse(request_admin.response);
+    if (adminRespons == 1) {
+        adminDisplay = 1;
+    }
+}
 
 /*
 détection

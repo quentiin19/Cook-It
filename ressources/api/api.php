@@ -170,6 +170,21 @@ class API{
 
         return json_encode($json_ingredients);
     }
+
+    function isAdmin($id, $token) {
+        //connexion à la bdd
+        $pdo = connectDB();
+
+        $queryPrepared = $pdo->prepare("SELECT role FROM USER WHERE ID=:id AND TOKEN=:token");	
+        $queryPrepared->execute(["id"=>$id, "token"=>$token]);
+        $resultat = $queryPrepared->fetch();
+        
+        if ($resultat[0] == 2){
+            return 1;
+        }else{
+            return 0;
+        }       
+    }
 }
 
 $API = new API;
@@ -180,6 +195,9 @@ if ($_GET['action'] == 1) {
 
 }elseif ($_GET['action'] == 2) {
     echo $API->ReturnIngredient($_GET['keywords']);
+
+}elseif ($_GET['action'] == 3){
+    echo $API->isAdmin($_GET['id'], $_GET['token']);
 }
 
 

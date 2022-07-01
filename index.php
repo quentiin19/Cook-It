@@ -1,5 +1,10 @@
 <?php
 include "template/header.php";
+
+if(isConnected()){
+    echo '<p id="id-user" hidden="hidden">'.$_SESSION['id'].'</p>';
+    echo '<p id="token-user" hidden="hidden">'.$_SESSION['token'].'</p>';
+}
 ?>
 
         <input type="text" id="search-bar-recipe" placeholder="rechercher" class="text-center">
