@@ -26,16 +26,9 @@ if(isConnected()){
     	$from = 'support-cookit@cookit.com';
     	$name = "Cookit-supportTeam";
     	$subj = 'Mail de confirmation';
-        $msg = '<a href=https://cookit.ovh/test/TestConfirmMail/verif.php?id='.$_SESSION['id'].'&cle='.$cle.'>Confirmer</a><h1>Cliquez sur le lien de confirmation juste au dessus</h1>';
+        $msg = '<a href=https://cookit.ovh/test/TestConfirmMail/verifcm.php?id='.$_SESSION['id'].'&cle='.$cle.'>Confirmer</a><h1>Cliquez sur le lien de confirmation juste au dessus</h1>';
     	smtpmailer($emailnew,$from, $name ,$subj, $msg);
     	
-    	    	//repasser le statut à 0
-		$queryPrepared = $pdo->prepare("UPDATE USER SET role = 0 where USER.ID = :id");
-	    $queryPrepared->execute(["id"=>$_SESSION['id']]);
-        
-        $queryPrepared = $pdo->prepare("UPDATE USER SET MAIL = :mail where USER.ID = :id");
-	    $queryPrepared->execute(["id"=>$_SESSION['id'], "mail" => $_POST['emailnew']]);
-
         }		
 	
     }else{
