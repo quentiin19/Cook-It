@@ -1,8 +1,9 @@
 <?php
 include "template/header.php";
 ?>
-<div class="card bg-color text-white" style="border-radius: 1rem;">
+
     <div class="col-lg-6 col-md-6 col-sm-6">
+    <div class="card bg-color text-white py-3" style="border-radius: 1rem;">
         <h3 class="text-center py-3">Ajouter les ingrédients </h3>
 
         <!--scroll-->
