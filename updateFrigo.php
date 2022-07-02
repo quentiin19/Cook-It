@@ -15,15 +15,16 @@ if (isConnected()){
 
     foreach($ingredients as $ingredient){
         if(isset($_POST['nfcheckbox'.$ingredient['ID']])){
-            echo 'ouais';
             // il a coché la check
             $queryPrepared = $pdo->prepare("SELECT COUNT(ID_INGREDIENT) FROM FRIDGE where ID_USER = :id AND ID_INGREDIENT = :ingr;");
             $queryPrepared->execute(['id' => $_SESSION['id'], 'ingr' => $ingredient['ID']]);
             $ingr_fridge = $queryPrepared->fetch();
+            echo $ingr_fridge;
             if ($ingr_fridge == 0){
                 //Pas dans le frigo
+                echo $ingredient['NAME'].' inséré en bdd';
                 $queryPrepared = $pdo->prepare("INSERT INTO FRIDGE VALUES (:id, :ingr, :quant);");
-                $queryPrepared->execute(['id' => $_SESSION['id'], 'ingr' => $ingredient['ID'], 'quant' => $_POST['nfquantity'.$ingredient['ID']] ]);
+                $queryPrepared->execute(['id' => $_SESSION['id'], 'ingr' => $ingredient['ID'], 'quant' => $_POST['nfquantity'.$ingredient['ID']]]);
             }
         }elseif(isset($_POST['fcheckbox'.$ingredient['ID']])){
 
