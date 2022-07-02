@@ -59,7 +59,7 @@ function display_results_user() {
             pseudo.innerText = `${user['PSEUDO']}`;
 
             const a = document.createElement("a");
-            a.setAttribute("href", `https://cookit.ovh/recette.php?id=${recipe['ID_RECIPE']}`);
+            a.setAttribute("href", `https://cookit.ovh/recette.php?id=${user['ID']}`);
 
 
             second_div.appendChild(img);
