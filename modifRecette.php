@@ -143,7 +143,7 @@ if (isConnected() == $_SESSION['id'] || isAdmin()) {
 			if(isset($_POST['checkbox'.$i])){
 				$quantity = $_POST["quantity".$i];
 				$queryPrepared = $pdo->prepare("INSERT INTO NEED VALUES (:quantity, :id_ingr, :id_recipe)");
-				$queryPrepared->execute(["quantity"=>$quantity, "id_ingr"=>$i ,"id_recipe"=>$_POST["idrecipe"]]);
+				$queryPrepared->execute(["quantity"=>$_POST['quantity'.$i], "id_ingr"=>$i ,"id_recipe"=>$_POST["idrecipe"]]);
 			}
 		}
 		
