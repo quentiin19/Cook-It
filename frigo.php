@@ -43,7 +43,7 @@ include "template/header.php";
         
                     }?>
             </div>
-            <div class="d-flex justify-content-center">
+            <div class="d-flex justify-content-center my-4">
                 <button type="submit" class="btn btn-secondary mb-2 ">Valider</button>
             </div>
         </div>
