@@ -43,7 +43,9 @@ include "template/header.php";
         
                     }?>
             </div>
-            <input type="submit" value="Valider" class="text-center">
+            <div class="row d-flex justify-content-center">
+                <input type="submit" value="Valider" class="text-center">
+            </div>
         </div>
     </div>
 </div>
