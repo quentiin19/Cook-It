@@ -25,7 +25,7 @@ if (isConnected()) {
             </div>
             <div class="row">
                 <div class="col-lg-12 my-4 py-2 pl-2">
-                    <a class="text-white" href="#" >Modifier mon mot de passe</a>
+                    <a class="text-white" href="https://cookit.ovh/pwdmodif.php?id=<?= $_SESSION['id']?>" >Modifier mon mot de passe</a>
                 </div>
             </div>
             <div class="row">
