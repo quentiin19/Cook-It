@@ -60,6 +60,8 @@ function display_results_user() {
 
             const a = document.createElement("a");
             a.setAttribute("href", `https://cookit.ovh/profil.php?id=${user['ID']}`);
+            a.setAttribute("class", "bg-light rounded my-3");
+            a.innerText = "Voir le profil";
 
 
             second_div.appendChild(img);
