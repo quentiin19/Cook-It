@@ -35,7 +35,28 @@ if($state1[0] == 1 && $state2[0] == 1){
 
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     
-    
+<div class="row" height = "100%" >
+    <div class="col-lg-2 col-md-2 col-sm-2 bg-color my-3 ml-5 arrondie ">
+    <div class="row">
+    <?php
+	if(isConnected()){
+		if ($saved['0'] == 1) {
+			echo '<a href="https://cookit.ovh/messagerie.php?id='.$_GET['id'].'"><button type="button" class="btn btn-success px-3"><i class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></i></button></a>';
+		}else{
+			echo '<a href="https://cookit.ovh/saveRecipe.php?id_recipe='.$_GET['id'].'"><button type="button" class="btn btn-danger px-3"><i class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></i></button></a>';
+		}
+										
+		if($recipe['ID_CREATOR'] == isConnected() || isAdmin()){
+			echo '
+				<a href="https://cookit.ovh/page_modif_recette.php?id='.$_GET['id'].'"><button type="button" class="btn btn-primary px-3"><i class="glyphicon glyphicon-pencil" aria-hidden="true"></i></button></a>
+				<a href="https://cookit.ovh/delRecette.php?id='.$_GET['id'].'"><button type="button" class="btn btn-danger px-3"><i class="glyphicon glyphicon-trash" aria-hidden="true"></i></button></a>
+				';
+			}
+    	}
+    									
+    ?>
+    </div>
+    </div>
     
 <div class="row d-flex justify-content-center my-5">
     <div class="col-md-10 col-lg-8 col-xl-6">
