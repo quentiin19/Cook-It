@@ -12,6 +12,7 @@ const msg_canva = document.getElementById("message-canva");
 const id_sender = document.getElementById("id-sender").innerText;
 const id_receveur = document.getElementById("id-receveur").innerText;
 const token = document.getElementById("token").innerText;
+let last_msg;
 
 
 //listener
@@ -32,7 +33,7 @@ function sendMsg(){
     if(msg.length > 0){
         console.log('envoi du message');
         request.addEventListener("load", displayMsg);
-        request.open("GET", `https://cookit.ovh/test/messagerie/api_msg.php?task=write&msg=${msg}&sender=${id_sender}&receiver=${id_receveur}&token=${token}`);
+        request.open("GET", `https://cookit.ovh/ressources/api/api_msg.php?task=write&msg=${msg}&sender=${id_sender}&receiver=${id_receveur}&token=${token}`);
         request.send();
     }
 }
@@ -70,8 +71,10 @@ function displayMsg() {
             div.appendChild(msg);
             msg_canva.appendChild(div);
 
-            msg.scrollIntoView();
+            last_msg = msg;
         }
+
+        last_msg.scrollIntoView();
     }
 }
 
@@ -79,7 +82,7 @@ function refresh() {
     request.addEventListener("load", function(){
         displayMsg();
     });
-    request.open("GET", `https://cookit.ovh/test/messagerie/api_msg.php?task=read&sender=${id_sender}&receiver=${id_receveur}&token=${token}`);
+    request.open("GET", `https://cookit.ovh/ressources/api/api_msg.php?task=read&sender=${id_sender}&receiver=${id_receveur}&token=${token}`);
     request.send();
     console.log("refreshed");
     setTimeout(refresh, 2000);

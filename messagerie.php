@@ -1,6 +1,6 @@
 <?php
 session_start();
-include '../../functions.php';
+include 'functions.php';
 
 
 
@@ -101,7 +101,7 @@ if($state1[0] == 1 && $state2[0] == 1){
     </div>
 </div>
 
-<script src="messagerie.js"></script>
+<script src="ressources/js/messagerie.js"></script>
 
 
 
