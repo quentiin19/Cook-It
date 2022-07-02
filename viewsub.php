@@ -7,7 +7,7 @@
 // Condition  : si la personne est connecté elle ne se verra pas dans les membres ( on verifie si une variable de SESSIO$_SESSION existe)
 if($_GET['display']==1){
 
-    $queryPrepared = $pdo->prepare("SELECT * FROM USER WHERE ID IN (SELECT ID_SUBSCRIPTION FROM SUBSCRIPTION WHERE ID_SUBSCRIBER = :id) ORDER BY PSEUDO ASC;");
+    $queryPrepared = $pdo->prepare("SELECT * FROM USER WHERE ID IN (SELECT ID_SUBSCRIPTION FROM SUBSCRIPTION WHERE ID_SUBSCRIBER = :id AND STATUS=1) ORDER BY PSEUDO ASC;");
     $queryPrepared -> execute(['id' =>$_GET['id']]);
     $abonnement = $queryPrepared -> fetchAll();
 
@@ -27,7 +27,7 @@ if($_GET['display']==1){
                 <div>
                     <?= $ab['PSEUDO'] ?>  
                 </div>
-                <a href="https://cookit.ovh/profil_membres.php?id=<?= $ab['ID'] ?>" class ="bg-light rounded my-3"> Voir le profil</a>
+                <a href="https://cookit.ovh/profil.php?id=<?= $ab['ID'] ?>" class ="bg-light rounded my-3"> Voir le profil</a>
                 
             </div>
         </div>
@@ -62,7 +62,7 @@ if($_GET['display']==1){
                 <div>
                     <?= $ab['PSEUDO'] ?>  
                 </div>
-                <a href="https://cookit.ovh/profil_membres.php?id=<?= $ab['ID'] ?>" class ="bg-light rounded my-3"> Voir le profil</a>
+                <a href="https://cookit.ovh/profil.php?id=<?= $ab['ID'] ?>" class ="bg-light rounded my-3"> Voir le profil</a>
                 
             </div>
         </div>

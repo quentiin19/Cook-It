@@ -12,8 +12,7 @@ include "template/header.php";
                 <input type="text" id="search-bar-ingredient" class="  py-2 mb-3 text-dark" placeholder="rechercher un ingredient">
             </div>
             <form method="POST" action="updateFrigo.php">
-            <div id="ingredients"></div>
-            <div id="ingredients-php" class="overflow-auto" style="height : 500px">
+            <div id="ingredients" class="overflow-auto" style="height : 500px">
                 <?php
                 $pdo = connectDB();
 
