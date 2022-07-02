@@ -76,7 +76,7 @@ if (isConnected() == $_SESSION['id']){
             echo '<div id="'.$ingredient['ID'].'"class="col-lg-12 col-md-12 col-sm-12 background-body arrondie my-2">
                         <div class="row align-items-center">
                                 <div class="col-lg-1 col-md-1 col-sm-6">
-                                    <input checked="checked" type="checkbox" name="fcheckbox'.$ingredient['ID'].' value="'.$ingredient['QUANTITY'].'">
+                                    <input checked="checked" type="checkbox" name="fcheckbox'.$ingredient['ID'].'" value="'.$ingredient['QUANTITY'].'">
                                 </div>
                                 <div class="col-lg-3 col-md-3 col-sm-6">
                                     <img src="'.$ingredient['PICTURE_PATH'].'" height ="70vh" width="70vw"/>
