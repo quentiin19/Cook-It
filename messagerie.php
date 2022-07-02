@@ -39,91 +39,69 @@ if($state1[0] == 1 && $state2[0] == 1){
 <div class="row" height="100%">
     <div class="col-lg-2 col-md-2 col-sm-2 bg-color my-3 ml-5 arrondie ">
         <div class="row overflow-auto" height="100%">
-                <div class="col-lg-12 my-5 py-2 pl-2">
-                    <a class="text-white" href="https://cookit.ovh/profilview.php?id=<?= $_SESSION['id']?>" >Mon profil</a>
-                </div>
-                <div class="col-lg-12 my-5 py-2 pl-2">
-                    <a class="text-white" href="https://cookit.ovh/modif_profil.php?id=<?= $_SESSION['id']?>" >Modifier mon profil</a>
-                </div>
-            </div>
+        
             <div class="row">
                 <div class="col-lg-12 my-5  py-2 pl-2">
                     <a class="text-white" href="https://cookit.ovh/avatar.php?id=<?= $_SESSION['id']?>" >Modifier mon avatar</a>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-lg-12 my-5 py-2 pl-2">
-                    <a class="text-white" href="https://cookit.ovh/modif_email.php?id=<?= $_SESSION['id']?>" >Modifier mon email</a>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12 my-4 py-2 pl-2">
-                    <a class="text-white" href="https://cookit.ovh/pwdmodif.php?id=<?= $_SESSION['id']?>" >Modifier mon mot de passe</a>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12 my-5 py-2 pl-2">
-                    <a class="text-white" href="https://cookit.ovh/test/fpdf/download_log.php?id=<?= $_SESSION['id'] ?>" >Télécharger mes logs</a>
-                </div>
-            </div>
+
         </div>
     <div class="col-lg-10 col-md-10 col-sm-10 bg-coleur">
-        <div class="row">
-			<div class="col-lg-12 col-md-12 col-sm-12 h-auto arrondie d-flex justify-content-center  ">
-                <div class="row d-flex justify-content-center my-5">
-                    <div class="col-md-10 col-lg-8 col-xl-6">
+        <div class="row d-flex justify-content-center my-5">
+            <div class="col-md-10 col-lg-8 col-xl-6">
 
-                        <div class="card" id="chat2">
-                            <div class="card-header d-flex justify-content-between align-items-center p-3">
-                                <h5 class="mb-0">Chat avec <?=$friendName[0]?></h5>
-                            </div>
+                <div class="card" id="chat2">
+                    <div class="card-header d-flex justify-content-between align-items-center p-3">
+                        <h5 class="mb-0">Chat avec <?=$friendName[0]?></h5>
+                    </div>
 
-                            <!-- section du chat -->
-                            <div id="message-canva" class="card-body overflow-auto" data-mdb-perfect-scrollbar="true" style="position: relative; height: 400px">
-                            
-                            
-                                <!-- 1ere personne -->
-                                <div class="d-flex flex-row justify-content-start">
-                                    <!-- <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3-bg.webp" alt="avatar 1" style="width: 45px; height: 100%;">-->
-                                    <div>
-                                        <p class="small p-2 ms-3 mb-1 rounded-3" style="background-color: #f5f6f7;">Hi</p>
-                                        <p class="small p-2 ms-3 mb-1 rounded-3" style="background-color: #f5f6f7;">How are you ...???</p>
-                                        <p class="small p-2 ms-3 mb-1 rounded-3" style="background-color: #f5f6f7;">What are you doing tomorrow? Can we come up a bar?</p>
-                                        <p class="small ms-3 mb-3 rounded-3 text-muted">23:58</p>
-                                    </div>
-                                </div>
-
-                                
-                                <!-- 2eme personne -->
-                                <div class="d-flex flex-row justify-content-end mb-4 pt-1">
-                                    <div>
-                                        <p class="small p-2 me-3 mb-1 text-white rounded-3 bg-primary">Hiii, I'm good.</p>
-                                        <p class="small p-2 me-3 mb-1 text-white rounded-3 bg-primary">How are you doing?</p>
-                                        <p class="small p-2 me-3 mb-1 text-white rounded-3 bg-primary">Long time no see! Tomorrow ofdddddddddddddddfdfdsfkslfklmdskflmskflmdskflmskflmskflmskfmlskmlfksmlfkldmskfmlsfdfdfkdfdlfkldkfldfkldkfldklfdkfldkdflfice. will be free on sunday.</p>
-                                        <p class="small me-3 mb-3 rounded-3 text-muted d-flex justify-content-end">00:06</p>
-                            
-                                    </div>
-                                    <!-- <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava4-bg.webp" alt="avatar 1" style="width: 45px; height: 100%;">-->
-                                </div> 
-
-                            </div>
-
-                            <!-- section du chat -->
-
-
-
-
-
-                            <div class="card-footer text-muted d-flex justify-content-start align-items-center p-3">
-                                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3-bg.webp" alt="avatar 3" style="width: 40px; height: 100%;">
-                                <input type="text" class="form-control form-control-lg" id="message-input" placeholder="Type message">
-                                <button id="send-message">envoyer</button>
-                                <a class="ms-3" href="#!"><i class="fas fa-paper-plane"></i></a>
+                    <!-- section du chat -->
+                    <div id="message-canva" class="card-body overflow-auto" data-mdb-perfect-scrollbar="true" style="position: relative; height: 400px">
+                    
+                    
+                        <!-- 1ere personne -->
+                        <div class="d-flex flex-row justify-content-start">
+                            <!-- <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3-bg.webp" alt="avatar 1" style="width: 45px; height: 100%;">-->
+                            <div>
+                                <p class="small p-2 ms-3 mb-1 rounded-3" style="background-color: #f5f6f7;">Hi</p>
+                                <p class="small p-2 ms-3 mb-1 rounded-3" style="background-color: #f5f6f7;">How are you ...???</p>
+                                <p class="small p-2 ms-3 mb-1 rounded-3" style="background-color: #f5f6f7;">What are you doing tomorrow? Can we come up a bar?</p>
+                                <p class="small ms-3 mb-3 rounded-3 text-muted">23:58</p>
                             </div>
                         </div>
+
+                        
+                        <!-- 2eme personne -->
+                        <div class="d-flex flex-row justify-content-end mb-4 pt-1">
+                            <div>
+                                <p class="small p-2 me-3 mb-1 text-white rounded-3 bg-primary">Hiii, I'm good.</p>
+                                <p class="small p-2 me-3 mb-1 text-white rounded-3 bg-primary">How are you doing?</p>
+                                <p class="small p-2 me-3 mb-1 text-white rounded-3 bg-primary">Long time no see! Tomorrow ofdddddddddddddddfdfdsfkslfklmdskflmskflmdskflmskflmskflmskfmlskmlfksmlfkldmskfmlsfdfdfkdfdlfkldkfldfkldkfldklfdkfldkdflfice. will be free on sunday.</p>
+                                <p class="small me-3 mb-3 rounded-3 text-muted d-flex justify-content-end">00:06</p>
+                    
+                            </div>
+                            <!-- <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava4-bg.webp" alt="avatar 1" style="width: 45px; height: 100%;">-->
+                        </div> 
+
+                    </div>
+
+                    <!-- section du chat -->
+
+
+
+
+
+                    <div class="card-footer text-muted d-flex justify-content-start align-items-center p-3">
+                        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3-bg.webp" alt="avatar 3" style="width: 40px; height: 100%;">
+                        <input type="text" class="form-control form-control-lg" id="message-input" placeholder="Type message">
+                        <button id="send-message">envoyer</button>
+                        <a class="ms-3" href="#!"><i class="fas fa-paper-plane"></i></a>
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
 
 <script src="ressources/js/messagerie.js"></script>
 
