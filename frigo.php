@@ -54,7 +54,7 @@ include "template/header.php";
 
 if (isConnected() == $_SESSION['id']){
 	$pdo = connectDB();
-	$queryPrepared = $pdo->prepare("SELECT *, QUANTITY FROM INGREDIENTS, FRIDGE WHERE ID in (SELECT ID_INGREDIENT FROM FRIDGE WHERE ID_USER = :id);");
+	$queryPrepared = $pdo->prepare("SELECT * from FRIDGE,INGREDIENTS where INGREDIENTS.ID = FRIDGE.ID_INGREDIENT AND FRIDGE.ID_USER = :id;");
 	$queryPrepared->execute(["id" => $_SESSION['id']]);
 	$fridge = $queryPrepared->fetchAll();
 
