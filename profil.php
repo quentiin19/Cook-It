@@ -116,7 +116,7 @@ if (isConnected()){
     
                                 }
                             //sinon si 
-                            }elseif(!isset($state2[0]) || $state2[0] == 1) {
+                            }elseif(!isset($state2[0]) || $state2[0] == 1 || $state1[0] == 0) {
                                 //affichage du bouton s'abonner
                                 echo'<div class="col-lg-6 col-md-6 d-flex justify-content-end">
                                     <a href="https://cookit.ovh/social-action.php?id='.$_GET['id'].'&action=sub" class=" btn btn-secondary" style="height : 30px"><p>S\'abonner</p></a>
