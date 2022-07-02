@@ -1,7 +1,7 @@
 <?php
 session_start();
 require "functions.php";
-require 'PHPMailer/PHPMailerAutoload.php';
+require '/test/TestConfirmaMail/PHPMailer/PHPMailerAutoload.php';
 ?>
 <?php
 $email = $_POST['emailold'];
