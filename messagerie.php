@@ -45,8 +45,8 @@ if($state1[0] == 1 && $state2[0] == 1){
                     <a class="text-white" href="https://cookit.ovh/avatar.php?id=<?= $_SESSION['id']?>" >Modifier mon avatar</a>
                 </div>
             </div>
-
         </div>
+    </div>
     <div class="col-lg-10 col-md-10 col-sm-10 bg-coleur">
         <div class="row d-flex justify-content-center my-5">
             <div class="col-md-10 col-lg-8 col-xl-6">
