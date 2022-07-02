@@ -41,7 +41,7 @@
                                                 <!--scroll-->
                                                 <div>
 													<input type="text" id="search-bar-ingredient" class="text-dark" placeholder="rechercher un ingredient">
-                                                    <div id="ingredients" class="overflow-auto" style="height : 400px">
+                                                    <div id="ingredients" class="overflow-auto" style="height : 380px">
                                                         <?php
 												$pdo = connectDB();
 
