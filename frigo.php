@@ -69,10 +69,6 @@ if (isConnected() == $_SESSION['id']){
             <div class="overflow-auto " style="height : 480px">
             <?php
             foreach ($fridge as $ingredient) {
-                echo 'eee<pre>';
-                print_r($ingredient);
-                echo '</pre>';
-                echo $ingredient['QUANTITY'];
             echo '<div id="'.$ingredient['ID'].'"class="col-lg-12 col-md-12 col-sm-12 background-body arrondie my-2">
                         <div class="row align-items-center">
                                 <div class="col-lg-1 col-md-1 col-sm-6">
