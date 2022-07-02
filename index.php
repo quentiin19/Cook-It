@@ -80,7 +80,7 @@ $p = $_GET['p'];
         <!-- PAGINATION --> 
         <div id="next-prev" class="row">
             <div class="d-flex justify-content-center">
-                <ul class="pagination">
+                <ul class="pagination text-left">
                     <li>
                     <a class="page-link" href="
                     <?php 
