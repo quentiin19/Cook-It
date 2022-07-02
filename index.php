@@ -13,8 +13,10 @@ if(!isset($_GET['p'])){
 $p = $_GET['p'];
 
 ?>
-<div>
-        <input type="text" id="search-bar-recipe" placeholder="rechercher" class="text-center">
+<div>   
+        <div class="d-flex justify-content-center">
+            <input type="text" id="search-bar-recipe" placeholder="rechercher" class="text-center">
+        </div>
         <div id="recettes"></div>
 
         <div id="recettes-php">
