@@ -79,28 +79,28 @@ $p = $_GET['p'];
     </div>
         <!-- PAGINATION --> 
         <div id="next-prev" class="row">
-            <div class="d-flex justify-content-center">
-                
-                    <a class="page-link" href="
+            <div class="d-flex justify-content-center mb-5">
+
+                <button type="button" class="btn btn-primary"><a class="" href="
                     <?php 
                     if ($p == 1){
                         echo'#';
                     }else{
                         echo'https://cookit.ovh/index.php?p='.($p -1);
                     }
-                    ?>">Previous</a>
+                    ?>">Previous</a></button>
                     
                         <p> Pages : <?=$p .'/'.$pmax ?> </p> 
                     
                     
-                    <a class="page-link" href="
+                    <button type="button" class="btn btn-primary"><a class="page-link" href="
                     <?php 
                     if ($p == $pmax){
                         echo'#';
                     }else{
                         echo'https://cookit.ovh/index.php?p='.($p + 1);
                     }
-                    ?>">Next</a>
+                    ?>">Next</a></button>
                     
                 
             </div>
