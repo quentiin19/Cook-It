@@ -1,12 +1,12 @@
-function switchTheme(theme_add, theme_rm) {
-    const lightText = document.body.querySelectorAll(.${theme_rm});
+// function switchTheme(theme_add, theme_rm) {
+//     const lightText = document.body.querySelectorAll(.${theme_rm});
 
-    for (let index = 0; index < lightText.length; index++) {
-        const element = lightText[index];
-        element.classList.remove(background-body);
-        element.classList.add(bg-light);
-    }
-}
+//     for (let index = 0; index < lightText.length; index++) {
+//         const element = lightText[index];
+//         element.classList.remove(background-body);
+//         element.classList.add(bg-light);
+//     }
+// }
 
 function switchCards(theme) {
     const cards = document.querySelectorAll('.film');
