@@ -3,12 +3,17 @@ const request_ajax = new XMLHttpRequest;
 
 //elements du dom
 const search_bar_ingredients = document.getElementById("search-bar-ingredient");
-const ingredients_php = document.getElementById("ingredients-php");
 const ingredients = document.getElementById("ingredients");
+
+//variables
+let keyword = "";
 
 
 //écouteur
 search_bar_ingredients.addEventListener("input", onclickingredients);
+
+
+
 
 
 function clean_str_ajax(str){
@@ -33,12 +38,12 @@ function clean_str_ajax(str){
 
 function onclickingredients() {
     //récupération de la valeur dans la barre de recherche
-    var keywords = clean_str_ajax(search_bar_ingredients.value);
+    keyword = clean_str_ajax(search_bar_ingredients.value);
 
     //envoi de la requete
     request_ajax.addEventListener("load", display_results_ingredient);
     //configuration de la requete
-    request_ajax.open("GET", `https://cookit.ovh/ressources/api/api.php?keywords=${keywords}&action=2`);
+    request_ajax.open("GET", `https://cookit.ovh/ressources/api/api.php?keywords=${keyword}&action=2`);
     request_ajax.send();
 
 
@@ -46,35 +51,35 @@ function onclickingredients() {
 
 
 function display_results_ingredient(){
-    ingredients.innerText = "";
-    if(keywords == ""){
-        next_prev.hidden = false;
-        for (const ingredient_php of ingredients_php.childNodes){
-            ingredient_php.hidden = false;
+    if(keyword == ""){
+        //hide tous les éléments
+        for (const element of ingredients.childNodes) {
+            element.hidden = false;
         }
     }else{
-        next_prev.hidden = true;
-        for (const ingredient_php of ingredients_php.childNodes){
-            recingredient_phpipe.hidden = true;
-        }
-
         let ingredients_resp = JSON.parse(request_ajax.response);
         console.log(ingredients_resp);
-
-
-        console.log(ingredients.children);
-        console.log(ingredients.childNodes);
+    
+    
+        //hide tous les éléments
+        for (const element of ingredients.childNodes) {
+            element.hidden = true;
+        }
+    
         //afficher tous les éléments présents dans ingredients_resp
         for (const element of ingredients.childNodes) {
             for (const ingredient of ingredients_resp) {
-                console.log(`${element.id} -- ${ingredient['ID']}`);
                 if(element.id == ingredient['ID']){
                     element.hidden = false;
+                    
                     break;
                 }
             }
         }
     }
+
+
+    
 
 
 
@@ -174,4 +179,3 @@ function display_results_ingredient(){
 }
 
 
-console.log("ouais");
