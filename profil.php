@@ -178,7 +178,7 @@ if (isConnected()){
                     <div class="row my-5">
                         <div class="col-lg-3 ">
                             <h4>Description : </h4><br>
-                            <p class="d-flex arrondie bg-light text-dark py-3 my-3"><?= $user['DESCRIPTION_PROFIL']?></p><br>    
+                            <p class="d-flex arrondie bg-light text-dark py-3 px-3-3"><?= $user['DESCRIPTION_PROFIL']?></p><br>    
                         </div>
                     </div>
                 </div>
