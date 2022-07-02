@@ -160,7 +160,7 @@ if (isConnected()){
                                 echo '
                                 <div class="col-lg-3">
                                     <a href="https://cookit.ovh/friendrequests.php?id='.$_GET['id'].'&display=2"><h4>Demandesd\'amis : '.$friendR[0].'</h4><a>
-                                </div>'
+                                </div>';
                             }
                         }
                         ?>
