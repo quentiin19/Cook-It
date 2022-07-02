@@ -196,7 +196,7 @@ if (isConnected()){
         </div>         
     </div>
 </div>
-
+<?php include "template/footer.php";?>
 
 
 
