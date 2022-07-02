@@ -39,10 +39,11 @@ include "template/header.php";
                                     '.$ingredient['UNIT'].'
                                 </div>		
                         </div>
-                        <input type="submit" value"Valider" class="text-center">
+                        
                     </div>';
             
         }?>
+        <input type="submit" value="Valider" class="text-center">
             </div>
             </div>
         </div>
