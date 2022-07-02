@@ -57,8 +57,9 @@ if($state1[0] == 1 && $state2[0] == 1){
 
                     echo    '<div class="row">
                                 <div class="col-lg-12 my-5  py-2 pl-2">
-                                    <img src="'.$friend['PATH_AVATAR'].'">
-                                    <a class="text-white" href="https://cookit.ovh/messagerie.php?id='.$friend['ID'].'" >'.$friend['PSEUDO'].'</a>
+                                    <a class="text-white" href="https://cookit.ovh/messagerie.php?id='.$friend['ID'].'" >
+                                        <img src="'.$friend['PATH_AVATAR'].'">
+                                    '.$friend['PSEUDO'].'</a>
                                 </div>
                             </div>';
                 }
