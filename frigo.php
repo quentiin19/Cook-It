@@ -8,7 +8,7 @@ include "template/header.php";
 
         <!--scroll-->
         <div>
-            <input type="text" id="search-bar-ingredient" class=" text-center py-2 pb-4 text-dark" placeholder="rechercher un ingredient">
+            <input type="text" id="search-bar-ingredient" class=" text-center py-2 mb-4 text-dark" placeholder="rechercher un ingredient">
             <div id="ingredients" class="overflow-auto" style="height : 500px">
                 <?php
         $pdo = connectDB();
