@@ -49,7 +49,7 @@ if($state1[0] == 1 && $state2[0] == 1){
                 $queryPrepared->execute(['id'=>$_SESSION['id'], 'idsub'=>$subscription['ID']]);
                 $result = $queryPrepared->fetch();
 
-                if($result[0] == 1){
+                if($result[0] == 1 && $subscription['ID'] =! $_GET['id']){
                     //récupération des données de l'ami
                     $queryPrepared = $pdo->prepare("SELECT ID, PSEUDO, PATH_AVATAR FROM USER WHERE ID = :id;");
                     $queryPrepared->execute(['id'=>$subscription['ID']]);
