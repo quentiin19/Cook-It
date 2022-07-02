@@ -2,7 +2,7 @@
 
 
 <!-- Footer -->
-<footer class="bg-color text-center text-white">
+<footer class="bg-color text-center text-white fixed-bottom">
   <!-- Copyright -->
   <div class=" p-3">
     © 2022 Copyright:
