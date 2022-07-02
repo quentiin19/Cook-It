@@ -54,7 +54,7 @@ include "template/header.php";
 
 if (isConnected() == $_SESSION['id']){
 	$pdo = connectDB();
-	$queryPrepared = $pdo->prepare("SELECT *  FROM INGREDIENTS WHERE ID in ( SELECT ID_INGREDIENT FROM FRIDGE WHERE ID_USER = :id);");
+	$queryPrepared = $pdo->prepare("SELECT *, QUANTITY FROM INGREDIENTS, FRIDGE WHERE ID in (SELECT ID_INGREDIENT FROM FRIDGE WHERE ID_USER = :id);");
 	$queryPrepared->execute(["id" => $_SESSION['id']]);
 	$fridge = $queryPrepared->fetchAll();
 
@@ -69,27 +69,24 @@ if (isConnected() == $_SESSION['id']){
         <div>
             <div class="overflow-auto " style="height : 480px">
             <?php
-            foreach ($fridge as $fridge_ingr) {
-
-    echo '<pre>';
-    print_r($fridge_ingr);
-    echo '</pre>';
-            echo '<div id="'.$fridge_ingr['ID'].'"class="col-lg-12 col-md-12 col-sm-12 background-body arrondie my-2">
+            foreach ($fridge as $ingredient) {
+                
+            echo '<div id="'.$ingredient['ID'].'"class="col-lg-12 col-md-12 col-sm-12 background-body arrondie my-2">
                         <div class="row align-items-center">
                                 <div class="col-lg-1 col-md-1 col-sm-6">
-                                    <input checked="checked" type="checkbox" name="fcheckbox'.$fridge_ingr['ID'].' value="'.$fridge_ingr['QUANTITY'].'"">
+                                    <input checked="checked" type="checkbox" name="fcheckbox'.$ingredient['ID'].' value="'.$ingredient['QUANTITY'].'"">
                                 </div>
                                 <div class="col-lg-3 col-md-3 col-sm-6">
-                                    <img src="'.$fridge_ingr['PICTURE_PATH'].'" height ="70vh" width="70vw"/>
+                                    <img src="'.$ingredient['PICTURE_PATH'].'" height ="70vh" width="70vw"/>
                                 </div>
                                 <div class="col-lg-3 col-md-3 col-sm-3">
-                                    <p>'.$fridge_ingr['NAME'].'</p>
+                                    <p>'.$ingredient['NAME'].'</p>
                                 </div>
                                 <div class="col-lg-3 col-md-2 col-sm-6 ">
-                                    <input class="input-width text-dark" type="text" name="fquantity'.$fridge_ingr['ID'].'" placeholder="quantité">
+                                    <input class="input-width text-dark" type="text" name="fquantity'.$ingredient['ID'].'" placeholder="quantité">
                                 </div>
                             <div class="col-lg-2 col-md-3 col-sm-3">
-                                    '.$fridge_ingr['UNIT'].'
+                                    '.$ingredient['UNIT'].'
                                 </div>		
                         </div>
                     </div>';
