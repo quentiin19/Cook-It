@@ -70,7 +70,7 @@ if (isConnected() == $_SESSION['id']){
 
                 <!--clean-->
         <div>
-            <div class="overflow-auto " style="height : 300px">
+            <div class="overflow-auto " style="height : 480px">
                 <?php
                 $displayed = 0;
                     foreach($allIngredient as $ingredient){
