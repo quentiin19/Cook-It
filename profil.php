@@ -217,8 +217,7 @@ if (isConnected()){
         
         echo'
         <div class="row">
-            <div class="col-lg-2"></div>
-            <div class="col-lg-8">';
+            <div class="col-lg-12 col-md-12 col-sm-12 d-flex justify-content-center">';
         foreach ($results as $result){
             echo '
                     <div class="col-lg-4 col-md-4 col-sm-1 py-3">
@@ -234,7 +233,6 @@ if (isConnected()){
         }
         echo '
             </div>
-            <div class="col-lg-2"></div>
         </div>';
 
 
