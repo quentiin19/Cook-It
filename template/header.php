@@ -34,9 +34,12 @@
 						<a href="#" class="btn btn-lg dropdown-toggle" data-bs-toggle="dropdown"><img src="../..'.$pathAvatar[0].'" height="100vh" width="100vw"></a>
 						<ul class="dropdown-menu">
 							<li><a href="#" class="dropdown-item">Mes abonnements</a></li>
-							<li><a href="./myprofile.php?id='.$_SESSION['id'].'" class="dropdown-item">Modifier mon profil</a></li>
-							<li><a href="./avatar.php" class="dropdown-item">Modifier mon Avatar</a></li>
-							<li><a href="./AddRecette.php" class="dropdown-item">Ajouter une recette</a></li>';
+							<li><a href="https://cookit.ovh/savedRecipe.php?id='.$_SESSION['id'].'" class="dropdown-item">Mes Recettes Sauvegardés</a></li>
+							<li><a href="https://cookit.ovh/friendrequests.php?id='.$_SESSION['id'].'" class="dropdown-item">Mes Demandes</a></li>
+							<li><a href="https://cookit.ovh/profilview.php?id='.$_SESSION['id'].'" class="dropdown-item">Mon Compte</a></li>
+							<li><a href="https://cookit.ovh/fridge.php?id='.$_SESSION['id'].'" class="dropdown-item">Mon Frigo</a></li>
+							<li><a href="#" class="dropdown-item">Mes Messagese</a></li>
+							<li><a href="https://cookit.ovh/AddRecette.php" class="dropdown-item">Ajouter une recette</a></li>';
 							if (isAdmin()) {
 								echo'<li><a href="./admin.php" class="dropdown-item">Gérer les utilisateurs</a></li>';
 							}
