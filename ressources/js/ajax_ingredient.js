@@ -46,28 +46,34 @@ function onclickingredients() {
 
 
 function display_results_ingredient(){
-    let ingredients_resp = JSON.parse(request_ajax.response);
-    console.log(ingredients_resp);
+    ingredients.innerText = "";
+    if(keywords == ""){
+        next_prev.hidden = false;
+        for (const ingredient_php of ingredients_php.childNodes){
+            ingredient_php.hidden = false;
+        }
+    }else{
+        next_prev.hidden = true;
+        for (const ingredient_php of ingredients_php.childNodes){
+            recingredient_phpipe.hidden = true;
+        }
+
+        let ingredients_resp = JSON.parse(request_ajax.response);
+        console.log(ingredients_resp);
 
 
-    //hide tous les éléments
-    for (const element of ingredients_php.childNodes) {
-        element.hidden = true;
-    }
-
-
-    console.log(ingredients.children);
-    console.log(ingredients.childNodes);
-    //afficher tous les éléments présents dans ingredients_resp
-    for (const element of ingredients.childNodes) {
-        for (const ingredient of ingredients_resp) {
-            console.log(`${element.id} -- ${ingredient['ID']}`);
-            if(element.id == ingredient['ID']){
-                element.hidden = false;
-                break;
+        console.log(ingredients.children);
+        console.log(ingredients.childNodes);
+        //afficher tous les éléments présents dans ingredients_resp
+        for (const element of ingredients.childNodes) {
+            for (const ingredient of ingredients_resp) {
+                console.log(`${element.id} -- ${ingredient['ID']}`);
+                if(element.id == ingredient['ID']){
+                    element.hidden = false;
+                    break;
+                }
             }
         }
-    }
 
 
 
