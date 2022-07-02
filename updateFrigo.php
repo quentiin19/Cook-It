@@ -32,7 +32,7 @@ if (isConnected()){
 
             if(($_POST['fquantity'.$ingredient['ID']]) > 0) {
                     $queryPrepared = $pdo -> prepare("UPDATE FRIDGE SET QUANTITY = :quantity WHERE ID_INGREDIENT = :ingr AND ID_USER = :id");
-                    $queryPrepared =execute(['quantity' => $_POST['fquantity'.$ingredient['ID']], 'ingr' =>  $ingredient['ID'], 'id' => $_SESSION[['id']]]);
+                    $queryPrepared->execute(['quantity' => $_POST['fquantity'.$ingredient['ID']], 'ingr' =>  $ingredient['ID'], 'id' => $_SESSION[['id']]]);
                 }
 
         }else{
