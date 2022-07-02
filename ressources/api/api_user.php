@@ -18,6 +18,9 @@ class API{
         $queryPrepared->execute(["word"=>"%".$keyword."%"]);
         $queryResults = $queryPrepared->fetchAll();
 
+        echo $keyword;
+        print_r($queryResults);
+
         return json_encode($queryResults);
     }
 
