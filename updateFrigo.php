@@ -15,6 +15,7 @@ if (isConnected()){
 
     foreach($ingredients as $ingredient){
         if(isset($_POST['nfcheckbox'.$ingredient['ID']])){
+            echo 'ouais';
             // il a coché la check
             $queryPrepared = $pdo->prepare("SELECT COUNT(ID_INGREDIENT) FROM FRIDGE where ID_USER = :id AND ID_INGREDIENT = :ingr;");
             $queryPrepared->execute(['id' => $_SESSION['id'], 'ingr' => $ingredient['ID']]);
