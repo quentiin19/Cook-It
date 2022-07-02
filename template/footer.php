@@ -2,11 +2,11 @@
 
 
 <!-- Footer -->
-<footer class="bg-couleur text-center text-white">
+<footer class="bg-color text-center text-white">
   <!-- Copyright -->
-  <div class="text-center p-3">
+  <div class=" p-3">
     © 2022 Copyright:
-    <a class="text-white" href="#">Cook'It</a>
+    <a  href="#">Cook'It</a>
   </div>
   <!-- Copyright -->
 </footer>
