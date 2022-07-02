@@ -30,6 +30,7 @@
 					<div class="row">
 						<div class="col-lg-2 col-md-0 col-sm-0"></div>
 						<div class="col-lg-8 col-md-12 col-sm-12 bg-color arrondie">
+							Avatar : 
 							<div>
 								<img src="<?= $results['PATH_AVATAR']?>" ></img>						
 							</div>
