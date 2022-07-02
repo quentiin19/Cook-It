@@ -83,6 +83,7 @@ if (isConnected()){
 
                     
                     <?php
+                    if(isConnected()){
                         //s'il s'agit de la page d'un autre utilisateur
                         if($ownpage == 0){
                             if(isset($state1[0])){
@@ -139,6 +140,7 @@ if (isConnected()){
                         //             <a href="#" class=" btn btn-secondary" style="height : 30px"><p>S\'abonner</p></a>
                         //         </div>';
                         // }
+                    }
                     ?>
 
                     </div>          
@@ -153,7 +155,7 @@ if (isConnected()){
                             <a href="<?= 'https://cookit.ovh/viewsub.php?id='.$_GET['id'].'&display=2'?>"><h4>Abonnés : <?= $abonnes[0]?></h4><a>
                         </div>
                         <?php
-                        if ($_GET['id']== $_SESSION['id'])
+                        if ($_GET['id'] == $_SESSION['id'])
                         echo '
                         <div class="col-lg-3">
                             <a href="https://cookit.ovh/friendrequests.php?id='.$_GET['id'].'&display=2"><h4>Demandesd\'amis : '.$friendR[0].'</h4><a>
