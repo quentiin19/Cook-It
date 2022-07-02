@@ -212,7 +212,7 @@ if (isConnected()){
                     <div class="row my-5">
                         <div class="col-lg-3 ">
                             <h4>Description : </h4><br>
-                            <p><?= $user['DESCRIPTION_PROFIL']?></p><br>    
+                            <p class="d-flex arrondie bg-light text-dark"><?= $user['DESCRIPTION_PROFIL']?></p><br>    
                         </div>
                     </div>
                 </div>
