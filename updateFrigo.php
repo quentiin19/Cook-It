@@ -28,7 +28,7 @@ if (isConnected()){
                 }
 
         }else{
-            $queryPrepared = $pdo-> prepare("DELETE * FROM FRIDGE WHERE ID_INGREDIENT = :ingr and ID_USER = :id;");
+            $queryPrepared = $pdo-> prepare("DELETE FROM FRIDGE WHERE ID_INGREDIENT = :ingr and ID_USER = :id;");
             $queryPrepared -> execute(['id' => $_SESSION['id'], 'ingr' => $ingredient['ID']]);
         }
 
