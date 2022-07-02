@@ -155,11 +155,14 @@ if (isConnected()){
                             <a href="<?= 'https://cookit.ovh/viewsub.php?id='.$_GET['id'].'&display=2'?>"><h4>Abonnés : <?= $abonnes[0]?></h4><a>
                         </div>
                         <?php
-                        if ($_GET['id'] == $_SESSION['id'])
-                        echo '
-                        <div class="col-lg-3">
-                            <a href="https://cookit.ovh/friendrequests.php?id='.$_GET['id'].'&display=2"><h4>Demandesd\'amis : '.$friendR[0].'</h4><a>
-                        </div>'
+                        if(isConnected()){
+                            if ($_GET['id'] == $_SESSION['id']){
+                                echo '
+                                <div class="col-lg-3">
+                                    <a href="https://cookit.ovh/friendrequests.php?id='.$_GET['id'].'&display=2"><h4>Demandesd\'amis : '.$friendR[0].'</h4><a>
+                                </div>'
+                            }
+                        }
                         ?>
                         
                     </div>
