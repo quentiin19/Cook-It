@@ -19,7 +19,7 @@ if (isConnected()){
             $queryPrepared = $pdo->prepare("SELECT COUNT(ID_INGREDIENT) FROM FRIDGE where ID_USER = :id AND ID_INGREDIENT = :ingr;");
             $queryPrepared->execute(['id' => $_SESSION['id'], 'ingr' => $ingredient['ID']]);
             $ingr_fridge = $queryPrepared->fetch();
-            echo '<pre>';
+            echo 'ingr<pre>';
             print_r($ingr_fridge);
             echo '</pre>';
             if ($ingr_fridge[0] == 0){
