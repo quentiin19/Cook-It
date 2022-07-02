@@ -14,7 +14,7 @@ if (isConnected()){
     $ingredients = $queryPrepared->fetchAll();
 
     foreach($ingredients as $ingredient){
-        echo '<pre>';
+        echo 'eeee<pre>';
             print_r($ingr_fridge);
             echo '</pre>';
         if(isset($_POST['nfcheckbox'.$ingredient['ID']])){
