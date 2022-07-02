@@ -40,18 +40,18 @@ if($state1[0] == 1 && $state2[0] == 1){
     <div class="col-lg-2 col-md-2 col-sm-2 bg-color my-3 ml-5 arrondie ">
         <div class="row overflow-auto" height="100%">
         <?php
-            $queryPrepared->prepare("SELECT ID_SUBSCRIPTION FROM SUBSCRIPTION WHERE ID_SUBSCRIBER = :id; AND STATUS = 1;");
+            $queryPrepared = $pdo->prepare("SELECT ID_SUBSCRIPTION FROM SUBSCRIPTION WHERE ID_SUBSCRIBER = :id; AND STATUS = 1;");
             $queryPrepared->execute(['id'=>$_SESSION['id']]);
             $subscriptions = $queryPrepared->fetchAll();
 
             foreach ($subscriptions as $subscription) {
-                $queryPrepared->prepare("SELECT COUNT(ID_SUBSCRIBER) FROM SUBSCRIPTION WHERE ID_SUBSCRIPTION = :id AND ID_SUBSCRIBER = :idsub AND STATUS = 1;");
+                $queryPrepared = $pdo->prepare("SELECT COUNT(ID_SUBSCRIBER) FROM SUBSCRIPTION WHERE ID_SUBSCRIPTION = :id AND ID_SUBSCRIBER = :idsub AND STATUS = 1;");
                 $queryPrepared->execute(['id'=>$_SESSION['id'], 'idsub'=>$subscription['ID']]);
                 $result = $queryPrepared->fetch();
 
                 if($result[0] == 1){
                     //récupération des données de l'ami
-                    $queryPrepared->prepare("SELECT ID, PSEUDO, PATH_AVATAR FROM USER WHERE ID = :id;");
+                    $queryPrepared = $pdo->prepare("SELECT ID, PSEUDO, PATH_AVATAR FROM USER WHERE ID = :id;");
                     $queryPrepared->execute(['id'=>$subscription['ID']]);
                     $friend = $queryPrepared->fetch();
 
