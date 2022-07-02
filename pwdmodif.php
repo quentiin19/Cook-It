@@ -2,7 +2,8 @@
 <?php
 if (isConnected()) {
 ?>
-
+<div class="row" height = "100%" >
+    <div class="col-lg-2 col-md-2 col-sm-2 bg-color my-3 ml-5 arrondie ">
 <div class="row">
                 <div class="col-lg-12 my-5 py-2 pl-2">
                     <a class="text-white" href="#" >Modifier mon profil</a>
@@ -63,8 +64,9 @@ if (isConnected()) {
 					    </div>
 					  </div>
 			</div>
+		</div>
+	</div>
 </div>
-
 
 <?php include "template/footer.php";?>
 <?php
