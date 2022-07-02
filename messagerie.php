@@ -39,12 +39,32 @@ if($state1[0] == 1 && $state2[0] == 1){
 <div class="row" height="100%">
     <div class="col-lg-2 col-md-2 col-sm-2 bg-color my-3 ml-5 arrondie ">
         <div class="row overflow-auto" height="100%">
-        
-            <div class="row">
-                <div class="col-lg-12 my-5  py-2 pl-2">
-                    <a class="text-white" href="https://cookit.ovh/avatar.php?id=<?= $_SESSION['id']?>" >Modifier mon avatar</a>
-                </div>
-            </div>
+        <?php
+            $queryPrepared->prepare("SELECT ID_SUBSCRIPTION FROM SUBSCRIPTION WHERE ID_SUBSCRIBER = :id; AND STATUS = 1;");
+            $queryPrepared->execute(['id'=>$_SESSION['id']]);
+            $subscriptions = $queryPrepared->fetchAll();
+
+            foreach ($subscriptions as $subscription) {
+                $queryPrepared->prepare("SELECT COUNT(ID_SUBSCRIBER) FROM SUBSCRIPTION WHERE ID_SUBSCRIPTION = :id AND ID_SUBSCRIBER = :idsub AND STATUS = 1;");
+                $queryPrepared->execute(['id'=>$_SESSION['id'], 'idsub'=>$subscription['ID']]);
+                $result = $queryPrepared->fetch();
+
+                if($result[0] == 1){
+                    //récupération des données de l'ami
+                    $queryPrepared->prepare("SELECT ID, PSEUDO, PATH_AVATAR FROM USER WHERE ID = :id;");
+                    $queryPrepared->execute(['id'=>$subscription['ID']]);
+                    $friend = $queryPrepared->fetch();
+
+                    echo    '<div class="row">
+                                <div class="col-lg-12 my-5  py-2 pl-2">
+                                    <img src="'.$friend['PATH_AVATAR'].'">
+                                    <a class="text-white" href="https://cookit.ovh/messagerie.php?id='.$friend['ID'].'" >'.$friend['PSEUDO'].'</a>
+                                </div>
+                            </div>';
+                }
+            }
+        ?>
+
         </div>
     </div>
     <div class="col-lg-10 col-md-10 col-sm-10 bg-coleur">
