@@ -81,7 +81,7 @@ $p = $_GET['p'];
         <div id="next-prev" class="row">
             <div class="d-flex justify-content-center mb-5 ">
 
-                <button type="button" class="btn btn-secondary mx-3 text-white"><a href="
+                <button type="button" class="btn btn-secondary mx-3 text-white"><a class="text-white" href="
                     <?php 
                     if ($p == 1){
                         echo'#';
@@ -93,7 +93,7 @@ $p = $_GET['p'];
                         <p class="my-3"> Pages : <?=$p .'/'.$pmax ?> </p> 
                     
                     
-                    <button type="button" class="btn btn-secondary mx-3 text-white"><a class="text-white"  href="
+                    <button type="button" class="btn btn-secondary mx-3 "><a class="text-white"  href="
                     <?php 
                     if ($p == $pmax){
                         echo'#';
