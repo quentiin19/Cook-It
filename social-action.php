@@ -1,5 +1,7 @@
 <?php
-include 'template/header.php';
+session_start();
+include 'functions.php';
+
 
 $id = $_GET['id'];
 $action = $_GET['action'];
@@ -95,3 +97,4 @@ if (isConnected() == $_SESSION['id']) {
 }else{
     header("Location: login.php");
 }
+header("Location: profil.php?id=".$id);
