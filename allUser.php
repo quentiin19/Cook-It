@@ -23,7 +23,7 @@ if (isConnected() == $_SESSION['id']) {
                         <div>
                             '.$user['PSEUDO'].' 
                         </div>
-                        <a href="https://cookit.ovh/profil_membres.php?id='.$user['ID'].'" class ="bg-light rounded my-3"> Voir le profil</a>
+                        <a href="https://cookit.ovh/profil.php?id='.$user['ID'].'" class ="bg-light rounded my-3"> Voir le profil</a>
                         
                     </div>
                   </div>';

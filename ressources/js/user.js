@@ -59,7 +59,9 @@ function display_results_user() {
             pseudo.innerText = `${user['PSEUDO']}`;
 
             const a = document.createElement("a");
-            a.setAttribute("href", `https://cookit.ovh/recette.php?id=${user['ID']}`);
+            a.setAttribute("href", `https://cookit.ovh/profil.php?id=${user['ID']}`);
+            a.setAttribute("class", "bg-light rounded my-3");
+            a.innerText = "Voir le profil";
 
 
             second_div.appendChild(img);
@@ -99,9 +101,9 @@ function changeAdminDP(){
     }
 }
 
-if(adminDisplay == 0){
-    request_admin.addEventListener("load", changeAdminDP);
-    request_admin.open("GET", `https://cookit.ovh/ressources/api/api.php?action=3&id=${id}&token=${token}`);
-    request_admin.send();
+// if(adminDisplay == 0){
+//     request_admin.addEventListener("load", changeAdminDP);
+//     request_admin.open("GET", `https://cookit.ovh/ressources/api/api.php?action=3&id=${id}&token=${token}`);
+//     request_admin.send();
 
-}
+//}
