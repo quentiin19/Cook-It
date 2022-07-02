@@ -9,7 +9,7 @@ include "template/header.php";
         <!--scroll-->
         <div>
             <div class="d-flex justify-content-center">
-                <input type="text" id="search-bar-ingredient" class="  py-2 mb-4 text-dark" placeholder="rechercher un ingredient">
+                <input type="text" id="search-bar-ingredient" class="  py-2 mb-3 text-dark" placeholder="rechercher un ingredient">
             </div>
             <div id="ingredients" class="overflow-auto" style="height : 500px">
                 <?php
