@@ -134,5 +134,5 @@ if($state1[0] == 1 && $state2[0] == 1){
     echo '<br>';
     echo '<a href="index.php">Acceuil</a>';
 }
-
+include "template/footer.php";
 ?>
