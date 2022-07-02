@@ -57,7 +57,6 @@ if (isConnected() == $_SESSION['id']){
 	$queryPrepared = $pdo->prepare("SELECT * from FRIDGE,INGREDIENTS where INGREDIENTS.ID = FRIDGE.ID_INGREDIENT AND FRIDGE.ID_USER = :id;");
 	$queryPrepared->execute(["id" => $_SESSION['id']]);
 	$fridge = $queryPrepared->fetchAll();
-
 }
 ?>
 

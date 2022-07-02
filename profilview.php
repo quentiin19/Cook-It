@@ -1,8 +1,43 @@
+<?php include "template/header.php";?>
 <?php
-include "template/header.php";
+if (isConnected()) {
 ?>
+<div class="row" height = "100%" >
+    <div class="col-lg-2 col-md-2 col-sm-2 bg-color my-3 ml-5 arrondie ">
+<div class="row">
 
-        <?php
+                <div class="col-lg-12 my-5 py-2 pl-2">
+                    <a class="text-white" href="https://cookit.ovh/profilview.php?id=<?= $_SESSION['id']?>" >Mon profil</a>
+                </div>
+                <div class="col-lg-12 my-5 py-2 pl-2">
+                    <a class="text-white" href="https://cookit.ovh/modif_profil.php?id=<?= $_SESSION['id']?>" >Modifier mon profil</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 my-5  py-2 pl-2">
+                    <a class="text-white" href="https://cookit.ovh/avatar.php?id=<?= $_SESSION['id']?>" >Modifier mon avatar</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 my-5 py-2 pl-2">
+                    <a class="text-white" href="https://cookit.ovh/modif_email.php?id=<?= $_SESSION['id']?>" >Modifier mon email</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 my-4 py-2 pl-2">
+                    <a class="text-white" href="#" >Modifier mon mot de passe</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 my-5 py-2 pl-2">
+                    <a class="text-white" href="https://cookit.ovh/test/fpdf/download_log.php?id=<?= $_SESSION['id'] ?>" >Télécharger mes logs</a>
+                </div>
+            </div>
+    </div>
+    <div class="col-lg-10 col-md-10 col-sm-10 bg-coleur">
+<div class="row">
+			<div class="col-lg-12 col-md-12 col-sm-12 h-auto arrondie d-flex justify-content-center  ">
+            <?php
         $pdo = connectDB();
 
         //récupération des informations du profil
@@ -91,7 +126,7 @@ if (isConnected()){
                                 //si l'utilisateur a déjà ce profil en ami
                                 if($state1[0] == 1){
                                     //si l'utilisateur du profil a déjà l'utilisateur en ami
-                                    if(isset($state2[0]) && $state2[0] == 1){
+                                    if($state2[0] == 1){
                                         //afficher le bouton message
                                         echo'<div class="col-lg-6 col-md-6 d-flex justify-content-end">
                                             <a href="https://cookit.ovh/messagerie.php?id='.$_GET['id'].'" class=" btn btn-secondary" style="height : 30px"><p>Message</p></a>
@@ -239,7 +274,12 @@ if (isConnected()){
 
 
         ?>
+			</div>
+		</div>
+	</div>
+</div>
 
-
-    </body>
-</html>
+<?php include "template/footer.php";?>
+<?php
+}
+?>
