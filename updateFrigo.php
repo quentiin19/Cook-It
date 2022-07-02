@@ -13,23 +13,23 @@ if (isConnected()){
         if (isset($_POST['nfcheckbox'.$ingredient['ID']])){
             // il a coché la check
             $queryPrepared = $pdo->prepare("SELECT COUNT(ID_INGREDIENT) FROM FRIDGE where ID_USER = :id AND ID_INGREDIENT = :ingr;");
-            $queryPrepared->execute(['id' => $_SESSION['ID'], 'ingr' => $ingredient['ID']]);
+            $queryPrepared->execute(['id' => $_SESSION['id'], 'ingr' => $ingredient['ID']]);
             $ingr_fridge = $queryPrepared->fetch();
             if ($ingr_fridge == 0){
                 //Pas dans le frigo
                 $queryPrepared = $pdo->prepare("INSERT INTO FRIDGE VALUES (:id, :ingr, :quant);");
-                $queryPrepared->execute(['id' => $_SESSION['ID'], 'ingr' => $ingredient['ID'], 'quant' => $_POST['nfquantity'.$ingredient['ID']] ]);
+                $queryPrepared->execute(['id' => $_SESSION['id'], 'ingr' => $ingredient['ID'], 'quant' => $_POST['nfquantity'.$ingredient['ID']] ]);
             }
         }elseif (isset($_POST['fcheckbox'.$ingredient['ID']])){
 
-            if ($_POST['fquantity'.$ingredient['ID']]) > 0 {
+            if (($_POST['fquantity'.$ingredient['ID']]) > 0) {
                     $queryPrepared = $pdo -> prepare("UPDATE FRIDGE SET QUANTITY = :quantity WHERE ID_INGREDIENT = :ingr AND ID_USER = :id");
-                    $queryPrepared =execute(['quantity' => $_POST['fquantity'.$ingredient['ID']], 'ingr' =>  $ingredient['ID'], 'id' => $_SESSION[['ID']]]);
+                    $queryPrepared =execute(['quantity' => $_POST['fquantity'.$ingredient['ID']], 'ingr' =>  $ingredient['ID'], 'id' => $_SESSION[['id']]]);
                 }
 
         }else{
             $queryPrepared = $pdo-> prepare("DELETE * FROM FRIDGE WHERE ID_INGREDIENT = :ingr and ID_USER = :id;");
-            $queryPrepared -> execute(['id' => $_SESSION['ID'], 'ingr' => $ingredient['ID']]);
+            $queryPrepared -> execute(['id' => $_SESSION['id'], 'ingr' => $ingredient['ID']]);
         }
 
             // if ($_POST['fquantity'.$ingredient['ID']]) != 0 {
