@@ -91,7 +91,7 @@ if (isConnected()){
                                 //si l'utilisateur a déjà ce profil en ami
                                 if($state1[0] == 1){
                                     //si l'utilisateur du profil a déjà l'utilisateur en ami
-                                    if($state2[0] == 1){
+                                    if(isset($state2[0]) && $state2[0] == 1){
                                         //afficher le bouton message
                                         echo'<div class="col-lg-6 col-md-6 d-flex justify-content-end">
                                             <a href="https://cookit.ovh/messagerie.php?id='.$_GET['id'].'" class=" btn btn-secondary" style="height : 30px"><p>Message</p></a>
