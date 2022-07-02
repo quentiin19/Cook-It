@@ -37,7 +37,7 @@
 							<li><a href="https://cookit.ovh/savedRecipe.php?id='.$_SESSION['id'].'" class="dropdown-item">Mes Recettes Sauvegardés</a></li>
 							<li><a href="https://cookit.ovh/friendrequests.php?id='.$_SESSION['id'].'" class="dropdown-item">Mes Demandes</a></li>
 							<li><a href="https://cookit.ovh/profilview.php?id='.$_SESSION['id'].'" class="dropdown-item">Mon Compte</a></li>
-							<li><a href="https://cookit.ovh/fridge.php?id='.$_SESSION['id'].'" class="dropdown-item">Mon Frigo</a></li>
+							<li><a href="https://cookit.ovh/frigo.php?id='.$_SESSION['id'].'" class="dropdown-item">Mon Frigo</a></li>
 							<li><a href="#" class="dropdown-item">Mes Messages</a></li>
 							<li><a href="https://cookit.ovh/AddRecette.php" class="dropdown-item">Ajouter une recette</a></li>';
 							if (isAdmin()) {
