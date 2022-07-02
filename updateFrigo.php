@@ -4,9 +4,9 @@ require "functions.php";
 $pdo = ConnectDB();
 
 if (isConnected()){
-    echo '<pre>';
-    print_r($_POST);
-    echo '</pre>';
+    // echo '<pre>';
+    // print_r($_POST);
+    // echo '</pre>';
 
 
     $queryPrepared = $pdo->prepare("SELECT * FROM INGREDIENTS;");
@@ -14,14 +14,15 @@ if (isConnected()){
     $ingredients = $queryPrepared->fetchAll();
 
     foreach($ingredients as $ingredient){
+        echo '<pre>';
+            print_r($ingr_fridge);
+            echo '</pre>';
         if(isset($_POST['nfcheckbox'.$ingredient['ID']])){
             // il a coché la check
             $queryPrepared = $pdo->prepare("SELECT COUNT(ID_INGREDIENT) FROM FRIDGE where ID_USER = :id AND ID_INGREDIENT = :ingr;");
             $queryPrepared->execute(['id' => $_SESSION['id'], 'ingr' => $ingredient['ID']]);
             $ingr_fridge = $queryPrepared->fetch();
-            echo 'ingr<pre>';
-            print_r($ingr_fridge);
-            echo '</pre>';
+            
             if ($ingr_fridge[0] == 0){
                 //Pas dans le frigo
                 echo $ingredient['NAME'].' inséré en bdd';
