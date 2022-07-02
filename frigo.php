@@ -16,8 +16,8 @@ include "template/header.php";
                 <?php
         $pdo = connectDB();
 
-        $queryPrepared = $pdo->prepare("SELECT * FROM INGREDIENTS;");
-        $queryPrepared->execute();
+        $queryPrepared = $pdo->prepare("SELECT * FROM INGREDIENTS WHERE ID NOT IN (SELECT ID_INGREDIENT FROM FRIDGE WHERE ID_USER = :id);");
+        $queryPrepared->execute(['id'=>$_SESSION['id']]);
         $results = $queryPrepared->fetchAll();
         
         foreach ($results as $key => $ingredient) { 
