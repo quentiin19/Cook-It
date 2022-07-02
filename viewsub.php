@@ -27,7 +27,7 @@ if($_GET['display']==1){
                 <div>
                     <?= $ab['PSEUDO'] ?>  
                 </div>
-                <a href="https://cookit.ovh/profil_membres.php?id=<?= $ab['ID'] ?>" class ="bg-light rounded my-3"> Voir le profil</a>
+                <a href="https://cookit.ovh/profil.php?id=<?= $ab['ID'] ?>" class ="bg-light rounded my-3"> Voir le profil</a>
                 
             </div>
         </div>
@@ -62,7 +62,7 @@ if($_GET['display']==1){
                 <div>
                     <?= $ab['PSEUDO'] ?>  
                 </div>
-                <a href="https://cookit.ovh/profil_membres.php?id=<?= $ab['ID'] ?>" class ="bg-light rounded my-3"> Voir le profil</a>
+                <a href="https://cookit.ovh/profil.php?id=<?= $ab['ID'] ?>" class ="bg-light rounded my-3"> Voir le profil</a>
                 
             </div>
         </div>
