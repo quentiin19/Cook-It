@@ -21,7 +21,6 @@ class API{
         return json_encode($queryResults);
     }
 
-    function return
 }
 
 
