@@ -3,17 +3,12 @@ const request_ajax = new XMLHttpRequest;
 
 //elements du dom
 const search_bar_ingredients = document.getElementById("search-bar-ingredient");
+const ingredients_php = document.getElementById("ingredients-php");
 const ingredients = document.getElementById("ingredients");
-
-
-
 
 
 //écouteur
 search_bar_ingredients.addEventListener("input", onclickingredients);
-
-
-
 
 
 function clean_str_ajax(str){
