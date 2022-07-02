@@ -88,19 +88,19 @@ include "template/header.php";
                                     if($state2[0] == 1){
                                         //afficher le bouton message
                                         echo'<div class="col-lg-6 col-md-6 d-flex justify-content-end">
-                                            <a href="#" class=" btn btn-secondary" style="height : 30px"><p>Message</p></a>
+                                            <a href="https://cookit.ovh/messagerie.php?id='.$_GET['id'].'" class=" btn btn-secondary" style="height : 30px"><p>Message</p></a>
                                         </div>';
     
                                     }
                                     //afficher le bouton supprimer
                                     echo'<div class="col-lg-6 col-md-6 d-flex justify-content-end">
-                                        <a href="#" class=" btn btn-secondary" style="height : 30px"><p>Désabonner</p></a>
+                                        <a href="https://cookit.ovh/social-action.php?id='.$_GET['id'].'&action=unsub" class=" btn btn-secondary" style="height : 30px"><p>Désabonner</p></a>
                                     </div>';
     
                                 }elseif ($state1[0] == -1) {
                                     //afficher le bouton pour débloquer
                                     echo'<div class="col-lg-6 col-md-6 d-flex justify-content-end">
-                                        <a href="#" class=" btn btn-secondary" style="height : 30px"><p>Débloquer</p></a>
+                                        <a href="https://cookit.ovh/social-action.php?id='.$_GET['id'].'&action=unblock" class=" btn btn-secondary" style="height : 30px"><p>Débloquer</p></a>
                                     </div>';
     
                                 }
@@ -108,13 +108,13 @@ include "template/header.php";
                             }elseif(!isset($state2[0]) || $state2[0] == 1) {
                                 //affichage du bouton s'abonner
                                 echo'<div class="col-lg-6 col-md-6 d-flex justify-content-end">
-                                    <a href="#" class=" btn btn-secondary" style="height : 30px"><p>S\'abonner</p></a>
+                                    <a href="https://cookit.ovh/social-action.php?id='.$_GET['id'].'&action=sub" class=" btn btn-secondary" style="height : 30px"><p>S\'abonner</p></a>
                                 </div>';
 
                             }
 
                             echo'<div class="col-lg-6 col-md-6 d-flex justify-content-end">
-                                    <a href="#" class=" btn btn-secondary" style="height : 30px"><p>Bloquer</p></a>
+                                    <a href="https://cookit.ovh/social-action.php?id='.$_GET['id'].'&action=block" class=" btn btn-secondary" style="height : 30px"><p>Bloquer</p></a>
                                 </div>';
                         
                         //sinon, il s'agit de la propre page du user
