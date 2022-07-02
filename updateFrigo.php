@@ -40,6 +40,7 @@ if (isConnected()){
     }
 }
 
+header("Location: frigo.php?id=".$_SESSION['id']);
 // si nf et dans dans le frigo = erreuf
 // si nf pas dans le frigo et checkbox = go dans le frigo
 // si f et que <> checkbox = delete from ffridge
