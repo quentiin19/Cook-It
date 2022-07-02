@@ -51,7 +51,7 @@ function display_results_ingredient(){
 
 
     //hide tous les éléments
-    for (const element of ingredients.childNodes) {
+    for (const element of ingredients_php.childNodes) {
         element.hidden = true;
     }
 
