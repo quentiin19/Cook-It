@@ -1,6 +1,7 @@
 <?php
 include "template/header.php";
 ?>
+
         <?php
         $pdo = connectDB();
 
@@ -30,23 +31,24 @@ include "template/header.php";
         $friendR = $queryPrepared->fetch();
         
         //affichages des boutons sur le profil
+if (isConnected()){
+    if($_SESSION['id'] != $_GET['id']){
+        $ownpage = 0;
 
-        if($_SESSION['id'] != $_GET['id']){
-            $ownpage = 0;
+        //Verification que l'un est bien abonné à l'autre
+        $queryPrepared = $pdo->prepare("SELECT STATUS FROM SUBSCRIPTION WHERE ID_SUBSCRIBER = :sender AND ID_SUBSCRIPTION = :receveur");
+        $queryPrepared->execute(["sender"=>$_SESSION['id'], "receveur"=>$_GET['id']]);
+        $state1 = $queryPrepared->fetch();
 
-            //Verification que l'un est bien abonné à l'autre
-            $queryPrepared = $pdo->prepare("SELECT STATUS FROM SUBSCRIPTION WHERE ID_SUBSCRIBER = :sender AND ID_SUBSCRIPTION = :receveur");
-            $queryPrepared->execute(["sender"=>$_SESSION['id'], "receveur"=>$_GET['id']]);
-            $state1 = $queryPrepared->fetch();
-    
-            //vérification que l'autre est bien abonné à l'un
-            $queryPrepared = $pdo->prepare("SELECT STATUS FROM SUBSCRIPTION WHERE ID_SUBSCRIBER = :sender AND ID_SUBSCRIPTION = :receveur");
-            $queryPrepared->execute(["receveur"=>$_SESSION['id'], "sender"=>$_GET['id']]);
-            $state2 = $queryPrepared->fetch();
+        //vérification que l'autre est bien abonné à l'un
+        $queryPrepared = $pdo->prepare("SELECT STATUS FROM SUBSCRIPTION WHERE ID_SUBSCRIBER = :sender AND ID_SUBSCRIPTION = :receveur");
+        $queryPrepared->execute(["receveur"=>$_SESSION['id'], "sender"=>$_GET['id']]);
+        $state2 = $queryPrepared->fetch();
 
-        }else{
-            $ownpage = 1;
-        }
+    }else{
+        $ownpage = 1;
+    }
+}
 
         /*
         tous les états possibles :
