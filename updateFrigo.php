@@ -22,7 +22,7 @@ if (isConnected()){
             echo '<pre>';
             print_r($ingr_fridge);
             echo '</pre>';
-            if ($ingr_fridge == 0){
+            if ($ingr_fridge[0] == 0){
                 //Pas dans le frigo
                 echo $ingredient['NAME'].' inséré en bdd';
                 $queryPrepared = $pdo->prepare("INSERT INTO FRIDGE VALUES (:id, :ingr, :quant);");
