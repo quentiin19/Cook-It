@@ -3,10 +3,7 @@ html, body {
 	overflow-x: hidden; 
 }
 
-/*.font-text{
-	font-family: 'Fira Sans', sans-serif;
-}
-*/
+
 .button-background{
 	background-color: #4B4B4B;
 	color: white;
@@ -21,6 +18,8 @@ html, body {
 	background-color: #615E58;
 }
 
+.bg-light{
+	background-color: #FEF6D7;
 
 
 .arrondie {
