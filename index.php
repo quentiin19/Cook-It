@@ -93,7 +93,7 @@ $p = $_GET['p'];
                         <p class="my-3"> Pages : <?=$p .'/'.$pmax ?> </p> 
                     
                     
-                    <button type="button" class="btn btn-secondary mx-3 text-white"><a  href="
+                    <button type="button" class="btn btn-secondary mx-3 text-white"><a class="text-white"  href="
                     <?php 
                     if ($p == $pmax){
                         echo'#';
