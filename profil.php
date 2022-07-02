@@ -212,7 +212,7 @@ if (isConnected()){
             echo '
                     <div class="col-lg-4 col-md-4 col-sm-1 py-3">
                         <div class="card mb-4 shadow-sm bg-color py-3 px-3 arrondie">
-                            <a href="https://cookit.ovh/recette.php?id='.$result['ID_RECIPE'].'">
+                            <a class="text-white" href="https://cookit.ovh/recette.php?id='.$result['ID_RECIPE'].'">
                             <img src="'.$result['PICTURE_PATH'].'" class="card-img-top cardh"> </img>
                             <div class="card-body text-center arrondie">
                                         <h4>'.$result['TITLE'].'</h4>   
