@@ -40,7 +40,7 @@ if($state1[0] == 1 && $state2[0] == 1){
     <div class="col-lg-2 col-md-2 col-sm-2 bg-color my-3 ml-5 arrondie ">
         <div class="row overflow-auto" height="100%">
         <?php
-            $queryPrepared = $pdo->prepare("SELECT ID_SUBSCRIPTION FROM SUBSCRIPTION WHERE ID_SUBSCRIBER = :id; AND STATUS = 1;");
+            $queryPrepared = $pdo->prepare("SELECT ID_SUBSCRIPTION AS ID FROM SUBSCRIPTION WHERE ID_SUBSCRIBER = :id; AND STATUS = 1;");
             $queryPrepared->execute(['id'=>$_SESSION['id']]);
             $subscriptions = $queryPrepared->fetchAll();
 
