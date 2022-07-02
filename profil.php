@@ -86,8 +86,11 @@ if (isConnected()){
                     if(isConnected()){
                         //s'il s'agit de la page d'un autre utilisateur
                         if($ownpage == 0){
+                            //si une relation existe déjà
                             if(isset($state1[0])){
+                                //si l'utilisateur a déjà ce profil en ami
                                 if($state1[0] == 1){
+                                    //si l'utilisateur du profil a déjà l'utilisateur en ami
                                     if($state2[0] == 1){
                                         //afficher le bouton message
                                         echo'<div class="col-lg-6 col-md-6 d-flex justify-content-end">
@@ -99,26 +102,32 @@ if (isConnected()){
                                     echo'<div class="col-lg-6 col-md-6 d-flex justify-content-end">
                                         <a href="https://cookit.ovh/social-action.php?id='.$_GET['id'].'&action=unsub" class=" btn btn-secondary" style="height : 30px"><p>Désabonner</p></a>
                                     </div>';
+                                    
+                                    //afficher le bouton bloquer
+                                    echo'<div class="col-lg-6 col-md-6 d-flex justify-content-end">
+                                            <a href="https://cookit.ovh/social-action.php?id='.$_GET['id'].'&action=block" class=" btn btn-secondary" style="height : 30px"><p>Bloquer</p></a>
+                                        </div>';
     
-                                }elseif ($state1[0] == -1) {
+                                }elseif($state1[0] == -1) {
                                     //afficher le bouton pour débloquer
                                     echo'<div class="col-lg-6 col-md-6 d-flex justify-content-end">
                                         <a href="https://cookit.ovh/social-action.php?id='.$_GET['id'].'&action=unblock" class=" btn btn-secondary" style="height : 30px"><p>Débloquer</p></a>
                                     </div>';
     
                                 }
-    
+                            //sinon si 
                             }elseif(!isset($state2[0]) || $state2[0] == 1) {
                                 //affichage du bouton s'abonner
                                 echo'<div class="col-lg-6 col-md-6 d-flex justify-content-end">
                                     <a href="https://cookit.ovh/social-action.php?id='.$_GET['id'].'&action=sub" class=" btn btn-secondary" style="height : 30px"><p>S\'abonner</p></a>
                                 </div>';
 
-                            }
-
-                            echo'<div class="col-lg-6 col-md-6 d-flex justify-content-end">
+                                //afficher le bouton bloquer
+                                echo'<div class="col-lg-6 col-md-6 d-flex justify-content-end">
                                     <a href="https://cookit.ovh/social-action.php?id='.$_GET['id'].'&action=block" class=" btn btn-secondary" style="height : 30px"><p>Bloquer</p></a>
                                 </div>';
+
+                            }
                         
                         //sinon, il s'agit de la propre page du user
                         }else{
