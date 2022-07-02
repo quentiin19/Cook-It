@@ -2,7 +2,7 @@
 include 'template/header.php';
 
 $id = $_GET['id'];
-$action = $_GET['action']
+$action = $_GET['action'];
 
 if (isConnected() == $_SESSION['id']) {
     if($_SESSION['id'] != $_GET['id']){
