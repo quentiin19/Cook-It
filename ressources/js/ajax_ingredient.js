@@ -74,6 +74,7 @@ function display_results_ingredient(){
                 }
             }
         }
+    }
 
 
 
