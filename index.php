@@ -15,7 +15,7 @@ $p = $_GET['p'];
 ?>
 <div>   
         <div class="d-flex justify-content-center my-3">
-            <input type="text" id="search-bar-recipe" placeholder="rechercher" class="text-center">
+            <input type="text" id="search-bar-recipe" placeholder="rechercher une recette" class="text-center">
         </div>
         <div id="recettes"></div>
 
