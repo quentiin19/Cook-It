@@ -10,7 +10,7 @@ if (isConnected() == $_SESSION['id']) {
     <?php
 
         $pdo = connectDB();
-        $queryPrepared = $pdo->prepare("SELECT ID, PSEUDO, PATH_AVATAR, DESCRIPTION FROM USER;");
+        $queryPrepared = $pdo->prepare("SELECT ID, PSEUDO, PATH_AVATAR, DESCRIPTION_PROFIL FROM USER;");
         $queryPrepared->execute();
         $users = $queryPrepared->fetchAll();
 
