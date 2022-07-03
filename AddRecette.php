@@ -223,7 +223,7 @@ if(!empty($_POST)){
 	}
 
 
-	//header("Location: recette.php?id=".$result['ID_RECIPE']);
+	header("Location: index.php?");
 }
 
 ?>
