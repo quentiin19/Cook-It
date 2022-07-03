@@ -20,7 +20,7 @@ if (isConnected() != $_SESSION['id']) {
         <?php
         foreach ($matchs as $match) {
             $queryPrepared = $pdo->prepare("SELECT STATUS FROM MATCHS WHERE ID_MATCHER = :id AND ID_MATCH = :id_sender;");
-            $queryPrepared->execute(['id' => $_SESSION['id'], 'id_sender' => $matchs['ID']]);
+            $queryPrepared->execute(['id' => $_SESSION['id'], 'id_sender' => $match['ID']]);
             $result = $queryPrepared->fetch();
 
             //si nous n'avons pas encore matché avec cette personne
