@@ -72,13 +72,13 @@ if (isAdmin()) {
 		header('Location: profil_membre.php?id='.$_POST['id']);
 	}
 	//redirection vers la page membre
-	echo $firstname;
-	echo $pseudo;
-	echo $lastname;
-	echo $description;
-	echo $id;
+	// echo $firstname;
+	// echo $pseudo;
+	// echo $lastname;
+	// echo $description;
+	// echo $id;
 
-	//header("Location: https://cookit.ovh/index.php");
+	header("Location: https://cookit.ovh/admin.php");
 
 //si la personne est connectée
 } elseif (isConnected() == $id) {
