@@ -112,7 +112,7 @@ echo '<p id="id-recette" hidden="hidden">'.$_GET['id'].'</p>';
 							<div class="row">
 								<div class="col-lg-12 col-md-12 col-sm-12">
 									<h4>Recette :</h4><br>
-									<p><?= $recipe['DESCRIPTION'] = nl2br($recipe['DESCRIPTION']);?></p>
+									<p><?= $recipe['DESCRIPTION'] ;?></p>
 								</div>
 							</div>	
 						</div>
