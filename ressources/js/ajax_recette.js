@@ -88,6 +88,7 @@ function display_results_recipe() {
             second_div.setAttribute("class", "card mb-4 shadow-sm bg-color py-3 px-3 arrondie");
 
             const a = document.createElement("a");
+            a.setAttribute("class", "text-white");
             a.setAttribute("href", `https://cookit.ovh/recette.php?id=${recipe['ID_RECIPE']}`);
 
             const img = document.createElement("img");
