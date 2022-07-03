@@ -58,6 +58,14 @@ if (isConnected() == $_SESSION['id']) {
                     $queryPrepared->execute(['id_sender'=>$_SESSION['id'], 'id_receveur'=>$_GET['id']]);
                 }
                 break;
+        
+            case 'rmatch':
+                if (isset($statematch2[0])){
+                        //mettre 2 en bdd
+                        $queryPrepared = $pdo->prepare("UPDATE MATCHS SET STATUS = 0 WHERE ID_MATCHER = :id_sender; AND ID_MATCH = :id_receveur;");
+                        $queryPrepared->execute(['id_sender'=>$_GET_SESSION['id'], 'id_receveur'=>$_SESSION['id']]);
+                }
+                break;
             
             case 'block':
                 if (isset($statematch1[0])){
