@@ -1,15 +1,18 @@
 <?php
 include "template/header.php";
 
+?>
+<div class='text-center'>
+    <h1>Gestion des utilisateurs</h1>
+</div>
+<?php
+
 
 $pdo = connectDB();
 
 $queryPrepared = $pdo->prepare("SELECT ID_SUBSCRIPTION FROM SUBSCRIPTION WHERE ID_SUBSCRIBER = :id;");
 $queryPrepared->execute(['id'=>$_SESSION['id']]);
 $subs = $queryPrepared->fetchAll();
-
-
-
 
 
 foreach ($subs as $sub){
@@ -19,6 +22,7 @@ foreach ($subs as $sub){
     $queryPrepared->execute(['id'=>$sub[0]]);
     $recipes = $queryPrepared->fetchAll();
 
+    //pour chaque recette de l'abonnement
     foreach ($recipes as $recipe){
         echo '<div class="col-lg-3 col-md-4 col-sm-1 py-3">
             <div class="card mb-4 shadow-sm bg-color py-3 px-3 arrondie">
@@ -33,7 +37,6 @@ foreach ($subs as $sub){
                             <a href="https://cookit.ovh/delRecette.php?id='.$recipe['ID_RECIPE'].'"><button type="button" class="btn btn-danger px-3"><i class="glyphicon glyphicon-trash" aria-hidden="true"></i></button></a>
                         </div>';
                 }
-                
                 echo'</a>        
             </div>
         </div>';
