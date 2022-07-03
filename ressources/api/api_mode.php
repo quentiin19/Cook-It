@@ -15,8 +15,12 @@ function returnMode($id){
 
     // $return = array();
     // array_push($return, $result[0]);
+    if($result['MODE'] == 1){
+        return true;
+    }else{
+        return false;
+    }
 
-    return $result;
 }
 
 function changeMode($id){
