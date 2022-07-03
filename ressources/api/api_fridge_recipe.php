@@ -35,7 +35,8 @@ function returnRecipes($difficulty, $id){
 
         foreach ($needs as $key => $need) {
             foreach ($ingredients as $key => $ingredient) {
-                echo '( '.$ingredient['ID_INGREDIENT'].' -- '.$need['ID_INGREDIENT'].' )';
+                
+                echo '( title recipe : '.$recipe['TITLE'].' -- ingredient : '.$ingredient['ID_INGREDIENT'].' -- '.$need['ID_INGREDIENT'].' )';
                 if ($ingredient['ID_INGREDIENT'] == $need['ID_INGREDIENT']) {
                     if ($ingredient['QUANTITY'] >= $need['QUANTITY']) {
                         $found += 1;
