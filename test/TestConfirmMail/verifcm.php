@@ -12,7 +12,7 @@ if($_GET['id'] == $_SESSION['id']){
         $queryPrepared = $pdo->prepare("UPDATE USER SET MAIL = :mail where ID = :id");
 	    $queryPrepared->execute(["mail"=> $_GET['mail'], "id"=>$_SESSION['id']]);
         echo "Vous avez bien validé votre mail, cliquez sur le lien ci dessous pour vous connecter";
-        echo "<brs><a href=http://51.255.172.36/login.php>Se Connecter</a>";
+        echo "<brs><a href=http://cookit.ovh/login.php>Se Connecter</a>";
     }else{
         echo "votre lien n'est plus valide";
     }
