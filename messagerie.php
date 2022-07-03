@@ -53,10 +53,10 @@ if ($state1[0] == 1 && $state2[0] == 1) {
                     $result = $queryPrepared->fetch();
 
                     //on vérifie qu'elle a bien matché avec nous
-                    if ($result[0] == 1 && $subscription['ID'] != $_GET['id']) {
+                    if ($result[0] == 1 && $match['ID'] != $_GET['id']) {
                         //récupération des données de l'ami
                         $queryPrepared = $pdo->prepare("SELECT ID, PSEUDO, PATH_AVATAR FROM USER WHERE ID = :id;");
-                        $queryPrepared->execute(['id' => $subscription['ID']]);
+                        $queryPrepared->execute(['id' => $match['ID']]);
                         $friend = $queryPrepared->fetch();
 
                         echo'<div class="row">
