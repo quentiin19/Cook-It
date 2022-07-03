@@ -111,7 +111,15 @@ if (isConnected() == $_SESSION['id']) {
                         echo'update';
                         //mettre 1 en bdd
                         $queryPrepared = $pdo->prepare("UPDATE SUBSCRIPTION SET STATUS = 1 WHERE ID_SUBSCRIBER = :id_sender; AND ID_SUBSCRIPTION = :id_receveur;");
+                        echo $queryPrepared;
                         $queryPrepared->execute(['id_sender'=>$_SESSION['id'], 'id_receveur'=>$_GET['id']]);
+                        echo "<pre>";
+                        print_r($_GET);
+                        echo "</pre>";
+                        echo "<pre>";
+                        print_r($_SESSION);
+                        echo "</pre>";
+
                     }
                 }else{
                     echo 'insert';
