@@ -305,7 +305,7 @@ if (isConnected()){
                         //     echo'<div class="btn col-lg-6 col-md-6 d-flex justify-content-end">
                         //             <a href="modif_profil.php" class=" btn btn-secondary" style="height : 30px"><p>Modifier mon profil</p></a>
                         //         </div>';
-                        // }
+                         }
                         
 
 
