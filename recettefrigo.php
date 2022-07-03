@@ -7,7 +7,7 @@ if(isConnected()){
 
 
 ?>
-
+<input type="number" id="difficulty" placeholder="Nombre d'ingrédient non détenu autorisé" size="30">
 <div id='recettes'></div>
 
 
