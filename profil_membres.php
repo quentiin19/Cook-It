@@ -40,6 +40,7 @@ $results = $queryPrepared->fetch();
 											Prénom :<input type="text" class="form-control py-4" name="firstname" placeholder="Votre prénom" value="<?= $results["FIRSTNAME"] ?>"><br>
 											Nom :<input type="text" class="form-control" name="lastname" placeholder="Votre nom" value=" <?= $results["LASTNAME"] ?>"><br>
 											Pseudo :<input type="text" class="form-control" name="pseudo" placeholder="Votre pseudo" required="required" value=" <?= $results["PSEUDO"] ?>"><br>
+											Votre Description :<textarea row=3 type="text" class="form-control" name="description" placeholder="Votre description" required="required" value=" <?= $results["DESCRIPTION_PROFIL"] ?>"></textarea><br>
 											<input type="hidden" name="id" value="<?= $_GET['id'] ?>">
 											<input type="submit" class=" ml-3 mt-5 btn btn-light btn-lg py-2 " value="Modifier">
 										</div>
