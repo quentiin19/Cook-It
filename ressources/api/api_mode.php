@@ -27,16 +27,16 @@ function changeMode($id){
         $query = $pdo->prepare("UPDATE USER SET MODE = 0 WHERE ID = :id;");
         $query->execute(['id'=>$id]);
 
-        $return = array();
-        array_push($return, 0);
+        // $return = array();
+        // array_push($return, 0);
 
         return returnMode($id);
     }else{
         $query = $pdo->prepare("UPDATE USER SET MODE = 1 WHERE ID = :id;");
         $query->execute(['id'=>$id]);
 
-        $return = array();
-        array_push($return, 1);
+        // $return = array();
+        // array_push($return, 1);
 
         return returnMode($id);
     }
