@@ -2,10 +2,11 @@
 session_start();
 include '../../functions.php';
 
-header("Content-type: application/json");
+//header("Content-type: application/json");
 
 
 $pdo = connectDB();
+
 $id = $_GET['id'];
 $dif = $_GET['dif'];
 //$token = $_GET['token'];
