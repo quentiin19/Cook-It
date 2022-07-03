@@ -28,7 +28,7 @@ if (isConnected()) {
 			$subj = 'Mail de confirmation';
 			$msg = '<a href=https://cookit.ovh/test/TestConfirmMail/verifcm.php?id=' . $_SESSION['id'] . '&cle=' . $cle . '&mail=' . $emailnew . '>Confirmer</a><h1>Cliquez sur le lien de confirmation juste au dessus</h1>';
 			smtpmailer($emailnew, $from, $name, $subj, $msg);
-			header("Location: https://cookit.ovh/index.php");
+			header("Location: index.php");
 			unset($_SESSION['email']);
 			unset($_SESSION['token']);
 		}
