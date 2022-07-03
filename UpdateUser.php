@@ -40,7 +40,8 @@ if (isAdmin()) {
 	$description = trim($description);
 
 	//Vérification des données
-
+	$errors = array();
+	
 	//prénom : Min 2, Max 45 ou empty
 	if (strlen($firstname) == 1 || strlen($firstname) > 45) {
 		$errors[] = "Votre prénom doit faire plus de 2 caractères";
