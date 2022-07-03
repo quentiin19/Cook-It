@@ -17,7 +17,6 @@ if (isAdmin()) {
 		!isset($_POST["firstname"]) ||
 		!isset($_POST["lastname"]) ||
 		empty($_POST["pseudo"]) ||
-		!isset($_POST["description"]) ||
 		count($_POST) != 5
 	) {
 
