@@ -38,12 +38,23 @@ if (isConnected()){
         //Verification que l'un est bien abonné à l'autre
         $queryPrepared = $pdo->prepare("SELECT STATUS FROM SUBSCRIPTION WHERE ID_SUBSCRIBER = :sender AND ID_SUBSCRIPTION = :receveur");
         $queryPrepared->execute(["sender"=>$_SESSION['id'], "receveur"=>$_GET['id']]);
-        $state1 = $queryPrepared->fetch();
+        $statesub1 = $queryPrepared->fetch();
 
         //vérification que l'autre est bien abonné à l'un
         $queryPrepared = $pdo->prepare("SELECT STATUS FROM SUBSCRIPTION WHERE ID_SUBSCRIBER = :sender AND ID_SUBSCRIPTION = :receveur");
         $queryPrepared->execute(["receveur"=>$_SESSION['id'], "sender"=>$_GET['id']]);
-        $state2 = $queryPrepared->fetch();
+        $statesub2 = $queryPrepared->fetch();
+
+
+        //Verification que l'un a bien match avec l'autre
+        $queryPrepared = $pdo->prepare("SELECT STATUS FROM MATCHS WHERE ID_MATCHER = :sender AND ID_MATCH = :receveur");
+        $queryPrepared->execute(["sender"=>$_SESSION['id'], "receveur"=>$_GET['id']]);
+        $statematch1 = $queryPrepared->fetch();
+
+        //vérification que l'autre a bien match avec l'un
+        $queryPrepared = $pdo->prepare("SELECT STATUS FROM MATCHS WHERE ID_MATCHER = :sender AND ID_MATCH = :receveur");
+        $queryPrepared->execute(["receveur"=>$_SESSION['id'], "sender"=>$_GET['id']]);
+        $statematch2 = $queryPrepared->fetch();
 
     }else{
         $ownpage = 1;
@@ -87,56 +98,48 @@ if (isConnected()){
                         //s'il s'agit de la page d'un autre utilisateur
                         if($ownpage == 0){
                             //si une relation existe déjà
-                            if(isset($state1[0])){
+                            if(isset($statesub1[0])){
                                 //si l'utilisateur a déjà ce profil en ami
-                                if($state1[0] == 1){
-                                    //si l'utilisateur du profil a déjà l'utilisateur en ami
-                                    if(isset($state2[0]) && $state2[0] == 1){
-                                        //afficher le bouton message
-                                        echo'<div class="col-lg-6 col-md-6 d-flex justify-content-end">
-                                            <a href="https://cookit.ovh/messagerie.php?id='.$_GET['id'].'" class=" btn btn-secondary" style="height : 30px"><p>Message</p></a>
-                                        </div>';
-    
-                                    }
-                                    //afficher le bouton supprimer
+                                if($statesub1[0] == 1){
+                                    //afficher le bouton se désabonner
                                     echo'<div class="col-lg-6 col-md-6 d-flex justify-content-end">
-                                        <a href="https://cookit.ovh/social-action.php?id='.$_GET['id'].'&action=unsub" class=" btn btn-secondary" style="height : 30px"><p>Désabonner</p></a>
+                                        <a href="https://cookit.ovh/social-action.php?id='.$_GET['id'].'&action=unsub" class=" btn btn-secondary" style="height : 30px"><p>Se Désabonner</p></a>
                                     </div>';
                                     
                                     //afficher le bouton bloquer
-                                    echo'<div class="col-lg-6 col-md-6 d-flex justify-content-end">
-                                            <a href="https://cookit.ovh/social-action.php?id='.$_GET['id'].'&action=block" class=" btn btn-secondary" style="height : 30px"><p>Bloquer</p></a>
-                                        </div>';
+                                    // echo'<div class="col-lg-6 col-md-6 d-flex justify-content-end">
+                                    //         <a href="https://cookit.ovh/social-action.php?id='.$_GET['id'].'&action=block" class=" btn btn-secondary" style="height : 30px"><p>Bloquer</p></a>
+                                    //     </div>';
     
-                                }elseif($state1[0] == 0){
+                                }elseif($statesub1[0] == 0){
                                     //affichage du bouton s'abonner
                                     echo'<div class="col-lg-6 col-md-6 d-flex justify-content-end">
                                         <a href="https://cookit.ovh/social-action.php?id='.$_GET['id'].'&action=sub" class=" btn btn-secondary" style="height : 30px"><p>S\'abonner</p></a>
                                     </div>';
     
-                                    //afficher le bouton bloquer
-                                    echo'<div class="col-lg-6 col-md-6 d-flex justify-content-end">
-                                        <a href="https://cookit.ovh/social-action.php?id='.$_GET['id'].'&action=block" class=" btn btn-secondary" style="height : 30px"><p>Bloquer</p></a>
-                                    </div>';
+                                    // //afficher le bouton bloquer
+                                    // echo'<div class="col-lg-6 col-md-6 d-flex justify-content-end">
+                                    //     <a href="https://cookit.ovh/social-action.php?id='.$_GET['id'].'&action=block" class=" btn btn-secondary" style="height : 30px"><p>Bloquer</p></a>
+                                    // </div>';
 
-                                }elseif($state1[0] == -1) {
-                                    //afficher le bouton pour débloquer
-                                    echo'<div class="col-lg-6 col-md-6 d-flex justify-content-end">
-                                        <a href="https://cookit.ovh/social-action.php?id='.$_GET['id'].'&action=unblock" class=" btn btn-secondary" style="height : 30px"><p>Débloquer</p></a>
-                                    </div>';
-    
                                 }
+                                // elseif($state1[0] == -1) {
+                                //     //afficher le bouton pour débloquer
+                                //     echo'<div class="col-lg-6 col-md-6 d-flex justify-content-end">
+                                //         <a href="https://cookit.ovh/social-action.php?id='.$_GET['id'].'&action=unblock" class=" btn btn-secondary" style="height : 30px"><p>Débloquer</p></a>
+                                //     </div>';
+                                // }
                             //sinon si 
-                            }elseif(!isset($state2[0]) || $state2[0] == 1) {
+                            }elseif(!isset($statesub2[0]) || $statesub2[0] == 1) {
                                 //affichage du bouton s'abonner
                                 echo'<div class="col-lg-6 col-md-6 d-flex justify-content-end">
                                     <a href="https://cookit.ovh/social-action.php?id='.$_GET['id'].'&action=sub" class=" btn btn-secondary" style="height : 30px"><p>S\'abonner</p></a>
                                 </div>';
 
-                                //afficher le bouton bloquer
-                                echo'<div class="col-lg-6 col-md-6 d-flex justify-content-end">
-                                    <a href="https://cookit.ovh/social-action.php?id='.$_GET['id'].'&action=block" class=" btn btn-secondary" style="height : 30px"><p>Bloquer</p></a>
-                                </div>';
+                                // //afficher le bouton bloquer
+                                // echo'<div class="col-lg-6 col-md-6 d-flex justify-content-end">
+                                //     <a href="https://cookit.ovh/social-action.php?id='.$_GET['id'].'&action=block" class=" btn btn-secondary" style="height : 30px"><p>Bloquer</p></a>
+                                // </div>';
 
                             }
                         
