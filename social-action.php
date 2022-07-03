@@ -16,20 +16,31 @@ if (isConnected() == $_SESSION['id']) {
         //Verification que l'un est bien abonné à l'autre
         $queryPrepared = $pdo->prepare("SELECT STATUS FROM SUBSCRIPTION WHERE ID_SUBSCRIBER = :sender AND ID_SUBSCRIPTION = :receveur");
         $queryPrepared->execute(["sender"=>$_SESSION['id'], "receveur"=>$_GET['id']]);
-        $state1 = $queryPrepared->fetch();
+        $statesub1 = $queryPrepared->fetch();
 
         //vérification que l'autre est bien abonné à l'un
         $queryPrepared = $pdo->prepare("SELECT STATUS FROM SUBSCRIPTION WHERE ID_SUBSCRIBER = :sender AND ID_SUBSCRIPTION = :receveur");
         $queryPrepared->execute(["receveur"=>$_SESSION['id'], "sender"=>$_GET['id']]);
-        $state2 = $queryPrepared->fetch();
+        $statesub2 = $queryPrepared->fetch();
+
+
+        //----match----
+        //vérification que l'autre est bien abonné à l'un
+        $queryPrepared = $pdo->prepare("SELECT STATUS FROM MATCH WHERE ID_MATCHER = :sender AND ID_MATCH = :receveur");
+        $queryPrepared->execute(["receveur"=>$_SESSION['id'], "sender"=>$_GET['id']]);
+        $statematch1 = $queryPrepared->fetch();
+
+        //vérification que l'autre est bien abonné à l'un
+        $queryPrepared = $pdo->prepare("SELECT STATUS FROM MATCH WHERE ID_MATCHER = :sender AND ID_MATCH = :receveur");
+        $queryPrepared->execute(["receveur"=>$_SESSION['id'], "sender"=>$_GET['id']]);
+        $statematch2 = $queryPrepared->fetch();
 
         //----match----
 
         switch ($action) {
-
             case 'match':
-                if (isset($state1[0])){
-                    if ($state1[0] == -1) {
+                if (isset($statematch1[0])){
+                    if ($statematch2[0] == -1 || ($statematch1[0] == 2) || ($statematch2[0] == 2) || ($statematch1[0] == 1 && $statematch1[0] == 1)) {
                         break;
                     }else{
                         //mettre -1 en bdd
@@ -76,8 +87,8 @@ if (isConnected() == $_SESSION['id']) {
                 break;
         
             case 'sub':
-                if (isset($state1[0])){
-                    if ($state1[0] == 1) {
+                if (isset($statesub1[0])){
+                    if ($statesub1[0] == 1) {
                         break;
                     }else{
                         //mettre -1 en bdd
@@ -92,8 +103,8 @@ if (isConnected() == $_SESSION['id']) {
                 break;
 
             case 'unsub':
-                if (isset($state1[0])){
-                    if ($state1[0] != 1) {
+                if (isset($statesub1[0])){
+                    if ($statesub1[0] != 1) {
                         break;
                     }else{
                         //mettre -1 en bdd
