@@ -25,6 +25,8 @@ $queryPrepared = $pdo->prepare("SELECT COUNT(ID_SUBSCRIPTION) FROM SUBSCRIPTION 
 $queryPrepared->execute(["id" => $_GET["id"]]);
 $abonnement = $queryPrepared->fetch();
 
+
+
 //récupération du nombre d'abonnement de ce profil qu'il n'a pas accepté
 $queryPrepared = $pdo->prepare("SELECT COUNT(ID_SUBSCRIPTION) FROM SUBSCRIPTION WHERE SUBSCRIPTION.ID_SUBSCRIBER = :id AND STATUS = 0;");
 $queryPrepared->execute(["id" => $_GET["id"]]);

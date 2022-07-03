@@ -32,6 +32,7 @@ if (isAdmin()) {
 	$lastname = $_POST["lastname"];
 	$pseudo = $_POST["pseudo"];
 	$description = $_POST["description"];
+	$id = $_POST['id'];
 
 	//nettoyage des données
 	$firstname = ucwords(strtolower(trim($firstname)));
@@ -40,7 +41,7 @@ if (isAdmin()) {
 	$description = trim($description);
 
 	//Vérification des données
-	$errors = array();
+	$errors = [];
 	
 	//prénom : Min 2, Max 45 ou empty
 	if (strlen($firstname) == 1 || strlen($firstname) > 45) {
@@ -61,13 +62,13 @@ if (isAdmin()) {
 		$errors[] = "Votre description doit faire entre 2 et 200 caractères";
 	}
 
-	if(count($errors)==0){
+	if(count($errors) == 0){
 	//Modification des infos de l'utilisateur dans la BDD
-	$queryPrepared = $pdo->prepare("Update USER SET PSEUDO =:pseudo, FIRSTNAME =:firstname, LASTNAME =:lastname, DESCRIPTION_PROFIL=:desc WHERE ID =:id");
+	$queryPrepared = $pdo->prepare("UPDATE USER SET PSEUDO =:pseudo, FIRSTNAME =:firstname, LASTNAME =:lastname, DESCRIPTION_PROFIL=:desc WHERE ID =:id");
 	$queryPrepared->execute(["pseudo" => $pseudo, "firstname" => $firstname, "lastname" => $lastname, "desc" => $description, "id" => $id]);
 
 	//update des logs
-	updateLogs($id, "modification du profil par un administrateur (" . $_SESSION['id'] . ")");
+	updateLogs($id, 'modification du profil par un administrateur (". $_SESSION['id'] . ")');
 	}else{
 		header('Location: profil_membre.php?id='.$_POST['id']);
 	}
