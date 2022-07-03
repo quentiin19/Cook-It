@@ -1,5 +1,6 @@
 <?php
 include "template/header.php";
+echo '<p id="id-user">'.$_SESSION['id'].'</p>';
 ?>
 
 <button id="switch-mode">Test</button>
@@ -13,4 +14,11 @@ include "template/header.php";
 </div>
 
 
+
+
+
 <script src="lightmode.js"></script>
+
+<?php
+include 'template/footer.php';
+?>
