@@ -21,18 +21,18 @@ if (isConnected() != $_SESSION['id']){
                 $queryPrepared->execute(['id'=>$_SESSION['id'], 'id_sender'=>$friend['ID']]);
                 $result = $queryPrepared->fetch();
 
-                if($result[0] == 0){
-                    echo '<div class="col-lg-3 col-md-4 col-sm-6"> 
-                            <div class=" card bg-color text-center shadow p-3 mb-5 rounded">
-                                <img src="'.$friend['PATH_AVATAR'].'">
-                                <div>'.$friend['PSEUDO'].'</div>
-                                <button type="button" class="btn btn"><a href="https://cookit.ovh/social-action.php?id='.$friend['ID'].'&action=match" class ="bg-light rounded my-3"> Accepter</a></button>
-                                <button type="button" class="btn btn"><a href="https://cookit.ovh/social-action.php?id='.$friend['ID'].'&action=rmatch" class ="bg-light rounded my-3"> Refuser</a></button>
-                            </div>
-                        </div>';
-
+                if(isset($result[0]){
+                    if($result[0] == 0){
+                        echo '<div class="col-lg-3 col-md-4 col-sm-6"> 
+                                <div class=" card bg-color text-center shadow p-3 mb-5 rounded">
+                                    <img src="'.$friend['PATH_AVATAR'].'">
+                                    <div>'.$friend['PSEUDO'].'</div>
+                                    <button type="button" class="btn btn"><a href="https://cookit.ovh/social-action.php?id='.$friend['ID'].'&action=match" class ="bg-light rounded my-3"> Accepter</a></button>
+                                    <button type="button" class="btn btn"><a href="https://cookit.ovh/social-action.php?id='.$friend['ID'].'&action=rmatch" class ="bg-light rounded my-3"> Refuser</a></button>
+                                </div>
+                            </div>';
+                    }
                 }
-        
             }
         ?>
     </div>
