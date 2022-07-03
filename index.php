@@ -128,12 +128,12 @@ $p = $_GET['p'];
 
       <!-- Modal body -->
       <div class="modal-body">
-        Bienvenue sur CookIt, le site de cuisine pas comme les autres,
-        Sur cet incroyable site, vous pourrez créer vos recettes favorites et les partagées au monde entier.
-        Votre Frigo est presque vide, vous ne savez pas quoi cuisiner ? 
-        Pas de panique , sélectionnez les ingrédients et la quantité qu'il vous reste dans la section "frigo",
-        et nous vous proposerons des recettes.
-        Si un utilisateur publie du contenu qui vous plait vous pouvait le suivre grâce au bouton "S'abonner".
+        Bienvenue sur CookIt, le site de cuisine pas comme les autres, </br>
+        Sur cet incroyable site, vous pourrez créer vos recettes favorites et les partagées au monde entier.</br>
+        Votre Frigo est presque vide, vous ne savez pas quoi cuisiner ? </br>
+        Pas de panique , sélectionnez les ingrédients et la quantité qu'il vous reste dans la section "frigo",</br>
+        et nous vous proposerons des recettes.</br>
+        Si un utilisateur publie du contenu qui vous plait vous pouvait le suivre grâce au bouton "S'abonner".</br>
         
       </div>
 
