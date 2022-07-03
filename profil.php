@@ -40,9 +40,14 @@ if (isConnected()){
         $queryPrepared->execute(["sender"=>$_SESSION['id'], "receveur"=>$_GET['id']]);
         $statesub1 = $queryPrepared->fetch();
 
-        if($statesub1[0] == 1){
-            $subbtn = 1;
-            $unsubbtn = 0;
+        if(isset($statesub1[0])){
+            if($statesub1[0] == 1){
+                $subbtn = 1;
+                $unsubbtn = 0;
+            }else{
+                $subbtn = 0;
+                $unsubbtn = 1;
+            }
         }else{
             $subbtn = 0;
             $unsubbtn = 1;
