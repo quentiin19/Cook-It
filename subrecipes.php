@@ -42,10 +42,6 @@ foreach ($subs as $sub){
 
 
 
-
-    $queryPrepared = $pdo->prepare("SELECT ID_RECIPE, PICTURE_PATH, TITLE, ID_CREATOR, PSEUDO FROM RECIPES, USER WHERE USER.ID = RECIPES.ID_CREATOR AND RECIPES.ID_RECIPE = :id ORDER BY RECIPES.ID_RECIPE DESC;");
-    $queryPrepared->execute([]);
-    $recipes = $queryPrepared->fetchAll();
     if ($recipe['ID_CREATOR'] == $sub){
     echo '<div class="col-lg-3 col-md-4 col-sm-1 py-3">
             <div class="card mb-4 shadow-sm bg-color py-3 px-3 arrondie">
