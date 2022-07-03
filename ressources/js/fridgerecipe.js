@@ -10,7 +10,7 @@ const difficulty = document.getElementById("difficulty");
 difficulty.addEventListener("input", function (){
     console.log("test");
     
-})
+});
 
 function onclickrecipe() {
     //récupération de la valeur dans la barre de recherche

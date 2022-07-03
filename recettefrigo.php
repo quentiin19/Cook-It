@@ -8,7 +8,7 @@ if(isConnected()){
 
 ?>
 <p>Nombre d'ingrédient non détenu autorisé : </p>
-<input type="number" id="difficulty" size="30" value='2'>
+<input type="number" id="difficulty" value='2'>
 <div id='recettes'></div>
 
 
