@@ -5,17 +5,13 @@ const request_admin = new XMLHttpRequest;
 //elements du dom
 const search_bar_user = document.getElementById("search-bar-user");
 const users = document.getElementById("users");
-
 const users_php = document.getElementById("users-php");
-//const next_prev = document.getElementById("next-prev");
-
-
 
 
 //écouteur
 search_bar_user.addEventListener("input", onclickuser);
 
-//variable
+//variables
 let adminDisplay = 0;
 let keywords = '';
 
@@ -34,14 +30,19 @@ function onclickuser() {
 }
 
 function display_results_user() {
+    //remise à zero de la div
     users.innerText = "";
+
+    //si le input est vide
     if(keywords == ""){
         users_php.hidden = false;
+
     }else{
         users_php.hidden = true;
     
         let users_resp = JSON.parse(request_ajax.response);
-
+        
+        //affichage du user
         for (const user of users_resp) {
 
             const main_div = document.createElement("div");
@@ -72,27 +73,11 @@ function display_results_user() {
 
             users.appendChild(main_div);
 
-            
-
-
-
-            // if (adminDisplay === 1){
-
-            //     const aAdmin = document.createElement("a");
-            //     aAdmin.setAttribute("href", `https://cookit.ovh/delRecette.php?id=${recipe['ID_RECIPE']}`);
-
-            //     const btnAdmin = document.createElement("button");
-            //     //---------------------------------------------------------------
-            //     btnAdmin.setAttribute("class", "btn btn-danger px-3");
-            //     btnAdmin.innerHTML = '<i class="glyphicon glyphicon-trash" aria-hidden="true"></i>';
-
-            //     admin_div.appendChild(aAdmin);
-            //     admin_div.appendChild(btnAdmin);
-            // }
         }
     }
 }
 
+//vérification des droits admin
 function changeAdminDP(){
     adminRespons = JSON.parse(request_admin.response);
     console.log(request_admin.response);
@@ -101,9 +86,3 @@ function changeAdminDP(){
     }
 }
 
-// if(adminDisplay == 0){
-//     request_admin.addEventListener("load", changeAdminDP);
-//     request_admin.open("GET", `https://cookit.ovh/ressources/api/api.php?action=3&id=${id}&token=${token}`);
-//     request_admin.send();
-
-//}

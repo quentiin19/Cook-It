@@ -35,7 +35,6 @@ if (isConnected() == $_SESSION['id']) {
         $queryPrepared->execute(["receveur" => $_SESSION['id'], "sender" => $_GET['id']]);
         $statematch2 = $queryPrepared->fetch();
 
-        //----match----
 
         switch ($action) {
             case 'match':

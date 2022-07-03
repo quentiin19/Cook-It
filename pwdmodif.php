@@ -3,6 +3,7 @@
 if (isConnected()) {
 ?>
     <div class="row" height="100%">
+    <!-- SideBar -->
         <div class="col-lg-2 col-md-2 col-sm-2 bg-color my-3 ml-5 arrondie ">
             <div class="row">
                 <div class="row">
@@ -35,6 +36,7 @@ if (isConnected()) {
                 </div>
             </div>
         </div>
+    <!-- SideBar -->
         <div class="col-lg-10 col-md-10 col-sm-10 bg-coleur">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 h-auto arrondie d-flex justify-content-center  ">
@@ -47,8 +49,6 @@ if (isConnected()) {
                                     <div class="mb-md-5 mt-md-4 pb-5">
                                         <div class="row">
                                             <div class="col-lg-12 pb-3">
-                                                <?php //include "avatar/avatar.php"; 
-                                                ?>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -63,7 +63,6 @@ if (isConnected()) {
                                                 </form>
                                             </div>
                                             <div class="col-lg-2 col-md-0 col-sm-0"></div>
-
                                         </div>
                                     </div>
                                 </div>
@@ -74,7 +73,8 @@ if (isConnected()) {
             </div>
         </div>
 
-        <?php include "template/footer.php"; ?>
-    <?php
+<?php 
+include "template/footer.php"; 
 }
-    ?>
+//fin du if
+?>

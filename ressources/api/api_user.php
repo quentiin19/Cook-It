@@ -23,4 +23,5 @@ class API{
 
 $API = new API;
 
+//renvois un user en fonction d'un mot clé
 echo ($API->returnUser($_GET['keyword']));

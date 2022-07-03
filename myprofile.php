@@ -36,7 +36,7 @@ include 'template/header.php';
 		<?php
 		if (isConnected()) {
 			$pdo = connectDB();
-
+			//récupération des informations du user
 			$queryPrepared = $pdo->prepare("SELECT * FROM USER where ID=:id");
 			$queryPrepared->execute(["id" => $_SESSION["id"]]);
 			$results = $queryPrepared->fetch();
@@ -52,8 +52,6 @@ include 'template/header.php';
 									<div class="mb-md-5 mt-md-4 pb-5">
 										<div class="row">
 											<div class="col-lg-12 pb-3">
-												<?php //include "avatar/avatar.php"; 
-												?>
 											</div>
 										</div>
 										<div class="row">

@@ -13,13 +13,14 @@ $queryPrepared = $pdo->prepare("SELECT STATUS FROM MATCHS WHERE ID_MATCHER = :se
 $queryPrepared->execute(["receveur" => $_SESSION['id'], "sender" => $_GET['id']]);
 $state2 = $queryPrepared->fetch();
 
+//si les deux personnes se sont matchées
 if ($state1[0] == 1 && $state2[0] == 1) {
     if (isConnected()) {
         echo '<p id="id-sender" hidden="hidden">' . $_SESSION['id'] . '</p>';
         echo '<p id="id-receveur" hidden="hidden">' . $_GET['id'] . '</p>';
         echo '<p id="token" hidden="hidden">' . $_SESSION['token'] . '</p>';
     }
-
+    //on récupère le pseudo de la personne avec qui on parle
     $queryPrepared = $pdo->prepare("SELECT PSEUDO FROM USER WHERE ID = :id;");
     $queryPrepared->execute(['id' => $_GET['id']]);
     $friendName = $queryPrepared->fetch();
@@ -40,22 +41,25 @@ if ($state1[0] == 1 && $state2[0] == 1) {
         <div class="col-lg-2 col-md-2 col-sm-2 bg-color my-3 ml-5 arrondie ">
             <div class="row overflow-auto" height="100%">
                 <?php
-                $queryPrepared = $pdo->prepare("SELECT ID_SUBSCRIPTION AS ID FROM SUBSCRIPTION WHERE ID_SUBSCRIBER = :id; AND STATUS = 1;");
+                //récupération des 
+                $queryPrepared = $pdo->prepare("SELECT ID_MATCH AS ID FROM MATCHS WHERE ID_MATCHER = :id; AND STATUS = 1;");
                 $queryPrepared->execute(['id' => $_SESSION['id']]);
-                $subscriptions = $queryPrepared->fetchAll();
+                $matchs = $queryPrepared->fetchAll();
 
-                foreach ($subscriptions as $subscription) {
-                    $queryPrepared = $pdo->prepare("SELECT COUNT(ID_SUBSCRIBER) FROM SUBSCRIPTION WHERE ID_SUBSCRIPTION = :id AND ID_SUBSCRIBER = :idsub AND STATUS = 1;");
-                    $queryPrepared->execute(['id' => $_SESSION['id'], 'idsub' => $subscription['ID']]);
+                //pour chaque personnes avec qui on a matché
+                foreach ($matchs as $match) {
+                    $queryPrepared = $pdo->prepare("SELECT COUNT(ID_MATCHER) FROM MATCHS WHERE ID_MATCH = :id AND ID_MATCHER = :idsub AND STATUS = 1;");
+                    $queryPrepared->execute(['id' => $_SESSION['id'], 'idsub' => $match['ID']]);
                     $result = $queryPrepared->fetch();
 
+                    //on vérifie qu'elle a bien matché avec nous
                     if ($result[0] == 1 && $subscription['ID'] != $_GET['id']) {
                         //récupération des données de l'ami
                         $queryPrepared = $pdo->prepare("SELECT ID, PSEUDO, PATH_AVATAR FROM USER WHERE ID = :id;");
                         $queryPrepared->execute(['id' => $subscription['ID']]);
                         $friend = $queryPrepared->fetch();
 
-                        echo    '<div class="row">
+                        echo'<div class="row">
                                 <div class="col-lg-12 my-5  py-2 pl-2">
                                     <a class="text-white" href="https://cookit.ovh/messagerie.php?id=' . $friend['ID'] . '" >
                                         <img src="' . $friend['PATH_AVATAR'] . '" height="100px" width="100px">
@@ -79,34 +83,8 @@ if ($state1[0] == 1 && $state2[0] == 1) {
 
                         <!-- section du chat -->
                         <div id="message-canva" class="card-body overflow-auto" data-mdb-perfect-scrollbar="true" style="position: relative; height: 400px">
-
-
-                            <!-- 1ere personne -->
-                            <div class="d-flex flex-row justify-content-start">
-                                <!-- <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3-bg.webp" alt="avatar 1" style="width: 45px; height: 100%;">-->
-                                <div>
-                                    <p class="small p-2 ms-3 mb-1 rounded-3" style="background-color: #f5f6f7;">Hi</p>
-                                    <p class="small p-2 ms-3 mb-1 rounded-3" style="background-color: #f5f6f7;">How are you ...???</p>
-                                    <p class="small p-2 ms-3 mb-1 rounded-3" style="background-color: #f5f6f7;">What are you doing tomorrow? Can we come up a bar?</p>
-                                    <p class="small ms-3 mb-3 rounded-3 text-muted">23:58</p>
-                                </div>
-                            </div>
-
-
-                            <!-- 2eme personne -->
-                            <div class="d-flex flex-row justify-content-end mb-4 pt-1">
-                                <div>
-                                    <p class="small p-2 me-3 mb-1 text-white rounded-3 bg-primary">Hiii, I'm good.</p>
-                                    <p class="small p-2 me-3 mb-1 text-white rounded-3 bg-primary">How are you doing?</p>
-                                    <p class="small p-2 me-3 mb-1 text-white rounded-3 bg-primary">Long time no see! Tomorrow ofdddddddddddddddfdfdsfkslfklmdskflmskflmdskflmskflmskflmskfmlskmlfksmlfkldmskfmlsfdfdfkdfdlfkldkfldfkldkfldklfdkfldkdflfice. will be free on sunday.</p>
-                                    <p class="small me-3 mb-3 rounded-3 text-muted d-flex justify-content-end">00:06</p>
-
-                                </div>
-                                <!-- <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava4-bg.webp" alt="avatar 1" style="width: 45px; height: 100%;">-->
-                            </div>
-
+                    
                         </div>
-
                         <!-- section du chat -->
 
 

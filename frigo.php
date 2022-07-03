@@ -16,10 +16,12 @@ include "template/header.php";
                     <?php
                     $pdo = connectDB();
 
+                    //récupération de tous les ingredients
                     $queryPrepared = $pdo->prepare("SELECT * FROM INGREDIENTS WHERE ID NOT IN (SELECT ID_INGREDIENT FROM FRIDGE WHERE ID_USER = :id);");
                     $queryPrepared->execute(['id' => $_SESSION['id']]);
                     $results = $queryPrepared->fetchAll();
 
+                    //affichage de tous les ingredients
                     foreach ($results as $key => $ingredient) {
                         echo   '<div id="' . $ingredient['ID'] . '"class="col-lg-12 col-md-12 col-sm-12 background-body arrondie my-2">
                                 <div class="row align-items-center">
@@ -54,6 +56,7 @@ include "template/header.php";
 
 if (isConnected() == $_SESSION['id']) {
     $pdo = connectDB();
+    //récupération des ingrédients que le user a dans son frigo
     $queryPrepared = $pdo->prepare("SELECT * from FRIDGE,INGREDIENTS where INGREDIENTS.ID = FRIDGE.ID_INGREDIENT AND FRIDGE.ID_USER = :id;");
     $queryPrepared->execute(["id" => $_SESSION['id']]);
     $fridge = $queryPrepared->fetchAll();
@@ -68,6 +71,7 @@ if (isConnected() == $_SESSION['id']) {
         <div>
             <div class="overflow-auto" style="height : 480px;">
                 <?php
+                //affichage des ingredients du frigo du user
                 foreach ($fridge as $ingredient) {
                     echo '<div id="' . $ingredient['ID'] . '"class="col-lg-12 col-md-12 col-sm-12 background-body arrondie my-2">
                         <div class="row align-items-center">

@@ -53,6 +53,7 @@ if (isConnected()) {
     }
 }
 
+//rediréction sur le frigo
 header("Location: frigo.php?id=" . $_SESSION['id']);
 
 //algo

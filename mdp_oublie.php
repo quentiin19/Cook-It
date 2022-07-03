@@ -56,6 +56,7 @@ require "./test/TestConfirmMail/inscription.php";
 	</div>
 	<?php
 
+	//si le mail n'est pas définit
 	if (
 		!isset($_POST["email"]) ||
 		count($_POST) != 1
@@ -65,11 +66,13 @@ require "./test/TestConfirmMail/inscription.php";
 	}
 
 	$email = $_POST["email"];
+	//génération de la clé
 	$cle = rand(1000000, 9000000);
 
+	//mise en session de la clé pour la vérification
 	$_SESSION['cle'] = $cle;
 
-
+	//envois du mail
 	$from = 'support-cookit@cookit.com';
 	$name = "Cookit-supportTeam";
 	$subj = 'Mot de passe oublié';

@@ -13,6 +13,7 @@ function onchange() {
     //récupération de la valeur
     let dif = difficulty.value;
 
+    //blocage de la difficulté entre 0 et 3
     if(dif > 3){
         difficulty.value = 3;
         dif = difficulty.value;
@@ -31,10 +32,11 @@ function onchange() {
 
 function display_results_recipe() {
     let recipes = JSON.parse(request.response);
-    console.log(recipes);
 
+    //remise à zero de la div
     recettes.innerText = "";
 
+    //affichage des recettes
     for (const recipe of recipes) {
         console.log(recipe);
         
@@ -84,4 +86,5 @@ function display_results_recipe() {
 }
 
 
+//premier chargement
 onchange();

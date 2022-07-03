@@ -1,17 +1,14 @@
 <?php
 session_start();
 require "functions.php";
-echo '<pre>';
-print_r($_POST);
-echo '</pre>';
-echo '<pre>';
-print_r($_SESSION);
-echo '</pre>';
+
+
 $id = $_SESSION['id'];
+
 //Vérification si admin
 if (isAdmin()) {
 	$pdo = connectDB();
-
+	//vérification des entrées
 	if (
 		!isset($_POST["firstname"]) ||
 		!isset($_POST["lastname"]) ||
@@ -64,15 +61,17 @@ if (isAdmin()) {
 
 	//redirection vers la page membre
 	header("Location: https://cookit.ovh/index.php");
+
+//si la personne est connectée
 } elseif (isConnected() == $id) {
 
+	//récupération du hash de son mdp
 	$pdo = connectDB();
 	$queryPrepared = $pdo->prepare("SELECT HASHPWD FROM USER WHERE ID=:id");
 	$queryPrepared->execute(["id" => $id]);
 	$results = $queryPrepared->fetch();
 
-	print_r($_POST);
-	print_r($_SESSION);
+	//vérification des entrées
 	if (
 		!isset($_POST["firstname"]) ||
 		!isset($_POST["lastname"]) ||
@@ -153,6 +152,7 @@ if (isAdmin()) {
 
 	//Redirection
 	header("Location: https://cookit.ovh/index.php");
+	
 } else {
 	die("Il faut se connecter !!!");
 }

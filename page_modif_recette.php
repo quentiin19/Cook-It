@@ -4,14 +4,17 @@ include "template/header.php";
 
 if (isConnected() == $_SESSION['id']) {
 	$pdo = connectDB();
+	//récupération de la recette
 	$queryPrepared = $pdo->prepare("SELECT *  FROM RECIPES WHERE ID_RECIPE = :idr;");
 	$queryPrepared->execute(["idr" => $_GET['id']]);
 	$resultR = $queryPrepared->fetch();
 
+	//récupération des besoin pour la recette
 	$queryPrepared = $pdo->prepare("SELECT *  FROM NEED WHERE ID_RECIPE = :id;");
 	$queryPrepared->execute(["id" => $_GET['id']]);
 	$resultN = $queryPrepared->fetchAll();
 
+	//récupération des ingrédients
 	$queryPrepared = $pdo->prepare("SELECT * FROM INGREDIENTS;");
 	$queryPrepared->execute();
 	$allIngredient = $queryPrepared->fetchAll();
@@ -75,46 +78,46 @@ if (isConnected() == $_SESSION['id']) {
 												if ($ingredient['ID'] == $need['ID_INGREDIENT']) {
 													$displayed = 1;
 													echo '<div class="col-lg-12 col-md-12 col-sm-12 background-body arrondie my-2">
-																	<div class="row align-items-center">
-																		<div class="col-lg-1 col-md-1 col-sm-6">
-																			<input checked="checked" type="checkbox" name="checkbox' . $ingredient['ID'] . '">
-																		</div>
-																		<div class="col-lg-3 col-md-3 col-sm-6">
-																			<img src="' . $ingredient['PICTURE_PATH'] . '" height ="70vh" width="70vw"/>
-																		</div>
-																		<div class="col-lg-3 col-md-3 col-sm-3">
-																			<p>' . $ingredient['NAME'] . '</p>
-																		</div>
-																		<div class="col-lg-3 col-md-2 col-sm-6 ">
-																			<input class="input-width text-dark" type="text" name="quantity' . $ingredient['ID'] . '" value=' . $need['QUANTITY'] . ' placeholder="quantité">
-																		</div>
-																		<div class="col-lg-2 col-md-3 col-sm-3">
-																			' . $ingredient['UNIT'] . '
-																		</div>		
-																	</div>
-																</div>';
+															<div class="row align-items-center">
+																<div class="col-lg-1 col-md-1 col-sm-6">
+																	<input checked="checked" type="checkbox" name="checkbox' . $ingredient['ID'] . '">
+																</div>
+																<div class="col-lg-3 col-md-3 col-sm-6">
+																	<img src="' . $ingredient['PICTURE_PATH'] . '" height ="70vh" width="70vw"/>
+																</div>
+																<div class="col-lg-3 col-md-3 col-sm-3">
+																	<p>' . $ingredient['NAME'] . '</p>
+																</div>
+																<div class="col-lg-3 col-md-2 col-sm-6 ">
+																	<input class="input-width text-dark" type="text" name="quantity' . $ingredient['ID'] . '" value=' . $need['QUANTITY'] . ' placeholder="quantité">
+																</div>
+																<div class="col-lg-2 col-md-3 col-sm-3">
+																	' . $ingredient['UNIT'] . '
+																</div>		
+															</div>
+														</div>';
 												}
 											}
 											if ($displayed == 0) {
 												echo '<div class="col-lg-12 col-md-12 col-sm-12 background-body arrondie my-2">
-																<div class="row align-items-center">
-																	<div class="col-lg-1 col-md-1 col-sm-6">
-																		<input type="checkbox" name="checkbox' . $ingredient['ID'] . '">
-																	</div>
-																	<div class="col-lg-3 col-md-3 col-sm-6">
-																		<img src="' . $ingredient['PICTURE_PATH'] . '" height ="70vh" width="70vw"/>
-																	</div>
-																	<div class="col-lg-3 col-md-3 col-sm-3">
-																		<p>' . $ingredient['NAME'] . '</p>
-																	</div>
-																	<div class="col-lg-3 col-md-2 col-sm-6 ">
-																		<input class="input-width" type="text" name="quantity' . $ingredient['ID'] . '" placeholder="quantité">
-																	</div>
-																	<div class="col-lg-2 col-md-3 col-sm-3">
-																		' . $ingredient['UNIT'] . '
-																	</div>		
-																</div>
-															</div>';
+														<div class="row align-items-center">
+															<div class="col-lg-1 col-md-1 col-sm-6">
+																<input type="checkbox" name="checkbox' . $ingredient['ID'] . '">
+															</div>
+															<div class="col-lg-3 col-md-3 col-sm-6">
+																<img src="' . $ingredient['PICTURE_PATH'] . '" height ="70vh" width="70vw"/>
+															</div>
+															<div class="col-lg-3 col-md-3 col-sm-3">
+																<p>' . $ingredient['NAME'] . '</p>
+															</div>
+															<div class="col-lg-3 col-md-2 col-sm-6 ">
+																<input class="input-width" type="text" name="quantity' . $ingredient['ID'] . '" placeholder="quantité">
+															</div>
+															<div class="col-lg-2 col-md-3 col-sm-3">
+																' . $ingredient['UNIT'] . '
+															</div>		
+														</div>
+													</div>';
 											}
 											$displayed = 0;
 										}
@@ -130,12 +133,6 @@ if (isConnected() == $_SESSION['id']) {
 						</form>
 
 						<!--fin form-->
-
-
-
-
-
-
 					</div>
 				</div>
 			</div>

@@ -49,6 +49,7 @@ if (!isConnected()) {
 														<?php
 														$pdo = connectDB();
 
+														//récupération de toues les ingredients
 														$queryPrepared = $pdo->prepare("SELECT * FROM INGREDIENTS;");
 														$queryPrepared->execute();
 														$results = $queryPrepared->fetchAll();
@@ -148,21 +149,17 @@ if (!empty($_POST)) {
 				// Définit les marges pour le cachet et récupère la hauteur et la largeur de celui-ci
 				$marge_right = 10;
 				$marge_bottom = 10;
+
+				//récupération des dimentions de l'image
 				$sx = imagesx($logo);
 				$sy = imagesy($logo);
-				//création d'une canvas de mêmes dimensions que l'image
-				// $final_img = imagecreate(imagesx($img), imagesy($img));
-
-				// Fonction pour copier une image sur une autre
-				// imagecopy($final_img, $img, 0, 0, 0, 0, imagesx($img), imagesy($img));
-				// imagecopy($final_img, $logo, 0, 0, 0, 0, 81, 75);
 
 				// Copie le cachet sur la photo en utilisant les marges et la largeur de la
 				// photo originale  afin de calculer la position du cachet 
 				imagecopy($img, $logo, imagesx($img) - $sx - $marge_right, imagesy($img) - $sy - $marge_bottom, 0, 0, imagesx($logo), imagesy($logo));
 
 				//suppression de l'ancien fichier
-				// unlink($destination.$file_name);
+				unlink($destination.$file_name);
 
 				//création de l'image
 				if ($extension == '.png' || $extension == '.PNG') {

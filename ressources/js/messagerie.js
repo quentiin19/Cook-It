@@ -24,12 +24,7 @@ function sendMsg(){
     let msg = msg_input.value;
     msg_input.value = "";
 
-
-    console.log(msg);
-    console.log(id_sender);
-    console.log(id_receveur);
-    console.log(token);
-
+    //si le message n'est pas vide
     if(msg.length > 0){
         console.log('envoi du message');
         request.addEventListener("load", displayMsg);
@@ -78,6 +73,7 @@ function displayMsg() {
     }
 }
 
+//fonction de refresh des messages pour la messagerie instannée
 function refresh() {
     request.addEventListener("load", function(){
         displayMsg();

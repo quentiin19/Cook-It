@@ -39,6 +39,9 @@ include "./template/header.php";
 
 												//redirection
 												header("location: index.php");
+
+
+								//affichage des erreurs
 											} else {
 												echo '<p class="bg-danger text-white">Identifiants incorrects</p>';
 											}

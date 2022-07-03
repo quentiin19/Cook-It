@@ -114,11 +114,10 @@ if ($pwd != $pwdConfirm) {
 	$errors[] = "Votre mot de passe de confirmation ne correspond pas";
 }
 
-
+//s'il n'y a pas d'erreurs
 if (count($errors) == 0) {
 
-
-
+	//mise en bdd
 	$queryPrepared = $pdo->prepare("INSERT INTO USER (MAIL, FIRSTNAME, LASTNAME, PSEUDO, HASHPWD, role) 
 		VALUES ( :email , :firstname, :lastname, :pseudo, :pwd , :role);");
 
@@ -134,15 +133,19 @@ if (count($errors) == 0) {
 		"role" => 0
 	]);
 
+	//récupération de l'id
 	$queryPrepared = $pdo->prepare("SELECT * FROM USER WHERE MAIL = :email;");
 	$queryPrepared->execute(["email" => $email]);
 	$result = $queryPrepared->fetch();
 
+	//création de la clé
 	$cle = rand(1000000, 9000000);
 
+	//sauvegarde de la clé
 	$_SESSION['id'] = $result['ID'];
 	$_SESSION['cle'] = $cle;
 
+	//envois du mail
 	$from = 'support-cookit@cookit.com';
 	$name = "Cookit-supportTeam";
 	$subj = 'Mail de confirmation';
@@ -151,7 +154,7 @@ if (count($errors) == 0) {
 
 	header("Location: login.php");
 } else {
-
+	//redirection sur la page d'inscription avec les erreurs
 	$_SESSION['errors'] = $errors;
 	header("Location: SignUp.php");
 }

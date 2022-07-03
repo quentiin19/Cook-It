@@ -2,7 +2,7 @@
 <?php
 if (isConnected()) {
 	$pdo = connectDB();
-
+	//récupération des informations du user
 	$queryPrepared = $pdo->prepare("SELECT * FROM USER where ID=:id");
 	$queryPrepared->execute(["id" => $_SESSION["id"]]);
 	$results = $queryPrepared->fetch();
