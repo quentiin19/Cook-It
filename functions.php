@@ -77,7 +77,7 @@ function isAdmin() {
 
 function updateLogs($id, $action){
 	$pdo = connectDB();
-	$queryPrepared = $pdo->prepare("INSERT INTO LOGS (ID, DATE_LOGIN, ACTION) VALUES (:id , CURRENT_TIMESTAMP, :action);");
+	$queryPrepared = $pdo->prepare("INSERT INTO LOGS (ID, DATE_LOGIN, ACTION) VALUES (:id ,CURRENT_TIMESTAMP, :action);");
 	$queryPrepared->execute(["id"=>$id, "action"=>$action]);
 }
 
