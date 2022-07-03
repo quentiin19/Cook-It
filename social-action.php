@@ -26,7 +26,7 @@ if (isConnected() == $_SESSION['id']) {
 
         //----match----
         //vérification que l'autre est bien abonné à l'un
-        $queryPrepared = $pdo->prepare("SELECT STATUS FROM MATCHS WHERE ID_MATCHER = :sender AND ID_MATCH = :receveur");
+        $queryPrepared = $pdo->prepare("SELECT STATUS FROM MATCHS WHERE ID_MATCHER = :receveur AND ID_MATCH = :sender");
         $queryPrepared->execute(["receveur"=>$_SESSION['id'], "sender"=>$_GET['id']]);
         $statematch1 = $queryPrepared->fetch();
 
@@ -75,12 +75,12 @@ if (isConnected() == $_SESSION['id']) {
                     if ($statematch1[0] != -1) {
                         break;
                     }else{
-                        //mettre -1 en bdd
+                        //mettre 0 en bdd
                         $queryPrepared = $pdo->prepare("UPDATE MATCHS SET STATUS = 0 WHERE ID_MATCHER = :id_sender; AND ID_MATCH = :id_receveur;");
                         $queryPrepared->execute(['id_sender'=>$_SESSION['id'], 'id_receveur'=>$_GET['id']]);
                     }
                 }else{
-                    //mettre -1 en bdd
+                    //mettre 0 en bdd
                     $queryPrepared = $pdo->prepare("INSERT INTO MATCHS VALUES (:id_sender, :id_receveur, 0, NOW());");
                     $queryPrepared->execute(['id_sender'=>$_SESSION['id'], 'id_receveur'=>$_GET['id']]);
                 }
