@@ -8,7 +8,7 @@ header("Content-type: application/json");
 $pdo = connectDB();
 $id = $_GET['id'];
 $dif = $_GET['dif'];
-$token = $_GET['token'];
+//$token = $_GET['token'];
 
 
 function returnRecipes($difficulty, $id){
