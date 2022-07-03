@@ -13,12 +13,9 @@ if(!isset($_GET['p'])){
 $p = $_GET['p'];
 ?>
 
-<div class="container mt-3">
-  <h3>Modal Example</h3>
-  <p>Click on the button to open the modal.</p>
-  
-  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
-    Open modal
+<div class="container mt-3"> 
+  <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#myModal">
+    Comment ça marche ?
   </button>
 </div>
 
