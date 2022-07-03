@@ -191,7 +191,7 @@ if(!empty($_POST)){
 
 	//insertion recette dans tables recipes
 	$recette = $_POST["recette"];
-	$recette_description = $_POST["recette_description"];
+	$recette_description = nl2br($_POST["recette_description"]);
 
 	$pdo = connectDB();
 	$queryPrepared = $pdo->prepare("INSERT INTO RECIPES (ID_CREATOR, TITLE, DESCRIPTION, PICTURE_PATH) VALUES (:idcreator, :title, :recettedesc, :path);");
