@@ -93,6 +93,9 @@ if (isConnected() == $_SESSION['id']){
         }?> 
             </div>
         </div>
+        <div class="d-flex justify-content-center my-4">
+            <button type="submit" class="btn btn-secondary mb-2 "><a href="#" class="text-white">Voir les recettes</a></button>
+        </div>
     </div>
 </div>
 <script src='ressources/js/ajax_ingredient.js'></script>
