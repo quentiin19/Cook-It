@@ -23,9 +23,6 @@ function returnRecipes($difficulty, $id){
     $ingredients = $query->fetchAll();
 
 
-
-
-
     $query = $pdo->prepare("SELECT ID_RECIPE FROM RECIPES;");
     $query->execute();
     $recipes = $query->fetchAll();
@@ -41,7 +38,7 @@ function returnRecipes($difficulty, $id){
                 if ($ingredient['ID_INGREDIENT'] == $need['ID_INGREDIENT']) {
                     if ($ingredient['QUANTITY'] >= $need['QUANTITY']) {
                         $found += 1;
-                        echo 'ok pour '.$ingredient['NAME'];
+                        echo 'ok pour '.$ingredient['ID_INGREDIENT'];
                     }
                 }
             }
