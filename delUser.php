@@ -21,7 +21,7 @@ require "functions.php";
 
 
 //Vérification de l'utilisateur
-if(isAdmin() || $_GET['id'] == isConnected()){
+if (isAdmin() || $_GET['id'] == isConnected()) {
 	//connexion à la base de données
 	$pdo = connectDB();
 
@@ -29,80 +29,78 @@ if(isAdmin() || $_GET['id'] == isConnected()){
 
 	//suppression des messages
 	$queryPrepared = $pdo->prepare("DELETE FROM MESSAGE WHERE ID_SENDER=:id OR ID_RECEIVER=:id;");
-	$queryPrepared->execute(["id"=>$id]);
+	$queryPrepared->execute(["id" => $id]);
 
 
 
 	//suppression des abonnements
 	$queryPrepared = $pdo->prepare("DELETE FROM SUBSCRIPTION WHERE ID_SUBSCRIPTION=:id OR ID_SUBSCRIBER=:id;");
-	$queryPrepared->execute(["id"=>$id]);
+	$queryPrepared->execute(["id" => $id]);
 
 
 
 	//suppression du frigo
 	$queryPrepared = $pdo->prepare("DELETE FROM FRIDGE WHERE ID_USER=:id;");
-	$queryPrepared->execute(["id"=>$id]);
+	$queryPrepared->execute(["id" => $id]);
 
 
 
 	//suppression des recettes que le user à sauvegardé
 	$queryPrepared = $pdo->prepare("DELETE FROM RECIPES_SAVED WHERE ID_USER=:id;");
-	$queryPrepared->execute(["id"=>$id]);
+	$queryPrepared->execute(["id" => $id]);
 
 	//suppression des recettes que le user à créé et que d'autres ont sauvegardé
 	$queryPrepared = $pdo->prepare("DELETE FROM RECIPES_SAVED WHERE ID_RECIPE IN (SELECT ID_RECIPE FROM RECIPES WHERE ID_CREATOR=:id);");
-	$queryPrepared->execute(["id"=>$id]);
+	$queryPrepared->execute(["id" => $id]);
 
 
 
 	//suppression des images dans les recettes que le user à créé
 	$queryPrepared = $pdo->prepare("DELETE FROM PICTURES WHERE ID_RECIPE IN (SELECT ID_RECIPE FROM RECIPES WHERE ID_CREATOR=:id);");
-	$queryPrepared->execute(["id"=>$id]);
+	$queryPrepared->execute(["id" => $id]);
 
 
 
 	//suppression des besoin des recettes créé par le user
 	$queryPrepared = $pdo->prepare("DELETE FROM NEED WHERE ID_RECIPE IN (SELECT ID_RECIPE FROM RECIPES WHERE ID_CREATOR=:id);");
-	$queryPrepared->execute(["id"=>$id]);
+	$queryPrepared->execute(["id" => $id]);
 
 
 
 	//suppression des votes du user
 	$queryPrepared = $pdo->prepare("DELETE FROM VOTES WHERE ID_USER=:id;");
-	$queryPrepared->execute(["id"=>$id]);
+	$queryPrepared->execute(["id" => $id]);
 
 	//suppression des votes sur les recettes créé par le user
 	$queryPrepared = $pdo->prepare("DELETE FROM VOTES WHERE ID_RECIPE IN (SELECT ID_RECIPE FROM RECIPES WHERE ID_CREATOR=:id);");
-	$queryPrepared->execute(["id"=>$id]);
+	$queryPrepared->execute(["id" => $id]);
 
 
 
 	//suppression des recettes créées par le user
 	$queryPrepared = $pdo->prepare("DELETE FROM RECIPES WHERE ID_CREATOR=:id;");
-	$queryPrepared->execute(["id"=>$id]);
+	$queryPrepared->execute(["id" => $id]);
 
 
 
 	//suppression des logs du user
 	$queryPrepared = $pdo->prepare("DELETE FROM LOGS WHERE ID=:id;");
-	$queryPrepared->execute(["id"=>$id]);
+	$queryPrepared->execute(["id" => $id]);
 
 
 	//suppression des matchs du user
 	$queryPrepared = $pdo->prepare("DELETE FROM MATCHS WHERE ID_MATCH=:id OR ID_MATCHER=:id;");
-	$queryPrepared->execute(["id"=>$id]);
+	$queryPrepared->execute(["id" => $id]);
 
 
 	//suppression du user lui-même
 	$queryPrepared = $pdo->prepare("DELETE FROM USER WHERE ID=:id;");
-	$queryPrepared->execute(["id"=>$id]);
+	$queryPrepared->execute(["id" => $id]);
 
 
 
 	//redirection sur la home
 	header("Location: admin.php");
-
-}else{
+} else {
 	die("Vous ne pouvez pas supprimer ce compte.");
 }
-

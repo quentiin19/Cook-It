@@ -1,52 +1,51 @@
 <?php
-    require "./template/header.php";
+require "./template/header.php";
 ?>
 <div class="col-lg-6 col-md-12 col-sm-12">
 
-<form method="POST" action="">
+    <form method="POST" action="">
 
-    <input type="password" class="form-control" name="password" placeholder="Votre Mot de passe" required="required"><br>
-    <input type="password" class="form-control" name="passwordconfirm" placeholder="Confirmez votre Mot de passe" required="required"><br>
-    
-    <div class="row">
+        <input type="password" class="form-control" name="password" placeholder="Votre Mot de passe" required="required"><br>
+        <input type="password" class="form-control" name="passwordconfirm" placeholder="Confirmez votre Mot de passe" required="required"><br>
 
-        <div class="col-lg-4 col-md-1 col-sm-0"></div>
-        <div class="col-lg-4 col-md-12 col-sm-12">
-            <input type="submit" class="btn btn-outline-light btn-lg py-2 " value="Envoyer">
-    </div>
-    
-    <div class="col-lg-4 col-md-1 col-sm-0"></div>
+        <div class="row">
 
+            <div class="col-lg-4 col-md-1 col-sm-0"></div>
+            <div class="col-lg-4 col-md-12 col-sm-12">
+                <input type="submit" class="btn btn-outline-light btn-lg py-2 " value="Envoyer">
+            </div>
+
+            <div class="col-lg-4 col-md-1 col-sm-0"></div>
+
+        </div>
+
+    </form>
 </div>
-    
-  </form>
-</div>
 
-    
-<?php  
+<?php include "template/footer.php"; ?>
+<?php
 
-if(!empty($_POST["password"]) || !empty($_POST["passwordConfirm"]) || count($_POST) == 2){
+if (!empty($_POST["password"]) || !empty($_POST["passwordConfirm"]) || count($_POST) == 2) {
     $pdo = connectDB();
     $pwd = password_hash($_POST["password"], PASSWORD_DEFAULT);
-    
-    if($_GET['id']==$_SESSION['id']){
-        if($_GET['cle']== $_SESSION['cle']){
+
+    if ($_GET['id'] == $_SESSION['id']) {
+        if ($_GET['cle'] == $_SESSION['cle']) {
             $queryPrepared = $pdo->prepare("UPDATE USER set HASHPWD =:pwd WHERE ID =:id; ");
-            $queryPrepared->execute(["pwd"=>$pwd, "id"=>$_SESSION['id']]);
+            $queryPrepared->execute(["pwd" => $pwd, "id" => $_SESSION['id']]);
 
             echo "Vous avez bien changé votre mot de passe, cliquez sur le lien ci dessous pour vous connecter";
             echo "<br/><a href=http://51.255.172.36/ProjAnn/login.php>Se Connecter</a>";
-            }else{
-                echo "votre lien n'est plus valide";
-                echo 'clé get :'.$_GET['cle'];
-                echo 'clé session :'.$_SESSION['cle'];
-
+        } else {
+            echo "votre lien n'est plus valide";
+            echo 'clé get :' . $_GET['cle'];
+            echo 'clé session :' . $_SESSION['cle'];
         }
-    }else{
+    } else {
         echo "votre lien n'est plus valide";
-        echo 'id get : '.$_GET['id'];
-        echo 'id session : '.$_SESSION['id'];
+        echo 'id get : ' . $_GET['id'];
+        echo 'id session : ' . $_SESSION['id'];
     }
 }
-    
+
 ?>

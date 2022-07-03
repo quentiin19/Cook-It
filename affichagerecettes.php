@@ -15,7 +15,7 @@ $pdo = connectDB();
         <div class="card mb-4 shadow-sm">
             <img src="./ressources/images/Plats/plat3.jpeg" class="arrondie w-100">
             <div class="card-body arrondie">
-                
+
 
                 <div class="col-lg-3 col-md-3 col-sm-3">
                     <div class="row">
@@ -41,4 +41,3 @@ $pdo = connectDB();
             </div>
         </div>
     </div>
-
