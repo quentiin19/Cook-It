@@ -82,3 +82,6 @@ function display_results_recipe() {
         recettes.appendChild(main_div);
     }
 }
+
+
+onchange();
