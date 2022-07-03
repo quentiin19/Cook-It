@@ -10,6 +10,7 @@ if($_GET['id'] == $_SESSION['id']){
         $pdo = connectDB();
         $queryPrepared = $pdo->prepare("UPDATE USER set role = 1 WHERE ID=:id ; ");
         $queryPrepared->execute(["id"=>$_SESSION['id']]);
+        header("Location: https://cookit.ovh/login.php");
         echo "Vous avez bien validé votre mail, cliquez sur le lien ci dessous pour vous connecter";
         echo "<brs><a href=http://cookit.ovh/login.php>Se Connecter</a>";
     }else{
