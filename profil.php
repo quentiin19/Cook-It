@@ -98,9 +98,9 @@ if (isConnected()){
                         //s'il s'agit de la page d'un autre utilisateur
                         if($ownpage == 0){
                             //si une relation existe déjà
-                            if(isset($state1[0])){
+                            if(isset($statesub1[0])){
                                 //si l'utilisateur a déjà ce profil en ami
-                                if($state1[0] == 1){
+                                if($statesub1[0] == 1){
                                     //afficher le bouton se désabonner
                                     echo'<div class="col-lg-6 col-md-6 d-flex justify-content-end">
                                         <a href="https://cookit.ovh/social-action.php?id='.$_GET['id'].'&action=unsub" class=" btn btn-secondary" style="height : 30px"><p>Se Désabonner</p></a>
@@ -111,7 +111,7 @@ if (isConnected()){
                                     //         <a href="https://cookit.ovh/social-action.php?id='.$_GET['id'].'&action=block" class=" btn btn-secondary" style="height : 30px"><p>Bloquer</p></a>
                                     //     </div>';
     
-                                }elseif($state1[0] == 0){
+                                }elseif($statesub1[0] == 0){
                                     //affichage du bouton s'abonner
                                     echo'<div class="col-lg-6 col-md-6 d-flex justify-content-end">
                                         <a href="https://cookit.ovh/social-action.php?id='.$_GET['id'].'&action=sub" class=" btn btn-secondary" style="height : 30px"><p>S\'abonner</p></a>
@@ -130,7 +130,7 @@ if (isConnected()){
                                 //     </div>';
                                 // }
                             //sinon si 
-                            }elseif(!isset($state2[0]) || $state2[0] == 1) {
+                            }elseif(!isset($statesub2[0]) || $statesub2[0] == 1) {
                                 //affichage du bouton s'abonner
                                 echo'<div class="col-lg-6 col-md-6 d-flex justify-content-end">
                                     <a href="https://cookit.ovh/social-action.php?id='.$_GET['id'].'&action=sub" class=" btn btn-secondary" style="height : 30px"><p>S\'abonner</p></a>
