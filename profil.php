@@ -156,6 +156,12 @@ if (isConnected()){
                                             <a href="https://cookit.ovh/social-action.php?id='.$_GET['id'].'&action=block" class=" btn btn-secondary" style="height : 30px"><p>Bloquer</p></a>
                                         </div>';
                                     
+                                }elseif ($statematch1[0] == 1) {
+                                    //affichage du bouton bloquer
+                                    echo'<div class="col-lg-6 col-md-6 d-flex justify-content-end">
+                                            <a href="https://cookit.ovh/social-action.php?id='.$_GET['id'].'&action=block" class=" btn btn-secondary" style="height : 30px"><p>Bloquer</p></a>
+                                        </div>';
+                            
                                 }elseif ($statematch1[0] == -1) {
                                     //affichage du bouton débloquer
                                     echo'<div class="col-lg-6 col-md-6 d-flex justify-content-end">
