@@ -55,8 +55,8 @@ if (isConnected() == $_SESSION['id']) {
                 break;
             
             case 'block':
-                if (isset($state1[0])){
-                    if ($state1[0] == -1) {
+                if (isset($statematch1[0])){
+                    if ($statematch1[0] == -1) {
                         break;
                     }else{
                         //mettre -1 en bdd
@@ -71,8 +71,8 @@ if (isConnected() == $_SESSION['id']) {
                 break;
         
             case 'unblock':
-                if (isset($state1[0])){
-                    if ($state1[0] != -1) {
+                if (isset($statematch1[0])){
+                    if ($statematch1[0] != -1) {
                         break;
                     }else{
                         //mettre -1 en bdd
