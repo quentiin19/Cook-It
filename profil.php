@@ -165,48 +165,47 @@ if (isConnected()){
         </div>
         <div class="col-lg-7 col-md-5">
                 <div class="row">
-                    <div class="col-lg-6 col-md-6 my-3">
-                        <h4><?= $user['PSEUDO'] ?></h4>
+                    <div class="col-lg-6 col-md-6 py-5">
+                        <h2 class="  my-4"><?= $user['PSEUDO'] ?></h2>
                     </div>
-
-
-
-                    
+                    <div class="col-lg-6">
+                    <div class="row">
                     <?php
                     if(isConnected()){
                         //s'il s'agit de la page d'un autre utilisateur
                         if($ownpage == 0){
 
                             if($subbtn == 1){
-                                echo'<div class="btn col-lg-6 col-md-6 d-flex justify-content-end">
+                                echo'<div class="btn col-lg-12 col-md-12 d-flex justify-content-end">
                                         <a href="https://cookit.ovh/social-action.php?id='.$_GET['id'].'&action=sub" class=" btn btn-secondary" style="height : 30px"><p>S\'abonner</p></a>
                                     </div>';
                             }
                             if($unsubbtn == 1){
-                                echo'<div class="btn col-lg-6 col-md-6 d-flex justify-content-end">
+                                echo'<div class="btn col-lg-12 col-md-12 d-flex justify-content-end">
                                         <a href="https://cookit.ovh/social-action.php?id='.$_GET['id'].'&action=unsub" class=" btn btn-secondary" style="height : 30px"><p>Se Désabonner</p></a>
                                     </div>';
                             }
                             if($unblockbtn == 1){
-                                echo'<div class="btn col-lg-6 col-md-6 d-flex justify-content-end">
+                                echo'<div class="btn col-lg-12 col-md-12 d-flex justify-content-end">
                                         <a href="https://cookit.ovh/social-action.php?id='.$_GET['id'].'&action=unblock" class=" btn btn-secondary" style="height : 30px"><p>Débloquer</p></a>
                                     </div>';
                             }
                             if($blockbtn == 1){
-                                echo'<div class="btn col-lg-6 col-md-6 d-flex justify-content-end">
+                                echo'<div class="btn col-lg-12 col-md-12 d-flex justify-content-end">
                                         <a href="https://cookit.ovh/social-action.php?id='.$_GET['id'].'&action=block" class=" btn btn-secondary" style="height : 30px"><p>Bloquer</p></a>
                                     </div>';
                             }
                             if($msgbtn == 1){
-                                echo'<div class="btn col-lg-6 col-md-6 d-flex justify-content-end">
+                                echo'<div class="btn col-lg-12 col-md-12 d-flex justify-content-end">
                                         <a href="https://cookit.ovh/messagerie.php?id='.$_GET['id'].'" class=" btn btn-secondary" style="height : 30px"><p>Message</p></a>
                                     </div>';
                             }
                             if($matchbtn == 1){
-                                echo'<div class="btn col-lg-6 col-md-6 d-flex justify-content-end">
+                                echo'<div class="btn col-lg-12 col-md-12 d-flex justify-content-end">
                                         <a href="https://cookit.ovh/social-action.php?id='.$_GET['id'].'&action=match" class=" btn btn-secondary" style="height : 30px"><p>Match <3</p></a>
                                     </div>';
                             }
+                            
 
 
                         //     //si une relation d'abonnement existe déjà
@@ -313,6 +312,7 @@ if (isConnected()){
                         //             <a href="modif_profil.php" class=" btn btn-secondary" style="height : 30px"><p>Modifier mon profil</p></a>
                         //         </div>';
                          }
+                         
                         
 
 
@@ -329,16 +329,20 @@ if (isConnected()){
                         // }
                     }
                     ?>
+                    <!-- fermeture row -->
+                    </div>
+                    <!-- fermeture div -->
+                    </div>
                     </div>          
                     <div class="row my-5">
-                        <div class="col-lg-3 ">
+                        <div class="col-lg-4 ">
                             <h4>Recettes : <?= $nbrecipe[0]?></h4>
                         </div>
-                        <div class="col-lg-3">
-                            <a class="text-white" href="<?= 'https://cookit.ovh/viewsub.php?id='.$_GET['id'].'&display=1'?>"><h4>Abonnement : <?= $abonnement[0]?></h4><a> 
+                        <div class="col-lg-4">
+                            <a class="text-white" href="<?= 'https://cookit.ovh/viewsub.php?id='.$_GET['id'].'&display=1'?>"><h4>Abonnement : <?= $abonnement[0]?></h4></a> 
                         </div>
-                        <div class="col-lg-3">
-                            <a class="text-white" href="<?= 'https://cookit.ovh/viewsub.php?id='.$_GET['id'].'&display=2'?>"><h4>Abonnés : <?= $abonnes[0]?></h4><a>
+                        <div class="col-lg-4">
+                            <a class="text-white" href="<?= 'https://cookit.ovh/viewsub.php?id='.$_GET['id'].'&display=2'?>"><h4>Abonnés : <?= $abonnes[0]?></h4></a>
                         </div>   
                     </div>
                     <div class="row my-5">
