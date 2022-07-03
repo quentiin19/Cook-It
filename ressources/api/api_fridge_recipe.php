@@ -2,7 +2,7 @@
 session_start();
 include '../../functions.php';
 
-header("Content-type: application/json");
+//header("Content-type: application/json");
 
 
 
