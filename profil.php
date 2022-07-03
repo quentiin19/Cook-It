@@ -49,8 +49,8 @@ if (isConnected()){
                 $unsubbtn = 1;
             }
         }else{
-            $subbtn = 0;
-            $unsubbtn = 1;
+            $subbtn = 1;
+            $unsubbtn = 0;
         }
 
 
