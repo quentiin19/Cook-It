@@ -66,7 +66,7 @@ function returnRecipes($difficulty, $id){
         print_r($temp);
         echo '</pre>';
 
-        array_push($id_recipes_found, $temp);
+        array_push($recipes_found, $temp);
     }
 
 
