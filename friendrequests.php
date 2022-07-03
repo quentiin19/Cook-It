@@ -21,7 +21,7 @@ if (isConnected() != $_SESSION['id']){
                 $queryPrepared->execute(['id'=>$_SESSION['id'], 'id_sender'=>$friend['ID']]);
                 $result = $queryPrepared->fetch();
 
-                if(isset($result[0]){
+                if(isset($result[0])){
                     if($result[0] == 0){
                         echo '<div class="col-lg-3 col-md-4 col-sm-6"> 
                                 <div class=" card bg-color text-center shadow p-3 mb-5 rounded">
