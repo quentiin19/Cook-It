@@ -40,16 +40,8 @@ if (isConnected() == $_SESSION['id']) {
         switch ($action) {
             case 'match':
                 if (isset($statematch1[0])){
-                    if ($statematch2[0] == -1 || ($statematch1[0] == 2) || ($statematch2[0] == 2)) {
+                    if ($statematch2[0] == -1) {
                         break;
-                    }elseif($statematch1[0] == 1 && $statematch2[0] == 1){
-                        //mettre 2 en bdd
-                        $queryPrepared = $pdo->prepare("UPDATE MATCHS SET STATUS = 2 WHERE ID_MATCHER = :id_sender; AND ID_MATCH = :id_receveur;");
-                        $queryPrepared->execute(['id_sender'=>$_SESSION['id'], 'id_receveur'=>$_GET['id']]);
-
-                        $queryPrepared = $pdo->prepare("UPDATE MATCHS SET STATUS = 2 WHERE ID_MATCHER = :id_sender; AND ID_MATCH = :id_receveur;");
-                        $queryPrepared->execute(['id_sender'=>$_GET['id'], 'id_receveur'=>$_SESSION['id']]);
-
                     }else{
                         //mettre 1 en bdd
                         $queryPrepared = $pdo->prepare("UPDATE MATCHS SET STATUS = 1 WHERE ID_MATCHER = :id_sender; AND ID_MATCH = :id_receveur;");
