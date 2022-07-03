@@ -47,7 +47,7 @@ if (isConnected()){
 
 
         //Verification que l'un a bien match avec l'autre
-        $queryPrepared = $pdo->prepare("SELECT STATUS FROM MACTHS WHERE ID_MATCHER = :sender AND ID_MATCH = :receveur");
+        $queryPrepared = $pdo->prepare("SELECT STATUS FROM MATCHS WHERE ID_MATCHER = :sender AND ID_MATCH = :receveur");
         $queryPrepared->execute(["sender"=>$_SESSION['id'], "receveur"=>$_GET['id']]);
         $statematch1 = $queryPrepared->fetch();
 
