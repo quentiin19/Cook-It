@@ -62,4 +62,4 @@ function returnRecipes($difficulty, $id){
     return json_encode($recipes_found);
 }
 
-echo returnRecipes($dif, $id);
+//echo returnRecipes($dif, $id);
