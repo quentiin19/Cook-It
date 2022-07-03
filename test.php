@@ -11,3 +11,6 @@ include "template/header.php";
 <div class="bg-color">
     HVSGuigbuzehnifnopzafopn,f
 </div>
+
+
+<script src="lightmode.js"></script>
