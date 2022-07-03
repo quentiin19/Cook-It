@@ -7,22 +7,20 @@ include "template/header.php";
 	<div class="col-lg-12 col-md-12 col-sm-12 h-auto arrondie py-3 d-flex justify-content-center ">
 		<div>
 			<?php
-
+			//s'il y a d'erreurs
 			if (!empty($_SESSION['errors'])) {
 				foreach ($_SESSION['errors'] as $error) {
-
+					//on les affiche
 					echo '<div class="d-flex justify-content-center">
 						<div class="alert alert-danger" role="alert">
 							<p>' . $error . '</p>
 						</div>
 					 </div>';
 				}
+				//suppression de l'index 'errors'
 				unset($_SESSION['errors']);
 			}
 
-			// foreach ($errors as $error){
-			// 	echo '<p class="bg-danger text-white">$error</p>';
-			// }
 			?>
 		</div>
 		<div class="container py-2  h-auto  ">
@@ -43,13 +41,13 @@ include "template/header.php";
 										<input type="text" class="form-control" name="firstname" placeholder="Votre prénom"><br>
 										<input type="text" class="form-control" name="lastname" placeholder="Votre nom"><br>
 										<input type="text" class="form-control" name="pseudo" placeholder="Votre pseudo" required="required"><br>
-								</div>
-								<div class="col-lg-6 col-md-12 col-sm-12">
+									</div>
+									<div class="col-lg-6 col-md-12 col-sm-12">
 
-									<input type="date" class="form-control" name="birthday" placeholder="Votre date de naissance"><br>
-									<input type="password" class="form-control" name="password" placeholder="Votre mot de passe" required="required"><br>
-									<input type="password" class="form-control" name="passwordConfirm" placeholder="confirmation" required="required"><br>
-									<div class="text-left ">
+										<input type="date" class="form-control" name="birthday" placeholder="Votre date de naissance"><br>
+										<input type="password" class="form-control" name="password" placeholder="Votre mot de passe" required="required"><br>
+										<input type="password" class="form-control" name="passwordConfirm" placeholder="confirmation" required="required"><br>
+										<div class="text-left ">
 										<input type="checkbox" name="cgu" required="required"> CGU <br>
 									</div>
 								</div>
@@ -78,12 +76,8 @@ include "template/header.php";
 									<p class="mb-0">Avez-vous déjà un compte ? <a href="login.php" class="text-white-50 fw-bold">Se Connecter</a></p>
 								</div>
 							</div>
-
-
 							</form>
-
 						</div>
-
 					</div>
 				</div>
 			</div>

@@ -3,13 +3,12 @@ session_start();
 
 include "functions.php";
 
+//update des logs
 updateLogs($_SESSION['id'], "déconnexion");
 
+//destruction de la session actuelle
 session_destroy();
 
-foreach ($_SESSION as $key => $value) {
-    unset($_SESSION);
-}
 
 
 header("Location: index.php");

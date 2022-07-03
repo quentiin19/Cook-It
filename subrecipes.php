@@ -10,11 +10,12 @@ include "template/header.php";
 
 $pdo = connectDB();
 
+//récupération des id des abonnements
 $queryPrepared = $pdo->prepare("SELECT ID_SUBSCRIPTION FROM SUBSCRIPTION WHERE ID_SUBSCRIBER = :id;");
 $queryPrepared->execute(['id' => $_SESSION['id']]);
 $subs = $queryPrepared->fetchAll();
 
-
+//pour chaque abonné
 foreach ($subs as $sub) {
 
     //on récupère chaque recette de l'abonnement actuel
@@ -22,7 +23,7 @@ foreach ($subs as $sub) {
     $queryPrepared->execute(['id' => $sub[0]]);
     $recipes = $queryPrepared->fetchAll();
 
-    //pour chaque recette de l'abonnement
+    //pour chaque recette de l'abonnement on affiche la card
     foreach ($recipes as $recipe) {
         echo '<div class="col-lg-3 col-md-4 col-sm-1 py-3">
             <div class="card mb-4 shadow-sm bg-color py-3 px-3 arrondie">

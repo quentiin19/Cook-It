@@ -9,7 +9,7 @@ class Image{
 const height_canva = 200;
 const width_canva = 200;
 
-
+//variables des différentes parties
 let skins = [];
 let current_skin = 0;
 const total_skins = 4;

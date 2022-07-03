@@ -6,6 +6,7 @@ require "functions.php";
 $id_recipe = $_GET['id'];
 
 $pdo = connectDB();
+//récupération de la recette
 $queryPrepared = $pdo->prepare("SELECT * FROM RECIPES WHERE ID_RECIPE = :id;");
 $queryPrepared->execute(["id" => $id_recipe]);
 $recipe = $queryPrepared->fetch();

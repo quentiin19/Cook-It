@@ -3,13 +3,13 @@ include 'template/header.php';
 
 
 if (isConnected()) {
+    //récupération de l'id de l'utilisateur pour l'utiliser dans le script js
     echo '<p hidden="hidden" id="id-user">' . $_GET['id'] . '</p>';
 
 
 ?>
     <p>Nombre d'ingrédient non détenu autorisé : </p>
     <input type="number" id="difficulty" value='0'>
-    <div id='errors'></div>
     <div id='recettes'></div>
 
 

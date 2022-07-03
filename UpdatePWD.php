@@ -1,17 +1,16 @@
 <?php
 session_start();
 require "functions.php";
-echo '<pre>';
-print_r($_POST);
-echo '</pre>';
-echo '<pre>';
-print_r($_SESSION);
-echo '</pre>';
+
+
+
 $id = $_SESSION['id'];
+
 //Vérification si admin
 if (isAdmin()) {
 	$pdo = connectDB();
 
+	//vérification des entrées
 	if (
 		empty($_POST["oldpassword"]) ||
 		empty($_POST["password"]) ||
@@ -28,6 +27,8 @@ if (isAdmin()) {
 
 	//redirection vers la page membre
 	header("Location: admin.php?id=" . $id);
+
+//sinon si la personne est connectée
 } elseif (isConnected() == $id) {
 
 	$pdo = connectDB();
@@ -35,8 +36,7 @@ if (isAdmin()) {
 	$queryPrepared->execute(["id" => $id]);
 	$results = $queryPrepared->fetch();
 
-	print_r($_POST);
-	print_r($_SESSION);
+	//vérification des entrées
 	if (
 		empty($_POST["oldpassword"]) ||
 		empty($_POST["password"]) ||
@@ -57,7 +57,7 @@ if (isAdmin()) {
 
 	//Vérification des mots de passes
 	$hasholdpwd = password_hash($oldpwd, PASSWORD_DEFAULT);
-
+	//si le hash du mdp ne correspond pas
 	if ($results[0] != $hasholdpwd) {
 		$errors[] = "Votre ancien mot de passe n'est pas bon";
 	}

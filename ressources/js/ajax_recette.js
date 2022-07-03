@@ -25,11 +25,10 @@ let keywords = '';
 
 
 
-
+//fonction pour enlever les espaces
 function clean_str_ajax(str){
     let new_str = [];
     console.log(`uncleaned string : ${str}`);
-    let liaison = ['à', 'au', 'aux', 'le', 'la' , 'les', 'pour', 'dans', 'avec', 'sans'];
 
     //on remplace les lettres qui pourrait fausser notre rechercher en bdd
     for (let k = 0; k < str.length; k++) {
@@ -76,8 +75,9 @@ function display_results_recipe() {
     
 
         let recipes = JSON.parse(request_ajax.response);
-        console.log(recipes);
+    
 
+        //affichage des recettes
         for (const recipe of recipes) {
             console.log(recipe);
             
@@ -141,6 +141,7 @@ function display_results_recipe() {
     }
 }
 
+//vérfication des droits admin
 function changeAdminDP(){
     adminRespons = JSON.parse(request_admin.response);
     console.log(request_admin.response);
@@ -149,6 +150,7 @@ function changeAdminDP(){
     }
 }
 
+//affichage en mode admin
 if(adminDisplay == 0){
     request_admin.addEventListener("load", changeAdminDP);
     request_admin.open("GET", `https://cookit.ovh/ressources/api/api.php?action=3&id=${id}&token=${token}`);

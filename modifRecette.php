@@ -3,29 +3,23 @@ session_start();
 include "./functions.php"; ?>
 <?php
 
-echo '<pre>';
-print_r($_FILES);
-echo '</pre>';
-
-echo '<pre>';
-print_r($_POST);
-echo '</pre>';
 
 if (isConnected() == $_SESSION['id'] || isAdmin()) {
 	$pdo = connectDB();
 
+	// //récupération de la recette
+	// $queryPrepared = $pdo->prepare("SELECT * FROM RECIPES WHERE ID_CREATOR = :id  AND ID_RECIPE = :idr");
+	// $queryPrepared->execute(["id" => $_SESSION["id"], "idr" => $_POST["idrecipe"]]);
+	// $resultR = $queryPrepared->fetch();
 
-	$queryPrepared = $pdo->prepare("SELECT *  FROM RECIPES WHERE ID_CREATOR = :id  AND ID_RECIPE = :idr");
-	$queryPrepared->execute(["id" => $_SESSION["id"], "idr" => $_POST["idrecipe"]]);
-	$resultR = $queryPrepared->fetch();
+	// //récupération des besoins
+	// $queryPrepared = $pdo->prepare("SELECT * FROM NEED WHERE ID_RECIPE = :id;");
+	// $queryPrepared->execute(["id" => $_POST["idrecipe"]]);
+	// $resultN = $queryPrepared->fetchAll();
 
-	$queryPrepared = $pdo->prepare("SELECT * FROM NEED WHERE ID_RECIPE = :id;");
-	$queryPrepared->execute(["id" => $_POST["idrecipe"]]);
-	$resultN = $queryPrepared->fetchAll();
-
-	$queryPrepared = $pdo->prepare("SELECT * FROM INGREDIENTS WHERE ID IN (SELECT ID_INGREDIENT FROM NEED WHERE ID_RECIPE = :id);");
-	$queryPrepared->execute(["id" => $_POST["idrecipe"]]);
-	$ingredients = $queryPrepared->fetchAll();
+	// $queryPrepared = $pdo->prepare("SELECT * FROM INGREDIENTS WHERE ID IN (SELECT ID_INGREDIENT FROM NEED WHERE ID_RECIPE = :id);");
+	// $queryPrepared->execute(["id" => $_POST["idrecipe"]]);
+	// $ingredients = $queryPrepared->fetchAll();
 
 
 	//on supprime tout les inredients pour pouvoir le mettre a jour après
@@ -80,21 +74,17 @@ if (isConnected() == $_SESSION['id'] || isAdmin()) {
 				// Définit les marges pour le cachet et récupère la hauteur et la largeur de celui-ci
 				$marge_right = 10;
 				$marge_bottom = 10;
+
+				//récupération de la taille de l'image
 				$sx = imagesx($logo);
 				$sy = imagesy($logo);
-				//création d'une canvas de mêmes dimensions que l'image
-				// $final_img = imagecreate(imagesx($img), imagesy($img));
-
-				// Fonction pour copier une image sur une autre
-				// imagecopy($final_img, $img, 0, 0, 0, 0, imagesx($img), imagesy($img));
-				// imagecopy($final_img, $logo, 0, 0, 0, 0, 81, 75);
 
 				// Copie le cachet sur la photo en utilisant les marges et la largeur de la
 				// photo originale  afin de calculer la position du cachet 
 				imagecopy($img, $logo, imagesx($img) - $sx - $marge_right, imagesy($img) - $sy - $marge_bottom, 0, 0, imagesx($logo), imagesy($logo));
 
 				//suppression de l'ancien fichier
-				// unlink($destination.$file_name);
+				unlink($destination.$file_name);
 
 				//création de l'image
 				if ($extension == '.png' || $extension == '.PNG') {
@@ -126,15 +116,17 @@ if (isConnected() == $_SESSION['id'] || isAdmin()) {
 	$queryPrepared = $pdo->prepare("UPDATE RECIPES set DESCRIPTION = :desc WHERE ID_RECIPE = :id");
 	$queryPrepared->execute(["desc" => $_POST["recette_description"] = nl2br($_POST["recette_description"]), "id" => $_POST["idrecipe"]]);
 
-
+	//récupération du nombre d'ingrédients
 	$queryPrepared = $pdo->prepare("SELECT count(ID) FROM INGREDIENTS;");
 	$queryPrepared->execute();
 	$nbingredients = $queryPrepared->fetch();
 
 	//on inscrit les nouvelles valeurs des ingredients 1 à count id ingredient
 	for ($i = 1; $i < $nbingredients[0]; $i++) {
+		//vérification de la présence de chaque ingrédients dans la modif de recette
 		if (isset($_POST['checkbox' . $i])) {
 			if (!empty($_POST['quantity' . $i])) {
+				//mise en bdd
 				$quantity = $_POST["quantity" . $i];
 				$queryPrepared = $pdo->prepare("INSERT INTO NEED VALUES (:quantity, :id_ingr, :id_recipe);");
 				$queryPrepared->execute(["quantity" => $_POST['quantity' . $i], "id_ingr" => $i, "id_recipe" => $_POST["idrecipe"]]);

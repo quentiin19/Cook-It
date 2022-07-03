@@ -8,6 +8,7 @@ header("Content-type: application/json");
 $error = array();
 
 if($_GET['task'] == "write"){
+    //récupération des variables
     $sender = $_GET['sender'];
     $receveur = $_GET['receiver'];
     $msg = $_GET['msg'];

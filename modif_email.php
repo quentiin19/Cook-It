@@ -40,6 +40,7 @@ include "template/header.php";
         if (isConnected()) {
             $pdo = connectDB();
 
+            //récupération des infos du user
             $queryPrepared = $pdo->prepare("SELECT * FROM USER where ID=:id");
             $queryPrepared->execute(["id" => $_SESSION["id"]]);
             $results = $queryPrepared->fetch();
@@ -77,13 +78,8 @@ include "template/header.php";
                                                     </div>
                                                 </form>
                                             </div>
-
                                             <div class="col-lg-3 col-md-1 col-sm-0"></div>
-
                                         </div>
-
-
-
                                     </div>
                                 </div>
                             </div>

@@ -48,14 +48,15 @@ $action = $_GET['action'];
 $id_recipe = $_GET['recipe'];
 $array = array();
 
-//vérification du token pour voir si le user est bien connecté
 
+//récupération du nombre de votes
 if ($action == 1) {
     //retourner le nombre de votes
     $API = new API_VOTE;
     $array['vote'] = $API->CountVote($id_recipe);
     echo json_encode($array);
 
+//action de vote sur une recette
 }elseif ($action == 2) {
     //vote d'un user
     $id_user = $_GET['user'];
@@ -64,6 +65,8 @@ if ($action == 1) {
 
     if ($vote >= -1 && $vote <= 1) {
         $pdo = connectDB();
+
+        //vérification du token pour voir si le user est bien connecté
         $queryPrepared = $pdo->prepare("SELECT TOKEN FROM USER WHERE ID=:id_user;");
         $queryPrepared->execute(['id_user'=>$id_user]);
         $tokenbdd = $queryPrepared->fetch();

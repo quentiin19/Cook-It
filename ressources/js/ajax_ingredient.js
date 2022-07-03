@@ -19,7 +19,6 @@ search_bar_ingredients.addEventListener("input", onclickingredients);
 function clean_str_ajax(str){
     let new_str = [];
     console.log(`uncleaned string : ${str}`);
-    let liaison = ['à', 'au', 'aux', 'le', 'la' , 'les', 'pour', 'dans', 'avec', 'sans'];
 
     //on remplace les lettres qui pourrait fausser notre rechercher en bdd
     for (let k = 0; k < str.length; k++) {

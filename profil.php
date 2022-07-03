@@ -64,6 +64,7 @@ if (isConnected()) {
         $queryPrepared->execute(["receveur" => $_SESSION['id'], "sender" => $_GET['id']]);
         $statematch2 = $queryPrepared->fetch();
 
+        //mise en place des conditions d'affichage des boutons
         if (isset($statematch1[0]) && isset($statematch2[0])) {
             if ($statematch1[0] == -1) {
                 $unblockbtn = 1;
@@ -203,128 +204,7 @@ if (isConnected()) {
                                         <a href="https://cookit.ovh/social-action.php?id=' . $_GET['id'] . '&action=match" class=" btn btn-secondary" style="height : 30px"><p>Match <3</p></a>
                                     </div>';
                                 }
-
-
-
-                                //     //si une relation d'abonnement existe déjà
-                                //     if(isset($statesub1[0])){
-                                //         //si l'utilisateur a déjà ce profil en ami
-                                //         if($statesub1[0] == 1){
-                                //             //afficher le bouton se désabonner
-                                //             echo'<div class="btn col-lg-6 col-md-6 d-flex justify-content-end">
-                                //                 <a href="https://cookit.ovh/social-action.php?id='.$_GET['id'].'&action=unsub" class=" btn btn-secondary" style="height : 30px"><p>Se Désabonner</p></a>
-                                //             </div>';
-
-
-                                //         }elseif($statesub1[0] == 0){
-                                //             //affichage du bouton s'abonner
-                                //             echo'<div class="btn col-lg-6 col-md-6 d-flex justify-content-end">
-                                //                 <a href="https://cookit.ovh/social-action.php?id='.$_GET['id'].'&action=sub" class=" btn btn-secondary" style="height : 30px"><p>S\'abonner</p></a>
-                                //             </div>';
-
-                                //         }
-                                //     }
-
-                                //     //si
-                                //     if (isset($statematch1[0])){
-                                //         if($statematch1[0] == 1 && $statematch2[0] == 1){
-                                //             //affichage du bouton message
-                                //             echo'<div class="btn col-lg-6 col-md-6 d-flex justify-content-end">
-                                //                     <a href="https://cookit.ovh/messagerie.php?id='.$_GET['id'].'" class=" btn btn-secondary" style="height : 30px"><p>Message</p></a>
-                                //                 </div>';
-
-                                //             //affichage du bouton bloquer
-                                //             echo'<div class="btn col-lg-6 col-md-6 d-flex justify-content-end">
-                                //                     <a href="https://cookit.ovh/social-action.php?id='.$_GET['id'].'&action=block" class=" btn btn-secondary" style="height : 30px"><p>Bloquer</p></a>
-                                //                 </div>';
-
-                                //         }elseif ($statematch1[0] == 1) {
-                                //             //affichage du bouton bloquer
-                                //             echo'<div class="btn col-lg-6 col-md-6 d-flex justify-content-end">
-                                //                     <a href="https://cookit.ovh/social-action.php?id='.$_GET['id'].'&action=block" class=" btn btn-secondary" style="height : 30px"><p>Bloquer</p></a>
-                                //                 </div>';
-
-                                //         }elseif ($statematch1[0] == -1) {
-                                //             //affichage du bouton débloquer
-                                //             echo'<div class="btn col-lg-6 col-md-6 d-flex justify-content-end">
-                                //                     <a href="https://cookit.ovh/social-action.php?id='.$_GET['id'].'&action=unblock" class=" btn btn-secondary" style="height : 30px"><p>Débloquer</p></a>
-                                //                 </div>';
-
-                                //         }else{
-                                //             //affichage du bouton match
-                                //             echo'<div class="btn col-lg-6 col-md-6 d-flex justify-content-end">
-                                //                 <a href="https://cookit.ovh/social-action.php?id='.$_GET['id'].'&action=match" class=" btn btn-secondary" style="height : 30px"><p>Match <3</p></a>
-                                //             </div>';
-
-
-                                //             //affichage du bouton bloquer
-                                //             echo'<div class="btn col-lg-6 col-md-6 d-flex justify-content-end">
-                                //                 <a href="https://cookit.ovh/social-action.php?id='.$_GET['id'].'&action=block" class=" btn btn-secondary" style="height : 30px"><p>Bloquer</p></a>
-                                //             </div>';
-
-                                //         }
-
-
-                                //     }elseif(isset($statematch2[0])){
-                                //         if($statematch2[0] == 2){
-                                //             //affichage du bouton message
-                                //             echo'<div class="btn col-lg-6 col-md-6 d-flex justify-content-end">
-                                //                     <a href="https://cookit.ovh/messagerie.php?id='.$_GET['id'].'" class=" btn btn-secondary" style="height : 30px"><p>Message</p></a>
-                                //                 </div>';
-
-                                //             //affichage du bouton bloquer
-                                //             echo'<div class="btn col-lg-6 col-md-6 d-flex justify-content-end">
-                                //                     <a href="https://cookit.ovh/social-action.php?id='.$_GET['id'].'&action=block" class=" btn btn-secondary" style="height : 30px"><p>Bloquer</p></a>
-                                //                 </div>';
-
-                                //         }elseif ($statematch2[0] == 1 || $statematch2[0] == 0) {
-                                //             //affichage du bouton match
-                                //             echo'<div class="btn col-lg-6 col-md-6 d-flex justify-content-end">
-                                //                 <a href="https://cookit.ovh/social-action.php?id='.$_GET['id'].'&action=match" class=" btn btn-secondary" style="height : 30px"><p>Match <3</p></a>
-                                //             </div>';
-
-
-                                //             //affichage du bouton bloquer
-                                //             echo'<div class="btn col-lg-6 col-md-6 d-flex justify-content-end">
-                                //                 <a href="https://cookit.ovh/social-action.php?id='.$_GET['id'].'&action=block" class=" btn btn-secondary" style="height : 30px"><p>Bloquer</p></a>
-                                //             </div>';
-                                //         }
-
-                                //     }else{
-                                //         //affichage du bouton match
-                                //         echo'<div class="btn col-lg-6 col-md-6 d-flex justify-content-end">
-                                //             <a href="https://cookit.ovh/social-action.php?id='.$_GET['id'].'&action=match" class=" btn btn-secondary" style="height : 30px"><p>Match <3</p></a>
-                                //         </div>';
-
-
-                                //         //affichage du bouton bloquer
-                                //         echo'<div class="btn col-lg-6 col-md-6 d-flex justify-content-end">
-                                //             <a href="https://cookit.ovh/social-action.php?id='.$_GET['id'].'&action=block" class=" btn btn-secondary" style="height : 30px"><p>Bloquer</p></a>
-                                //         </div>';
-
-                                //     }
-
-                                // //sinon, il s'agit de la propre page du user
-                                // }else{
-                                //     echo'<div class="btn col-lg-6 col-md-6 d-flex justify-content-end">
-                                //             <a href="modif_profil.php" class=" btn btn-secondary" style="height : 30px"><p>Modifier mon profil</p></a>
-                                //         </div>';
                             }
-
-
-
-
-
-
-                            // if ($user['ID'] == $_SESSION['id']){
-                            //     echo'<div class="col-lg-6 col-md-6 d-flex justify-content-end">
-                            //             <a href="modif_profil.php" class=" btn btn-secondary" style="height : 30px"><p>Modifier mon profil</p></a>
-                            //         </div>';
-                            // }else{
-                            //     echo'<div class="col-lg-6 col-md-6 d-flex justify-content-end">
-                            //             <a href="#" class=" btn btn-secondary" style="height : 30px"><p>S\'abonner</p></a>
-                            //         </div>';
-                            // }
                         }
                         ?>
                         <!-- fermeture row -->
@@ -376,27 +256,23 @@ $queryPrepared->execute(["id" => $_GET["id"]]);
 $results = $queryPrepared->fetchAll();
 
 
-echo '
-        <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12">';
+echo '<div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12">';
 
-foreach ($results as $result) {
-    echo '
-                    <div class="col-lg-4 col-md-4 col-sm-1 py-3">
-                        <div class="card mb-4 shadow-sm bg-color py-3 px-3 arrondie">
-                            <a class="text-white" href="https://cookit.ovh/recette.php?id=' . $result['ID_RECIPE'] . '">
-                            <img src="' . $result['PICTURE_PATH'] . '" class="card-img-top cardh"> </img>
-                            <div class="card-body text-center arrondie">
-                                        <h4>' . $result['TITLE'] . '</h4>   
-                            </div>
-                            </a>        
+    foreach ($results as $result) {
+        echo '<div class="col-lg-4 col-md-4 col-sm-1 py-3">
+                <div class="card mb-4 shadow-sm bg-color py-3 px-3 arrondie">
+                    <a class="text-white" href="https://cookit.ovh/recette.php?id=' . $result['ID_RECIPE'] . '">
+                        <img src="' . $result['PICTURE_PATH'] . '" class="card-img-top cardh"> </img>
+                        <div class="card-body text-center arrondie">
+                                    <h4>' . $result['TITLE'] . '</h4>   
                         </div>
-                    </div>';
-}
-echo '
-            </div>
-            
-        </div>';
+                    </a>        
+                </div>
+            </div>';
+    }
+    echo '</div>
+    </div>';
 
 
 ?>

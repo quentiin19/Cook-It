@@ -16,10 +16,6 @@ function connectDB()
 	return $pdo;
 }
 
-/*
-	$token = createToken();
-	updateToken($results["id"], $token);
-*/
 
 function createToken()
 {

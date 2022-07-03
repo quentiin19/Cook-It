@@ -60,6 +60,7 @@ echo '<p id="id-recette" hidden="hidden">' . $_GET['id'] . '</p>';
 
 									<?php
 									if (isConnected()) {
+										//affichage du bouton sauvegarder
 										if ($saved['0'] == 1) {
 											echo '<a href="https://cookit.ovh/saveRecipe.php?id_recipe=' . $_GET['id'] . '"><button type="button" class="btn btn-success px-3"><i class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></i></button></a>';
 										} else {
