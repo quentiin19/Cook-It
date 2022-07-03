@@ -11,6 +11,7 @@ function onclickmode(){
     request.addEventListener("load", changemode);
     request.open("GET", `https://cookit.ovh/ressources/api/api_mode.php?id=${id}&action=change`);
     request.send();
+    console.log("clicked");
 
 }
 
