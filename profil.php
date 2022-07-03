@@ -188,22 +188,22 @@ if (isConnected()){
                                     </div>';
                             }
                             if($unblockbtn == 1){
-                                echo'<div class="btn col-lg-6 col-md-6 d-flex justify-content-end">
+                                echo'<div class="btn col-lg-12 col-md-12 d-flex justify-content-end">
                                         <a href="https://cookit.ovh/social-action.php?id='.$_GET['id'].'&action=unblock" class=" btn btn-secondary" style="height : 30px"><p>Débloquer</p></a>
                                     </div>';
                             }
                             if($blockbtn == 1){
-                                echo'<div class="btn col-lg-6 col-md-6 d-flex justify-content-end">
+                                echo'<div class="btn col-lg-12 col-md-12 d-flex justify-content-end">
                                         <a href="https://cookit.ovh/social-action.php?id='.$_GET['id'].'&action=block" class=" btn btn-secondary" style="height : 30px"><p>Bloquer</p></a>
                                     </div>';
                             }
                             if($msgbtn == 1){
-                                echo'<div class="btn col-lg-6 col-md-6 d-flex justify-content-end">
+                                echo'<div class="btn col-lg-12 col-md-12 d-flex justify-content-end">
                                         <a href="https://cookit.ovh/messagerie.php?id='.$_GET['id'].'" class=" btn btn-secondary" style="height : 30px"><p>Message</p></a>
                                     </div>';
                             }
                             if($matchbtn == 1){
-                                echo'<div class="btn col-lg-6 col-md-6 d-flex justify-content-end">
+                                echo'<div class="btn col-lg-12 col-md-12 d-flex justify-content-end">
                                         <a href="https://cookit.ovh/social-action.php?id='.$_GET['id'].'&action=match" class=" btn btn-secondary" style="height : 30px"><p>Match <3</p></a>
                                     </div>';
                             }
