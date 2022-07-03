@@ -55,6 +55,10 @@ function display_results_ingredient(){
         //hide tous les éléments
         for (const element of ingredients.childNodes) {
             element.hidden = true;
+
+            if(element.id == 38){
+                element.hidden = false;
+            }
         }
     }
     if(keyword == ""){
