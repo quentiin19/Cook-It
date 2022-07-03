@@ -3,7 +3,7 @@ include "template/header.php";
 
 ?>
 <div class='text-center'>
-    <h1>Gestion des utilisateurs</h1>
+    <h1>Mon flux d'abonnement</h1>
 </div>
 <?php
 
