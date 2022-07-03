@@ -165,13 +165,11 @@ if (isConnected()){
         </div>
         <div class="col-lg-7 col-md-5">
                 <div class="row">
-                    <div class="col-lg-6 col-md-6 my-3">
+                    <div class="col-lg-6 col-md-6 my-5">
                         <h4><?= $user['PSEUDO'] ?></h4>
                     </div>
-
-
-
-                    
+                    <div class="col-lg-6">
+                    <div class="row">
                     <?php
                     if(isConnected()){
                         //s'il s'agit de la page d'un autre utilisateur
@@ -207,6 +205,7 @@ if (isConnected()){
                                         <a href="https://cookit.ovh/social-action.php?id='.$_GET['id'].'&action=match" class=" btn btn-secondary" style="height : 30px"><p>Match <3</p></a>
                                     </div>';
                             }
+                            
 
 
                         //     //si une relation d'abonnement existe déjà
@@ -313,6 +312,7 @@ if (isConnected()){
                         //             <a href="modif_profil.php" class=" btn btn-secondary" style="height : 30px"><p>Modifier mon profil</p></a>
                         //         </div>';
                          }
+                         
                         
 
 
@@ -329,6 +329,10 @@ if (isConnected()){
                         // }
                     }
                     ?>
+                    <!-- fermeture row -->
+                    </div>
+                    <!-- fermeture div -->
+                    </div>
                     </div>          
                     <div class="row my-5">
                         <div class="col-lg-4 ">
