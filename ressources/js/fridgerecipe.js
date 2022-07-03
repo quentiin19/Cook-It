@@ -33,6 +33,8 @@ function display_results_recipe() {
     let recipes = JSON.parse(request.response);
     console.log(recipes);
 
+    recettes.innerText = "";
+
     for (const recipe of recipes) {
         console.log(recipe);
         
