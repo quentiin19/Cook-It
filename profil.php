@@ -162,7 +162,21 @@ if (isConnected()){
                                             <a href="https://cookit.ovh/social-action.php?id='.$_GET['id'].'&action=unblock" class=" btn btn-secondary" style="height : 30px"><p>Débloquer</p></a>
                                         </div>';
                             
+                                }else{
+                                    //affichage du bouton match
+                                    echo'<div class="col-lg-6 col-md-6 d-flex justify-content-end">
+                                        <a href="https://cookit.ovh/social-action.php?id='.$_GET['id'].'&action=match" class=" btn btn-secondary" style="height : 30px"><p>Match <3</p></a>
+                                    </div>';
+                                
+    
+                                    //affichage du bouton bloquer
+                                    echo'<div class="col-lg-6 col-md-6 d-flex justify-content-end">
+                                        <a href="https://cookit.ovh/social-action.php?id='.$_GET['id'].'&action=block" class=" btn btn-secondary" style="height : 30px"><p>Bloquer</p></a>
+                                    </div>';
+
                                 }
+
+
                             }elseif(isset($statematch2[0])){
                                 if($statematch2[0] == 2){
                                     //affichage du bouton message
@@ -175,6 +189,17 @@ if (isConnected()){
                                             <a href="https://cookit.ovh/social-action.php?id='.$_GET['id'].'&action=block" class=" btn btn-secondary" style="height : 30px"><p>Bloquer</p></a>
                                         </div>';
                             
+                                }elseif ($statematch2[0] == 1 || $statematch2[0] == 0) {
+                                    //affichage du bouton match
+                                    echo'<div class="col-lg-6 col-md-6 d-flex justify-content-end">
+                                        <a href="https://cookit.ovh/social-action.php?id='.$_GET['id'].'&action=match" class=" btn btn-secondary" style="height : 30px"><p>Match <3</p></a>
+                                    </div>';
+                                
+    
+                                    //affichage du bouton bloquer
+                                    echo'<div class="col-lg-6 col-md-6 d-flex justify-content-end">
+                                        <a href="https://cookit.ovh/social-action.php?id='.$_GET['id'].'&action=block" class=" btn btn-secondary" style="height : 30px"><p>Bloquer</p></a>
+                                    </div>';
                                 }
                                 
                             }else{
