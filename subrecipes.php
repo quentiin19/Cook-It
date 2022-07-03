@@ -3,8 +3,8 @@ include "template/header.php";
 
 
 $pdo = connectDB();
-$queryPrepared = $pdo->prepare("SELECT RECIPES.ID_RECIPE, RECIPES.PICTURE_PATH, RECIPES.TITLE, RECIPES.ID_CREATOR, USER.PSEUDO from RECIPES, SUBSCRIPTION, USER where  RECIPES.ID_CREATOR = SUBSCRIPTION.ID_SUBSCRIPTION AND USER.ID_SUBSCRIBER = :id ID ; ");
-$queryPrepared->execute(['id'=>$_SESSION['ID']]);
+$queryPrepared = $pdo->prepare("SELECT RECIPES.ID_RECIPE, RECIPES.PICTURE_PATH, RECIPES.TITLE, RECIPES.ID_CREATOR, USER.PSEUDO from RECIPES, SUBSCRIPTION, USER where  RECIPES.ID_CREATOR = SUBSCRIPTION.ID_SUBSCRIPTION AND USER.ID_SUBSCRIBER = :id ; ");
+$queryPrepared->execute(['id'=>$_SESSION['id']]);
 $recipes = $queryPrepared->fetchAll();
 
 
