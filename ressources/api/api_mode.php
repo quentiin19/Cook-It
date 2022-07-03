@@ -20,7 +20,7 @@ function changeMode($id){
     $mode = returnMode($id);
     $pdo = connectDB();
 
-    if($mode == 1){
+    if($mode[0] == 1){
         $query = $pdo->prepare("UPDATE USER SET MODE = 0 WHERE ID = :id;");
         $query->execute(['id'=>$id]);
 
