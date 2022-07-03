@@ -90,6 +90,7 @@ if (isConnected() == $_SESSION['id']) {
                     </div>';
                 } ?>
             </div>
+            <button type="submit" class="btn btn-secondary mb-2 "><a href="https://cookit.ovh/recettefrigo.php?id=<?= $_GET['id']?>" class="text-white">Voir les recettes</a></button>
         </div>
     </div>
 </div>
