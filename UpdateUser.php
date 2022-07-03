@@ -68,7 +68,7 @@ if (isAdmin()) {
 	$queryPrepared->execute(["pseudo" => $pseudo, "firstname" => $firstname, "lastname" => $lastname, "desc" => $description, "id" => $id]);
 
 	//update des logs
-	updateLogs($id, 'modification du profil par un administrateur (". $_SESSION['id'] . ")');
+	updateLogs($id, 'modification du profil par un administrateur ('. $_SESSION['id'] . ')');
 	}else{
 		header('Location: profil_membre.php?id='.$_POST['id']);
 	}
