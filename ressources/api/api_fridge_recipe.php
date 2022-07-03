@@ -52,6 +52,7 @@ function returnRecipes($difficulty, $id){
             print_r($recipe);
             echo '</pre>';
         }
+        $found = 0;
     }
 
 
