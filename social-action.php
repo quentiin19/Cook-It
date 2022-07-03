@@ -132,9 +132,9 @@ if (isConnected() == $_SESSION['id']) {
                 break;
         }
     }else{
-        //header("Location: login.php");
+        header("Location: login.php");
     }
 }else{
-    //header("Location: login.php");
+    header("Location: login.php");
 }
-//header("Location: profil.php?id=".$id);
+header("Location: profil.php?id=".$id);
