@@ -90,6 +90,8 @@ if (isConnected()){
                         <h4><?= $user['PSEUDO'] ?></h4>
                     </div>
 
+                    
+                    <div class="btn-group" role="group" aria-label="Un groupe de boutons">
 
 
                     
@@ -147,36 +149,36 @@ if (isConnected()){
                             if (isset($statematch1[0])){
                                 if($statematch1[0] == 2){
                                     //affichage du bouton message
-                                    echo'<div class="col-lg-6 col-md-6 d-flex justify-content-end">
+                                    echo'<div class="btn col-lg-6 col-md-6 d-flex justify-content-end">
                                             <a href="https://cookit.ovh/messagerie.php?id='.$_GET['id'].'" class=" btn btn-secondary" style="height : 30px"><p>Message</p></a>
                                         </div>';
 
                                     //affichage du bouton bloquer
-                                    echo'<div class="col-lg-6 col-md-6 d-flex justify-content-end">
+                                    echo'<div class="btn col-lg-6 col-md-6 d-flex justify-content-end">
                                             <a href="https://cookit.ovh/social-action.php?id='.$_GET['id'].'&action=block" class=" btn btn-secondary" style="height : 30px"><p>Bloquer</p></a>
                                         </div>';
                                     
                                 }elseif ($statematch1[0] == 1) {
                                     //affichage du bouton bloquer
-                                    echo'<div class="col-lg-6 col-md-6 d-flex justify-content-end">
+                                    echo'<div class="btn col-lg-6 col-md-6 d-flex justify-content-end">
                                             <a href="https://cookit.ovh/social-action.php?id='.$_GET['id'].'&action=block" class=" btn btn-secondary" style="height : 30px"><p>Bloquer</p></a>
                                         </div>';
                             
                                 }elseif ($statematch1[0] == -1) {
                                     //affichage du bouton débloquer
-                                    echo'<div class="col-lg-6 col-md-6 d-flex justify-content-end">
+                                    echo'<div class="btn col-lg-6 col-md-6 d-flex justify-content-end">
                                             <a href="https://cookit.ovh/social-action.php?id='.$_GET['id'].'&action=unblock" class=" btn btn-secondary" style="height : 30px"><p>Débloquer</p></a>
                                         </div>';
                             
                                 }else{
                                     //affichage du bouton match
-                                    echo'<div class="col-lg-6 col-md-6 d-flex justify-content-end">
+                                    echo'<div class="btn col-lg-6 col-md-6 d-flex justify-content-end">
                                         <a href="https://cookit.ovh/social-action.php?id='.$_GET['id'].'&action=match" class=" btn btn-secondary" style="height : 30px"><p>Match <3</p></a>
                                     </div>';
                                 
     
                                     //affichage du bouton bloquer
-                                    echo'<div class="col-lg-6 col-md-6 d-flex justify-content-end">
+                                    echo'<div class="btn col-lg-6 col-md-6 d-flex justify-content-end">
                                         <a href="https://cookit.ovh/social-action.php?id='.$_GET['id'].'&action=block" class=" btn btn-secondary" style="height : 30px"><p>Bloquer</p></a>
                                     </div>';
 
@@ -186,37 +188,37 @@ if (isConnected()){
                             }elseif(isset($statematch2[0])){
                                 if($statematch2[0] == 2){
                                     //affichage du bouton message
-                                    echo'<div class="col-lg-6 col-md-6 d-flex justify-content-end">
+                                    echo'<div class="btn col-lg-6 col-md-6 d-flex justify-content-end">
                                             <a href="https://cookit.ovh/messagerie.php?id='.$_GET['id'].'" class=" btn btn-secondary" style="height : 30px"><p>Message</p></a>
                                         </div>';
 
                                     //affichage du bouton bloquer
-                                    echo'<div class="col-lg-6 col-md-6 d-flex justify-content-end">
+                                    echo'<div class="btn col-lg-6 col-md-6 d-flex justify-content-end">
                                             <a href="https://cookit.ovh/social-action.php?id='.$_GET['id'].'&action=block" class=" btn btn-secondary" style="height : 30px"><p>Bloquer</p></a>
                                         </div>';
                             
                                 }elseif ($statematch2[0] == 1 || $statematch2[0] == 0) {
                                     //affichage du bouton match
-                                    echo'<div class="col-lg-6 col-md-6 d-flex justify-content-end">
+                                    echo'<div class="btn col-lg-6 col-md-6 d-flex justify-content-end">
                                         <a href="https://cookit.ovh/social-action.php?id='.$_GET['id'].'&action=match" class=" btn btn-secondary" style="height : 30px"><p>Match <3</p></a>
                                     </div>';
                                 
     
                                     //affichage du bouton bloquer
-                                    echo'<div class="col-lg-6 col-md-6 d-flex justify-content-end">
+                                    echo'<div class="btn col-lg-6 col-md-6 d-flex justify-content-end">
                                         <a href="https://cookit.ovh/social-action.php?id='.$_GET['id'].'&action=block" class=" btn btn-secondary" style="height : 30px"><p>Bloquer</p></a>
                                     </div>';
                                 }
                                 
                             }else{
                                 //affichage du bouton match
-                                echo'<div class="col-lg-6 col-md-6 d-flex justify-content-end">
+                                echo'<div class="btn col-lg-6 col-md-6 d-flex justify-content-end">
                                     <a href="https://cookit.ovh/social-action.php?id='.$_GET['id'].'&action=match" class=" btn btn-secondary" style="height : 30px"><p>Match <3</p></a>
                                 </div>';
                             
 
                                 //affichage du bouton bloquer
-                                echo'<div class="col-lg-6 col-md-6 d-flex justify-content-end">
+                                echo'<div class="btn col-lg-6 col-md-6 d-flex justify-content-end">
                                     <a href="https://cookit.ovh/social-action.php?id='.$_GET['id'].'&action=block" class=" btn btn-secondary" style="height : 30px"><p>Bloquer</p></a>
                                 </div>';
                             
@@ -224,7 +226,7 @@ if (isConnected()){
                         
                         //sinon, il s'agit de la propre page du user
                         }else{
-                            echo'<div class="col-lg-6 col-md-6 d-flex justify-content-end">
+                            echo'<div class="btn col-lg-6 col-md-6 d-flex justify-content-end">
                                     <a href="modif_profil.php" class=" btn btn-secondary" style="height : 30px"><p>Modifier mon profil</p></a>
                                 </div>';
                         }
@@ -244,6 +246,7 @@ if (isConnected()){
                         // }
                     }
                     ?>
+                    </div>
 
                     </div>          
                     <div class="row my-5">
