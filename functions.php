@@ -1,17 +1,15 @@
 <?php
-require "config.inc.php";
 
-function connectDB(){
+function connectDB()
+{
 	//création d'une nouvelle connexion à notre bdd
-	try{
-				
-		$pdo = new PDO( "mysql:host=localhost;dbname=ProjAnn;port=3306","chef" ,"QOY@BDD" );
+	try {
 
-    	$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		$pdo = new PDO("mysql:host=localhost;dbname=ProjAnn;port=3306", "chef", "QOY@BDD");
 
-
-	}catch(Exception $e){
-		die("Erreur SQL ".$e->getMessage());
+		$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+	} catch (Exception $e) {
+		die("Erreur SQL " . $e->getMessage());
 	}
 
 
@@ -23,60 +21,61 @@ function connectDB(){
 	updateToken($results["id"], $token);
 */
 
-function createToken(){
-	$token = sha1(md5(rand(0,100)."gdgfm432").uniqid());
+function createToken()
+{
+	$token = sha1(md5(rand(0, 100) . "gdgfm432") . uniqid());
 	return $token;
 }
 
 
-function updateToken($userId, $token){
+function updateToken($userId, $token)
+{
 
 	$pdo = connectDB();
 	$queryPrepared = $pdo->prepare("UPDATE USER SET TOKEN=:token WHERE ID=:id");
-	$queryPrepared->execute(["token"=>$token, "id"=>$userId]);
-
+	$queryPrepared->execute(["token" => $token, "id" => $userId]);
 }
 
 
-function isConnected(){
+function isConnected()
+{
 
-	if(!isset($_SESSION["email"]) || !isset($_SESSION["token"])){
+	if (!isset($_SESSION["email"]) || !isset($_SESSION["token"])) {
 		return false;
 	}
 
 	$pdo = connectDB();
-	$queryPrepared = $pdo->prepare("SELECT ID FROM USER WHERE MAIL=:email AND TOKEN=:token");	
-	$queryPrepared->execute(["email"=>$_SESSION["email"], "token"=>$_SESSION["token"]]);
+	$queryPrepared = $pdo->prepare("SELECT ID FROM USER WHERE MAIL=:email AND TOKEN=:token");
+	$queryPrepared->execute(["email" => $_SESSION["email"], "token" => $_SESSION["token"]]);
 	$result = $queryPrepared->fetch();
 
 	return $result[0];
 }
 
-function isAdmin() {
+function isAdmin()
+{
 
-	if(!isset($_SESSION["email"]) || !isset($_SESSION["token"])){
+	if (!isset($_SESSION["email"]) || !isset($_SESSION["token"])) {
 		return false;
-	}
-	else {
+	} else {
 		$pdo = connectDB();
-		$queryPrepared = $pdo->prepare("SELECT * FROM USER WHERE MAIL=:email AND TOKEN=:token");	
-		$queryPrepared->execute(["email"=>$_SESSION["email"], "token"=>$_SESSION["token"]]);
-	
-		
+		$queryPrepared = $pdo->prepare("SELECT * FROM USER WHERE MAIL=:email AND TOKEN=:token");
+		$queryPrepared->execute(["email" => $_SESSION["email"], "token" => $_SESSION["token"]]);
+
+
 		$resultat = $queryPrepared->fetch();
-		
-		if ($resultat['role'] == 2){
+
+		if ($resultat['role'] == 2) {
 			return True;
-		}else{
+		} else {
 			return false;
 		}
-				
 	}
-	
 }
 
-function updateLogs($id, $action){
+function updateLogs($id, $action)
+{
 	$pdo = connectDB();
 	$queryPrepared = $pdo->prepare("INSERT INTO LOGS (ID, DATE_LOGIN, ACTION) VALUES (:id ,CURRENT_TIMESTAMP, :action);");
-	$queryPrepared->execute(["id"=>$id, "action"=>$action]);
+	$queryPrepared->execute(["id" => $id, "action" => $action]);
 }
