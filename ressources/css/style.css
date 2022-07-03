@@ -18,9 +18,19 @@ html, body {
 	background-color: #615E58;
 }
 
-/* .bg-light{
-	background-color: #FEF6D7; */
+/* light mode */
+.bg-color-light{
+	background-color: #e7b247;
+	color: black;
+}
 
+.background-body-light{
+	background-color: #ffe9b7;;
+}
+
+.bg-couleur-light{
+	background-color: #ffe9b7;
+}
 
 .arrondie {
 -moz-border-radius:7px;
