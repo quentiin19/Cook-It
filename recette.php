@@ -110,17 +110,11 @@ echo '<p id="id-recette" hidden="hidden">'.$_GET['id'].'</p>';
 							</div>
 							<!-- RECETTE -->
 							<div class="row">
-<<<<<<< HEAD
 								<div class="d-flex justify-content-center">
 									<div class="col-lg-8 col-md-8 col-sm-8">
 										<h4>Recette :</h4><br>
 										<p><?= $recipe['DESCRIPTION']?></p>
 									</div>
-=======
-								<div class="col-lg-12 col-md-12 col-sm-12">
-									<h4>Recette :</h4><br>
-									<p><?= $recipe['DESCRIPTION'] ;?></p>
->>>>>>> 8b1a7ed80290811a30d478376a22d0f8d0b39e75
 								</div>
 							</div>	
 						</div>
