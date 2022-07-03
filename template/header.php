@@ -31,9 +31,9 @@
 				$pathAvatar = $queryPrepared->fetch();
 				echo'<div class="col-lg-2 col-md-2  align-self-center ">
 						<div class="btn-group">
-						<a href="https://cookit.ovh/subrecipes.php" class="btn btn-lg dropdown-toggle" data-bs-toggle="dropdown"><img src="../..'.$pathAvatar[0].'" height="100vh" width="100vw"></a>
+						<a href="#" class="btn btn-lg dropdown-toggle" data-bs-toggle="dropdown"><img src="../..'.$pathAvatar[0].'" height="100vh" width="100vw"></a>
 						<ul class="dropdown-menu">
-							<li><a href="#" class="dropdown-item">Mes abonnements</a></li>
+							<li><a href="https://cookit.ovh/subrecipes.php" class="dropdown-item">Mes abonnements</a></li>
 							<li><a href="https://cookit.ovh/savedRecipe.php?id='.$_SESSION['id'].'" class="dropdown-item">Mes Recettes Sauvegardés</a></li>
 							<li><a href="https://cookit.ovh/friendrequests.php?id='.$_SESSION['id'].'" class="dropdown-item">Mes Demandes</a></li>
 							<li><a href="https://cookit.ovh/profilview.php?id='.$_SESSION['id'].'" class="dropdown-item">Mon Compte</a></li>
