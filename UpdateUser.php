@@ -56,7 +56,7 @@ if (isAdmin()) {
 		$errors[] = "Votre pseudo doit faire entre 4 et 60 caractères";
 	}
 
-	if (strlen($description) < 2 || strlen($description) > 200) {
+	if (strlen($description) > 200) {
 		$errors[] = "Votre description doit faire entre 2 et 200 caractères";
 	}
 
