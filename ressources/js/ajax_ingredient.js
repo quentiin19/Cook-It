@@ -51,24 +51,10 @@ function onclickingredients() {
 
 
 function display_results_ingredient(){
-    if(search_bar_ingredients.value == "sananes"){
-        //hide tous les éléments
-        for (const element of ingredients.childNodes) {
-            element.hidden = true;
-
-            if(element.id == 38){
-                element.hidden = false;
-            }
-        }
-    }
     if(keyword == ""){
         //hide tous les éléments
         for (const element of ingredients.childNodes) {
             element.hidden = false;
-
-            if(element.id == 38){
-                element.hidden = true;
-            }
         }
     }else{
         let ingredients_resp = JSON.parse(request_ajax.response);
@@ -88,9 +74,6 @@ function display_results_ingredient(){
                     
                     break;
                 }
-            }
-            if(element.id == 38){
-                element.hidden = true;
             }
         }
     }
