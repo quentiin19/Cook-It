@@ -2,14 +2,13 @@
 session_start();
 include '../../functions.php';
 
-//header("Content-type: application/json");
+header("Content-type: application/json");
 
 
 
 $id = $_GET['id'];
 $dif = $_GET['dif'];
 
-$token = $_GET['token'];
 
 
 function returnRecipes($difficulty, $id){
@@ -57,9 +56,9 @@ function returnRecipes($difficulty, $id){
     foreach ($id_recipes_found as $id_recipe) {
         $query = $pdo->prepare("SELECT * FROM RECIPES WHERE ID_RECIPE = :id;");
         $query->execute(["id"=>$id_recipe]);
-        $recipe = $query->fetch();
+        $temp = $query->fetch();
 
-        array_push($id_recipes_found, $recipe);
+        array_push($id_recipes_found, $temp);
     }
     return json_encode($recipes_found);
 }
