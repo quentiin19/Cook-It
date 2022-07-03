@@ -51,10 +51,6 @@ function returnRecipes($difficulty, $id){
         }
     }
 
-    echo '<pre>';
-    print_r($id_recipes_found);
-    echo '</pre>';
-
 
     foreach ($id_recipes_found as $id_recipe) {
         $query = $pdo->prepare("SELECT * FROM RECIPES WHERE ID_RECIPE = :id;");
@@ -62,17 +58,9 @@ function returnRecipes($difficulty, $id){
         $temp = $query->fetch();
 
         
-        echo '<pre>';
-        print_r($temp);
-        echo '</pre>';
-
         array_push($recipes_found, $temp);
     }
 
-
-    echo '<pre>';
-    print_r($recipes_found);
-    echo '</pre>';
     return json_encode($recipes_found);
 }
 
