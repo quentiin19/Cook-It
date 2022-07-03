@@ -32,7 +32,7 @@ function changeMode($id){
 
 
 if($action == 'change'){
-    echo changeMode($id)
+    echo changeMode($id);
 }elseif ($action == 'get') {
     echo returnMode($id);
 }
