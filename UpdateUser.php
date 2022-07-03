@@ -10,7 +10,7 @@ echo'<pre>';
 	print_r($_POST);
 echo'</pre>';
 
-if (isAdmin()) {
+if (isAdmin() && !isset($_POST['password'])) {
 	$pdo = connectDB();
 	//vérification des entrées
 	if (
