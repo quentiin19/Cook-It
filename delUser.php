@@ -88,6 +88,10 @@ if(isAdmin() || $_GET['id'] == isConnected()){
 	$queryPrepared->execute(["id"=>$id]);
 
 
+	//suppression des matchs du user
+	$queryPrepared = $pdo->prepare("DELETE FROM MATCHS WHERE ID_MATCH=:id OR ID_MATCHER=:id;");
+	$queryPrepared->execute(["id"=>$id]);
+
 
 	//suppression du user lui-même
 	$queryPrepared = $pdo->prepare("DELETE FROM USER WHERE ID=:id;");

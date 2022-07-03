@@ -60,7 +60,7 @@ $queryPrepared->execute(["pseudo"=> $pseudo, "firstname"=>$firstname, "lastname"
 updateLogs($id, "modification du profil par un administrateur (".$_SESSION['id'].")");
 
 //redirection vers la page membre
-header("Location: admin.php");
+header("Location: https://cookit.ovh/index.php");
 
 }elseif(isConnected() == $id){
 
@@ -150,7 +150,7 @@ header("Location: admin.php");
 	updateLogs($id, "modification du profil");
 
 	//Redirection
-	header("Location: profil.php?id=".$id);
+	header("Location: https://cookit.ovh/index.php");
 	
 	}else{
 		die("Il faut se connecter !!!");

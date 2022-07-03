@@ -23,12 +23,12 @@ if($_GET['task'] == "write"){
 
     if($tokenbdd[0] == $token){
         //Verification que l'un est bien abonné à l'autre
-        $queryPrepared = $pdo->prepare("SELECT STATUS FROM SUBSCRIPTION WHERE ID_SUBSCRIBER = :sender AND ID_SUBSCRIPTION = :receveur");
+        $queryPrepared = $pdo->prepare("SELECT STATUS FROM MATCHS WHERE ID_MATCHER = :sender AND ID_MATCH = :receveur");
         $queryPrepared->execute(["sender"=>$sender, "receveur"=>$receveur]);
         $state1 = $queryPrepared->fetch();
         
         //vérification que l'autre est bien abonné à l'un
-        $queryPrepared = $pdo->prepare("SELECT STATUS FROM SUBSCRIPTION WHERE ID_SUBSCRIBER = :sender AND ID_SUBSCRIPTION = :receveur");
+        $queryPrepared = $pdo->prepare("SELECT STATUS FROM MATCHS WHERE ID_MATCHER = :sender AND ID_MATCH = :receveur");
         $queryPrepared->execute(["receveur"=>$sender, "sender"=>$receveur]);
         $state2 = $queryPrepared->fetch();
         
