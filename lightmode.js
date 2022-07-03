@@ -21,14 +21,12 @@ function setupMode(){
 
 }
 
-function changemode(mode){
-    console.log(request.response);
+function changemode(){
     const response = JSON.parse(request.response);
     console.log(response);
-    let theme = response['MODE'];
     
     //mode = 1 = dark
-    if(theme == 1){
+    if(!response){
         const divbg = document.querySelectorAll(".bg-color-light");
         for (const node of divbg) {
             node.classList.remove("bg-color-light");
