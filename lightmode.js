@@ -1,18 +1,21 @@
+// function switchTheme(theme_add, theme_rm) {
+//     const lightText = document.body.querySelectorAll(theme_rm);
 
-function switchTheme(theme_add, theme_rm) {
-    const lightText = document.body.querySelectorAll(theme_rm);
-
-    for (let index = 0; index < lightText.length; index++) {
-        const element = lightText[index];
-        element.classList.remove(theme_rm);
-        element.classList.add(theme_add);
-    }
-}
-
-
-const btn = document.querySelector('#light-mode');
+//     for (let index = 0; index < lightText.length; index++) {
+//         const element = lightText[index];
+//         element.classList.remove(theme_rm);
+//         element.classList.add(theme_add);
+//     }
+// }
 
 
+const btn = document.getElementById('switch-mode');
+
+const div = document.querySelectorAll("bg-color");
+
+<<<<<<< HEAD
+console.log(div);
+=======
 btn.addEventListener('click', function () {
     document.body.classList.toggle('bg-color-light');
     let theme = "dark";
@@ -43,6 +46,7 @@ if (localTheme == 'dark') {
     switchTheme('text-light', 'text-dark');
 
 }
+>>>>>>> 15d0e9826cb3c8d3484ea396bd00a182ad0526a0
 
 
 
