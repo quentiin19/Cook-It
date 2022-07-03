@@ -14,7 +14,7 @@ const btn = document.querySelector('#light-mode');
 
 
 btn.addEventListener('click', function () {
-    document.body.classList.toggle('bg-color');
+    document.body.classList.toggle('bg-color-light');
     let theme = "dark";
 
     if (document.body.classList.contains('bg-color')) {
