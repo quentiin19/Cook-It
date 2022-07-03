@@ -1,6 +1,6 @@
 <?php
 require '../../functions.php';
-//header("Content-type: application/json");
+header("Content-type: application/json");
 
 
 $action = $_GET['action'];
