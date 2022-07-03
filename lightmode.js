@@ -23,6 +23,8 @@ function setupMode(){
 
 function changemode(mode){
     const response = JSON.parse(request.response);
+    console.log(response);
+    let mode = response['MODE'];
     
     //mode = 1 = dark
     if(mode == 1){
