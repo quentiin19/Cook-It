@@ -5,7 +5,6 @@ if(!isConnected()){
 	header("Location: login.php");
 }
 
-header("Location: index.php", true, 301);
 ?>
 
 <div class="row">
@@ -228,7 +227,7 @@ if(!empty($_POST)){
 		}
 	}
 
-	exit();
+	
 }
 
 ?>
