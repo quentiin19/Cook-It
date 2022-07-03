@@ -28,13 +28,13 @@ function returnRecipes($difficulty, $id){
 }
 
 
-$query = $pdo->prepare("SELECT TOKEN FROM USER WHERE ID = :id;");
-$query->execute(['id'=> $id]);
-$tokenbdd = $query->fetch();
+// $query = $pdo->prepare("SELECT TOKEN FROM USER WHERE ID = :id;");
+// $query->execute(['id'=> $id]);
+// $tokenbdd = $query->fetch();
 
 
 
-if ($tokenbdd[0] == $token) {
-    echo returnRecipes($dif, $id);
-}
+// if ($tokenbdd[0] == $token) {
+//     echo returnRecipes($dif, $id);
+// }
 echo returnRecipes($dif, $id);
