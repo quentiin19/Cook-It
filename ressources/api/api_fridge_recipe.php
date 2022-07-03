@@ -5,7 +5,6 @@ include '../../functions.php';
 //header("Content-type: application/json");
 
 
-$pdo = connectDB();
 
 $id = $_GET['id'];
 $dif = $_GET['dif'];
@@ -13,6 +12,7 @@ $dif = $_GET['dif'];
 
 
 function returnRecipes($difficulty, $id){
+    $pdo = connectDB();
     $query = $pdo->prepare("SELECT ID_INGREDIENT FROM FRIDGE WHERE ID_USER = :id;");
     $query->execute(['id'=>$id]);
     $ingredients = $query->fetchAll();
