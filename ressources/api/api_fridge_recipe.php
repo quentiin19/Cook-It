@@ -34,7 +34,7 @@ function returnRecipes($difficulty, $id){
 
 
     foreach ($recipes as $key => $recipe) {
-        $query = $pdo->prepare("SELECT ID_INGREDIENT FROM NEED WHERE ID_RECIPE = :id;");
+        $query = $pdo->prepare("SELECT * FROM NEED WHERE ID_RECIPE = :id;");
         $query->execute(['id'=>$recipe['ID_RECIPE']]);
         $needs = $query->fetchAll();
 
