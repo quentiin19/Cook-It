@@ -24,10 +24,10 @@ function setupMode(){
 function changemode(mode){
     const response = JSON.parse(request.response);
     console.log(response);
-    let mode = response['MODE'];
+    let theme = response['MODE'];
     
     //mode = 1 = dark
-    if(mode == 1){
+    if(theme == 1){
         const divbg = document.querySelectorAll(".bg-color-light");
         for (const node of divbg) {
             node.classList.remove("bg-color-light");
