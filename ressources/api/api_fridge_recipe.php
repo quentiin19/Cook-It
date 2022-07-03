@@ -35,6 +35,6 @@ $tokenbdd = $query->fetch();
 
 
 if ($tokenbdd[0] == $token) {
-    echo returnRecipes($dif, $id)
+    echo returnRecipes($dif, $id);
 }
-echo returnRecipes($dif, $id)
+echo returnRecipes($dif, $id);
