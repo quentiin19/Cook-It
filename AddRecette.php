@@ -1,5 +1,9 @@
 <?php   
-		include "template/header.php";
+include "template/header.php";
+
+if(!isConnected()){
+	header("Location: login.php");
+}
 ?>
 
 <div class="row">
