@@ -42,11 +42,11 @@ if (isConnected()){
 
         if(isset($statesub1[0])){
             if($statesub1[0] == 1){
-                $subbtn = 1;
-                $unsubbtn = 0;
-            }else{
                 $subbtn = 0;
                 $unsubbtn = 1;
+            }else{
+                $subbtn = 1;
+                $unsubbtn = 0;
             }
         }else{
             $subbtn = 1;
