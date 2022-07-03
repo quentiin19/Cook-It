@@ -13,7 +13,7 @@ $queryPrepared = $pdo->prepare("SELECT STATUS FROM MATCHS WHERE ID_MATCHER = :se
 $queryPrepared->execute(["receveur"=>$_SESSION['id'], "sender"=>$_GET['id']]);
 $state2 = $queryPrepared->fetch();
 
-if(($state1[0] == 1 && $state2[0] == 1) || $state1[0] == 2 || $state2[0] == 2){
+if($state1[0] == 1 && $state2[0] == 1){
     if(isConnected()){
         echo '<p id="id-sender" hidden="hidden">'.$_SESSION['id'].'</p>';
         echo '<p id="id-receveur" hidden="hidden">'.$_GET['id'].'</p>';
