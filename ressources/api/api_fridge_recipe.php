@@ -23,7 +23,7 @@ function returnRecipes($difficulty, $id){
     $ingredients = $query->fetchAll();
 
 
-    $query = $pdo->prepare("SELECT ID_RECIPE FROM RECIPES;");
+    $query = $pdo->prepare("SELECT * FROM RECIPES;");
     $query->execute();
     $recipes = $query->fetchAll();
 
