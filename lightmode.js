@@ -11,7 +11,7 @@ function switchTheme(theme_add, theme_rm) {
 
 
 const btn = document.querySelector('#light-mode');
-<button id="light-mode"></button>
+
 
 btn.addEventListener('click', function () {
     document.body.classList.toggle('bg-color');
