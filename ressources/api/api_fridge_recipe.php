@@ -48,6 +48,9 @@ function returnRecipes($difficulty, $id){
         if ($found >= (count($needs) - $difficulty)) {
             array_push($id_recipes_found, $recipe);
             echo $recipe['TITLE'];
+            echo '<pre>';
+            print_r($recipe);
+            echo '</pre>';
         }
     }
 
