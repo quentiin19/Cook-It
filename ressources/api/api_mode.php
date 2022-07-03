@@ -13,7 +13,7 @@ function returnMode($id){
     $query->execute(['id'=>$id]);
     $result = $query->fetch();
 
-    return json_encode($result);
+    return $result;
 }
 
 function changeMode($id){
@@ -23,17 +23,25 @@ function changeMode($id){
     if($mode == 1){
         $query = $pdo->prepare("UPDATE USER SET MODE = 0 WHERE ID = :id;");
         $query->execute(['id'=>$id]);
-        return json_encode(0);
+
+        $return = array();
+        array_push($return, 0);
+        
+        return $return;
     }else{
         $query = $pdo->prepare("UPDATE USER SET MODE = 1 WHERE ID = :id;");
         $query->execute(['id'=>$id]);
-        return json_encode(1);
+
+        $return = array();
+        array_push($return, 1);
+
+        return $return;
     }
 }
 
 
 if($action == 'change'){
-    echo changeMode($id);
+    echo json_encode(changeMode($id));
 }elseif ($action == 'get') {
-    echo returnMode($id);
+    echo json_encode(returnMode($id));
 }
