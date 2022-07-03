@@ -12,27 +12,37 @@ if(!isset($_GET['p'])){
 
 $p = $_GET['p'];
 ?>
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="exampleModalLabel">
-  Launch demo modal
-</button>
-<!-- Modal -->
-<div class="modal fade" id="exampleModalLabel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
+
+<div class="container mt-3">
+  <h3>Modal Example</h3>
+  <p>Click on the button to open the modal.</p>
+  
+  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
+    Open modal
+  </button>
+</div>
+
+<!-- The Modal -->
+<div class="modal" id="myModal">
+  <div class="modal-dialog">
     <div class="modal-content">
+
+      <!-- Modal Header -->
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+        <h4 class="modal-title">Modal Heading</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
       </div>
+
+      <!-- Modal body -->
       <div class="modal-body">
-        ...
+        Modal body..
       </div>
+
+      <!-- Modal footer -->
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
       </div>
+
     </div>
   </div>
 </div>
