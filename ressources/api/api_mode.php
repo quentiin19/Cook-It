@@ -13,7 +13,7 @@ function returnMode($id){
     $query->execute(['id'=>$id]);
     $result = $query->fetch();
 
-    return $result;
+    return $result[0];
 }
 
 function changeMode($id){
