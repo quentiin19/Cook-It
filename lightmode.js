@@ -13,4 +13,7 @@ const btn = document.getElementById('switch-mode');
 
 const div = document.querySelectorAll("bg-color");
 
-console.log(div);
+for (const node of div) {
+    console.log(node);
+    
+}
