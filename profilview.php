@@ -199,6 +199,7 @@ if (isConnected()){
 
                     </div>          
                     <div class="row my-5">
+                        <div class="row">
                         <div class="col-lg-4 ">
                             <h4>Recettes : <?= $nbrecipe[0]?></h4>
                         </div>
@@ -207,6 +208,7 @@ if (isConnected()){
                         </div>
                         <div class="col-lg-4">
                             <a class="text-white" href="<?= 'https://cookit.ovh/viewsub.php?id='.$_GET['id'].'&display=2'?>"><h4>Abonnés : <?= $abonnes[0]?></h4><a>
+                        </div>
                         </div>   
                     </div>
                     <div class="row my-5">
