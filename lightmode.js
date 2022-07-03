@@ -22,6 +22,7 @@ function setupMode(){
 }
 
 function changemode(mode){
+    console.log(request.response);
     const response = JSON.parse(request.response);
     console.log(response);
     let theme = response['MODE'];
