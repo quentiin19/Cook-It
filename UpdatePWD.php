@@ -7,29 +7,30 @@ require "functions.php";
 $id = $_SESSION['id'];
 
 //Vérification si admin
-if (isAdmin()) {
-	$pdo = connectDB();
+// if (isAdmin()) {
+// 	$pdo = connectDB();
 
-	//vérification des entrées
-	if (
-		empty($_POST["oldpassword"]) ||
-		empty($_POST["password"]) ||
-		empty($_POST["passwordConfirm"]) ||
-		count($_POST) != 4
-	) {
+// 	//vérification des entrées
+// 	if (
+// 		empty($_POST["oldpassword"]) ||
+// 		empty($_POST["password"]) ||
+// 		empty($_POST["passwordConfirm"]) ||
+// 		count($_POST) != 4
+// 	) {
 
-		die("Tentative de Hack ...");
-	}
+// 		die("Tentative de Hack ...");
+// 	}
 
 
-	//update des logs
-	updateLogs($id, "modification du profil par un administrateur (" . $_SESSION['id'] . ")");
+// 	//update des logs
+// 	updateLogs($id, "modification du profil par un administrateur (" . $_SESSION['id'] . ")");
 
-	//redirection vers la page membre
-	header("Location: admin.php?id=" . $id);
+// 	//redirection vers la page membre
+// 	header("Location: admin.php?id=" . $id);
 
 //sinon si la personne est connectée
-} elseif (isConnected() == $id) {
+// } else
+if (isConnected() == $id) {
 
 	$pdo = connectDB();
 	$queryPrepared = $pdo->prepare("SELECT HASHPWD FROM USER WHERE ID=:id");
