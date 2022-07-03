@@ -2,4 +2,8 @@
 include "template/header.php";
 ?>
 
-<button id="light-mode"></button>
+<button id="light-mode">Test</button>
+
+<div class="bg-color">
+    HVSGuigbuzehnifnopzafopn,f
+</div>
