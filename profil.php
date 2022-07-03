@@ -166,7 +166,7 @@ if (isConnected()){
         <div class="col-lg-7 col-md-5">
                 <div class="row">
                     <div class="col-lg-6 col-md-6 py-5">
-                        <h2 class=" text-center my-4"><?= $user['PSEUDO'] ?></h2>
+                        <h2 class="  my-4"><?= $user['PSEUDO'] ?></h2>
                     </div>
                     <div class="col-lg-6">
                     <div class="row">
