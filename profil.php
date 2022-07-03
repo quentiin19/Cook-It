@@ -145,7 +145,7 @@ if (isConnected()){
 
                             //si
                             if (isset($statematch1[0])){
-                                if($statematch1[0] == 2 || ($statematch1[0] == 1 && $statematch2[0] == 1)){
+                                if($statematch1[0] == 2){
                                     //affichage du bouton message
                                     echo'<div class="col-lg-6 col-md-6 d-flex justify-content-end">
                                             <a href="https://cookit.ovh/messagerie.php?id='.$_GET['id'].'" class=" btn btn-secondary" style="height : 30px"><p>Message</p></a>

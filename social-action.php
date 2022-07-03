@@ -42,13 +42,18 @@ if (isConnected() == $_SESSION['id']) {
                 if (isset($statematch1[0])){
                     if ($statematch2[0] == -1 || ($statematch1[0] == 2) || ($statematch2[0] == 2) || ($statematch1[0] == 1 && $statematch1[0] == 1)) {
                         break;
+                    }elseif($statematch1[0] == 1 && $statematch2[0] == 1){
+                        //mettre 2 en bdd
+                        $queryPrepared = $pdo->prepare("UPDATE MATCHS SET STATUS = 2 WHERE ID_MATCHER = :id_sender; AND ID_MATCH = :id_receveur;");
+                        $queryPrepared->execute(['id_sender'=>$_SESSION['id'], 'id_receveur'=>$_GET['id']]);
+
                     }else{
-                        //mettre -1 en bdd
+                        //mettre 1 en bdd
                         $queryPrepared = $pdo->prepare("UPDATE MATCHS SET STATUS = 1 WHERE ID_MATCHER = :id_sender; AND ID_MATCH = :id_receveur;");
                         $queryPrepared->execute(['id_sender'=>$_SESSION['id'], 'id_receveur'=>$_GET['id']]);
                     }
                 }else{
-                    //mettre -1 en bdd
+                    //mettre 1 en bdd
                     $queryPrepared = $pdo->prepare("INSERT INTO MATCHS VALUES (:id_sender, :id_receveur, 1, NOW());");
                     $queryPrepared->execute(['id_sender'=>$_SESSION['id'], 'id_receveur'=>$_GET['id']]);
                 }
@@ -91,12 +96,12 @@ if (isConnected() == $_SESSION['id']) {
                     if ($statesub1[0] == 1) {
                         break;
                     }else{
-                        //mettre -1 en bdd
+                        //mettre 1 en bdd
                         $queryPrepared = $pdo->prepare("UPDATE SUBSCRIPTION SET STATUS = 1 WHERE ID_SUBSCRIBER = :id_sender; AND ID_SUBSCRIPTION = :id_receveur;");
                         $queryPrepared->execute(['id_sender'=>$_SESSION['id'], 'id_receveur'=>$_GET['id']]);
                     }
                 }else{
-                    //mettre -1 en bdd
+                    //mettre 1 en bdd
                     $queryPrepared = $pdo->prepare("INSERT INTO SUBSCRIPTION VALUES (:id_sender, :id_receveur, 1, NOW());");
                     $queryPrepared->execute(['id_sender'=>$_SESSION['id'], 'id_receveur'=>$_GET['id']]);
                 }
@@ -107,12 +112,12 @@ if (isConnected() == $_SESSION['id']) {
                     if ($statesub1[0] != 1) {
                         break;
                     }else{
-                        //mettre -1 en bdd
+                        //mettre 0 en bdd
                         $queryPrepared = $pdo->prepare("UPDATE SUBSCRIPTION SET STATUS = 0 WHERE ID_SUBSCRIBER = :id_sender; AND ID_SUBSCRIPTION = :id_receveur;");
                         $queryPrepared->execute(['id_sender'=>$_SESSION['id'], 'id_receveur'=>$_GET['id']]);
                     }
                 }else{
-                    //mettre -1 en bdd
+                    //mettre 0 en bdd
                     $queryPrepared = $pdo->prepare("INSERT INTO SUBSCRIPTION VALUES (:id_sender, :id_receveur, 0, NOW());");
                     $queryPrepared->execute(['id_sender'=>$_SESSION['id'], 'id_receveur'=>$_GET['id']]);
                 }
