@@ -23,7 +23,7 @@
          <div class="container">
              <h1>Boutons</h1>
              <div class="btn-group" role="group" aria-label="Un groupe de boutons">
-				<div class='btn btn-secondary'>truc</div>
+				<div class=' btn-secondary'>truc</div>
                  <button type="button" class="btn btn-secondary">Gauche</button>
                  <button type="button" class="btn btn-secondary">Milieu</button>
                  <button type="button" class="btn btn-secondary">Droite</button>
