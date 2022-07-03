@@ -9,6 +9,10 @@ print_r($_SESSION);
 echo '</pre>';
 $id = $_SESSION['id'];
 //Vérification si admin
+echo'<pre>';
+	print_r($_POST);
+echo'</pre>';
+
 if (isAdmin()) {
 	$pdo = connectDB();
 
