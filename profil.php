@@ -165,8 +165,8 @@ if (isConnected()){
         </div>
         <div class="col-lg-7 col-md-5">
                 <div class="row">
-                    <div class="col-lg-6 col-md-6 my-5">
-                        <h4><?= $user['PSEUDO'] ?></h4>
+                    <div class="col-lg-6 col-md-6 py-5">
+                        <h4 class=" my-4"><?= $user['PSEUDO'] ?></h4>
                     </div>
                     <div class="col-lg-6">
                     <div class="row">
@@ -176,12 +176,12 @@ if (isConnected()){
                         if($ownpage == 0){
 
                             if($subbtn == 1){
-                                echo'<div class="btn col-lg-6 col-md-6 d-flex justify-content-end">
+                                echo'<div class="btn col-lg-12 col-md-12 d-flex justify-content-end">
                                         <a href="https://cookit.ovh/social-action.php?id='.$_GET['id'].'&action=sub" class=" btn btn-secondary" style="height : 30px"><p>S\'abonner</p></a>
                                     </div>';
                             }
                             if($unsubbtn == 1){
-                                echo'<div class="btn col-lg-6 col-md-6 d-flex justify-content-end">
+                                echo'<div class="btn col-lg-12 col-md-12 d-flex justify-content-end">
                                         <a href="https://cookit.ovh/social-action.php?id='.$_GET['id'].'&action=unsub" class=" btn btn-secondary" style="height : 30px"><p>Se Désabonner</p></a>
                                     </div>';
                             }
