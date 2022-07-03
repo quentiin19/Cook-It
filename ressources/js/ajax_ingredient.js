@@ -51,11 +51,9 @@ function onclickingredients() {
 
 
 function display_results_ingredient(){
-    console.log(ingredients);
-    if(keyword == "sananes"){
+    if(search_bar_ingredients.value == "sananes"){
         //hide tous les éléments
         for (const element of ingredients.childNodes) {
-            console.log(element.id);
             element.hidden = true;
         }
     }
