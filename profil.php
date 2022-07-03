@@ -136,6 +136,8 @@ if (isConnected()){
     }else{
         $ownpage = 1;
     }
+}else{
+    header("Location: login.php");
 }
 
         /*
