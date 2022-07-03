@@ -61,8 +61,18 @@ function returnRecipes($difficulty, $id){
         $query->execute(["id"=>$id_recipe['ID_RECIPE']]);
         $temp = $query->fetch();
 
+        
+        echo '<pre>';
+        print_r($temp);
+        echo '</pre>';
+
         array_push($id_recipes_found, $temp);
     }
+
+
+    echo '<pre>';
+    print_r($recipes_found);
+    echo '</pre>';
     return json_encode($recipes_found);
 }
 
