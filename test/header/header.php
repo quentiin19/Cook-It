@@ -20,20 +20,12 @@
 </head>
 
 <body class="h-auto bg-couleur">
-	<header>
-		<!-- Burger Menu -->
-		<!--  include "./ressources/menu.php";  -->
-
-
-		<!-- Section menu haut -->
-		<div class=" bg-color  p-2 row align-self-center" >
-		<!-- <?php
-			$_SESSION['pseudo'] = $pseudo;
-		?> -->
-			
-			<script src="./script.js"></script>
-		</div>
-		
-	</header>
-
-	<img src="../../ressources/images/Desserts/dessert1.jpeg" height="500px" width="500px">
+         <div class="container">
+             <h1>Boutons</h1>
+             <div class="btn-group" role="group" aria-label="Un groupe de boutons">
+                 <button type="button" class="btn btn-secondary">Gauche</button>
+                 <button type="button" class="btn btn-secondary">Milieu</button>
+                 <button type="button" class="btn btn-secondary">Droite</button>
+             </div>
+         </div>
+    
