@@ -4,16 +4,16 @@ include 'template/header.php';
 
 $pdo = connectDB();
 //Verification que l'un est bien abonné à l'autre
-$queryPrepared = $pdo->prepare("SELECT STATUS FROM SUBSCRIPTION WHERE ID_SUBSCRIBER = :sender AND ID_SUBSCRIPTION = :receveur");
+$queryPrepared = $pdo->prepare("SELECT STATUS FROM MATCHS WHERE ID_MATCHER = :sender AND ID_MATCH = :receveur");
 $queryPrepared->execute(["sender"=>$_SESSION['id'], "receveur"=>$_GET['id']]);
 $state1 = $queryPrepared->fetch();
 
 //vérification que l'autre est bien abonné à l'un
-$queryPrepared = $pdo->prepare("SELECT STATUS FROM SUBSCRIPTION WHERE ID_SUBSCRIBER = :sender AND ID_SUBSCRIPTION = :receveur");
+$queryPrepared = $pdo->prepare("SELECT STATUS FROM MATCHS WHERE ID_MATCHER = :sender AND ID_MATCH = :receveur");
 $queryPrepared->execute(["receveur"=>$_SESSION['id'], "sender"=>$_GET['id']]);
 $state2 = $queryPrepared->fetch();
 
-if($state1[0] == 1 && $state2[0] == 1){
+if(($state1[0] == 1 && $state2[0] == 1) || $state1[0] == 2 || $state2[0] == 2){
     if(isConnected()){
         echo '<p id="id-sender" hidden="hidden">'.$_SESSION['id'].'</p>';
         echo '<p id="id-receveur" hidden="hidden">'.$_GET['id'].'</p>';

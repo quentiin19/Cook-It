@@ -108,8 +108,7 @@ if (isConnected() == $_SESSION['id']) {
                         break;
                     }else{
                         //mettre 1 en bdd
-                        $queryPrepared = $pdo->prepare("UPDATE SUBSCRIPTION SET STATUS = 1 WHERE ID_SUBSCRIBER = :id_sender; AND ID_SUBSCRIPTION = :id_receveur;");
-                        $queryPrepared->execute(['id_sender'=>$_SESSION['id'], 'id_receveur'=>$_GET['id']]);
+                        $queryPrepared = $pdo->prepare("UPDATE SUBSCRIPTION SET STATUS = 1 WHERE ID_SUBSCRIBER = :id_sender AND ID_SUBSCRIPTION = :id_receveur;");
                     }
                 }else{
                     //mettre 1 en bdd
@@ -140,9 +139,9 @@ if (isConnected() == $_SESSION['id']) {
                 break;
         }
     }else{
-        header("Location: login.php");
+        //header("Location: login.php");
     }
 }else{
-    header("Location: login.php");
+    //header("Location: login.php");
 }
-header("Location: profil.php?id=".$id);
+//header("Location: profil.php?id=".$id);
