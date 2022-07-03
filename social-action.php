@@ -143,9 +143,11 @@ if (isConnected() == $_SESSION['id']) {
                 break;
         }
     }else{
+        echo 'session =  get';
         //header("Location: login.php");
     }
 }else{
+    echo 'pas connecté';
     //header("Location: login.php");
 }
 //header("Location: profil.php?id=".$id);
