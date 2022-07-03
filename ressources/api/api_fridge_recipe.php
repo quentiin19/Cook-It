@@ -9,12 +9,13 @@ include '../../functions.php';
 $id = $_GET['id'];
 $dif = $_GET['dif'];
 
-//$token = $_GET['token'];
+$token = $_GET['token'];
 
 
 function returnRecipes($difficulty, $id){
     $missingIngr = 0;
     $found = 0;
+    $id_recipes_found = array();
     $recipes_found = array();
 
     $pdo = connectDB();
@@ -49,20 +50,18 @@ function returnRecipes($difficulty, $id){
         }
 
         if ($found >= (count($needs) - $difficulty)) {
-            array_push($recipes_found, $recipe);
+            array_push($id_recipes_found, $recipe);
         }
     }
-    echo json_encode($recipes_found);
+
+    foreach ($id_recipes_found as $id_recipe) {
+        $query = $pdo->prepare("SELECT * FROM RECIPES WHERE ID_RECIPE = :id;");
+        $query->execute(["id"=>$id_recipe]);
+        $recipe = $query->fetch();
+
+        array_push($id_recipes_found, $recipe);
+    }
+    return json_encode($recipes_found);
 }
 
-
-// $query = $pdo->prepare("SELECT TOKEN FROM USER WHERE ID = :id;");
-// $query->execute(['id'=> $id]);
-// $tokenbdd = $query->fetch();
-
-
-
-// if ($tokenbdd[0] == $token) {
-//     echo returnRecipes($dif, $id);
-// }
 echo returnRecipes($dif, $id);

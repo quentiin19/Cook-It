@@ -12,7 +12,6 @@ difficulty.addEventListener("input", onchange);
 function onchange() {
     //récupération de la valeur
     let dif = difficulty.value;
-    console.log(dif);
 
     if(dif > 3){
         difficulty.value = 3;
