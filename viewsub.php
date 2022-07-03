@@ -71,6 +71,7 @@ if($_GET['display']==1){
         ?>
     </div>
 </div>
+
 <?php
 }
 include 'template/footer.php';
