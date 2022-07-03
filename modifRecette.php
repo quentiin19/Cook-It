@@ -131,7 +131,7 @@ if (isConnected() == $_SESSION['id'] || isAdmin()) {
 		
 		//on rentre la description
 		$queryPrepared = $pdo->prepare("UPDATE RECIPES set DESCRIPTION = :desc WHERE ID_RECIPE = :id");
-		$queryPrepared ->execute(["desc"=>$_POST["recette_description"],"id" => $_POST["idrecipe"]]);
+		$queryPrepared ->execute(["desc"=>$_POST["recette_description"]=nl2br($_POST["recette_description"]),"id" => $_POST["idrecipe"]]);
 		
 		
 		$queryPrepared = $pdo->prepare("SELECT count(ID) FROM INGREDIENTS;");

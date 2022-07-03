@@ -31,7 +31,6 @@ if(isConnected()){
     	header("Location: https://cookit.ovh/index.php");
     	unset($_SESSION['email']);
     	unset($_SESSION['token']);
-    	
         }		
 	
     }else{
