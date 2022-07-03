@@ -39,7 +39,6 @@ function returnRecipes($difficulty, $id){
                     if ($ingredient['QUANTITY'] >= $need['QUANTITY']) {
                         $found += 1;
                         echo 'ok pour '.$ingredient['ID_INGREDIENT'];
-                        echo $ingredient['ID_INGREDIENT'].' -- ';
                         break;
                     }
                 }
