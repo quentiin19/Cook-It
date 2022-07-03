@@ -90,8 +90,6 @@ if (isConnected()){
                         <h4><?= $user['PSEUDO'] ?></h4>
                     </div>
 
-                    
-                    <div class="btn-group" role="group" aria-label="Un groupe de boutons">
 
 
                     
@@ -246,8 +244,6 @@ if (isConnected()){
                         // }
                     }
                     ?>
-                    </div>
-
                     </div>          
                     <div class="row my-5">
                         <div class="col-lg-4 ">
