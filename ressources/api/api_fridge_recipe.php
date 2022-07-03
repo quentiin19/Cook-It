@@ -22,9 +22,7 @@ function returnRecipes($difficulty, $id){
     $query->execute(['id'=>$id]);
     $ingredients = $query->fetchAll();
 
-    echo '<pre>';
-    print_r($ingredients);
-    echo '</pre>';
+
 
 
 
