@@ -133,8 +133,12 @@ $p = $_GET['p'];
         Votre Frigo est presque vide, vous ne savez pas quoi cuisiner ? </br>
         Pas de panique , sélectionnez les ingrédients et la quantité qu'il vous reste dans la section "frigo",</br>
         et nous vous proposerons des recettes.</br>
-        Si un utilisateur publie du contenu qui vous plait vous pouvait le suivre grâce au bouton "S'abonner".</br>
-        
+        Si un utilisateur publie du contenu qui vous plait vous pouvez le suivre grâce au bouton "S'abonner".</br>
+        N'oubliez pas d'ajouter une description qui vous correspond à votre profil.</br>
+        La particularité de Cook'it est le systeme de "match" ! </br>
+        Lorsque qu'une personne vous interesse ( vous avez les memes gouts cullinaires, et que sa description vous plait ),</br>
+        Sur son profil, il suffit de cliquer sur "match". Si les 2 personnes match alors une messagerie 
+        est débloquer pour faire plus ample connaissance et pourquoi trouver votre ame-soeur.  
       </div>
 
       <!-- Modal footer -->
