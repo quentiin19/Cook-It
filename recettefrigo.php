@@ -14,6 +14,7 @@ if (isConnected()) {
 
 
     <script src="ressources/js/fridgerecipe.js"></script>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 <?php
 } else {
     header('Location: login.php');
