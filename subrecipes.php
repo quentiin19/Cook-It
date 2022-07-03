@@ -3,13 +3,21 @@ include "template/header.php";
 
 
 $pdo = connectDB();
-//$queryPrepared = $pdo->prepare("SELECT RECIPES.ID_RECIPE, RECIPES.PICTURE_PATH, RECIPES.TITLE, RECIPES.ID_CREATOR, USER.PSEUDO from RECIPES, SUBSCRIPTION, USER where  RECIPES.ID_CREATOR = SUBSCRIPTION.ID_SUBSCRIPTION AND SUBSCRIPTION.ID_SUBSCRIBER = :id GROUP BY  ; ");
-$queryPrepared = $pdo->prepare("SELECT RECIPES.ID_RECIPE, RECIPES.PICTURE_PATH, RECIPES.TITLE, RECIPES.ID_CREATOR, USER.PSEUDO FROM RECIPES, USER WHERE RECIPES.ID_CREATOR in ( SELECT ID_SUBSCRIPTION FROM SUBSCRIPTION WHERE SUBSCRIPTION.ID_SUBSCRIBER = :id);  ");
+
+
+$queryPrepared = $pdo->prepare("SELECT ID_SUBSCRIPTION FROM SUBSCRIPTION WHERE SUBSCRIPTION.ID_SUBSCRIBER = :id;");
 $queryPrepared->execute(['id'=>$_SESSION['id']]);
+$sub = $queryPrepared->fetchAll();
+
+$queryPrepared = $pdo->prepare("SELECT RECIPES.ID_RECIPE, RECIPES.PICTURE_PATH, RECIPES.TITLE, RECIPES.ID_CREATOR, USER.PSEUDO FROM RECIPES, USER ;");
+$queryPrepared->execute();
 $recipes = $queryPrepared->fetchAll();
 
 
+
+
 foreach ($recipes as $recipe){
+    if ($recipe['ID_CREATOR'] == $sub){
     echo '<div class="col-lg-3 col-md-4 col-sm-1 py-3">
             <div class="card mb-4 shadow-sm bg-color py-3 px-3 arrondie">
                 <a href="https://cookit.ovh/recette.php?id='.$recipe['ID_RECIPE'].'">
@@ -27,5 +35,6 @@ foreach ($recipes as $recipe){
                 echo'</a>        
             </div>
         </div>';
+    }
 }
 ?>
