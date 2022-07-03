@@ -15,12 +15,8 @@ function returnMode($id){
 
     // $return = array();
     // array_push($return, $result[0]);
-    if($result['MODE'] == 1){
-        return true;
-    }else{
-        return false;
-    }
 
+    return $result;
 }
 
 function changeMode($id){
@@ -34,7 +30,7 @@ function changeMode($id){
         // $return = array();
         // array_push($return, 0);
 
-        return false;
+        return returnMode($id);
     }else{
         $query = $pdo->prepare("UPDATE USER SET MODE = 1 WHERE ID = :id;");
         $query->execute(['id'=>$id]);
@@ -42,7 +38,7 @@ function changeMode($id){
         // $return = array();
         // array_push($return, 1);
 
-        return true;
+        return returnMode($id);
     }
 }
 

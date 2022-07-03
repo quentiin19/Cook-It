@@ -51,6 +51,14 @@ function onclickingredients() {
 
 
 function display_results_ingredient(){
+    console.log(ingredients);
+    if(keyword == "sananes"){
+        //hide tous les éléments
+        for (const element of ingredients.childNodes) {
+            console.log(element);
+            element.hidden = true;
+        }
+    }
     if(keyword == ""){
         //hide tous les éléments
         for (const element of ingredients.childNodes) {
