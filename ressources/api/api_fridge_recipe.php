@@ -2,7 +2,7 @@
 session_start();
 include '../../functions.php';
 
-//header("Content-type: application/json");
+header("Content-type: application/json");
 
 
 
@@ -23,10 +23,7 @@ function returnRecipes($difficulty, $id){
     $ingredients = $query->fetchAll();
 
 
-
-
-
-    $query = $pdo->prepare("SELECT ID_RECIPE FROM RECIPES;");
+    $query = $pdo->prepare("SELECT * FROM RECIPES;");
     $query->execute();
     $recipes = $query->fetchAll();
 
@@ -49,23 +46,19 @@ function returnRecipes($difficulty, $id){
         if ($found >= (count($needs) - $difficulty)) {
             array_push($id_recipes_found, $recipe);
         }
+        $found = 0;
     }
-
-    echo '<pre>';
-    print_r($id_recipes_found);
-    echo '</pre>';
 
 
     foreach ($id_recipes_found as $id_recipe) {
-        echo '<pre>';
-        print_r($id_recipe);
-        echo '</pre>';
         $query = $pdo->prepare("SELECT * FROM RECIPES WHERE ID_RECIPE = :id;");
-        $query->execute(["id"=>$id_recipe]);
+        $query->execute(["id"=>$id_recipe['ID_RECIPE']]);
         $temp = $query->fetch();
 
-        array_push($id_recipes_found, $temp);
+        
+        array_push($recipes_found, $temp);
     }
+
     return json_encode($recipes_found);
 }
 

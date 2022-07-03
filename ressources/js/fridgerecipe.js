@@ -22,16 +22,18 @@ function onchange() {
     }
 
     //envoi de la requete
-    request_ajax.addEventListener("load", display_results_recipe);
+    request.addEventListener("load", display_results_recipe);
 
     //configuration de la requete
-    request_ajax.open("GET", `https://cookit.ovh/ressources/api/api_fridge_recipe.php?id=${id}&dif=${dif}`);
-    request_ajax.send();
+    request.open("GET", `https://cookit.ovh/ressources/api/api_fridge_recipe.php?id=${id}&dif=${dif}`);
+    request.send();
 }
 
 function display_results_recipe() {
-    let recipes = JSON.parse(request_ajax.response);
+    let recipes = JSON.parse(request.response);
     console.log(recipes);
+
+    recettes.innerText = "";
 
     for (const recipe of recipes) {
         console.log(recipe);
@@ -80,3 +82,6 @@ function display_results_recipe() {
         recettes.appendChild(main_div);
     }
 }
+
+
+onchange();
