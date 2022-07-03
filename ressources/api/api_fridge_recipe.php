@@ -9,7 +9,6 @@ include '../../functions.php';
 $id = $_GET['id'];
 $dif = $_GET['dif'];
 
-$token = $_GET['token'];
 
 
 function returnRecipes($difficulty, $id){
@@ -23,9 +22,7 @@ function returnRecipes($difficulty, $id){
     $query->execute(['id'=>$id]);
     $ingredients = $query->fetchAll();
 
-    echo '<pre>';
-    print_r($ingredients);
-    echo '</pre>';
+
 
 
 
@@ -54,12 +51,20 @@ function returnRecipes($difficulty, $id){
         }
     }
 
+    echo '<pre>';
+    print_r($id_recipes_found);
+    echo '</pre>';
+
+
     foreach ($id_recipes_found as $id_recipe) {
+        echo '<pre>';
+        print_r($id_recipe);
+        echo '</pre>';
         $query = $pdo->prepare("SELECT * FROM RECIPES WHERE ID_RECIPE = :id;");
         $query->execute(["id"=>$id_recipe]);
-        $recipe = $query->fetch();
+        $temp = $query->fetch();
 
-        array_push($id_recipes_found, $recipe);
+        array_push($id_recipes_found, $temp);
     }
     return json_encode($recipes_found);
 }
