@@ -55,7 +55,7 @@ function display_results_ingredient(){
     if(keyword == "sananes"){
         //hide tous les éléments
         for (const element of ingredients.childNodes) {
-            console.log(element);
+            console.log(element.id);
             element.hidden = true;
         }
     }
