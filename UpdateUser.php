@@ -60,15 +60,24 @@ if (isAdmin()) {
 		$errors[] = "Votre description doit faire entre 2 et 200 caractères";
 	}
 
+	if(count($errors)==0){
 	//Modification des infos de l'utilisateur dans la BDD
 	$queryPrepared = $pdo->prepare("Update USER SET PSEUDO =:pseudo, FIRSTNAME =:firstname, LASTNAME =:lastname, DESCRIPTION_PROFIL=:desc WHERE ID =:id");
 	$queryPrepared->execute(["pseudo" => $pseudo, "firstname" => $firstname, "lastname" => $lastname, "desc" => $description, "id" => $id]);
 
 	//update des logs
 	updateLogs($id, "modification du profil par un administrateur (" . $_SESSION['id'] . ")");
-
+	}else{
+		header('Location: profil_membre.php?id='.$_POST['id']);
+	}
 	//redirection vers la page membre
-	header("Location: https://cookit.ovh/index.php");
+	echo $firstname;
+	echo $pseudo;
+	echo $lastname;
+	echo $description;
+	echo $id;
+
+	//header("Location: https://cookit.ovh/index.php");
 
 //si la personne est connectée
 } elseif (isConnected() == $id) {
@@ -151,6 +160,7 @@ if (isAdmin()) {
 	//Hashage du nouveau mdp
 	$hashpwd = password_hash($pwd, PASSWORD_DEFAULT);
 
+	
 	//Modification des infos de l'utilisateur dans la BDD
 	$queryPrepared = $pdo->prepare("Update USER SET PSEUDO =:pseudo, FIRSTNAME =:firstname, LASTNAME =:lastname, DESCRIPTION_PROFIL=:desc WHERE ID =:id");
 	$queryPrepared->execute(["pseudo" => $pseudo, "firstname" => $firstname, "lastname" => $lastname, "desc" => $description, "id" => $id]);
