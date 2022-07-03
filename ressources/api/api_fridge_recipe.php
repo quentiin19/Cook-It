@@ -19,11 +19,11 @@ function returnRecipes($difficulty, $id){
 
 
     $query = $pdo->prepare("SELECT ID_INGREDIENT FROM NEED WHERE ID_RECIPE IN (SELECT ID_RECIPE FROM RECIPES);");
-    $query->execute(['id'=>$id]);
-    $ingredients = $query->fetchAll();
+    $query->execute();
+    $needs = $query->fetchAll();
 
     echo '<pre>';
-    print_r($ingredients);
+    print_r($needs);
     echo '</pre>';
 
 }
