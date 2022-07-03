@@ -15,7 +15,7 @@ function returnMode($id){
 
     $return = array();
     array_push($return, $result[0]);
-
+    echo $return;
     return $return;
 }
 
@@ -37,6 +37,7 @@ function changeMode($id){
 
         $return = array();
         array_push($return, 1);
+        echo $return;
 
         return $return;
     }
