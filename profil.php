@@ -104,7 +104,7 @@ if (isConnected()){
                                 //si l'utilisateur a déjà ce profil en ami
                                 if($statesub1[0] == 1){
                                     //afficher le bouton se désabonner
-                                    echo'<div class="col-lg-6 col-md-6 d-flex justify-content-end">
+                                    echo'<div class="btn col-lg-6 col-md-6 d-flex justify-content-end">
                                         <a href="https://cookit.ovh/social-action.php?id='.$_GET['id'].'&action=unsub" class=" btn btn-secondary" style="height : 30px"><p>Se Désabonner</p></a>
                                     </div>';
                                     
@@ -115,7 +115,7 @@ if (isConnected()){
     
                                 }elseif($statesub1[0] == 0){
                                     //affichage du bouton s'abonner
-                                    echo'<div class="col-lg-6 col-md-6 d-flex justify-content-end">
+                                    echo'<div class="btn col-lg-6 col-md-6 d-flex justify-content-end">
                                         <a href="https://cookit.ovh/social-action.php?id='.$_GET['id'].'&action=sub" class=" btn btn-secondary" style="height : 30px"><p>S\'abonner</p></a>
                                     </div>';
     
@@ -134,7 +134,7 @@ if (isConnected()){
                             //sinon si 
                             }elseif(!isset($statesub2[0]) || $statesub2[0] == 1) {
                                 //affichage du bouton s'abonner
-                                echo'<div class="col-lg-6 col-md-6 d-flex justify-content-end">
+                                echo'<div class="btn col-lg-6 col-md-6 d-flex justify-content-end">
                                     <a href="https://cookit.ovh/social-action.php?id='.$_GET['id'].'&action=sub" class=" btn btn-secondary" style="height : 30px"><p>S\'abonner</p></a>
                                 </div>';
 
