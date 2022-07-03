@@ -11,15 +11,15 @@ difficulty.addEventListener("input", onchange);
 
 function onchange() {
     //récupération de la valeur
-    let dif = search_bar_recipes.value;
+    let dif = difficulty.value;
     console.log(dif);
 
     if(dif > 3){
-        search_bar_recipes.value = 3;
-        dif = search_bar_recipes.value;
+        difficulty.value = 3;
+        dif = difficulty.value;
     }else if(dif < 0){
-        search_bar_recipes.value = 0;
-        dif = search_bar_recipes.value;
+        difficulty.value = 0;
+        dif = difficulty.value;
     }
 
     //envoi de la requete
