@@ -57,6 +57,7 @@ function returnRecipes($difficulty, $id){
 
 
     foreach ($id_recipes_found as $id_recipe) {
+        echo $id_recipe;
         $query = $pdo->prepare("SELECT * FROM RECIPES WHERE ID_RECIPE = :id;");
         $query->execute(["id"=>$id_recipe]);
         $temp = $query->fetch();
