@@ -112,8 +112,8 @@ echo '<p id="id-recette" hidden="hidden">'.$_GET['id'].'</p>';
 							<div class="row">
 								<div class="d-flex justify-content-center">
 									<div class="col-lg-8 col-md-8 col-sm-8">
-										<h4>Recette :</h4><br>
-										<p><?= $recipe['DESCRIPTION']?></p>
+										<h4 >Recette :</h4><br>
+										<p class="text-left"><?= $recipe['DESCRIPTION']?></p>
 									</div>
 								</div>
 							</div>	
