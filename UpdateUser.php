@@ -17,6 +17,7 @@ if (isAdmin()) {
 		!isset($_POST["firstname"]) ||
 		!isset($_POST["lastname"]) ||
 		empty($_POST["pseudo"]) ||
+		!isset($_POST["description"]) ||
 		count($_POST) != 5
 	) {
 
@@ -52,6 +53,10 @@ if (isAdmin()) {
 
 	//pseudo : Min 4 Max 60
 	if (strlen($pseudo) < 4 || strlen($pseudo) > 60) {
+		$errors[] = "Votre pseudo doit faire entre 4 et 60 caractères";
+	}
+
+	if (strlen($description) < 2 || strlen($description) > 200) {
 		$errors[] = "Votre pseudo doit faire entre 4 et 60 caractères";
 	}
 
