@@ -57,7 +57,7 @@ if (isAdmin()) {
 	}
 
 	if (strlen($description) < 2 || strlen($description) > 200) {
-		$errors[] = "Votre pseudo doit faire entre 4 et 60 caractères";
+		$errors[] = "Votre description doit faire entre 2 et 200 caractères";
 	}
 
 	//Modification des infos de l'utilisateur dans la BDD
