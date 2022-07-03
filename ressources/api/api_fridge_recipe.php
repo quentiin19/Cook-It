@@ -17,6 +17,11 @@ function returnRecipes($difficulty, $id){
     $query->execute(['id'=>$id]);
     $ingredients = $query->fetchAll();
 
+    echo '<pre>';
+    print_r($ingredients);
+    echo '</pre>';
+
+
 
     $query = $pdo->prepare("SELECT ID_RECIPE FROM RECIPES;");
     $query->execute();
@@ -27,6 +32,8 @@ function returnRecipes($difficulty, $id){
         $query = $pdo->prepare("SELECT ID_INGREDIENT FROM NEED WHERE ID_RECIPE = :id;");
         $query->execute(['id'=>$recipe['ID_RECIPE']]);
         $needs = $query->fetchAll();
+
+
     }
 }
 
