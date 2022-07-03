@@ -2,7 +2,7 @@
 include 'template/header.php';
 
 
-if(isConnected() == $_GET['id']){
+if(isConnected()){
     echo '<p hidden="hidden" id="id-user">'.$_GET['id'].'</p>';
 
 
