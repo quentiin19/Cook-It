@@ -1,6 +1,6 @@
 <?php
 require '../../functions.php';
-header("Content-type: application/json");
+//header("Content-type: application/json");
 
 
 $action = $_GET['action'];
@@ -15,7 +15,7 @@ function returnMode($id){
 
     $return = array();
     array_push($return, $result[0]);
-    echo $return;
+    print_r($return);
     return $return;
 }
 
@@ -29,7 +29,7 @@ function changeMode($id){
 
         $return = array();
         array_push($return, 0);
-        
+        print_r($return);
         return $return;
     }else{
         $query = $pdo->prepare("UPDATE USER SET MODE = 1 WHERE ID = :id;");
@@ -37,7 +37,7 @@ function changeMode($id){
 
         $return = array();
         array_push($return, 1);
-        echo $return;
+        print_r($return);
 
         return $return;
     }
