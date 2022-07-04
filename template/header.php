@@ -36,7 +36,6 @@ require "functions.php";
 						<ul class="dropdown-menu">
 							<li><a href="https://cookit.ovh/subrecipes.php" class="dropdown-item">Mes abonnements</a></li>
 							<li><a href="https://cookit.ovh/savedRecipe.php?id=' . $_SESSION['id'] . '" class="dropdown-item">Mes Recettes Sauvegardés</a></li>
-							<li><a href="https://cookit.ovh/friendrequests.php?id=' . $_SESSION['id'] . '" class="dropdown-item">Mes Matchs</a></li>
 							<li><a href="https://cookit.ovh/profilview.php?id=' . $_SESSION['id'] . '" class="dropdown-item">Mon Compte</a></li>
 							<li><a href="https://cookit.ovh/frigo.php?id=' . $_SESSION['id'] . '" class="dropdown-item">Mon Frigo</a></li>
 							<li><a href="https://cookit.ovh/AddRecette.php" class="dropdown-item">Ajouter une recette</a></li>';
