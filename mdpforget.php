@@ -44,7 +44,7 @@ if (!empty($_POST["password"]) || !empty($_POST["passwordConfirm"]) || count($_P
 
     
 			echo'<pre>';
-			print_r($_SESSION);
+			print_r($_GET);
 			echo'</pre>';
             
 			echo'<pre>';
