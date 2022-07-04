@@ -84,7 +84,7 @@ if(isset($_POST['email'])){
 		$queryPrepared->execute(["email" => $email]);
 		$result = $queryPrepared->fetch();
 		echo("récup du mail en bdd");
-		if ($result['ID'] == $email) {
+		if (isset($result['ID'])) {
 			$_SESSION['cle'] = $cle;
 			echo("envois mail");
 			//envois du mail
