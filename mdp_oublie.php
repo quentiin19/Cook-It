@@ -88,7 +88,7 @@ if(isset($_POST['email'])){
 			$from = 'support-cookit@cookit.com';
 			$name = "Cookit-supportTeam";
 			$subj = 'Mot de passe oublié';
-			$msg = '<a href=http://51.255.172.36/mdpforget.php?id='.$result['ID'].'&cle='.$cle.'>Confirmer</a><h1>Confirmez le mail en cliquant sur le lien ci dessus</h1>';
+			$msg = '<a href="http://51.255.172.36/mdpforget.php?id='.$result['ID'].'&cle='.$cle.'">Confirmer</a><h1>Confirmez le mail en cliquant sur le lien ci dessus</h1>';
 			smtpmailer($email, $from, $name, $subj, $msg);
 			//header("Location:login.php");
 		}
