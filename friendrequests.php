@@ -40,5 +40,10 @@ if (isConnected() != $_SESSION['id']) {
         ?>
     </div>
 </div>
-
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
 <?php include "template/footer.php"; ?>
