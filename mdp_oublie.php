@@ -91,6 +91,7 @@ if(isset($_POST['email'])){
 			$msg = '<a href="http://51.255.172.36/mdpforget.php?id='.$result['ID'].'&cle='.$cle.'">Confirmer</a><h1>Confirmez le mail en cliquant sur le lien ci dessus</h1>';
 			smtpmailer($email, $from, $name, $subj, $msg);
 			//header("Location:login.php");
+			print_r($_SESSION);
 		}
 		else {
 			echo "l'email n'existe pas en bdd";
