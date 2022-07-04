@@ -8,10 +8,11 @@ if (isConnected()) {
 
 
 ?>
+<div class="d-flex justify-content-center">
     <p>Nombre d'ingrédient non détenu autorisé : </p>
     <input type="number" id="difficulty" value='0'>
     <div id='recettes'></div>
-
+</div>
 
     <script src="ressources/js/fridgerecipe.js"></script>
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
