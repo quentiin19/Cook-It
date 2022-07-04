@@ -5,7 +5,7 @@ require '../../ressources/fpdf184/fpdf.php';
 
 
 
-if(isconnected() == $_GET['id']) {
+if(isconnected() == $_GET['id'] || isAdmin()) {
     $id = $_GET['id'];
 
 
