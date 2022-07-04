@@ -58,6 +58,7 @@ function display_results_recipe() {
 
         const title = document.createElement("h4");
         title.innerText = `${recipe['TITLE']}`;
+        title.setAttribute("class", "text-white");
 
         const creator = document.createElement("a");
         creator.setAttribute("href", `https://cookit.ovh/profil.php?id=${recipe['ID_CREATOR']}`);
