@@ -55,7 +55,7 @@ require "./test/TestConfirmMail/inscription.php";
 	<?php
 
 if(isset($_POST['email'])){
-	echo ("variable post ok");
+	// echo ("variable post ok");
 	//si le mail n'est pas définit
 	if (
 		!isset($_POST["email"]) ||
@@ -79,7 +79,7 @@ if(isset($_POST['email'])){
 		$queryPrepared = $pdo->prepare("SELECT ID from USER WHERE MAIL = :email");
 		$queryPrepared->execute(["email" => $email]);
 		$result = $queryPrepared->fetch();
-		echo("récup du mail en bdd");
+		// echo("récup du mail en bdd");
 		if (isset($result['ID'])) {
 			$_SESSION['cle'] = $cle;
 			$_SESSION['email'] = $email;
