@@ -77,7 +77,7 @@ if(!isset($_POST)){
 		$queryPrepared->execute(["id" => $_SESSION["id"]]);
 		$result = $queryPrepared->fetch();
 	
-		if ($result['MAIL'] == $_SESSION['email']) {
+		if ($result['MAIL'] == $email) {
 			$_SESSION['cle'] = $cle;
 	
 			//envois du mail
