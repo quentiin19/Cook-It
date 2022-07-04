@@ -55,6 +55,9 @@ require "./test/TestConfirmMail/inscription.php";
 	<?php
 
 echo("eeeeeeeeeeeeeeeeee");
+echo'<pre>';
+print_r($_POST);
+echo'</pre>';
 if(!isset($_POST)){
 	echo ("variable post ok");
 	//si le mail n'est pas définit
