@@ -83,6 +83,9 @@ if(isset($_POST['email'])){
 		if (isset($result['ID'])) {
 			$_SESSION['cle'] = $cle;
 			$_SESSION['email'] = $email;
+			echo'<pre>';
+			print_r($_SESSION);
+			echo'</pre>';
 			echo("envois mail");
 			//envois du mail
 			$from = 'support-cookit@cookit.com';
