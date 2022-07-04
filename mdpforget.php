@@ -11,7 +11,7 @@ require "./template/header.php";
 
                         <h2 class="fw-bold mb-2 text-uppercase">Problèmes de connexion ?</h2>
                         <p class="text-white-50 mb-5"> Entrez votre adresse mail et nous vous enverrons un lien pour récupérer votre compte.</p>
-                            <div class="col-lg-6 col-md-12 col-sm-12">
+                            <div class="col-lg-6 col-md-12 col-sm-12 d-flex justify-content-center">
 
                                 <form method="POST" action="">
                                     <input type="password" class="form-control" name="password" placeholder="Votre Mot de passe" required="required"><br>
