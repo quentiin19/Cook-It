@@ -118,8 +118,8 @@ if ($pwd != $pwdConfirm) {
 if (count($errors) == 0) {
 
 	//mise en bdd
-	$queryPrepared = $pdo->prepare("INSERT INTO USER (MAIL, FIRSTNAME, LASTNAME, PSEUDO, HASHPWD, role) 
-		VALUES ( :email , :firstname, :lastname, :pseudo, :pwd , :role);");
+	$queryPrepared = $pdo->prepare("INSERT INTO USER (MAIL, FIRSTNAME,PATH_AVATAR, LASTNAME, PSEUDO, HASHPWD, role) 
+		VALUES ( :email , :firstname,:path, :lastname, :pseudo, :pwd , :role);");
 
 
 	$pwd = password_hash($pwd, PASSWORD_DEFAULT);
@@ -127,6 +127,7 @@ if (count($errors) == 0) {
 	$queryPrepared->execute([
 		"email" => $email,
 		"firstname" => $firstname,
+		"path"=>'/ressources/images/avatar-parts/skin0.png',
 		"lastname" => $lastname,
 		"pseudo" => $pseudo,
 		"pwd" => $pwd,
