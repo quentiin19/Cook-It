@@ -35,7 +35,6 @@ if (isConnected() == $_SESSION['id']) {
         $queryPrepared->execute(["receveur" => $_SESSION['id'], "sender" => $_GET['id']]);
         $statematch2 = $queryPrepared->fetch();
 
-        print_r($statematch1);
         switch ($action) {
             case 'match':
                 if (isset($statematch1[0])) {
@@ -45,11 +44,13 @@ if (isConnected() == $_SESSION['id']) {
                         //mettre 1 en bdd
                         $queryPrepared = $pdo->prepare("UPDATE MATCHS SET STATUS = 1 WHERE ID_MATCHER = :id_sender; AND ID_MATCH = :id_receveur;");
                         $queryPrepared->execute(['id_sender' => $_SESSION['id'], 'id_receveur' => $_GET['id']]);
+                        echo 'insert';
                     }
                 } else {
                     //mettre 1 en bdd
                     $queryPrepared = $pdo->prepare("INSERT INTO MATCHS VALUES (:id_sender, :id_receveur, 1, NOW());");
                     $queryPrepared->execute(['id_sender' => $_SESSION['id'], 'id_receveur' => $_GET['id']]);
+                    echo 'update';
                 }
                 break;
 
