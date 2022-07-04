@@ -9,7 +9,9 @@ $id_recipe = $_GET['id_recipe'];
 if (isConnected()) {
     //récupération de la recette
     $id_user = isConnected();
+    echo $id_user;
 
+    //connexion à la bdd
     $pdo = connectDB();
     $queryPrepared = $pdo->prepare("SELECT COUNT(ID_USER) FROM RECIPES_SAVED WHERE ID_RECIPE = :id_recipe AND ID_USER = :id_user;");
     $queryPrepared->execute(["id_recipe" => $id_recipe, "id_user" => $id_user]);
@@ -27,4 +29,4 @@ if (isConnected()) {
     }
 }
 
-header("Location: recette.php?id=" . $id_recipe);
+header("Location: recette.php?id=".$id_recipe);

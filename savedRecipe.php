@@ -5,7 +5,7 @@ include "template/header.php";
 $pdo = connectDB();
 
 //récupération des recettes enregistrées et du pseudo du créateur de la recette
-$queryPrepared = $pdo->prepare("SELECT RECIPES.ID_RECIPE, RECIPES.PICTURE_PATH, RECIPES.TITLE, RECIPES.ID_CREATOR, USER.PSEUDO from RECIPES_SAVED, RECIPES, USER where RECIPES.ID_RECIPE = RECIPES_SAVED.ID_RECIPE AND RECIPES.ID_CREATOR = USER.ID order by RECIPES_SAVED.DATE_SAVED DESC");
+$queryPrepared = $pdo->prepare("SELECT RECIPES.ID_RECIPE, RECIPES.PICTURE_PATH, RECIPES.TITLE, RECIPES.ID_CREATOR, USER.PSEUDO from RECIPES_SAVED, RECIPES, USER where RECIPES.ID_RECIPE = RECIPES_SAVED.ID_RECIPE AND RECIPES_SAVED.ID_USER = :id AND RECIPES.ID_CREATOR = USER.ID order by RECIPES_SAVED.DATE_SAVED DESC");
 $queryPrepared->execute(['id' => $_SESSION['id']]);
 $recipes = $queryPrepared->fetchAll();
 
