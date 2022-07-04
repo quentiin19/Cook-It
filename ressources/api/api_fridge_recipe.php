@@ -55,7 +55,7 @@ function returnRecipes($difficulty, $id){
 
     //on récupère toutes les info de chaque recette valide
     foreach ($id_recipes_found as $id_recipe) {
-        $query = $pdo->prepare("SELECT * FROM RECIPES WHERE ID_RECIPE = :id;");
+        $query = $pdo->prepare("SELECT *, PSEUDO FROM RECIPES,USER WHERE ID = ID_CREATOR AND ID_RECIPE = :id;");
         $query->execute(["id"=>$id_recipe['ID_RECIPE']]);
         $temp = $query->fetch();
 
