@@ -79,14 +79,14 @@ if(!isset($_POST)){
 	
 		if ($result['MAIL'] == $email) {
 			$_SESSION['cle'] = $cle;
-	
+			echo("envois mail");
 			//envois du mail
 			$from = 'support-cookit@cookit.com';
 			$name = "Cookit-supportTeam";
 			$subj = 'Mot de passe oublié';
 			$msg = '<a href=http://51.255.172.36/ProjAnn/mdpforget.php?id='.$_SESSION['id'].'&cle='.$cle.'>Confirmer</a><h1>Confirmez le mail en cliquant sur le lien ci dessus</h1>';
 			smtpmailer($email, $from, $name, $subj, $msg);
-			header("Location:login.php");
+			//header("Location:login.php");
 		}
 		else {
 			echo "l'email n'existe pas en bdd";
