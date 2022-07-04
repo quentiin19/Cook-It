@@ -24,26 +24,20 @@ if (!empty($_POST["password"]) || !empty($_POST["passwordConfirm"]) || count($_P
     $pdo = connectDB();
     $pwd = password_hash($_POST["password"], PASSWORD_DEFAULT);
 
-    //si l'id correspond bien et que la clé aussi 
-    if ($_GET['id'] == $_SESSION['id']) {
-        if ($_GET['cle'] == $_SESSION['cle']) {
-            //on update l'entrée en base de données
-            $queryPrepared = $pdo->prepare("UPDATE USER set HASHPWD =:pwd WHERE ID =:id; ");
-            $queryPrepared->execute(["pwd" => $pwd, "id" => $_SESSION['id']]);
+    //si la clé correspond bien
+    if ($_GET['cle'] == $_SESSION['cle']) {
+        //on update l'entrée en base de données
+        $queryPrepared = $pdo->prepare("UPDATE USER set HASHPWD =:pwd WHERE ID =:id; ");
+        $queryPrepared->execute(["pwd" => $pwd, "id" => $_SESSION['id']]);
 
-            echo "Vous avez bien changé votre mot de passe, cliquez sur le lien ci dessous pour vous connecter";
-            echo "<br/><a href=http://51.255.172.36/ProjAnn/login.php>Se Connecter</a>";
-        
-        //affichage des erreurs
-        } else {
-            echo "votre lien n'est plus valide";
-            echo 'clé get :' . $_GET['cle'];
-            echo 'clé session :' . $_SESSION['cle'];
-        }
+        echo "Vous avez bien changé votre mot de passe, cliquez sur le lien ci dessous pour vous connecter";
+        echo "<br/><a href=http://51.255.172.36/ProjAnn/login.php>Se Connecter</a>";
+    
+    //affichage des erreurs
     } else {
         echo "votre lien n'est plus valide";
-        echo 'id get : ' . $_GET['id'];
-        echo 'id session : ' . $_SESSION['id'];
+        echo 'clé get :' . $_GET['cle'];
+        echo 'clé session :' . $_SESSION['cle'];
     }
 }
 
