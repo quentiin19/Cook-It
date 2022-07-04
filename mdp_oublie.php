@@ -54,6 +54,7 @@ require "./test/TestConfirmMail/inscription.php";
 	</div>
 	<?php
 if(!isset($_POST)){
+	echo ("variable post ok");
 	//si le mail n'est pas définit
 	if (
 		!isset($_POST["email"]) ||
@@ -70,13 +71,14 @@ if(!isset($_POST)){
 	//Email OK
 	if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
 		$errors[] = "Email incorrect";
+		echo("email pas bon..");
 	} else {
 		//Vérification l'unicité de l'email
 		$pdo = connectDB();
 		$queryPrepared = $pdo->prepare("SELECT MAIL from USER WHERE ID=:id");
 		$queryPrepared->execute(["id" => $_SESSION["id"]]);
 		$result = $queryPrepared->fetch();
-	
+		echo("récup du mail en bdd");
 		if ($result['MAIL'] == $email) {
 			$_SESSION['cle'] = $cle;
 			echo("envois mail");
