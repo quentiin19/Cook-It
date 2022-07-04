@@ -5,9 +5,7 @@ require "./test/TestConfirmMail/inscription.php";
 
 <div class="row">
 
-	<div class="col-lg-2 col-md-1 col-sm-0"></div>
-
-	<div class="col-lg-8 col-md-10 col-sm-12 h-auto arrondie  ">
+	<div class="col-lg-12 col-md-12 col-sm-12 d-flex justify-content-center h-auto arrondie  ">
 		<div class="container py-2  h-auto  ">
 			<div class="row d-flex justify-content-center align-items-center h-100">
 
@@ -24,7 +22,7 @@ require "./test/TestConfirmMail/inscription.php";
 
 								<div class="col-lg-6 col-md-12 col-sm-12">
 
-									<form method="POST" action="mdpforget.php">
+									<form method="POST" action="">
 
 										<input type="email" class="form-control" name="email" placeholder="Votre email" required="required"><br>
 
@@ -41,7 +39,7 @@ require "./test/TestConfirmMail/inscription.php";
 									</form>
 								</div>
 
-								<div class="col-lg-3 col-md-1 col-sm-0"></div>
+
 
 							</div>
 
@@ -62,23 +60,40 @@ require "./test/TestConfirmMail/inscription.php";
 		count($_POST) != 1
 	) {
 
-		die("remplissez les deux champs SVP !");
+		die("remplissez le champ SVP !");
 	}
 
 	$email = $_POST["email"];
 	//génération de la clé
 	$cle = rand(1000000, 9000000);
+//Email OK
+if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+	$errors[] = "Email incorrect";
+} else {
 
+	//Vérification l'unicité de l'email
+	$pdo = connectDB();
+	$queryPrepared = $pdo->prepare("SELECT MAIL from USER WHERE ID=:id");
+	$queryPrepared->execute(["email" => $_SESSION["id"]]);
+	$results = $queryPrepared->fetch();
+
+	if (!empty($result) && $result == $_SESSION['mail']) {
+		$_SESSION['cle'] = $cle;
+
+		//envois du mail
+		$from = 'support-cookit@cookit.com';
+		$name = "Cookit-supportTeam";
+		$subj = 'Mot de passe oublié';
+		$msg = '<a href=http://51.255.172.36/ProjAnn/mdpforget.php?id='.$_SESSION['id'].'&cle='.$cle.'>Confirmer</a><h1>Confirmez le mail en cliquant sur le lien ci dessus</h1>';
+		smtpmailer($email, $from, $name, $subj, $msg);
+		header("Location:login.php");
+	}
+	else {
+		echo "l'email n'existe pas en bdd";
+	}
+}
 	//mise en session de la clé pour la vérification
-	$_SESSION['cle'] = $cle;
 
-	//envois du mail
-	$from = 'support-cookit@cookit.com';
-	$name = "Cookit-supportTeam";
-	$subj = 'Mot de passe oublié';
-	$msg = '<a href=http://51.255.172.36/ProjAnn/mdpforget.php?id=' . $_SESSION['id'] . '&cle=' . $cle . '>Confirmer</a><h1>je suis ton père</h1>';
-	smtpmailer($email, $from, $name, $subj, $msg);
-	header("Location:login.php");
 	?>
 
 	<?php include "template/footer.php"; ?>
