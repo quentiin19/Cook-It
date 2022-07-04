@@ -5,7 +5,6 @@ require 'PHPMailer/PHPMailerAutoload.php';
 function smtpmailer($to, $from, $from_name, $subject, $body)
 {
     $mail = new PHPMailer();
-    $mail->SMTPDebug = SMTP::DEBUG_CONNECTION;
     $mail->IsSMTP();
     $mail->SMTPAuth = true;
     $mail->SMTPOptions = array(
