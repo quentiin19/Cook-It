@@ -58,7 +58,7 @@ echo("eeeeeeeeeeeeeeeeee");
 echo'<pre>';
 print_r($_POST);
 echo'</pre>';
-if(!isset($_POST)){
+if(!isset($_POST['email'])){
 	echo ("variable post ok");
 	//si le mail n'est pas définit
 	if (
