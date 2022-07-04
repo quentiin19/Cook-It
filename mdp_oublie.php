@@ -53,47 +53,49 @@ require "./test/TestConfirmMail/inscription.php";
 		<div class="col-lg-2 col-md-1 col-sm-0"></div>
 	</div>
 	<?php
-
+if(!isset($_POST)){
 	//si le mail n'est pas définit
 	if (
 		!isset($_POST["email"]) ||
 		count($_POST) != 1
 	) {
-
+	
 		die("remplissez le champ SVP !");
 	}
-
+	
 	$email = $_POST["email"];
 	//génération de la clé
 	$cle = rand(1000000, 9000000);
-//Email OK
-if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-	$errors[] = "Email incorrect";
-} else {
-
-	//Vérification l'unicité de l'email
-	$pdo = connectDB();
-	$queryPrepared = $pdo->prepare("SELECT MAIL from USER WHERE ID=:id");
-	$queryPrepared->execute(["email" => $_SESSION["id"]]);
-	$results = $queryPrepared->fetch();
-
-	if (!empty($result) && $result == $_SESSION['mail']) {
-		$_SESSION['cle'] = $cle;
-
-		//envois du mail
-		$from = 'support-cookit@cookit.com';
-		$name = "Cookit-supportTeam";
-		$subj = 'Mot de passe oublié';
-		$msg = '<a href=http://51.255.172.36/ProjAnn/mdpforget.php?id='.$_SESSION['id'].'&cle='.$cle.'>Confirmer</a><h1>Confirmez le mail en cliquant sur le lien ci dessus</h1>';
-		smtpmailer($email, $from, $name, $subj, $msg);
-		header("Location:login.php");
+	
+	//Email OK
+	if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+		$errors[] = "Email incorrect";
+	} else {
+		//Vérification l'unicité de l'email
+		$pdo = connectDB();
+		$queryPrepared = $pdo->prepare("SELECT MAIL from USER WHERE ID=:id");
+		$queryPrepared->execute(["id" => $_SESSION["id"]]);
+		$result = $queryPrepared->fetch();
+	
+		if ($result['MAIL'] == $_SESSION['email']) {
+			$_SESSION['cle'] = $cle;
+	
+			//envois du mail
+			$from = 'support-cookit@cookit.com';
+			$name = "Cookit-supportTeam";
+			$subj = 'Mot de passe oublié';
+			$msg = '<a href=http://51.255.172.36/ProjAnn/mdpforget.php?id='.$_SESSION['id'].'&cle='.$cle.'>Confirmer</a><h1>Confirmez le mail en cliquant sur le lien ci dessus</h1>';
+			smtpmailer($email, $from, $name, $subj, $msg);
+			header("Location:login.php");
+		}
+		else {
+			echo "l'email n'existe pas en bdd";
+		}
 	}
-	else {
-		echo "l'email n'existe pas en bdd";
-	}
+		//mise en session de la clé pour la vérification
+	
+
 }
-	//mise en session de la clé pour la vérification
-
 	?>
 
 	<?php include "template/footer.php"; ?>
