@@ -22,7 +22,7 @@ require "./test/TestConfirmMail/inscription.php";
 
 								<div class="col-lg-6 col-md-12 col-sm-12">
 
-									<form method="POST" action="login.php">
+									<form method="POST" action="">
 
 										<input type="email" class="form-control" name="email" placeholder="Votre email" required="required"><br>
 
@@ -55,7 +55,7 @@ require "./test/TestConfirmMail/inscription.php";
 	<?php
 
 if(isset($_POST['email'])){
-	echo ("variable post ok");
+	// echo ("variable post ok");
 	//si le mail n'est pas définit
 	if (
 		!isset($_POST["email"]) ||
@@ -79,7 +79,7 @@ if(isset($_POST['email'])){
 		$queryPrepared = $pdo->prepare("SELECT ID from USER WHERE MAIL = :email");
 		$queryPrepared->execute(["email" => $email]);
 		$result = $queryPrepared->fetch();
-		echo("récup du mail en bdd");
+		// echo("récup du mail en bdd");
 		if (isset($result['ID'])) {
 			$_SESSION['cle'] = $cle;
 			$_SESSION['email'] = $email;
@@ -88,9 +88,10 @@ if(isset($_POST['email'])){
 			$from = 'support-cookit@cookit.com';
 			$name = "Cookit-supportTeam";
 			$subj = 'Mot de passe oublié';
-			$msg = '<a href=http://51.255.172.36/mdpforget.php?id='.$result['ID'].'&cle='.$cle.'>Confirmer</a><h1>Confirmez le mail en cliquant sur le lien ci dessus</h1>';
+			$msg = '<a href="http://51.255.172.36/mdpforget.php?id='.$result['ID'].'&cle='.$cle.'">Confirmer</a><h1>Confirmez le mail en cliquant sur le lien ci dessus</h1>';
 			smtpmailer($email, $from, $name, $subj, $msg);
-			//header("Location:login.php");
+			header("Location:login.php");
+			print_r($_SESSION);
 		}
 		else {
 			echo "l'email n'existe pas en bdd";

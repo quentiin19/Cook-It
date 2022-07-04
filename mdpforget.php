@@ -49,13 +49,13 @@ if (!empty($_POST["password"]) || !empty($_POST["passwordConfirm"]) || count($_P
         $queryPrepared->execute(["pwd" => $pwd, "email" => $_SESSION['email']]);
 
         echo "Vous avez bien changé votre mot de passe, cliquez sur le lien ci dessous pour vous connecter";
-        echo "<br/><a href=http://51.255.172.36/login.php>Se Connecter</a>";
+        echo "<br/><a href=http://cookit.ovh/login.php>Se Connecter</a></br>";
     
     //affichage des erreurs
     } else {
         echo "votre lien n'est plus valide";
-        echo 'clé get :' . $_GET['cle'];
-        echo 'clé session :' . $_SESSION['cle'];
+        // echo 'clé get :' . $_GET['cle'];
+        // echo 'clé session :' . $_SESSION['cle'];
     }
 }
 
