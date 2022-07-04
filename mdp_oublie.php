@@ -83,6 +83,9 @@ if(isset($_POST['email'])){
 		if (isset($result['ID'])) {
 			$_SESSION['cle'] = $cle;
 			$_SESSION['email'] = $email;
+			echo'<pre>';
+			print_r($_SESSION);
+			echo'</pre>';
 			echo("envois mail");
 			//envois du mail
 			$from = 'support-cookit@cookit.com';
@@ -90,7 +93,7 @@ if(isset($_POST['email'])){
 			$subj = 'Mot de passe oublié';
 			$msg = '<a href="http://51.255.172.36/mdpforget.php?id='.$result['ID'].'&cle='.$cle.'">Confirmer</a><h1>Confirmez le mail en cliquant sur le lien ci dessus</h1>';
 			smtpmailer($email, $from, $name, $subj, $msg);
-			header("Location:login.php");
+			//header("Location:login.php");
 			print_r($_SESSION);
 		}
 		else {

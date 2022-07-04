@@ -42,6 +42,14 @@ if (!empty($_POST["password"]) || !empty($_POST["passwordConfirm"]) || count($_P
     $pdo = connectDB();
     $pwd = password_hash($_POST["password"], PASSWORD_DEFAULT);
 
+    
+			echo'<pre>';
+			print_r($_GET);
+			echo'</pre>';
+            
+			echo'<pre>';
+			print_r($_SESSION);
+			echo'</pre>';
     //si la clé correspond bien
     if ($_GET['cle'] == $_SESSION['cle']) {
         //on update l'entrée en base de données
