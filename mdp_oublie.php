@@ -24,7 +24,7 @@ require "./test/TestConfirmMail/inscription.php";
 
 								<div class="col-lg-6 col-md-12 col-sm-12">
 
-									<form method="POST" action="">
+									<form method="POST" action="mdpforget.php">
 
 										<input type="email" class="form-control" name="email" placeholder="Votre email" required="required"><br>
 
