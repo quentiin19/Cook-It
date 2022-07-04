@@ -86,6 +86,7 @@ if(isset($_POST['email'])){
 		echo("récup du mail en bdd");
 		if (isset($result['ID'])) {
 			$_SESSION['cle'] = $cle;
+			$_SESSION['email'] = $email;
 			echo("envois mail");
 			//envois du mail
 			$from = 'support-cookit@cookit.com';

@@ -27,8 +27,8 @@ if (!empty($_POST["password"]) || !empty($_POST["passwordConfirm"]) || count($_P
     //si la clé correspond bien
     if ($_GET['cle'] == $_SESSION['cle']) {
         //on update l'entrée en base de données
-        $queryPrepared = $pdo->prepare("UPDATE USER set HASHPWD =:pwd WHERE ID =:id; ");
-        $queryPrepared->execute(["pwd" => $pwd, "id" => $_SESSION['id']]);
+        $queryPrepared = $pdo->prepare("UPDATE USER set HASHPWD =:pwd WHERE MAIL =:email;");
+        $queryPrepared->execute(["pwd" => $pwd, "email" => $_SESSION['email']]);
 
         echo "Vous avez bien changé votre mot de passe, cliquez sur le lien ci dessous pour vous connecter";
         echo "<br/><a href=http://51.255.172.36/ProjAnn/login.php>Se Connecter</a>";
