@@ -81,7 +81,7 @@ if(isset($_POST['email'])){
 		//Vérification l'unicité de l'email
 		$pdo = connectDB();
 		$queryPrepared = $pdo->prepare("SELECT ID from USER WHERE MAIL = :email");
-		$queryPrepared->execute(["email" => $email);
+		$queryPrepared->execute(["email" => $email]);
 		$result = $queryPrepared->fetch();
 		echo("récup du mail en bdd");
 		if ($result['MAIL'] == $email) {
